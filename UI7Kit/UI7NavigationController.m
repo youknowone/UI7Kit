@@ -29,6 +29,8 @@
 
 @implementation UI7NavigationController
 
+// TODO: Implement 'pushViewController' with new transition animation.
+
 + (void)initialize {
     if (self == [UI7NavigationController class]) {
         NSAClass *class = [NSAClass classWithClass:[UINavigationController class]];

@@ -25,6 +25,8 @@
 
 @implementation UI7TableView
 
+// TODO: implement 'setAccessoryType' to fake accessories.
+
 + (void)initialize {
     if (self == [UI7TableView class]) {
         NSAClass *class = [NSAClass classWithClass:[UITableView class]];
@@ -82,6 +84,7 @@ UIView *UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableVie
         [delegateClass addMethodForSelector:@selector(tableView:viewForHeaderInSection:) implementation:(IMP)UI7TableViewDelegateViewForHeaderInSection types:@"@16@0:4@8i12"];
     } else {
         if ([delegateClass methodImplementationForSelector:@selector(tableView:viewForHeaderInSection:)] == (IMP)UI7TableViewDelegateViewForHeaderInSection) {
+            // TODO: probably we should remove this methods.
             //            class_removeMethods(<#Class#>, <#struct objc_method_list *#>)
         }
     }
@@ -141,7 +144,7 @@ UIView *UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableVie
     self.detailTextLabel.font = [UIFont iOS7SystemFontOfSize:17.0 weight:UI7FontWeightLight]; // FIXME: not sure
     self.textLabel.highlightedTextColor = self.textLabel.textColor;
     self.detailTextLabel.highlightedTextColor = self.detailTextLabel.textColor; // FIXME: not sure
-    self.selectedBackgroundView = [UIImage imageNamed:@"UI7TableViewCellSelection"].view;
+    self.selectedBackgroundView = [UIImage imageNamed:@"UI7TableViewCellSelection"].view; // 
 }
 
 @end
