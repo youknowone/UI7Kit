@@ -38,6 +38,7 @@
 		38AF86CF1769BC8000BFBD29 /* libUI7Kit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38017423176989650049D26C /* libUI7Kit.a */; };
 		38BC0E5D173E821700F36497 /* UITSubviewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38BC0E5B173E821700F36497 /* UITSubviewTableViewController.m */; };
 		38EEF9C7176A366C0085B09B /* UI7Button.m in Sources */ = {isa = PBXBuildFile; fileRef = 38EEF9C6176A366C0085B09B /* UI7Button.m */; };
+		38EEF9CA176A482C0085B09B /* UI7Switch.m in Sources */ = {isa = PBXBuildFile; fileRef = 38EEF9C9176A482C0085B09B /* UI7Switch.m */; };
 		38F068181636F8C8002723AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383764E213373155007072FD /* UIKit.framework */; };
 		38F068191636F8C8002723AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383764D713373154007072FD /* Foundation.framework */; };
 		38F0681A1636F8C8002723AB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383764E513373155007072FD /* CoreGraphics.framework */; };
@@ -131,6 +132,8 @@
 		38E58A901767576300F6ED19 /* UI7Kit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7Kit.h; sourceTree = "<group>"; };
 		38EEF9C5176A366C0085B09B /* UI7Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7Button.h; sourceTree = "<group>"; };
 		38EEF9C6176A366C0085B09B /* UI7Button.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7Button.m; sourceTree = "<group>"; };
+		38EEF9C8176A482C0085B09B /* UI7Switch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7Switch.h; sourceTree = "<group>"; };
+		38EEF9C9176A482C0085B09B /* UI7Switch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7Switch.m; sourceTree = "<group>"; };
 		38F068161636F8C8002723AB /* UI7KitTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UI7KitTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38F0681D1636F8C8002723AB /* UI7KitTestApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UI7KitTestApp-Info.plist"; sourceTree = "<group>"; };
 		38F0681F1636F8C8002723AB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -304,6 +307,8 @@
 				382F54281767863B004D6F59 /* UI7TableView.m */,
 				38EEF9C5176A366C0085B09B /* UI7Button.h */,
 				38EEF9C6176A366C0085B09B /* UI7Button.m */,
+				38EEF9C8176A482C0085B09B /* UI7Switch.h */,
+				38EEF9C9176A482C0085B09B /* UI7Switch.m */,
 				380174601769FE390049D26C /* Resources */,
 				38017426176989660049D26C /* Supporting Files */,
 			);
@@ -517,6 +522,7 @@
 				38EEF9C7176A366C0085B09B /* UI7Button.m in Sources */,
 				3801744F176989B80049D26C /* UI7Kit.m in Sources */,
 				38017450176989B80049D26C /* UI7Utilities.m in Sources */,
+				38EEF9CA176A482C0085B09B /* UI7Switch.m in Sources */,
 				38017451176989B80049D26C /* UI7NavigationBar.m in Sources */,
 				38017452176989B80049D26C /* UI7Toolbar.m in Sources */,
 				38017453176989B80049D26C /* UI7BarButtonItem.m in Sources */,

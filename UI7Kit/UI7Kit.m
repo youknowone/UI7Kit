@@ -3,7 +3,7 @@
 //  UI7Kit
 //
 //  Created by Jeong YunWon on 13. 6. 13..
-//  Copyright (c) 2013년 youknowone.org. All rights reserved.
+//  Copyright (c) 2013 youknowone.org. All rights reserved.
 //
 
 #import "UI7Kit.h"
@@ -18,6 +18,7 @@ void UI7KitPatchAll(BOOL override7) {
              @"UI7NavigationBar",
              @"UI7NavigationController",
              @"UI7Button",
+             @"UI7Switch",
              ]) {
             Class class = NSClassFromString(className);
             [class patch];

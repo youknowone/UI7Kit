@@ -38,10 +38,10 @@
 
 + (void)patch {
     NSAClass *sourceClass = [NSAClass classWithClass:[self class]];
-
-    [sourceClass exportSelector:@selector(initWithCoder:) toClass:[UITableView class]];
-    [sourceClass exportSelector:@selector(initWithFrame:) toClass:[UITableView class]];
-    [sourceClass exportSelector:@selector(setDelegate:) toClass:[UITableView class]];
+    Class targetClass = [UITableView class];
+    [sourceClass exportSelector:@selector(initWithCoder:) toClass:targetClass];
+    [sourceClass exportSelector:@selector(initWithFrame:) toClass:targetClass];
+    [sourceClass exportSelector:@selector(setDelegate:) toClass:targetClass];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
