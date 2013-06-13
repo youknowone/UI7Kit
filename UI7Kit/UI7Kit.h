@@ -11,6 +11,7 @@
  *      UI7KitPatchAll(NO); // in main.m, before UIApplicationMain()
  */
 
+#include <UI7Kit/UI7Utilities.h>
 #include <UI7Kit/UI7BarButtonItem.h>
 #include <UI7Kit/UI7NavigationBar.h>
 #include <UI7Kit/UI7Toolbar.h>

@@ -9,6 +9,5 @@
 #endif
 
 #ifdef __OBJC__
-    #import <UIKitExtension/UIKitExtension.h>
     #import <UI7Kit/UI7Kit.h>
 #endif

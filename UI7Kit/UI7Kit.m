@@ -17,6 +17,7 @@ void UI7KitPatchAll(BOOL override7) {
              @"UI7BarButtonItem",
              @"UI7NavigationBar",
              @"UI7NavigationController",
+             @"UI7Button",
              ]) {
             Class class = NSClassFromString(className);
             [class patch];
