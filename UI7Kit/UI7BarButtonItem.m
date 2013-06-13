@@ -23,7 +23,7 @@
 
 - (void)_barButtonItemInitWithFont:(UIFont *)font {
     [self setBackgroundImage:[UIImage blankImage] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    [self setBackButtonBackgroundImage:[UIImage blankImage] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [self setBackButtonBackgroundImage:[UIImage imageNamed:@"UI7NavigationBarBackButton"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault]; // @2x is not retina image
     [self setTitleTextAttributes:@{
              UITextAttributeFont:font,
         UITextAttributeTextColor: [UIColor colorWithRed:.0 green:.5 blue:1.0 alpha:1.0],

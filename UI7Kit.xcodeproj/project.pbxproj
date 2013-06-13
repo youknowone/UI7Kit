@@ -29,6 +29,7 @@
 		38017456176989B80049D26C /* UI7TableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 382F54281767863B004D6F59 /* UI7TableView.m */; };
 		3801745B1769C5D90049D26C /* UI7TableViewCellDisclosureIndicator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3801745A1769C5D90049D26C /* UI7TableViewCellDisclosureIndicator@2x.png */; };
 		3801745F1769F3B50049D26C /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3801745E1769F3B50049D26C /* Storyboard.storyboard */; };
+		38017462176A245B0049D26C /* UI7NavigationBarBackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 38017461176A245B0049D26C /* UI7NavigationBarBackButton.png */; };
 		381C00AD17172CE20067C936 /* UITTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 381C00AB17172CE20067C936 /* UITTextViewController.m */; };
 		382F542317676943004D6F59 /* UI7NavigationBarPortraitLandscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 382F542217676933004D6F59 /* UI7NavigationBarPortraitLandscape.png */; };
 		382F542417676945004D6F59 /* UI7NavigationBarPortrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 382F542117676933004D6F59 /* UI7NavigationBarPortrait.png */; };
@@ -101,6 +102,7 @@
 		3801743F176989660049D26C /* UI7KitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UI7KitTests.m; sourceTree = "<group>"; };
 		3801745A1769C5D90049D26C /* UI7TableViewCellDisclosureIndicator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7TableViewCellDisclosureIndicator@2x.png"; sourceTree = "<group>"; };
 		3801745E1769F3B50049D26C /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		38017461176A245B0049D26C /* UI7NavigationBarBackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7NavigationBarBackButton.png; sourceTree = "<group>"; };
 		381C00AA17172CE20067C936 /* UITTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITTextViewController.h; sourceTree = "<group>"; };
 		381C00AB17172CE20067C936 /* UITTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITTextViewController.m; sourceTree = "<group>"; };
 		382F542117676933004D6F59 /* UI7NavigationBarPortrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7NavigationBarPortrait.png; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				3801741317682DD40049D26C /* UI7TableViewCellSelection.png */,
 				3801741517682DDA0049D26C /* UI7TableViewCellDisclosureIndicator.png */,
 				3801745A1769C5D90049D26C /* UI7TableViewCellDisclosureIndicator@2x.png */,
+				38017461176A245B0049D26C /* UI7NavigationBarBackButton.png */,
 				382F542117676933004D6F59 /* UI7NavigationBarPortrait.png */,
 				38017417176849680049D26C /* UI7NavigationBarPortrait@2x.png */,
 				382F542217676933004D6F59 /* UI7NavigationBarPortraitLandscape.png */,
@@ -451,6 +454,7 @@
 				3801741A176849680049D26C /* UI7NavigationBarPortraitLandscape@2x.png in Resources */,
 				3801745B1769C5D90049D26C /* UI7TableViewCellDisclosureIndicator@2x.png in Resources */,
 				3801745F1769F3B50049D26C /* Storyboard.storyboard in Resources */,
+				38017462176A245B0049D26C /* UI7NavigationBarBackButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
