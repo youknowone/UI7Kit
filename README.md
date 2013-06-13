@@ -3,10 +3,13 @@ UI7Kit
 
 UI7Kit is a GUI toolkit to implement iOS7 look & feel UIKit under iOS5/iOS6. It is also supported that patching UIKit to UI7Kit in runtime.
 
+NOTE: This project is very immature and under progressing. This is not available for real product yet.
+
 Goal
 ----
-- Full-featured copy of UIKit for iOS7 look & feel (Except status bar)
+- Full-featured copy of UIKit for iOS7 look & feel (Except status bar).
 - Patch the classic UIKit to UI7Kit in runtime to reduce code rewriting for legacy codes.
+- 100% UIKit compatibility.
 
 How to use
 ----------
