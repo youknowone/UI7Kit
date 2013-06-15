@@ -54,6 +54,14 @@ NSString *UI7FontWeightBold = @"Bold";
     return [UIColor colorWithWhite:248/255.0f alpha:1.0];
 }
 
++ (UIColor *)iOS7ButtonTitleColor {
+    return [UIColor colorWithRed:.0 green:.5 blue:1.0 alpha:1.0];
+}
+
++ (UIColor *)iOS7ButtonTitleHighlightedColor {
+    return [UIColor colorWith8bitRed:197 green:221 blue:248 alpha:255];
+}
+
 @end
 
 
@@ -72,7 +80,7 @@ NSString *UI7FontWeightBold = @"Bold";
 
 @implementation UIImage (Images)
 
-+ (id)blankImage {
++ (UIImage *)blankImage {
     static UIImage *image = nil;
     if (image == nil) {
         image = [[UIImage imageNamed:@"UI7Blank"] retain];

@@ -36,6 +36,8 @@ extern void UI7KitPatchAll(BOOL override7);
 @interface UIColor (iOS7)
 
 + (UIColor *)iOS7BackgroundColor;
++ (UIColor *)iOS7ButtonTitleColor;
++ (UIColor *)iOS7ButtonTitleHighlightedColor;
 
 @end
 
@@ -54,7 +56,7 @@ FOUNDATION_EXTERN NSString *UI7FontWeightBold;
 
 @interface UIImage (Images)
 
-+ (id)blankImage;
++ (UIImage *)blankImage;
 - (UIImageView *)view;
 
 @end

@@ -11,12 +11,14 @@
  *      UI7KitPatchAll(NO); // in main.m, before UIApplicationMain()
  */
 
-#include <UI7Kit/UI7Utilities.h>
-#include <UI7Kit/UI7BarButtonItem.h>
-#include <UI7Kit/UI7NavigationBar.h>
-#include <UI7Kit/UI7Toolbar.h>
-#include <UI7Kit/UI7ViewController.h>
-#include <UI7Kit/UI7NavigationController.h>
-#include <UI7Kit/UI7TableView.h>
+#import <UI7Kit/UI7Utilities.h>
+#import <UI7Kit/UI7BarButtonItem.h>
+#import <UI7Kit/UI7NavigationBar.h>
+#import <UI7Kit/UI7Toolbar.h>
+#import <UI7Kit/UI7ViewController.h>
+#import <UI7Kit/UI7NavigationController.h>
+#import <UI7Kit/UI7TableView.h>
+#import <UI7Kit/UI7Button.h>
+#import <UI7Kit/UI7AlertView.h>
 
 FOUNDATION_EXTERN void UI7KitPatchAll(BOOL override7);
