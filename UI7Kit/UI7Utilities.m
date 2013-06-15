@@ -80,7 +80,7 @@ NSString *UI7FontWeightBold = @"Bold";
 
 @implementation UIImage (Images)
 
-+ (id)blankImage {
++ (UIImage *)blankImage {
     static UIImage *image = nil;
     if (image == nil) {
         image = [[UIImage imageNamed:@"UI7Blank"] retain];

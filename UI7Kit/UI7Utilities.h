@@ -56,7 +56,7 @@ FOUNDATION_EXTERN NSString *UI7FontWeightBold;
 
 @interface UIImage (Images)
 
-+ (id)blankImage;
++ (UIImage *)blankImage;
 - (UIImageView *)view;
 
 @end

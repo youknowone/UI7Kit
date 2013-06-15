@@ -12,7 +12,6 @@
 		3801741617682DDA0049D26C /* UI7TableViewCellDisclosureIndicator.png in Resources */ = {isa = PBXBuildFile; fileRef = 3801741517682DDA0049D26C /* UI7TableViewCellDisclosureIndicator.png */; };
 		38017419176849680049D26C /* UI7NavigationBarPortrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38017417176849680049D26C /* UI7NavigationBarPortrait@2x.png */; };
 		3801741A176849680049D26C /* UI7NavigationBarPortraitLandscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38017418176849680049D26C /* UI7NavigationBarPortraitLandscape@2x.png */; };
-		38017424176989650049D26C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383764D713373154007072FD /* Foundation.framework */; };
 		38017432176989660049D26C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38C7A9891495181800381910 /* SenTestingKit.framework */; };
 		38017433176989660049D26C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383764E213373155007072FD /* UIKit.framework */; };
 		38017434176989660049D26C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383764D713373154007072FD /* Foundation.framework */; };
@@ -164,7 +163,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38017424176989650049D26C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
