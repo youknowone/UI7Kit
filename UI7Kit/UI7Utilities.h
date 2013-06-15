@@ -36,6 +36,8 @@ extern void UI7KitPatchAll(BOOL override7);
 @interface UIColor (iOS7)
 
 + (UIColor *)iOS7BackgroundColor;
++ (UIColor *)iOS7ButtonTitleColor;
++ (UIColor *)iOS7ButtonTitleHighlightedColor;
 
 @end
 
