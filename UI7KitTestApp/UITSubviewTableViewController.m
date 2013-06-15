@@ -72,7 +72,7 @@
 }
 
 - (UIView *)subviewTableView:(UIASubviewTableView *)scrollView viewForRow:(NSUInteger)row {
-    return [self->views objectAtIndex:row];
+    return self->views[row];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {

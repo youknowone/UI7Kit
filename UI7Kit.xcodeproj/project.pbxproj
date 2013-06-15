@@ -127,7 +127,7 @@
 		38740493176825D900C0BB18 /* UI7Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7Utilities.m; sourceTree = "<group>"; };
 		3888FC60176C7C7900489638 /* UITIssue1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITIssue1ViewController.h; sourceTree = "<group>"; };
 		3888FC61176C7C7900489638 /* UITIssue1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITIssue1ViewController.m; sourceTree = "<group>"; };
-		3888FC64176C8EBB00489638 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libPods.a; path = "Pods/build/Release-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		3888FC64176C8EBB00489638 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Release-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		38BC0E5A173E821700F36497 /* UITSubviewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITSubviewTableViewController.h; sourceTree = "<group>"; };
 		38BC0E5B173E821700F36497 /* UITSubviewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITSubviewTableViewController.m; sourceTree = "<group>"; };
 		38C7A9761495181800381910 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };

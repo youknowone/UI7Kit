@@ -54,7 +54,7 @@ static NSMutableDictionary *UI7AlertViewStrokeViews = nil;
 }
 
 - (void)setFrameView:(UIView *)frameView {
-    [UI7AlertViewFrameViews setObject:frameView forKey:self.pointerString];
+    UI7AlertViewFrameViews[self.pointerString] = frameView;
 }
 
 - (UIView *)strokeView {
@@ -62,7 +62,7 @@ static NSMutableDictionary *UI7AlertViewStrokeViews = nil;
 }
 
 - (void)setStrokeView:(UIView *)strokeView {
-    [UI7AlertViewStrokeViews setObject:strokeView forKey:self.pointerString];
+    UI7AlertViewStrokeViews[self.pointerString] = strokeView;
 }
 
 @end
@@ -131,7 +131,7 @@ static NSMutableDictionary *UI7AlertViewStrokeViews = nil;
     if (self != nil) {
         self.backgroundImageView = [UIImage blankImage].view;
         UIView *frameView = self.frameView = [[[UIView alloc] initWithFrame:CGRectMake(.0, .0, 284.0, 141.0)] autorelease];
-        frameView.backgroundColor = [UIColor iOS7BackgroundColor]; // temp
+        frameView.backgroundColor = [UIColor colorWith8BitWhite:233 alpha:255];
 
         self.strokeView = [[UIView alloc] initWithFrame:CGRectMake(.0, .0, frameView.frame.size.width, 0.5)];
         self.strokeView.backgroundColor = [UIColor colorWith8BitWhite:182 alpha:255];
@@ -151,14 +151,9 @@ static NSMutableDictionary *UI7AlertViewStrokeViews = nil;
     self.titleLabel.font = [UIFont iOS7SystemFontOfSize:16.0 weight:UI7FontWeightMedium];
     self.bodyTextLabel.font = [UIFont iOS7SystemFontOfSize:16.0 weight:UI7FontWeightLight];
 
-    {
-        CGRect frame = self.strokeView.frame;
-        frame.origin.y = self.bodyTextLabel.frame.origin.y + self.bodyTextLabel.frame.size.height + 29.5f;
-        self.strokeView.frame = frame;
-    }
-
     self.frameView.frame = self.bounds;
 
+    CGFloat highest = self.frame.size.height;
     for (UIAlertButton *button in self.buttons) {
         button.titleLabel.font = [UIFont iOS7SystemFontOfSize:16.0 weight:UI7FontWeightLight];
         [button setTitleColor:[UIColor iOS7ButtonTitleColor] forState:UIControlStateNormal];
@@ -168,9 +163,16 @@ static NSMutableDictionary *UI7AlertViewStrokeViews = nil;
         [button setBackgroundImage:nil forState:UIControlStateHighlighted];
 
         CGRect frame = button.frame;
-        frame.size.height = 45.0;
-        frame.origin.y = self.strokeView.frame.origin.y + 0.5f;
+        frame.origin.y += 16.0;
         button.frame = frame;
+
+        highest = MIN(highest, button.frame.origin.y);
+    }
+
+    {
+        CGRect frame = self.strokeView.frame;
+        frame.origin.y = highest - 0.5f;
+        self.strokeView.frame = frame;
     }
 }
 

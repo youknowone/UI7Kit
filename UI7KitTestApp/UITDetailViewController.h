@@ -10,8 +10,9 @@
 
 @interface UITDetailViewController : UIViewController
 
-@property (strong, nonatomic) id detailItem;
-
-@property (strong, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+- (IBAction)showAlertView1:(id)sender;
+- (IBAction)showAlertView2:(id)sender;
+- (IBAction)showAlertView3:(id)sender;
+- (IBAction)showActionSheet:(id)sender;
 
 @end

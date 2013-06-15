@@ -95,19 +95,19 @@ static NSMutableDictionary *UI7ViewControllerEditButtonItems = nil;
 }
 
 - (UINavigationItem *)navigationItem {
-    UI7NavigationItem *item = [UI7ViewControllerNavigationItems objectForKey:self.pointerString];
+    UI7NavigationItem *item = UI7ViewControllerNavigationItems[self.pointerString];
     if (item == nil) {
         item = [[[UI7NavigationItem alloc] initWithTitle:self.title] autorelease];
-        [UI7ViewControllerNavigationItems setObject:item forKey:self.pointerString];
+        UI7ViewControllerNavigationItems[self.pointerString] = item;
     }
     return item;
 }
 
 - (UIBarButtonItem *)editButtonItem {
-    UI7BarButtonItem *item = [UI7ViewControllerEditButtonItems objectForKey:self.pointerString];
+    UI7BarButtonItem *item = UI7ViewControllerEditButtonItems[self.pointerString];
     if (item == nil) {
         item = [[[UI7BarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(_toggleEditing:)] autorelease];
-        [UI7ViewControllerEditButtonItems setObject:item forKey:self.pointerString];
+        UI7ViewControllerEditButtonItems[self.pointerString] = item;
     }
     return item;
 }
