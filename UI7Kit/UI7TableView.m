@@ -60,39 +60,72 @@
     return self;
 }
 
+CGFloat UI7TableViewDelegateHeightForHeaderInSection(id self, SEL _cmd, UITableView *tableView, NSUInteger section) {
+    NSString *title = [tableView.dataSource tableView:tableView titleForHeaderInSection:section];
+    if (title) {
+        return tableView.sectionHeaderHeight;
+    }
+    return .0;
+}
+
+CGFloat UI7TableViewDelegateHeightForFooterInSection(id self, SEL _cmd, UITableView *tableView, NSUInteger section) {
+    NSString *title = [tableView.dataSource tableView:tableView titleForFooterInSection:section];
+    if (title) {
+        return tableView.sectionFooterHeight;
+    }
+    return .0;
+}
+
 UIView *UI7TableViewDelegateViewForHeaderInSection(id self, SEL _cmd, UITableView *tableView, NSUInteger section) {
     CGFloat height = [tableView.delegate respondsToSelector:@selector(tableView:heightForHeaderInSection:)] ? [tableView.delegate tableView:tableView heightForHeaderInSection:section] : tableView.sectionHeaderHeight;
+    NSString *title = [tableView.dataSource tableView:tableView titleForHeaderInSection:section];
+    if (title == nil) {
+        return [[[UIView alloc] initWithFrame:CGRectZero] autorelease];;
+    }
+    
     UILabel *view = [[[UILabel alloc] initWithFrame:CGRectMake(.0, .0, tableView.frame.size.width, height)] autorelease];
     view.backgroundColor = [UIColor iOS7BackgroundColor];
-    view.text = [@"    " stringByAppendingString:[tableView.dataSource tableView:tableView titleForHeaderInSection:section]];
+
+    view.text = [@"    " stringByAppendingString:title];
     view.font = [UIFont iOS7SystemFontOfSize:14.0 weight:UI7FontWeightBold];
     return view;
 }
 
 UIView *UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableView *tableView, NSUInteger section) {
     CGFloat height = [tableView.delegate respondsToSelector:@selector(tableView:heightForFooterInSection:)] ? [tableView.delegate tableView:tableView heightForFooterInSection:section] : tableView.sectionFooterHeight;
+    NSString *title = [tableView.dataSource tableView:tableView titleForFooterInSection:section];
+    if (title == nil) {
+        return [[[UIView alloc] initWithFrame:CGRectZero] autorelease];
+    }
+    
     UILabel *view = [[[UILabel alloc] initWithFrame:CGRectMake(.0, .0, tableView.frame.size.width, height)] autorelease];
     view.backgroundColor = [UIColor iOS7BackgroundColor];
-    view.text = [@"    " stringByAppendingString:[tableView.dataSource tableView:tableView titleForFooterInSection:section]]; // TODO: do this pretty later
+    view.text = [@"    " stringByAppendingString:title]; // TODO: do this pretty later
     view.font = [UIFont iOS7SystemFontOfSize:14.0 weight:UI7FontWeightBold];
     return view;
 }
 
 - (void)setDelegate:(id<UITableViewDelegate>)delegate {
-    NSAClass *delegateClass = [(NSObject *)delegate classObject];
-    if ([self.dataSource respondsToSelector:@selector(tableView:titleForHeaderInSection:)] && ![delegate respondsToSelector:@selector(tableView:viewForHeaderInSection:)]) {
-        [delegateClass addMethodForSelector:@selector(tableView:viewForHeaderInSection:) implementation:(IMP)UI7TableViewDelegateViewForHeaderInSection types:@"@16@0:4@8i12"];
-    } else {
+    if (self.delegate) {
+        NSAClass *delegateClass = [(NSObject *)self.delegate classObject];
         if ([delegateClass methodImplementationForSelector:@selector(tableView:viewForHeaderInSection:)] == (IMP)UI7TableViewDelegateViewForHeaderInSection) {
             // TODO: probably we should remove this methods.
-            //            class_removeMethods(<#Class#>, <#struct objc_method_list *#>)
+            //            class_removeMethods(￼, ￼)
         }
     }
-    if ([self.dataSource respondsToSelector:@selector(tableView:titleForFooterInSection:)] && ![delegate respondsToSelector:@selector(tableView:viewForFooterInSection:)]) {
-        [delegateClass addMethodForSelector:@selector(tableView:viewForFooterInSection:) implementation:(IMP)UI7TableViewDelegateViewForFooterInSection types:@"@16@0:4@8i12"];
-    } else {
-        if ([delegateClass methodImplementationForSelector:@selector(tableView:viewForFooterInSection:)] == (IMP)UI7TableViewDelegateViewForFooterInSection) {
-            //            class_removeMethods(<#Class#>, <#struct objc_method_list *#>)
+    if (delegate) {
+        NSAClass *delegateClass = [(NSObject *)delegate classObject];
+        if ([self.dataSource respondsToSelector:@selector(tableView:titleForHeaderInSection:)] && ![delegate respondsToSelector:@selector(tableView:viewForHeaderInSection:)]) {
+            [delegateClass addMethodForSelector:@selector(tableView:viewForHeaderInSection:) implementation:(IMP)UI7TableViewDelegateViewForHeaderInSection types:@"@16@0:4@8i12"];
+            if (![delegate respondsToSelector:@selector(tableView:heightForHeaderInSection:)]) {
+                [delegateClass addMethodForSelector:@selector(tableView:heightForHeaderInSection:) implementation:(IMP)UI7TableViewDelegateHeightForHeaderInSection types:@"f16@0:4@8i12"];
+            }
+        }
+        if ([self.dataSource respondsToSelector:@selector(tableView:titleForFooterInSection:)] && ![delegate respondsToSelector:@selector(tableView:viewForFooterInSection:)]) {
+            [delegateClass addMethodForSelector:@selector(tableView:viewForFooterInSection:) implementation:(IMP)UI7TableViewDelegateViewForFooterInSection types:@"@16@0:4@8i12"];
+            if (![delegate respondsToSelector:@selector(tableView:heightForFooterInSection:)]) {
+                [delegateClass addMethodForSelector:@selector(tableView:heightForFooterInSection:) implementation:(IMP)UI7TableViewDelegateHeightForHeaderInSection types:@"f16@0:4@8i12"];
+            }
         }
     }
     [self __setDelegate:delegate];

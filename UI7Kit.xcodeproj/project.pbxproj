@@ -35,6 +35,9 @@
 		382F54261767809E004D6F59 /* UI7Blank.png in Resources */ = {isa = PBXBuildFile; fileRef = 382F54251767809E004D6F59 /* UI7Blank.png */; };
 		38485C6317109CD20001A99D /* UITPreparedCellTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38485C5F1710974C0001A99D /* UITPreparedCellTableViewController.m */; };
 		38505B30176B1575004A7725 /* UI7AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 38505B2F176B1575004A7725 /* UI7AlertView.m */; };
+		3888FC62176C7C7900489638 /* UITIssue1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3888FC61176C7C7900489638 /* UITIssue1ViewController.m */; };
+		3888FC63176C8EAD00489638 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383764E513373155007072FD /* CoreGraphics.framework */; };
+		3888FC65176C8EBB00489638 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3888FC64176C8EBB00489638 /* libPods.a */; };
 		38AF86CF1769BC8000BFBD29 /* libUI7Kit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38017423176989650049D26C /* libUI7Kit.a */; };
 		38BC0E5D173E821700F36497 /* UITSubviewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38BC0E5B173E821700F36497 /* UITSubviewTableViewController.m */; };
 		38EEF9C7176A366C0085B09B /* UI7Button.m in Sources */ = {isa = PBXBuildFile; fileRef = 38EEF9C6176A366C0085B09B /* UI7Button.m */; };
@@ -122,6 +125,9 @@
 		38660A24161AD86000C5CE06 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		38740492176825D900C0BB18 /* UI7Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7Utilities.h; sourceTree = "<group>"; };
 		38740493176825D900C0BB18 /* UI7Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7Utilities.m; sourceTree = "<group>"; };
+		3888FC60176C7C7900489638 /* UITIssue1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITIssue1ViewController.h; sourceTree = "<group>"; };
+		3888FC61176C7C7900489638 /* UITIssue1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITIssue1ViewController.m; sourceTree = "<group>"; };
+		3888FC64176C8EBB00489638 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libPods.a; path = "Pods/build/Release-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		38BC0E5A173E821700F36497 /* UITSubviewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITSubviewTableViewController.h; sourceTree = "<group>"; };
 		38BC0E5B173E821700F36497 /* UITSubviewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITSubviewTableViewController.m; sourceTree = "<group>"; };
 		38C7A9761495181800381910 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -170,6 +176,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3888FC65176C8EBB00489638 /* libPods.a in Frameworks */,
+				3888FC63176C8EAD00489638 /* CoreGraphics.framework in Frameworks */,
 				38017432176989660049D26C /* SenTestingKit.framework in Frameworks */,
 				38017433176989660049D26C /* UIKit.framework in Frameworks */,
 				38017434176989660049D26C /* Foundation.framework in Frameworks */,
@@ -239,6 +247,7 @@
 		383764C913373154007072FD = {
 			isa = PBXGroup;
 			children = (
+				3888FC64176C8EBB00489638 /* libPods.a */,
 				38D7EB31176753A600B1DCAE /* UI7Kit */,
 				38017438176989660049D26C /* UI7KitTests */,
 				38F0681B1636F8C8002723AB /* TestApp */,
@@ -333,6 +342,8 @@
 				381C00AB17172CE20067C936 /* UITTextViewController.m */,
 				38BC0E5A173E821700F36497 /* UITSubviewTableViewController.h */,
 				38BC0E5B173E821700F36497 /* UITSubviewTableViewController.m */,
+				3888FC60176C7C7900489638 /* UITIssue1ViewController.h */,
+				3888FC61176C7C7900489638 /* UITIssue1ViewController.m */,
 				3801745E1769F3B50049D26C /* Storyboard.storyboard */,
 				38F0681C1636F8C8002723AB /* Supporting Files */,
 			);
@@ -555,6 +566,7 @@
 				38485C6317109CD20001A99D /* UITPreparedCellTableViewController.m in Sources */,
 				381C00AD17172CE20067C936 /* UITTextViewController.m in Sources */,
 				38BC0E5D173E821700F36497 /* UITSubviewTableViewController.m in Sources */,
+				3888FC62176C7C7900489638 /* UITIssue1ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -671,8 +683,13 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = (
+					"${PODS_HEADERS_SEARCH_PATHS}",
+					.,
+				);
 				INFOPLIST_FILE = "UI7KitTests/UI7KitTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LIBRARY_SEARCH_PATHS = "$(PODS_ROOT)/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -698,8 +715,13 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UI7Kit/UI7Kit-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"${PODS_HEADERS_SEARCH_PATHS}",
+					.,
+				);
 				INFOPLIST_FILE = "UI7KitTests/UI7KitTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LIBRARY_SEARCH_PATHS = "$(PODS_ROOT)/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
