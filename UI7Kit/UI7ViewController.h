@@ -6,8 +6,11 @@
 //  Copyright (c) 2013 youknowone.org. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
 @interface UI7ViewController : UIViewController<UI7Patch>
+
+@end
+
+
+@interface UI7TableViewController : UITableViewController
 
 @end

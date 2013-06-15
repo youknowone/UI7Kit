@@ -3,7 +3,7 @@
 //  UI7Kit
 //
 //  Created by Jeong YunWon on 13. 6. 15..
-//  Copyright (c) 2013년 youknowone.org. All rights reserved.
+//  Copyright (c) 2013 youknowone.org. All rights reserved.
 //
 
 #import "UITIssue1ViewController.h"
@@ -26,7 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning

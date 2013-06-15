@@ -6,9 +6,6 @@
 //  Copyright (c) 2013 youknowone.org. All rights reserved.
 //
 
-#import "NSArray.h"
-#import "UIColor.h"
-
 #import "UI7NavigationBar.h"
 #import "UI7BarButtonItem.h"
 
@@ -53,7 +50,7 @@ static NSMutableDictionary *UI7ViewControllerEditButtonItems = nil;
     if (self == [UI7ViewController class]) {
         UI7ViewControllerNavigationItems = [[NSMutableDictionary alloc] init];
         UI7ViewControllerEditButtonItems = [[NSMutableDictionary alloc] init];
-        
+
         NSAClass *origin = [UIViewController classObject];
         [origin copyToSelector:@selector(__initViewControllerWithCoder:) fromSelector:@selector(initWithCoder:)];
         [origin copyToSelector:@selector(__initViewControllerWithNibName:bundle:) fromSelector:@selector(initWithNibName:bundle:)];
@@ -64,7 +61,7 @@ static NSMutableDictionary *UI7ViewControllerEditButtonItems = nil;
 + (void)patch {
     NSAClass *source = [self classObject];
     NSAClass *target = [UIViewController classObject];
-    
+
     [source exportSelector:@selector(initWithCoder:) toClass:target];
     [source exportSelector:@selector(initWithStyle:reuseIdentifier:) toClass:target];
     [source copyToSelector:@selector(dealloc) fromSelector:@selector(_dealloc)];
@@ -113,6 +110,24 @@ static NSMutableDictionary *UI7ViewControllerEditButtonItems = nil;
         [UI7ViewControllerEditButtonItems setObject:item forKey:self.pointerString];
     }
     return item;
+}
+
+@end
+
+
+@implementation UI7TableViewController
+
+// Dynamic patch is not required
+
++ (void)initialize {
+    if (self == [UI7TableViewController class]) {
+        NSAClass *source = [UI7ViewController classObject];
+        NSAClass *target = [UI7TableViewController classObject];
+
+        [source exportSelector:@selector(navigationItem) toClass:target];
+        [source exportSelector:@selector(editButtonItem) toClass:target];
+        [source exportSelector:@selector(setTitle:) toClass:target];
+    }
 }
 
 @end
