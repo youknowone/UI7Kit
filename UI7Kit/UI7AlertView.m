@@ -88,6 +88,11 @@ static NSMutableDictionary *UI7AlertViewStrokeViews = nil;
 - (void)__show { assert(NO); }
 
 - (void)__dealloc { assert(NO); }
+- (void)_dealloc {
+    [UI7AlertViewFrameViews removeObjectForKey:self.pointerString];
+    [UI7AlertViewStrokeViews removeObjectForKey:self.pointerString];
+    [self __dealloc];
+}
 
 @end
 
@@ -115,9 +120,9 @@ static NSMutableDictionary *UI7AlertViewStrokeViews = nil;
 }
 
 - (void)dealloc {
-    [UI7AlertViewFrameViews removeObjectForKey:self.pointerString];
-    [UI7AlertViewStrokeViews removeObjectForKey:self.pointerString];
-    [super __dealloc];
+    [super _dealloc];
+    return;
+    [super dealloc];
 }
 
 - (id)init {

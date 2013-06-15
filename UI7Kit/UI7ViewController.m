@@ -26,14 +26,18 @@ static NSMutableDictionary *UI7ViewControllerEditButtonItems = nil;
 
 @implementation UIViewController (Patch)
 
-- (id)__initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil { assert(NO); return nil; }
-- (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
-- (id)__dealloc { assert(NO); }
+- (id)__initViewControllerWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil { assert(NO); return nil; }
+- (id)__initViewControllerWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
+- (id)__deallocViewController { assert(NO); }
 
 - (void)_dealloc {
     [UI7ViewControllerNavigationItems removeObjectForKey:self.pointerString];
     [UI7ViewControllerEditButtonItems removeObjectForKey:self.pointerString];
-    [super dealloc];
+    [self __deallocViewController];
+}
+
+- (void)_viewControllerInit {
+    
 }
 
 @end
@@ -50,9 +54,9 @@ static NSMutableDictionary *UI7ViewControllerEditButtonItems = nil;
         UI7ViewControllerNavigationItems = [[NSMutableDictionary alloc] init];
         UI7ViewControllerEditButtonItems = [[NSMutableDictionary alloc] init];
         NSAClass *class = [NSAClass classWithClass:[UIViewController class]];
-        [class copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
-        [class copyToSelector:@selector(__initWithNibName:bundle:) fromSelector:@selector(initWithNibName:bundle:)];
-        [class copyToSelector:@selector(__dealloc) fromSelector:@selector(dealloc)];
+        [class copyToSelector:@selector(__initViewControllerWithCoder:) fromSelector:@selector(initWithCoder:)];
+        [class copyToSelector:@selector(__initViewControllerWithNibName:bundle:) fromSelector:@selector(initWithNibName:bundle:)];
+        [class copyToSelector:@selector(__deallocViewController) fromSelector:@selector(dealloc)];
     }
 }
 
@@ -68,6 +72,22 @@ static NSMutableDictionary *UI7ViewControllerEditButtonItems = nil;
     [super _dealloc];
     return;
     [super dealloc];
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [self __initViewControllerWithCoder:aDecoder];
+    if (self != nil) {
+
+    }
+    return self;
+}
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [self __initViewControllerWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self != nil) {
+
+    }
+    return self;
 }
 
 - (void)setTitle:(NSString *)title {
