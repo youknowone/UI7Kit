@@ -8,6 +8,18 @@
 
 #import "UI7KitTests.h"
 
+@interface TableViewDelegate : NSObject<UITableViewDelegate>
+
+@end
+
+@implementation TableViewDelegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section { return  .0; }
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section { return nil; }
+
+@end
+
+
 @implementation UI7KitTests
 
 - (void)setUp
@@ -24,9 +36,11 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testTypeEncoding
 {
-    STFail(@"Unit tests are not implemented yet in UI7KitTests");
+    NSAClass *class = [TableViewDelegate classObject];
+    STAssertEqualObjects([class methodObjectForSelector:@selector(tableView:heightForHeaderInSection:)].typeEncoding, @"f16@0:4@8i12", @"");
+    STAssertEqualObjects([class methodObjectForSelector:@selector(tableView:viewForHeaderInSection:)].typeEncoding, @"@16@0:4@8i12", @"");
 }
 
 @end
