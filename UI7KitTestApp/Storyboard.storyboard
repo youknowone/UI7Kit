@@ -9,7 +9,8 @@
         <!--Navigation Controller-->
         <scene sceneID="S5g-Tb-iC2">
             <objects>
-                <navigationController definesPresentationContext="YES" id="r1d-64-0wN" sceneMemberID="viewController">
+                <navigationController wantsFullScreenLayout="YES" definesPresentationContext="YES" id="r1d-64-0wN" sceneMemberID="viewController">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hOx-dN-vyL">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -24,7 +25,7 @@
         <!--Master View Controller - List-->
         <scene sceneID="iZn-PB-Ux9">
             <objects>
-                <viewController storyboardIdentifier="List" title="List" id="VOL-Ip-gE2" customClass="UITMasterViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="List" title="List" wantsFullScreenLayout="YES" id="VOL-Ip-gE2" customClass="UITMasterViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ssj-lm-eGM">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -117,7 +118,7 @@
         <!--Issue1 View Controller - Nil section header-->
         <scene sceneID="6np-sq-XtN">
             <objects>
-                <tableViewController id="lpO-jh-9Lt" customClass="UITIssue1ViewController" sceneMemberID="viewController">
+                <tableViewController wantsFullScreenLayout="YES" id="lpO-jh-9Lt" customClass="UITIssue1ViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="upQ-pL-nQV">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -156,7 +157,7 @@
         <!--Text View Controller - Text-->
         <scene sceneID="F41-De-g08">
             <objects>
-                <viewController id="15o-YJ-Ey9" customClass="UITTextViewController" sceneMemberID="viewController">
+                <viewController wantsFullScreenLayout="YES" id="15o-YJ-Ey9" customClass="UITTextViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8lr-65-0MX">
                         <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -188,7 +189,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Text" id="sET-y7-ILT">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="QEK-hF-05Y">
+                        <barButtonItem key="rightBarButtonItem" id="QEK-hF-05Y">
                             <switch key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="7mR-pq-aty">
                                 <rect key="frame" x="238" y="8" width="79" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -210,7 +211,7 @@
         <!--Detail View Controller - Detail-->
         <scene sceneID="gCn-nD-MEF">
             <objects>
-                <viewController storyboardIdentifier="Detail" title="Detail" id="Sei-zQ-6Ij" customClass="UITDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Detail" title="Detail" wantsFullScreenLayout="YES" id="Sei-zQ-6Ij" customClass="UITDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="csd-ad-yoJ">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

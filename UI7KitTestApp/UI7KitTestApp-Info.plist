@@ -30,8 +30,10 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIStatusBarHidden</key>
+	<false/>
 	<key>UIStatusBarStyle</key>
-	<string>UIStatusBarStyleDefault</string>
+	<string>UIStatusBarStyleBlackTranslucent</string>
 	<key>UIStatusBarTintParameters</key>
 	<dict>
 		<key>UINavigationBar</key>
@@ -41,11 +43,11 @@
 			<key>TintColor</key>
 			<dict>
 				<key>Blue</key>
-				<real>1</real>
+				<real>0.97254901960784312</real>
 				<key>Green</key>
-				<real>1</real>
+				<real>0.97254901960784312</real>
 				<key>Red</key>
-				<real>1</real>
+				<real>0.97254901960784312</real>
 			</dict>
 			<key>Translucent</key>
 			<false/>
