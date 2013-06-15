@@ -34,8 +34,7 @@
     toMethod.implementation = fromMethod.implementation;
 }
 
-- (void)exportSelector:(SEL)selector toClass:(Class)aClass {
-    NSAClass *toClass = [NSAClass classWithClass:aClass];
+- (void)exportSelector:(SEL)selector toClass:(NSAClass *)toClass {
     NSAMethod *fromMethod = [self methodObjectForSelector:selector];
     NSAMethod *toMethod = [toClass methodObjectForSelector:selector];
     toMethod.implementation = fromMethod.implementation;

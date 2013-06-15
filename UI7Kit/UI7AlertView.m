@@ -104,19 +104,20 @@ static NSMutableDictionary *UI7AlertViewStrokeViews = nil;
         UI7AlertViewFrameViews = [[NSMutableDictionary alloc] init];
         UI7AlertViewStrokeViews = [[NSMutableDictionary alloc] init];
 
-        NSAClass *targetClass = [NSAClass classWithClass:[UIAlertView class]];
-        [targetClass copyToSelector:@selector(__init) fromSelector:@selector(init)];
-        [targetClass copyToSelector:@selector(__show) fromSelector:@selector(show)];
-        [targetClass copyToSelector:@selector(__dealloc) fromSelector:@selector(dealloc)];
+        NSAClass *origin = [UIAlertView classObject];
+        [origin copyToSelector:@selector(__init) fromSelector:@selector(init)];
+        [origin copyToSelector:@selector(__show) fromSelector:@selector(show)];
+        [origin copyToSelector:@selector(__dealloc) fromSelector:@selector(dealloc)];
     }
 }
 
 + (void)patch {
-    NSAClass *sourceClass = [NSAClass classWithClass:[UI7AlertView class]];
-    Class targetClass = [UIAlertView class];
-    [sourceClass exportSelector:@selector(init) toClass:targetClass];
-    [sourceClass exportSelector:@selector(show) toClass:targetClass];
-    [sourceClass exportSelector:@selector(dealloc) toClass:targetClass];
+    NSAClass *source = [self classObject];
+    NSAClass *target = [UIAlertView classObject];
+
+    [source exportSelector:@selector(init) toClass:target];
+    [source exportSelector:@selector(show) toClass:target];
+    [source exportSelector:@selector(dealloc) toClass:target];
 }
 
 - (void)dealloc {

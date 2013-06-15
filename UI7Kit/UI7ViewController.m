@@ -53,19 +53,21 @@ static NSMutableDictionary *UI7ViewControllerEditButtonItems = nil;
     if (self == [UI7ViewController class]) {
         UI7ViewControllerNavigationItems = [[NSMutableDictionary alloc] init];
         UI7ViewControllerEditButtonItems = [[NSMutableDictionary alloc] init];
-        NSAClass *class = [NSAClass classWithClass:[UIViewController class]];
-        [class copyToSelector:@selector(__initViewControllerWithCoder:) fromSelector:@selector(initWithCoder:)];
-        [class copyToSelector:@selector(__initViewControllerWithNibName:bundle:) fromSelector:@selector(initWithNibName:bundle:)];
-        [class copyToSelector:@selector(__deallocViewController) fromSelector:@selector(dealloc)];
+        
+        NSAClass *origin = [UIViewController classObject];
+        [origin copyToSelector:@selector(__initViewControllerWithCoder:) fromSelector:@selector(initWithCoder:)];
+        [origin copyToSelector:@selector(__initViewControllerWithNibName:bundle:) fromSelector:@selector(initWithNibName:bundle:)];
+        [origin copyToSelector:@selector(__deallocViewController) fromSelector:@selector(dealloc)];
     }
 }
 
 + (void)patch {
-    NSAClass *sourceClass = [NSAClass classWithClass:[self class]];
-    Class targetClass = [UIViewController class];
-    [sourceClass exportSelector:@selector(initWithCoder:) toClass:targetClass];
-    [sourceClass exportSelector:@selector(initWithStyle:reuseIdentifier:) toClass:targetClass];
-    [sourceClass copyToSelector:@selector(dealloc) fromSelector:@selector(_dealloc)];
+    NSAClass *source = [self classObject];
+    NSAClass *target = [UIViewController classObject];
+    
+    [source exportSelector:@selector(initWithCoder:) toClass:target];
+    [source exportSelector:@selector(initWithStyle:reuseIdentifier:) toClass:target];
+    [source copyToSelector:@selector(dealloc) fromSelector:@selector(_dealloc)];
 }
 
 - (void)dealloc {

@@ -27,17 +27,19 @@
 
 + (void)initialize {
     if (self == [UI7Button class]) {
-        NSAClass *targetClass = [NSAClass classWithClass:[UIButton class]];
-        [targetClass copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
-        [targetClass classMethodObjectForSelector:@selector(__buttonWithType:)].implementation = [targetClass classMethodObjectForSelector:@selector(buttonWithType:)].implementation;
+        NSAClass *origin = [UIButton classObject];
+
+        [origin copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
+        [origin classMethodObjectForSelector:@selector(__buttonWithType:)].implementation = [origin classMethodObjectForSelector:@selector(buttonWithType:)].implementation;
     }
 }
 
 + (void)patch {
-    NSAClass *sourceClass = [NSAClass classWithClass:[UI7Button class]];
-    NSAClass *targetClass = [NSAClass classWithClass:[UIButton class]];
-    [sourceClass exportSelector:@selector(initWithCoder:) toClass:targetClass.class];
-    [targetClass classMethodObjectForSelector:@selector(buttonWithType:)].implementation = [sourceClass classMethodObjectForSelector:@selector(buttonWithType:)].implementation;
+    NSAClass *source = [UI7Button classObject];
+    NSAClass *target = [UIButton classObject];
+
+    [source exportSelector:@selector(initWithCoder:) toClass:target];
+    [target classMethodObjectForSelector:@selector(buttonWithType:)].implementation = [source classMethodObjectForSelector:@selector(buttonWithType:)].implementation;
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {

@@ -44,20 +44,21 @@
 
 + (void)initialize {
     if (self == [UI7NavigationBar class]) {
-        NSAClass *class = [NSAClass classWithClass:[UINavigationBar class]];
-        [class copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
-        [class copyToSelector:@selector(__initWithFrame:) fromSelector:@selector(initWithFrame:)];
-        [class copyToSelector:@selector(__pushNavigationItem:) fromSelector:@selector(pushNavigationItem:)];
+        NSAClass *origin = [UINavigationBar classObject];
+
+        [origin copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
+        [origin copyToSelector:@selector(__initWithFrame:) fromSelector:@selector(initWithFrame:)];
+        [origin copyToSelector:@selector(__pushNavigationItem:) fromSelector:@selector(pushNavigationItem:)];
     }
 }
 
 + (void)patch {
-    NSAClass *sourceClass = [NSAClass classWithClass:[self class]];
-    Class targetClass = [UINavigationBar class];
+    NSAClass *source = [self classObject];
+    NSAClass *target = [UINavigationBar classObject];
 
-    [sourceClass exportSelector:@selector(initWithCoder:) toClass:targetClass];
-    [sourceClass exportSelector:@selector(initWithFrame:) toClass:targetClass];
-    [sourceClass exportSelector:@selector(pushNavigationItem:) toClass:targetClass];
+    [source exportSelector:@selector(initWithCoder:) toClass:target];
+    [source exportSelector:@selector(initWithFrame:) toClass:target];
+    [source exportSelector:@selector(pushNavigationItem:) toClass:target];
 }
 
 - (id)initWithFrame:(CGRect)frame {

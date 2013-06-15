@@ -57,19 +57,21 @@
 
 + (void)initialize {
     if (self == [UI7BarButtonItem class]) {
-        NSAClass *class = [NSAClass classWithClass:[UIBarButtonItem class]];
-        [class copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
-        [class copyToSelector:@selector(__initWithTitle:style:target:action:) fromSelector:@selector(initWithTitle:style:target:action:)];
-        [class copyToSelector:@selector(__initWithBarButtonSystemItem:target:action:) fromSelector:@selector(initWithBarButtonSystemItem:target:action:)];
+        NSAClass *origin = [UIBarButtonItem classObject];
+
+        [origin copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
+        [origin copyToSelector:@selector(__initWithTitle:style:target:action:) fromSelector:@selector(initWithTitle:style:target:action:)];
+        [origin copyToSelector:@selector(__initWithBarButtonSystemItem:target:action:) fromSelector:@selector(initWithBarButtonSystemItem:target:action:)];
     }
 }
 
 + (void)patch {
-    NSAClass *class = [NSAClass classWithClass:self];
-    Class toClass = [UIBarButtonItem class];
-    [class exportSelector:@selector(initWithCoder:) toClass:toClass];
-    [class exportSelector:@selector(initWithBarButtonSystemItem:target:action:) toClass:toClass];
-    [class exportSelector:@selector(initWithTitle:style:target:action:) toClass:toClass];
+    NSAClass *source = [self classObject];
+    NSAClass *target = [UIBarButtonItem classObject];
+
+    [source exportSelector:@selector(initWithCoder:) toClass:target];
+    [source exportSelector:@selector(initWithBarButtonSystemItem:target:action:) toClass:target];
+    [source exportSelector:@selector(initWithTitle:style:target:action:) toClass:target];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {

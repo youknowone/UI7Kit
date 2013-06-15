@@ -28,7 +28,7 @@ extern void UI7KitPatchAll(BOOL override7);
 @interface NSAClass (MethodCopying)
 
 - (void)copyToSelector:(SEL)toSelector fromSelector:(SEL)fromSelector;
-- (void)exportSelector:(SEL)selector toClass:(Class)aClass;
+- (void)exportSelector:(SEL)selector toClass:(NSAClass *)toClass;
 
 @end
 

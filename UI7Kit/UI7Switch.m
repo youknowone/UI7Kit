@@ -27,18 +27,19 @@
 
 + (void)initialize {
     if (self == [UI7Switch class]) {
-        NSAClass *class = [NSAClass classWithClass:[UISwitch class]];
-        [class copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
-        [class copyToSelector:@selector(__initWithFrame:) fromSelector:@selector(initWithFrame:)];
+        NSAClass *origin = [UISwitch classObject];
+
+        [origin copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
+        [origin copyToSelector:@selector(__initWithFrame:) fromSelector:@selector(initWithFrame:)];
     }
 }
 
 + (void)patch {
-    NSAClass *sourceClass = [NSAClass classWithClass:[self class]];
-    Class targetClass = [UISwitch class];
+    NSAClass *source = [self classObject];
+    NSAClass *target = [UISwitch classObject];
 
-    [sourceClass exportSelector:@selector(initWithCoder:) toClass:targetClass];
-    [sourceClass exportSelector:@selector(initWithFrame:) toClass:targetClass];
+    [source exportSelector:@selector(initWithCoder:) toClass:target];
+    [source exportSelector:@selector(initWithFrame:) toClass:target];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
