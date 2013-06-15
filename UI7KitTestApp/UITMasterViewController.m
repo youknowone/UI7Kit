@@ -77,10 +77,10 @@
     NSString *cellIdentifier = nil;
     switch (indexPath.section) {
         case 0:
-            cellIdentifier = [self.details :indexPath.row];
+            cellIdentifier = self.details[indexPath.row];
             break;
         case 1:
-            cellIdentifier = [@"#%@" format:[self.issues :indexPath.row]];
+            cellIdentifier = [@"#%@" format:self.issues[indexPath.row]];
             break;
         default:
             assert(NO);

@@ -37,7 +37,7 @@
         cell.detailTextLabel.text = [NSString stringWithInteger:index];
         return cell;
     }];
-    assert([[self.tableView.cells :0] isKindOfClass:[UITableViewCell class]]);
+    assert([self.tableView.cells[0] isKindOfClass:[UITableViewCell class]]);
 }
 
 - (void)didReceiveMemoryWarning

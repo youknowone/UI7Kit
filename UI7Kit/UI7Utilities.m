@@ -11,7 +11,7 @@
 @implementation UIDevice (iOS7)
 
 - (BOOL)needsUI7Kit {
-    return [[[self.systemVersion componentsSeparatedByString:@"."] :0] integerValue] < 7;
+    return [[self.systemVersion componentsSeparatedByString:@"."][0] integerValue] < 7;
 }
 
 @end

@@ -50,7 +50,7 @@ static NSMutableDictionary *UI7AlertViewStrokeViews = nil;
 }
 
 - (UIView *)frameView {
-    return [UI7AlertViewFrameViews :self.pointerString];
+    return UI7AlertViewFrameViews[self.pointerString];
 }
 
 - (void)setFrameView:(UIView *)frameView {
@@ -58,7 +58,7 @@ static NSMutableDictionary *UI7AlertViewStrokeViews = nil;
 }
 
 - (UIView *)strokeView {
-    return [UI7AlertViewStrokeViews :self.pointerString];
+    return UI7AlertViewStrokeViews[self.pointerString];
 }
 
 - (void)setStrokeView:(UIView *)strokeView {

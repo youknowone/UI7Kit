@@ -30,10 +30,10 @@
 		3801745F1769F3B50049D26C /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3801745E1769F3B50049D26C /* Storyboard.storyboard */; };
 		38017462176A245B0049D26C /* UI7NavigationBarBackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 38017461176A245B0049D26C /* UI7NavigationBarBackButton.png */; };
 		381C00AD17172CE20067C936 /* UITTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 381C00AB17172CE20067C936 /* UITTextViewController.m */; };
+		382E2206176CB72D005F0A98 /* UITPreparedCellTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38485C5F1710974C0001A99D /* UITPreparedCellTableViewController.m */; };
 		382F542317676943004D6F59 /* UI7NavigationBarPortraitLandscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 382F542217676933004D6F59 /* UI7NavigationBarPortraitLandscape.png */; };
 		382F542417676945004D6F59 /* UI7NavigationBarPortrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 382F542117676933004D6F59 /* UI7NavigationBarPortrait.png */; };
 		382F54261767809E004D6F59 /* UI7Blank.png in Resources */ = {isa = PBXBuildFile; fileRef = 382F54251767809E004D6F59 /* UI7Blank.png */; };
-		38485C6317109CD20001A99D /* UITPreparedCellTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38485C5F1710974C0001A99D /* UITPreparedCellTableViewController.m */; };
 		38505B30176B1575004A7725 /* UI7AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 38505B2F176B1575004A7725 /* UI7AlertView.m */; };
 		3888FC62176C7C7900489638 /* UITIssue1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3888FC61176C7C7900489638 /* UITIssue1ViewController.m */; };
 		3888FC63176C8EAD00489638 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383764E513373155007072FD /* CoreGraphics.framework */; };
@@ -562,8 +562,8 @@
 				38F068221636F8C8002723AB /* main.m in Sources */,
 				38F068261636F8C8002723AB /* UITAppDelegate.m in Sources */,
 				38F0682F1636F8C8002723AB /* UITMasterViewController.m in Sources */,
+				382E2206176CB72D005F0A98 /* UITPreparedCellTableViewController.m in Sources */,
 				38F068321636F8C9002723AB /* UITDetailViewController.m in Sources */,
-				38485C6317109CD20001A99D /* UITPreparedCellTableViewController.m in Sources */,
 				381C00AD17172CE20067C936 /* UITTextViewController.m in Sources */,
 				38BC0E5D173E821700F36497 /* UITSubviewTableViewController.m in Sources */,
 				3888FC62176C7C7900489638 /* UITIssue1ViewController.m in Sources */,
