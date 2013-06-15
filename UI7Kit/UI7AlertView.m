@@ -3,7 +3,7 @@
 //  UI7Kit
 //
 //  Created by Jeong YunWon on 13. 6. 14..
-//  Copyright (c) 2013년 youknowone.org. All rights reserved.
+//  Copyright (c) 2013 youknowone.org. All rights reserved.
 //
 
 #import "UI7Button.h"
@@ -19,9 +19,16 @@
 @end
 
 
+static NSMutableDictionary *UI7AlertViewFrameViews = nil;
+static NSMutableDictionary *UI7AlertViewStrokeViews = nil;
+
+
 @interface UIAlertView (Accessor)
 
 @property(nonatomic,retain) UIView *backgroundImageView;
+
+@property(nonatomic,assign) UIView *frameView;
+@property(nonatomic,assign) UIView *strokeView;
 
 @end
 
@@ -42,6 +49,22 @@
     return view;
 }
 
+- (UIView *)frameView {
+    return [UI7AlertViewFrameViews :self.pointerString];
+}
+
+- (void)setFrameView:(UIView *)frameView {
+    [UI7AlertViewFrameViews setObject:frameView forKey:self.pointerString];
+}
+
+- (UIView *)strokeView {
+    return [UI7AlertViewStrokeViews :self.pointerString];
+}
+
+- (void)setStrokeView:(UIView *)strokeView {
+    [UI7AlertViewStrokeViews setObject:strokeView forKey:self.pointerString];
+}
+
 @end
 
 
@@ -54,75 +77,67 @@
 
 @interface UI7AlertView ()
 
-@property(nonatomic,assign) UIView *frameView;
 
-@property(nonatomic,assign) UIView *strokeView;
+@end
 
-- (void)_buttonDidSelected:(id)sender;
+
+@implementation UIAlertView (Patch)
+
+- (id)init { return [super init]; }
+- (id)__init { assert(NO); return nil; }
+- (void)__show { assert(NO); }
+
+- (void)__dealloc { assert(NO); }
 
 @end
 
 
 @implementation UI7AlertView
 
-@synthesize frameView=_frameView;
-@synthesize strokeView=_strokeView;
++ (void)initialize {
+    if (self == [UI7AlertView class]) {
+        UI7AlertViewFrameViews = [[NSMutableDictionary alloc] init];
+        UI7AlertViewStrokeViews = [[NSMutableDictionary alloc] init];
 
-@synthesize cancelButtonIndex;
+        NSAClass *targetClass = [NSAClass classWithClass:[UIAlertView class]];
+        [targetClass copyToSelector:@selector(__init) fromSelector:@selector(init)];
+        [targetClass copyToSelector:@selector(__show) fromSelector:@selector(show)];
+        [targetClass copyToSelector:@selector(__dealloc) fromSelector:@selector(dealloc)];
+    }
+}
 
++ (void)patch {
+    NSAClass *sourceClass = [NSAClass classWithClass:[UI7AlertView class]];
+    Class targetClass = [UIAlertView class];
+    [sourceClass exportSelector:@selector(init) toClass:targetClass];
+    [sourceClass exportSelector:@selector(show) toClass:targetClass];
+    [sourceClass exportSelector:@selector(dealloc) toClass:targetClass];
+}
 
-- (id)initWithTitle:(NSString *)title message:(NSString *)message delegate:(id)delegate cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ... {
-    self = [super init]; // rough
+- (void)dealloc {
+    [UI7AlertViewFrameViews removeObjectForKey:self.pointerString];
+    [UI7AlertViewStrokeViews removeObjectForKey:self.pointerString];
+    [super __dealloc];
+}
+
+- (id)init {
+    self = [self __init];
     if (self != nil) {
-        self.backgroundColor = [UIColor colorWithWhite:0.5 alpha:1.0];
         self.backgroundImageView = [UIImage blankImage].view;
-
         UIView *frameView = self.frameView = [[[UIView alloc] initWithFrame:CGRectMake(.0, .0, 284.0, 141.0)] autorelease];
         frameView.backgroundColor = [UIColor iOS7BackgroundColor]; // temp
 
         self.strokeView = [[UIView alloc] initWithFrame:CGRectMake(.0, .0, frameView.frame.size.width, 0.5)];
         self.strokeView.backgroundColor = [UIColor colorWith8BitWhite:182 alpha:255];
         [frameView addSubview:self.strokeView];
-        
+
         [self addSubview:frameView];
-
-        self.title = title;
-        self.message = message;
-        self.delegate = delegate;
-//        self.buttons = [NSArray array];
-
-        va_list titlep;
-        va_start(titlep, otherButtonTitles);
-        NSString *aTitle = otherButtonTitles;
-        while (aTitle != nil) {
-            [self addButtonWithTitle:aTitle];
-            aTitle = va_arg(titlep, NSString *);
-        }
-        va_end(titlep);
-        NSInteger index = [self addButtonWithTitle:cancelButtonTitle];
-        self.cancelButtonIndex = index;
     }
     return self;
 }
 
 - (void)show {
-//    [self.buttons applyProcedureWithIndex:^(id obj, NSUInteger index) {
-//        UI7Button *button = obj;
-//        CGFloat width = self.frameView.frame.size.width / self.buttons.count;
-//        CGRect frame = CGRectMake(width * index, self.strokeView.frame.origin.y + 1.0f, self.frameView.frame.size.width / self.buttons.count, 45.0);
-//        button.frame = frame;
-//    }];
-
-//    {
-//        self.frameView.center = self.center;
-//
-//        [window addSubview:self];
-//    }
-    self.backgroundImageView.alpha = .0;
-    for (UIView *view in self.backgroundImageView.subviews) {
-        NSLog(@" %@ %@", view.className, view);
-    }
-    [super show];
+    [super __show];
 
     self.titleLabel.textColor = self.bodyTextLabel.textColor = [UIColor blackColor];
     self.titleLabel.shadowOffset = self.bodyTextLabel.shadowOffset = CGSizeZero;
@@ -153,29 +168,5 @@
     }
 }
 
-//- (NSInteger)addButtonWithTitle:(NSString *)title {
-//    [super addButtonWithTitle:title];
-//    UI7Button *button = [UI7Button buttonWithType:UIButtonTypeCustom];
-//    CGRect frame = CGRectMake(.0, .0, self.frameView.frame.size.width, 45.0);
-//
-//    button.frame = frame;
-//    [self.frameView addSubview:button];
-//    [button setTitle:title forState:UIControlStateNormal];
-//    [button setTitleColor:[UIColor iOS7ButtonTitleColor] forState:UIControlStateNormal];
-//    [button setTitleColor:[UIColor iOS7ButtonTitleHighlightedColor] forState:UIControlStateHighlighted];
-//    button.tag = self.buttons.count;
-//    [button addTarget:self action:@selector(_buttonDidSelected:) forControlEvents:UIControlEventTouchUpInside];
-//
-//    self.buttons = [self.buttons arrayByAddingObject:button];
-//    return button.tag;
-//}
-
-//- (void)_buttonDidSelected:(id)sender {
-//    id<UIAlertViewDelegate> delegate = [self delegate];
-//    [delegate alertView:(id)self willDismissWithButtonIndex:[sender tag]];
-//    [delegate alertView:(id)self didDismissWithButtonIndex:[sender tag]];
-//    [delegate alertView:(id)self didDismissWithButtonIndex:[sender tag]];
-//    [self removeFromSuperview];
-//}
 
 @end

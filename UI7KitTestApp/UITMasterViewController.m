@@ -50,7 +50,7 @@
 //    NSString *title = @"Is this test string can be as long as long cat? Or should I test long long longer cat? Like, caaaaaaaaaaaaaaaaaaaaaaaaaaat? I doubt even there is limitation of lines of title or not. Say, is this become long as much as burst to top and bottom of screen? And how much sentence should I write down to reach the end of the screen? I am not a good author. I feel tired to write this sentences. This can hide OK button not to be closed? Then it would be miserable result for must of developer. I am reaching the point soooooooooooooooon";
     NSString *title = @"Is this test string can be as long as long cat?";
     NSString *message = @"Is this test string can be as long as long cat? I don't know how much it long, but it should be long enough to finish my test.";
-    UI7AlertView *alertView = (UI7AlertView *)[[[UI7AlertView alloc] initWithTitle:@"title" message:@"message" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] autorelease];
+    UIAlertView *alertView = [[[UIAlertView alloc] initWithTitle:@"title" message:@"message" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] autorelease];
     [alertView show];
 }
 
