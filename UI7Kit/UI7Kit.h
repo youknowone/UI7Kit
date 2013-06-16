@@ -20,5 +20,6 @@
 #import <UI7Kit/UI7TableView.h>
 #import <UI7Kit/UI7Button.h>
 #import <UI7Kit/UI7AlertView.h>
+#import <UI7Kit/UI7ActionSheet.h>
 
 FOUNDATION_EXTERN void UI7KitPatchAll(BOOL override7);
