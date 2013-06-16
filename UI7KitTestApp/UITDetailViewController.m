@@ -45,4 +45,10 @@
     [view release];
 }
 
+- (void)showActionSheet:(id)sender {
+    NSString *title = @"Title";
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:title delegate:nil cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Destructive" otherButtonTitles:@"Other", @"Buttons", nil];
+    [actionSheet showInView:self.view];
+}
+
 @end
