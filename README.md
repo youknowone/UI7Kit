@@ -28,8 +28,15 @@ Case 3: Partial patch
 
 Example
 -------
+Example with current code.
+
 ![Current status](https://raw.github.com/youknowone/UI7Kit/master/UI7Kit.png).
 
+Contact
+-------
+Email: Address is in LICENSE or git log.
+
+IRC: Visit irc://irc.freenode.org/#youknowone for instant message. (You need IRC client)
 
 How to run test app
 -------------------
@@ -80,3 +87,4 @@ If you have Podfile, add 'UI7Kit'. Or follow steps below:
 
 This command will generate or edit `YourProject.xcworkspace`.
 Open this instead of your original `YourProject.xcodeproj`.
+
