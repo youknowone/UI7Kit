@@ -6,7 +6,6 @@
 //  Copyright (c) 2012 youknowone.org. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 
 @class UITDetailViewController;
 

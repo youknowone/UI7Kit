@@ -94,6 +94,7 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
         UI7AlertViewStrokeViews = [[NSMutableDictionary alloc] init];
 
         NSAClass *origin = [UIAlertView classObject];
+
         [origin copyToSelector:@selector(__init) fromSelector:@selector(init)];
         [origin copyToSelector:@selector(__show) fromSelector:@selector(show)];
         [origin copyToSelector:@selector(__dealloc) fromSelector:@selector(dealloc)];

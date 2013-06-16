@@ -21,6 +21,8 @@ void UI7KitPatchAll(BOOL override7) {
              @"UI7Switch",
              @"UI7AlertView",
              @"UI7ActionSheet",
+             @"UI7TabBar",
+             @"UI7TabBarItem",
              ]) {
             Class class = NSClassFromString(className);
             [class patch];

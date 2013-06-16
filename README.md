@@ -49,6 +49,16 @@ If you don't have cocoapods, visit http://www.cocoapods.org or follow steps belo
 
 Run test app now.
 
+How to update
+-------------
+Update source code and cocoapods
+
+    git pull # if you edited code, 'git fetch origin && git rebase origin/master'
+    pod update
+    open UI7Kit.xcworkspace # You should open xcwordspace
+
+If you have problem with missing methods, 'pod update' usually solves it.
+
 
 How to install to my project
 ----------------------------

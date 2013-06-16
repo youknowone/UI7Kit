@@ -111,7 +111,10 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
-    return @"FOOTER!";
+    if (section == tableView.numberOfSections - 1) {
+        return @"FOOTER!";
+    }
+    return nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {

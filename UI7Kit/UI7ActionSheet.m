@@ -80,6 +80,7 @@ static NSMutableDictionary *UI7ActionSheetStrokeViews = nil;
         UI7ActionSheetStrokeViews = [[NSMutableDictionary alloc] init];
 
         NSAClass *origin = [UIActionSheet classObject];
+
         [origin copyToSelector:@selector(__init) fromSelector:@selector(init)];
         [origin copyToSelector:@selector(__showInView:) fromSelector:@selector(showInView:)];
         [origin copyToSelector:@selector(__dealloc) fromSelector:@selector(dealloc)];

@@ -35,6 +35,16 @@
 		382F542417676945004D6F59 /* UI7NavigationBarPortrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 382F542117676933004D6F59 /* UI7NavigationBarPortrait.png */; };
 		382F54261767809E004D6F59 /* UI7Blank.png in Resources */ = {isa = PBXBuildFile; fileRef = 382F54251767809E004D6F59 /* UI7Blank.png */; };
 		38505B30176B1575004A7725 /* UI7AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 38505B2F176B1575004A7725 /* UI7AlertView.m */; };
+		387558B1176DD00600AE5C8B /* UI7TabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 387558B0176DD00600AE5C8B /* UI7TabBar.m */; };
+		387558B4176DD03F00AE5C8B /* UI7TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 387558B3176DD03F00AE5C8B /* UI7TabBarController.m */; };
+		387558B7176DD46A00AE5C8B /* UI7TabBarBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 387558B5176DD46A00AE5C8B /* UI7TabBarBackground@2x.png */; };
+		387558B8176DD46A00AE5C8B /* UI7TabBarBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 387558B6176DD46A00AE5C8B /* UI7TabBarBackground.png */; };
+		387558BB176DEDDF00AE5C8B /* UI7TabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 387558BA176DEDDE00AE5C8B /* UI7TabBarItem.m */; };
+		387558C0176DF36700AE5C8B /* UI7TabBarItemFavoriteSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 387558BC176DF36700AE5C8B /* UI7TabBarItemFavoriteSelected.png */; };
+		387558C1176DF36700AE5C8B /* UI7TabBarItemFavoriteSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 387558BD176DF36700AE5C8B /* UI7TabBarItemFavoriteSelected@2x.png */; };
+		387558C2176DF36700AE5C8B /* UI7TabBarItemFavoriteUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 387558BE176DF36700AE5C8B /* UI7TabBarItemFavoriteUnselected.png */; };
+		387558C3176DF36700AE5C8B /* UI7TabBarItemFavoriteUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 387558BF176DF36700AE5C8B /* UI7TabBarItemFavoriteUnselected@2x.png */; };
+		387558C5176DFA8600AE5C8B /* UI7NavigationBarBackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 387558C4176DFA8600AE5C8B /* UI7NavigationBarBackButton@2x.png */; };
 		387A6FE4176CC58F00B91354 /* UI7ActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 387A6FE3176CC58F00B91354 /* UI7ActionSheet.m */; };
 		3888FC62176C7C7900489638 /* UITIssue1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3888FC61176C7C7900489638 /* UITIssue1ViewController.m */; };
 		3888FC63176C8EAD00489638 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383764E513373155007072FD /* CoreGraphics.framework */; };
@@ -126,6 +136,19 @@
 		38660A24161AD86000C5CE06 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		38740492176825D900C0BB18 /* UI7Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7Utilities.h; sourceTree = "<group>"; };
 		38740493176825D900C0BB18 /* UI7Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7Utilities.m; sourceTree = "<group>"; };
+		387558AF176DD00600AE5C8B /* UI7TabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7TabBar.h; sourceTree = "<group>"; };
+		387558B0176DD00600AE5C8B /* UI7TabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7TabBar.m; sourceTree = "<group>"; };
+		387558B2176DD03F00AE5C8B /* UI7TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7TabBarController.h; sourceTree = "<group>"; };
+		387558B3176DD03F00AE5C8B /* UI7TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7TabBarController.m; sourceTree = "<group>"; };
+		387558B5176DD46A00AE5C8B /* UI7TabBarBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7TabBarBackground@2x.png"; sourceTree = "<group>"; };
+		387558B6176DD46A00AE5C8B /* UI7TabBarBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7TabBarBackground.png; sourceTree = "<group>"; };
+		387558B9176DEDDE00AE5C8B /* UI7TabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7TabBarItem.h; sourceTree = "<group>"; };
+		387558BA176DEDDE00AE5C8B /* UI7TabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7TabBarItem.m; sourceTree = "<group>"; };
+		387558BC176DF36700AE5C8B /* UI7TabBarItemFavoriteSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7TabBarItemFavoriteSelected.png; sourceTree = "<group>"; };
+		387558BD176DF36700AE5C8B /* UI7TabBarItemFavoriteSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7TabBarItemFavoriteSelected@2x.png"; sourceTree = "<group>"; };
+		387558BE176DF36700AE5C8B /* UI7TabBarItemFavoriteUnselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7TabBarItemFavoriteUnselected.png; sourceTree = "<group>"; };
+		387558BF176DF36700AE5C8B /* UI7TabBarItemFavoriteUnselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7TabBarItemFavoriteUnselected@2x.png"; sourceTree = "<group>"; };
+		387558C4176DFA8600AE5C8B /* UI7NavigationBarBackButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7NavigationBarBackButton@2x.png"; sourceTree = "<group>"; };
 		387A6FE2176CC58F00B91354 /* UI7ActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7ActionSheet.h; sourceTree = "<group>"; };
 		387A6FE3176CC58F00B91354 /* UI7ActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7ActionSheet.m; sourceTree = "<group>"; };
 		3888FC60176C7C7900489638 /* UITIssue1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITIssue1ViewController.h; sourceTree = "<group>"; };
@@ -238,10 +261,17 @@
 				3801741517682DDA0049D26C /* UI7TableViewCellDisclosureIndicator.png */,
 				3801745A1769C5D90049D26C /* UI7TableViewCellDisclosureIndicator@2x.png */,
 				38017461176A245B0049D26C /* UI7NavigationBarBackButton.png */,
+				387558C4176DFA8600AE5C8B /* UI7NavigationBarBackButton@2x.png */,
 				382F542117676933004D6F59 /* UI7NavigationBarPortrait.png */,
 				38017417176849680049D26C /* UI7NavigationBarPortrait@2x.png */,
 				382F542217676933004D6F59 /* UI7NavigationBarPortraitLandscape.png */,
 				38017418176849680049D26C /* UI7NavigationBarPortraitLandscape@2x.png */,
+				387558B6176DD46A00AE5C8B /* UI7TabBarBackground.png */,
+				387558B5176DD46A00AE5C8B /* UI7TabBarBackground@2x.png */,
+				387558BC176DF36700AE5C8B /* UI7TabBarItemFavoriteSelected.png */,
+				387558BD176DF36700AE5C8B /* UI7TabBarItemFavoriteSelected@2x.png */,
+				387558BE176DF36700AE5C8B /* UI7TabBarItemFavoriteUnselected.png */,
+				387558BF176DF36700AE5C8B /* UI7TabBarItemFavoriteUnselected@2x.png */,
 			);
 			name = Resources;
 			path = ../Resources;
@@ -306,14 +336,14 @@
 				3801742A176989660049D26C /* UI7Kit.m */,
 				38740492176825D900C0BB18 /* UI7Utilities.h */,
 				38740493176825D900C0BB18 /* UI7Utilities.m */,
-				38F2BA431767599400F12168 /* UI7NavigationBar.h */,
-				38F2BA441767599400F12168 /* UI7NavigationBar.m */,
 				3801740A1767704B0049D26C /* UI7Toolbar.h */,
 				3801740B1767704B0049D26C /* UI7Toolbar.m */,
 				38017410176776020049D26C /* UI7BarButtonItem.h */,
 				38017411176776020049D26C /* UI7BarButtonItem.m */,
 				3801740D176771CF0049D26C /* UI7ViewController.h */,
 				3801740E176771CF0049D26C /* UI7ViewController.m */,
+				38F2BA431767599400F12168 /* UI7NavigationBar.h */,
+				38F2BA441767599400F12168 /* UI7NavigationBar.m */,
 				38E58A8D1767554200F6ED19 /* UI7NavigationController.h */,
 				38E58A8E1767554200F6ED19 /* UI7NavigationController.m */,
 				382F54271767863B004D6F59 /* UI7TableView.h */,
@@ -326,6 +356,12 @@
 				38505B2F176B1575004A7725 /* UI7AlertView.m */,
 				387A6FE2176CC58F00B91354 /* UI7ActionSheet.h */,
 				387A6FE3176CC58F00B91354 /* UI7ActionSheet.m */,
+				387558AF176DD00600AE5C8B /* UI7TabBar.h */,
+				387558B0176DD00600AE5C8B /* UI7TabBar.m */,
+				387558B9176DEDDE00AE5C8B /* UI7TabBarItem.h */,
+				387558BA176DEDDE00AE5C8B /* UI7TabBarItem.m */,
+				387558B2176DD03F00AE5C8B /* UI7TabBarController.h */,
+				387558B3176DD03F00AE5C8B /* UI7TabBarController.m */,
 				380174601769FE390049D26C /* Resources */,
 				38017426176989660049D26C /* Supporting Files */,
 			);
@@ -335,6 +371,7 @@
 		38F0681B1636F8C8002723AB /* TestApp */ = {
 			isa = PBXGroup;
 			children = (
+				3801745E1769F3B50049D26C /* Storyboard.storyboard */,
 				38F068241636F8C8002723AB /* UITAppDelegate.h */,
 				38F068251636F8C8002723AB /* UITAppDelegate.m */,
 				38F0682D1636F8C8002723AB /* UITMasterViewController.h */,
@@ -349,7 +386,6 @@
 				38BC0E5B173E821700F36497 /* UITSubviewTableViewController.m */,
 				3888FC60176C7C7900489638 /* UITIssue1ViewController.h */,
 				3888FC61176C7C7900489638 /* UITIssue1ViewController.m */,
-				3801745E1769F3B50049D26C /* Storyboard.storyboard */,
 				38F0681C1636F8C8002723AB /* Supporting Files */,
 			);
 			name = TestApp;
@@ -484,6 +520,13 @@
 				3801745B1769C5D90049D26C /* UI7TableViewCellDisclosureIndicator@2x.png in Resources */,
 				3801745F1769F3B50049D26C /* Storyboard.storyboard in Resources */,
 				38017462176A245B0049D26C /* UI7NavigationBarBackButton.png in Resources */,
+				387558B7176DD46A00AE5C8B /* UI7TabBarBackground@2x.png in Resources */,
+				387558B8176DD46A00AE5C8B /* UI7TabBarBackground.png in Resources */,
+				387558C0176DF36700AE5C8B /* UI7TabBarItemFavoriteSelected.png in Resources */,
+				387558C1176DF36700AE5C8B /* UI7TabBarItemFavoriteSelected@2x.png in Resources */,
+				387558C2176DF36700AE5C8B /* UI7TabBarItemFavoriteUnselected.png in Resources */,
+				387558C3176DF36700AE5C8B /* UI7TabBarItemFavoriteUnselected@2x.png in Resources */,
+				387558C5176DFA8600AE5C8B /* UI7NavigationBarBackButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,6 +593,9 @@
 				38017456176989B80049D26C /* UI7TableView.m in Sources */,
 				38505B30176B1575004A7725 /* UI7AlertView.m in Sources */,
 				387A6FE4176CC58F00B91354 /* UI7ActionSheet.m in Sources */,
+				387558B1176DD00600AE5C8B /* UI7TabBar.m in Sources */,
+				387558B4176DD03F00AE5C8B /* UI7TabBarController.m in Sources */,
+				387558BB176DEDDF00AE5C8B /* UI7TabBarItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
