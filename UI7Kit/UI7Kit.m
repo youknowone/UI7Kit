@@ -20,6 +20,7 @@ void UI7KitPatchAll(BOOL override7) {
              @"UI7Button",
              @"UI7Switch",
              @"UI7AlertView",
+             @"UI7ActionSheet",
              ]) {
             Class class = NSClassFromString(className);
             [class patch];

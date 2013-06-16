@@ -325,7 +325,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UITTextViewController.h"/>
             <relationships>
                 <relationship kind="action" name="resign:"/>
-                <relationship kind="action" name="switched:" candidateClass="UISwitch"/>
+                <relationship kind="action" name="switched:"/>
                 <relationship kind="outlet" name="textView" candidateClass="UIAPlaceholderTextView"/>
             </relationships>
         </class>

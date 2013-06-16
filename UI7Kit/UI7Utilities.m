@@ -61,6 +61,14 @@ NSString *UI7FontWeightBold = @"Bold";
     return [UIColor colorWith8bitRed:197 green:221 blue:248 alpha:255];
 }
 
++ (UIColor *)iOS7ButtonTitleEmphasizedColor {
+    return [UIColor colorWith8bitRed:255 green:69 blue:55 alpha:255];
+}
+
++ (UIColor *)iOS7ButtonTitleEmphasizedHighlightedColor {
+    return [UIColor colorWith8bitRed:197 green:221 blue:248 alpha:255]; // FIXME
+}
+
 @end
 
 
