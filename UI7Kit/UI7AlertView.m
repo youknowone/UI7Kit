@@ -35,19 +35,8 @@ static NSMutableDictionary *UI7AlertViewStrokeViews = nil;
 
 @implementation UIAlertView (Accessor)
 
-- (void)setBackgroundImageView:(UIView *)backgroundImageView {
-    id view;
-    [backgroundImageView retain];
-    object_getInstanceVariable(self, "_backgroundImageView", (void **)&view);
-    [view release];
-    object_setInstanceVariable(self, "_backgroundImageView", backgroundImageView);
-}
-
-- (UIView *)backgroundImageView {
-    void *view;
-    object_getInstanceVariable(self, "_backgroundImageView", &view);
-    return view;
-}
+NSAPropertyGetter(backgroundImageView, @"_backgroundImageView")
+NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
 
 - (UIView *)frameView {
     return UI7AlertViewFrameViews[self.pointerString];
