@@ -28,6 +28,7 @@
 - (void)__pushNavigationItem:(UINavigationItem *)item { assert(NO); }
 
 - (void)_navigationBarInit {
+    self.backgroundColor = [UIColor iOS7BackgroundColor];
     [self setBackgroundImage:[UIImage imageNamed:@"UI7NavigationBarPortrait"] forBarMetrics:UIBarMetricsDefault];
     [self setBackgroundImage:[UIImage imageNamed:@"UI7NavigationBarLandscape"] forBarMetrics:UIBarMetricsLandscapePhone];
     [self setTitleTextAttributes:@{
