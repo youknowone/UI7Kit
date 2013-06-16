@@ -1,3 +1,3 @@
 platform :ios
 
-pod 'FoundationExtension', '~> 0.32'
+pod 'FoundationExtension', '~> 0.33.1'

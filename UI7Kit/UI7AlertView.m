@@ -19,7 +19,7 @@
 @end
 
 
-static NSMutableDictionary *UI7AlertViewFrameViews = nil;
+static NSMutableDictionary *UI7AlertViewBackgroundViews = nil;
 static NSMutableDictionary *UI7AlertViewStrokeViews = nil;
 
 
@@ -27,7 +27,7 @@ static NSMutableDictionary *UI7AlertViewStrokeViews = nil;
 
 @property(nonatomic,retain) UIView *backgroundImageView;
 
-@property(nonatomic,assign) UIView *frameView;
+@property(nonatomic,assign) UIASegmentedImageView *backgroundView;
 @property(nonatomic,assign) UIView *strokeView;
 
 @end
@@ -38,12 +38,12 @@ static NSMutableDictionary *UI7AlertViewStrokeViews = nil;
 NSAPropertyGetter(backgroundImageView, @"_backgroundImageView")
 NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
 
-- (UIView *)frameView {
-    return UI7AlertViewFrameViews[self.pointerString];
+- (UIView *)backgroundView {
+    return UI7AlertViewBackgroundViews[self.pointerString];
 }
 
-- (void)setFrameView:(UIView *)frameView {
-    UI7AlertViewFrameViews[self.pointerString] = frameView;
+- (void)setBackgroundView:(UIView *)backgroundView {
+    UI7AlertViewBackgroundViews[self.pointerString] = backgroundView;
 }
 
 - (UIView *)strokeView {
@@ -78,7 +78,7 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
 
 - (void)__dealloc { assert(NO); }
 - (void)_dealloc {
-    [UI7AlertViewFrameViews removeObjectForKey:self.pointerString];
+    [UI7AlertViewBackgroundViews removeObjectForKey:self.pointerString];
     [UI7AlertViewStrokeViews removeObjectForKey:self.pointerString];
     [self __dealloc];
 }
@@ -90,7 +90,7 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
 
 + (void)initialize {
     if (self == [UI7AlertView class]) {
-        UI7AlertViewFrameViews = [[NSMutableDictionary alloc] init];
+        UI7AlertViewBackgroundViews = [[NSMutableDictionary alloc] init];
         UI7AlertViewStrokeViews = [[NSMutableDictionary alloc] init];
 
         NSAClass *origin = [UIAlertView classObject];
@@ -120,14 +120,12 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
     self = [self __init];
     if (self != nil) {
         self.backgroundImageView = [UIImage blankImage].view;
-        UIView *frameView = self.frameView = [[[UIView alloc] initWithFrame:CGRectMake(.0, .0, 284.0, 141.0)] autorelease];
-        frameView.backgroundColor = [UIColor colorWith8BitWhite:233 alpha:255];
+        UIView *backgroundView = self.backgroundView = [[[UIASegmentedImageView alloc] initWithTopImage:[UIImage imageNamed:@"UI7AlertViewBackgroundTop"] centerImage:[UIImage imageNamed:@"UI7AlertViewBackgroundBody"] bottomImage:[UIImage imageNamed:@"UI7AlertViewBackgroundBottom"]] autorelease];
+        [self addSubview:backgroundView];
 
-        self.strokeView = [[UIView alloc] initWithFrame:CGRectMake(.0, .0, frameView.frame.size.width, 0.5)];
+        self.strokeView = [[UIView alloc] initWithFrame:CGRectMake(7.0, .0, 270.0, 0.5)];
         self.strokeView.backgroundColor = [UIColor colorWith8BitWhite:182 alpha:255];
-        [frameView addSubview:self.strokeView];
-
-        [self addSubview:frameView];
+        [self addSubview:self.strokeView];
     }
     return self;
 }
@@ -141,7 +139,7 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
     self.titleLabel.font = [UIFont iOS7SystemFontOfSize:16.0 weight:UI7FontWeightMedium];
     self.bodyTextLabel.font = [UIFont iOS7SystemFontOfSize:16.0 weight:UI7FontWeightLight];
 
-    self.frameView.frame = self.bounds;
+    self.backgroundView.frame = self.bounds;
 
     CGFloat highest = self.frame.size.height;
     for (UIAlertButton *button in self.buttons) {

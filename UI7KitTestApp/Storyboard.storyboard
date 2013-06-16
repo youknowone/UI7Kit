@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="RC6-zb-YZU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="4457.6" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" initialViewController="RC6-zb-YZU">
     <dependencies>
-        <deployment defaultVersion="1552" identifier="iOS"/>
+        <deployment defaultVersion="1280" identifier="iOS"/>
         <development version="4600" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3682.6"/>
     </dependencies>
     <scenes>
         <!--Tab Bar Controller-->
         <scene sceneID="3fD-kZ-urZ">
             <objects>
                 <tabBarController definesPresentationContext="YES" id="RC6-zb-YZU" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="bzb-Vk-2FR">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
@@ -29,7 +30,8 @@
         <scene sceneID="S5g-Tb-iC2">
             <objects>
                 <navigationController definesPresentationContext="YES" id="r1d-64-0wN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="UI7NavigationBarBackButton@2x.png" id="eab-in-Sso"/>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="UI7NavigationBarBackButton.png" id="eab-in-Sso"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hOx-dN-vyL">
                         <autoresizingMask key="autoresizingMask"/>
@@ -59,7 +61,7 @@
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Basic UIViewController" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="w0E-wg-KLZ">
@@ -126,6 +128,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="List" id="HIG-nr-RKe"/>
                     <connections>
                         <outlet property="listTableView" destination="ciM-Me-ZX6" id="G3B-tZ-ela"/>
@@ -140,7 +143,7 @@
             <objects>
                 <tableViewController wantsFullScreenLayout="YES" id="lpO-jh-9Lt" customClass="UITIssue1ViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="upQ-pL-nQV">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -152,7 +155,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Y0s-sM-YLE">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                            <rect key="frame" x="15" y="0.0" width="290" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -168,6 +171,7 @@
                             <outlet property="delegate" destination="lpO-jh-9Lt" id="OMM-cZ-4iY"/>
                         </connections>
                     </tableView>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="Nil section header" id="AWb-XB-EVI"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aUH-yT-e1G" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -207,6 +211,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Text" id="sET-y7-ILT">
                         <barButtonItem key="rightBarButtonItem" id="QEK-hF-05Y">
@@ -305,6 +310,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="5KD-LT-4hF"/>
                     <navigationItem key="navigationItem" title="Detail" id="VmR-2N-0ni">
                         <barButtonItem key="rightBarButtonItem" title="IBButton" id="elb-uV-DKT"/>
@@ -317,39 +323,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="UI7NavigationBarBackButton@2x.png" width="100" height="66"/>
+        <image name="UI7NavigationBarBackButton.png" width="50" height="33"/>
     </resources>
-    <classes>
-        <class className="UIAPlaceholderTextView" superclassName="UITextView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIAPlaceholderTextView.h"/>
-        </class>
-        <class className="UITDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITDetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="showActionSheet:"/>
-                <relationship kind="action" name="showAlertView1:"/>
-                <relationship kind="action" name="showAlertView2:"/>
-                <relationship kind="action" name="showAlertView3:"/>
-            </relationships>
-        </class>
-        <class className="UITIssue1ViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITIssue1ViewController.h"/>
-        </class>
-        <class className="UITMasterViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITMasterViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="listTableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="UITTextViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITTextViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="resign:"/>
-                <relationship kind="action" name="switched:"/>
-                <relationship kind="outlet" name="textView" candidateClass="UIAPlaceholderTextView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
