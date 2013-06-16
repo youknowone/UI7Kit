@@ -136,7 +136,7 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
     self.titleLabel.textColor = self.bodyTextLabel.textColor = [UIColor blackColor];
     self.titleLabel.shadowOffset = self.bodyTextLabel.shadowOffset = CGSizeZero;
 
-    self.titleLabel.font = [UIFont iOS7SystemFontOfSize:16.0 weight:UI7FontWeightMedium];
+    self.titleLabel.font = [UIFont iOS7SystemFontOfSize:17.0 weight:UI7FontWeightMedium];
     self.bodyTextLabel.font = [UIFont iOS7SystemFontOfSize:16.0 weight:UI7FontWeightLight];
 
     self.backgroundView.frame = self.bounds;
@@ -159,7 +159,7 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
 
     {
         CGRect frame = self.strokeView.frame;
-        frame.origin.y = highest - 0.5f;
+        frame.origin.y = highest - 1.0f;
         self.strokeView.frame = frame;
     }
 }
