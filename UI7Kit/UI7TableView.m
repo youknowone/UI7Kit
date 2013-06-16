@@ -79,7 +79,7 @@ CGFloat UI7TableViewDelegateHeightForFooterInSection(id self, SEL _cmd, UITableV
 }
 
 UIView *UI7TableViewDelegateViewForHeaderInSection(id self, SEL _cmd, UITableView *tableView, NSUInteger section) {
-    CGFloat height = [tableView.delegate respondsToSelector:@selector(tableView:heightForHeaderInSection:)] ? [tableView.delegate tableView:tableView heightForHeaderInSection:section] : tableView.sectionHeaderHeight;
+    CGFloat height = [tableView.delegate tableView:tableView heightForHeaderInSection:section];
     NSString *title = [tableView.dataSource tableView:tableView titleForHeaderInSection:section];
     if (title == nil) {
         return [[[UIView alloc] initWithFrame:CGRectZero] autorelease];;
@@ -94,7 +94,7 @@ UIView *UI7TableViewDelegateViewForHeaderInSection(id self, SEL _cmd, UITableVie
 }
 
 UIView *UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableView *tableView, NSUInteger section) {
-    CGFloat height = [tableView.delegate respondsToSelector:@selector(tableView:heightForFooterInSection:)] ? [tableView.delegate tableView:tableView heightForFooterInSection:section] : tableView.sectionFooterHeight;
+    CGFloat height = [tableView.delegate tableView:tableView heightForFooterInSection:section];
     NSString *title = [tableView.dataSource tableView:tableView titleForFooterInSection:section];
     if (title == nil) {
         return [[[UIView alloc] initWithFrame:CGRectZero] autorelease];
@@ -126,7 +126,7 @@ UIView *UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableVie
         if ([self.dataSource respondsToSelector:@selector(tableView:titleForFooterInSection:)] && ![delegate respondsToSelector:@selector(tableView:viewForFooterInSection:)]) {
             [delegateClass addMethodForSelector:@selector(tableView:viewForFooterInSection:) implementation:(IMP)UI7TableViewDelegateViewForFooterInSection types:@"@16@0:4@8i12"];
             if (![delegate respondsToSelector:@selector(tableView:heightForFooterInSection:)]) {
-                [delegateClass addMethodForSelector:@selector(tableView:heightForFooterInSection:) implementation:(IMP)UI7TableViewDelegateHeightForHeaderInSection types:@"f16@0:4@8i12"];
+                [delegateClass addMethodForSelector:@selector(tableView:heightForFooterInSection:) implementation:(IMP)UI7TableViewDelegateHeightForFooterInSection types:@"f16@0:4@8i12"];
             }
         }
     }
