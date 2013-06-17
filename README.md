@@ -1,42 +1,44 @@
 UI7Kit
 ======
 
-UI7Kit is a GUI toolkit to implement iOS7 look & feel UIKit under iOS5/iOS6. It is also supported that patching UIKit to UI7Kit in runtime.
+UI7Kit is a GUI toolkit to backport flat-style UIKit from iOS7 to iOS5/iOS6. Additionally, UI7Kit can be used to patch legacy UIKit to UI7Kit in runtime.
 
-NOTE: This project is very immature and under progressing. This is not available for real product yet.
+NOTE: This project is very immature and in progressing. It is not a good idea that try this for complex real-world product. Reporting or contributing any missing feature would be appreciated.
 
 Goal
 ----
-- Full-featured copy of UIKit for iOS7 look & feel (Except status bar).
-- Patch the classic UIKit to UI7Kit in runtime to reduce code rewriting for legacy codes.
+- Implement flat-style iOS7 theme to iOS5/6 (Except status bar).
+- Patch the classic UIKit to UI7Kit in runtime. (Renew your legacy app just in a line!)
 - 100% UIKit compatibility.
 
 How to use
 ----------
-Case 1: Dynamic patch
+Case 1: Dynamic patch (Mostly recommended)
 
     #import <UI7Kit/UI7Kit.h>
     UI7KitPatchAll(NO); // in main.m, before UIApplicationMain()
 
-Case 2: Partial usage: Use UI7<class> instead of UI<class>.
-ex) UI7NavigationController, instead of UINavigationController
+Case 2: Partial usage
+: Use UI7<class> instead of UI<class>.
+: ex) UI7NavigationController, instead of UINavigationController
 
-Case 3: Partial patch
+Case 3: Partial dynamic patch
 
     #import <UI7Kit/UI7Kit.h>
     [UI7<class> patch]; // ex) [UI7TableView patch];
 
 Example
 -------
-Example with current code.
+Example with current code. (0.0.7)
 
 ![Current status](https://raw.github.com/youknowone/UI7Kit/master/UI7Kit.png).
 
 Contact
 -------
-Email: Address is in LICENSE or git log.
 
-IRC: Visit irc://irc.freenode.org/#youknowone for instant message. (You need IRC client)
+- Github issues are appreciated.
+- Email: Address is in LICENSE or git log.
+- IRC: Visit irc://irc.freenode.org/#youknowone for instant message. (You need an IRC client)
 
 How to run test app
 -------------------
@@ -69,7 +71,7 @@ If you have problem with missing methods, 'pod update' usually solves it.
 
 How to install to my project
 ----------------------------
-NOTE: This project is very premature yet.
+NOTE: This project is very immature yet.
 
 If you don't have cocoapods, visit http://www.cocoapods.org or follow steps below:
 
@@ -88,3 +90,7 @@ If you have Podfile, add 'UI7Kit'. Or follow steps below:
 This command will generate or edit `YourProject.xcworkspace`.
 Open this instead of your original `YourProject.xcodeproj`.
 
+Implementations
+---------------
+
+- Hope to list here something ;)
