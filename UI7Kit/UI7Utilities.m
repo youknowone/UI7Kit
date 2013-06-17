@@ -105,7 +105,7 @@ NSString *UI7FontWeightBold = @"Bold";
 
     UIBezierPath* path = [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:radius];
 
-    return [UIImage imageWithBazierPath:path color:color backgroundColor:color];
+    return [UIImage imageWithBezierPath:path color:color backgroundColor:color];
 }
 
 + (UIImage *)roundedImageWithSize:(CGSize)size {
