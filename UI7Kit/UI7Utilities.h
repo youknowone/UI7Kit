@@ -61,6 +61,9 @@ FOUNDATION_EXTERN NSString *UI7FontWeightBold;
 + (UIImage *)blankImage;
 - (UIImageView *)view;
 
++ (UIImage *)roundedImageWithSize:(CGSize)size color:(UIColor *)color radius:(CGFloat)radius;
++ (UIImage *)roundedImageWithSize:(CGSize)size; // default buttoncolor + redius 6
+
 @end
 
 

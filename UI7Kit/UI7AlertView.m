@@ -31,7 +31,7 @@ static NSMutableDictionary *UI7AlertViewStrokeViews = nil;
 
 @property(nonatomic,retain) UIView *backgroundImageView;
 
-@property(nonatomic,assign) UIASegmentedImageView *backgroundView;
+@property(nonatomic,assign) UIImageView *backgroundView;
 @property(nonatomic,assign) UIView *strokeView;
 
 @end
@@ -128,8 +128,8 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
     if (self != nil) {
         self.dimsBackground = NO;
         self.backgroundImageView = [UIImage blankImage].view;
-        UIView *backgroundView = self.backgroundView = [[[UIASegmentedImageView alloc] initWithTopImage:[UIImage imageNamed:@"UI7AlertViewBackgroundTop"] centerImage:[UIImage imageNamed:@"UI7AlertViewBackgroundBody"] bottomImage:[UIImage imageNamed:@"UI7AlertViewBackgroundBottom"]] autorelease];
-        [self addSubview:backgroundView];
+        self.backgroundView = [[[UIImageView alloc] init] autorelease];
+        [self addSubview:self.backgroundView];
 
         self.strokeView = [[UIView alloc] initWithFrame:CGRectMake(7.0, .0, 270.0, 0.5)];
         self.strokeView.backgroundColor = [UIColor colorWith8BitWhite:182 alpha:255];
@@ -140,9 +140,10 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
 
 - (void)show {
     [super __show];
-
+    self.backgroundView.frame = CGRectMake(7.0, .0, 270.0, self.frame.size.height - 12.0);
+    self.backgroundView.image = [UIImage roundedImageWithSize:self.backgroundView.frame.size color:[UIColor colorWith8BitWhite:234 alpha:248] radius:6.0];
     UIView *view = self.dimView = [[[UIADimmingView alloc] initWithFrame:self.window.bounds] autorelease];
-    view.alpha = 0.35;
+    view.alpha = 0.4;
     view.hidden = YES;
     [view setHidden:NO animated:YES];
     [self.window addSubview:view];
@@ -154,8 +155,6 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
 
     self.titleLabel.font = [UIFont iOS7SystemFontOfSize:17.0 weight:UI7FontWeightMedium];
     self.bodyTextLabel.font = [UIFont iOS7SystemFontOfSize:16.0 weight:UI7FontWeightLight];
-
-    self.backgroundView.frame = self.bounds;
 
     CGFloat highest = self.frame.size.height;
     for (UIAlertButton *button in self.buttons) {

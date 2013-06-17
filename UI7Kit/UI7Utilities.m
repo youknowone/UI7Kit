@@ -99,4 +99,17 @@ NSString *UI7FontWeightBold = @"Bold";
     return [[[UIImageView alloc] initWithImage:self] autorelease];
 }
 
++ (UIImage *)roundedImageWithSize:(CGSize)size color:(UIColor *)color radius:(CGFloat)radius {
+    CGRect rect = CGRectZero;
+    rect.size = size;
+
+    UIBezierPath* path = [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:radius];
+
+    return [UIImage imageWithBazierPath:path color:color backgroundColor:color];
+}
+
++ (UIImage *)roundedImageWithSize:(CGSize)size {
+    return [self roundedImageWithSize:size color:[UIColor iOS7ButtonTitleColor] radius:6.0];
+}
+
 @end
