@@ -69,9 +69,9 @@
         rightSegmentState:UIControlStateNormal
                barMetrics:UIBarMetricsDefault];
 
-    self.layer.cornerRadius = 4.0;
-    self.layer.borderWidth = 1.0f;
-    self.layer.borderColor = [UIColor iOS7ButtonTitleColor].CGColor;
+    [self.layer setCornerRadius:4.0f];
+    [self.layer setBorderWidth:1.0f];
+    [self.layer setBorderColor:[UIColor iOS7ButtonTitleColor].CGColor];
 }
 
 @end
