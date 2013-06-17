@@ -15,6 +15,10 @@
 @property(nonatomic,readonly) UILabel *titleLabel;
 @property(nonatomic,readonly) UILabel *bodyTextLabel;
 @property(nonatomic,readonly) NSArray *buttons;
+@property(nonatomic,retain,getter=_dimView) UIView *dimView;
+@property(nonatomic,assign) BOOL *dimsBackground;
+
+- (void)dismissWithClickedButtonIndex:(int)arg1 animated:(BOOL)arg2;
 
 @end
 
@@ -75,6 +79,7 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
 - (id)init { return [super init]; }
 - (id)__init { assert(NO); return nil; }
 - (void)__show { assert(NO); }
+- (void)__dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated { assert(NO); }
 
 - (void)__dealloc { assert(NO); }
 - (void)_dealloc {
@@ -98,6 +103,7 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
         [origin copyToSelector:@selector(__init) fromSelector:@selector(init)];
         [origin copyToSelector:@selector(__show) fromSelector:@selector(show)];
         [origin copyToSelector:@selector(__dealloc) fromSelector:@selector(dealloc)];
+        [origin copyToSelector:@selector(__dismissWithClickedButtonIndex:animated:) fromSelector:@selector(dismissWithClickedButtonIndex:animated:)];
     }
 }
 
@@ -108,6 +114,7 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
     [source exportSelector:@selector(init) toClass:target];
     [source exportSelector:@selector(show) toClass:target];
     [source exportSelector:@selector(dealloc) toClass:target];
+    [source exportSelector:@selector(dismissWithClickedButtonIndex:animated:) toClass:target];
 }
 
 - (void)dealloc {
@@ -119,6 +126,7 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
 - (id)init {
     self = [self __init];
     if (self != nil) {
+        self.dimsBackground = NO;
         self.backgroundImageView = [UIImage blankImage].view;
         UIView *backgroundView = self.backgroundView = [[[UIASegmentedImageView alloc] initWithTopImage:[UIImage imageNamed:@"UI7AlertViewBackgroundTop"] centerImage:[UIImage imageNamed:@"UI7AlertViewBackgroundBody"] bottomImage:[UIImage imageNamed:@"UI7AlertViewBackgroundBottom"]] autorelease];
         [self addSubview:backgroundView];
@@ -132,6 +140,14 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
 
 - (void)show {
     [super __show];
+
+    UIView *view = self.dimView = [[[UIADimmingView alloc] initWithFrame:self.window.bounds] autorelease];
+    view.alpha = 0.35;
+    view.hidden = YES;
+    [view setHidden:NO animated:YES];
+    [self.window addSubview:view];
+    [self.window bringSubviewToFront:self];
+
 
     self.titleLabel.textColor = self.bodyTextLabel.textColor = [UIColor blackColor];
     self.titleLabel.shadowOffset = self.bodyTextLabel.shadowOffset = CGSizeZero;
@@ -164,5 +180,11 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
     }
 }
 
+- (void)dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated {
+    [self __dismissWithClickedButtonIndex:buttonIndex animated:animated];
+    if (animated) {
+        [self.dimView setHidden:YES animated:YES];
+    }
+}
 
 @end

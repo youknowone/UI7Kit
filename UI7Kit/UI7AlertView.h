@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 youknowone.org. All rights reserved.
 //
 
+#import <UI7Kit/UI7Utilities.h>
 
 @interface UI7AlertView : UIAlertView<UI7Patch>
 
