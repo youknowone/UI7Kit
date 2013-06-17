@@ -47,8 +47,12 @@
 
 - (void)showActionSheet:(id)sender {
     NSString *title = @"Title";
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:title delegate:nil cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Destructive" otherButtonTitles:@"Other", @"Buttons", nil];
-    [actionSheet showInView:self.view];
+    UIActionSheet *actionSheet = [[UI7ActionSheet alloc] initWithTitle:title delegate:nil cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Destructive" otherButtonTitles:@"Other", @"Buttons", nil];
+//    if (self.tabBarController) {
+//        [actionSheet showFromTabBar:self.tabBarController.tabBar];
+//    } else {
+        [actionSheet showInView:self.view];
+//    }
 }
 
 @end

@@ -23,6 +23,7 @@ void UI7KitPatchAll(BOOL override7) {
              @"UI7ActionSheet",
              @"UI7TabBar",
              @"UI7TabBarItem",
+             @"UI7SegmentedControl",
              ]) {
             Class class = NSClassFromString(className);
             [class patch];

@@ -48,14 +48,9 @@
 		387A6FE4176CC58F00B91354 /* UI7ActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 387A6FE3176CC58F00B91354 /* UI7ActionSheet.m */; };
 		3888FC62176C7C7900489638 /* UITIssue1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3888FC61176C7C7900489638 /* UITIssue1ViewController.m */; };
 		3888FC63176C8EAD00489638 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383764E513373155007072FD /* CoreGraphics.framework */; };
-		388D1C26176E2C900061527C /* UI7AlertViewBackgroundBody.png in Resources */ = {isa = PBXBuildFile; fileRef = 388D1C20176E2C900061527C /* UI7AlertViewBackgroundBody.png */; };
-		388D1C27176E2C900061527C /* UI7AlertViewBackgroundBody@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 388D1C21176E2C900061527C /* UI7AlertViewBackgroundBody@2x.png */; };
-		388D1C28176E2C900061527C /* UI7AlertViewBackgroundBottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 388D1C22176E2C900061527C /* UI7AlertViewBackgroundBottom.png */; };
-		388D1C29176E2C900061527C /* UI7AlertViewBackgroundBottom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 388D1C23176E2C900061527C /* UI7AlertViewBackgroundBottom@2x.png */; };
-		388D1C2A176E2C900061527C /* UI7AlertViewBackgroundTop.png in Resources */ = {isa = PBXBuildFile; fileRef = 388D1C24176E2C900061527C /* UI7AlertViewBackgroundTop.png */; };
-		388D1C2B176E2C900061527C /* UI7AlertViewBackgroundTop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 388D1C25176E2C900061527C /* UI7AlertViewBackgroundTop@2x.png */; };
 		38AF86CF1769BC8000BFBD29 /* libUI7Kit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38017423176989650049D26C /* libUI7Kit.a */; };
 		38BC0E5D173E821700F36497 /* UITSubviewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38BC0E5B173E821700F36497 /* UITSubviewTableViewController.m */; };
+		38CE37D6176F657800AC0C89 /* UI7SegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 38CE37D4176F4C8400AC0C89 /* UI7SegmentedControl.m */; };
 		38EEF9C7176A366C0085B09B /* UI7Button.m in Sources */ = {isa = PBXBuildFile; fileRef = 38EEF9C6176A366C0085B09B /* UI7Button.m */; };
 		38EEF9CA176A482C0085B09B /* UI7Switch.m in Sources */ = {isa = PBXBuildFile; fileRef = 38EEF9C9176A482C0085B09B /* UI7Switch.m */; };
 		38F068181636F8C8002723AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383764E213373155007072FD /* UIKit.framework */; };
@@ -158,12 +153,6 @@
 		387A6FE3176CC58F00B91354 /* UI7ActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7ActionSheet.m; sourceTree = "<group>"; };
 		3888FC60176C7C7900489638 /* UITIssue1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITIssue1ViewController.h; sourceTree = "<group>"; };
 		3888FC61176C7C7900489638 /* UITIssue1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITIssue1ViewController.m; sourceTree = "<group>"; };
-		388D1C20176E2C900061527C /* UI7AlertViewBackgroundBody.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7AlertViewBackgroundBody.png; sourceTree = "<group>"; };
-		388D1C21176E2C900061527C /* UI7AlertViewBackgroundBody@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7AlertViewBackgroundBody@2x.png"; sourceTree = "<group>"; };
-		388D1C22176E2C900061527C /* UI7AlertViewBackgroundBottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7AlertViewBackgroundBottom.png; sourceTree = "<group>"; };
-		388D1C23176E2C900061527C /* UI7AlertViewBackgroundBottom@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7AlertViewBackgroundBottom@2x.png"; sourceTree = "<group>"; };
-		388D1C24176E2C900061527C /* UI7AlertViewBackgroundTop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7AlertViewBackgroundTop.png; sourceTree = "<group>"; };
-		388D1C25176E2C900061527C /* UI7AlertViewBackgroundTop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7AlertViewBackgroundTop@2x.png"; sourceTree = "<group>"; };
 		38BC0E5A173E821700F36497 /* UITSubviewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITSubviewTableViewController.h; sourceTree = "<group>"; };
 		38BC0E5B173E821700F36497 /* UITSubviewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITSubviewTableViewController.m; sourceTree = "<group>"; };
 		38C7A9761495181800381910 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -171,6 +160,8 @@
 		38C7A9781495181800381910 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		38C7A9891495181800381910 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		38C7A9D014951D2C00381910 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = SDKs/MacOSX10.7.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		38CE37D3176F4C8400AC0C89 /* UI7SegmentedControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UI7SegmentedControl.h; sourceTree = "<group>"; };
+		38CE37D4176F4C8400AC0C89 /* UI7SegmentedControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UI7SegmentedControl.m; sourceTree = "<group>"; };
 		38E58A8D1767554200F6ED19 /* UI7NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7NavigationController.h; sourceTree = "<group>"; };
 		38E58A8E1767554200F6ED19 /* UI7NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7NavigationController.m; sourceTree = "<group>"; };
 		38E58A901767576300F6ED19 /* UI7Kit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7Kit.h; sourceTree = "<group>"; };
@@ -266,12 +257,6 @@
 			isa = PBXGroup;
 			children = (
 				382F54251767809E004D6F59 /* UI7Blank.png */,
-				388D1C20176E2C900061527C /* UI7AlertViewBackgroundBody.png */,
-				388D1C21176E2C900061527C /* UI7AlertViewBackgroundBody@2x.png */,
-				388D1C22176E2C900061527C /* UI7AlertViewBackgroundBottom.png */,
-				388D1C23176E2C900061527C /* UI7AlertViewBackgroundBottom@2x.png */,
-				388D1C24176E2C900061527C /* UI7AlertViewBackgroundTop.png */,
-				388D1C25176E2C900061527C /* UI7AlertViewBackgroundTop@2x.png */,
 				3801741317682DD40049D26C /* UI7TableViewCellSelection.png */,
 				3801741517682DDA0049D26C /* UI7TableViewCellDisclosureIndicator.png */,
 				3801745A1769C5D90049D26C /* UI7TableViewCellDisclosureIndicator@2x.png */,
@@ -372,6 +357,8 @@
 				387558BA176DEDDE00AE5C8B /* UI7TabBarItem.m */,
 				387558B2176DD03F00AE5C8B /* UI7TabBarController.h */,
 				387558B3176DD03F00AE5C8B /* UI7TabBarController.m */,
+				38CE37D3176F4C8400AC0C89 /* UI7SegmentedControl.h */,
+				38CE37D4176F4C8400AC0C89 /* UI7SegmentedControl.m */,
 				380174601769FE390049D26C /* Resources */,
 				38017426176989660049D26C /* Supporting Files */,
 			);
@@ -537,12 +524,6 @@
 				387558C2176DF36700AE5C8B /* UI7TabBarItemFavoriteUnselected.png in Resources */,
 				387558C3176DF36700AE5C8B /* UI7TabBarItemFavoriteUnselected@2x.png in Resources */,
 				387558C5176DFA8600AE5C8B /* UI7NavigationBarBackButton@2x.png in Resources */,
-				388D1C26176E2C900061527C /* UI7AlertViewBackgroundBody.png in Resources */,
-				388D1C27176E2C900061527C /* UI7AlertViewBackgroundBody@2x.png in Resources */,
-				388D1C28176E2C900061527C /* UI7AlertViewBackgroundBottom.png in Resources */,
-				388D1C29176E2C900061527C /* UI7AlertViewBackgroundBottom@2x.png in Resources */,
-				388D1C2A176E2C900061527C /* UI7AlertViewBackgroundTop.png in Resources */,
-				388D1C2B176E2C900061527C /* UI7AlertViewBackgroundTop@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,6 +580,7 @@
 			files = (
 				38EEF9C7176A366C0085B09B /* UI7Button.m in Sources */,
 				3801744F176989B80049D26C /* UI7Kit.m in Sources */,
+				38CE37D6176F657800AC0C89 /* UI7SegmentedControl.m in Sources */,
 				38017450176989B80049D26C /* UI7Utilities.m in Sources */,
 				38EEF9CA176A482C0085B09B /* UI7Switch.m in Sources */,
 				38017451176989B80049D26C /* UI7NavigationBar.m in Sources */,

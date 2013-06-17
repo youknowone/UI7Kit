@@ -63,7 +63,7 @@ static NSMutableDictionary *UI7ViewControllerEditButtonItems = nil;
     NSAClass *target = [UIViewController classObject];
 
     [source exportSelector:@selector(initWithCoder:) toClass:target];
-    [source exportSelector:@selector(initWithStyle:reuseIdentifier:) toClass:target];
+    [source exportSelector:@selector(initWithNibName:bundle:) toClass:target];
     [source copyToSelector:@selector(dealloc) fromSelector:@selector(_dealloc)];
 }
 

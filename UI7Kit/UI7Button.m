@@ -12,6 +12,7 @@
 
 - (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
 + (id)__buttonWithType:(UIButtonType)buttonType { assert(NO); return nil; }
+//- (void)__drawRect:(CGRect)rect { assert(NO); }
 
 - (void)_buttonInit {
     if (self.buttonType == UIButtonTypeRoundedRect) {
@@ -31,15 +32,17 @@
 
         [origin copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
         [origin classMethodObjectForSelector:@selector(__buttonWithType:)].implementation = [origin classMethodObjectForSelector:@selector(buttonWithType:)].implementation;
+//        [origin copyToSelector:@selector(__drawRect:) fromSelector:@selector(drawRect:)];
     }
 }
 
 + (void)patch {
-    NSAClass *source = [UI7Button classObject];
+    NSAClass *source = [self classObject];
     NSAClass *target = [UIButton classObject];
 
     [source exportSelector:@selector(initWithCoder:) toClass:target];
     [target classMethodObjectForSelector:@selector(buttonWithType:)].implementation = [source classMethodObjectForSelector:@selector(buttonWithType:)].implementation;
+    [source exportSelector:@selector(drawRect:) toClass:target];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
@@ -57,6 +60,10 @@
         return button;
     }
     return [self __buttonWithType:buttonType];
+}
+
+- (void)drawRect:(CGRect)rect {
+    NSLog(@"buh");
 }
 
 @end

@@ -44,9 +44,9 @@ extern void UI7KitPatchAll(BOOL override7);
 @end
 
 
-FOUNDATION_EXTERN NSString *UI7FontWeightLight;
-FOUNDATION_EXTERN NSString *UI7FontWeightMedium;
-FOUNDATION_EXTERN NSString *UI7FontWeightBold;
+UIKIT_EXTERN NSString *UI7FontWeightLight;
+UIKIT_EXTERN NSString *UI7FontWeightMedium;
+UIKIT_EXTERN NSString *UI7FontWeightBold;
 
 @interface UIFont (iOS7)
 
@@ -55,6 +55,7 @@ FOUNDATION_EXTERN NSString *UI7FontWeightBold;
 
 @end
 
+UIKIT_EXTERN const CGFloat UI7ControlRadius;
 
 @interface UIImage (Images)
 

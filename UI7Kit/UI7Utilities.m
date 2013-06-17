@@ -54,7 +54,7 @@ NSString *UI7FontWeightBold = @"Bold";
 }
 
 + (UIColor *)iOS7ButtonTitleColor {
-    return [UIColor colorWithRed:.0 green:.5 blue:1.0 alpha:1.0];
+    return [UIColor colorWith8bitRed:0 green:126 blue:245 alpha:255];
 }
 
 + (UIColor *)iOS7ButtonTitleHighlightedColor {
@@ -84,6 +84,7 @@ NSString *UI7FontWeightBold = @"Bold";
 
 @end
 
+const CGFloat UI7ControlRadius = 6.0;
 
 @implementation UIImage (Images)
 

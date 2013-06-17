@@ -141,7 +141,7 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
 - (void)show {
     [super __show];
     self.backgroundView.frame = CGRectMake(7.0, .0, 270.0, self.frame.size.height - 12.0);
-    self.backgroundView.image = [UIImage roundedImageWithSize:self.backgroundView.frame.size color:[UIColor colorWith8BitWhite:234 alpha:248] radius:6.0];
+    self.backgroundView.image = [UIImage roundedImageWithSize:self.backgroundView.frame.size color:[UIColor colorWith8BitWhite:234 alpha:248] radius:UI7ControlRadius];
     UIView *view = self.dimView = [[[UIADimmingView alloc] initWithFrame:self.window.bounds] autorelease];
     view.alpha = 0.4;
     view.hidden = YES;
