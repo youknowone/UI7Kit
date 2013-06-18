@@ -132,7 +132,7 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
         [self addSubview:self.backgroundView];
 
         self.strokeView = [[UIView alloc] initWithFrame:CGRectMake(7.0, .0, 270.0, 0.5)];
-        self.strokeView.backgroundColor = [UIColor colorWith8BitWhite:182 alpha:255];
+        self.strokeView.backgroundColor = [UIColor colorWith8bitWhite:182 alpha:255];
         [self addSubview:self.strokeView];
     }
     return self;
@@ -141,7 +141,7 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
 - (void)show {
     [super __show];
     self.backgroundView.frame = CGRectMake(7.0, .0, 270.0, self.frame.size.height - 12.0);
-    self.backgroundView.image = [UIImage roundedImageWithSize:self.backgroundView.frame.size color:[UIColor colorWith8BitWhite:234 alpha:248] radius:UI7ControlRadius];
+    self.backgroundView.image = [UIImage roundedImageWithSize:self.backgroundView.frame.size color:[UIColor colorWith8bitWhite:234 alpha:248] radius:UI7ControlRadius];
     UIView *view = self.dimView = [[[UIADimmingView alloc] initWithFrame:self.window.bounds] autorelease];
     view.alpha = 0.4;
     view.hidden = YES;
@@ -159,8 +159,8 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
     CGFloat highest = self.frame.size.height;
     for (UIAlertButton *button in self.buttons) {
         button.titleLabel.font = [UIFont iOS7SystemFontOfSize:16.0 weight:UI7FontWeightLight];
-        [button setTitleColor:[UI7Kit kit].tintColor forState:UIControlStateNormal];
-        [button setTitleColor:[UIColor iOS7ButtonTitleHighlightedColor] forState:UIControlStateHighlighted];
+        [button setTitleColor:[UIColor iOS7ButtonTitleColor] forState:UIControlStateNormal];
+        [button setTitleColor:[UI7Kit kit].tintColor.highligtedColor forState:UIControlStateHighlighted];
         button.titleLabel.shadowOffset = CGSizeZero;
         [button setBackgroundImage:nil forState:UIControlStateNormal];
         [button setBackgroundImage:nil forState:UIControlStateHighlighted];

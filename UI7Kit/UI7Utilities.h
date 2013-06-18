@@ -35,9 +35,10 @@
 @interface UIColor (iOS7)
 
 + (UIColor *)iOS7BackgroundColor;
-+ (UIColor *)iOS7ButtonTitleHighlightedColor;
++ (UIColor *)iOS7ButtonTitleColor;
 + (UIColor *)iOS7ButtonTitleEmphasizedColor;
-+ (UIColor *)iOS7ButtonTitleEmphasizedHighlightedColor;
+
+- (UIColor *)highligtedColor;
 
 @end
 

@@ -8,6 +8,8 @@
 
 #import "UI7KitCore.h"
 
+#import "UI7Utilities.h"
+
 @implementation UI7Kit
 
 @synthesize tintColor=_tintColor;
@@ -17,7 +19,7 @@ UI7Kit *UI7KitSharedObject = nil;
 - (id)init {
     self = [super init];
     if (self != nil) {
-        self.tintColor = [UIColor colorWith8bitRed:0 green:126 blue:245 alpha:255];
+        self.tintColor = [UIColor iOS7ButtonTitleColor];
     }
     return self;
 }

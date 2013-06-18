@@ -31,7 +31,7 @@
         Class origin = [UIButton class];
 
         [origin copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
-        [origin classMethodObjectForSelector:@selector(__buttonWithType:)].implementation = [origin classMethodObjectForSelector:@selector(buttonWithType:)].implementation;
+        [origin classMethodForSelector:@selector(__buttonWithType:)].implementation = [origin classMethodForSelector:@selector(buttonWithType:)].implementation;
 //        [origin copyToSelector:@selector(__drawRect:) fromSelector:@selector(drawRect:)];
     }
 }

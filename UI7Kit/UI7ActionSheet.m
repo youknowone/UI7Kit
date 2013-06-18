@@ -108,7 +108,7 @@ static NSMutableDictionary *UI7ActionSheetStrokeViews = nil;
     self = [self __init];
     if (self != nil) {
         UIView *frameView = self.frameView = [[[UIView alloc] init] autorelease];
-        frameView.backgroundColor = [UIColor colorWith8BitWhite:240 alpha:255];
+        frameView.backgroundColor = [UIColor colorWith8bitWhite:240 alpha:255];
         [self addSubview:frameView];
     }
     return self;
@@ -120,12 +120,12 @@ static NSMutableDictionary *UI7ActionSheetStrokeViews = nil;
 
 - (void)showInView:(UIView *)view {
     [self __showInView:view];
-    self.backgroundColor = [UIColor colorWith8BitWhite:122 alpha:255];
+    self.backgroundColor = [UIColor colorWith8bitWhite:122 alpha:255];
     
     CGRect frame = self.bounds;
     frame.origin.y = self._titleLabel.frame.origin.y + self._titleLabel.frame.size.height + 6.0f;
     self.frameView.frame = frame;
-    self._titleLabel.textColor = [UIColor colorWith8BitWhite:88 alpha:255];
+    self._titleLabel.textColor = [UIColor colorWith8bitWhite:88 alpha:255];
     self._titleLabel.shadowOffset = CGSizeZero;
     [self.buttons applyProcedureWithIndex:^(id obj, NSUInteger index) {
         UIButton *button = obj; // UIAlertButton, really
@@ -137,13 +137,14 @@ static NSMutableDictionary *UI7ActionSheetStrokeViews = nil;
         [button setBackgroundImage:[UIImage blankImage] forState:UIControlStateNormal];
         [button setBackgroundImage:[UIImage blankImage] forState:UIControlStateHighlighted];
 
+        UIColor *color = nil;
         if (self.destructiveButtonIndex == (NSInteger)index) {
-            [button setTitleColor:[UI7Kit kit].tintColor forState:UIControlStateNormal];
-            [button setTitleColor:[UIColor iOS7ButtonTitleEmphasizedHighlightedColor] forState:UIControlStateHighlighted];
+            color = [UIColor iOS7ButtonTitleEmphasizedColor];
         } else {
-            [button setTitleColor:[UI7Kit kit].tintColor forState:UIControlStateNormal];
-            [button setTitleColor:[UIColor iOS7ButtonTitleHighlightedColor] forState:UIControlStateHighlighted];
+            color = [UIColor iOS7ButtonTitleColor];
         }
+        [button setTitleColor:color forState:UIControlStateNormal];
+        [button setTitleColor:color.highligtedColor forState:UIControlStateHighlighted];
         button.titleLabel.shadowOffset = CGSizeZero;
     }];
 }
