@@ -28,9 +28,9 @@
     self.selectedImageTintColor = [UI7Kit kit].tintColor;
     self.backgroundColor = [UIColor iOS7BackgroundColor];
     self.backgroundImage = [UIImage imageNamed:@"UI7TabBarBackground"]; // Makes tab bar flat
-    self.selectionIndicatorImage = [UIImage blankImage]; // Removes selection image
+    self.selectionIndicatorImage = [UIImage clearImage]; // Removes selection image
     if ([self respondsToSelector:@selector(setShadowImage:)]) {
-        self.shadowImage = [UIImage blankImage];
+        self.shadowImage = [UIImage clearImage];
     }
     // private properties
     [self _setLabelFont:[UIFont iOS7SystemFontOfSize:10.0 weight:@"Light"]];

@@ -177,7 +177,7 @@ UIView *UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableVie
     self.detailTextLabel.font = [UIFont iOS7SystemFontOfSize:17.0 weight:UI7FontWeightLight]; // FIXME: not sure
     self.textLabel.highlightedTextColor = self.textLabel.textColor;
     self.detailTextLabel.highlightedTextColor = self.detailTextLabel.textColor; // FIXME: not sure
-    self.selectedBackgroundView = [UIImage imageNamed:@"UI7TableViewCellSelection"].view; // 
+    self.selectedBackgroundView = [UIColor colorWith8bitWhite:217 alpha:255].image.view;
 }
 
 @end

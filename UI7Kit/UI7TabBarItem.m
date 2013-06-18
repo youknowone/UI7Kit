@@ -70,7 +70,7 @@
             // TODO: not easy...
         }
         [self _tabBarItemInit];
-        self.selectedImage = [UIImage blankImage];
+        self.selectedImage = [UIImage clearImage];
     }
     return self;
 }

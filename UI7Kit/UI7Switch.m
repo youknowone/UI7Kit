@@ -16,8 +16,8 @@
 - (void)_switchInit {
     self.onTintColor = [UIColor colorWith8bitRed:76 green:217 blue:100 alpha:255];
     if ([self respondsToSelector:@selector(onImage)]) {
-        self.onImage = [UIImage blankImage];
-        self.offImage = [UIImage blankImage];
+        self.onImage = [UIImage clearImage];
+        self.offImage = [UIImage clearImage];
         self.tintColor = [UI7Kit kit].tintColor;
         self.thumbTintColor = [UIColor whiteColor];
     }

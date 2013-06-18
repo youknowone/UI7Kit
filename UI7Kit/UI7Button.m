@@ -17,7 +17,7 @@
 - (void)_buttonInit {
     if (self.buttonType == UIButtonTypeRoundedRect) {
         self.titleLabel.font = [UIFont iOS7SystemFontOfSize:self.titleLabel.font.pointSize weight:@"Light"];
-        [self setBackgroundImage:[UIImage blankImage] forState:UIControlStateNormal];
+        [self setBackgroundImage:[UIImage clearImage] forState:UIControlStateNormal];
     }
 }
 

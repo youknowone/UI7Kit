@@ -134,8 +134,8 @@ static NSMutableDictionary *UI7ActionSheetStrokeViews = nil;
         } else {
             button.titleLabel.font = [UIFont iOS7SystemFontOfSize:button.titleLabel.font.pointSize weight:@"Light"];
         }
-        [button setBackgroundImage:[UIImage blankImage] forState:UIControlStateNormal];
-        [button setBackgroundImage:[UIImage blankImage] forState:UIControlStateHighlighted];
+        [button setBackgroundImage:[UIImage clearImage] forState:UIControlStateNormal];
+        [button setBackgroundImage:[UIImage clearImage] forState:UIControlStateHighlighted];
 
         UIColor *color = nil;
         if (self.destructiveButtonIndex == (NSInteger)index) {

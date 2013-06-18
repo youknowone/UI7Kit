@@ -22,7 +22,7 @@
 
 
 - (void)_barButtonItemInitWithFont:(UIFont *)font {
-    [self setBackgroundImage:[UIImage blankImage] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [self setBackgroundImage:[UIImage clearImage] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     /*  FIXME:
      *  Actually, iOS7 back button is not implemented in this way. There is new property about '<' mark.
      *  To implement this in right way, UINavigationBar -drawRect: should be rewritten entirely, in my guess.

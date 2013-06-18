@@ -58,7 +58,6 @@ UIKIT_EXTERN const CGFloat UI7ControlRadius;
 
 @interface UIImage (Images)
 
-+ (UIImage *)blankImage;
 - (UIImageView *)view;
 
 + (UIImage *)roundedImageWithSize:(CGSize)size color:(UIColor *)color radius:(CGFloat)radius;

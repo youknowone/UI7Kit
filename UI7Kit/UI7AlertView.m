@@ -127,7 +127,7 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
     self = [self __init];
     if (self != nil) {
         self.dimsBackground = NO;
-        self.backgroundImageView = [UIImage blankImage].view;
+        self.backgroundImageView = [UIImage clearImage].view;
         self.backgroundView = [[[UIImageView alloc] init] autorelease];
         [self addSubview:self.backgroundView];
 

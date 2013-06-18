@@ -87,14 +87,6 @@ const CGFloat UI7ControlRadius = 6.0;
 
 @implementation UIImage (Images)
 
-+ (UIImage *)blankImage {
-    static UIImage *image = nil;
-    if (image == nil) {
-        image = [[UIImage imageNamed:@"UI7Blank"] retain];
-    }
-    return image;
-}
-
 - (UIImageView *)view {
     return [[[UIImageView alloc] initWithImage:self] autorelease];
 }

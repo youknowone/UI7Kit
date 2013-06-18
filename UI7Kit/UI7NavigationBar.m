@@ -34,7 +34,7 @@
     [self setTitleTextAttributes:@{
                                    UITextAttributeFont: [UIFont iOS7SystemFontOfSize:17.0 weight:UI7FontWeightMedium],
                                    UITextAttributeTextColor: [UIColor blackColor],
-                                   UITextAttributeTextShadowOffset: @(0),
+                                   UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetZero],
                                    }];
 }
 
