@@ -29,25 +29,38 @@
 }
 
 - (void)_stepperInit {
-    UIImage *backgroundImage = [UIImage roundedImageWithSize:CGSizeMake(10.0f, 40.0f) color:self.tintColor radius:4.0];
-    UIImage *highlightedBackgroundImage = [UIImage roundedImageWithSize:CGSizeMake(10.0f, 40.0f) color:self.tintColor.highligtedColor radius:4.0];
-
     if ([self respondsToSelector:@selector(setBackgroundImage:forState:)]) {
-        [self setBackgroundImage:[UIImage clearImage]
-                        forState:UIControlStateNormal];
-
-        [self setBackgroundImage:backgroundImage
-                        forState:UIControlStateSelected];
-
-        [self setBackgroundImage:highlightedBackgroundImage
-                        forState:UIControlStateHighlighted];
-
-        [self setBackgroundImage:[UIImage clearImage]
-                        forState:UIControlStateDisabled];
+        NSDictionary *backColors = @{
+                                     @(UIControlStateNormal): [UIColor clearColor],
+                                     @(UIControlStateHighlighted): self.tintColor.highligtedColor,
+                                     @(UIControlStateDisabled): [UIColor clearColor],
+                                     };
+        NSDictionary *titleColors = @{
+                                      @(UIControlStateNormal): self.tintColor,
+                                      @(UIControlStateHighlighted): self.tintColor.highligtedColor,
+                                      @(UIControlStateDisabled): self.tintColor.highligtedColor,
+                                      };
 
         [self setDividerImage:self.tintColor.image
           forLeftSegmentState:UIControlStateNormal
             rightSegmentState:UIControlStateNormal];
+
+        for (NSNumber *stateNumber in @[@(UIControlStateNormal), @(UIControlStateHighlighted), @(UIControlStateDisabled)]) {
+            UIControlState state = (UIControlState)(stateNumber.integerValue);
+            UIImage *backgroundImage = [UIImage roundedImageWithSize:CGSizeMake(10.0, 30.0) color:backColors[stateNumber] radius:4.0];
+            [self setBackgroundImage:backgroundImage forState:state];
+            UIImage *image;
+            image = [self incrementImageForState:state];
+            if (image) {
+                [self setIncrementImage:[image imageByFilledWithColor:titleColors[stateNumber]] forState:state];
+            }
+            image = [self decrementImageForState:state];
+            if (image) {
+                [self setDecrementImage:[image imageByFilledWithColor:titleColors[stateNumber]] forState:state];
+            }
+        }
+    } else {
+
     }
 
     self.layer.cornerRadius = 4.0f;
