@@ -79,7 +79,7 @@ static NSMutableDictionary *UI7ActionSheetStrokeViews = nil;
         UI7ActionSheetFrameViews = [[NSMutableDictionary alloc] init];
         UI7ActionSheetStrokeViews = [[NSMutableDictionary alloc] init];
 
-        NSAClass *origin = [UIActionSheet classObject];
+        Class origin = [UIActionSheet class];
 
         [origin copyToSelector:@selector(__init) fromSelector:@selector(init)];
         [origin copyToSelector:@selector(__showInView:) fromSelector:@selector(showInView:)];
@@ -88,8 +88,8 @@ static NSMutableDictionary *UI7ActionSheetStrokeViews = nil;
 }
 
 + (void)patch {
-    NSAClass *source = [self classObject];
-    NSAClass *target = [UIActionSheet classObject];
+    Class source = [self class];
+    Class target = [UIActionSheet class];
 
     [source exportSelector:@selector(init) toClass:target];
     [source exportSelector:@selector(showInView:) toClass:target];
@@ -138,10 +138,10 @@ static NSMutableDictionary *UI7ActionSheetStrokeViews = nil;
         [button setBackgroundImage:[UIImage blankImage] forState:UIControlStateHighlighted];
 
         if (self.destructiveButtonIndex == (NSInteger)index) {
-            [button setTitleColor:[UIColor iOS7ButtonTitleEmphasizedColor] forState:UIControlStateNormal];
+            [button setTitleColor:[UI7Kit kit].tintColor forState:UIControlStateNormal];
             [button setTitleColor:[UIColor iOS7ButtonTitleEmphasizedHighlightedColor] forState:UIControlStateHighlighted];
         } else {
-            [button setTitleColor:[UIColor iOS7ButtonTitleColor] forState:UIControlStateNormal];
+            [button setTitleColor:[UI7Kit kit].tintColor forState:UIControlStateNormal];
             [button setTitleColor:[UIColor iOS7ButtonTitleHighlightedColor] forState:UIControlStateHighlighted];
         }
         button.titleLabel.shadowOffset = CGSizeZero;

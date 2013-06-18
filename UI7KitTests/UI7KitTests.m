@@ -8,7 +8,7 @@
 
 #import "UI7KitTests.h"
 
-@interface TableViewDelegate : NSObject<UITableViewDelegate>
+@interface TableViewDelegate : NSObject<UITableViewDelegate, UI7Patch>
 
 @end
 
@@ -38,9 +38,9 @@
 
 - (void)testTypeEncoding
 {
-    NSAClass *class = [TableViewDelegate classObject];
-    STAssertEqualObjects([class methodObjectForSelector:@selector(tableView:heightForHeaderInSection:)].typeEncoding, @"f16@0:4@8i12", @"");
-    STAssertEqualObjects([class methodObjectForSelector:@selector(tableView:viewForHeaderInSection:)].typeEncoding, @"@16@0:4@8i12", @"");
+    Class class = [TableViewDelegate class];
+    STAssertEqualObjects([class methodForSelector:@selector(tableView:heightForHeaderInSection:)].typeEncoding, @"f16@0:4@8i12", @"");
+    STAssertEqualObjects([class methodForSelector:@selector(tableView:viewForHeaderInSection:)].typeEncoding, @"@16@0:4@8i12", @"");
 }
 
 @end

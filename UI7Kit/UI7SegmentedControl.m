@@ -43,13 +43,13 @@
 - (void)_segmentedControlInit {
     // Set background images
 
-    UIImage *normalBackgroundImage = [UIImage roundedImageWithSize:CGSizeMake(10.0f, 40.0f)];
+    UIImage *normalBackgroundImage = [UIImage roundedImageWithSize:CGSizeMake(10.0f, 40.0f) color:[UI7Kit kit].tintColor radius:4.0];
     UIImage *selectedBackgroundImage = [UIImage roundedImageWithSize:CGSizeMake(10.0f, 40.0f) color:[UIColor clearColor] radius:UI7ControlRadius];
 
     NSDictionary *attributes = @{
                                  UITextAttributeFont: [UIFont iOS7SystemFontOfSize:13.0 weight:@"Medium"],
-                                 UITextAttributeTextColor: [UIColor iOS7ButtonTitleColor],
-                                 UITextAttributeTextShadowOffset: @(.0),
+                                 UITextAttributeTextColor: [UI7Kit kit].tintColor,
+                                 UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetZero],
                                  };
     [self setTitleTextAttributes:attributes forState:UIControlStateNormal];
 
@@ -64,14 +64,14 @@
                     forState:UIControlStateSelected
                   barMetrics:UIBarMetricsDefault];
 
-    [self setDividerImage:[UIImage roundedImageWithSize:CGSizeMake(1.0, 40.0) color:[UIColor iOS7ButtonTitleColor] radius:0.1f] // FIXME: plain image please
+    [self setDividerImage:[UI7Kit kit].tintColor.image
       forLeftSegmentState:UIControlStateNormal
         rightSegmentState:UIControlStateNormal
                barMetrics:UIBarMetricsDefault];
 
     [self.layer setCornerRadius:4.0f];
     [self.layer setBorderWidth:1.0f];
-    [self.layer setBorderColor:[UIColor iOS7ButtonTitleColor].CGColor];
+    [self.layer setBorderColor:[UI7Kit kit].tintColor.CGColor];
 }
 
 @end
@@ -81,7 +81,7 @@
 
 + (void)initialize {
     if (self == [UI7SegmentedControl class]) {
-        NSAClass *origin = [UISegmentedControl classObject];
+        Class origin = [UISegmentedControl class];
 
         [origin copyToSelector:@selector(__initWithItems:) fromSelector:@selector(initWithItems:)];
         [origin copyToSelector:@selector(__awakeFromNib) fromSelector:@selector(awakeFromNib)];
@@ -89,8 +89,8 @@
 }
 
 + (void)patch {
-    NSAClass *source = [self classObject];
-    NSAClass *target = [UISegmentedControl classObject];
+    Class source = [self class];
+    Class target = [UISegmentedControl class];
 
     [source exportSelector:@selector(initWithItems:) toClass:target];
     [source exportSelector:@selector(awakeFromNib) toClass:target];

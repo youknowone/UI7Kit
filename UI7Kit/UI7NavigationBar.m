@@ -45,7 +45,7 @@
 
 + (void)initialize {
     if (self == [UI7NavigationBar class]) {
-        NSAClass *origin = [UINavigationBar classObject];
+        Class origin = [UINavigationBar class];
 
         [origin copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
         [origin copyToSelector:@selector(__initWithFrame:) fromSelector:@selector(initWithFrame:)];
@@ -54,8 +54,8 @@
 }
 
 + (void)patch {
-    NSAClass *source = [self classObject];
-    NSAClass *target = [UINavigationBar classObject];
+    Class source = [self class];
+    Class target =  [UINavigationBar class];
 
     [source exportSelector:@selector(initWithCoder:) toClass:target];
     [source exportSelector:@selector(initWithFrame:) toClass:target];

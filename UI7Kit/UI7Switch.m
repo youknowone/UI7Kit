@@ -18,6 +18,8 @@
     if ([self respondsToSelector:@selector(onImage)]) {
         self.onImage = [UIImage blankImage];
         self.offImage = [UIImage blankImage];
+        self.tintColor = [UI7Kit kit].tintColor;
+        self.thumbTintColor = [UIColor whiteColor];
     }
 }
 
@@ -27,7 +29,7 @@
 
 + (void)initialize {
     if (self == [UI7Switch class]) {
-        NSAClass *origin = [UISwitch classObject];
+        Class origin = [UISwitch class];
 
         [origin copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
         [origin copyToSelector:@selector(__initWithFrame:) fromSelector:@selector(initWithFrame:)];
@@ -35,8 +37,8 @@
 }
 
 + (void)patch {
-    NSAClass *source = [self classObject];
-    NSAClass *target = [UISwitch classObject];
+    Class source = [self class];
+    Class target = [UISwitch class];
 
     [source exportSelector:@selector(initWithCoder:) toClass:target];
     [source exportSelector:@selector(initWithFrame:) toClass:target];

@@ -27,17 +27,19 @@
      *  Actually, iOS7 back button is not implemented in this way. There is new property about '<' mark.
      *  To implement this in right way, UINavigationBar -drawRect: should be rewritten entirely, in my guess.
      */
-    [self setBackButtonBackgroundImage:[UIImage imageNamed:@"UI7NavigationBarBackButton"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault]; // @2x is not retina image
+    UIImage *backImage = [UIImage imageNamed:@"UI7NavigationBarBackButton"];
+    backImage = [backImage imageByFilledWithColor:[UI7Kit kit].tintColor];
+    [self setBackButtonBackgroundImage:backImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault]; // @2x is not retina image
     [self setTitleTextAttributes:@{
              UITextAttributeFont:font,
-        UITextAttributeTextColor:[UIColor iOS7ButtonTitleColor],
- UITextAttributeTextShadowOffset:@(.0)
+        UITextAttributeTextColor:[UI7Kit kit].tintColor,
+ UITextAttributeTextShadowOffset:[NSValue valueWithUIOffset:UIOffsetZero]
      }
                         forState:UIControlStateNormal];
     [self setTitleTextAttributes:@{
              UITextAttributeFont:font,
         UITextAttributeTextColor:[UIColor iOS7ButtonTitleHighlightedColor],
- UITextAttributeTextShadowOffset:@(.0),
+ UITextAttributeTextShadowOffset:[NSValue valueWithUIOffset:UIOffsetZero],
      }
                         forState:UIControlStateHighlighted];
 }
@@ -57,7 +59,7 @@
 
 + (void)initialize {
     if (self == [UI7BarButtonItem class]) {
-        NSAClass *origin = [UIBarButtonItem classObject];
+        Class origin = [UIBarButtonItem class];
 
         [origin copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
         [origin copyToSelector:@selector(__initWithTitle:style:target:action:) fromSelector:@selector(initWithTitle:style:target:action:)];
@@ -66,8 +68,8 @@
 }
 
 + (void)patch {
-    NSAClass *source = [self classObject];
-    NSAClass *target = [UIBarButtonItem classObject];
+    Class source = [self class];
+    Class target =  [UIBarButtonItem class];
 
     [source exportSelector:@selector(initWithCoder:) toClass:target];
     [source exportSelector:@selector(initWithBarButtonSystemItem:target:action:) toClass:target];

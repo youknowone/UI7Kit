@@ -7,8 +7,7 @@
 //
 
 #import <UIKitExtension/UIKitExtension.h>
-
-extern void UI7KitPatchAll(BOOL override7);
+#import <UI7Kit/UI7KitCore.h>
 
 
 @interface UIDevice (iOS7)
@@ -25,10 +24,10 @@ extern void UI7KitPatchAll(BOOL override7);
 @end
 
 
-@interface NSAClass (MethodCopying)
+@interface NSObject (MethodCopying)
 
-- (void)copyToSelector:(SEL)toSelector fromSelector:(SEL)fromSelector;
-- (void)exportSelector:(SEL)selector toClass:(NSAClass *)toClass;
++ (void)copyToSelector:(SEL)toSelector fromSelector:(SEL)fromSelector;
++ (void)exportSelector:(SEL)selector toClass:(Class)toClass;
 
 @end
 
@@ -36,7 +35,6 @@ extern void UI7KitPatchAll(BOOL override7);
 @interface UIColor (iOS7)
 
 + (UIColor *)iOS7BackgroundColor;
-+ (UIColor *)iOS7ButtonTitleColor;
 + (UIColor *)iOS7ButtonTitleHighlightedColor;
 + (UIColor *)iOS7ButtonTitleEmphasizedColor;
 + (UIColor *)iOS7ButtonTitleEmphasizedHighlightedColor;
@@ -63,13 +61,6 @@ UIKIT_EXTERN const CGFloat UI7ControlRadius;
 - (UIImageView *)view;
 
 + (UIImage *)roundedImageWithSize:(CGSize)size color:(UIColor *)color radius:(CGFloat)radius;
-+ (UIImage *)roundedImageWithSize:(CGSize)size; // default buttoncolor + redius 6
 
 @end
 
-
-@protocol UI7Patch <NSObject>
-
-+ (void)patch;
-
-@end

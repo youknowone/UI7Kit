@@ -18,7 +18,6 @@
 		38017437176989660049D26C /* libUI7Kit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38017423176989650049D26C /* libUI7Kit.a */; };
 		3801743D176989660049D26C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3801743B176989660049D26C /* InfoPlist.strings */; };
 		38017440176989660049D26C /* UI7KitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3801743F176989660049D26C /* UI7KitTests.m */; };
-		3801744F176989B80049D26C /* UI7Kit.m in Sources */ = {isa = PBXBuildFile; fileRef = 3801742A176989660049D26C /* UI7Kit.m */; };
 		38017450176989B80049D26C /* UI7Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 38740493176825D900C0BB18 /* UI7Utilities.m */; };
 		38017451176989B80049D26C /* UI7NavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 38F2BA441767599400F12168 /* UI7NavigationBar.m */; };
 		38017452176989B80049D26C /* UI7Toolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3801740B1767704B0049D26C /* UI7Toolbar.m */; };
@@ -35,6 +34,7 @@
 		382F542417676945004D6F59 /* UI7NavigationBarPortrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 382F542117676933004D6F59 /* UI7NavigationBarPortrait.png */; };
 		382F54261767809E004D6F59 /* UI7Blank.png in Resources */ = {isa = PBXBuildFile; fileRef = 382F54251767809E004D6F59 /* UI7Blank.png */; };
 		38505B30176B1575004A7725 /* UI7AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 38505B2F176B1575004A7725 /* UI7AlertView.m */; };
+		385CE660177009680076C02A /* UI7KitCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 38013FE3176F8352003B7809 /* UI7KitCore.m */; };
 		387558B1176DD00600AE5C8B /* UI7TabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 387558B0176DD00600AE5C8B /* UI7TabBar.m */; };
 		387558B4176DD03F00AE5C8B /* UI7TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 387558B3176DD03F00AE5C8B /* UI7TabBarController.m */; };
 		387558B7176DD46A00AE5C8B /* UI7TabBarBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 387558B5176DD46A00AE5C8B /* UI7TabBarBackground@2x.png */; };
@@ -96,6 +96,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		38013FE2176F8352003B7809 /* UI7KitCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UI7KitCore.h; sourceTree = "<group>"; };
+		38013FE3176F8352003B7809 /* UI7KitCore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UI7KitCore.m; sourceTree = "<group>"; };
 		38016AB8176EF5B400BF421C /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		38016AB9176EF5B400BF421C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		3801740A1767704B0049D26C /* UI7Toolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7Toolbar.h; sourceTree = "<group>"; };
@@ -110,7 +112,6 @@
 		38017418176849680049D26C /* UI7NavigationBarPortraitLandscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7NavigationBarPortraitLandscape@2x.png"; sourceTree = "<group>"; };
 		38017423176989650049D26C /* libUI7Kit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUI7Kit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		38017427176989660049D26C /* UI7Kit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UI7Kit-Prefix.pch"; sourceTree = "<group>"; };
-		3801742A176989660049D26C /* UI7Kit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UI7Kit.m; sourceTree = "<group>"; };
 		38017431176989660049D26C /* UI7KitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UI7KitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3801743A176989660049D26C /* UI7KitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UI7KitTests-Info.plist"; sourceTree = "<group>"; };
 		3801743C176989660049D26C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -328,7 +329,8 @@
 			isa = PBXGroup;
 			children = (
 				38E58A901767576300F6ED19 /* UI7Kit.h */,
-				3801742A176989660049D26C /* UI7Kit.m */,
+				38013FE2176F8352003B7809 /* UI7KitCore.h */,
+				38013FE3176F8352003B7809 /* UI7KitCore.m */,
 				38740492176825D900C0BB18 /* UI7Utilities.h */,
 				38740493176825D900C0BB18 /* UI7Utilities.m */,
 				3801740A1767704B0049D26C /* UI7Toolbar.h */,
@@ -579,7 +581,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				38EEF9C7176A366C0085B09B /* UI7Button.m in Sources */,
-				3801744F176989B80049D26C /* UI7Kit.m in Sources */,
 				38CE37D6176F657800AC0C89 /* UI7SegmentedControl.m in Sources */,
 				38017450176989B80049D26C /* UI7Utilities.m in Sources */,
 				38EEF9CA176A482C0085B09B /* UI7Switch.m in Sources */,
@@ -591,6 +592,7 @@
 				38017456176989B80049D26C /* UI7TableView.m in Sources */,
 				38505B30176B1575004A7725 /* UI7AlertView.m in Sources */,
 				387A6FE4176CC58F00B91354 /* UI7ActionSheet.m in Sources */,
+				385CE660177009680076C02A /* UI7KitCore.m in Sources */,
 				387558B1176DD00600AE5C8B /* UI7TabBar.m in Sources */,
 				387558B4176DD03F00AE5C8B /* UI7TabBarController.m in Sources */,
 				387558BB176DEDDF00AE5C8B /* UI7TabBarItem.m in Sources */,

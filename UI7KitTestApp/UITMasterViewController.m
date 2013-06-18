@@ -12,7 +12,7 @@
 
 @interface UITMasterViewController ()
 
-@property(nonatomic, retain) NSArray *details, *issues;
+@property(nonatomic, strong) NSArray *details, *issues;
 
 @end
 

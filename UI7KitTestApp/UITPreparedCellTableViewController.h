@@ -8,6 +8,6 @@
 
 @interface UITPreparedCellTableViewController : UIViewController<UITableViewDelegate>
 
-@property(nonatomic, retain) IBOutlet UIAPreparedCellTableView *tableView;
+@property(nonatomic, strong) IBOutlet UIAPreparedCellTableView *tableView;
 
 @end

@@ -11,6 +11,7 @@
  *      UI7KitPatchAll(NO); // in main.m, before UIApplicationMain()
  */
 
+#import <UI7Kit/UI7KitCore.h>
 #import <UI7Kit/UI7Utilities.h>
 #import <UI7Kit/UI7BarButtonItem.h>
 #import <UI7Kit/UI7NavigationBar.h>
@@ -21,5 +22,3 @@
 #import <UI7Kit/UI7Button.h>
 #import <UI7Kit/UI7AlertView.h>
 #import <UI7Kit/UI7ActionSheet.h>
-
-FOUNDATION_EXTERN void UI7KitPatchAll(BOOL override7);

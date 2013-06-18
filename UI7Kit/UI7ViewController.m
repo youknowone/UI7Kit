@@ -51,7 +51,8 @@ static NSMutableDictionary *UI7ViewControllerEditButtonItems = nil;
         UI7ViewControllerNavigationItems = [[NSMutableDictionary alloc] init];
         UI7ViewControllerEditButtonItems = [[NSMutableDictionary alloc] init];
 
-        NSAClass *origin = [UIViewController classObject];
+        Class origin = [UIViewController class];
+
         [origin copyToSelector:@selector(__initViewControllerWithCoder:) fromSelector:@selector(initWithCoder:)];
         [origin copyToSelector:@selector(__initViewControllerWithNibName:bundle:) fromSelector:@selector(initWithNibName:bundle:)];
         [origin copyToSelector:@selector(__deallocViewController) fromSelector:@selector(dealloc)];
@@ -59,8 +60,8 @@ static NSMutableDictionary *UI7ViewControllerEditButtonItems = nil;
 }
 
 + (void)patch {
-    NSAClass *source = [self classObject];
-    NSAClass *target = [UIViewController classObject];
+    Class source = [self class];
+    Class target = [UIViewController class];
 
     [source exportSelector:@selector(initWithCoder:) toClass:target];
     [source exportSelector:@selector(initWithNibName:bundle:) toClass:target];
@@ -121,8 +122,8 @@ static NSMutableDictionary *UI7ViewControllerEditButtonItems = nil;
 
 + (void)initialize {
     if (self == [UI7TableViewController class]) {
-        NSAClass *source = [UI7ViewController classObject];
-        NSAClass *target = [UI7TableViewController classObject];
+        Class source = [UI7ViewController class];
+        Class target = [UI7TableViewController class];
 
         [source exportSelector:@selector(navigationItem) toClass:target];
         [source exportSelector:@selector(editButtonItem) toClass:target];

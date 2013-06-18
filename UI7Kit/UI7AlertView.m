@@ -98,7 +98,7 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
         UI7AlertViewBackgroundViews = [[NSMutableDictionary alloc] init];
         UI7AlertViewStrokeViews = [[NSMutableDictionary alloc] init];
 
-        NSAClass *origin = [UIAlertView classObject];
+        Class origin = [UIAlertView class];
 
         [origin copyToSelector:@selector(__init) fromSelector:@selector(init)];
         [origin copyToSelector:@selector(__show) fromSelector:@selector(show)];
@@ -108,8 +108,8 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
 }
 
 + (void)patch {
-    NSAClass *source = [self classObject];
-    NSAClass *target = [UIAlertView classObject];
+    Class source = [self class];
+    Class target = [UIAlertView class];
 
     [source exportSelector:@selector(init) toClass:target];
     [source exportSelector:@selector(show) toClass:target];
@@ -159,7 +159,7 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
     CGFloat highest = self.frame.size.height;
     for (UIAlertButton *button in self.buttons) {
         button.titleLabel.font = [UIFont iOS7SystemFontOfSize:16.0 weight:UI7FontWeightLight];
-        [button setTitleColor:[UIColor iOS7ButtonTitleColor] forState:UIControlStateNormal];
+        [button setTitleColor:[UI7Kit kit].tintColor forState:UIControlStateNormal];
         [button setTitleColor:[UIColor iOS7ButtonTitleHighlightedColor] forState:UIControlStateHighlighted];
         button.titleLabel.shadowOffset = CGSizeZero;
         [button setBackgroundImage:nil forState:UIControlStateNormal];

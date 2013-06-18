@@ -26,17 +26,17 @@
 @end
 
 
-@implementation NSAClass (MethodCopying)
+@implementation NSObject (MethodCopying)
 
-- (void)copyToSelector:(SEL)toSelector fromSelector:(SEL)fromSelector {
-    NSAMethod *toMethod = [self methodObjectForSelector:toSelector];
-    NSAMethod *fromMethod = [self methodObjectForSelector:fromSelector];
++ (void)copyToSelector:(SEL)toSelector fromSelector:(SEL)fromSelector {
+    NSAMethod *toMethod = [self methodForSelector:toSelector];
+    NSAMethod *fromMethod = [self methodForSelector:fromSelector];
     toMethod.implementation = fromMethod.implementation;
 }
 
-- (void)exportSelector:(SEL)selector toClass:(NSAClass *)toClass {
-    NSAMethod *fromMethod = [self methodObjectForSelector:selector];
-    NSAMethod *toMethod = [toClass methodObjectForSelector:selector];
++ (void)exportSelector:(SEL)selector toClass:(Class )toClass {
+    NSAMethod *fromMethod = [self methodForSelector:selector];
+    NSAMethod *toMethod = [toClass methodForSelector:selector];
     toMethod.implementation = fromMethod.implementation;
 }
 
@@ -51,10 +51,6 @@ NSString *UI7FontWeightBold = @"Bold";
 
 + (UIColor *)iOS7BackgroundColor {
     return [UIColor colorWithWhite:248/255.0f alpha:1.0];
-}
-
-+ (UIColor *)iOS7ButtonTitleColor {
-    return [UIColor colorWith8bitRed:0 green:126 blue:245 alpha:255];
 }
 
 + (UIColor *)iOS7ButtonTitleHighlightedColor {
@@ -107,10 +103,6 @@ const CGFloat UI7ControlRadius = 6.0;
     UIBezierPath* path = [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:radius];
 
     return [UIImage imageWithBezierPath:path color:color backgroundColor:color];
-}
-
-+ (UIImage *)roundedImageWithSize:(CGSize)size {
-    return [self roundedImageWithSize:size color:[UIColor iOS7ButtonTitleColor] radius:6.0];
 }
 
 @end

@@ -37,15 +37,15 @@
 
 + (void)initialize {
     if (self == [UI7TabBarItem class]) {
-        NSAClass *origin = [UITabBarItem classObject];
+        Class origin = [UITabBarItem class];
 
         [origin copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
     }
 }
 
 + (void)patch {
-    NSAClass *source = [self classObject];
-    NSAClass *target = [UITabBarItem classObject];
+    Class source = [self class];
+    Class target = [UITabBarItem class];
 
     [source exportSelector:@selector(initWithCoder:) toClass:target];
     [source exportSelector:@selector(_updateImageWithTintColor:isSelected:getImageOffset:) toClass:target];

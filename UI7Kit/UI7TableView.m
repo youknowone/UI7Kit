@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 youknowone.org. All rights reserved.
 //
 
-#import "NSAClass.h"
-
 #import "UI7TableView.h"
 
 @implementation UITableView (Patch)
@@ -29,7 +27,7 @@
 
 + (void)initialize {
     if (self == [UI7TableView class]) {
-        NSAClass *origin = [UITableView classObject];
+        Class origin = [UITableView class];
 
         [origin copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
         [origin copyToSelector:@selector(__initWithFrame:) fromSelector:@selector(initWithFrame:)];
@@ -38,8 +36,8 @@
 }
 
 + (void)patch {
-    NSAClass *source = [self classObject];
-    NSAClass *target = [UITableView classObject];
+    Class source = [self class];
+    Class target = [UITableView class];
 
     [source exportSelector:@selector(initWithCoder:) toClass:target];
     [source exportSelector:@selector(initWithFrame:) toClass:target];
@@ -109,14 +107,14 @@ UIView *UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableVie
 
 - (void)setDelegate:(id<UITableViewDelegate>)delegate {
     if (self.delegate) {
-        NSAClass *delegateClass = [(NSObject *)self.delegate classObject];
+        Class delegateClass = [(NSObject *)self.delegate class];
         if ([delegateClass methodImplementationForSelector:@selector(tableView:viewForHeaderInSection:)] == (IMP)UI7TableViewDelegateViewForHeaderInSection) {
             // TODO: probably we should remove this methods.
             //            class_removeMethods(￼, ￼)
         }
     }
     if (delegate) {
-        NSAClass *delegateClass = [(NSObject *)delegate classObject];
+        Class delegateClass = [(NSObject *)delegate class];
         if ([self.dataSource respondsToSelector:@selector(tableView:titleForHeaderInSection:)] && ![delegate respondsToSelector:@selector(tableView:viewForHeaderInSection:)]) {
             [delegateClass addMethodForSelector:@selector(tableView:viewForHeaderInSection:) implementation:(IMP)UI7TableViewDelegateViewForHeaderInSection types:@"@16@0:4@8i12"];
             if (![delegate respondsToSelector:@selector(tableView:heightForHeaderInSection:)]) {
@@ -189,7 +187,7 @@ UIView *UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableVie
 
 + (void)initialize {
     if (self == [UI7TableViewCell class]) {
-        NSAClass *origin = [UITableViewCell classObject];
+        Class origin = [UITableViewCell class];
 
         [origin copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
         [origin copyToSelector:@selector(__initWithStyle:reuseIdentifier:) fromSelector:@selector(initWithStyle:reuseIdentifier:)];
@@ -197,8 +195,8 @@ UIView *UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableVie
 }
 
 + (void)patch {
-    NSAClass *source = [self classObject];
-    NSAClass *target = [UITableViewCell classObject];
+    Class source = [self class];
+    Class target = [UITableViewCell class];
 
     [source exportSelector:@selector(initWithCoder:) toClass:target];
     [source exportSelector:@selector(initWithStyle:reuseIdentifier:) toClass:target];

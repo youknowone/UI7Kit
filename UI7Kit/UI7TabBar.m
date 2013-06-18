@@ -25,7 +25,7 @@
 
 - (void)_tabBarInit {
     self.tintColor = [UIColor grayColor];
-    self.selectedImageTintColor = [UIColor iOS7ButtonTitleColor];
+    self.selectedImageTintColor = [UI7Kit kit].tintColor;
     self.backgroundColor = [UIColor iOS7BackgroundColor];
     self.backgroundImage = [UIImage imageNamed:@"UI7TabBarBackground"]; // Makes tab bar flat
     self.selectionIndicatorImage = [UIImage blankImage]; // Removes selection image
@@ -35,7 +35,7 @@
     // private properties
     [self _setLabelFont:[UIFont iOS7SystemFontOfSize:10.0 weight:@"Light"]];
     [self _setLabelShadowOffset:CGSizeZero];
-    [self _setLabelTextColor:[UIColor grayColor] selectedTextColor:[UIColor iOS7ButtonTitleColor]];
+    [self _setLabelTextColor:[UIColor grayColor] selectedTextColor:[UI7Kit kit].tintColor];
 }
 
 @end
@@ -45,7 +45,7 @@
 
 + (void)initialize {
     if (self == [UI7TabBar class]) {
-        NSAClass *origin = [UITabBar classObject];
+        Class origin = [UITabBar class];
 
         [origin copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
         [origin copyToSelector:@selector(__initWithFrame:) fromSelector:@selector(initWithFrame:)];
@@ -53,8 +53,8 @@
 }
 
 + (void)patch {
-    NSAClass *source = [self classObject];
-    NSAClass *target = [UITabBar classObject];
+    Class source = [self class];
+    Class target = [UITabBar class];
 
     [source exportSelector:@selector(initWithCoder:) toClass:target];
     [source exportSelector:@selector(initWithFrame:) toClass:target];

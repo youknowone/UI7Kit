@@ -8,7 +8,7 @@
 
 @interface UITTextViewController : UIViewController
 
-@property(nonatomic, retain) IBOutlet UIAPlaceholderTextView *textView;
+@property(nonatomic, strong) IBOutlet UIAPlaceholderTextView *textView;
 
 - (IBAction)switched:(id)sender;
 - (IBAction)resign:(id)sender;

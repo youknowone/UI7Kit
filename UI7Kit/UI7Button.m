@@ -28,7 +28,7 @@
 
 + (void)initialize {
     if (self == [UI7Button class]) {
-        NSAClass *origin = [UIButton classObject];
+        Class origin = [UIButton class];
 
         [origin copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
         [origin classMethodObjectForSelector:@selector(__buttonWithType:)].implementation = [origin classMethodObjectForSelector:@selector(buttonWithType:)].implementation;
@@ -37,8 +37,8 @@
 }
 
 + (void)patch {
-    NSAClass *source = [self classObject];
-    NSAClass *target = [UIButton classObject];
+    Class source = [self class];
+    Class target =  [UIButton class];
 
     [source exportSelector:@selector(initWithCoder:) toClass:target];
     [target classMethodObjectForSelector:@selector(buttonWithType:)].implementation = [source classMethodObjectForSelector:@selector(buttonWithType:)].implementation;
