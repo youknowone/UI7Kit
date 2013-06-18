@@ -30,6 +30,8 @@
     UIImage *backImage = [UIImage imageNamed:@"UI7NavigationBarBackButton"];
     backImage = [backImage imageByFilledWithColor:[UI7Kit kit].tintColor];
     [self setBackButtonBackgroundImage:backImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault]; // @2x is not retina image
+    backImage = [backImage imageByFilledWithColor:[UI7Kit kit].tintColor.highligtedColor];
+    [self setBackButtonBackgroundImage:backImage forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
     [self setTitleTextAttributes:@{
              UITextAttributeFont:font,
         UITextAttributeTextColor:[UI7Kit kit].tintColor,
@@ -38,7 +40,7 @@
                         forState:UIControlStateNormal];
     [self setTitleTextAttributes:@{
              UITextAttributeFont:font,
-        UITextAttributeTextColor:[UIColor iOS7ButtonTitleHighlightedColor],
+        UITextAttributeTextColor:[UI7Kit kit].tintColor.highligtedColor,
  UITextAttributeTextShadowOffset:[NSValue valueWithUIOffset:UIOffsetZero],
      }
                         forState:UIControlStateHighlighted];
