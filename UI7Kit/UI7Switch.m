@@ -18,7 +18,7 @@
     if ([self respondsToSelector:@selector(onImage)]) {
         self.onImage = [UIImage clearImage];
         self.offImage = [UIImage clearImage];
-        self.tintColor = [UI7Kit kit].tintColor;
+        self.tintColor = self.tintColor;
         self.thumbTintColor = [UIColor whiteColor];
     }
 }

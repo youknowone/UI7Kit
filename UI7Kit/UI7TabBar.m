@@ -35,7 +35,7 @@
     // private properties
     [self _setLabelFont:[UIFont iOS7SystemFontOfSize:10.0 weight:@"Light"]];
     [self _setLabelShadowOffset:CGSizeZero];
-    [self _setLabelTextColor:[UIColor grayColor] selectedTextColor:[UI7Kit kit].tintColor];
+    [self _setLabelTextColor:[UIColor grayColor] selectedTextColor:self.tintColor];
 }
 
 @end

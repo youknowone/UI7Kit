@@ -22,25 +22,27 @@
 
 
 - (void)_barButtonItemInitWithFont:(UIFont *)font {
+    self.tintColor = [UI7Kit kit].tintColor; // FIXME
+
     [self setBackgroundImage:[UIImage clearImage] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     /*  FIXME:
      *  Actually, iOS7 back button is not implemented in this way. There is new property about '<' mark.
      *  To implement this in right way, UINavigationBar -drawRect: should be rewritten entirely, in my guess.
      */
     UIImage *backImage = [UIImage imageNamed:@"UI7NavigationBarBackButton"];
-    backImage = [backImage imageByFilledWithColor:[UI7Kit kit].tintColor];
+    backImage = [backImage imageByFilledWithColor:self.tintColor];
     [self setBackButtonBackgroundImage:backImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault]; // @2x is not retina image
-    backImage = [backImage imageByFilledWithColor:[UI7Kit kit].tintColor.highligtedColor];
+    backImage = [backImage imageByFilledWithColor:self.tintColor.highligtedColor];
     [self setBackButtonBackgroundImage:backImage forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
     [self setTitleTextAttributes:@{
              UITextAttributeFont:font,
-        UITextAttributeTextColor:[UI7Kit kit].tintColor,
+        UITextAttributeTextColor:self.tintColor,
  UITextAttributeTextShadowOffset:[NSValue valueWithUIOffset:UIOffsetZero]
      }
                         forState:UIControlStateNormal];
     [self setTitleTextAttributes:@{
              UITextAttributeFont:font,
-        UITextAttributeTextColor:[UI7Kit kit].tintColor.highligtedColor,
+        UITextAttributeTextColor:self.tintColor.highligtedColor,
  UITextAttributeTextShadowOffset:[NSValue valueWithUIOffset:UIOffsetZero],
      }
                         forState:UIControlStateHighlighted];

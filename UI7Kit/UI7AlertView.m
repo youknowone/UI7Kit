@@ -160,7 +160,7 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
     for (UIAlertButton *button in self.buttons) {
         button.titleLabel.font = [UIFont iOS7SystemFontOfSize:16.0 weight:UI7FontWeightLight];
         [button setTitleColor:[UIColor iOS7ButtonTitleColor] forState:UIControlStateNormal];
-        [button setTitleColor:[UI7Kit kit].tintColor.highligtedColor forState:UIControlStateHighlighted];
+        [button setTitleColor:[UIColor iOS7ButtonTitleColor].highligtedColor forState:UIControlStateHighlighted];
         button.titleLabel.shadowOffset = CGSizeZero;
         [button setBackgroundImage:nil forState:UIControlStateNormal];
         [button setBackgroundImage:nil forState:UIControlStateHighlighted];

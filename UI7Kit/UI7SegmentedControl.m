@@ -32,6 +32,7 @@
 
 #import <QuartzCore/QuartzCore.h>
 
+#import "UI7View.h"
 #import "UI7SegmentedControl.h"
 
 
@@ -42,15 +43,24 @@
 - (id)__initWithItems:(NSArray *)items { assert(NO); return nil; }
 - (void)__awakeFromNib { assert(NO); }
 
+- (UIColor *)__tintColor { assert(NO); return nil; }
+- (UIColor *)_tintColor {
+    UIColor *tintColor = [self __tintColor];
+    if (tintColor == nil) {
+        tintColor = self.superview.tintColor;
+    }
+    return tintColor;
+}
+
 - (void)_segmentedControlInit {
     // Set background images
 
-    UIImage *normalBackgroundImage = [UIImage roundedImageWithSize:CGSizeMake(10.0f, 40.0f) color:[UI7Kit kit].tintColor radius:4.0];
+    UIImage *backgroundImage = [UIImage roundedImageWithSize:CGSizeMake(10.0f, 40.0f) color:self.tintColor radius:4.0];
     UIImage *selectedBackgroundImage = [UIImage roundedImageWithSize:CGSizeMake(10.0f, 40.0f) color:[UIColor clearColor] radius:UI7ControlRadius];
 
     NSDictionary *attributes = @{
                                  UITextAttributeFont: [UIFont iOS7SystemFontOfSize:13.0 weight:@"Medium"],
-                                 UITextAttributeTextColor: [UI7Kit kit].tintColor,
+                                 UITextAttributeTextColor: self.tintColor,
                                  UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetZero],
                                  };
     [self setTitleTextAttributes:attributes forState:UIControlStateNormal];
@@ -62,18 +72,18 @@
                     forState:UIControlStateNormal
                   barMetrics:UIBarMetricsDefault];
 
-    [self setBackgroundImage:normalBackgroundImage
+    [self setBackgroundImage:backgroundImage
                     forState:UIControlStateSelected
                   barMetrics:UIBarMetricsDefault];
 
-    [self setDividerImage:[UI7Kit kit].tintColor.image
+    [self setDividerImage:self.tintColor.image
       forLeftSegmentState:UIControlStateNormal
         rightSegmentState:UIControlStateNormal
                barMetrics:UIBarMetricsDefault];
 
     self.layer.cornerRadius = 4.0f;
     self.layer.borderWidth = 1.0f;
-    self.layer.borderColor = [UI7Kit kit].tintColor.CGColor;
+    self.layer.borderColor = self.tintColor.CGColor;
 }
 
 @end
@@ -87,6 +97,7 @@
 
         [origin copyToSelector:@selector(__initWithItems:) fromSelector:@selector(initWithItems:)];
         [origin copyToSelector:@selector(__awakeFromNib) fromSelector:@selector(awakeFromNib)];
+        [origin copyToSelector:@selector(__tintColor) fromSelector:@selector(tintColor)];
     }
 }
 
@@ -96,6 +107,7 @@
 
     [source exportSelector:@selector(initWithItems:) toClass:target];
     [source exportSelector:@selector(awakeFromNib) toClass:target];
+    [target methodForSelector:@selector(tintColor)].implementation = [target methodForSelector:@selector(_tintColor)].implementation;
 }
 
 - (void)awakeFromNib {
@@ -105,7 +117,7 @@
 
 - (id)initWithItems:(NSArray *)items {
     self = [self __initWithItems:items];
-    if (self == nil) {
+    if (self != nil) {
         [self _segmentedControlInit];
     }
     return self;
@@ -113,10 +125,14 @@
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
-    if (self == nil) {
+    if (self != nil) {
         [self _segmentedControlInit];
     }
     return self;
+}
+
+- (UIColor *)tintColor {
+    return [super _tintColor];
 }
 
 @end

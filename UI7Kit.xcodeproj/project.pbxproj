@@ -45,6 +45,8 @@
 		387558C5176DFA8600AE5C8B /* UI7NavigationBarBackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 387558C4176DFA8600AE5C8B /* UI7NavigationBarBackButton@2x.png */; };
 		387A6FE4176CC58F00B91354 /* UI7ActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 387A6FE3176CC58F00B91354 /* UI7ActionSheet.m */; };
 		3886F6FE17709EF300890D47 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3886F6FD17709EF300890D47 /* QuartzCore.framework */; };
+		3886F7011770AAD800890D47 /* UI7Stepper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886F7001770AAD700890D47 /* UI7Stepper.m */; };
+		3886F7041770B10800890D47 /* UI7View.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886F7031770B10700890D47 /* UI7View.m */; };
 		3888FC62176C7C7900489638 /* UITIssue1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3888FC61176C7C7900489638 /* UITIssue1ViewController.m */; };
 		3888FC63176C8EAD00489638 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383764E513373155007072FD /* CoreGraphics.framework */; };
 		38AF86CF1769BC8000BFBD29 /* libUI7Kit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38017423176989650049D26C /* libUI7Kit.a */; };
@@ -149,6 +151,10 @@
 		387A6FE2176CC58F00B91354 /* UI7ActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7ActionSheet.h; sourceTree = "<group>"; };
 		387A6FE3176CC58F00B91354 /* UI7ActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7ActionSheet.m; sourceTree = "<group>"; };
 		3886F6FD17709EF300890D47 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		3886F6FF1770AAD700890D47 /* UI7Stepper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7Stepper.h; sourceTree = "<group>"; };
+		3886F7001770AAD700890D47 /* UI7Stepper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7Stepper.m; sourceTree = "<group>"; };
+		3886F7021770B10700890D47 /* UI7View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7View.h; sourceTree = "<group>"; };
+		3886F7031770B10700890D47 /* UI7View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7View.m; sourceTree = "<group>"; };
 		3888FC60176C7C7900489638 /* UITIssue1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITIssue1ViewController.h; sourceTree = "<group>"; };
 		3888FC61176C7C7900489638 /* UITIssue1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITIssue1ViewController.m; sourceTree = "<group>"; };
 		38BC0E5A173E821700F36497 /* UITSubviewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITSubviewTableViewController.h; sourceTree = "<group>"; };
@@ -327,6 +333,8 @@
 				38013FE3176F8352003B7809 /* UI7KitCore.m */,
 				38740492176825D900C0BB18 /* UI7Utilities.h */,
 				38740493176825D900C0BB18 /* UI7Utilities.m */,
+				3886F7021770B10700890D47 /* UI7View.h */,
+				3886F7031770B10700890D47 /* UI7View.m */,
 				3801740A1767704B0049D26C /* UI7Toolbar.h */,
 				3801740B1767704B0049D26C /* UI7Toolbar.m */,
 				38017410176776020049D26C /* UI7BarButtonItem.h */,
@@ -355,6 +363,8 @@
 				387558B3176DD03F00AE5C8B /* UI7TabBarController.m */,
 				38CE37D3176F4C8400AC0C89 /* UI7SegmentedControl.h */,
 				38CE37D4176F4C8400AC0C89 /* UI7SegmentedControl.m */,
+				3886F6FF1770AAD700890D47 /* UI7Stepper.h */,
+				3886F7001770AAD700890D47 /* UI7Stepper.m */,
 				380174601769FE390049D26C /* Resources */,
 				38017426176989660049D26C /* Supporting Files */,
 			);
@@ -588,6 +598,8 @@
 				387558B1176DD00600AE5C8B /* UI7TabBar.m in Sources */,
 				387558B4176DD03F00AE5C8B /* UI7TabBarController.m in Sources */,
 				387558BB176DEDDF00AE5C8B /* UI7TabBarItem.m in Sources */,
+				3886F7011770AAD800890D47 /* UI7Stepper.m in Sources */,
+				3886F7041770B10800890D47 /* UI7View.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
