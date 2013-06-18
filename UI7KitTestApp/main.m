@@ -27,6 +27,7 @@ int main(int argc, char *argv[]) {
     @autoreleasepool {
         [UI7Kit patchIfNeeded];
         [[UI7Kit kit] setTintColor:[UIColor colorWith32bitColor:UI7RandomColor()]];
+        [[UI7Kit kit] setTintColor:[UIColor colorWith8bitRed:250 green:140 blue:0 alpha:255]];
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([UITAppDelegate class]));
     }
 }

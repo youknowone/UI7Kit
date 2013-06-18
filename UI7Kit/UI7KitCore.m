@@ -49,6 +49,7 @@ UI7Kit *UI7KitSharedObject = nil;
          @"UI7TabBar",
          @"UI7TabBarItem",
          @"UI7SegmentedControl",
+         @"UI7Stepper",
          ]) {
         Class class = NSClassFromString(className);
         [class patch];
