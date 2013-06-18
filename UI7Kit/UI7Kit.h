@@ -11,6 +11,9 @@
  *      UI7KitPatchAll(NO); // in main.m, before UIApplicationMain()
  */
 
+#import <QuartzCore/QuartzCore.h>
+#import <UIKitExtension/UIKitExtension.h>
+
 #import <UI7Kit/UI7KitCore.h>
 #import <UI7Kit/UI7Utilities.h>
 #import <UI7Kit/UI7BarButtonItem.h>

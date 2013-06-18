@@ -30,6 +30,8 @@
 //  THE SOFTWARE.
 //
 
+#import <QuartzCore/QuartzCore.h>
+
 #import "UI7SegmentedControl.h"
 
 
@@ -69,9 +71,9 @@
         rightSegmentState:UIControlStateNormal
                barMetrics:UIBarMetricsDefault];
 
-    [self.layer setCornerRadius:4.0f];
-    [self.layer setBorderWidth:1.0f];
-    [self.layer setBorderColor:[UI7Kit kit].tintColor.CGColor];
+    self.layer.cornerRadius = 4.0f;
+    self.layer.borderWidth = 1.0f;
+    self.layer.borderColor = [UI7Kit kit].tintColor.CGColor;
 }
 
 @end

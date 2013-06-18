@@ -10,4 +10,5 @@
 
 #ifdef __OBJC__
     #import <UI7Kit/UI7Kit.h>
+    #import <QuartzCore/QuartzCore.h>
 #endif
