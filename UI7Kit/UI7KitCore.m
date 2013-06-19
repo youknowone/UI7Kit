@@ -48,6 +48,7 @@ UI7Kit *UI7KitSharedObject = nil;
          @"UI7ActionSheet",
          @"UI7TabBar",
          @"UI7TabBarItem",
+         @"UI7Toolbar",
          @"UI7SegmentedControl",
          @"UI7Stepper",
          @"UI7Slider",

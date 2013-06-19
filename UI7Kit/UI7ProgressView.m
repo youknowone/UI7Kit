@@ -14,6 +14,7 @@
 
 - (id)__initWithFrame:(CGRect)frame { assert(NO); return nil; }
 - (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
+- (id)__initWithProgressViewStyle:(UIProgressViewStyle)style { assert(NO); return nil; }
 
 - (void)_progressViewInit {
     self.progressTintColor = self.tintColor;
@@ -43,6 +44,7 @@
 
         [origin copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
         [origin copyToSelector:@selector(__initWithFrame:) fromSelector:@selector(initWithFrame:)];
+        [origin copyToSelector:@selector(__initWithProgressViewStyle:) fromSelector:@selector(initWithProgressViewStyle:)];
     }
 }
 
@@ -52,6 +54,7 @@
 
     [origin exportSelector:@selector(initWithFrame:) toClass:target];
     [origin exportSelector:@selector(initWithCoder:) toClass:target];
+    [origin exportSelector:@selector(initWithProgressViewStyle:) toClass:target];
 }
 
 - (id)initWithFrame:(CGRect)frame {
@@ -64,6 +67,14 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [self __initWithCoder:aDecoder];
+    if (self != nil) {
+        [self _progressViewInit];
+    }
+    return self;
+}
+
+- (id)initWithProgressViewStyle:(UIProgressViewStyle)style {
+    self = [self __initWithProgressViewStyle:style];
     if (self != nil) {
         [self _progressViewInit];
     }

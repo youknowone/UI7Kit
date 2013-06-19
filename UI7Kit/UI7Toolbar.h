@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 youknowone.org. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <UI7Kit/UI7Utilities.h>
 
-@interface UI7Toolbar : UIToolbar
+@interface UI7Toolbar : UIToolbar<UI7Patch>
 
 @end

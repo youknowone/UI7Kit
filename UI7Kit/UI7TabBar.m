@@ -27,7 +27,14 @@
     self.tintColor = [UIColor grayColor];
     self.selectedImageTintColor = [UI7Kit kit].tintColor;
     self.backgroundColor = [UIColor iOS7BackgroundColor];
-    self.backgroundImage = [UIImage imageNamed:@"UI7TabBarBackground"]; // Makes tab bar flat
+
+    UIGraphicsBeginImageContext(CGSizeMake(1.0, 3.0));
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [[UIColor colorWith8bitWhite:178 alpha:255] set];
+    CGContextFillRect(context, CGRectMake(.0, .0, 1.0, 1.0));
+    UIImage *backgroundImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    self.backgroundImage = backgroundImage; // Makes tab bar flat
     self.selectionIndicatorImage = [UIImage clearImage]; // Removes selection image
     if ([self respondsToSelector:@selector(setShadowImage:)]) {
         self.shadowImage = [UIImage clearImage];

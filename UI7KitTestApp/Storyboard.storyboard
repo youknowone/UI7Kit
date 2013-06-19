@@ -344,6 +344,13 @@
                                     <action selector="showActionSheet:" destination="Sei-zQ-6Ij" eventType="valueChanged" id="t1p-gB-Rzu"/>
                                 </connections>
                             </switch>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="bvp-0E-App" customClass="UI7Toolbar">
+                                <rect key="frame" x="0.0" y="411" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="ToolbarButton" id="VL2-W4-tOp"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>

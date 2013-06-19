@@ -29,8 +29,15 @@
 
 - (void)_navigationBarInit {
     self.backgroundColor = [UIColor iOS7BackgroundColor];
-    [self setBackgroundImage:[UIImage imageNamed:@"UI7NavigationBarPortrait"] forBarMetrics:UIBarMetricsDefault];
-    [self setBackgroundImage:[UIImage imageNamed:@"UI7NavigationBarLandscape"] forBarMetrics:UIBarMetricsLandscapePhone];
+    UIGraphicsBeginImageContext(CGSizeMake(1.0, 3.0));
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [[UIColor colorWith8bitWhite:178 alpha:255] set];
+    CGContextFillRect(context, CGRectMake(.0, 2.0, 1.0, 1.0));
+    UIImage *backgroundImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+
+    [self setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
+    [self setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsLandscapePhone];
     [self setTitleTextAttributes:@{
                                    UITextAttributeFont: [UIFont iOS7SystemFontOfSize:17.0 weight:UI7FontWeightMedium],
                                    UITextAttributeTextColor: [UIColor blackColor],
