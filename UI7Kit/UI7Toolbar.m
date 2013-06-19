@@ -23,7 +23,7 @@
     UIImage *backgroundImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
 
-    [self setBackgroundImage:backgroundImage forToolbarPosition:UIBarPositionBottom barMetrics:UIBarMetricsDefault];
+    [self setBackgroundImage:backgroundImage forToolbarPosition:UIToolbarPositionBottom barMetrics:UIBarMetricsDefault];
 
     UIGraphicsBeginImageContext(CGSizeMake(1.0, 3.0));
     context = UIGraphicsGetCurrentContext();
@@ -32,8 +32,7 @@
     backgroundImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
 
-    [self setBackgroundImage:backgroundImage forToolbarPosition:UIBarPositionTop barMetrics:UIBarMetricsDefault];
-    [self setBackgroundImage:backgroundImage forToolbarPosition:UIBarPositionTopAttached barMetrics:UIBarMetricsDefault];
+    [self setBackgroundImage:backgroundImage forToolbarPosition:UIToolbarPositionTop barMetrics:UIBarMetricsDefault];
 }
 
 @end
@@ -60,7 +59,7 @@
 }
 
 - (id)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
+    self = [self __initWithFrame:frame];
     if (self) {
         [self _toolbarInit];
     }
@@ -68,7 +67,7 @@
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
-    self = [super initWithCoder:aDecoder];
+    self = [self __initWithCoder:aDecoder];
     if (self) {
         [self _toolbarInit];
     }
