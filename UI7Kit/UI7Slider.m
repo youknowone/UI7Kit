@@ -22,6 +22,8 @@
 
     UIImage *maximumTrackImage = [UIImage imageWithColor:self.maximumTrackTintColor size:CGSizeMake(1.0, 2.0)];
     [self setMaximumTrackImage:maximumTrackImage forState:UIControlStateNormal];
+    UIImage *minimumTrackImage = [UIImage imageWithColor:self.minimumTrackTintColor size:CGSizeMake(1.0, 2.0)];
+    [self setMinimumTrackImage:minimumTrackImage forState:UIControlStateNormal];
 }
 
 @end

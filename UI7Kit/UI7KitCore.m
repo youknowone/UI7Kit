@@ -51,6 +51,7 @@ UI7Kit *UI7KitSharedObject = nil;
          @"UI7SegmentedControl",
          @"UI7Stepper",
          @"UI7Slider",
+         @"UI7ProgressView",
          ]) {
         Class class = NSClassFromString(className);
         [class patch];

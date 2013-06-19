@@ -34,6 +34,7 @@
 		382F542417676945004D6F59 /* UI7NavigationBarPortrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 382F542117676933004D6F59 /* UI7NavigationBarPortrait.png */; };
 		38505B30176B1575004A7725 /* UI7AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 38505B2F176B1575004A7725 /* UI7AlertView.m */; };
 		385CE660177009680076C02A /* UI7KitCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 38013FE3176F8352003B7809 /* UI7KitCore.m */; };
+		3861E06B1771F9BC00AA8DE4 /* UI7ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3861E06A1771F9BC00AA8DE4 /* UI7ProgressView.m */; };
 		387558B1176DD00600AE5C8B /* UI7TabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 387558B0176DD00600AE5C8B /* UI7TabBar.m */; };
 		387558B4176DD03F00AE5C8B /* UI7TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 387558B3176DD03F00AE5C8B /* UI7TabBarController.m */; };
 		387558B7176DD46A00AE5C8B /* UI7TabBarBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 387558B5176DD46A00AE5C8B /* UI7TabBarBackground@2x.png */; };
@@ -136,6 +137,8 @@
 		38485C5F1710974C0001A99D /* UITPreparedCellTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITPreparedCellTableViewController.m; sourceTree = "<group>"; };
 		38505B2E176B1575004A7725 /* UI7AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7AlertView.h; sourceTree = "<group>"; };
 		38505B2F176B1575004A7725 /* UI7AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7AlertView.m; sourceTree = "<group>"; };
+		3861E0691771F9BC00AA8DE4 /* UI7ProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7ProgressView.h; sourceTree = "<group>"; };
+		3861E06A1771F9BC00AA8DE4 /* UI7ProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7ProgressView.m; sourceTree = "<group>"; };
 		38740492176825D900C0BB18 /* UI7Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7Utilities.h; sourceTree = "<group>"; };
 		38740493176825D900C0BB18 /* UI7Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7Utilities.m; sourceTree = "<group>"; };
 		387558AF176DD00600AE5C8B /* UI7TabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7TabBar.h; sourceTree = "<group>"; };
@@ -370,6 +373,8 @@
 				3886F7001770AAD700890D47 /* UI7Stepper.m */,
 				381582451771E72C0045713A /* UI7Slider.h */,
 				381582461771E72C0045713A /* UI7Slider.m */,
+				3861E0691771F9BC00AA8DE4 /* UI7ProgressView.h */,
+				3861E06A1771F9BC00AA8DE4 /* UI7ProgressView.m */,
 				380174601769FE390049D26C /* Resources */,
 				38017426176989660049D26C /* Supporting Files */,
 			);
@@ -606,6 +611,7 @@
 				387558BB176DEDDF00AE5C8B /* UI7TabBarItem.m in Sources */,
 				3886F7011770AAD800890D47 /* UI7Stepper.m in Sources */,
 				3886F7041770B10800890D47 /* UI7View.m in Sources */,
+				3861E06B1771F9BC00AA8DE4 /* UI7ProgressView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

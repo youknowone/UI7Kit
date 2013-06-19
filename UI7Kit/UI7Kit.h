@@ -23,6 +23,7 @@
 #import <UI7Kit/UI7Button.h>
 #import <UI7Kit/UI7NavigationBar.h>
 #import <UI7Kit/UI7NavigationController.h>
+#import <UI7Kit/UI7ProgressView.h>
 #import <UI7Kit/UI7SegmentedControl.h>
 #import <UI7Kit/UI7Slider.h>
 #import <UI7Kit/UI7Stepper.h>
