@@ -16,20 +16,21 @@ How to use
 Case 1: Dynamic patch (Mostly recommended)
 
     #import <UI7Kit/UI7Kit.h>
-    UI7KitPatchAll(NO); // in main.m, before UIApplicationMain()
+    [UI7Kit patchIfNeeded]; // in main.m, before UIApplicationMain()
 
 Case 2: Partial usage
+
 : Use UI7<class> instead of UI<class>.
 : ex) UI7NavigationController, instead of UINavigationController
 
 Case 3: Partial dynamic patch
 
     #import <UI7Kit/UI7Kit.h>
-    [UI7<class> patch]; // ex) [UI7TableView patch];
+    [UI7<class> patchIfNeeded]; // ex) [UI7TableView patch];
 
 Example
 -------
-Example with current code. (0.0.7)
+Example with current code. (0.0.10)
 
 ![Current status](https://raw.github.com/youknowone/UI7Kit/master/UI7Kit.png).
 
