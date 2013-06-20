@@ -11,6 +11,8 @@
 
 #import "UI7Stepper.h"
 
+#import "UI7KitPrivate.h"
+
 @implementation UIStepper (Patch)
 
 - (void)awakeFromNib { [super awakeFromNib]; }
