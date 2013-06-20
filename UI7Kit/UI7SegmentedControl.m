@@ -35,6 +35,7 @@
 #import "UI7View.h"
 #import "UI7SegmentedControl.h"
 
+#import "UI7KitPrivate.h"
 
 @implementation UISegmentedControl (Patch)
 

@@ -18,16 +18,6 @@
 - (id)__init { assert(NO); return nil; }
 - (void)__awakeFromNib { assert(NO); }
 
-- (UIColor *)__tintColor { return nil; }
-
-- (UIColor *)_tintColor {
-    UIColor *tintColor = [self __tintColor];
-    if (tintColor == nil) {
-        tintColor = self.superview.tintColor;
-    }
-    return tintColor;
-}
-
 - (void)_stepperInit {
     if ([self respondsToSelector:@selector(setBackgroundImage:forState:)]) {
         NSDictionary *backColors = @{
@@ -60,7 +50,12 @@
             }
         }
     } else {
-
+        //        for (CALayer *layer in self.layer.sublayers.reverseObjectEnumerator) {
+        //            [layer removeFromSuperlayer];
+        //            static int count = 0;
+        //            count += 1;
+        //            if (count ==3) break;
+        //        }
     }
 
     self.layer.cornerRadius = 4.0f;

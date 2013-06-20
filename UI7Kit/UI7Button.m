@@ -8,6 +8,8 @@
 
 #import "UI7Button.h"
 
+#import "UI7KitPrivate.h"
+
 @implementation UIButton (Patch)
 
 - (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
@@ -45,7 +47,7 @@
 
         [origin copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
         [origin classMethodForSelector:@selector(__buttonWithType:)].implementation = [origin classMethodForSelector:@selector(buttonWithType:)].implementation;
-        [origin copyToSelector:@selector(__tintColor:) fromSelector:@selector(tintColor:)];
+        [origin copyToSelector:@selector(__tintColor) fromSelector:@selector(tintColor)];
     }
 }
 
@@ -64,10 +66,8 @@
     self = [self __initWithCoder:aDecoder];
     switch (self.buttonType) {
         case UIButtonTypeCustom:
-        case UIButtonTypeRoundedRect: {
-            id x = [self imageForState:UIControlStateNormal];
-            id y = [self backgroundImageForState:UIControlStateNormal];
-        }   break;
+        case UIButtonTypeRoundedRect:
+            break;
         case UIButtonTypeDetailDisclosure:
         case UIButtonTypeInfoDark:
         case UIButtonTypeInfoLight: {

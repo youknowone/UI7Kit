@@ -159,6 +159,7 @@
 		388FC1DF177303AA0084574E /* UI7ButtonImageAdd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7ButtonImageAdd@2x.png"; sourceTree = "<group>"; };
 		388FC1E0177303AA0084574E /* UI7ButtonImageInfo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7ButtonImageInfo.png; sourceTree = "<group>"; };
 		388FC1E1177303AA0084574E /* UI7ButtonImageInfo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7ButtonImageInfo@2x.png"; sourceTree = "<group>"; };
+		388FC1E6177345970084574E /* UI7KitPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7KitPrivate.h; sourceTree = "<group>"; };
 		38BC0E5A173E821700F36497 /* UITSubviewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITSubviewTableViewController.h; sourceTree = "<group>"; };
 		38BC0E5B173E821700F36497 /* UITSubviewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITSubviewTableViewController.m; sourceTree = "<group>"; };
 		38C7A9761495181800381910 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -331,6 +332,7 @@
 				38E58A901767576300F6ED19 /* UI7Kit.h */,
 				38013FE2176F8352003B7809 /* UI7KitCore.h */,
 				38013FE3176F8352003B7809 /* UI7KitCore.m */,
+				388FC1E6177345970084574E /* UI7KitPrivate.h */,
 				38740492176825D900C0BB18 /* UI7Utilities.h */,
 				38740493176825D900C0BB18 /* UI7Utilities.m */,
 				3886F7021770B10700890D47 /* UI7View.h */,
