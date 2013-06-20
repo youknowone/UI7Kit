@@ -43,15 +43,6 @@
 - (id)__initWithItems:(NSArray *)items { assert(NO); return nil; }
 - (void)__awakeFromNib { assert(NO); }
 
-- (UIColor *)__tintColor { assert(NO); return nil; }
-- (UIColor *)_tintColor {
-    UIColor *tintColor = [self __tintColor];
-    if (tintColor == nil) {
-        tintColor = self.superview.tintColor;
-    }
-    return tintColor;
-}
-
 - (void)_segmentedControlInit {
     // Set background images
 

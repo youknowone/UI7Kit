@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		15315B9E98864B01A283D8AB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C081AB61224D42EF8B7ABD3F /* libPods.a */; };
 		3801741617682DDA0049D26C /* UI7TableViewCellDisclosureIndicator.png in Resources */ = {isa = PBXBuildFile; fileRef = 3801741517682DDA0049D26C /* UI7TableViewCellDisclosureIndicator.png */; };
-		38017419176849680049D26C /* UI7NavigationBarPortrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38017417176849680049D26C /* UI7NavigationBarPortrait@2x.png */; };
-		3801741A176849680049D26C /* UI7NavigationBarPortraitLandscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38017418176849680049D26C /* UI7NavigationBarPortraitLandscape@2x.png */; };
 		38017432176989660049D26C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38C7A9891495181800381910 /* SenTestingKit.framework */; };
 		38017433176989660049D26C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383764E213373155007072FD /* UIKit.framework */; };
 		38017434176989660049D26C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383764D713373154007072FD /* Foundation.framework */; };
@@ -30,15 +28,11 @@
 		381582471771E72C0045713A /* UI7Slider.m in Sources */ = {isa = PBXBuildFile; fileRef = 381582461771E72C0045713A /* UI7Slider.m */; };
 		381C00AD17172CE20067C936 /* UITTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 381C00AB17172CE20067C936 /* UITTextViewController.m */; };
 		382E2206176CB72D005F0A98 /* UITPreparedCellTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38485C5F1710974C0001A99D /* UITPreparedCellTableViewController.m */; };
-		382F542317676943004D6F59 /* UI7NavigationBarPortraitLandscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 382F542217676933004D6F59 /* UI7NavigationBarPortraitLandscape.png */; };
-		382F542417676945004D6F59 /* UI7NavigationBarPortrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 382F542117676933004D6F59 /* UI7NavigationBarPortrait.png */; };
 		38505B30176B1575004A7725 /* UI7AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 38505B2F176B1575004A7725 /* UI7AlertView.m */; };
 		385CE660177009680076C02A /* UI7KitCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 38013FE3176F8352003B7809 /* UI7KitCore.m */; };
 		3861E06B1771F9BC00AA8DE4 /* UI7ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3861E06A1771F9BC00AA8DE4 /* UI7ProgressView.m */; };
 		387558B1176DD00600AE5C8B /* UI7TabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 387558B0176DD00600AE5C8B /* UI7TabBar.m */; };
 		387558B4176DD03F00AE5C8B /* UI7TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 387558B3176DD03F00AE5C8B /* UI7TabBarController.m */; };
-		387558B7176DD46A00AE5C8B /* UI7TabBarBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 387558B5176DD46A00AE5C8B /* UI7TabBarBackground@2x.png */; };
-		387558B8176DD46A00AE5C8B /* UI7TabBarBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 387558B6176DD46A00AE5C8B /* UI7TabBarBackground.png */; };
 		387558BB176DEDDF00AE5C8B /* UI7TabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 387558BA176DEDDE00AE5C8B /* UI7TabBarItem.m */; };
 		387558C0176DF36700AE5C8B /* UI7TabBarItemFavoriteSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 387558BC176DF36700AE5C8B /* UI7TabBarItemFavoriteSelected.png */; };
 		387558C1176DF36700AE5C8B /* UI7TabBarItemFavoriteSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 387558BD176DF36700AE5C8B /* UI7TabBarItemFavoriteSelected@2x.png */; };
@@ -51,6 +45,10 @@
 		3886F7041770B10800890D47 /* UI7View.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886F7031770B10700890D47 /* UI7View.m */; };
 		3888FC62176C7C7900489638 /* UITIssue1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3888FC61176C7C7900489638 /* UITIssue1ViewController.m */; };
 		3888FC63176C8EAD00489638 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383764E513373155007072FD /* CoreGraphics.framework */; };
+		388FC1E2177303AA0084574E /* UI7ButtonImageAdd.png in Resources */ = {isa = PBXBuildFile; fileRef = 388FC1DE177303AA0084574E /* UI7ButtonImageAdd.png */; };
+		388FC1E3177303AA0084574E /* UI7ButtonImageAdd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 388FC1DF177303AA0084574E /* UI7ButtonImageAdd@2x.png */; };
+		388FC1E4177303AA0084574E /* UI7ButtonImageInfo.png in Resources */ = {isa = PBXBuildFile; fileRef = 388FC1E0177303AA0084574E /* UI7ButtonImageInfo.png */; };
+		388FC1E5177303AA0084574E /* UI7ButtonImageInfo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 388FC1E1177303AA0084574E /* UI7ButtonImageInfo@2x.png */; };
 		38AF86CF1769BC8000BFBD29 /* libUI7Kit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38017423176989650049D26C /* libUI7Kit.a */; };
 		38BC0E5D173E821700F36497 /* UITSubviewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38BC0E5B173E821700F36497 /* UITSubviewTableViewController.m */; };
 		38CE37D6176F657800AC0C89 /* UI7SegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 38CE37D4176F4C8400AC0C89 /* UI7SegmentedControl.m */; };
@@ -110,8 +108,6 @@
 		38017410176776020049D26C /* UI7BarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7BarButtonItem.h; sourceTree = "<group>"; };
 		38017411176776020049D26C /* UI7BarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7BarButtonItem.m; sourceTree = "<group>"; };
 		3801741517682DDA0049D26C /* UI7TableViewCellDisclosureIndicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7TableViewCellDisclosureIndicator.png; sourceTree = "<group>"; };
-		38017417176849680049D26C /* UI7NavigationBarPortrait@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7NavigationBarPortrait@2x.png"; sourceTree = "<group>"; };
-		38017418176849680049D26C /* UI7NavigationBarPortraitLandscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7NavigationBarPortraitLandscape@2x.png"; sourceTree = "<group>"; };
 		38017423176989650049D26C /* libUI7Kit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUI7Kit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		38017427176989660049D26C /* UI7Kit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UI7Kit-Prefix.pch"; sourceTree = "<group>"; };
 		38017431176989660049D26C /* UI7KitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UI7KitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,8 +122,6 @@
 		381582461771E72C0045713A /* UI7Slider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7Slider.m; sourceTree = "<group>"; };
 		381C00AA17172CE20067C936 /* UITTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITTextViewController.h; sourceTree = "<group>"; };
 		381C00AB17172CE20067C936 /* UITTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITTextViewController.m; sourceTree = "<group>"; };
-		382F542117676933004D6F59 /* UI7NavigationBarPortrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7NavigationBarPortrait.png; sourceTree = "<group>"; };
-		382F542217676933004D6F59 /* UI7NavigationBarPortraitLandscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7NavigationBarPortraitLandscape.png; sourceTree = "<group>"; };
 		382F54271767863B004D6F59 /* UI7TableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7TableView.h; sourceTree = "<group>"; };
 		382F54281767863B004D6F59 /* UI7TableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7TableView.m; sourceTree = "<group>"; };
 		383764D713373154007072FD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -145,8 +139,6 @@
 		387558B0176DD00600AE5C8B /* UI7TabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7TabBar.m; sourceTree = "<group>"; };
 		387558B2176DD03F00AE5C8B /* UI7TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7TabBarController.h; sourceTree = "<group>"; };
 		387558B3176DD03F00AE5C8B /* UI7TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7TabBarController.m; sourceTree = "<group>"; };
-		387558B5176DD46A00AE5C8B /* UI7TabBarBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7TabBarBackground@2x.png"; sourceTree = "<group>"; };
-		387558B6176DD46A00AE5C8B /* UI7TabBarBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7TabBarBackground.png; sourceTree = "<group>"; };
 		387558B9176DEDDE00AE5C8B /* UI7TabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7TabBarItem.h; sourceTree = "<group>"; };
 		387558BA176DEDDE00AE5C8B /* UI7TabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7TabBarItem.m; sourceTree = "<group>"; };
 		387558BC176DF36700AE5C8B /* UI7TabBarItemFavoriteSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7TabBarItemFavoriteSelected.png; sourceTree = "<group>"; };
@@ -163,6 +155,10 @@
 		3886F7031770B10700890D47 /* UI7View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7View.m; sourceTree = "<group>"; };
 		3888FC60176C7C7900489638 /* UITIssue1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITIssue1ViewController.h; sourceTree = "<group>"; };
 		3888FC61176C7C7900489638 /* UITIssue1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITIssue1ViewController.m; sourceTree = "<group>"; };
+		388FC1DE177303AA0084574E /* UI7ButtonImageAdd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7ButtonImageAdd.png; sourceTree = "<group>"; };
+		388FC1DF177303AA0084574E /* UI7ButtonImageAdd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7ButtonImageAdd@2x.png"; sourceTree = "<group>"; };
+		388FC1E0177303AA0084574E /* UI7ButtonImageInfo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7ButtonImageInfo.png; sourceTree = "<group>"; };
+		388FC1E1177303AA0084574E /* UI7ButtonImageInfo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7ButtonImageInfo@2x.png"; sourceTree = "<group>"; };
 		38BC0E5A173E821700F36497 /* UITSubviewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITSubviewTableViewController.h; sourceTree = "<group>"; };
 		38BC0E5B173E821700F36497 /* UITSubviewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITSubviewTableViewController.m; sourceTree = "<group>"; };
 		38C7A9761495181800381910 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -266,16 +262,14 @@
 		380174601769FE390049D26C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				388FC1DE177303AA0084574E /* UI7ButtonImageAdd.png */,
+				388FC1DF177303AA0084574E /* UI7ButtonImageAdd@2x.png */,
+				388FC1E0177303AA0084574E /* UI7ButtonImageInfo.png */,
+				388FC1E1177303AA0084574E /* UI7ButtonImageInfo@2x.png */,
 				3801741517682DDA0049D26C /* UI7TableViewCellDisclosureIndicator.png */,
 				3801745A1769C5D90049D26C /* UI7TableViewCellDisclosureIndicator@2x.png */,
 				38017461176A245B0049D26C /* UI7NavigationBarBackButton.png */,
 				387558C4176DFA8600AE5C8B /* UI7NavigationBarBackButton@2x.png */,
-				382F542117676933004D6F59 /* UI7NavigationBarPortrait.png */,
-				38017417176849680049D26C /* UI7NavigationBarPortrait@2x.png */,
-				382F542217676933004D6F59 /* UI7NavigationBarPortraitLandscape.png */,
-				38017418176849680049D26C /* UI7NavigationBarPortraitLandscape@2x.png */,
-				387558B6176DD46A00AE5C8B /* UI7TabBarBackground.png */,
-				387558B5176DD46A00AE5C8B /* UI7TabBarBackground@2x.png */,
 				387558BC176DF36700AE5C8B /* UI7TabBarItemFavoriteSelected.png */,
 				387558BD176DF36700AE5C8B /* UI7TabBarItemFavoriteSelected@2x.png */,
 				387558BE176DF36700AE5C8B /* UI7TabBarItemFavoriteUnselected.png */,
@@ -520,19 +514,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				38F068201636F8C8002723AB /* InfoPlist.strings in Resources */,
+				388FC1E5177303AA0084574E /* UI7ButtonImageInfo@2x.png in Resources */,
 				38F068281636F8C8002723AB /* Default.png in Resources */,
 				38F0682A1636F8C8002723AB /* Default@2x.png in Resources */,
 				38F0682C1636F8C8002723AB /* Default-568h@2x.png in Resources */,
-				382F542317676943004D6F59 /* UI7NavigationBarPortraitLandscape.png in Resources */,
-				382F542417676945004D6F59 /* UI7NavigationBarPortrait.png in Resources */,
+				388FC1E3177303AA0084574E /* UI7ButtonImageAdd@2x.png in Resources */,
+				388FC1E4177303AA0084574E /* UI7ButtonImageInfo.png in Resources */,
+				388FC1E2177303AA0084574E /* UI7ButtonImageAdd.png in Resources */,
 				3801741617682DDA0049D26C /* UI7TableViewCellDisclosureIndicator.png in Resources */,
-				38017419176849680049D26C /* UI7NavigationBarPortrait@2x.png in Resources */,
-				3801741A176849680049D26C /* UI7NavigationBarPortraitLandscape@2x.png in Resources */,
 				3801745B1769C5D90049D26C /* UI7TableViewCellDisclosureIndicator@2x.png in Resources */,
 				3801745F1769F3B50049D26C /* Storyboard.storyboard in Resources */,
 				38017462176A245B0049D26C /* UI7NavigationBarBackButton.png in Resources */,
-				387558B7176DD46A00AE5C8B /* UI7TabBarBackground@2x.png in Resources */,
-				387558B8176DD46A00AE5C8B /* UI7TabBarBackground.png in Resources */,
 				387558C0176DF36700AE5C8B /* UI7TabBarItemFavoriteSelected.png in Resources */,
 				387558C1176DF36700AE5C8B /* UI7TabBarItemFavoriteSelected@2x.png in Resources */,
 				387558C2176DF36700AE5C8B /* UI7TabBarItemFavoriteUnselected.png in Resources */,

@@ -24,6 +24,19 @@
 @end
 
 
+@implementation UI7Button (UIRoundedRectButton)
+
+- (id)_UIRoundedRectButton_initWithCoder:(NSCoder *)aDecoder {
+    if (self != nil && [self.class.name isEqualToString:@"UIRoundedRectButton"]) {
+        object_setClass(self, [UI7Button class]);
+    }
+    self = [UI7Button methodImplementationForSelector:@selector(initWithCoder:)](self, _cmd, aDecoder);
+    return self;
+}
+
+@end
+
+
 @implementation UI7Button
 
 + (void)initialize {
@@ -32,7 +45,7 @@
 
         [origin copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
         [origin classMethodForSelector:@selector(__buttonWithType:)].implementation = [origin classMethodForSelector:@selector(buttonWithType:)].implementation;
-//        [origin copyToSelector:@selector(__drawRect:) fromSelector:@selector(drawRect:)];
+        [origin copyToSelector:@selector(__tintColor:) fromSelector:@selector(tintColor:)];
     }
 }
 
@@ -41,14 +54,38 @@
     Class target =  [UIButton class];
 
     [source exportSelector:@selector(initWithCoder:) toClass:target];
+    [target methodForSelector:@selector(tintColor)].implementation = [target methodForSelector:@selector(_tintColor)].implementation;
     [target classMethodObjectForSelector:@selector(buttonWithType:)].implementation = [source classMethodObjectForSelector:@selector(buttonWithType:)].implementation;
     [source exportSelector:@selector(drawRect:) toClass:target];
+    [NSClassFromString(@"UIRoundedRectButton") addMethodForSelector:@selector(initWithCoder:) fromMethod:[self methodForSelector:@selector(_UIRoundedRectButton_initWithCoder:)]];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [self __initWithCoder:aDecoder];
-    if (self.buttonType == UIButtonTypeRoundedRect) {
-        // TODO: no idea yet.
+    switch (self.buttonType) {
+        case UIButtonTypeCustom:
+        case UIButtonTypeRoundedRect: {
+            id x = [self imageForState:UIControlStateNormal];
+            id y = [self backgroundImageForState:UIControlStateNormal];
+        }   break;
+        case UIButtonTypeDetailDisclosure:
+        case UIButtonTypeInfoDark:
+        case UIButtonTypeInfoLight: {
+            UIImage *image = [UIImage imageNamed:@"UI7ButtonImageInfo"];
+            image = [image imageByFilledWithColor:self.tintColor];
+            [self setImage:image forState:UIControlStateNormal];
+            image = [image imageByFilledWithColor:self.tintColor.highligtedColor];
+            [self setImage:image forState:UIControlStateHighlighted];
+        }   break;
+        case UIButtonTypeContactAdd: {
+            UIImage *image = [UIImage imageNamed:@"UI7ButtonImageAdd"];
+            image = [image imageByFilledWithColor:self.tintColor];
+            [self setImage:image forState:UIControlStateNormal];
+            image = [image imageByFilledWithColor:self.tintColor.highligtedColor];
+            [self setImage:image forState:UIControlStateHighlighted];
+        }   break;
+        default:
+            break;
     }
     return self;
 }
@@ -63,7 +100,7 @@
 }
 
 - (void)drawRect:(CGRect)rect {
-    NSLog(@"buh");
+    NSLog(@"bah");
 }
 
 @end
