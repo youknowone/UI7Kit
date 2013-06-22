@@ -14,7 +14,7 @@
 - (id)__initWithFrame:(CGRect)frame { assert(NO); return nil; }
 
 - (void)_switchInit {
-    self.onTintColor = [UIColor colorWith8bitRed:76 green:217 blue:100 alpha:255];
+   // self.onTintColor = [UIColor colorWith8bitRed:76 green:217 blue:100 alpha:255];
     if ([self respondsToSelector:@selector(onImage)]) {
         self.onImage = [UIImage clearImage];
         self.offImage = [UIImage clearImage];
@@ -23,21 +23,7 @@
     }
 }
 @end
-@implementation KLSwitch (Patch)
 
-- (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
-- (id)__initWithFrame:(CGRect)frame { assert(NO); return nil; }
-
-- (void)_switchInit {
-    self.onTintColor = [UIColor colorWith8bitRed:76 green:217 blue:100 alpha:255];
-    if ([self respondsToSelector:@selector(onImage)]) {
-        self.onImage = [UIImage clearImage];
-        self.offImage = [UIImage clearImage];
-        self.tintColor = self.tintColor;
-        self.thumbTintColor = [UIColor whiteColor];
-    }
-}
-@end
 @implementation UI7Switch
 
 + (void)initialize {
