@@ -58,9 +58,8 @@ NSMutableDictionary *UI7TintColors = nil;
 - (UIColor *)_tintColor {
     UIColor *tintColor = [self __tintColor];
     if (tintColor == nil) {
-        if (self.superview) {
-            tintColor = self.superview.tintColor;
-        } else {
+        tintColor = self.superview.tintColor;
+        if (tintColor == nil) {
             tintColor = [UI7Kit kit].tintColor;
         }
     }
