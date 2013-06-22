@@ -6,9 +6,8 @@
 //  Copyright (c) 2013 youknowone.org. All rights reserved.
 //
 
-#import "UIColor.h"
-
 #import "UI7Utilities.h"
+#import "UI7Font.h"
 
 #import "UI7BarButtonItem.h"
 
@@ -49,7 +48,7 @@
 }
 
 - (void)_barButtonItemInit {
-    [self _barButtonItemInitWithFont:[UIFont iOS7SystemFontOfSize:17.0 weight:UI7FontWeightLight]];
+    [self _barButtonItemInitWithFont:[UI7Font systemFontOfSize:17.0 attribute:UI7FontAttributeLight]];
 }
 
 @end
@@ -87,11 +86,11 @@
 }
 
 - (id)initWithBarButtonSystemItem:(UIBarButtonSystemItem)systemItem target:(id)target action:(SEL)action {
-    UIFont *font = [UIFont iOS7SystemFontOfSize:17.0 weight:UI7FontWeightLight];
+    UIFont *font = [UI7Font systemFontOfSize:17.0 attribute:UI7FontAttributeLight];
     switch (systemItem) {
         case UIBarButtonSystemItemAdd:
             self = [super initWithTitle:@"＋" style:UIBarButtonItemStylePlain target:target action:action];
-            font = [UIFont iOS7SystemFontOfSize:22.0 weight:UI7FontWeightMedium];
+            font = [UI7Font systemFontOfSize:22.0 attribute:UI7FontAttributeMedium];
             break;
         case UIBarButtonSystemItemCompose:
         case UIBarButtonSystemItemReply:

@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 youknowone.org. All rights reserved.
 //
 
+#import "UI7Font.h"
+
 #import "UI7Button.h"
 
 #import "UI7KitPrivate.h"
@@ -18,7 +20,7 @@
 
 - (void)_buttonInit {
     if (self.buttonType == UIButtonTypeRoundedRect) {
-        self.titleLabel.font = [UIFont iOS7SystemFontOfSize:self.titleLabel.font.pointSize weight:@"Light"];
+        self.titleLabel.font = [UI7Font systemFontOfSize:self.titleLabel.font.pointSize attribute:UI7FontAttributeLight];
         [self setBackgroundImage:[UIImage clearImage] forState:UIControlStateNormal];
     }
 }

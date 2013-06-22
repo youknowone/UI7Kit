@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 youknowone.org. All rights reserved.
 //
 
+#import "UI7Font.h"
+
 #import "UI7TableView.h"
 
 @implementation UITableView (Patch)
@@ -87,7 +89,7 @@ UIView *UI7TableViewDelegateViewForHeaderInSection(id self, SEL _cmd, UITableVie
     view.backgroundColor = [UIColor iOS7BackgroundColor];
 
     view.text = [@"    " stringByAppendingString:title];
-    view.font = [UIFont iOS7SystemFontOfSize:14.0 weight:UI7FontWeightBold];
+    view.font = [UI7Font systemFontOfSize:14.0 attribute:UI7FontAttributeBold];
     return view;
 }
 
@@ -101,7 +103,7 @@ UIView *UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableVie
     UILabel *view = [[[UILabel alloc] initWithFrame:CGRectMake(.0, .0, tableView.frame.size.width, height)] autorelease];
     view.backgroundColor = [UIColor iOS7BackgroundColor];
     view.text = [@"    " stringByAppendingString:title]; // TODO: do this pretty later
-    view.font = [UIFont iOS7SystemFontOfSize:14.0 weight:UI7FontWeightBold];
+    view.font = [UI7Font systemFontOfSize:14.0 attribute:UI7FontAttributeBold];
     return view;
 }
 
@@ -173,8 +175,8 @@ UIView *UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableVie
 - (id)__initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier { assert(NO); return nil; }
 
 - (void)_tableViewCellInit {
-    self.textLabel.font = [UIFont iOS7SystemFontOfSize:18.0 weight:UI7FontWeightLight];
-    self.detailTextLabel.font = [UIFont iOS7SystemFontOfSize:17.0 weight:UI7FontWeightLight]; // FIXME: not sure
+    self.textLabel.font = [UI7Font systemFontOfSize:18.0 attribute:UI7FontAttributeLight];
+    self.detailTextLabel.font = [UI7Font systemFontOfSize:17.0 attribute:UI7FontAttributeLight]; // FIXME: not sure
     self.textLabel.highlightedTextColor = self.textLabel.textColor;
     self.detailTextLabel.highlightedTextColor = self.detailTextLabel.textColor; // FIXME: not sure
     self.selectedBackgroundView = [UIColor colorWith8bitWhite:217 alpha:255].image.view;

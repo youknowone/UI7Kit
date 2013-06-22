@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 youknowone.org. All rights reserved.
 //
 
+#import "UI7Font.h"
+
 #import "UI7ActionSheet.h"
 
 @interface UIActionSheet (Private)
@@ -130,9 +132,9 @@ static NSMutableDictionary *UI7ActionSheetStrokeViews = nil;
     [self.buttons applyProcedureWithIndex:^(id obj, NSUInteger index) {
         UIButton *button = obj; // UIAlertButton, really
         if (self.cancelButtonIndex == (NSInteger)index) {
-            button.titleLabel.font = [UIFont iOS7SystemFontOfSize:button.titleLabel.font.pointSize weight:@"Medium"];
+            button.titleLabel.font = [UI7Font systemFontOfSize:button.titleLabel.font.pointSize attribute:UI7FontAttributeMedium];
         } else {
-            button.titleLabel.font = [UIFont iOS7SystemFontOfSize:button.titleLabel.font.pointSize weight:@"Light"];
+            button.titleLabel.font = [UI7Font systemFontOfSize:button.titleLabel.font.pointSize attribute:UI7FontAttributeLight];
         }
         [button setBackgroundImage:[UIImage clearImage] forState:UIControlStateNormal];
         [button setBackgroundImage:[UIImage clearImage] forState:UIControlStateHighlighted];

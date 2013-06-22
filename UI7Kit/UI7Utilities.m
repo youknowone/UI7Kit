@@ -43,9 +43,6 @@
 @end
 
 
-NSString *UI7FontWeightLight = @"Light";
-NSString *UI7FontWeightMedium = @"Medium";
-NSString *UI7FontWeightBold = @"Bold";
 
 @implementation UIColor (iOS7)
 
@@ -70,18 +67,6 @@ NSString *UI7FontWeightBold = @"Bold";
 
 @end
 
-
-@implementation UIFont (iOS7)
-
-+ (UIFont *)iOS7SystemFontOfSize:(CGFloat)fontSize {
-    return [UIFont fontWithName:@"Helvetica Neue" size:fontSize];
-}
-
-+ (UIFont *)iOS7SystemFontOfSize:(CGFloat)fontSize weight:(NSString *)weight {
-    return [UIFont fontWithName:[@"HelveticaNeue-%@" format:weight] size:fontSize];
-}
-
-@end
 
 const CGFloat UI7ControlRadius = 6.0;
 

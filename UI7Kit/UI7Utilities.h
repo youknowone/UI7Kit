@@ -42,18 +42,6 @@
 
 @end
 
-
-UIKIT_EXTERN NSString *UI7FontWeightLight;
-UIKIT_EXTERN NSString *UI7FontWeightMedium;
-UIKIT_EXTERN NSString *UI7FontWeightBold;
-
-@interface UIFont (iOS7)
-
-+ (UIFont *)iOS7SystemFontOfSize:(CGFloat)fontSize;
-+ (UIFont *)iOS7SystemFontOfSize:(CGFloat)fontSize weight:(NSString *)weight;
-
-@end
-
 UIKIT_EXTERN const CGFloat UI7ControlRadius;
 
 @interface UIImage (Images)

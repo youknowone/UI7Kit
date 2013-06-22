@@ -24,6 +24,11 @@ UI7Kit *UI7KitSharedObject = nil;
     return self;
 }
 
+- (void)dealloc {
+    self.tintColor = nil;
+    [super dealloc];
+}
+
 + (UI7Kit *)kit {
     return UI7KitSharedObject;
 }
@@ -36,6 +41,7 @@ UI7Kit *UI7KitSharedObject = nil;
 
 + (void)patch {
     for (NSString *className in @[
+         @"UI7Font",
          @"UI7ViewController",
          @"UI7TableView",
          @"UI7TableViewCell",
@@ -56,10 +62,6 @@ UI7Kit *UI7KitSharedObject = nil;
          ]) {
         Class class = NSClassFromString(className);
         [class patch];
-        #if DEBUG
-        NSLog(@"patched? %@", [class name]);
-        assert([class respondsToSelector:@selector(patchIfNeeded)]);
-        #endif
     }
 }
 

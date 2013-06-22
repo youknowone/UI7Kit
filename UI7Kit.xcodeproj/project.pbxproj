@@ -28,6 +28,7 @@
 		381582471771E72C0045713A /* UI7Slider.m in Sources */ = {isa = PBXBuildFile; fileRef = 381582461771E72C0045713A /* UI7Slider.m */; };
 		381C00AD17172CE20067C936 /* UITTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 381C00AB17172CE20067C936 /* UITTextViewController.m */; };
 		382E2206176CB72D005F0A98 /* UITPreparedCellTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38485C5F1710974C0001A99D /* UITPreparedCellTableViewController.m */; };
+		383E6A831775CF0100EF7ADA /* UI7Font.m in Sources */ = {isa = PBXBuildFile; fileRef = 383E6A821775CF0100EF7ADA /* UI7Font.m */; };
 		38505B30176B1575004A7725 /* UI7AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 38505B2F176B1575004A7725 /* UI7AlertView.m */; };
 		385CE660177009680076C02A /* UI7KitCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 38013FE3176F8352003B7809 /* UI7KitCore.m */; };
 		3861E06B1771F9BC00AA8DE4 /* UI7ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3861E06A1771F9BC00AA8DE4 /* UI7ProgressView.m */; };
@@ -127,6 +128,8 @@
 		383764D713373154007072FD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		383764E213373155007072FD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		383764E513373155007072FD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		383E6A811775CF0100EF7ADA /* UI7Font.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7Font.h; sourceTree = "<group>"; };
+		383E6A821775CF0100EF7ADA /* UI7Font.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7Font.m; sourceTree = "<group>"; };
 		38485C5E1710974C0001A99D /* UITPreparedCellTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITPreparedCellTableViewController.h; sourceTree = "<group>"; };
 		38485C5F1710974C0001A99D /* UITPreparedCellTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITPreparedCellTableViewController.m; sourceTree = "<group>"; };
 		38505B2E176B1575004A7725 /* UI7AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7AlertView.h; sourceTree = "<group>"; };
@@ -335,6 +338,8 @@
 				388FC1E6177345970084574E /* UI7KitPrivate.h */,
 				38740492176825D900C0BB18 /* UI7Utilities.h */,
 				38740493176825D900C0BB18 /* UI7Utilities.m */,
+				383E6A811775CF0100EF7ADA /* UI7Font.h */,
+				383E6A821775CF0100EF7ADA /* UI7Font.m */,
 				3886F7021770B10700890D47 /* UI7View.h */,
 				3886F7031770B10700890D47 /* UI7View.m */,
 				38017410176776020049D26C /* UI7BarButtonItem.h */,
@@ -606,6 +611,7 @@
 				3886F7011770AAD800890D47 /* UI7Stepper.m in Sources */,
 				3886F7041770B10800890D47 /* UI7View.m in Sources */,
 				3861E06B1771F9BC00AA8DE4 /* UI7ProgressView.m in Sources */,
+				383E6A831775CF0100EF7ADA /* UI7Font.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

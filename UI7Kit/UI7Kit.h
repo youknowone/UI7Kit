@@ -17,6 +17,7 @@
 #import <UI7Kit/UI7KitCore.h>
 #import <UI7Kit/UI7Utilities.h>
 
+#import <UI7Kit/UI7Font.h>
 #import <UI7Kit/UI7AlertView.h>
 #import <UI7Kit/UI7ActionSheet.h>
 #import <UI7Kit/UI7BarButtonItem.h>

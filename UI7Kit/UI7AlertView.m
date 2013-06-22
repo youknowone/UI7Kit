@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 youknowone.org. All rights reserved.
 //
 
+#import "UI7Font.h"
 #import "UI7Button.h"
 
 #import "UI7AlertView.h"
@@ -153,12 +154,12 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
     self.titleLabel.textColor = self.bodyTextLabel.textColor = [UIColor blackColor];
     self.titleLabel.shadowOffset = self.bodyTextLabel.shadowOffset = CGSizeZero;
 
-    self.titleLabel.font = [UIFont iOS7SystemFontOfSize:17.0 weight:UI7FontWeightMedium];
-    self.bodyTextLabel.font = [UIFont iOS7SystemFontOfSize:16.0 weight:UI7FontWeightLight];
+    self.titleLabel.font = [UI7Font systemFontOfSize:17.0 attribute:UI7FontAttributeMedium];
+    self.bodyTextLabel.font = [UI7Font systemFontOfSize:16.0 attribute:UI7FontAttributeLight];
 
     CGFloat highest = self.frame.size.height;
     for (UIAlertButton *button in self.buttons) {
-        button.titleLabel.font = [UIFont iOS7SystemFontOfSize:16.0 weight:UI7FontWeightLight];
+        button.titleLabel.font = [UI7Font systemFontOfSize:16.0 attribute:UI7FontAttributeLight];
         [button setTitleColor:[UIColor iOS7ButtonTitleColor] forState:UIControlStateNormal];
         [button setTitleColor:[UIColor iOS7ButtonTitleColor].highligtedColor forState:UIControlStateHighlighted];
         button.titleLabel.shadowOffset = CGSizeZero;

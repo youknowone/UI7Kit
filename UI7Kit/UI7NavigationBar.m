@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 youknowone.org. All rights reserved.
 //
 
+#import "UI7Font.h"
 #import "UI7BarButtonItem.h"
 
 #import "UI7NavigationBar.h"
@@ -39,7 +40,7 @@
     [self setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
     [self setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsLandscapePhone];
     [self setTitleTextAttributes:@{
-                                   UITextAttributeFont: [UIFont iOS7SystemFontOfSize:17.0 weight:UI7FontWeightMedium],
+                                   UITextAttributeFont: [UI7Font systemFontOfSize:17.0 attribute:UI7FontAttributeMedium],
                                    UITextAttributeTextColor: [UIColor blackColor],
                                    UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetZero],
                                    }];

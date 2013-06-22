@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 youknowone.org. All rights reserved.
 //
 
+#import "UI7Font.h"
+
 #import "UI7TabBar.h"
 
 @interface UITabBar (Private)
@@ -40,7 +42,7 @@
         self.shadowImage = [UIImage clearImage];
     }
     // private properties
-    [self _setLabelFont:[UIFont iOS7SystemFontOfSize:10.0 weight:@"Light"]];
+    [self _setLabelFont:[UI7Font systemFontOfSize:10.0 attribute:UI7FontAttributeLight]];
     [self _setLabelShadowOffset:CGSizeZero];
     [self _setLabelTextColor:[UIColor grayColor] selectedTextColor:self.tintColor];
 }

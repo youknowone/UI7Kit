@@ -32,7 +32,9 @@
 
 #import <QuartzCore/QuartzCore.h>
 
+#import "UI7Font.h"
 #import "UI7View.h"
+
 #import "UI7SegmentedControl.h"
 
 #import "UI7KitPrivate.h"
@@ -51,7 +53,7 @@
     UIImage *selectedBackgroundImage = [UIImage roundedImageWithSize:CGSizeMake(10.0f, 40.0f) color:[UIColor clearColor] radius:UI7ControlRadius];
 
     NSDictionary *attributes = @{
-                                 UITextAttributeFont: [UIFont iOS7SystemFontOfSize:13.0 weight:@"Medium"],
+                                 UITextAttributeFont: [UI7Font systemFontOfSize:13.0 attribute:UI7FontAttributeMedium],
                                  UITextAttributeTextColor: self.tintColor,
                                  UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetZero],
                                  };
