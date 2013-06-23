@@ -56,6 +56,10 @@ static NSMutableDictionary *UI7ActionSheetStrokeViews = nil;
 
 - (id)init { return [super init]; }
 - (id)__init { assert(NO); return nil; }
+- (void)__showFromBarButtonItem:(UIBarButtonItem *)item animated:(BOOL)animated { assert(NO); }
+- (void)__showFromRect:(CGRect)rect inView:(UIView *)view animated:(BOOL)animated { assert(NO); }
+- (void)__showFromTabBar:(UITabBar *)view { assert(NO); }
+- (void)__showFromToolbar:(UIToolbar *)view { assert(NO); }
 - (void)__showInView:(UIView *)view { assert(NO); }
 
 - (void)__dealloc { assert(NO); }
@@ -84,19 +88,26 @@ static NSMutableDictionary *UI7ActionSheetStrokeViews = nil;
         Class origin = [UIActionSheet class];
 
         [origin copyToSelector:@selector(__init) fromSelector:@selector(init)];
+        [origin copyToSelector:@selector(__showFromBarButtonItem:animated:) fromSelector:@selector(showFromBarButtonItem:animated:)];
+        [origin copyToSelector:@selector(__showFromRect:inView:animated:) fromSelector:@selector(showFromRect:inView:animated:)];
+        [origin copyToSelector:@selector(__showFromTabBar:) fromSelector:@selector(showFromTabBar:)];
+        [origin copyToSelector:@selector(__showFromToolbar:) fromSelector:@selector(showFromToolbar:)];
         [origin copyToSelector:@selector(__showInView:) fromSelector:@selector(showInView:)];
         [origin copyToSelector:@selector(__dealloc) fromSelector:@selector(dealloc)];
     }
 }
 
 + (void)patch {
-    Class source = [self class];
     Class target = [UIActionSheet class];
 
-    [source exportSelector:@selector(init) toClass:target];
-    [source exportSelector:@selector(showInView:) toClass:target];
-    [source exportSelector:@selector(dealloc) toClass:target];
-    [source exportSelector:@selector(drawRect:) toClass:target];
+    [self exportSelector:@selector(init) toClass:target];
+    [self exportSelector:@selector(showFromBarButtonItem:animated:) toClass:target];
+    [self exportSelector:@selector(showFromRect:inView:animated:) toClass:target];
+    [self exportSelector:@selector(showFromTabBar:) toClass:target];
+    [self exportSelector:@selector(showFromToolbar:) toClass:target];
+    [self exportSelector:@selector(showInView:) toClass:target];
+    [self exportSelector:@selector(dealloc) toClass:target];
+    [self exportSelector:@selector(drawRect:) toClass:target];
 }
 
 - (void)dealloc {
@@ -120,10 +131,15 @@ static NSMutableDictionary *UI7ActionSheetStrokeViews = nil;
     // blow up stupid backgrounds >:|
 }
 
-- (void)showInView:(UIView *)view {
-    [self __showInView:view];
+// common method calls
+// - UI7ActionSheet UIActionSheet presentSheetFromButtonBar:
+// - UI7ActionSheet UIActionSheet presentSheetFromBehindView:
+// - UI7ActionSheet UIActionSheet _presentSheetFromView:above:
+// - layout
+
+- (void)_setTheme {
     self.backgroundColor = [UIColor colorWith8bitWhite:122 alpha:255];
-    
+
     CGRect frame = self.bounds;
     frame.origin.y = self._titleLabel.frame.origin.y + self._titleLabel.frame.size.height + 6.0f;
     self.frameView.frame = frame;
@@ -149,6 +165,31 @@ static NSMutableDictionary *UI7ActionSheetStrokeViews = nil;
         [button setTitleColor:color.highligtedColor forState:UIControlStateHighlighted];
         button.titleLabel.shadowOffset = CGSizeZero;
     }];
+}
+
+- (void)showFromBarButtonItem:(UIBarButtonItem *)item animated:(BOOL)animated {
+    [self __showFromBarButtonItem:item animated:animated];
+    [self _setTheme];
+}
+
+- (void)showFromRect:(CGRect)rect inView:(UIView *)view animated:(BOOL)animated {
+    [self __showFromRect:rect inView:view animated:animated];
+    [self _setTheme];
+}
+
+- (void)showFromTabBar:(UITabBar *)view {
+    [self __showFromTabBar:view];
+    [self _setTheme];
+}
+
+- (void)showFromToolbar:(UIToolbar *)view {
+    [self __showFromToolbar:view];
+    [self _setTheme];
+}
+
+- (void)showInView:(UIView *)view {
+    [self __showInView:view];
+    [self _setTheme];
 }
 
 @end
