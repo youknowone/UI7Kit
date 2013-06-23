@@ -33,7 +33,7 @@ static NSMutableDictionary *UI7AlertViewStrokeViews = nil;
 @property(nonatomic,retain) UIView *backgroundImageView;
 
 @property(nonatomic,assign) UIImageView *backgroundView;
-@property(nonatomic,assign) UIView *strokeView;
+@property(nonatomic,assign) NSMutableArray *strokeViews;
 
 @end
 
@@ -51,12 +51,12 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
     UI7AlertViewBackgroundViews[self.pointerString] = backgroundView;
 }
 
-- (UIView *)strokeView {
+- (NSMutableArray *)strokeViews {
     return UI7AlertViewStrokeViews[self.pointerString];
 }
 
-- (void)setStrokeView:(UIView *)strokeView {
-    UI7AlertViewStrokeViews[self.pointerString] = strokeView;
+- (void)setStrokeViews:(NSMutableArray *)strokeViews {
+    UI7AlertViewStrokeViews[self.pointerString] = strokeViews;
 }
 
 @end
@@ -131,10 +131,6 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
         self.backgroundImageView = [UIImage clearImage].view;
         self.backgroundView = [[[UIImageView alloc] init] autorelease];
         [self addSubview:self.backgroundView];
-
-        self.strokeView = [[UIView alloc] initWithFrame:CGRectMake(7.0, .0, 270.0, 0.5)];
-        self.strokeView.backgroundColor = [UIColor colorWith8bitWhite:182 alpha:255];
-        [self addSubview:self.strokeView];
     }
     return self;
 }
@@ -157,9 +153,19 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
     self.titleLabel.font = [UI7Font systemFontOfSize:17.0 attribute:UI7FontAttributeMedium];
     self.bodyTextLabel.font = [UI7Font systemFontOfSize:16.0 attribute:UI7FontAttributeLight];
 
-    CGFloat highest = self.frame.size.height;
-    for (UIAlertButton *button in self.buttons) {
-        button.titleLabel.font = [UI7Font systemFontOfSize:16.0 attribute:UI7FontAttributeLight];
+    for (UIView *strokeView in self.strokeViews) {
+        [strokeView removeFromSuperview];
+    }
+
+    self.strokeViews = [NSMutableArray array];
+
+    [self.buttons applyProcedureWithIndex:^(id obj, NSUInteger index) {
+        UIAlertButton *button = obj;
+        if (self.cancelButtonIndex == (NSInteger)index) {
+            button.titleLabel.font = [UI7Font systemFontOfSize:16.0 attribute:UI7FontAttributeLight];
+        } else {
+            button.titleLabel.font = [UI7Font systemFontOfSize:16.0 attribute:UI7FontAttributeMedium];
+        }
         [button setTitleColor:[UIColor iOS7ButtonTitleColor] forState:UIControlStateNormal];
         [button setTitleColor:[UIColor iOS7ButtonTitleColor].highligtedColor forState:UIControlStateHighlighted];
         button.titleLabel.shadowOffset = CGSizeZero;
@@ -170,14 +176,11 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
         frame.origin.y += 16.0;
         button.frame = frame;
 
-        highest = MIN(highest, button.frame.origin.y);
-    }
-
-    {
-        CGRect frame = self.strokeView.frame;
-        frame.origin.y = highest - 1.0f;
-        self.strokeView.frame = frame;
-    }
+        UIView *strokeView = [[UIView alloc] initWithFrame:CGRectMake(7.0, button.frame.origin.y, 270.0, 0.5)];
+        strokeView.backgroundColor = [UIColor colorWith8bitWhite:182 alpha:255];
+        [self addSubview:strokeView];
+        [self.strokeViews addObject:strokeView];
+    }];
 }
 
 - (void)dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated {
