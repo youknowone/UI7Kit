@@ -101,8 +101,4 @@
     return [self __buttonWithType:buttonType];
 }
 
-- (void)drawRect:(CGRect)rect {
-    NSLog(@"bah");
-}
-
 @end
