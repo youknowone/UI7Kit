@@ -19,50 +19,9 @@
 @end
 
 
-static NSMutableDictionary *UI7ActionSheetBackgroundViews = nil;
-static NSMutableDictionary *UI7ActionSheetHeaderBackgroundViews = nil;
-static NSMutableDictionary *UI7ActionSheetStrokeViews = nil;
-
-
 @interface UIActionSheet (Accessor)
 
-@property(nonatomic,readonly) UIView *buttonBackgroundView;
-@property(nonatomic,assign) UIView *backgroundView;
-@property(nonatomic,assign) UIView *headerBackgroundView;
 @property(nonatomic,assign) NSMutableArray *strokeViews;
-
-@end
-
-
-@implementation UIActionSheet (Accessor)
-
-- (UIView *)buttonBackgroundView {
-    return self.subviews[0];
-}
-
-- (UIView *)backgroundView {
-    return UI7ActionSheetBackgroundViews[self.pointerString];
-}
-
-- (void)setBackgroundView:(UIView *)view {
-    UI7ActionSheetBackgroundViews[self.pointerString] = view;
-}
-
-- (UIView *)headerBackgroundView {
-    return UI7ActionSheetHeaderBackgroundViews[self.pointerString];
-}
-
-- (void)setHeaderBackgroundView:(UIView *)view {
-    UI7ActionSheetHeaderBackgroundViews[self.pointerString] = view;
-}
-
-- (NSMutableArray *)strokeViews {
-    return UI7ActionSheetStrokeViews[self.pointerString];
-}
-
-- (void)setStrokeViews:(NSMutableArray *)strokeViews {
-    UI7ActionSheetStrokeViews[self.pointerString] = strokeViews;
-}
 
 @end
 
@@ -79,41 +38,25 @@ static NSMutableDictionary *UI7ActionSheetStrokeViews = nil;
 
 - (void)__dealloc { assert(NO); }
 - (void)_dealloc {
-    [UI7ActionSheetBackgroundViews removeObjectForKey:self.pointerString];
-    [UI7ActionSheetHeaderBackgroundViews removeObjectForKey:self.pointerString];
-    [UI7ActionSheetStrokeViews removeObjectForKey:self.pointerString];
     [self __dealloc];
 }
 
 - (void)_setTheme {
+    self.backgroundColor = UIColor.clearColor;
     
-    self.backgroundColor=UIColor.clearColor;
-    
-    CGRect frame = self.bounds;
-    frame.origin.y = [UIScreen mainScreen].bounds.size.height-self.frame.size.height;
-    self.backgroundView.frame = CGRectZero;
     self._titleLabel.textColor = [UIColor colorWith8bitWhite:88 alpha:255];
     self._titleLabel.shadowOffset = CGSizeZero;
-    
-    self.buttonBackgroundView.backgroundColor = [UIColor colorWith8bitWhite:240 alpha:255];
-    
-    for (UIView *strokeView in self.strokeViews) {
-        [strokeView removeFromSuperview];
-    }
-    
-    self.strokeViews = [NSMutableArray array];
-    
-    for (UIButton *button in self.buttons) {
+
+    [self.buttons applyProcedureWithIndex:^(id obj, NSUInteger index) {
+        UIButton *button = obj; // UIAlertButton
         
-        NSInteger index=[self.buttons indexOfObject:button];
-        
-        frame = button.frame;
-        frame.size = CGSizeMake(304.0f, 38.5f);
+        CGRect frame = button.frame;
+        frame.size = CGSizeMake(304.0f, 43.5f);
         frame.origin.x = 8.0f;
-        if (self.cancelButtonIndex == index) {
-            frame.origin.y = 60.0f + (self.buttons.count - 1) * 38.5f;
+        if (self.cancelButtonIndex == (NSInteger)index) {
+            frame.origin.y = 60.0f + (self.buttons.count - 1) * 44.0f;
         } else {
-            frame.origin.y = 50.0f + index * 38.5f;
+            frame.origin.y = 50.0f + index * 44.0f;
         }
         button.frame = frame;
         
@@ -127,25 +70,17 @@ static NSMutableDictionary *UI7ActionSheetStrokeViews = nil;
         
         UIBezierPath *path;
         
-        if (index==0) {
+        if (index == 0) {
             path = [UIBezierPath bezierPathWithRoundedRect:button.bounds byRoundingCorners:UIRectCornerTopLeft|UIRectCornerTopRight cornerRadii:self._titleLabel.text.length>1?CGSizeMake(0.0, 0.0):CGSizeMake(4.0, 4.0)];
-        }else if (index+1==self.buttons.count) {
+        } else if ((NSInteger)index == self.cancelButtonIndex) {
             path = [UIBezierPath bezierPathWithRoundedRect:button.bounds byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(4.0, 4.0)];
-        }else if (index+2==self.buttons.count) {
+        } else if (index == self.buttons.count - 1 - (self.cancelButtonIndex >= 0 ? 1 : 0)) {
             path = [UIBezierPath bezierPathWithRoundedRect:button.bounds byRoundingCorners:UIRectCornerBottomLeft|UIRectCornerBottomRight cornerRadii:CGSizeMake(4.0, 4.0)];
-        }else{
-            path = [UIBezierPath bezierPathWithRoundedRect:button.bounds byRoundingCorners:UIRectCornerTopLeft|UIRectCornerTopRight cornerRadii:CGSizeMake(0.0, 0.0)];
+        } else {
+            path = [UIBezierPath bezierPathWithRoundedRect:button.bounds cornerRadius:.0f];
         }
         
         [button setBackgroundImage:[path imageWithFillColor:[UIColor iOS7BackgroundColor]] forState:UIControlStateNormal];
-        
-        UIGraphicsBeginImageContext(button.frame.size);
-        CGContextRef context = UIGraphicsGetCurrentContext();
-        [[UIColor colorWith8bitWhite:218 alpha:255] set];
-        CGContextFillRect(context, CGRectMake(8.0f, 0.0, button.frame.size.width - 16.0f, button.frame.size.height));
-        
-        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
         
         [button setBackgroundImage:[path imageWithFillColor:[UIColor lightTextColor]] forState:UIControlStateHighlighted];
         
@@ -158,26 +93,22 @@ static NSMutableDictionary *UI7ActionSheetStrokeViews = nil;
         [button setTitleColor:color forState:UIControlStateNormal];
         [button setTitleColor:color forState:UIControlStateHighlighted];
         button.titleLabel.shadowOffset = CGSizeZero;
-        
-    }
-    frame = self.frame;
-    frame.origin.y += self.buttons.count * 10.0f;
-    
-    if (self._titleLabel.text.length>1) {
-        frame.origin.y += 20;
-        
-        self._titleLabel.frame= CGRectMake(self._titleLabel.frame.origin.x, self._titleLabel.frame.origin.y+10, self._titleLabel.frame.size.width, self._titleLabel.frame.size.height) ;
+    }];
+
+    CGRect frame = self.frame;
+    frame.origin.y += self.buttons.count * 4.0f;
+
+    if (self._titleLabel.text.length > 0) {
+        frame.origin.y += 20.0f;
+
+        CGRect tframe = self._titleLabel.frame;
+        tframe.origin.y += 10.0f;
+        self._titleLabel.frame = tframe;
 
         UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(8.0f, 10.0f, self.frame.size.width - 16.0f, 39.0f) byRoundingCorners:UIRectCornerTopLeft|UIRectCornerTopRight cornerRadii:CGSizeMake(4.0, 4.0)];
         UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[path imageWithFillColor:[UIColor iOS7BackgroundColor]]];
         
-        UIView *view = [[[UIView alloc] initWithFrame:CGRectMake(8.0f, 49, self.frame.size.width - 16.0f, 1.0f)] autorelease];
-        view.backgroundColor = [UIColor blackColor];
-        [self addSubview:view];
-        [self.strokeViews addObject:view];
-
-        [self insertSubview:backgroundView belowSubview:self.buttonBackgroundView];
-        self.headerBackgroundView = backgroundView;
+        [self insertSubview:backgroundView belowSubview:self._titleLabel];
     }
     
     self.frame = frame;
@@ -197,9 +128,6 @@ static NSMutableDictionary *UI7ActionSheetStrokeViews = nil;
 
 + (void)initialize {
     if (self == [UI7ActionSheet class]) {
-        UI7ActionSheetBackgroundViews = [[NSMutableDictionary alloc] init];
-        UI7ActionSheetStrokeViews = [[NSMutableDictionary alloc] init];
-        
         Class origin = [UIActionSheet class];
         
         [origin copyToSelector:@selector(__init) fromSelector:@selector(init)];
@@ -236,9 +164,7 @@ static NSMutableDictionary *UI7ActionSheetStrokeViews = nil;
 - (id)init {
     self = [self __init];
     if (self != nil) {
-        UIView *backgroundView = self.backgroundView = [[[UIView alloc] init] autorelease];
-        backgroundView.backgroundColor = [UIColor colorWith8bitWhite:240 alpha:255];
-        [self addSubview:backgroundView];
+
     }
     return self;
 }

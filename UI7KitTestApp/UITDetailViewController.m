@@ -45,9 +45,9 @@
     [view release];
 }
 
-- (void)showActionSheet:(id)sender {
+- (void)showActionSheet:(UISwitch *)sender {
     NSString *title = @"Title";
-    UIActionSheet *actionSheet = [[UI7ActionSheet alloc] initWithTitle:title delegate:nil cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Destructive" otherButtonTitles:@"Other", @"Buttons", nil];
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:sender.on ? title : nil delegate:nil cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Destructive" otherButtonTitles:@"Other", @"Buttons", nil];
     if (self.tabBarController) {
         [actionSheet showFromTabBar:self.tabBarController.tabBar];
     } else {
