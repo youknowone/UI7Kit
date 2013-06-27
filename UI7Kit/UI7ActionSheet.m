@@ -85,6 +85,105 @@ static NSMutableDictionary *UI7ActionSheetStrokeViews = nil;
     [self __dealloc];
 }
 
+- (void)_setTheme {
+    
+    self.backgroundColor=UIColor.clearColor;
+    
+    CGRect frame = self.bounds;
+    frame.origin.y = [UIScreen mainScreen].bounds.size.height-self.frame.size.height;
+    self.backgroundView.frame = CGRectZero;
+    self._titleLabel.textColor = [UIColor colorWith8bitWhite:88 alpha:255];
+    self._titleLabel.shadowOffset = CGSizeZero;
+    
+    self.buttonBackgroundView.backgroundColor = [UIColor colorWith8bitWhite:240 alpha:255];
+    
+    for (UIView *strokeView in self.strokeViews) {
+        [strokeView removeFromSuperview];
+    }
+    
+    self.strokeViews = [NSMutableArray array];
+    
+    for (UIButton *button in self.buttons) {
+        
+        NSInteger index=[self.buttons indexOfObject:button];
+        
+        frame = button.frame;
+        frame.size = CGSizeMake(304.0f, 38.5f);
+        frame.origin.x = 8.0f;
+        if (self.cancelButtonIndex == index) {
+            frame.origin.y = 60.0f + (self.buttons.count - 1) * 38.5f;
+        } else {
+            frame.origin.y = 50.0f + index * 38.5f;
+        }
+        button.frame = frame;
+        
+        if (self.cancelButtonIndex == (NSInteger)index) {
+            button.titleLabel.font = [UI7Font systemFontOfSize:button.titleLabel.font.pointSize attribute:UI7FontAttributeMedium];
+        } else {
+            button.titleLabel.font = [UI7Font systemFontOfSize:button.titleLabel.font.pointSize attribute:UI7FontAttributeLight];
+        }
+        
+        [button setBackgroundColor:[UIColor darkGrayColor]];
+        
+        UIBezierPath *path;
+        
+        if (index==0) {
+            path = [UIBezierPath bezierPathWithRoundedRect:button.bounds byRoundingCorners:UIRectCornerTopLeft|UIRectCornerTopRight cornerRadii:self._titleLabel.text.length>1?CGSizeMake(0.0, 0.0):CGSizeMake(4.0, 4.0)];
+        }else if (index+1==self.buttons.count) {
+            path = [UIBezierPath bezierPathWithRoundedRect:button.bounds byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(4.0, 4.0)];
+        }else if (index+2==self.buttons.count) {
+            path = [UIBezierPath bezierPathWithRoundedRect:button.bounds byRoundingCorners:UIRectCornerBottomLeft|UIRectCornerBottomRight cornerRadii:CGSizeMake(4.0, 4.0)];
+        }else{
+            path = [UIBezierPath bezierPathWithRoundedRect:button.bounds byRoundingCorners:UIRectCornerTopLeft|UIRectCornerTopRight cornerRadii:CGSizeMake(0.0, 0.0)];
+        }
+        
+        [button setBackgroundImage:[path imageWithFillColor:[UIColor iOS7BackgroundColor]] forState:UIControlStateNormal];
+        
+        UIGraphicsBeginImageContext(button.frame.size);
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        [[UIColor colorWith8bitWhite:218 alpha:255] set];
+        CGContextFillRect(context, CGRectMake(8.0f, 0.0, button.frame.size.width - 16.0f, button.frame.size.height));
+        
+        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        [button setBackgroundImage:[path imageWithFillColor:[UIColor lightTextColor]] forState:UIControlStateHighlighted];
+        
+        UIColor *color = nil;
+        if ((self.destructiveButtonIndex == (NSInteger)index)&&(self.destructiveButtonIndex!=self.cancelButtonIndex)) {
+            color = [UIColor iOS7ButtonTitleEmphasizedColor];
+        } else {
+            color = [UIColor iOS7ButtonTitleColor];
+        }
+        [button setTitleColor:color forState:UIControlStateNormal];
+        [button setTitleColor:color forState:UIControlStateHighlighted];
+        button.titleLabel.shadowOffset = CGSizeZero;
+        
+    }
+    frame = self.frame;
+    frame.origin.y += self.buttons.count * 10.0f;
+    
+    if (self._titleLabel.text.length>1) {
+        frame.origin.y += 20;
+        
+        self._titleLabel.frame= CGRectMake(self._titleLabel.frame.origin.x, self._titleLabel.frame.origin.y+10, self._titleLabel.frame.size.width, self._titleLabel.frame.size.height) ;
+
+        UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(8.0f, 10.0f, self.frame.size.width - 16.0f, 39.0f) byRoundingCorners:UIRectCornerTopLeft|UIRectCornerTopRight cornerRadii:CGSizeMake(4.0, 4.0)];
+        UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[path imageWithFillColor:[UIColor iOS7BackgroundColor]]];
+        
+        UIView *view = [[[UIView alloc] initWithFrame:CGRectMake(8.0f, 49, self.frame.size.width - 16.0f, 1.0f)] autorelease];
+        view.backgroundColor = [UIColor blackColor];
+        [self addSubview:view];
+        [self.strokeViews addObject:view];
+
+        [self insertSubview:backgroundView belowSubview:self.buttonBackgroundView];
+        self.headerBackgroundView = backgroundView;
+    }
+    
+    self.frame = frame;
+}
+
+
 @end
 
 
@@ -100,9 +199,9 @@ static NSMutableDictionary *UI7ActionSheetStrokeViews = nil;
     if (self == [UI7ActionSheet class]) {
         UI7ActionSheetBackgroundViews = [[NSMutableDictionary alloc] init];
         UI7ActionSheetStrokeViews = [[NSMutableDictionary alloc] init];
-
+        
         Class origin = [UIActionSheet class];
-
+        
         [origin copyToSelector:@selector(__init) fromSelector:@selector(init)];
         [origin copyToSelector:@selector(__showFromBarButtonItem:animated:) fromSelector:@selector(showFromBarButtonItem:animated:)];
         [origin copyToSelector:@selector(__showFromRect:inView:animated:) fromSelector:@selector(showFromRect:inView:animated:)];
@@ -115,7 +214,7 @@ static NSMutableDictionary *UI7ActionSheetStrokeViews = nil;
 
 + (void)patch {
     Class target = [UIActionSheet class];
-
+    
     [self exportSelector:@selector(init) toClass:target];
     [self exportSelector:@selector(showFromBarButtonItem:animated:) toClass:target];
     [self exportSelector:@selector(showFromRect:inView:animated:) toClass:target];
@@ -124,6 +223,7 @@ static NSMutableDictionary *UI7ActionSheetStrokeViews = nil;
     [self exportSelector:@selector(showInView:) toClass:target];
     [self exportSelector:@selector(dealloc) toClass:target];
     [self exportSelector:@selector(drawRect:) toClass:target];
+
 }
 
 - (void)dealloc {
@@ -152,83 +252,6 @@ static NSMutableDictionary *UI7ActionSheetStrokeViews = nil;
 // - UI7ActionSheet UIActionSheet presentSheetFromBehindView:
 // - UI7ActionSheet UIActionSheet _presentSheetFromView:above:
 // - layout
-
-- (void)_setTheme {
-    self.backgroundColor = [UIColor colorWith8bitWhite:144 alpha:255];
-
-    CGRect frame = self.bounds;
-    frame.origin.y = self._titleLabel.frame.origin.y + self._titleLabel.frame.size.height + 6.0f;
-    self.backgroundView.frame = frame;
-    self._titleLabel.textColor = [UIColor colorWith8bitWhite:88 alpha:255];
-    self._titleLabel.shadowOffset = CGSizeZero;
-    
-    self.buttonBackgroundView.backgroundColor = [UIColor colorWith8bitWhite:240 alpha:255];
-
-    for (UIView *strokeView in self.strokeViews) {
-        [strokeView removeFromSuperview];
-    }
-    self.strokeViews = [NSMutableArray array];
-
-    NSInteger index = 0;
-    CGFloat bottom = .0;
-    for (UIButton *button in self.buttons) { // UIAlertButton, really
-        frame = button.frame;
-        frame.size = CGSizeMake(304.0f, 44.5f);
-        frame.origin.x = 8.0f;
-        if (self.cancelButtonIndex == index) {
-            frame.origin.y = 60.0f + (self.buttons.count - 1) * 45.0f;
-            index -= 1;
-        } else {
-            frame.origin.y = 50.0f + index * 45.0f;
-            UIView *view = [[[UIView alloc] initWithFrame:CGRectMake(16.0f, frame.origin.y + 0.5f, frame.size.width, 0.5f)] autorelease];
-            view.backgroundColor = [UIColor colorWith8bitWhite:171 alpha:255];
-            [self addSubview:view];
-            [self.strokeViews addObject:view];
-        }
-        button.frame = frame;
-
-        if (self.cancelButtonIndex == (NSInteger)index) {
-            button.titleLabel.font = [UI7Font systemFontOfSize:button.titleLabel.font.pointSize attribute:UI7FontAttributeMedium];
-        } else {
-            button.titleLabel.font = [UI7Font systemFontOfSize:button.titleLabel.font.pointSize attribute:UI7FontAttributeLight];
-        }
-
-        UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:button.bounds byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(4.0, 4.0)];
-        [button setBackgroundImage:[path imageWithFillColor:[UIColor iOS7BackgroundColor]] forState:UIControlStateNormal];
-
-        UIGraphicsBeginImageContext(button.frame.size);
-        CGContextRef context = UIGraphicsGetCurrentContext();
-        [[UIColor colorWith8bitWhite:218 alpha:255] set];
-        CGContextFillRect(context, CGRectMake(8.0f, .0, button.frame.size.width - 16.0f, button.frame.size.height));
-        
-        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
-        
-        [button setBackgroundImage:image forState:UIControlStateHighlighted];
-
-        UIColor *color = nil;
-        if (self.destructiveButtonIndex == (NSInteger)index) {
-            color = [UIColor iOS7ButtonTitleEmphasizedColor];
-        } else {
-            color = [UIColor iOS7ButtonTitleColor];
-        }
-        [button setTitleColor:color forState:UIControlStateNormal];
-        [button setTitleColor:color.highligtedColor forState:UIControlStateHighlighted];
-        button.titleLabel.shadowOffset = CGSizeZero;
-
-        bottom = MIN(bottom, button.frame.origin.y);
-
-        index += 1;
-    }
-    frame = self.frame;
-    frame.origin.y += self.buttons.count * 10.0f;
-    self.frame = frame;
-
-    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(8.0f, .0f, self.frame.size.width - 16.0f, 50.0f) cornerRadius:4.0f];
-    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[path imageWithFillColor:[UIColor colorWith8bitWhite:228 alpha:255]]];
-    [self insertSubview:backgroundView belowSubview:self.buttonBackgroundView];
-    self.headerBackgroundView = backgroundView;
-}
 
 - (void)showFromBarButtonItem:(UIBarButtonItem *)item animated:(BOOL)animated {
     [self __showFromBarButtonItem:item animated:animated];
