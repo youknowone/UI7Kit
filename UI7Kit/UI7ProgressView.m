@@ -20,7 +20,7 @@
     self.progressTintColor = self.tintColor;
     self.trackTintColor = [UIColor colorWith8bitWhite:183 alpha:255];
 
-    UIGraphicsBeginImageContext(CGSizeMake(1.0, 9.0));
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(1.0, 9.0), NO, .0);
     CGContextRef context = UIGraphicsGetCurrentContext();
     [self.trackTintColor set];
     CGContextFillRect(context, CGRectMake(.0, 4.0, 1.0, 2.0));
