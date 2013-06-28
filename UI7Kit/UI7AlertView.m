@@ -16,14 +16,15 @@
 @property(nonatomic,readonly) UILabel *titleLabel;
 @property(nonatomic,readonly) UILabel *bodyTextLabel;
 @property(nonatomic,readonly) NSArray *buttons;
-@property(nonatomic,retain,getter=_dimView) UIView *dimView;
-@property(nonatomic,assign) BOOL *dimsBackground;
+@property(nonatomic,readonly) UIView *_dimView __deprecated; // rejected
+@property(nonatomic,assign) BOOL *dimsBackground __deprecated; // rejected
 
 - (void)dismissWithClickedButtonIndex:(int)arg1 animated:(BOOL)arg2;
 
 @end
 
 
+static NSMutableDictionary *UI7AlertViewDimViews = nil;
 static NSMutableDictionary *UI7AlertViewBackgroundViews = nil;
 static NSMutableDictionary *UI7AlertViewStrokeViews = nil;
 
@@ -32,6 +33,7 @@ static NSMutableDictionary *UI7AlertViewStrokeViews = nil;
 
 @property(nonatomic,retain) UIView *backgroundImageView;
 
+@property(nonatomic,retain) UIView *dimView;
 @property(nonatomic,assign) UIImageView *backgroundView;
 @property(nonatomic,assign) NSMutableArray *strokeViews;
 
@@ -42,6 +44,14 @@ static NSMutableDictionary *UI7AlertViewStrokeViews = nil;
 
 NSAPropertyGetter(backgroundImageView, @"_backgroundImageView")
 NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
+
+- (UIView *)dimView {
+    return UI7AlertViewDimViews[self.pointerString];
+}
+
+- (void)setDimView:(UIView *)dimView {
+    UI7AlertViewDimViews[self.pointerString] = dimView;
+}
 
 - (UIView *)backgroundView {
     return UI7AlertViewBackgroundViews[self.pointerString];
@@ -84,6 +94,7 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
 
 - (void)__dealloc { assert(NO); }
 - (void)_dealloc {
+    [UI7AlertViewDimViews removeObjectForKey:self.pointerString];
     [UI7AlertViewBackgroundViews removeObjectForKey:self.pointerString];
     [UI7AlertViewStrokeViews removeObjectForKey:self.pointerString];
     [self __dealloc];
@@ -96,6 +107,7 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
 
 + (void)initialize {
     if (self == [UI7AlertView class]) {
+        UI7AlertViewDimViews = [[NSMutableDictionary alloc] init];
         UI7AlertViewBackgroundViews = [[NSMutableDictionary alloc] init];
         UI7AlertViewStrokeViews = [[NSMutableDictionary alloc] init];
 
@@ -127,7 +139,7 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
 - (id)init {
     self = [self __init];
     if (self != nil) {
-        self.dimsBackground = NO;
+//        self.dimsBackground = NO; // need better
         self.backgroundImageView = [UIImage clearImage].view;
         self.backgroundView = [[[UIImageView alloc] init] autorelease];
         [self addSubview:self.backgroundView];

@@ -12,10 +12,10 @@
 
 @interface UITabBar (Private)
 
-- (void)_setLabelFont:(UIFont *)font;
-- (void)_setLabelShadowColor:(UIColor *)color;
-- (void)_setLabelShadowOffset:(CGSize)size;
-- (void)_setLabelTextColor:(UIColor *)textColor selectedTextColor:(UIColor *)selectedTextColor;
+- (void)_setLabelFont:(UIFont *)font __deprecated; // rejected
+- (void)_setLabelShadowColor:(UIColor *)color __deprecated; // rejected
+- (void)_setLabelShadowOffset:(CGSize)size __deprecated; // rejected
+- (void)_setLabelTextColor:(UIColor *)textColor selectedTextColor:(UIColor *)selectedTextColor; // rejected
 
 @end
 
@@ -41,10 +41,10 @@
     if ([self respondsToSelector:@selector(setShadowImage:)]) {
         self.shadowImage = [UIImage clearImage];
     }
-    // private properties
-    [self _setLabelFont:[UI7Font systemFontOfSize:10.0 attribute:UI7FontAttributeLight]];
-    [self _setLabelShadowOffset:CGSizeZero];
-    [self _setLabelTextColor:[UIColor grayColor] selectedTextColor:self.tintColor];
+    // Removed to pass Appstore review
+//    [self _setLabelFont:[UI7Font systemFontOfSize:10.0 attribute:UI7FontAttributeLight]];
+//    [self _setLabelShadowOffset:CGSizeZero];
+//    [self _setLabelTextColor:[UIColor grayColor] selectedTextColor:self.tintColor];
 }
 
 @end

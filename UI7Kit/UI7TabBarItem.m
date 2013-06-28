@@ -11,7 +11,7 @@
 @interface UITabBarItem (Private)
 
 @property(nonatomic,retain) UIImage * selectedImage;
-@property(nonatomic,retain) UIImage * unselectedImage;
+@property(nonatomic,retain) UIImage * unselectedImage __deprecated; // rejected
 
 @property(nonatomic,readonly) BOOL isSystemItem;
 @property(nonatomic,readonly) UITabBarSystemItem systemItem;
@@ -82,7 +82,7 @@
     if (selected) {
         self.selectedImage = image;
     } else {
-        self.unselectedImage = image;
+//        self.unselectedImage = image; // to avoid appstore review
     }
     return image;
 }

@@ -12,7 +12,7 @@
 
 @interface UIActionSheet (Private)
 
-@property(nonatomic,readonly) UILabel *_titleLabel;
+@property(nonatomic,readonly) UILabel *_titleLabel __deprecated; // rejected
 @property(nonatomic,readonly) NSMutableArray *buttons;
 @property(nonatomic,readonly) UITableView *tableView;
 
@@ -21,7 +21,14 @@
 
 @interface UIActionSheet (Accessor)
 
-@property(nonatomic,assign) NSMutableArray *strokeViews;
+@property(nonatomic,readonly) UILabel *titleLabel;
+
+@end
+
+
+@implementation UIActionSheet (Accessor)
+
+NSAPropertyGetter(titleLabel, @"_titleLabel");
 
 @end
 
@@ -44,8 +51,8 @@
 - (void)_setTheme {
     self.backgroundColor = UIColor.clearColor;
     
-    self._titleLabel.textColor = [UIColor colorWith8bitWhite:88 alpha:255];
-    self._titleLabel.shadowOffset = CGSizeZero;
+    self.titleLabel.textColor = [UIColor colorWith8bitWhite:88 alpha:255];
+    self.titleLabel.shadowOffset = CGSizeZero;
 
     [self.buttons applyProcedureWithIndex:^(id obj, NSUInteger index) {
         UIButton *button = obj; // UIAlertButton
@@ -71,7 +78,7 @@
         UIBezierPath *path;
         
         if (index == 0) {
-            path = [UIBezierPath bezierPathWithRoundedRect:button.bounds byRoundingCorners:UIRectCornerTopLeft|UIRectCornerTopRight cornerRadii:self._titleLabel.text.length>1?CGSizeMake(0.0, 0.0):CGSizeMake(4.0, 4.0)];
+            path = [UIBezierPath bezierPathWithRoundedRect:button.bounds byRoundingCorners:UIRectCornerTopLeft|UIRectCornerTopRight cornerRadii:self.titleLabel.text.length>1?CGSizeMake(0.0, 0.0):CGSizeMake(4.0, 4.0)];
         } else if ((NSInteger)index == self.cancelButtonIndex) {
             path = [UIBezierPath bezierPathWithRoundedRect:button.bounds byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(4.0, 4.0)];
         } else if (index == self.buttons.count - 1 - (self.cancelButtonIndex >= 0 ? 1 : 0)) {
@@ -98,17 +105,17 @@
     CGRect frame = self.frame;
     frame.origin.y += self.buttons.count * 4.0f;
 
-    if (self._titleLabel.text.length > 0) {
+    if (self.titleLabel.text.length > 0) {
         frame.origin.y += 20.0f;
 
-        CGRect tframe = self._titleLabel.frame;
+        CGRect tframe = self.titleLabel.frame;
         tframe.origin.y += 10.0f;
-        self._titleLabel.frame = tframe;
+        self.titleLabel.frame = tframe;
 
         UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(8.0f, 10.0f, self.frame.size.width - 16.0f, 39.0f) byRoundingCorners:UIRectCornerTopLeft|UIRectCornerTopRight cornerRadii:CGSizeMake(4.0, 4.0)];
         UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[path imageWithFillColor:[UIColor iOS7BackgroundColor]]];
         
-        [self insertSubview:backgroundView belowSubview:self._titleLabel];
+        [self insertSubview:backgroundView belowSubview:self.titleLabel];
     }
     
     self.frame = frame;

@@ -16,7 +16,7 @@ static NSMutableDictionary *UI7ViewControllerEditButtonItems = nil;
 
 @interface UIViewController (Private)
 
-- (void)_toggleEditing:(id)sender;
+- (void)_toggleEditing:(id)sender __deprecated; // rejected
 
 @end
 
