@@ -78,6 +78,7 @@
     self.layer.cornerRadius = 4.0f;
     self.layer.borderWidth = 1.0f;
     self.layer.borderColor = self.tintColor.CGColor;
+    self.frame = CGRectMake(self.frame.origin.x,self.frame.origin.y,self.frame.size.width,29);
 }
 
 @end
