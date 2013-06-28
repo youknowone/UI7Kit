@@ -66,6 +66,7 @@
 		38F0682C1636F8C8002723AB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38F0682B1636F8C8002723AB /* Default-568h@2x.png */; };
 		38F0682F1636F8C8002723AB /* UITMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38F0682E1636F8C8002723AB /* UITMasterViewController.m */; };
 		38F068321636F8C9002723AB /* UITDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38F068311636F8C9002723AB /* UITDetailViewController.m */; };
+		38F0C7B1177C3F2C00645662 /* UI7TextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 38F0C7B0177C3F2C00645662 /* UI7TextField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -192,6 +193,8 @@
 		38F0682E1636F8C8002723AB /* UITMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UITMasterViewController.m; sourceTree = "<group>"; };
 		38F068301636F8C8002723AB /* UITDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UITDetailViewController.h; sourceTree = "<group>"; };
 		38F068311636F8C9002723AB /* UITDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UITDetailViewController.m; sourceTree = "<group>"; };
+		38F0C7AF177C3F2C00645662 /* UI7TextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7TextField.h; sourceTree = "<group>"; };
+		38F0C7B0177C3F2C00645662 /* UI7TextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7TextField.m; sourceTree = "<group>"; };
 		38F2BA431767599400F12168 /* UI7NavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7NavigationBar.h; sourceTree = "<group>"; };
 		38F2BA441767599400F12168 /* UI7NavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7NavigationBar.m; sourceTree = "<group>"; };
 		55EED93614CF421499E970F0 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
@@ -376,6 +379,8 @@
 				381582461771E72C0045713A /* UI7Slider.m */,
 				3861E0691771F9BC00AA8DE4 /* UI7ProgressView.h */,
 				3861E06A1771F9BC00AA8DE4 /* UI7ProgressView.m */,
+				38F0C7AF177C3F2C00645662 /* UI7TextField.h */,
+				38F0C7B0177C3F2C00645662 /* UI7TextField.m */,
 				380174601769FE390049D26C /* Resources */,
 				38017426176989660049D26C /* Supporting Files */,
 			);
@@ -592,6 +597,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38EEF9C7176A366C0085B09B /* UI7Button.m in Sources */,
+				38F0C7B1177C3F2C00645662 /* UI7TextField.m in Sources */,
 				38CE37D6176F657800AC0C89 /* UI7SegmentedControl.m in Sources */,
 				381582471771E72C0045713A /* UI7Slider.m in Sources */,
 				38017450176989B80049D26C /* UI7Utilities.m in Sources */,

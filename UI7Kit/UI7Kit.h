@@ -32,6 +32,7 @@
 #import <UI7Kit/UI7TabBarItem.h>
 #import <UI7Kit/UI7TabBarController.h>
 #import <UI7Kit/UI7TableView.h>
+#import <UI7Kit/UI7TextField.h>
 #import <UI7Kit/UI7Toolbar.h>
 #import <UI7Kit/UI7View.h>
 #import <UI7Kit/UI7ViewController.h>
