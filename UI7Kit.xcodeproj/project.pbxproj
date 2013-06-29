@@ -53,6 +53,7 @@
 		38AF86CF1769BC8000BFBD29 /* libUI7Kit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38017423176989650049D26C /* libUI7Kit.a */; };
 		38BC0E5D173E821700F36497 /* UITSubviewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38BC0E5B173E821700F36497 /* UITSubviewTableViewController.m */; };
 		38C46562177F277000A883EA /* UI7Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C46561177F277000A883EA /* UI7Color.m */; };
+		38C46565177F3C6E00A883EA /* UI7SearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C46564177F3C6D00A883EA /* UI7SearchBar.m */; };
 		38CE37D6176F657800AC0C89 /* UI7SegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 38CE37D4176F4C8400AC0C89 /* UI7SegmentedControl.m */; };
 		38D1C937177EF7B70026135A /* UI7Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D1C936177EF7B70026135A /* UI7Tool.m */; };
 		38EEF9C7176A366C0085B09B /* UI7Button.m in Sources */ = {isa = PBXBuildFile; fileRef = 38EEF9C6176A366C0085B09B /* UI7Button.m */; };
@@ -170,6 +171,8 @@
 		38BC0E5B173E821700F36497 /* UITSubviewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITSubviewTableViewController.m; sourceTree = "<group>"; };
 		38C46560177F277000A883EA /* UI7Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7Color.h; sourceTree = "<group>"; };
 		38C46561177F277000A883EA /* UI7Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7Color.m; sourceTree = "<group>"; };
+		38C46563177F3C6D00A883EA /* UI7SearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7SearchBar.h; sourceTree = "<group>"; };
+		38C46564177F3C6D00A883EA /* UI7SearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7SearchBar.m; sourceTree = "<group>"; };
 		38C7A9761495181800381910 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		38C7A9771495181800381910 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		38C7A9781495181800381910 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -353,24 +356,18 @@
 				38C46561177F277000A883EA /* UI7Color.m */,
 				3886F7021770B10700890D47 /* UI7View.h */,
 				3886F7031770B10700890D47 /* UI7View.m */,
-				38017410176776020049D26C /* UI7BarButtonItem.h */,
-				38017411176776020049D26C /* UI7BarButtonItem.m */,
 				3801740D176771CF0049D26C /* UI7ViewController.h */,
 				3801740E176771CF0049D26C /* UI7ViewController.m */,
-				38F2BA431767599400F12168 /* UI7NavigationBar.h */,
-				38F2BA441767599400F12168 /* UI7NavigationBar.m */,
-				38E58A8D1767554200F6ED19 /* UI7NavigationController.h */,
-				38E58A8E1767554200F6ED19 /* UI7NavigationController.m */,
-				382F54271767863B004D6F59 /* UI7TableView.h */,
-				382F54281767863B004D6F59 /* UI7TableView.m */,
-				38EEF9C5176A366C0085B09B /* UI7Button.h */,
-				38EEF9C6176A366C0085B09B /* UI7Button.m */,
-				38EEF9C8176A482C0085B09B /* UI7Switch.h */,
-				38EEF9C9176A482C0085B09B /* UI7Switch.m */,
 				38505B2E176B1575004A7725 /* UI7AlertView.h */,
 				38505B2F176B1575004A7725 /* UI7AlertView.m */,
 				387A6FE2176CC58F00B91354 /* UI7ActionSheet.h */,
 				387A6FE3176CC58F00B91354 /* UI7ActionSheet.m */,
+				38017410176776020049D26C /* UI7BarButtonItem.h */,
+				38017411176776020049D26C /* UI7BarButtonItem.m */,
+				38F2BA431767599400F12168 /* UI7NavigationBar.h */,
+				38F2BA441767599400F12168 /* UI7NavigationBar.m */,
+				38E58A8D1767554200F6ED19 /* UI7NavigationController.h */,
+				38E58A8E1767554200F6ED19 /* UI7NavigationController.m */,
 				387558AF176DD00600AE5C8B /* UI7TabBar.h */,
 				387558B0176DD00600AE5C8B /* UI7TabBar.m */,
 				387558B9176DEDDE00AE5C8B /* UI7TabBarItem.h */,
@@ -379,6 +376,14 @@
 				387558B3176DD03F00AE5C8B /* UI7TabBarController.m */,
 				3801740A1767704B0049D26C /* UI7Toolbar.h */,
 				3801740B1767704B0049D26C /* UI7Toolbar.m */,
+				38C46563177F3C6D00A883EA /* UI7SearchBar.h */,
+				38C46564177F3C6D00A883EA /* UI7SearchBar.m */,
+				382F54271767863B004D6F59 /* UI7TableView.h */,
+				382F54281767863B004D6F59 /* UI7TableView.m */,
+				38EEF9C5176A366C0085B09B /* UI7Button.h */,
+				38EEF9C6176A366C0085B09B /* UI7Button.m */,
+				38EEF9C8176A482C0085B09B /* UI7Switch.h */,
+				38EEF9C9176A482C0085B09B /* UI7Switch.m */,
 				38CE37D3176F4C8400AC0C89 /* UI7SegmentedControl.h */,
 				38CE37D4176F4C8400AC0C89 /* UI7SegmentedControl.m */,
 				3886F6FF1770AAD700890D47 /* UI7Stepper.h */,
@@ -629,6 +634,7 @@
 				3861E06B1771F9BC00AA8DE4 /* UI7ProgressView.m in Sources */,
 				383E6A831775CF0100EF7ADA /* UI7Font.m in Sources */,
 				38C46562177F277000A883EA /* UI7Color.m in Sources */,
+				38C46565177F3C6E00A883EA /* UI7SearchBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
