@@ -37,6 +37,7 @@
 //                     @"PreparedCellTable",
                      @"Text",
 //                     @"SubviewTable",
+                     @"RoundedRectButton",
                      ];
     self.issues = @[
                     @1,

@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 youknowone.org. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
+
 #import "UI7Font.h"
 
 #import "UI7Button.h"
@@ -18,11 +20,8 @@
 + (id)__buttonWithType:(UIButtonType)buttonType { assert(NO); return nil; }
 //- (void)__drawRect:(CGRect)rect { assert(NO); }
 
-- (void)_buttonInit {
-    if (self.buttonType == UIButtonTypeRoundedRect) {
-        self.titleLabel.font = [UI7Font systemFontOfSize:self.titleLabel.font.pointSize attribute:UI7FontAttributeLight];
-        [self setBackgroundImage:[UIImage clearImage] forState:UIControlStateNormal];
-    }
+- (void)_buttonInitTheme {
+    self.titleLabel.font = [UI7Font systemFontOfSize:self.titleLabel.font.pointSize attribute:UI7FontAttributeLight];
 }
 
 @end
@@ -54,13 +53,12 @@
 }
 
 + (void)patch {
-    Class source = [self class];
-    Class target =  [UIButton class];
+    Class target = [UIButton class];
 
-    [source exportSelector:@selector(initWithCoder:) toClass:target];
+    [self exportSelector:@selector(initWithCoder:) toClass:target];
     [target methodForSelector:@selector(tintColor)].implementation = [target methodForSelector:@selector(_tintColor)].implementation;
-    [target classMethodObjectForSelector:@selector(buttonWithType:)].implementation = [source classMethodObjectForSelector:@selector(buttonWithType:)].implementation;
-    [source exportSelector:@selector(drawRect:) toClass:target];
+    [target classMethodObjectForSelector:@selector(buttonWithType:)].implementation = [self.class classMethodObjectForSelector:@selector(buttonWithType:)].implementation;
+    [self exportSelector:@selector(drawRect:) toClass:target];
     [NSClassFromString(@"UIRoundedRectButton") addMethodForSelector:@selector(initWithCoder:) fromMethod:[self methodForSelector:@selector(_UIRoundedRectButton_initWithCoder:)]];
 }
 
@@ -95,10 +93,40 @@
 + (id)buttonWithType:(UIButtonType)buttonType {
     if (buttonType == UIButtonTypeRoundedRect) {
         UIButton *button = [self __buttonWithType:UIButtonTypeCustom];
-        [button _buttonInit];
+        [button _buttonInitTheme];
         return button;
     }
     return [self __buttonWithType:buttonType];
+}
+
+@end
+
+
+@implementation UI7RoundedRectButton
+
+- (void)_roundedRectButtonInit {
+    self.layer.cornerRadius = 6.0;
+    self.backgroundColor = self.tintColor;
+    [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self setTitleColor:self.tintColor.highligtedColor forState:UIControlStateHighlighted];
+    [self setTitleColor:self.tintColor.highligtedColor forState:UIControlStateSelected];
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    [self _roundedRectButtonInit];
+    return self;
+}
+
+- (id)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    [self _roundedRectButtonInit];
+    return self;
+}
+
+- (void)setTintColor:(UIColor *)tintColor {
+    [super setTintColor:tintColor];
+    self.backgroundColor = tintColor;
 }
 
 @end

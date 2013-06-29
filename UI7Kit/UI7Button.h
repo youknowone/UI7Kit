@@ -6,8 +6,13 @@
 //  Copyright (c) 2013 youknowone.org. All rights reserved.
 //
 
-#include <UI7Kit/UI7Utilities.h>
+#import <UI7Kit/UI7Utilities.h>
 
 @interface UI7Button : UIButton<UI7Patch>
+
+@end
+
+
+@interface UI7RoundedRectButton : UI7Button
 
 @end
