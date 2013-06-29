@@ -114,7 +114,7 @@ NSAPropertyGetter(titleLabel, @"_titleLabel");
         self.titleLabel.frame = tframe;
 
         UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(8.0f, 10.0f, self.frame.size.width - 16.0f, 39.0f) byRoundingCorners:UIRectCornerTopLeft|UIRectCornerTopRight cornerRadii:CGSizeMake(4.0, 4.0)];
-        UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[path imageWithFillColor:[UI7Color defaultBackgroundColor]]];
+        UIImageView *backgroundView = [[[UIImageView alloc] initWithImage:[path imageWithFillColor:[UI7Color defaultBackgroundColor]]] autorelease];
         
         [self insertSubview:backgroundView belowSubview:self.titleLabel];
     }
