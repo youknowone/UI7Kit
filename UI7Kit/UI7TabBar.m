@@ -46,15 +46,15 @@
     name = [@"_set" stringByAppendingString:@"LabelFont:"];
     selector = NSSelectorFromString(name);
     impl = class_getMethodImplementation(self.class, selector);
-    impl(self, _cmd, [UI7Font systemFontOfSize:10.0 attribute:UI7FontAttributeLight]);
+    impl(self, selector, [UI7Font systemFontOfSize:10.0 attribute:UI7FontAttributeLight]);
     name = [@"_set" stringByAppendingString:@"LabelShadowOffset:"];
     selector = NSSelectorFromString(name);
     impl = class_getMethodImplementation(self.class, selector);
-    impl(self, _cmd, CGSizeZero);
-    name = [@"_set" stringByAppendingString:@"LabelTextColor:"];
+    impl(self, selector, CGSizeZero);
+    name = [@"_set" stringByAppendingString:@"LabelTextColor:selectedTextColor:"];
     selector = NSSelectorFromString(name);
     impl = class_getMethodImplementation(self.class, selector);
-    impl(self, _cmd, [UIColor grayColor], self.tintColor);
+    impl(self, selector, [UIColor grayColor], self.tintColor);
 }
 
 @end

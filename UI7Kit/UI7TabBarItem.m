@@ -82,10 +82,10 @@
     if (selected) {
         self.selectedImage = image;
     } else {
-        NSString *name = [@"_set" stringByAppendingString:@"UnselectedImage:"];
+        NSString *name = [@"set" stringByAppendingString:@"UnselectedImage:"];
         SEL selector = NSSelectorFromString(name);
         IMP impl = class_getMethodImplementation(self.class, selector);
-        impl(self, _cmd, image);
+        impl(self, selector, image);
     }
     return image;
 }
