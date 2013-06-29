@@ -38,7 +38,10 @@
                      @"Text",
 //                     @"SubviewTable",
                      ];
-    self.issues = @[@1];
+    self.issues = @[
+                    @1,
+                    @30,
+                    ];
 }
 
 - (void)didReceiveMemoryWarning {

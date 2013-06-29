@@ -153,6 +153,27 @@
                                             <segue destination="lpO-jh-9Lt" kind="push" id="Rwm-hO-JwZ"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="#30" textLabel="nbj-FO-vp3" style="IBUITableViewCellStyleDefault" id="3I8-eO-yzK">
+                                        <rect key="frame" x="0.0" y="274" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="#30" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nbj-FO-vp3">
+                                                    <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="ZH5-Ee-lyy" kind="push" id="qMc-oN-F80"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="VOL-Ip-gE2" id="oVc-S7-0t5"/>
@@ -208,7 +229,44 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aUH-yT-e1G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="473" y="737"/>
+            <point key="canvasLocation" x="421" y="679"/>
+        </scene>
+        <!--View Controller - UISearchBar-->
+        <scene sceneID="FNs-An-U9Y">
+            <objects>
+                <viewController id="ZH5-Ee-lyy" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3br-DS-VuM">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" id="w0t-Qv-IQO">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ZH5-Ee-lyy" id="SGi-zk-dbt"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="UISearchBar" id="vL9-eR-Fg4"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="4QG-fO-JHw" id="1wu-7X-mdD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="33J-Sm-pTd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="4QG-fO-JHw">
+                    <connections>
+                        <outlet property="delegate" destination="ZH5-Ee-lyy" id="Cxx-K4-eLb"/>
+                        <outlet property="searchBar" destination="w0t-Qv-IQO" id="YIO-ut-LCQ"/>
+                        <outlet property="searchContentsController" destination="ZH5-Ee-lyy" id="y2Q-ok-xDA"/>
+                        <outlet property="searchResultsDataSource" destination="ZH5-Ee-lyy" id="bM7-oU-eFm"/>
+                        <outlet property="searchResultsDelegate" destination="ZH5-Ee-lyy" id="1uh-o8-76E"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="798" y="683"/>
         </scene>
         <!--Text View Controller - Text-->
         <scene sceneID="F41-De-g08">

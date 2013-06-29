@@ -12,7 +12,7 @@
 
 @implementation UITextField (Patch)
 
-- (id)initWithFrame:(CGRect)frame { return [super initWithFrame:frame]; }
+//- (id)initWithFrame:(CGRect)frame { return [super initWithFrame:frame]; }
 
 - (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
 - (id)__initWithFrame:(CGRect)frame { assert(NO); return nil; }
@@ -35,7 +35,7 @@
         Class origin = [UITextField class];
 
         [origin copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
-        [origin copyToSelector:@selector(__initWithFrame:) fromSelector:@selector(initWithFrame:)];
+//        [origin copyToSelector:@selector(__initWithFrame:) fromSelector:@selector(initWithFrame:)];
     }
 }
 
@@ -46,13 +46,13 @@
     [self exportSelector:@selector(initWithCoder:) toClass:target];
 }
 
-- (id)initWithFrame:(CGRect)frame {
-    self = [self __initWithFrame:frame];
-    if (self) {
-        [self _textFieldInit];
-    }
-    return self;
-}
+//- (id)initWithFrame:(CGRect)frame {
+//    self = [self __initWithFrame:frame];
+//    if (self) {
+//        [self _textFieldInit];
+//    }
+//    return self;
+//}
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [self __initWithCoder:aDecoder];
