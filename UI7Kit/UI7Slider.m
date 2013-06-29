@@ -23,10 +23,6 @@
 }
 
 - (void)_sliderInit {
-    self.minimumTrackTintColor = self.tintColor;
-    self.maximumTrackTintColor = [UI7Color defaultTrackTintColor];
-    self.thumbTintColor = [UIColor whiteColor];
-
     UIImage *maximumTrackImage = [UIImage imageWithColor:self.maximumTrackTintColor size:CGSizeMake(1.0, 2.0)];
     [self setMaximumTrackImage:maximumTrackImage forState:UIControlStateNormal];
     UIImage *minimumTrackImage = [UIImage imageWithColor:self.minimumTrackTintColor size:CGSizeMake(1.0, 2.0)];
@@ -48,17 +44,17 @@
 }
 
 + (void)patch {
-    Class origin = [self class];
     Class target = [UISlider class];
 
-    [origin exportSelector:@selector(initWithFrame:) toClass:target];
-    [origin exportSelector:@selector(initWithCoder:) toClass:target];
+    [self exportSelector:@selector(initWithFrame:) toClass:target];
+    [self exportSelector:@selector(initWithCoder:) toClass:target];
 }
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [self __initWithFrame:frame];
     if (self) {
+        [self _sliderInitTheme];
         [self _sliderInit];
     }
     return self;
@@ -67,18 +63,18 @@
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [self __initWithCoder:aDecoder];
     if (self != nil) {
+        if (![aDecoder containsValueForKey:@"UIMinimumTintColor"]) {
+            self.minimumTrackTintColor = self.tintColor;
+        }
+        if (![aDecoder containsValueForKey:@"UIMaximumTintColor"]) {
+            self.maximumTrackTintColor = [UI7Color defaultTrackTintColor];
+        }
+        if (![aDecoder containsValueForKey:@"UIThumbTintColor"]) {
+            self.thumbTintColor = [UIColor whiteColor];
+        }
         [self _sliderInit];
     }
     return self;
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end
