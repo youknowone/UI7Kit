@@ -149,51 +149,88 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
 }
 
 - (void)show {
-    [super __show];
-    self.backgroundView.frame = CGRectMake(7.0, .0, 270.0, self.frame.size.height - 12.0);
-    self.backgroundView.image = [UIImage roundedImageWithSize:self.backgroundView.frame.size color:[UIColor colorWith8bitWhite:234 alpha:248] radius:UI7ControlRadius];
-    UIView *view = self.dimView = [[[UIADimmingView alloc] initWithFrame:self.window.bounds] autorelease];
-    view.alpha = 0.4;
-    view.hidden = YES;
-    [view setHidden:NO animated:YES];
-    [self.window addSubview:view];
-    [self.window bringSubviewToFront:self];
+    [super __show];;
 
-
-    self.titleLabel.textColor = self.bodyTextLabel.textColor = [UIColor blackColor];
-    self.titleLabel.shadowOffset = self.bodyTextLabel.shadowOffset = CGSizeZero;
-
-    self.titleLabel.font = [UI7Font systemFontOfSize:17.0 attribute:UI7FontAttributeMedium];
-    self.bodyTextLabel.font = [UI7Font systemFontOfSize:16.0 attribute:UI7FontAttributeLight];
-
-    for (UIView *strokeView in self.strokeViews) {
-        [strokeView removeFromSuperview];
-    }
-
-    self.strokeViews = [NSMutableArray array];
-
-    [self.buttons applyProcedureWithIndex:^(id obj, NSUInteger index) {
-        UIAlertButton *button = obj;
-        if (self.cancelButtonIndex == (NSInteger)index) {
-            button.titleLabel.font = [UI7Font systemFontOfSize:16.0 attribute:UI7FontAttributeLight];
-        } else {
-            button.titleLabel.font = [UI7Font systemFontOfSize:16.0 attribute:UI7FontAttributeMedium];
+    if (self.alertViewStyle == UIAlertViewStyleDefault) {
+        if (self.buttons.count>2) {
+            self.frame=CGRectMake(0, 0, self.frame.size.width, 71+self.buttons.count*43+(self.message.length==0?0:[self.subviews[2] frame].size.height));
+            self.center = CGPointMake(self.window.bounds.size.width/2, self.window.bounds.size.height/2);
         }
-        [button setTitleColor:[UI7Color defaultTintColor] forState:UIControlStateNormal];
-        [button setTitleColor:[UI7Color defaultTintColor].highligtedColor forState:UIControlStateHighlighted];
-        button.titleLabel.shadowOffset = CGSizeZero;
-        [button setBackgroundImage:nil forState:UIControlStateNormal];
-        [button setBackgroundImage:nil forState:UIControlStateHighlighted];
+
+        self.backgroundView.frame = CGRectMake(7.0, .0, 270.0, self.frame.size.height - 12.0);
+        self.backgroundView.image = [UIImage roundedImageWithSize:self.backgroundView.frame.size color:[UIColor colorWith8bitWhite:234 alpha:248] radius:UI7ControlRadius];
+        UIView *view = self.dimView = [[[UIADimmingView alloc] initWithFrame:self.superview.bounds] autorelease];
+        view.alpha = 0.4;
+        view.hidden = YES;
+        [view setHidden:NO animated:YES];
+        [self.window addSubview:view];
+        [self.window bringSubviewToFront:self];
+
+        self.titleLabel.textColor = self.bodyTextLabel.textColor = [UIColor blackColor];
+        self.titleLabel.shadowOffset = self.bodyTextLabel.shadowOffset = CGSizeZero;
+
+        self.titleLabel.font = [UI7Font systemFontOfSize:17.0 attribute:UI7FontAttributeMedium];
+        self.bodyTextLabel.font = [UI7Font systemFontOfSize:16.0 attribute:UI7FontAttributeLight];
+
+        for (UIView *strokeView in self.strokeViews) {
+            [strokeView removeFromSuperview];
+        }
+
+        self.strokeViews = [NSMutableArray array];
+
+        for (int i=0; i<self.buttons.count; i++) {
+            UIAlertButton *button = self.buttons[i];
+            if (self.cancelButtonIndex == (NSInteger)i) {
+                button.titleLabel.font = [UI7Font systemFontOfSize:16.0 attribute:UI7FontAttributeMedium];
+            } else {
+                button.titleLabel.font = [UI7Font systemFontOfSize:16.0 attribute:UI7FontAttributeLight];
+            }
+            [button setTitleColor:[UI7Color defaultTintColor] forState:UIControlStateNormal];
+            [button setTitleColor:[UI7Color defaultTintColor].highligtedColor forState:UIControlStateHighlighted];
+            button.titleLabel.shadowOffset = CGSizeZero;
+            [button setBackgroundImage:nil forState:UIControlStateNormal];
+            [button setBackgroundImage:nil forState:UIControlStateHighlighted];
+
+            CGRect frame = button.frame;
+            CGFloat y=0.0;
+
+            if (((i>=2)&&(self.buttons.count>2))) {
+                y = [self.buttons[i-1] frame].origin.y+43;
+            }else if ((i==1)&&(self.buttons.count>2)) {
+                y = frame.origin.y;
+            }else y = frame.origin.y + 16.0;
+
+            frame.origin.y = y;
+            button.frame = frame;
+
+
+            if ((self.cancelButtonIndex!=i)) {
+                UIView *strokeView = [[UIView alloc] initWithFrame:CGRectMake(7.0, button.frame.origin.y, 270.0, 0.5)];
+                strokeView.backgroundColor = [UIColor colorWith8bitWhite:182 alpha:255];
+                [self addSubview:strokeView];
+                [self.strokeViews addObject:strokeView];
+            }
+
+        }
+
+        UIAlertButton *button = self.buttons[0]; //cancel button
 
         CGRect frame = button.frame;
-        frame.origin.y += 16.0;
+        frame.origin.y = self.buttons.count>2?[self.buttons.lastObject frame].origin.y+43:frame.origin.y;
         button.frame = frame;
 
         UIView *strokeView = [[UIView alloc] initWithFrame:CGRectMake(7.0, button.frame.origin.y, 270.0, 0.5)];
         strokeView.backgroundColor = [UIColor colorWith8bitWhite:182 alpha:255];
         [self addSubview:strokeView];
         [self.strokeViews addObject:strokeView];
-    }];
+
+        if (self.buttons.count==2) {
+            UIView *strokeView = [[UIView alloc] initWithFrame:CGRectMake(142, frame.origin.y, 0.5, frame.size.height)];
+            strokeView.backgroundColor = [UIColor colorWith8bitWhite:182 alpha:255];
+            [self addSubview:strokeView];
+            [self.strokeViews addObject:strokeView];
+        }
+    }
 }
 
 - (void)dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated {
