@@ -7,6 +7,7 @@
 //
 
 #import "UI7KitCore.h"
+#import "UI7Color.h"
 
 #import "UI7Utilities.h"
 
@@ -19,7 +20,7 @@ UI7Kit *UI7KitSharedObject = nil;
 - (id)init {
     self = [super init];
     if (self != nil) {
-        self.tintColor = [UIColor iOS7ButtonTitleColor];
+        self.tintColor = [UI7Color defaultTintColor];
     }
     return self;
 }

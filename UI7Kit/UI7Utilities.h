@@ -34,13 +34,10 @@
 
 @interface UIColor (iOS7)
 
-+ (UIColor *)iOS7BackgroundColor;
-+ (UIColor *)iOS7ButtonTitleColor;
-+ (UIColor *)iOS7ButtonTitleEmphasizedColor;
-
 - (UIColor *)highligtedColor;
 
 @end
+
 
 UIKIT_EXTERN const CGFloat UI7ControlRadius;
 

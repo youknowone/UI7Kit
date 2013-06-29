@@ -7,6 +7,7 @@
 //
 
 #import "UI7Font.h"
+#import "UI7Color.h"
 
 #import "UI7ActionSheet.h"
 
@@ -87,15 +88,15 @@ NSAPropertyGetter(titleLabel, @"_titleLabel");
             path = [UIBezierPath bezierPathWithRoundedRect:button.bounds cornerRadius:.0f];
         }
         
-        [button setBackgroundImage:[path imageWithFillColor:[UIColor iOS7BackgroundColor]] forState:UIControlStateNormal];
+        [button setBackgroundImage:[path imageWithFillColor:[UI7Color defaultBackgroundColor]] forState:UIControlStateNormal];
         
         [button setBackgroundImage:[path imageWithFillColor:[UIColor lightTextColor]] forState:UIControlStateHighlighted];
         
         UIColor *color = nil;
         if ((self.destructiveButtonIndex == (NSInteger)index)&&(self.destructiveButtonIndex!=self.cancelButtonIndex)) {
-            color = [UIColor iOS7ButtonTitleEmphasizedColor];
+            color = [UI7Color defaultEmphasizedColor];
         } else {
-            color = [UIColor iOS7ButtonTitleColor];
+            color = [UI7Color defaultTintColor];
         }
         [button setTitleColor:color forState:UIControlStateNormal];
         [button setTitleColor:color forState:UIControlStateHighlighted];
@@ -113,7 +114,7 @@ NSAPropertyGetter(titleLabel, @"_titleLabel");
         self.titleLabel.frame = tframe;
 
         UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(8.0f, 10.0f, self.frame.size.width - 16.0f, 39.0f) byRoundingCorners:UIRectCornerTopLeft|UIRectCornerTopRight cornerRadii:CGSizeMake(4.0, 4.0)];
-        UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[path imageWithFillColor:[UIColor iOS7BackgroundColor]]];
+        UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[path imageWithFillColor:[UI7Color defaultBackgroundColor]]];
         
         [self insertSubview:backgroundView belowSubview:self.titleLabel];
     }

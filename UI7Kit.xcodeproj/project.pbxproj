@@ -52,6 +52,7 @@
 		388FC1E5177303AA0084574E /* UI7ButtonImageInfo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 388FC1E1177303AA0084574E /* UI7ButtonImageInfo@2x.png */; };
 		38AF86CF1769BC8000BFBD29 /* libUI7Kit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38017423176989650049D26C /* libUI7Kit.a */; };
 		38BC0E5D173E821700F36497 /* UITSubviewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38BC0E5B173E821700F36497 /* UITSubviewTableViewController.m */; };
+		38C46562177F277000A883EA /* UI7Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C46561177F277000A883EA /* UI7Color.m */; };
 		38CE37D6176F657800AC0C89 /* UI7SegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 38CE37D4176F4C8400AC0C89 /* UI7SegmentedControl.m */; };
 		38D1C937177EF7B70026135A /* UI7Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D1C936177EF7B70026135A /* UI7Tool.m */; };
 		38EEF9C7176A366C0085B09B /* UI7Button.m in Sources */ = {isa = PBXBuildFile; fileRef = 38EEF9C6176A366C0085B09B /* UI7Button.m */; };
@@ -167,6 +168,8 @@
 		388FC1E6177345970084574E /* UI7KitPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7KitPrivate.h; sourceTree = "<group>"; };
 		38BC0E5A173E821700F36497 /* UITSubviewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITSubviewTableViewController.h; sourceTree = "<group>"; };
 		38BC0E5B173E821700F36497 /* UITSubviewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITSubviewTableViewController.m; sourceTree = "<group>"; };
+		38C46560177F277000A883EA /* UI7Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7Color.h; sourceTree = "<group>"; };
+		38C46561177F277000A883EA /* UI7Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7Color.m; sourceTree = "<group>"; };
 		38C7A9761495181800381910 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		38C7A9771495181800381910 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		38C7A9781495181800381910 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -346,6 +349,8 @@
 				38740493176825D900C0BB18 /* UI7Utilities.m */,
 				383E6A811775CF0100EF7ADA /* UI7Font.h */,
 				383E6A821775CF0100EF7ADA /* UI7Font.m */,
+				38C46560177F277000A883EA /* UI7Color.h */,
+				38C46561177F277000A883EA /* UI7Color.m */,
 				3886F7021770B10700890D47 /* UI7View.h */,
 				3886F7031770B10700890D47 /* UI7View.m */,
 				38017410176776020049D26C /* UI7BarButtonItem.h */,
@@ -623,6 +628,7 @@
 				3886F7041770B10800890D47 /* UI7View.m in Sources */,
 				3861E06B1771F9BC00AA8DE4 /* UI7ProgressView.m in Sources */,
 				383E6A831775CF0100EF7ADA /* UI7Font.m in Sources */,
+				38C46562177F277000A883EA /* UI7Color.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 //
 
 #import "UI7Font.h"
+#import "UI7Color.h"
 #import "UI7BarButtonItem.h"
 
 #import "UI7NavigationBar.h"
@@ -29,7 +30,7 @@
 - (void)__pushNavigationItem:(UINavigationItem *)item { assert(NO); }
 
 - (void)_navigationBarInit {
-    self.backgroundColor = [UIColor iOS7BackgroundColor];
+    self.backgroundColor = [UI7Color defaultBackgroundColor];
     UIGraphicsBeginImageContext(CGSizeMake(1.0, 3.0));
     CGContextRef context = UIGraphicsGetCurrentContext();
     [[UIColor colorWith8bitWhite:178 alpha:255] set];

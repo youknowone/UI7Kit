@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 youknowone.org. All rights reserved.
 //
 
+#import "UI7Color.h"
 #import "UI7View.h"
 
 #import "UI7ProgressView.h"
@@ -72,7 +73,7 @@
     self = [self __initWithCoder:aDecoder];
     if (self != nil) {
         if (![aDecoder containsValueForKey:@"UIProgressTrackTintColor"]) {
-            self.trackTintColor = [UIColor colorWith8bitWhite:183 alpha:255];
+            self.trackTintColor = [UI7Color defaultTrackTintColor];
         }
         if (![aDecoder containsValueForKey:@"UIProgressProgressTintColor"]) {
             self.progressTintColor = self.tintColor;

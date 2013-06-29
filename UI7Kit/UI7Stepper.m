@@ -13,6 +13,13 @@
 
 #import "UI7KitPrivate.h"
 
+@interface UIView ()
+
+- (UIColor *)_view_tintColor;
+
+@end
+
+
 @implementation UIStepper (Patch)
 
 - (void)awakeFromNib { [super awakeFromNib]; }
@@ -52,6 +59,7 @@
             }
         }
     } else {
+        // iOS5
         //        for (CALayer *layer in self.layer.sublayers.reverseObjectEnumerator) {
         //            [layer removeFromSuperlayer];
         //            static int count = 0;

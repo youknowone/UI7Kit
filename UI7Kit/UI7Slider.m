@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 youknowone.org. All rights reserved.
 //
 
+#import "UI7Color.h"
 #import "UI7View.h"
 
 #import "UI7Slider.h"
@@ -15,9 +16,15 @@
 - (id)__initWithFrame:(CGRect)frame { assert(NO); return nil; }
 - (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
 
+- (void)_sliderInitTheme {
+    self.minimumTrackTintColor = self.tintColor;
+    self.maximumTrackTintColor = [UI7Color defaultTrackTintColor];
+    self.thumbTintColor = [UIColor whiteColor];
+}
+
 - (void)_sliderInit {
     self.minimumTrackTintColor = self.tintColor;
-    self.maximumTrackTintColor = [UIColor colorWith8bitWhite:183 alpha:255];
+    self.maximumTrackTintColor = [UI7Color defaultTrackTintColor];
     self.thumbTintColor = [UIColor whiteColor];
 
     UIImage *maximumTrackImage = [UIImage imageWithColor:self.maximumTrackTintColor size:CGSizeMake(1.0, 2.0)];

@@ -7,6 +7,7 @@
 //
 
 #import "UI7Font.h"
+#import "UI7Color.h"
 
 #import "UI7TabBar.h"
 
@@ -28,7 +29,7 @@
 - (void)_tabBarInit {
     self.tintColor = [UIColor grayColor];
     self.selectedImageTintColor = [UI7Kit kit].tintColor;
-    self.backgroundColor = [UIColor iOS7BackgroundColor];
+    self.backgroundColor = [UI7Color defaultBackgroundColor];
 
     UIGraphicsBeginImageContext(CGSizeMake(1.0, 3.0));
     CGContextRef context = UIGraphicsGetCurrentContext();

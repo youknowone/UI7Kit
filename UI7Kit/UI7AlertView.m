@@ -7,6 +7,7 @@
 //
 
 #import "UI7Font.h"
+#import "UI7Color.h"
 #import "UI7Button.h"
 
 #import "UI7AlertView.h"
@@ -178,8 +179,8 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
         } else {
             button.titleLabel.font = [UI7Font systemFontOfSize:16.0 attribute:UI7FontAttributeMedium];
         }
-        [button setTitleColor:[UIColor iOS7ButtonTitleColor] forState:UIControlStateNormal];
-        [button setTitleColor:[UIColor iOS7ButtonTitleColor].highligtedColor forState:UIControlStateHighlighted];
+        [button setTitleColor:[UI7Color defaultTintColor] forState:UIControlStateNormal];
+        [button setTitleColor:[UI7Color defaultTintColor].highligtedColor forState:UIControlStateHighlighted];
         button.titleLabel.shadowOffset = CGSizeZero;
         [button setBackgroundImage:nil forState:UIControlStateNormal];
         [button setBackgroundImage:nil forState:UIControlStateHighlighted];

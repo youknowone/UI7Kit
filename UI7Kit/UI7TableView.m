@@ -7,6 +7,7 @@
 //
 
 #import "UI7Font.h"
+#import "UI7Color.h"
 
 #import "UI7TableView.h"
 
@@ -86,7 +87,7 @@ UIView *UI7TableViewDelegateViewForHeaderInSection(id self, SEL _cmd, UITableVie
     }
     
     UILabel *view = [[[UILabel alloc] initWithFrame:CGRectMake(.0, .0, tableView.frame.size.width, height)] autorelease];
-    view.backgroundColor = [UIColor iOS7BackgroundColor];
+    view.backgroundColor = [UI7Color defaultBackgroundColor];
 
     view.text = [@"    " stringByAppendingString:title];
     view.font = [UI7Font systemFontOfSize:14.0 attribute:UI7FontAttributeBold];
@@ -101,7 +102,7 @@ UIView *UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableVie
     }
     
     UILabel *view = [[[UILabel alloc] initWithFrame:CGRectMake(.0, .0, tableView.frame.size.width, height)] autorelease];
-    view.backgroundColor = [UIColor iOS7BackgroundColor];
+    view.backgroundColor = [UI7Color defaultBackgroundColor];
     view.text = [@"    " stringByAppendingString:title]; // TODO: do this pretty later
     view.font = [UI7Font systemFontOfSize:14.0 attribute:UI7FontAttributeBold];
     return view;

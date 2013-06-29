@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 youknowone.org. All rights reserved.
 //
 
+#import "UI7Color.h"
+
 #import "UI7Toolbar.h"
 
 @implementation UIToolbar (Patch)
@@ -14,7 +16,7 @@
 - (id)__initWithFrame:(CGRect)frame { assert(NO); return nil; }
 
 - (void)_toolbarInit {
-    self.backgroundColor = [UIColor iOS7BackgroundColor];
+    self.backgroundColor = [UI7Color defaultBackgroundColor];
 
     UIGraphicsBeginImageContext(CGSizeMake(1.0, 3.0));
     CGContextRef context = UIGraphicsGetCurrentContext();

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="RC6-zb-YZU">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
+        <development version="4600" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
@@ -335,7 +336,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stepper>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="4Br-vv-dy2">
-                                <rect key="frame" x="39" y="166" width="118" height="23"/>
+                                <rect key="frame" x="39" y="156" width="118" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </slider>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" id="1qT-de-oYy">
@@ -508,8 +509,16 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stepper>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="7pL-Gh-ZZX">
-                                <rect key="frame" x="39" y="166" width="118" height="23"/>
+                                <rect key="frame" x="39" y="151" width="118" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="minimumTrackTintColor" red="0.0" green="0.49261519160583944" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="maximumTrackTintColor" red="1" green="0.49261519160583944" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="thumbTintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" minimumValueImage="UI7ButtonImageAdd.png" maximumValueImage="UI7ButtonImageInfo.png" id="yWI-i5-r1m">
+                                <rect key="frame" x="39" y="174" width="118" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.52742928832116787" alpha="1" colorSpace="calibratedWhite"/>
                             </slider>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" id="Hvs-F9-h9L">
                                 <rect key="frame" x="41" y="208" width="150" height="9"/>
@@ -520,6 +529,7 @@
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" id="R0Q-5w-M1E">
                                 <rect key="frame" x="41" y="232" width="150" height="11"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.52626026459854014" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="progressTintColor" red="0.0" green="0.49652144160583944" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="trackTintColor" red="1" green="0.49652144160583944" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </progressView>
@@ -615,6 +625,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="UI7ButtonImageAdd.png" width="22" height="22"/>
+        <image name="UI7ButtonImageInfo.png" width="22" height="22"/>
         <image name="UI7NavigationBarBackButton.png" width="50" height="33"/>
     </resources>
     <classes>
