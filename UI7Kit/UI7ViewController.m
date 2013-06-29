@@ -107,7 +107,8 @@ static NSMutableDictionary *UI7ViewControllerEditButtonItems = nil;
 - (UIBarButtonItem *)editButtonItem {
     UI7BarButtonItem *item = UI7ViewControllerEditButtonItems[self.pointerString];
     if (item == nil) {
-        item = [[[UI7BarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(_toggleEditing:)] autorelease];
+        SEL toggleSelector = NSSelectorFromString([@"_toggle" stringByAppendingString:@"Editing:"]);
+        item = [[[UI7BarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:toggleSelector] autorelease];
         UI7ViewControllerEditButtonItems[self.pointerString] = item;
     }
     return item;

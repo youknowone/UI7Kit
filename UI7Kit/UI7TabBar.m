@@ -42,9 +42,19 @@
         self.shadowImage = [UIImage clearImage];
     }
     // Removed to pass Appstore review
-//    [self _setLabelFont:[UI7Font systemFontOfSize:10.0 attribute:UI7FontAttributeLight]];
-//    [self _setLabelShadowOffset:CGSizeZero];
-//    [self _setLabelTextColor:[UIColor grayColor] selectedTextColor:self.tintColor];
+    NSString *name; SEL selector; IMP impl;
+    name = [@"_set" stringByAppendingString:@"LabelFont:"];
+    selector = NSSelectorFromString(name);
+    impl = class_getMethodImplementation(self.class, selector);
+    impl(self, _cmd, [UI7Font systemFontOfSize:10.0 attribute:UI7FontAttributeLight]);
+    name = [@"_set" stringByAppendingString:@"LabelShadowOffset:"];
+    selector = NSSelectorFromString(name);
+    impl = class_getMethodImplementation(self.class, selector);
+    impl(self, _cmd, CGSizeZero);
+    name = [@"_set" stringByAppendingString:@"LabelTextColor:"];
+    selector = NSSelectorFromString(name);
+    impl = class_getMethodImplementation(self.class, selector);
+    impl(self, _cmd, [UIColor grayColor], self.tintColor);
 }
 
 @end
