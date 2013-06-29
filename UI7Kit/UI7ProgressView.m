@@ -16,10 +16,13 @@
 - (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
 - (id)__initWithProgressViewStyle:(UIProgressViewStyle)style { assert(NO); return nil; }
 
-- (void)_progressViewInit {
-    self.progressTintColor = self.tintColor;
+- (void)_progressViewInitTheme {
     self.trackTintColor = [UIColor colorWith8bitWhite:183 alpha:255];
+    self.progressTintColor = self.tintColor;
+}
 
+- (void)_progressViewInit {
+    self.progressViewStyle = UIProgressViewStyleDefault; // bar type has no difference in iOS7
     UIGraphicsBeginImageContextWithOptions(CGSizeMake(1.0, 9.0), NO, .0);
     CGContextRef context = UIGraphicsGetCurrentContext();
     [self.trackTintColor set];
@@ -49,17 +52,17 @@
 }
 
 + (void)patch {
-    Class origin = [self class];
     Class target = [UIProgressView class];
 
-    [origin exportSelector:@selector(initWithFrame:) toClass:target];
-    [origin exportSelector:@selector(initWithCoder:) toClass:target];
-    [origin exportSelector:@selector(initWithProgressViewStyle:) toClass:target];
+    [self exportSelector:@selector(initWithFrame:) toClass:target];
+    [self exportSelector:@selector(initWithCoder:) toClass:target];
+    [self exportSelector:@selector(initWithProgressViewStyle:) toClass:target];
 }
 
 - (id)initWithFrame:(CGRect)frame {
     self = [self __initWithFrame:frame];
     if (self != nil) {
+        [self _progressViewInitTheme];
         [self _progressViewInit];
     }
     return self;
@@ -68,6 +71,12 @@
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [self __initWithCoder:aDecoder];
     if (self != nil) {
+        if (![aDecoder containsValueForKey:@"UIProgressTrackTintColor"]) {
+            self.trackTintColor = [UIColor colorWith8bitWhite:183 alpha:255];
+        }
+        if (![aDecoder containsValueForKey:@"UIProgressProgressTintColor"]) {
+            self.progressTintColor = self.tintColor;
+        }
         [self _progressViewInit];
     }
     return self;
@@ -76,6 +85,7 @@
 - (id)initWithProgressViewStyle:(UIProgressViewStyle)style {
     self = [self __initWithProgressViewStyle:style];
     if (self != nil) {
+        [self _progressViewInitTheme];
         [self _progressViewInit];
     }
     return self;

@@ -33,6 +33,7 @@
 
     self.details = @[
                      @"Detail",
+                     @"Custom",
 //                     @"PreparedCellTable",
                      @"Text",
 //                     @"SubviewTable",
