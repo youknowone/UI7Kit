@@ -25,6 +25,17 @@
     self.backgroundColor = [UIColor colorWith8bitRed:201 green:201 blue:205 alpha:255];
     self.backgroundImage = backgroundImage;
     self.placeholder = @" ";
+    
+    UIBarButtonItem *searchBarButton = [UIBarButtonItem appearanceWhenContainedIn:[UISearchBar class], nil];
+    [searchBarButton setBackgroundImage:[UIColor clearColor].image forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [searchBarButton setTitleTextAttributes:@{UITextAttributeFont:[UIFont systemFontOfSize:16]} forState:UIControlStateNormal];
+    [searchBarButton setTitleTextAttributes:@{UITextAttributeTextColor:[UIColor lightGrayColor]} forState:UIControlStateHighlighted];
+
+    for (UIView *searchBarSubview in [self subviews]) {
+        if ([searchBarSubview conformsToProtocol:@protocol(UITextInputTraits)]) {                
+                [(UITextField *)searchBarSubview setBorderStyle:UITextBorderStyleRoundedRect];
+        }
+    }
 }
 
 @end
