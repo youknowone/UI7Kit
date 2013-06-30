@@ -30,7 +30,7 @@ Case 3: Partial dynamic patch
 
 Example
 -------
-Example with current code. (0.0.14)
+Example with current code. (0.0.16)
 
 ![Current status](https://raw.github.com/youknowone/UI7Kit/master/UI7Kit.png).
 
