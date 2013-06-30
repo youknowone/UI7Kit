@@ -37,18 +37,17 @@
 
 + (void)initialize {
     if (self == [UI7TabBarItem class]) {
-        Class origin = [UITabBarItem class];
+        Class target = [UITabBarItem class];
 
-        [origin copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
+        [target copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
     }
 }
 
 + (void)patch {
-    Class source = [self class];
     Class target = [UITabBarItem class];
 
-    [source exportSelector:@selector(initWithCoder:) toClass:target];
-    [source exportSelector:@selector(_updateImageWithTintColor:isSelected:getImageOffset:) toClass:target];
+    [self exportSelector:@selector(initWithCoder:) toClass:target];
+    [self exportSelector:@selector(_updateImageWithTintColor:isSelected:getImageOffset:) toClass:target];
 }
 
 - (id)initWithTitle:(NSString *)title image:(UIImage *)image tag:(NSInteger)tag {

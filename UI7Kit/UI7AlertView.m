@@ -112,23 +112,22 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
         UI7AlertViewBackgroundViews = [[NSMutableDictionary alloc] init];
         UI7AlertViewStrokeViews = [[NSMutableDictionary alloc] init];
 
-        Class origin = [UIAlertView class];
+        Class target = [UIAlertView class];
 
-        [origin copyToSelector:@selector(__init) fromSelector:@selector(init)];
-        [origin copyToSelector:@selector(__show) fromSelector:@selector(show)];
-        [origin copyToSelector:@selector(__dealloc) fromSelector:@selector(dealloc)];
-        [origin copyToSelector:@selector(__dismissWithClickedButtonIndex:animated:) fromSelector:@selector(dismissWithClickedButtonIndex:animated:)];
+        [target copyToSelector:@selector(__init) fromSelector:@selector(init)];
+        [target copyToSelector:@selector(__show) fromSelector:@selector(show)];
+        [target copyToSelector:@selector(__dealloc) fromSelector:@selector(dealloc)];
+        [target copyToSelector:@selector(__dismissWithClickedButtonIndex:animated:) fromSelector:@selector(dismissWithClickedButtonIndex:animated:)];
     }
 }
 
 + (void)patch {
-    Class source = [self class];
     Class target = [UIAlertView class];
 
-    [source exportSelector:@selector(init) toClass:target];
-    [source exportSelector:@selector(show) toClass:target];
-    [source exportSelector:@selector(dealloc) toClass:target];
-    [source exportSelector:@selector(dismissWithClickedButtonIndex:animated:) toClass:target];
+    [self exportSelector:@selector(init) toClass:target];
+    [self exportSelector:@selector(show) toClass:target];
+    [self exportSelector:@selector(dealloc) toClass:target];
+    [self exportSelector:@selector(dismissWithClickedButtonIndex:animated:) toClass:target];
 }
 
 - (void)dealloc {

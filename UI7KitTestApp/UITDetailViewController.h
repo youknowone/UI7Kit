@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 youknowone.org. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "UITTintViewController.h"
 
-@interface UITDetailViewController : UIViewController
+@interface UITDetailViewController : UITTintViewController
 
 - (IBAction)showAlertView1:(id)sender;
 - (IBAction)showAlertView2:(id)sender;

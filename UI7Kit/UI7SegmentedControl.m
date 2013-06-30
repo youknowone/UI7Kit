@@ -47,6 +47,17 @@
 - (void)__awakeFromNib { assert(NO); }
 
 - (void)_segmentedControlInit {
+    self.layer.cornerRadius = 4.0f;
+    self.layer.borderWidth = 1.0f;
+
+    [self _tintColorUpdated];
+
+    self.frame = CGRectMake(self.frame.origin.x,self.frame.origin.y,self.frame.size.width,29);
+}
+
+- (void)_tintColorUpdated {
+    [super _tintColorUpdated];
+
     UIColor *tintColor = self.tintColor;
     // Set background images
 
@@ -60,7 +71,7 @@
                                  UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetZero],
                                  };
     [self setTitleTextAttributes:attributes forState:UIControlStateNormal];
-    
+
     NSDictionary *highlightedAttributes = @{UITextAttributeTextColor: tintColor};
     [self setTitleTextAttributes:highlightedAttributes forState:UIControlStateHighlighted];
 
@@ -73,10 +84,7 @@
 
     [self setDividerImage:tintColor.image forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
 
-    self.layer.cornerRadius = 4.0f;
-    self.layer.borderWidth = 1.0f;
     self.layer.borderColor = tintColor.CGColor;
-    self.frame = CGRectMake(self.frame.origin.x,self.frame.origin.y,self.frame.size.width,29);
 }
 
 @end
@@ -86,20 +94,19 @@
 
 + (void)initialize {
     if (self == [UI7SegmentedControl class]) {
-        Class origin = [UISegmentedControl class];
+        Class target = [UISegmentedControl class];
 
-        [origin copyToSelector:@selector(__initWithItems:) fromSelector:@selector(initWithItems:)];
-        [origin copyToSelector:@selector(__awakeFromNib) fromSelector:@selector(awakeFromNib)];
-        [origin copyToSelector:@selector(__tintColor) fromSelector:@selector(tintColor)];
+        [target copyToSelector:@selector(__initWithItems:) fromSelector:@selector(initWithItems:)];
+        [target copyToSelector:@selector(__awakeFromNib) fromSelector:@selector(awakeFromNib)];
+        [target copyToSelector:@selector(__tintColor) fromSelector:@selector(tintColor)];
     }
 }
 
 + (void)patch {
-    Class source = [self class];
     Class target = [UISegmentedControl class];
 
-    [source exportSelector:@selector(initWithItems:) toClass:target];
-    [source exportSelector:@selector(awakeFromNib) toClass:target];
+    [self exportSelector:@selector(initWithItems:) toClass:target];
+    [self exportSelector:@selector(awakeFromNib) toClass:target];
     [target methodForSelector:@selector(tintColor)].implementation = [target methodForSelector:@selector(_tintColor)].implementation;
 }
 

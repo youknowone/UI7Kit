@@ -30,21 +30,20 @@
 
 + (void)initialize {
     if (self == [UI7TableView class]) {
-        Class origin = [UITableView class];
+        Class target = [UITableView class];
 
-        [origin copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
-        [origin copyToSelector:@selector(__initWithFrame:) fromSelector:@selector(initWithFrame:)];
-        [origin copyToSelector:@selector(__setDelegate:) fromSelector:@selector(setDelegate:)];
+        [target copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
+        [target copyToSelector:@selector(__initWithFrame:) fromSelector:@selector(initWithFrame:)];
+        [target copyToSelector:@selector(__setDelegate:) fromSelector:@selector(setDelegate:)];
     }
 }
 
 + (void)patch {
-    Class source = [self class];
     Class target = [UITableView class];
 
-    [source exportSelector:@selector(initWithCoder:) toClass:target];
-    [source exportSelector:@selector(initWithFrame:) toClass:target];
-    [source exportSelector:@selector(setDelegate:) toClass:target];
+    [self exportSelector:@selector(initWithCoder:) toClass:target];
+    [self exportSelector:@selector(initWithFrame:) toClass:target];
+    [self exportSelector:@selector(setDelegate:) toClass:target];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
@@ -190,19 +189,18 @@ UIView *UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableVie
 
 + (void)initialize {
     if (self == [UI7TableViewCell class]) {
-        Class origin = [UITableViewCell class];
+        Class target = [UITableViewCell class];
 
-        [origin copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
-        [origin copyToSelector:@selector(__initWithStyle:reuseIdentifier:) fromSelector:@selector(initWithStyle:reuseIdentifier:)];
+        [target copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
+        [target copyToSelector:@selector(__initWithStyle:reuseIdentifier:) fromSelector:@selector(initWithStyle:reuseIdentifier:)];
     }
 }
 
 + (void)patch {
-    Class source = [self class];
     Class target = [UITableViewCell class];
 
-    [source exportSelector:@selector(initWithCoder:) toClass:target];
-    [source exportSelector:@selector(initWithStyle:reuseIdentifier:) toClass:target];
+    [self exportSelector:@selector(initWithCoder:) toClass:target];
+    [self exportSelector:@selector(initWithStyle:reuseIdentifier:) toClass:target];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {

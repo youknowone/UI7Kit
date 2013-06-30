@@ -136,15 +136,15 @@ NSAPropertyGetter(titleLabel, @"_titleLabel");
 
 + (void)initialize {
     if (self == [UI7ActionSheet class]) {
-        Class origin = [UIActionSheet class];
+        Class target = [UIActionSheet class];
         
-        [origin copyToSelector:@selector(__init) fromSelector:@selector(init)];
-        [origin copyToSelector:@selector(__showFromBarButtonItem:animated:) fromSelector:@selector(showFromBarButtonItem:animated:)];
-        [origin copyToSelector:@selector(__showFromRect:inView:animated:) fromSelector:@selector(showFromRect:inView:animated:)];
-        [origin copyToSelector:@selector(__showFromTabBar:) fromSelector:@selector(showFromTabBar:)];
-        [origin copyToSelector:@selector(__showFromToolbar:) fromSelector:@selector(showFromToolbar:)];
-        [origin copyToSelector:@selector(__showInView:) fromSelector:@selector(showInView:)];
-        [origin copyToSelector:@selector(__dealloc) fromSelector:@selector(dealloc)];
+        [target copyToSelector:@selector(__init) fromSelector:@selector(init)];
+        [target copyToSelector:@selector(__showFromBarButtonItem:animated:) fromSelector:@selector(showFromBarButtonItem:animated:)];
+        [target copyToSelector:@selector(__showFromRect:inView:animated:) fromSelector:@selector(showFromRect:inView:animated:)];
+        [target copyToSelector:@selector(__showFromTabBar:) fromSelector:@selector(showFromTabBar:)];
+        [target copyToSelector:@selector(__showFromToolbar:) fromSelector:@selector(showFromToolbar:)];
+        [target copyToSelector:@selector(__showInView:) fromSelector:@selector(showInView:)];
+        [target copyToSelector:@selector(__dealloc) fromSelector:@selector(dealloc)];
     }
 }
 

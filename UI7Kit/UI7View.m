@@ -42,6 +42,7 @@ NSMutableDictionary *UI7TintColors = nil;
             [UI7TintColors removeObjectForKey:self.pointerString];
         }
     }
+    [self _tintColorUpdated];
 }
 
 - (void)__view_dealloc { assert(NO); }
@@ -66,5 +67,12 @@ NSMutableDictionary *UI7TintColors = nil;
     return tintColor;
 }
 
+- (void)_tintColorUpdated {
+    for (UIView *subview in self.subviews) {
+        if ([subview respondsToSelector:@selector(_tintColorUpdated)]) {
+            [subview _tintColorUpdated];
+        }
+    }
+}
 
 @end

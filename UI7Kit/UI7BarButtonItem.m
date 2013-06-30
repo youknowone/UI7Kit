@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 youknowone.org. All rights reserved.
 //
 
+#import "UI7KitPrivate.h"
 #import "UI7Utilities.h"
 #import "UI7Font.h"
 
@@ -18,11 +19,10 @@
 - (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
 - (id)__initWithBarButtonSystemItem:(UIBarButtonSystemItem)systemItem target:(id)target action:(SEL)action { assert(NO); return nil; }
 - (id)__initWithTitle:(NSString *)title style:(UIBarButtonItemStyle)style target:(id)target action:(SEL)action { assert(NO); return nil; }
-
+- (UIColor *)__tintColor { assert(NO); return nil; }
+- (id)superview { return nil; }
 
 - (void)_barButtonItemInitWithFont:(UIFont *)font {
-    self.tintColor = [UI7Kit kit].tintColor; // FIXME
-
     [self setBackgroundImage:[UIImage clearImage] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     /*  FIXME:
      *  Actually, iOS7 back button is not implemented in this way. There is new property about '<' mark.
@@ -62,21 +62,23 @@
 
 + (void)initialize {
     if (self == [UI7BarButtonItem class]) {
-        Class origin = [UIBarButtonItem class];
+        Class target = [UIBarButtonItem class];
 
-        [origin copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
-        [origin copyToSelector:@selector(__initWithTitle:style:target:action:) fromSelector:@selector(initWithTitle:style:target:action:)];
-        [origin copyToSelector:@selector(__initWithBarButtonSystemItem:target:action:) fromSelector:@selector(initWithBarButtonSystemItem:target:action:)];
+        [target copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
+        [target copyToSelector:@selector(__initWithTitle:style:target:action:) fromSelector:@selector(initWithTitle:style:target:action:)];
+        [target copyToSelector:@selector(__initWithBarButtonSystemItem:target:action:) fromSelector:@selector(initWithBarButtonSystemItem:target:action:)];
+        [target copyToSelector:@selector(__tintColor) fromSelector:@selector(tintColor)];
+        [[UIView class] exportSelector:@selector(_tintColor) toClass:target];
     }
 }
 
 + (void)patch {
-    Class source = [self class];
     Class target =  [UIBarButtonItem class];
 
-    [source exportSelector:@selector(initWithCoder:) toClass:target];
-    [source exportSelector:@selector(initWithBarButtonSystemItem:target:action:) toClass:target];
-    [source exportSelector:@selector(initWithTitle:style:target:action:) toClass:target];
+    [self exportSelector:@selector(initWithCoder:) toClass:target];
+    [self exportSelector:@selector(initWithBarButtonSystemItem:target:action:) toClass:target];
+    [self exportSelector:@selector(initWithTitle:style:target:action:) toClass:target];
+    [[UIView class] exportSelector:@selector(tintColor) toClass:target];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
@@ -110,6 +112,10 @@
     self = [self __initWithTitle:title style:style target:target action:action];
     [self _barButtonItemInit];
     return self;
+}
+
+- (UIColor *)tintColor {
+    return [self _tintColor];
 }
 
 @end

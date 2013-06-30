@@ -34,10 +34,10 @@
 
 + (void)initialize {
     if (self == [UI7SearchBar class]) {
-        Class origin = [UISearchBar class];
+        Class target = [UISearchBar class];
 
-        [origin copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
-        [origin copyToSelector:@selector(__initWithFrame:) fromSelector:@selector(initWithFrame:)];
+        [target copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
+        [target copyToSelector:@selector(__initWithFrame:) fromSelector:@selector(initWithFrame:)];
     }
 }
 

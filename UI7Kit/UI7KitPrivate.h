@@ -10,5 +10,6 @@
 
 - (UIColor *)_tintColor;
 - (UIColor *)__tintColor;
+- (void)_tintColorUpdated;
 
 @end

@@ -28,6 +28,14 @@
 - (void)__awakeFromNib { assert(NO); }
 
 - (void)_stepperInit {
+    self.layer.cornerRadius = 4.0f;
+    self.layer.borderWidth = 1.0f;
+    [self _tintColorUpdated];
+}
+
+- (void)_tintColorUpdated {
+    [super _tintColorUpdated];
+
     if ([self respondsToSelector:@selector(setBackgroundImage:forState:)]) {
         NSDictionary *backColors = @{
                                      @(UIControlStateNormal): [UIColor clearColor],
@@ -40,9 +48,7 @@
                                       @(UIControlStateDisabled): self.tintColor.highligtedColor,
                                       };
 
-        [self setDividerImage:self.tintColor.image
-          forLeftSegmentState:UIControlStateNormal
-            rightSegmentState:UIControlStateNormal];
+        [self setDividerImage:self.tintColor.image forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal];
 
         for (NSNumber *stateNumber in @[@(UIControlStateNormal), @(UIControlStateHighlighted), @(UIControlStateDisabled)]) {
             UIControlState state = (UIControlState)(stateNumber.integerValue);
@@ -68,8 +74,6 @@
         //        }
     }
 
-    self.layer.cornerRadius = 4.0f;
-    self.layer.borderWidth = 1.0f;
     self.layer.borderColor = self.tintColor.CGColor;
 }
 
@@ -79,27 +83,26 @@
 
 + (void)initialize {
     if (self == [UI7Stepper class]) {
-        Class origin = [UIStepper class];
+        Class target = [UIStepper class];
 
-        [origin copyToSelector:@selector(__init) fromSelector:@selector(initWithItems:)];
-        [origin copyToSelector:@selector(__awakeFromNib) fromSelector:@selector(awakeFromNib)];
+        [target copyToSelector:@selector(__init) fromSelector:@selector(initWithItems:)];
+        [target copyToSelector:@selector(__awakeFromNib) fromSelector:@selector(awakeFromNib)];
 
-        NSAMethod *tintColorMethod = [origin methodForSelector:@selector(tintColor)];
-        NSAMethod *viewTintColorMethod = [origin methodForSelector:@selector(_view_tintColor)];
+        NSAMethod *tintColorMethod = [target methodForSelector:@selector(tintColor)];
+        NSAMethod *viewTintColorMethod = [target methodForSelector:@selector(_view_tintColor)];
         if (tintColorMethod.implementation != viewTintColorMethod.implementation) {
-            [origin methodForSelector:@selector(__tintColor)].implementation = tintColorMethod.implementation;
+            [target methodForSelector:@selector(__tintColor)].implementation = tintColorMethod.implementation;
         } else {
-            [origin addMethodForSelector:@selector(tintColor) fromMethod:[origin methodForSelector:@selector(__tintColor)]];
+            [target addMethodForSelector:@selector(tintColor) fromMethod:[target methodForSelector:@selector(__tintColor)]];
         }
     }
 }
 
 + (void)patch {
-    Class source = [self class];
     Class target = [UIStepper class];
 
-    [source exportSelector:@selector(initWithItems:) toClass:target];
-    [source exportSelector:@selector(awakeFromNib) toClass:target];
+    [self exportSelector:@selector(initWithItems:) toClass:target];
+    [self exportSelector:@selector(awakeFromNib) toClass:target];
     [target methodForSelector:@selector(tintColor)].implementation = [target methodForSelector:@selector(_tintColor)].implementation;
 }
 

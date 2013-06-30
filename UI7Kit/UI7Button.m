@@ -24,46 +24,8 @@
     self.titleLabel.font = [UI7Font systemFontOfSize:self.titleLabel.font.pointSize attribute:UI7FontAttributeLight];
 }
 
-@end
-
-
-@implementation UI7Button (UIRoundedRectButton)
-
-- (id)_UIRoundedRectButton_initWithCoder:(NSCoder *)aDecoder {
-    if (self != nil && [self.class.name isEqualToString:@"UIRoundedRectButton"]) {
-        object_setClass(self, [UI7Button class]);
-    }
-    self = [UI7Button methodImplementationForSelector:@selector(initWithCoder:)](self, _cmd, aDecoder);
-    return self;
-}
-
-@end
-
-
-@implementation UI7Button
-
-+ (void)initialize {
-    if (self == [UI7Button class]) {
-        Class origin = [UIButton class];
-
-        [origin copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
-        [origin classMethodForSelector:@selector(__buttonWithType:)].implementation = [origin classMethodForSelector:@selector(buttonWithType:)].implementation;
-        [origin copyToSelector:@selector(__tintColor) fromSelector:@selector(tintColor)];
-    }
-}
-
-+ (void)patch {
-    Class target = [UIButton class];
-
-    [self exportSelector:@selector(initWithCoder:) toClass:target];
-    [target methodForSelector:@selector(tintColor)].implementation = [target methodForSelector:@selector(_tintColor)].implementation;
-    [target classMethodObjectForSelector:@selector(buttonWithType:)].implementation = [self.class classMethodObjectForSelector:@selector(buttonWithType:)].implementation;
-    [self exportSelector:@selector(drawRect:) toClass:target];
-    [NSClassFromString(@"UIRoundedRectButton") addMethodForSelector:@selector(initWithCoder:) fromMethod:[self methodForSelector:@selector(_UIRoundedRectButton_initWithCoder:)]];
-}
-
-- (id)initWithCoder:(NSCoder *)aDecoder {
-    self = [self __initWithCoder:aDecoder];
+- (void)_tintColorUpdated {
+    [super _tintColorUpdated];
     switch (self.buttonType) {
         case UIButtonTypeCustom:
         case UIButtonTypeRoundedRect:
@@ -86,6 +48,51 @@
         }   break;
         default:
             break;
+    }
+}
+
+@end
+
+
+@implementation UI7Button (UIRoundedRectButton)
+
+- (id)_UIRoundedRectButton_initWithCoder:(NSCoder *)aDecoder {
+    if (self != nil && [self.class.name isEqualToString:@"UIRoundedRectButton"]) {
+        object_setClass(self, [UI7Button class]);
+    }
+    self = [UI7Button methodImplementationForSelector:@selector(initWithCoder:)](self, _cmd, aDecoder);
+    return self;
+}
+
+@end
+
+
+@implementation UI7Button
+
++ (void)initialize {
+    if (self == [UI7Button class]) {
+        Class target = [UIButton class];
+
+        [target copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
+        [target classMethodForSelector:@selector(__buttonWithType:)].implementation = [target classMethodForSelector:@selector(buttonWithType:)].implementation;
+        [target copyToSelector:@selector(__tintColor) fromSelector:@selector(tintColor)];
+    }
+}
+
++ (void)patch {
+    Class target = [UIButton class];
+
+    [self exportSelector:@selector(initWithCoder:) toClass:target];
+    [target methodForSelector:@selector(tintColor)].implementation = [target methodForSelector:@selector(_tintColor)].implementation;
+    [target classMethodObjectForSelector:@selector(buttonWithType:)].implementation = [self.class classMethodObjectForSelector:@selector(buttonWithType:)].implementation;
+    [self exportSelector:@selector(drawRect:) toClass:target];
+    [NSClassFromString(@"UIRoundedRectButton") addMethodForSelector:@selector(initWithCoder:) fromMethod:[self methodForSelector:@selector(_UIRoundedRectButton_initWithCoder:)]];
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [self __initWithCoder:aDecoder];
+    if (self != nil) {
+        [self _tintColorUpdated];
     }
     return self;
 }

@@ -54,21 +54,20 @@
 
 + (void)initialize {
     if (self == [UI7NavigationBar class]) {
-        Class origin = [UINavigationBar class];
+        Class target = [UINavigationBar class];
 
-        [origin copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
-        [origin copyToSelector:@selector(__initWithFrame:) fromSelector:@selector(initWithFrame:)];
-        [origin copyToSelector:@selector(__pushNavigationItem:) fromSelector:@selector(pushNavigationItem:)];
+        [target copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
+        [target copyToSelector:@selector(__initWithFrame:) fromSelector:@selector(initWithFrame:)];
+        [target copyToSelector:@selector(__pushNavigationItem:) fromSelector:@selector(pushNavigationItem:)];
     }
 }
 
 + (void)patch {
-    Class source = [self class];
     Class target =  [UINavigationBar class];
 
-    [source exportSelector:@selector(initWithCoder:) toClass:target];
-    [source exportSelector:@selector(initWithFrame:) toClass:target];
-    [source exportSelector:@selector(pushNavigationItem:) toClass:target];
+    [self exportSelector:@selector(initWithCoder:) toClass:target];
+    [self exportSelector:@selector(initWithFrame:) toClass:target];
+    [self exportSelector:@selector(pushNavigationItem:) toClass:target];
 }
 
 - (id)initWithFrame:(CGRect)frame {

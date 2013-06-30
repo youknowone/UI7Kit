@@ -44,20 +44,19 @@
 
 + (void)initialize {
     if (self == [UI7Toolbar class]) {
-        Class origin = [UIToolbar class];
+        Class target = [UIToolbar class];
 
-        [origin copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
-        [origin copyToSelector:@selector(__initWithFrame:) fromSelector:@selector(initWithFrame:)];
+        [target copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
+        [target copyToSelector:@selector(__initWithFrame:) fromSelector:@selector(initWithFrame:)];
 
     }
 }
 
 + (void)patch {
-    Class origin = [self class];
     Class target = [UIToolbar class];
 
-    [origin exportSelector:@selector(initWithFrame:) toClass:target];
-    [origin exportSelector:@selector(initWithCoder:) toClass:target];
+    [self exportSelector:@selector(initWithFrame:) toClass:target];
+    [self exportSelector:@selector(initWithCoder:) toClass:target];
 }
 
 - (id)initWithFrame:(CGRect)frame {

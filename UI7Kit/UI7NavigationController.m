@@ -33,19 +33,18 @@
 
 + (void)initialize {
     if (self == [UI7NavigationController class]) {
-        Class origin = [UINavigationController class];
+        Class target = [UINavigationController class];
 
-        [origin copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
-        [origin copyToSelector:@selector(__initWithRootViewController:) fromSelector:@selector(initWithRootViewController:)];
+        [target copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
+        [target copyToSelector:@selector(__initWithRootViewController:) fromSelector:@selector(initWithRootViewController:)];
     }
 }
 
 + (void)patch {
-    Class source = [self class];
     Class target = [UINavigationController class];
 
-    [source exportSelector:@selector(initWithCoder:) toClass:target];
-    [source exportSelector:@selector(initWithRootViewController:) toClass:target];
+    [self exportSelector:@selector(initWithCoder:) toClass:target];
+    [self exportSelector:@selector(initWithRootViewController:) toClass:target];
 }
 
 

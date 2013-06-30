@@ -28,19 +28,18 @@
 
 + (void)initialize {
     if (self == [UI7Switch class]) {
-        Class origin = [UISwitch class];
+        Class target = [UISwitch class];
 
-        [origin copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
-        [origin copyToSelector:@selector(__initWithFrame:) fromSelector:@selector(initWithFrame:)];
+        [target copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
+        [target copyToSelector:@selector(__initWithFrame:) fromSelector:@selector(initWithFrame:)];
     }
 }
 
 + (void)patch {
-    Class source = [self class];
     Class target = [UISwitch class];
 
-    [source exportSelector:@selector(initWithCoder:) toClass:target];
-    [source exportSelector:@selector(initWithFrame:) toClass:target];
+    [self exportSelector:@selector(initWithCoder:) toClass:target];
+    [self exportSelector:@selector(initWithFrame:) toClass:target];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {

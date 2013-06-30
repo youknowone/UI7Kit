@@ -51,21 +51,20 @@ static NSMutableDictionary *UI7ViewControllerEditButtonItems = nil;
         UI7ViewControllerNavigationItems = [[NSMutableDictionary alloc] init];
         UI7ViewControllerEditButtonItems = [[NSMutableDictionary alloc] init];
 
-        Class origin = [UIViewController class];
+        Class target = [UIViewController class];
 
-        [origin copyToSelector:@selector(__initViewControllerWithCoder:) fromSelector:@selector(initWithCoder:)];
-        [origin copyToSelector:@selector(__initViewControllerWithNibName:bundle:) fromSelector:@selector(initWithNibName:bundle:)];
-        [origin copyToSelector:@selector(__deallocViewController) fromSelector:@selector(dealloc)];
+        [target copyToSelector:@selector(__initViewControllerWithCoder:) fromSelector:@selector(initWithCoder:)];
+        [target copyToSelector:@selector(__initViewControllerWithNibName:bundle:) fromSelector:@selector(initWithNibName:bundle:)];
+        [target copyToSelector:@selector(__deallocViewController) fromSelector:@selector(dealloc)];
     }
 }
 
 + (void)patch {
-    Class source = [self class];
     Class target = [UIViewController class];
 
-    [source exportSelector:@selector(initWithCoder:) toClass:target];
-    [source exportSelector:@selector(initWithNibName:bundle:) toClass:target];
-    [source copyToSelector:@selector(dealloc) fromSelector:@selector(_dealloc)];
+    [self exportSelector:@selector(initWithCoder:) toClass:target];
+    [self exportSelector:@selector(initWithNibName:bundle:) toClass:target];
+    [self copyToSelector:@selector(dealloc) fromSelector:@selector(_dealloc)];
 }
 
 - (void)dealloc {

@@ -32,9 +32,9 @@
 
 + (void)initialize {
     if (self == [UI7TextField class]) {
-        Class origin = [UITextField class];
+        Class target = [UITextField class];
 
-        [origin copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
+        [target copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
 //        [origin copyToSelector:@selector(__initWithFrame:) fromSelector:@selector(initWithFrame:)];
     }
 }

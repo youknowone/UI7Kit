@@ -29,6 +29,7 @@
 		381C00AD17172CE20067C936 /* UITTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 381C00AB17172CE20067C936 /* UITTextViewController.m */; };
 		382B5801177F60AA00D46754 /* UITAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 382B5800177F60AA00D46754 /* UITAlertViewController.m */; };
 		382B5803178013E300D46754 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 382B5802178013E300D46754 /* libPods.a */; };
+		382B58061780427800D46754 /* UITTintViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 382B58051780427800D46754 /* UITTintViewController.m */; };
 		382E2206176CB72D005F0A98 /* UITPreparedCellTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38485C5F1710974C0001A99D /* UITPreparedCellTableViewController.m */; };
 		383E6A831775CF0100EF7ADA /* UI7Font.m in Sources */ = {isa = PBXBuildFile; fileRef = 383E6A821775CF0100EF7ADA /* UI7Font.m */; };
 		38505B30176B1575004A7725 /* UI7AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 38505B2F176B1575004A7725 /* UI7AlertView.m */; };
@@ -132,6 +133,8 @@
 		382B57FF177F60AA00D46754 /* UITAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITAlertViewController.h; sourceTree = "<group>"; };
 		382B5800177F60AA00D46754 /* UITAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITAlertViewController.m; sourceTree = "<group>"; };
 		382B5802178013E300D46754 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Release-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		382B58041780427800D46754 /* UITTintViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITTintViewController.h; sourceTree = "<group>"; };
+		382B58051780427800D46754 /* UITTintViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITTintViewController.m; sourceTree = "<group>"; };
 		382F54271767863B004D6F59 /* UI7TableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7TableView.h; sourceTree = "<group>"; };
 		382F54281767863B004D6F59 /* UI7TableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7TableView.m; sourceTree = "<group>"; };
 		383764D713373154007072FD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -415,6 +418,8 @@
 				38F068251636F8C8002723AB /* UITAppDelegate.m */,
 				38F0682D1636F8C8002723AB /* UITMasterViewController.h */,
 				38F0682E1636F8C8002723AB /* UITMasterViewController.m */,
+				382B58041780427800D46754 /* UITTintViewController.h */,
+				382B58051780427800D46754 /* UITTintViewController.m */,
 				38F068301636F8C8002723AB /* UITDetailViewController.h */,
 				38F068311636F8C9002723AB /* UITDetailViewController.m */,
 				38485C5E1710974C0001A99D /* UITPreparedCellTableViewController.h */,
@@ -669,6 +674,7 @@
 				38BC0E5D173E821700F36497 /* UITSubviewTableViewController.m in Sources */,
 				3888FC62176C7C7900489638 /* UITIssue1ViewController.m in Sources */,
 				382B5801177F60AA00D46754 /* UITAlertViewController.m in Sources */,
+				382B58061780427800D46754 /* UITTintViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
