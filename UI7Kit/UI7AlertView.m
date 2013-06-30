@@ -184,9 +184,14 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
             baseHeight = field.frame.origin.y + field.frame.size.height;
         }   break;
        case UIAlertViewStyleDefault:
-       default:
-            baseHeight = self.titleLabel.frame.origin.y + self.titleLabel.frame.size.height+self.bodyTextLabel.frame.origin.y + self.bodyTextLabel.frame.size.height;
+      default:{
+            if (self.message.length>0) {
+            baseHeight = self.bodyTextLabel.frame.origin.y + self.bodyTextLabel.frame.size.height;
+            }else{
+            baseHeight = self.titleLabel.frame.origin.y + self.titleLabel.frame.size.height;
+            }
             break;
+        }
     }
     baseHeight += 14.5f;
 
