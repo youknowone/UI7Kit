@@ -49,8 +49,9 @@
 - (void)_segmentedControlInit {
     // Set background images
 
-    UIImage *backgroundImage = [UIImage roundedImageWithSize:CGSizeMake(10.0f, 40.0f) color:self.tintColor radius:4.0];
-    UIImage *selectedBackgroundImage = [UIImage roundedImageWithSize:CGSizeMake(10.0f, 40.0f) color:[UIColor clearColor] radius:UI7ControlRadius];
+    UIImage *backgroundImage = [UIColor clearColor].image;
+    UIImage *selectedBackgroundImage = [UIImage roundedImageWithSize:CGSizeMake(10.0f, 40.0f) color:self.tintColor radius:4.0];
+    UIImage *highlightedBackgroundImage = [UIImage roundedImageWithSize:CGSizeMake(10.0f, 40.0f) color:self.tintColor.highligtedColor radius:4.0];
 
     NSDictionary *attributes = @{
                                  UITextAttributeFont: [UI7Font systemFontOfSize:13.0 attribute:UI7FontAttributeMedium],
@@ -58,22 +59,18 @@
                                  UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetZero],
                                  };
     [self setTitleTextAttributes:attributes forState:UIControlStateNormal];
-
-    NSDictionary *highlightedAttributes = @{UITextAttributeTextColor: [UIColor whiteColor]};
+    
+    NSDictionary *highlightedAttributes = @{UITextAttributeTextColor: self.tintColor};
     [self setTitleTextAttributes:highlightedAttributes forState:UIControlStateHighlighted];
 
-    [self setBackgroundImage:selectedBackgroundImage
-                    forState:UIControlStateNormal
-                  barMetrics:UIBarMetricsDefault];
+    NSDictionary *selectedAttributes = @{UITextAttributeTextColor: [UIColor whiteColor]};
+    [self setTitleTextAttributes:selectedAttributes forState:UIControlStateSelected];
 
-    [self setBackgroundImage:backgroundImage
-                    forState:UIControlStateSelected
-                  barMetrics:UIBarMetricsDefault];
+    [self setBackgroundImage:backgroundImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [self setBackgroundImage:highlightedBackgroundImage forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
+    [self setBackgroundImage:selectedBackgroundImage forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
 
-    [self setDividerImage:self.tintColor.image
-      forLeftSegmentState:UIControlStateNormal
-        rightSegmentState:UIControlStateNormal
-               barMetrics:UIBarMetricsDefault];
+    [self setDividerImage:self.tintColor.image forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
 
     self.layer.cornerRadius = 4.0f;
     self.layer.borderWidth = 1.0f;

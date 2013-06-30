@@ -39,6 +39,7 @@
                      @"Text",
 //                     @"SubviewTable",
                      @"RoundedRectButton",
+                     @"SegmentedControl",
                      ];
     self.issues = @[
                     @1,
