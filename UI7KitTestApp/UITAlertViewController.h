@@ -16,5 +16,6 @@
 - (IBAction)inputButton1:(id)sender;
 - (IBAction)inputButton2:(id)sender;
 - (IBAction)inputButton3:(id)sender;
+- (IBAction)inputField2:(id)sender;
 
 @end

@@ -68,4 +68,10 @@
     [alert show];
 }
 
+- (void)inputField2:(id)sender {
+    UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Title" message:@"Message" delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil] autorelease];
+    alert.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
+    [alert show];
+}
+
 @end

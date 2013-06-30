@@ -11,7 +11,9 @@
 @implementation UIDevice (iOS7)
 
 - (BOOL)needsUI7Kit {
-    return [[self.systemVersion componentsSeparatedByString:@"."][0] integerValue] < 7;
+    NSArray *versionParts = [self.systemVersion componentsSeparatedByString:@"."];
+    NSInteger major = [versionParts[0] integerValue];
+    return major < 7;
 }
 
 @end
