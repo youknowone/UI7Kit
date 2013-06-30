@@ -183,9 +183,10 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
             UITextField *field = [self textFieldAtIndex:1];
             baseHeight = field.frame.origin.y + field.frame.size.height;
         }   break;
-        case UIAlertViewStyleDefault:
-        default:
-            baseHeight = self.bodyTextLabel.frame.origin.y + self.bodyTextLabel.frame.size.height;
+       case UIAlertViewStyleDefault:
+       default:
+            baseHeight = self.titleLabel.frame.origin.y + self.titleLabel.frame.size.height+self.bodyTextLabel.frame.origin.y + self.bodyTextLabel.frame.size.height;
+            break;
     }
     baseHeight += 14.5f;
 
