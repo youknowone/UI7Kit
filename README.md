@@ -34,6 +34,8 @@ Example with current code. (0.0.16)
 
 ![Current status](https://raw.github.com/youknowone/UI7Kit/master/UI7Kit.png).
 
+- [Quick video of 0.0.16 test app](http://www.youtube.com/watch?v=xVA5MAbUW44)
+
 Contact
 -------
 
