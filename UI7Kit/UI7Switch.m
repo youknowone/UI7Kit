@@ -50,12 +50,14 @@
     }
     
     //Reassign self and set to a KLSwitch copying propertie from dummy
-    self = (UI7Switch*)[[KLSwitch alloc]
-                        initWithCoder:aDecoder];
+    self = (UI7Switch*)[[KLSwitch alloc] initWithCoder:aDecoder];
     if (self != nil) {
-        [self setOn: dummySwitch.on
-           animated: NO];
-        self.onTintColor = dummySwitch.onTintColor;
+        [self setOn:dummySwitch.on animated: NO];
+        if ([aDecoder containsValueForKey:@"UISwitchOnTintColor"]) {
+            self.onTintColor = dummySwitch.onTintColor;
+        } else {
+            self.onTintColor = [UIColor colorWith8bitRed:69 green:215 blue:117 alpha:255];
+        }
     }
     return self;
 }
