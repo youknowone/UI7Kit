@@ -47,20 +47,21 @@
 - (void)__awakeFromNib { assert(NO); }
 
 - (void)_segmentedControlInit {
+    UIColor *tintColor = self.tintColor;
     // Set background images
 
     UIImage *backgroundImage = [UIColor clearColor].image;
-    UIImage *selectedBackgroundImage = [UIImage roundedImageWithSize:CGSizeMake(10.0f, 40.0f) color:self.tintColor radius:4.0];
-    UIImage *highlightedBackgroundImage = [UIImage roundedImageWithSize:CGSizeMake(10.0f, 40.0f) color:self.tintColor.highligtedColor radius:4.0];
+    UIImage *selectedBackgroundImage = [UIImage roundedImageWithSize:CGSizeMake(10.0f, 40.0f) color:tintColor radius:4.0];
+    UIImage *highlightedBackgroundImage = [UIImage roundedImageWithSize:CGSizeMake(10.0f, 40.0f) color:tintColor.highligtedColor radius:4.0];
 
     NSDictionary *attributes = @{
                                  UITextAttributeFont: [UI7Font systemFontOfSize:13.0 attribute:UI7FontAttributeMedium],
-                                 UITextAttributeTextColor: self.tintColor,
+                                 UITextAttributeTextColor: tintColor,
                                  UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetZero],
                                  };
     [self setTitleTextAttributes:attributes forState:UIControlStateNormal];
     
-    NSDictionary *highlightedAttributes = @{UITextAttributeTextColor: self.tintColor};
+    NSDictionary *highlightedAttributes = @{UITextAttributeTextColor: tintColor};
     [self setTitleTextAttributes:highlightedAttributes forState:UIControlStateHighlighted];
 
     NSDictionary *selectedAttributes = @{UITextAttributeTextColor: [UIColor whiteColor]};
@@ -70,11 +71,11 @@
     [self setBackgroundImage:highlightedBackgroundImage forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
     [self setBackgroundImage:selectedBackgroundImage forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
 
-    [self setDividerImage:self.tintColor.image forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [self setDividerImage:tintColor.image forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
 
     self.layer.cornerRadius = 4.0f;
     self.layer.borderWidth = 1.0f;
-    self.layer.borderColor = self.tintColor.CGColor;
+    self.layer.borderColor = tintColor.CGColor;
     self.frame = CGRectMake(self.frame.origin.x,self.frame.origin.y,self.frame.size.width,29);
 }
 
@@ -124,7 +125,7 @@
 }
 
 - (UIColor *)tintColor {
-    return [super _tintColor];
+    return [self _tintColor];
 }
 
 @end
