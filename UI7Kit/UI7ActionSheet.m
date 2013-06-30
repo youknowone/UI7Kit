@@ -51,8 +51,14 @@ NSAPropertyGetter(titleLabel, @"_titleLabel");
 
 - (void)_setTheme {
     self.backgroundColor = UIColor.clearColor;
-    
-    [self.subviews.lastObject removeFromSuperview]; //background image
+        
+    for (id view in self.subviews)
+    {
+    if ([view isKindOfClass:[UIImageView class]])
+       {
+        [view removeFromSuperview]; //background image
+       }    
+    }
     
     self.titleLabel.textColor = [UIColor colorWith8bitWhite:88 alpha:255];
     self.titleLabel.shadowOffset = CGSizeZero;
