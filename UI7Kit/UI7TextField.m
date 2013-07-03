@@ -20,7 +20,7 @@
 - (void)_textFieldInit {
     if (self.borderStyle == UITextBorderStyleRoundedRect) {
         self.borderStyle = UITextBorderStyleNone;
-        self.layer.cornerRadius = 4.0f;
+        self.layer.cornerRadius = UI7ControlRadius;
         self.layer.borderWidth = 1.0f;
         self.layer.borderColor = [UIColor lightGrayColor].CGColor;
     }

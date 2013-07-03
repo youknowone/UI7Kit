@@ -58,7 +58,9 @@
 @end
 
 
-const CGFloat UI7ControlRadius = 6.0;
+const CGFloat UI7ControlRadius = 4.0f;
+const CGSize UI7ControlRadiusSize = {4.0f, 4.0f};
+const CGFloat UI7ControlRowHeight = 44.0f;
 
 @implementation UIImage (Images)
 

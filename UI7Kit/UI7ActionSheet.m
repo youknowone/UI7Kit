@@ -65,12 +65,12 @@ NSAPropertyGetter(titleLabel, @"_titleLabel");
         UIButton *button = obj; // UIAlertButton
         
         CGRect frame = button.frame;
-        frame.size = CGSizeMake(304.0f, 43.5f);
+        frame.size = CGSizeMake(304.0f, UI7ControlRowHeight - 0.5f);
         frame.origin.x = 8.0f;
         if (self.cancelButtonIndex == (NSInteger)index) {
-            frame.origin.y = 60.0f + (self.buttons.count - 1) * 44.0f;
+            frame.origin.y = self.titleLabel.frame.size.height + 45.0f + (self.buttons.count - 1) * UI7ControlRowHeight;
         } else {
-            frame.origin.y = 50.0f + index * 44.0f;
+            frame.origin.y = self.titleLabel.frame.size.height + 35.0f + index * UI7ControlRowHeight;
         }
         button.frame = frame;
         
@@ -85,11 +85,15 @@ NSAPropertyGetter(titleLabel, @"_titleLabel");
         UIBezierPath *path;
         
         if (index == 0) {
-            path = [UIBezierPath bezierPathWithRoundedRect:button.bounds byRoundingCorners:UIRectCornerTopLeft|UIRectCornerTopRight cornerRadii:self.titleLabel.text.length>1?CGSizeMake(0.0, 0.0):CGSizeMake(4.0, 4.0)];
+            if (self.titleLabel.text.length > 1) {
+                path = [UIBezierPath bezierPathWithRoundedRect:button.bounds cornerRadius:.0f];
+            } else {
+                path = [UIBezierPath bezierPathWithRoundedRect:button.bounds byRoundingCorners:UIRectCornerTopLeft|UIRectCornerTopRight cornerRadii:UI7ControlRadiusSize];
+            }
         } else if ((NSInteger)index == self.cancelButtonIndex) {
-            path = [UIBezierPath bezierPathWithRoundedRect:button.bounds byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(4.0, 4.0)];
+            path = [UIBezierPath bezierPathWithRoundedRect:button.bounds byRoundingCorners:UIRectCornerAllCorners cornerRadii:UI7ControlRadiusSize];
         } else if (index == self.buttons.count - 1 - (self.cancelButtonIndex >= 0 ? 1 : 0)) {
-            path = [UIBezierPath bezierPathWithRoundedRect:button.bounds byRoundingCorners:UIRectCornerBottomLeft|UIRectCornerBottomRight cornerRadii:CGSizeMake(4.0, 4.0)];
+            path = [UIBezierPath bezierPathWithRoundedRect:button.bounds byRoundingCorners:UIRectCornerBottomLeft|UIRectCornerBottomRight cornerRadii:UI7ControlRadiusSize];
         } else {
             path = [UIBezierPath bezierPathWithRoundedRect:button.bounds cornerRadius:.0f];
         }
@@ -110,7 +114,7 @@ NSAPropertyGetter(titleLabel, @"_titleLabel");
     }];
 
     CGRect frame = self.frame;
-    frame.origin.y += self.buttons.count * 4.0f;
+    frame.origin.y += self.buttons.count * 3.0f;
 
     if (self.titleLabel.text.length > 0) {
         frame.origin.y += 20.0f;
@@ -119,7 +123,7 @@ NSAPropertyGetter(titleLabel, @"_titleLabel");
         tframe.origin.y += 10.0f;
         self.titleLabel.frame = tframe;
 
-        UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(8.0f, 10.0f, self.frame.size.width - 16.0f, 39.5f) byRoundingCorners:UIRectCornerTopLeft|UIRectCornerTopRight cornerRadii:CGSizeMake(4.0, 4.0)];
+        UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(8.0f, 10.0f, self.frame.size.width - 16.0f, 24.5f + self.titleLabel.frame.size.height) byRoundingCorners:UIRectCornerTopLeft|UIRectCornerTopRight cornerRadii:UI7ControlRadiusSize];
         UIImageView *backgroundView = [[[UIImageView alloc] initWithImage:[path imageWithFillColor:[UI7Color defaultBackgroundColor]]] autorelease];
         
         [self insertSubview:backgroundView belowSubview:self.titleLabel];

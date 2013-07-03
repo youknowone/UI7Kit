@@ -40,6 +40,8 @@
 
 
 UIKIT_EXTERN const CGFloat UI7ControlRadius;
+UIKIT_EXTERN const CGSize UI7ControlRadiusSize;
+UIKIT_EXTERN const CGFloat UI7ControlRowHeight;
 
 @interface UIImage (Images)
 

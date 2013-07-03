@@ -47,12 +47,14 @@
 - (void)__awakeFromNib { assert(NO); }
 
 - (void)_segmentedControlInit {
-    self.layer.cornerRadius = 4.0f;
+    self.layer.cornerRadius = UI7ControlRadius;
     self.layer.borderWidth = 1.0f;
 
-    [self _tintColorUpdated];
+    CGRect frame = self.frame;
+    frame.size.height = 29.0f;
+    self.frame = frame;
 
-    self.frame = CGRectMake(self.frame.origin.x,self.frame.origin.y,self.frame.size.width,29);
+    [self _tintColorUpdated];
 }
 
 - (void)_tintColorUpdated {
@@ -62,8 +64,8 @@
     // Set background images
 
     UIImage *backgroundImage = [UIColor clearColor].image;
-    UIImage *selectedBackgroundImage = [UIImage roundedImageWithSize:CGSizeMake(10.0f, 40.0f) color:tintColor radius:4.0];
-    UIImage *highlightedBackgroundImage = [UIImage roundedImageWithSize:CGSizeMake(10.0f, 40.0f) color:tintColor.highligtedColor radius:4.0];
+    UIImage *selectedBackgroundImage = [UIImage roundedImageWithSize:CGSizeMake(10.0f, self.frame.size.height) color:tintColor radius:UI7ControlRadius];
+    UIImage *highlightedBackgroundImage = [UIImage roundedImageWithSize:CGSizeMake(10.0f, self.frame.size.height) color:tintColor.highligtedColor radius:UI7ControlRadius];
 
     NSDictionary *attributes = @{
                                  UITextAttributeFont: [UI7Font systemFontOfSize:13.0 attribute:UI7FontAttributeMedium],

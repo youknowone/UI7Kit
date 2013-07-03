@@ -12,6 +12,8 @@
 
 #import "UI7AlertView.h"
 
+const CGFloat UI7AlertViewWidth = 270.0f;
+
 @interface UIAlertView (Private)
 
 @property(nonatomic,readonly) UILabel *titleLabel;
@@ -213,16 +215,16 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
         if (frame.origin.x < frame.size.width) {
             rows += 1;
         }
-        frame.size.height = 43.5f;
-        frame.origin.y = baseHeight + 44.0f * (rows - 1);
+        frame.size.height = UI7ControlRowHeight - 0.5f;
+        frame.origin.y = baseHeight + UI7ControlRowHeight * (rows - 1);
         button.frame = frame;
 
         frame.size.height = 0.5f;
         CGRect sframe;
         if (frame.origin.x < frame.size.width) {
-            sframe = CGRectMake(7.0, frame.origin.y, 270.0, 0.5);
+            sframe = CGRectMake(7.0, frame.origin.y, UI7AlertViewWidth, 0.5);
         } else {
-            sframe = CGRectMake(142.0, frame.origin.y, 0.5, 44.0);
+            sframe = CGRectMake(142.0, frame.origin.y, 0.5, UI7ControlRowHeight);
         }
         UIView *strokeView = [[[UIView alloc] initWithFrame:sframe] autorelease];
         strokeView.backgroundColor = [UIColor colorWith8bitWhite:182 alpha:255];
@@ -233,8 +235,8 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
     CGRect lastButtonFrame = [self.buttons.lastObject frame];
 
     // background image
-    self.backgroundView.frame = CGRectMake(7.0, .0, 270.0, lastButtonFrame.origin.y + lastButtonFrame.size.height);
-    self.backgroundView.image = [UIImage roundedImageWithSize:self.backgroundView.frame.size color:[UIColor colorWith8bitWhite:234 alpha:248] radius:UI7ControlRadius];
+    self.backgroundView.frame = CGRectMake(7.0, .0, UI7AlertViewWidth, lastButtonFrame.origin.y + lastButtonFrame.size.height);
+    self.backgroundView.image = [UIImage roundedImageWithSize:self.backgroundView.frame.size color:[UIColor colorWith8bitWhite:234 alpha:248] radius:6.0];
 }
 
 - (void)dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated {

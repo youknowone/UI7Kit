@@ -15,5 +15,7 @@
 - (IBAction)showAlertView3:(id)sender;
 - (IBAction)showActionSheet1:(id)sender;
 - (IBAction)showActionSheet2:(id)sender;
+- (IBAction)showActionSheet3:(id)sender;
+- (IBAction)showActionSheet4:(id)sender;
 
 @end

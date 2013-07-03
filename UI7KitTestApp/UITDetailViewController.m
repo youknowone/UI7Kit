@@ -64,4 +64,24 @@
     }
 }
 
+- (void)showActionSheet3:(UISwitch *)sender {
+    NSString *title = @"Title";
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:title delegate:nil cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Destructive" otherButtonTitles:@"Other", @"Buttons", @"Is", @"Many", @"At", @"This", @"Time", nil];
+    if (self.tabBarController) {
+        [actionSheet showFromTabBar:self.tabBarController.tabBar];
+    } else {
+        [actionSheet showInView:self.view];
+    }
+}
+
+- (void)showActionSheet4:(UISwitch *)sender {
+    NSString *title = @"Title is long long longer at this time. How long? This long.";
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:title delegate:nil cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Destructive" otherButtonTitles:@"Other", @"Buttons", @"Is", @"Many", @"At", @"This", @"Time", nil];
+    if (self.tabBarController) {
+        [actionSheet showFromTabBar:self.tabBarController.tabBar];
+    } else {
+        [actionSheet showInView:self.view];
+    }
+}
+
 @end

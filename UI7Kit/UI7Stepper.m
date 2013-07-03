@@ -28,7 +28,7 @@
 - (void)__awakeFromNib { assert(NO); }
 
 - (void)_stepperInit {
-    self.layer.cornerRadius = 4.0f;
+    self.layer.cornerRadius = UI7ControlRadius;
     self.layer.borderWidth = 1.0f;
     [self _tintColorUpdated];
 }
@@ -52,7 +52,7 @@
 
         for (NSNumber *stateNumber in @[@(UIControlStateNormal), @(UIControlStateHighlighted), @(UIControlStateDisabled)]) {
             UIControlState state = (UIControlState)(stateNumber.integerValue);
-            UIImage *backgroundImage = [UIImage roundedImageWithSize:CGSizeMake(10.0, 30.0) color:backColors[stateNumber] radius:4.0];
+            UIImage *backgroundImage = [UIImage roundedImageWithSize:CGSizeMake(10.0, 30.0) color:backColors[stateNumber] radius:UI7ControlRadius];
             [self setBackgroundImage:backgroundImage forState:state];
             UIImage *image;
             image = [self incrementImageForState:state];
