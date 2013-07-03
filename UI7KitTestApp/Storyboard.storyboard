@@ -414,7 +414,7 @@
             </objects>
             <point key="canvasLocation" x="1333" y="116"/>
         </scene>
-        <!--Alert View Controller-->
+        <!--Alert View Controller - AlertView-->
         <scene sceneID="Qrz-Lb-KKZ">
             <objects>
                 <viewController id="Jwg-fJ-bVs" customClass="UITAlertViewController" sceneMemberID="viewController">
@@ -530,7 +530,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="qI0-fS-xxK"/>
+                    <navigationItem key="navigationItem" title="AlertView" id="qI0-fS-xxK"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17G-U2-z0p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -976,10 +976,10 @@
             </objects>
             <point key="canvasLocation" x="999" y="-681"/>
         </scene>
-        <!--Tint View Controller - SegmentedControl-->
+        <!--Segmented Control View Controller - SegmentedControl-->
         <scene sceneID="8V8-C8-Ce8">
             <objects>
-                <viewController id="ngV-Q8-6tw" customClass="UITTintViewController" sceneMemberID="viewController">
+                <viewController id="ngV-Q8-6tw" customClass="UITSegmentedControlViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bdw-Wk-I7B">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1066,6 +1066,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="SegmentedControl" id="Tgv-IK-fza"/>
+                    <connections>
+                        <outlet property="segmented1" destination="okc-gA-zUC" id="Mpp-ay-Kv5"/>
+                        <outlet property="segmented2" destination="rSd-DD-cIK" id="D0v-3t-axa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ai-ER-fFb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1078,6 +1082,75 @@
         <image name="UI7NavigationBarBackButton.png" width="50" height="33"/>
         <image name="UI7TabBarItemFavoriteSelected.png" width="30" height="30"/>
     </resources>
+    <classes>
+        <class className="UI7Button" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UI7Button.h"/>
+        </class>
+        <class className="UI7RoundedRectButton" superclassName="UI7Button">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UI7RoundedRectButton.h"/>
+        </class>
+        <class className="UIAPlaceholderTextView" superclassName="UITextView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIAPlaceholderTextView.h"/>
+        </class>
+        <class className="UITAlertViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITAlertViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="defaultButton1:"/>
+                <relationship kind="action" name="defaultButton2:"/>
+                <relationship kind="action" name="defaultButton3:"/>
+                <relationship kind="action" name="inputButton1:"/>
+                <relationship kind="action" name="inputButton2:"/>
+                <relationship kind="action" name="inputButton3:"/>
+                <relationship kind="action" name="inputField2:"/>
+            </relationships>
+        </class>
+        <class className="UITDetailViewController" superclassName="UITTintViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="showActionSheet1:"/>
+                <relationship kind="action" name="showActionSheet2:"/>
+                <relationship kind="action" name="showActionSheet3:"/>
+                <relationship kind="action" name="showActionSheet4:"/>
+                <relationship kind="action" name="showAlertView1:"/>
+                <relationship kind="action" name="showAlertView2:"/>
+                <relationship kind="action" name="showAlertView3:"/>
+            </relationships>
+        </class>
+        <class className="UITGroupedTableViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITGroupedTableViewController.h"/>
+        </class>
+        <class className="UITIssue1ViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITIssue1ViewController.h"/>
+        </class>
+        <class className="UITMasterViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITMasterViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="listTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="UITSegmentedControlViewController" superclassName="UITTintViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITSegmentedControlViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="colorChanged:"/>
+                <relationship kind="outlet" name="segmented1" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="segmented2" candidateClass="UISegmentedControl"/>
+            </relationships>
+        </class>
+        <class className="UITTextViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITTextViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="resign:"/>
+                <relationship kind="action" name="switched:"/>
+                <relationship kind="outlet" name="textView" candidateClass="UIAPlaceholderTextView"/>
+            </relationships>
+        </class>
+        <class className="UITTintViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITTintViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="colorChanged:"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

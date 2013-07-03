@@ -26,6 +26,7 @@
 		3801745F1769F3B50049D26C /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3801745E1769F3B50049D26C /* Storyboard.storyboard */; };
 		38017462176A245B0049D26C /* UI7NavigationBarBackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 38017461176A245B0049D26C /* UI7NavigationBarBackButton.png */; };
 		381582471771E72C0045713A /* UI7Slider.m in Sources */ = {isa = PBXBuildFile; fileRef = 381582461771E72C0045713A /* UI7Slider.m */; };
+		381595A91784936A001CC0CD /* UITSegmentedControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 381595A81784936A001CC0CD /* UITSegmentedControlViewController.m */; };
 		381C00AD17172CE20067C936 /* UITTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 381C00AB17172CE20067C936 /* UITTextViewController.m */; };
 		382B5801177F60AA00D46754 /* UITAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 382B5800177F60AA00D46754 /* UITAlertViewController.m */; };
 		382B5803178013E300D46754 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 382B5802178013E300D46754 /* libPods.a */; };
@@ -129,6 +130,8 @@
 		38017461176A245B0049D26C /* UI7NavigationBarBackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7NavigationBarBackButton.png; sourceTree = "<group>"; };
 		381582451771E72C0045713A /* UI7Slider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7Slider.h; sourceTree = "<group>"; };
 		381582461771E72C0045713A /* UI7Slider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7Slider.m; sourceTree = "<group>"; };
+		381595A71784936A001CC0CD /* UITSegmentedControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITSegmentedControlViewController.h; sourceTree = "<group>"; };
+		381595A81784936A001CC0CD /* UITSegmentedControlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITSegmentedControlViewController.m; sourceTree = "<group>"; };
 		381C00AA17172CE20067C936 /* UITTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITTextViewController.h; sourceTree = "<group>"; };
 		381C00AB17172CE20067C936 /* UITTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITTextViewController.m; sourceTree = "<group>"; };
 		382B57FF177F60AA00D46754 /* UITAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITAlertViewController.h; sourceTree = "<group>"; };
@@ -435,6 +438,8 @@
 				382B5800177F60AA00D46754 /* UITAlertViewController.m */,
 				385492691783C5D800165B68 /* UITGroupedTableViewController.h */,
 				3854926A1783C5D800165B68 /* UITGroupedTableViewController.m */,
+				381595A71784936A001CC0CD /* UITSegmentedControlViewController.h */,
+				381595A81784936A001CC0CD /* UITSegmentedControlViewController.m */,
 				3888FC60176C7C7900489638 /* UITIssue1ViewController.h */,
 				3888FC61176C7C7900489638 /* UITIssue1ViewController.m */,
 				38D1C935177EF7B70026135A /* UI7Tool.h */,
@@ -681,6 +686,7 @@
 				382B5801177F60AA00D46754 /* UITAlertViewController.m in Sources */,
 				382B58061780427800D46754 /* UITTintViewController.m in Sources */,
 				3854926B1783C5D800165B68 /* UITGroupedTableViewController.m in Sources */,
+				381595A91784936A001CC0CD /* UITSegmentedControlViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

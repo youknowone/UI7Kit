@@ -16,6 +16,7 @@ NSMutableDictionary *UI7TintColors = nil;
     if (self == [UIView class]) {
         if ([UIDevice currentDevice].needsUI7Kit) {
             UI7TintColors = [[NSMutableDictionary alloc] init];
+
             [self addMethodForSelector:@selector(tintColor) fromMethod:[self methodForSelector:@selector(_view_tintColor)]];
             [self addMethodForSelector:@selector(setTintColor:) fromMethod:[self methodForSelector:@selector(_view_setTintColor:)]];
             [self copyToSelector:@selector(__view_dealloc) fromSelector:@selector(dealloc)];
@@ -57,7 +58,7 @@ NSMutableDictionary *UI7TintColors = nil;
 - (UIColor *)__tintColor { assert(NO); return nil; }
 
 - (UIColor *)_tintColor {
-    UIColor *tintColor = [self __tintColor];
+    UIColor *tintColor = [self _view_tintColor];
     if (tintColor == nil) {
         tintColor = self.superview.tintColor;
         if (tintColor == nil) {

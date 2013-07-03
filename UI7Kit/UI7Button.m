@@ -120,6 +120,10 @@
     [self setTitleColor:self.tintColor.highligtedColor forState:UIControlStateSelected];
 }
 
+- (void)_tintColorUpdated {
+    self.backgroundColor = self.tintColor;
+}
+
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     [self _roundedRectButtonInit];
@@ -134,7 +138,7 @@
 
 - (void)setTintColor:(UIColor *)tintColor {
     [super setTintColor:tintColor];
-    self.backgroundColor = tintColor;
+    [self _tintColorUpdated];
 }
 
 @end

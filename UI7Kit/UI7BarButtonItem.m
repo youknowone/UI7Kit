@@ -53,7 +53,10 @@
 
 @end
 
-@interface UI7BarButtonItem ()
+
+@interface UI7BarButtonItem (Dynamic)
+
+- (UIColor *)_tintColor;
 
 @end
 

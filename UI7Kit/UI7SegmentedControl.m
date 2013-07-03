@@ -39,6 +39,8 @@
 
 #import "UI7KitPrivate.h"
 
+NSMutableDictionary *UI7SegmentedControlTintColors = nil;
+
 @implementation UISegmentedControl (Patch)
 
 - (void)awakeFromNib { [super awakeFromNib]; }
@@ -46,7 +48,6 @@
 - (id)__initWithItems:(NSArray *)items { assert(NO); return nil; }
 - (void)__awakeFromNib { assert(NO); }
 - (UIColor *)__tintColor { assert(NO); return nil; }
-- (void)setTintColor:(UIColor *)tintColor { [super setTintColor:tintColor]; }
 - (void)__setTintColor:(UIColor *)tintColor { assert(NO); }
 
 - (void)_segmentedControlInit {
@@ -57,7 +58,6 @@
     frame.size.height = 29.0f;
     self.frame = frame;
 
-    [UI7TintColors setObject:self.tintColor forKey:self.pointerString];
     [self _tintColorUpdated];
 }
 
@@ -100,6 +100,8 @@
 
 + (void)initialize {
     if (self == [UI7SegmentedControl class]) {
+        UI7SegmentedControlTintColors = [[NSMutableDictionary alloc] init];
+
         Class target = [UISegmentedControl class];
 
         [target copyToSelector:@selector(__initWithItems:) fromSelector:@selector(initWithItems:)];
@@ -140,18 +142,16 @@
 }
 
 - (UIColor *)tintColor {
-    if (![UI7TintColors containsKey:self.pointerString]) {
-        UIColor *ownTintColor = [self __tintColor];
-        if (ownTintColor) {
-            return ownTintColor;
-        }
+    UIColor *color = [self __tintColor];
+    if (color == nil) {
+        color = [self _tintColor];
     }
-    return [self _tintColor];
+    return color;
 }
 
 - (void)setTintColor:(UIColor *)tintColor {
-    NSLog(@"tintcolor: %@", tintColor);
     [self __setTintColor:tintColor];
+    [self _tintColorUpdated];
 }
 
 @end
