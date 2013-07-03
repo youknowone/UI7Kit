@@ -109,11 +109,11 @@ UIView *UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableVie
 
 - (void)setDelegate:(id<UITableViewDelegate>)delegate {
     if (self.delegate) {
-        Class delegateClass = [(NSObject *)self.delegate class];
-        if ([delegateClass methodImplementationForSelector:@selector(tableView:viewForHeaderInSection:)] == (IMP)UI7TableViewDelegateViewForHeaderInSection) {
-            // TODO: probably we should remove this methods.
-            //            class_removeMethods(￼, ￼)
-        }
+//        Class delegateClass = [(NSObject *)self.delegate class];
+//        if ([delegateClass methodImplementationForSelector:@selector(tableView:viewForHeaderInSection:)] == (IMP)UI7TableViewDelegateViewForHeaderInSection) {
+//            // TODO: probably we should remove this methods.
+//            //            class_removeMethods(￼, ￼)
+//        }
     }
     if (delegate) {
         Class delegateClass = [(NSObject *)delegate class];
