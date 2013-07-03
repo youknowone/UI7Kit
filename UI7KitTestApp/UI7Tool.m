@@ -11,7 +11,8 @@
 @implementation NSCoder (Patch)
 
 + (void)initialize {
-    if (self == [NSCoder class]) {
+    Class UINibDecoder = NSClassFromString(@"UINibDecoder");
+    if (self == UINibDecoder) {
         [self copyToSelector:@selector(__containsValueForKey:) fromSelector:@selector(containsValueForKey:)];
         [self copyToSelector:@selector(containsValueForKey:) fromSelector:@selector(_containsValueForKey:)];
     }

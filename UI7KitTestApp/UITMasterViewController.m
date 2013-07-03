@@ -38,7 +38,7 @@
 //                     @"PreparedCellTable",
                      @"Text",
 //                     @"SubviewTable",
-                     @"RoundedRectButton",
+                     @"GroupedTableView",
                      @"SegmentedControl",
                      ];
     self.issues = @[

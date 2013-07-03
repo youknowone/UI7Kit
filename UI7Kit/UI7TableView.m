@@ -11,14 +11,39 @@
 
 #import "UI7TableView.h"
 
+NSMutableDictionary *UI7TableViewStyleIsGrouped = nil;
+
 @implementation UITableView (Patch)
 
 - (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
 - (id)__initWithFrame:(CGRect)frame { assert(NO); return nil; }
 - (void)__setDelegate:(id<UITableViewDelegate>)delegate { assert(NO); return; }
+- (UITableViewStyle)__style { assert(NO); return 0; }
 
 - (void)_tableViewInit {
-    //    self.separatorStyle = UITableViewCellSeparatorStyleSingleLineEtched;
+
+}
+
+- (void)__dealloc { assert(NO); }
+- (void)_dealloc {
+    if ([UI7TableViewStyleIsGrouped containsKey:self.pointerString]) {
+        [UI7TableViewStyleIsGrouped removeObjectForKey:self.pointerString];
+    }
+    [self __dealloc];
+}
+
+@end
+
+
+@implementation NSCoder (UI7TableView)
+
+- (NSInteger)__decodeIntegerForKey:(NSString *)key { assert(NO); }
+
+- (NSInteger)_UI7TableView_decodeIntegerForKey:(NSString *)key {
+    if ([key isEqualToString:@"UIStyle"]) {
+        return (NSInteger)UITableViewStylePlain;
+    }
+    return [self __decodeIntegerForKey:key];
 }
 
 @end
@@ -30,25 +55,49 @@
 
 + (void)initialize {
     if (self == [UI7TableView class]) {
+        UI7TableViewStyleIsGrouped = [[NSMutableDictionary alloc] init];
+
         Class target = [UITableView class];
 
+        [target copyToSelector:@selector(__dealloc) fromSelector:@selector(dealloc)];
         [target copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
         [target copyToSelector:@selector(__initWithFrame:) fromSelector:@selector(initWithFrame:)];
         [target copyToSelector:@selector(__setDelegate:) fromSelector:@selector(setDelegate:)];
+        [target copyToSelector:@selector(__style) fromSelector:@selector(style)];
     }
 }
 
 + (void)patch {
     Class target = [UITableView class];
 
+    [self exportSelector:@selector(dealloc) toClass:target];
     [self exportSelector:@selector(initWithCoder:) toClass:target];
     [self exportSelector:@selector(initWithFrame:) toClass:target];
     [self exportSelector:@selector(setDelegate:) toClass:target];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
+    UITableViewStyle style = UITableViewStylePlain;
+    if ([aDecoder containsValueForKey:@"UIStyle"]) {
+        style = [aDecoder decodeIntegerForKey:@"UIStyle"];
+        if (style == UITableViewStyleGrouped) {
+            NSAMethod *decode = [aDecoder.class methodForSelector:@selector(decodeIntegerForKey:)];
+            [aDecoder.class methodForSelector:@selector(__decodeIntegerForKey:)].implementation = decode.implementation;
+            decode.implementation = [aDecoder.class methodForSelector:@selector(_UI7TableView_decodeIntegerForKey:)].implementation;
+        }
+    }
     self = [self __initWithCoder:aDecoder];
+    if (style == UITableViewStyleGrouped) {
+        NSAMethod *decode = [aDecoder.class methodForSelector:@selector(decodeIntegerForKey:)];
+        decode.implementation = [aDecoder.class methodImplementationForSelector:@selector(__decodeIntegerForKey:)];
+        if (self) {
+            [UI7TableViewStyleIsGrouped setObject:@(YES) forKey:self.pointerString];
+        }
+    }
     if (self) {
+        if (self.separatorStyle == UITableViewCellSeparatorStyleSingleLineEtched) {
+            self.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        }
         [self _tableViewInit];
     }
     return self;
@@ -62,12 +111,39 @@
     return self;
 }
 
+- (id)initWithFrame:(CGRect)frame style:(UITableViewStyle)style {
+    self = [self __initWithFrame:frame];
+    if (self) {
+        [UI7TableViewStyleIsGrouped setObject:@(YES) forKey:self.pointerString];
+        [self _tableViewInit];
+    }
+    return self;
+}
+
+- (void)dealloc {
+    [self _dealloc];
+    return;
+    [super dealloc];
+}
+
+//- (UITableViewStyle)style {
+//    if ([UI7TableViewStyleIsGrouped containsKey:self.pointerString]) {
+//        return UITableViewStyleGrouped;
+//    }
+//    return [self __style];
+//}
+
+
 CGFloat UI7TableViewDelegateHeightForHeaderInSection(id self, SEL _cmd, UITableView *tableView, NSUInteger section) {
     NSString *title = [tableView.dataSource tableView:tableView titleForHeaderInSection:section];
+    CGFloat height = .0f;
     if (title) {
-        return tableView.sectionHeaderHeight;
+        height = tableView.sectionHeaderHeight;
     }
-    return .0;
+    if ([UI7TableViewStyleIsGrouped containsKey:tableView.pointerString]) {
+        height += 30.0f;
+    }
+    return height;
 }
 
 CGFloat UI7TableViewDelegateHeightForFooterInSection(id self, SEL _cmd, UITableView *tableView, NSUInteger section) {
@@ -79,17 +155,32 @@ CGFloat UI7TableViewDelegateHeightForFooterInSection(id self, SEL _cmd, UITableV
 }
 
 UIView *UI7TableViewDelegateViewForHeaderInSection(id self, SEL _cmd, UITableView *tableView, NSUInteger section) {
+    BOOL grouped = [UI7TableViewStyleIsGrouped containsKey:tableView.pointerString];
     CGFloat height = [tableView.delegate tableView:tableView heightForHeaderInSection:section];
     NSString *title = [tableView.dataSource tableView:tableView titleForHeaderInSection:section];
     if (title == nil) {
-        return [[[UIView alloc] initWithFrame:CGRectZero] autorelease];;
+        if (grouped) {
+            UIView *header = [[[UIView alloc] initWithFrame:CGRectMake(.0, .0, tableView.frame.size.width, 30.0f)] autorelease];
+            header.backgroundColor = [UI7Color defaultBackgroundColor];
+            return header;
+        } else {
+            return [[[UIView alloc] initWithFrame:CGRectZero] autorelease];
+        }
     }
-    
-    UILabel *view = [[[UILabel alloc] initWithFrame:CGRectMake(.0, .0, tableView.frame.size.width, height)] autorelease];
+
+    CGFloat groupHeight = grouped ? 30.0f : .0f;
+    UILabel *view = [[[UILabel alloc] initWithFrame:CGRectMake(.0, groupHeight, tableView.frame.size.width, height - groupHeight)] autorelease];
     view.backgroundColor = [UI7Color defaultBackgroundColor];
 
     view.text = [@"    " stringByAppendingString:title];
     view.font = [UI7Font systemFontOfSize:14.0 attribute:UI7FontAttributeBold];
+
+    if (grouped) {
+        UIView *holder = [[[UIView alloc] initWithFrame:CGRectMake(.0, .0, tableView.frame.size.width, height)] autorelease];
+        [holder addSubview:view];
+        holder.backgroundColor = view.backgroundColor;
+        view = (id)holder;
+    }
     return view;
 }
 
