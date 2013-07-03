@@ -45,6 +45,9 @@
 
 - (id)__initWithItems:(NSArray *)items { assert(NO); return nil; }
 - (void)__awakeFromNib { assert(NO); }
+- (UIColor *)__tintColor { assert(NO); return nil; }
+- (void)setTintColor:(UIColor *)tintColor { [super setTintColor:tintColor]; }
+- (void)__setTintColor:(UIColor *)tintColor { assert(NO); }
 
 - (void)_segmentedControlInit {
     self.layer.cornerRadius = UI7ControlRadius;
@@ -54,6 +57,7 @@
     frame.size.height = 29.0f;
     self.frame = frame;
 
+    [UI7TintColors setObject:self.tintColor forKey:self.pointerString];
     [self _tintColorUpdated];
 }
 
@@ -101,6 +105,7 @@
         [target copyToSelector:@selector(__initWithItems:) fromSelector:@selector(initWithItems:)];
         [target copyToSelector:@selector(__awakeFromNib) fromSelector:@selector(awakeFromNib)];
         [target copyToSelector:@selector(__tintColor) fromSelector:@selector(tintColor)];
+        [target copyToSelector:@selector(__setTintColor:) fromSelector:@selector(setTintColor:)];
     }
 }
 
@@ -109,7 +114,8 @@
 
     [self exportSelector:@selector(initWithItems:) toClass:target];
     [self exportSelector:@selector(awakeFromNib) toClass:target];
-    [target methodForSelector:@selector(tintColor)].implementation = [target methodForSelector:@selector(_tintColor)].implementation;
+    [self exportSelector:@selector(tintColor) toClass:target];
+    [self exportSelector:@selector(setTintColor:) toClass:target];
 }
 
 - (void)awakeFromNib {
@@ -134,7 +140,18 @@
 }
 
 - (UIColor *)tintColor {
+    if (![UI7TintColors containsKey:self.pointerString]) {
+        UIColor *ownTintColor = [self __tintColor];
+        if (ownTintColor) {
+            return ownTintColor;
+        }
+    }
     return [self _tintColor];
+}
+
+- (void)setTintColor:(UIColor *)tintColor {
+    NSLog(@"tintcolor: %@", tintColor);
+    [self __setTintColor:tintColor];
 }
 
 @end

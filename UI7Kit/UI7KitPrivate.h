@@ -6,6 +6,10 @@
 //  Copyright (c) 2013 youknowone.org. All rights reserved.
 //
 
+//  Don't access here as much as possible.
+
+extern NSMutableDictionary *UI7TintColors;
+
 @interface UIView (Private)
 
 - (UIColor *)_tintColor;

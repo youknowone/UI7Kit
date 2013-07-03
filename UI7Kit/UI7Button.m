@@ -18,6 +18,7 @@
 
 - (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
 + (id)__buttonWithType:(UIButtonType)buttonType { assert(NO); return nil; }
+- (UIColor *)__tintColor { assert(NO); return nil; }
 //- (void)__drawRect:(CGRect)rect { assert(NO); }
 
 - (void)_buttonInitTheme {
