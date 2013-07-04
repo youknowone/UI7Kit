@@ -9,9 +9,14 @@
 /* Begin PBXBuildFile section */
 		334FC6E52496488ABAB3C0F1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D48B79081B44C186893DD8 /* libPods.a */; };
 		3801745F1769F3B50049D26C /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3801745E1769F3B50049D26C /* Storyboard.storyboard */; };
+		381595AF1785B73A001CC0CD /* UITAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 381595AE1785B73A001CC0CD /* UITAlertViewController.m */; };
+		381595B41785B742001CC0CD /* UITGroupedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 381595B11785B742001CC0CD /* UITGroupedTableViewController.m */; };
+		381595B51785B742001CC0CD /* UITIssue1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 381595B31785B742001CC0CD /* UITIssue1ViewController.m */; };
+		381595C01785B74C001CC0CD /* UITPreparedCellTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 381595B71785B74B001CC0CD /* UITPreparedCellTableViewController.m */; };
+		381595C11785B74C001CC0CD /* UITSegmentedControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 381595B91785B74B001CC0CD /* UITSegmentedControlViewController.m */; };
+		381595C21785B74C001CC0CD /* UITSubviewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 381595BB1785B74C001CC0CD /* UITSubviewTableViewController.m */; };
+		381595C41785B74C001CC0CD /* UITTintViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 381595BF1785B74C001CC0CD /* UITTintViewController.m */; };
 		381C00AD17172CE20067C936 /* UITTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 381C00AB17172CE20067C936 /* UITTextViewController.m */; };
-		38485C6317109CD20001A99D /* UITPreparedCellTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38485C5F1710974C0001A99D /* UITPreparedCellTableViewController.m */; };
-		38BC0E5D173E821700F36497 /* UITSubviewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38BC0E5B173E821700F36497 /* UITSubviewTableViewController.m */; };
 		38F068181636F8C8002723AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383764E213373155007072FD /* UIKit.framework */; };
 		38F068191636F8C8002723AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383764D713373154007072FD /* Foundation.framework */; };
 		38F0681A1636F8C8002723AB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383764E513373155007072FD /* CoreGraphics.framework */; };
@@ -29,15 +34,25 @@
 		1CD6397DC4464AEBBF4476CE /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		20D48B79081B44C186893DD8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3801745E1769F3B50049D26C /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		381595AD1785B73A001CC0CD /* UITAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITAlertViewController.h; sourceTree = "<group>"; };
+		381595AE1785B73A001CC0CD /* UITAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITAlertViewController.m; sourceTree = "<group>"; };
+		381595B01785B742001CC0CD /* UITGroupedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITGroupedTableViewController.h; sourceTree = "<group>"; };
+		381595B11785B742001CC0CD /* UITGroupedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITGroupedTableViewController.m; sourceTree = "<group>"; };
+		381595B21785B742001CC0CD /* UITIssue1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITIssue1ViewController.h; sourceTree = "<group>"; };
+		381595B31785B742001CC0CD /* UITIssue1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITIssue1ViewController.m; sourceTree = "<group>"; };
+		381595B61785B74B001CC0CD /* UITPreparedCellTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITPreparedCellTableViewController.h; sourceTree = "<group>"; };
+		381595B71785B74B001CC0CD /* UITPreparedCellTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITPreparedCellTableViewController.m; sourceTree = "<group>"; };
+		381595B81785B74B001CC0CD /* UITSegmentedControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITSegmentedControlViewController.h; sourceTree = "<group>"; };
+		381595B91785B74B001CC0CD /* UITSegmentedControlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITSegmentedControlViewController.m; sourceTree = "<group>"; };
+		381595BA1785B74C001CC0CD /* UITSubviewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITSubviewTableViewController.h; sourceTree = "<group>"; };
+		381595BB1785B74C001CC0CD /* UITSubviewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITSubviewTableViewController.m; sourceTree = "<group>"; };
+		381595BE1785B74C001CC0CD /* UITTintViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITTintViewController.h; sourceTree = "<group>"; };
+		381595BF1785B74C001CC0CD /* UITTintViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITTintViewController.m; sourceTree = "<group>"; };
 		381C00AA17172CE20067C936 /* UITTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITTextViewController.h; sourceTree = "<group>"; };
 		381C00AB17172CE20067C936 /* UITTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITTextViewController.m; sourceTree = "<group>"; };
 		383764D713373154007072FD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		383764E213373155007072FD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		383764E513373155007072FD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		38485C5E1710974C0001A99D /* UITPreparedCellTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITPreparedCellTableViewController.h; sourceTree = "<group>"; };
-		38485C5F1710974C0001A99D /* UITPreparedCellTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITPreparedCellTableViewController.m; sourceTree = "<group>"; };
-		38BC0E5A173E821700F36497 /* UITSubviewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITSubviewTableViewController.h; sourceTree = "<group>"; };
-		38BC0E5B173E821700F36497 /* UITSubviewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITSubviewTableViewController.m; sourceTree = "<group>"; };
 		38C7A9891495181800381910 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		38F068161636F8C8002723AB /* UI7KitTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UI7KitTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38F0681D1636F8C8002723AB /* UI7KitTestApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UI7KitTestApp-Info.plist"; sourceTree = "<group>"; };
@@ -109,12 +124,22 @@
 				38F0682E1636F8C8002723AB /* UITMasterViewController.m */,
 				38F068301636F8C8002723AB /* UITDetailViewController.h */,
 				38F068311636F8C9002723AB /* UITDetailViewController.m */,
-				38485C5E1710974C0001A99D /* UITPreparedCellTableViewController.h */,
-				38485C5F1710974C0001A99D /* UITPreparedCellTableViewController.m */,
 				381C00AA17172CE20067C936 /* UITTextViewController.h */,
 				381C00AB17172CE20067C936 /* UITTextViewController.m */,
-				38BC0E5A173E821700F36497 /* UITSubviewTableViewController.h */,
-				38BC0E5B173E821700F36497 /* UITSubviewTableViewController.m */,
+				381595AD1785B73A001CC0CD /* UITAlertViewController.h */,
+				381595AE1785B73A001CC0CD /* UITAlertViewController.m */,
+				381595B01785B742001CC0CD /* UITGroupedTableViewController.h */,
+				381595B11785B742001CC0CD /* UITGroupedTableViewController.m */,
+				381595B21785B742001CC0CD /* UITIssue1ViewController.h */,
+				381595B31785B742001CC0CD /* UITIssue1ViewController.m */,
+				381595B61785B74B001CC0CD /* UITPreparedCellTableViewController.h */,
+				381595B71785B74B001CC0CD /* UITPreparedCellTableViewController.m */,
+				381595B81785B74B001CC0CD /* UITSegmentedControlViewController.h */,
+				381595B91785B74B001CC0CD /* UITSegmentedControlViewController.m */,
+				381595BA1785B74C001CC0CD /* UITSubviewTableViewController.h */,
+				381595BB1785B74C001CC0CD /* UITSubviewTableViewController.m */,
+				381595BE1785B74C001CC0CD /* UITTintViewController.h */,
+				381595BF1785B74C001CC0CD /* UITTintViewController.m */,
 				3801745E1769F3B50049D26C /* Storyboard.storyboard */,
 				38F0681C1636F8C8002723AB /* Supporting Files */,
 			);
@@ -238,9 +263,14 @@
 				38F068261636F8C8002723AB /* UITAppDelegate.m in Sources */,
 				38F0682F1636F8C8002723AB /* UITMasterViewController.m in Sources */,
 				38F068321636F8C9002723AB /* UITDetailViewController.m in Sources */,
-				38485C6317109CD20001A99D /* UITPreparedCellTableViewController.m in Sources */,
 				381C00AD17172CE20067C936 /* UITTextViewController.m in Sources */,
-				38BC0E5D173E821700F36497 /* UITSubviewTableViewController.m in Sources */,
+				381595AF1785B73A001CC0CD /* UITAlertViewController.m in Sources */,
+				381595B41785B742001CC0CD /* UITGroupedTableViewController.m in Sources */,
+				381595B51785B742001CC0CD /* UITIssue1ViewController.m in Sources */,
+				381595C01785B74C001CC0CD /* UITPreparedCellTableViewController.m in Sources */,
+				381595C11785B74C001CC0CD /* UITSegmentedControlViewController.m in Sources */,
+				381595C21785B74C001CC0CD /* UITSubviewTableViewController.m in Sources */,
+				381595C41785B74C001CC0CD /* UITTintViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

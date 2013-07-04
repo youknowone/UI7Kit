@@ -85,7 +85,7 @@ If you don't have cocoapods, visit http://www.cocoapods.org or follow steps belo
 If you have Podfile, add 'UI7Kit'. Or follow steps below:
 
     # Copy and paste this lines
-    echo "platform :ios" > Podfile
+    echo "platform :ios, '5.0'" > Podfile
     echo "pod 'UI7Kit'" >> Podfile
     pod install
     open *.xcworkspace
