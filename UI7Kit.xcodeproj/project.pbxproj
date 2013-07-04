@@ -804,7 +804,7 @@
 					"$(inherited)",
 				);
 				HEADER_SEARCH_PATHS = (
-					"${PODS_HEADERS_SEARCH_PATHS}",
+					"${inherited}",
 					.,
 				);
 				INFOPLIST_FILE = "UI7KitTests/UI7KitTests-Info.plist";
@@ -836,7 +836,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UI7Kit/UI7Kit-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
-					"${PODS_HEADERS_SEARCH_PATHS}",
+					"${inherited}",
 					.,
 				);
 				INFOPLIST_FILE = "UI7KitTests/UI7KitTests-Info.plist";
@@ -937,7 +937,7 @@
 					"$(inherited)",
 				);
 				HEADER_SEARCH_PATHS = (
-					"${HEADER_SEARCH_PATHS}",
+					"${inherited}",
 					.,
 				);
 				INFOPLIST_FILE = "UI7KitTestApp/UI7KitTestApp-Info.plist";
@@ -961,7 +961,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UI7KitTestApp/UI7KitTestApp-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
-					"${HEADER_SEARCH_PATHS}",
+					"${inherited}",
 					.,
 				);
 				INFOPLIST_FILE = "UI7KitTestApp/UI7KitTestApp-Info.plist";
