@@ -29,7 +29,7 @@
 - (void)_tabBarInit {
     self.tintColor = [UIColor grayColor];
     self.selectedImageTintColor = [UI7Kit kit].tintColor;
-    self.backgroundColor = [UI7Color defaultBackgroundColor];
+    self.backgroundColor = [UI7Kit kit].backgroundColor;
 
     UIGraphicsBeginImageContext(CGSizeMake(1.0, 3.0));
     CGContextRef context = UIGraphicsGetCurrentContext();

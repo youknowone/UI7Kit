@@ -40,6 +40,7 @@
 //                     @"SubviewTable",
                      @"GroupedTableView",
                      @"SegmentedControl",
+                     @"PickerView",
                      ];
     self.issues = @[
                     @1,

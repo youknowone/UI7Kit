@@ -30,7 +30,7 @@
 - (void)__pushNavigationItem:(UINavigationItem *)item { assert(NO); }
 
 - (void)_navigationBarInit {
-    self.backgroundColor = [UI7Color defaultBackgroundColor];
+    self.backgroundColor = [UI7Kit kit].backgroundColor;
     UIGraphicsBeginImageContext(CGSizeMake(1.0, 3.0));
     CGContextRef context = UIGraphicsGetCurrentContext();
     [[UIColor colorWith8bitWhite:178 alpha:255] set];

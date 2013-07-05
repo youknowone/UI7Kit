@@ -22,6 +22,7 @@
 @interface UI7Kit : NSObject<UI7Patch>
 
 @property(nonatomic,strong) UIColor *tintColor; // Global Tint
+@property(nonatomic,strong) UIColor *backgroundColor; // Background color
 
 + (UI7Kit *)kit;
 

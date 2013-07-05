@@ -17,7 +17,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="r1d-64-0wN" kind="relationship" relationship="viewControllers" id="F3C-Hn-jKE"/>
-                        <segue destination="Sei-zQ-6Ij" kind="relationship" relationship="viewControllers" id="e7u-pl-GqE"/>
+                        <segue destination="Hev-Xp-LDK" kind="relationship" relationship="viewControllers" id="foR-FP-e24"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fS3-0v-iid" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -40,6 +40,104 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D62-dl-3mN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-36" y="-15"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="3cs-q5-wCT">
+            <objects>
+                <viewController id="Hev-Xp-LDK" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gQB-NQ-O1x">
+                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" id="HfP-za-RN1">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="BarButton" id="azw-D5-Oxp">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="nZB-vz-wDf"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="31D-2p-7gE">
+                                <rect key="frame" x="0.0" y="123" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem systemItem="edit" id="NQu-9R-E6R"/>
+                                    <barButtonItem systemItem="done" id="a8F-82-rwL"/>
+                                    <barButtonItem systemItem="cancel" id="T9C-vd-OC2"/>
+                                    <barButtonItem systemItem="save" id="wgU-IQ-YfL"/>
+                                    <barButtonItem systemItem="undo" id="QcA-DR-p4u"/>
+                                </items>
+                            </toolbar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="vgT-tM-B1l">
+                                <rect key="frame" x="0.0" y="167" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Item" systemItem="redo" id="Wcd-Xl-AmS"/>
+                                    <barButtonItem systemItem="add" id="bAP-2p-v9x"/>
+                                    <barButtonItem systemItem="compose" id="Det-zC-VfI"/>
+                                    <barButtonItem systemItem="reply" id="Joh-HV-heN"/>
+                                    <barButtonItem systemItem="action" id="8JS-L6-US2"/>
+                                    <barButtonItem systemItem="organize" id="Efi-Xm-N9Q"/>
+                                </items>
+                            </toolbar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Y46-Xj-hyK">
+                                <rect key="frame" x="0.0" y="211" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem systemItem="trash" id="BKf-5X-PCB"/>
+                                    <barButtonItem systemItem="bookmarks" id="hFa-2N-dD0"/>
+                                    <barButtonItem systemItem="search" id="6Jn-Y8-qIy"/>
+                                    <barButtonItem systemItem="refresh" id="Zxi-eU-t0Y"/>
+                                    <barButtonItem systemItem="stop" id="HPj-yD-xhd"/>
+                                    <barButtonItem systemItem="camera" id="75C-gQ-dRO"/>
+                                </items>
+                            </toolbar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="b4B-e6-00p">
+                                <rect key="frame" x="0.0" y="255" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem systemItem="play" id="uJa-2Q-Y56"/>
+                                    <barButtonItem systemItem="pause" id="nba-H9-rXB"/>
+                                    <barButtonItem systemItem="rewind" id="MaL-Qq-qpk"/>
+                                    <barButtonItem systemItem="fastForward" id="2vn-RF-19g"/>
+                                    <barButtonItem systemItem="pageCurl" id="1tQ-CR-zsu"/>
+                                </items>
+                            </toolbar>
+                            <tabBar contentMode="scaleToFill" id="rFU-Do-cP1">
+                                <rect key="frame" x="0.0" y="340" width="320" height="49"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <tabBarItem systemItem="more" id="AtH-nb-lhT"/>
+                                    <tabBarItem systemItem="favorites" id="OWs-4w-9BV"/>
+                                    <tabBarItem systemItem="featured" id="dFd-Ju-raF"/>
+                                    <tabBarItem systemItem="topRated" id="JxC-gK-TrL"/>
+                                    <tabBarItem systemItem="recents" id="qkA-sB-4kD"/>
+                                    <tabBarItem systemItem="contacts" id="V9I-uo-179"/>
+                                </items>
+                            </tabBar>
+                            <tabBar contentMode="scaleToFill" id="bH5-xc-fDV">
+                                <rect key="frame" x="0.0" y="389" width="320" height="49"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <tabBarItem systemItem="history" id="CME-nz-HSM"/>
+                                    <tabBarItem systemItem="bookmarks" id="Kjt-ka-mMn"/>
+                                    <tabBarItem systemItem="search" id="tHv-cF-M2U"/>
+                                    <tabBarItem systemItem="downloads" id="j0F-xD-u4h"/>
+                                    <tabBarItem systemItem="mostRecent" id="epn-UD-YHk"/>
+                                    <tabBarItem systemItem="mostViewed" id="OWH-Ug-RyX"/>
+                                </items>
+                            </tabBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="Qep-lO-QoV"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KIk-nD-GL2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-431" y="690"/>
         </scene>
         <!--Master View Controller - List-->
         <scene sceneID="iZn-PB-Ux9">
@@ -178,8 +276,29 @@
                                             <segue destination="ngV-Q8-6tw" kind="push" id="QTG-GO-GhF"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="#1" textLabel="l8e-zj-YzH" style="IBUITableViewCellStyleDefault" id="NE5-ex-p0o">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PickerView" textLabel="Yxw-d5-mRX" style="IBUITableViewCellStyleDefault" id="aWq-Uk-wBE">
                                         <rect key="frame" x="0.0" y="286" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="UI7PickerView" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Yxw-d5-mRX">
+                                                    <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="lpa-9a-8P4" kind="push" id="0v0-We-Wq4"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="#1" textLabel="l8e-zj-YzH" style="IBUITableViewCellStyleDefault" id="NE5-ex-p0o">
+                                        <rect key="frame" x="0.0" y="330" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
@@ -200,7 +319,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="#30" textLabel="nbj-FO-vp3" style="IBUITableViewCellStyleDefault" id="3I8-eO-yzK">
-                                        <rect key="frame" x="0.0" y="330" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="374" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
@@ -359,6 +478,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="szU-lX-aDt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1206" y="768"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="kby-Pr-2sw">
+            <objects>
+                <viewController id="lpa-9a-8P4" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bhc-2i-P6S">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" id="f48-GI-3P7">
+                                <rect key="frame" x="0.0" y="15" width="320" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" id="hZl-Wa-2pc">
+                                <rect key="frame" x="0.0" y="239" width="320" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="394708526.67114902">
+                                    <!--2013-07-05 09:15:26 +0000-->
+                                </date>
+                                <timeZone key="timeZone" name="America/Los_Angeles">
+                                    <mutableData key="data">
+VFppZgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAC5AAAABAAAABCepkign7sVkKCGKqChmveQ
+y4kaoNIj9HDSYSYQ1v50INiArZDa/tGg28CQENzes6DdqayQ3r6VoN+JjpDgnneg4WlwkOJ+WaDjSVKQ
+5F47oOUpNJDmR1gg5xJREOgnOiDo8jMQ6gccIOrSFRDr5v4g7LH3EO3G4CDukdkQ76/8oPBxuxDxj96g
+8n/BkPNvwKD0X6OQ9U+ioPY/hZD3L4Sg+CiiEPkPZqD6CIQQ+viDIPvoZhD82GUg/chIEP64RyD/qCoQ
+AJgpIAGIDBACeAsgA3EokARhJ6AFUQqQBkEJoAcw7JAHjUOgCRDOkAmtvyAK8LCQC+CvoAzZzRANwJGg
+DrmvEA+priAQmZEQEYmQIBJ5cxATaXIgFFlVEBVJVCAWOTcQFyk2IBgiU5AZCRggGgI1kBryNKAb4heQ
+HNIWoB3B+ZAesfigH6HbkCB2KyAhgb2QIlYNICNq2hAkNe8gJUq8ECYV0SAnKp4QJ/7toCkKgBAp3s+g
+KupiECu+saAs036QLZ6ToC6zYJAvfnWgMJNCkDFnkiAycySQM0d0IDRTBpA1J1YgNjLokDcHOCA4HAUQ
+OOcaIDn75xA6xvwgO9vJEDywGKA9u6sQPo/6oD+bjRBAb9ygQYSpkEJPvqBDZIuQRC+goEVEbZBF89Mg
+Ry2KEEfTtSBJDWwQSbOXIErtThBLnLOgTNZqkE18laBOtkyQT1x3oFCWLpBRPFmgUnYQkFMcO6BUVfKQ
+VPwdoFY11JBW5TogWB7xEFjFHCBZ/tMQWqT+IFvetRBchOAgXb6XEF5kwiBfnnkQYE3eoGGHlZBiLcCg
+Y2d3kGQNoqBlR1mQZe2EoGcnO5BnzWagaQcdkGmtSKBq5v+Qa5ZlIGzQHBBtdkcgbq/+EG9WKSBwj+AQ
+cTYLIHJvwhBzFe0gdE+kEHT/CaB2OMCQdt7roHgYopB4vs2gefiEkHqer6B72GaQfH6RoH24SJB+XnOg
+f5gqkAABAAECAwEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
+</mutableData>
+                                </timeZone>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fhg-74-JKW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="guG-jU-ycD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1561" y="786"/>
         </scene>
         <!--Text View Controller - Text-->
         <scene sceneID="F41-De-g08">
@@ -1131,7 +1299,6 @@
         <class className="UITSegmentedControlViewController" superclassName="UITTintViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UITSegmentedControlViewController.h"/>
             <relationships>
-                <relationship kind="action" name="colorChanged:"/>
                 <relationship kind="outlet" name="segmented1" candidateClass="UISegmentedControl"/>
                 <relationship kind="outlet" name="segmented2" candidateClass="UISegmentedControl"/>
             </relationships>
@@ -1156,7 +1323,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="u4h-38-nNt"/>
-    </inferredMetricsTieBreakers>
 </document>

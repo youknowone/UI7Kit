@@ -16,7 +16,7 @@
 - (id)__initWithFrame:(CGRect)frame { assert(NO); return nil; }
 
 - (void)_toolbarInit {
-    self.backgroundColor = [UI7Color defaultBackgroundColor];
+    self.backgroundColor = [UI7Kit kit].backgroundColor;
 
     UIGraphicsBeginImageContext(CGSizeMake(1.0, 3.0));
     CGContextRef context = UIGraphicsGetCurrentContext();

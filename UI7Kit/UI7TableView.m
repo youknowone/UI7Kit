@@ -161,7 +161,7 @@ UIView *UI7TableViewDelegateViewForHeaderInSection(id self, SEL _cmd, UITableVie
     if (title == nil) {
         if (grouped) {
             UIView *header = [[[UIView alloc] initWithFrame:CGRectMake(.0, .0, tableView.frame.size.width, 30.0f)] autorelease];
-            header.backgroundColor = [UI7Color defaultBackgroundColor];
+            header.backgroundColor = [UI7Kit kit].backgroundColor;
             return header;
         } else {
             return [[[UIView alloc] initWithFrame:CGRectZero] autorelease];
@@ -170,7 +170,7 @@ UIView *UI7TableViewDelegateViewForHeaderInSection(id self, SEL _cmd, UITableVie
 
     CGFloat groupHeight = grouped ? 30.0f : .0f;
     UILabel *view = [[[UILabel alloc] initWithFrame:CGRectMake(.0, groupHeight, tableView.frame.size.width, height - groupHeight)] autorelease];
-    view.backgroundColor = [UI7Color defaultBackgroundColor];
+    view.backgroundColor = [UI7Kit kit].backgroundColor;
 
     view.text = [@"    " stringByAppendingString:title];
     view.font = [UI7Font systemFontOfSize:14.0 attribute:UI7FontAttributeBold];
@@ -192,7 +192,7 @@ UIView *UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableVie
     }
     
     UILabel *view = [[[UILabel alloc] initWithFrame:CGRectMake(.0, .0, tableView.frame.size.width, height)] autorelease];
-    view.backgroundColor = [UI7Color defaultBackgroundColor];
+    view.backgroundColor = [UI7Kit kit].backgroundColor;
     view.text = [@"    " stringByAppendingString:title]; // TODO: do this pretty later
     view.font = [UI7Font systemFontOfSize:14.0 attribute:UI7FontAttributeBold];
     return view;

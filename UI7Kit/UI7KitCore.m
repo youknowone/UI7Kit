@@ -14,6 +14,7 @@
 @implementation UI7Kit
 
 @synthesize tintColor=_tintColor;
+@synthesize backgroundColor=_backgroundColor;
 
 UI7Kit *UI7KitSharedObject = nil;
 
@@ -21,6 +22,7 @@ UI7Kit *UI7KitSharedObject = nil;
     self = [super init];
     if (self != nil) {
         self.tintColor = [UI7Color defaultTintColor];
+        self.backgroundColor = [UI7Color defaultBackgroundColor];
     }
     return self;
 }
