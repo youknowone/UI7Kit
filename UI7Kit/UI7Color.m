@@ -14,6 +14,10 @@
     return [UIColor colorWith8bitWhite:248 alpha:255];
 }
 
++ (UIColor *)blackBackgroundColor {
+    return [UIColor colorWith8bitWhite:25 alpha:255];
+}
+
 + (UIColor *)defaultTintColor {
     return [UIColor colorWith8bitRed:0 green:126 blue:245 alpha:255];
 }

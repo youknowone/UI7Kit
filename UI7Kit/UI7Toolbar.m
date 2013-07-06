@@ -14,6 +14,7 @@
 
 - (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
 - (id)__initWithFrame:(CGRect)frame { assert(NO); return nil; }
+- (void)__setBarStyle:(UIBarStyle)barStyle { assert(NO); }
 
 - (void)_toolbarInit {
     self.backgroundColor = [UI7Kit kit].backgroundColor;
@@ -48,7 +49,7 @@
 
         [target copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
         [target copyToSelector:@selector(__initWithFrame:) fromSelector:@selector(initWithFrame:)];
-
+        [target copyToSelector:@selector(__setBarStyle:) fromSelector:@selector(setBarStyle:)];
     }
 }
 
@@ -57,6 +58,7 @@
 
     [self exportSelector:@selector(initWithFrame:) toClass:target];
     [self exportSelector:@selector(initWithCoder:) toClass:target];
+    [self exportSelector:@selector(setBarStyle:) toClass:target];
 }
 
 - (id)initWithFrame:(CGRect)frame {
@@ -73,6 +75,21 @@
         [self _toolbarInit];
     }
     return self;
+}
+
+- (void)setBarStyle:(UIBarStyle)barStyle {
+    [self __setBarStyle:barStyle];
+
+    switch (barStyle) {
+        case UIBarStyleDefault: {
+            self.backgroundColor = [UI7Kit kit].backgroundColor;
+        }   break;
+        case UIBarStyleBlackOpaque: {
+            self.backgroundColor = [UIColor colorWith8bitWhite:90 alpha:255];
+        }   break;
+        default:
+            break;
+    }
 }
 
 @end

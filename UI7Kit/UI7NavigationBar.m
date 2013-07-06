@@ -27,6 +27,7 @@
 
 - (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
 - (id)__initWithFrame:(CGRect)frame { assert(NO); return nil; }
+- (void)__setBarStyle:(UIBarStyle)barStyle { assert(NO); }
 - (void)__pushNavigationItem:(UINavigationItem *)item { assert(NO); }
 
 - (void)_navigationBarInit {
@@ -58,6 +59,7 @@
 
         [target copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
         [target copyToSelector:@selector(__initWithFrame:) fromSelector:@selector(initWithFrame:)];
+        [target copyToSelector:@selector(__setBarStyle:) fromSelector:@selector(setBarStyle:)];
         [target copyToSelector:@selector(__pushNavigationItem:) fromSelector:@selector(pushNavigationItem:)];
     }
 }
@@ -67,6 +69,7 @@
 
     [self exportSelector:@selector(initWithCoder:) toClass:target];
     [self exportSelector:@selector(initWithFrame:) toClass:target];
+    [self exportSelector:@selector(setBarStyle:) toClass:target];
     [self exportSelector:@selector(pushNavigationItem:) toClass:target];
 }
 
@@ -84,6 +87,22 @@
         [self _navigationBarInit];
     }
     return self;
+}
+
+- (void)setBarStyle:(UIBarStyle)barStyle {
+    [self __setBarStyle:barStyle];
+
+    switch (barStyle) {
+        case UIBarStyleDefault: {
+            self.backgroundColor = [UI7Kit kit].backgroundColor;
+        }   break;
+        case UIBarStyleBlackOpaque:
+        case UIBarStyleBlackTranslucent: {
+            self.backgroundColor = [UI7Color blackBackgroundColor];
+        }   break;
+        default:
+            break;
+    }
 }
 
 //- (void)setItems:(NSArray *)items animated:(BOOL)animated {

@@ -10,6 +10,8 @@
 
 @interface UITDetailViewController : UITTintViewController
 
+@property(nonatomic,strong) IBOutlet UIToolbar *toolbar;
+
 - (IBAction)showAlertView1:(id)sender;
 - (IBAction)showAlertView2:(id)sender;
 - (IBAction)showAlertView3:(id)sender;

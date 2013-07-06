@@ -152,6 +152,7 @@
 - (void)styleChanged:(UISegmentedControl *)sender {
     UIBarStyle style = sender.selectedSegmentIndex;
     self.navigationController.navigationBar.barStyle = style;
+    self.tabBarController.tabBar.barStyle = style;
 }
 
 @end

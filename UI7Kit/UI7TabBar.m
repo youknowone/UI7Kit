@@ -11,12 +11,40 @@
 
 #import "UI7TabBar.h"
 
+
+NSMutableDictionary *UI7TabBarStyles = nil;
+
 @interface UITabBar (Private)
 
 - (void)_setLabelFont:(UIFont *)font __deprecated; // rejected
 - (void)_setLabelShadowColor:(UIColor *)color __deprecated; // rejected
 - (void)_setLabelShadowOffset:(CGSize)size __deprecated; // rejected
-- (void)_setLabelTextColor:(UIColor *)textColor selectedTextColor:(UIColor *)selectedTextColor; // rejected
+- (void)_setLabelTextColor:(UIColor *)textColor selectedTextColor:(UIColor *)selectedTextColor __deprecated; // rejected
+
+@end
+
+
+@implementation UITabBar (UI7Kit)
+
+- (UIBarStyle)_barStyle {
+    NSNumber *styleNumber = UI7TabBarStyles[self.pointerString];
+    return styleNumber.integerValue;
+}
+
+- (void)_setBarStyle:(UIBarStyle)barStyle {
+    UI7TabBarStyles[self.pointerString] = @(barStyle);
+
+    switch (barStyle) {
+        case UIBarStyleDefault: {
+            self.backgroundColor = [UI7Kit kit].backgroundColor;
+        }   break;
+        case UIBarStyleBlackOpaque: {
+            self.backgroundColor = [UI7Color blackBackgroundColor];
+        }   break;
+        default:
+            break;
+    }
+}
 
 @end
 
@@ -65,6 +93,8 @@
 
 + (void)initialize {
     if (self == [UI7TabBar class]) {
+        UI7TabBarStyles = [[NSMutableDictionary alloc] init];
+
         Class target = [UITabBar class];
 
         [target copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
@@ -77,6 +107,9 @@
 
     [self exportSelector:@selector(initWithCoder:) toClass:target];
     [self exportSelector:@selector(initWithFrame:) toClass:target];
+
+    [target addMethodForSelector:@selector(barStyle) fromMethod:[target methodForSelector:@selector(_barStyle)]];
+    [target addMethodForSelector:@selector(setBarStyle:) fromMethod:[target methodForSelector:@selector(_setBarStyle:)]];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {

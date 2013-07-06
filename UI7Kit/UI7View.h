@@ -8,7 +8,7 @@
 
 #import <UI7Kit/UI7Utilities.h>
 
-@interface UIView (UI7Kit)
+@interface UIView (iOS7)
 
 #if __IPHONE_OS_VERSION_MAX_ALLOWED < 70000
 @property(nonatomic, retain) UIColor *tintColor;

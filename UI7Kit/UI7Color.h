@@ -11,6 +11,7 @@
 @interface UI7Color : UIColor
 
 + (UIColor *)defaultBackgroundColor;
++ (UIColor *)blackBackgroundColor;
 + (UIColor *)defaultTintColor;
 + (UIColor *)defaultEmphasizedColor;
 + (UIColor *)defaultTrackTintColor;

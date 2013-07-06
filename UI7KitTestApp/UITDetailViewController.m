@@ -23,6 +23,12 @@
     return self;
 }
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    self.toolbar.barStyle = self.navigationController.navigationBar.barStyle;
+}
+
 - (void)showAlertView1:(id)sender {
     NSString *title = @"Title";
     NSString *message = @"Message";

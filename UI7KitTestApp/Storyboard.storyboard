@@ -375,9 +375,8 @@
                             <rect key="frame" x="14" y="7" width="292" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
-                                <segment title="First"/>
-                                <segment title="Second"/>
-                                <segment title=""/>
+                                <segment title="Default"/>
+                                <segment title="Black"/>
                             </segments>
                             <connections>
                                 <action selector="styleChanged:" destination="VOL-Ip-gE2" eventType="valueChanged" id="YOT-ya-5Ll"/>
@@ -866,6 +865,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem title="ToolbarButton" id="VL2-W4-tOp"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="xGL-Bx-MgO"/>
+                                    <barButtonItem systemItem="compose" id="fyT-Si-2k5"/>
                                 </items>
                             </toolbar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" id="uZI-rf-jO0">
@@ -968,6 +969,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <barButtonItem key="rightBarButtonItem" title="IBButton" id="elb-uV-DKT"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="toolbar" destination="bvp-0E-App" id="lD5-Mc-Lk4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EoT-Ud-iQ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1355,6 +1359,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="action" name="showAlertView1:"/>
                 <relationship kind="action" name="showAlertView2:"/>
                 <relationship kind="action" name="showAlertView3:"/>
+                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
             </relationships>
         </class>
         <class className="UITGroupedTableViewController" superclassName="UIViewController">
