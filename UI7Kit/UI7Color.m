@@ -23,7 +23,11 @@
 }
 
 + (UIColor *)defaultTrackTintColor {
-   return [UIColor colorWith8bitWhite:183 alpha:255];
+    return [UIColor colorWith8bitWhite:183 alpha:255];
+}
+
++ (UIColor *)groupedTableViewSectionBackgroundColor {
+    return [UIColor colorWith8bitWhite:229 alpha:255];
 }
 
 @end

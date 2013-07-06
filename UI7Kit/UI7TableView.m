@@ -11,7 +11,7 @@
 
 #import "UI7TableView.h"
 
-NSMutableDictionary *UI7TableViewStyleIsGrouped = nil;
+//NSMutableDictionary *UI7TableViewStyleIsGrouped = nil;
 
 @implementation UITableView (Patch)
 
@@ -26,9 +26,9 @@ NSMutableDictionary *UI7TableViewStyleIsGrouped = nil;
 
 - (void)__dealloc { assert(NO); }
 - (void)_dealloc {
-    if ([UI7TableViewStyleIsGrouped containsKey:self.pointerString]) {
-        [UI7TableViewStyleIsGrouped removeObjectForKey:self.pointerString];
-    }
+//    if ([UI7TableViewStyleIsGrouped containsKey:self.pointerString]) {
+//        [UI7TableViewStyleIsGrouped removeObjectForKey:self.pointerString];
+//    }
     [self __dealloc];
 }
 
@@ -55,7 +55,7 @@ NSMutableDictionary *UI7TableViewStyleIsGrouped = nil;
 
 + (void)initialize {
     if (self == [UI7TableView class]) {
-        UI7TableViewStyleIsGrouped = [[NSMutableDictionary alloc] init];
+//        UI7TableViewStyleIsGrouped = [[NSMutableDictionary alloc] init];
 
         Class target = [UITableView class];
 
@@ -74,29 +74,34 @@ NSMutableDictionary *UI7TableViewStyleIsGrouped = nil;
     [self exportSelector:@selector(initWithCoder:) toClass:target];
     [self exportSelector:@selector(initWithFrame:) toClass:target];
     [self exportSelector:@selector(setDelegate:) toClass:target];
+    [self exportSelector:@selector(style) toClass:target];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
-    UITableViewStyle style = UITableViewStylePlain;
-    if ([aDecoder containsValueForKey:@"UIStyle"]) {
-        style = [aDecoder decodeIntegerForKey:@"UIStyle"];
-        if (style == UITableViewStyleGrouped) {
-            NSAMethod *decode = [aDecoder.class methodForSelector:@selector(decodeIntegerForKey:)];
-            [aDecoder.class methodForSelector:@selector(__decodeIntegerForKey:)].implementation = decode.implementation;
-            decode.implementation = [aDecoder.class methodForSelector:@selector(_UI7TableView_decodeIntegerForKey:)].implementation;
-        }
-    }
+//    UITableViewStyle style = UITableViewStylePlain;
+//    if ([aDecoder containsValueForKey:@"UIStyle"]) {
+//        style = [aDecoder decodeIntegerForKey:@"UIStyle"];
+//        if (style == UITableViewStyleGrouped) {
+//            NSAMethod *decode = [aDecoder.class methodForSelector:@selector(decodeIntegerForKey:)];
+//            [aDecoder.class methodForSelector:@selector(__decodeIntegerForKey:)].implementation = decode.implementation;
+//            decode.implementation = [aDecoder.class methodForSelector:@selector(_UI7TableView_decodeIntegerForKey:)].implementation;
+//        }
+//    }
     self = [self __initWithCoder:aDecoder];
-    if (style == UITableViewStyleGrouped) {
-        NSAMethod *decode = [aDecoder.class methodForSelector:@selector(decodeIntegerForKey:)];
-        decode.implementation = [aDecoder.class methodImplementationForSelector:@selector(__decodeIntegerForKey:)];
-        if (self) {
-            [UI7TableViewStyleIsGrouped setObject:@(YES) forKey:self.pointerString];
-        }
-    }
+//    if (style == UITableViewStyleGrouped) {
+//        NSAMethod *decode = [aDecoder.class methodForSelector:@selector(decodeIntegerForKey:)];
+//        decode.implementation = [aDecoder.class methodImplementationForSelector:@selector(__decodeIntegerForKey:)];
+//        if (self) {
+//            [UI7TableViewStyleIsGrouped setObject:@(YES) forKey:self.pointerString];
+//        }
+//    }
     if (self) {
-        if (self.separatorStyle == UITableViewCellSeparatorStyleSingleLineEtched) {
-            self.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        if (self.__style == UITableViewStyleGrouped) {
+            self.backgroundColor = [UIColor clearColor];
+            self.backgroundView = nil;
+            if (self.separatorStyle == UITableViewCellSeparatorStyleSingleLineEtched) {
+                self.separatorStyle = UITableViewCellSeparatorStyleNone;
+            }
         }
         [self _tableViewInit];
     }
@@ -114,7 +119,7 @@ NSMutableDictionary *UI7TableViewStyleIsGrouped = nil;
 - (id)initWithFrame:(CGRect)frame style:(UITableViewStyle)style {
     self = [self __initWithFrame:frame];
     if (self) {
-        [UI7TableViewStyleIsGrouped setObject:@(YES) forKey:self.pointerString];
+//        [UI7TableViewStyleIsGrouped setObject:@(YES) forKey:self.pointerString];
         [self _tableViewInit];
     }
     return self;
@@ -126,22 +131,24 @@ NSMutableDictionary *UI7TableViewStyleIsGrouped = nil;
     [super dealloc];
 }
 
-//- (UITableViewStyle)style {
-//    if ([UI7TableViewStyleIsGrouped containsKey:self.pointerString]) {
-//        return UITableViewStyleGrouped;
-//    }
-//    return [self __style];
-//}
-
+- (UITableViewStyle)style {
+    return UITableViewStylePlain;
+}
 
 CGFloat UI7TableViewDelegateHeightForHeaderInSection(id self, SEL _cmd, UITableView *tableView, NSUInteger section) {
     NSString *title = [tableView.dataSource tableView:tableView titleForHeaderInSection:section];
     CGFloat height = .0f;
-    if (title) {
-        height = tableView.sectionHeaderHeight;
-    }
-    if ([UI7TableViewStyleIsGrouped containsKey:tableView.pointerString]) {
-        height += 30.0f;
+//    if ([UI7TableViewStyleIsGrouped containsKey:tableView.pointerString]) {
+    if (tableView.__style == UITableViewStyleGrouped) {
+        if (title) {
+            height = 55.0f;
+        } else {
+            height = 30.0f;
+        }
+    } else {
+        if (title) {
+            height = tableView.sectionHeaderHeight;
+        }
     }
     return height;
 }
@@ -155,13 +162,13 @@ CGFloat UI7TableViewDelegateHeightForFooterInSection(id self, SEL _cmd, UITableV
 }
 
 UIView *UI7TableViewDelegateViewForHeaderInSection(id self, SEL _cmd, UITableView *tableView, NSUInteger section) {
-    BOOL grouped = [UI7TableViewStyleIsGrouped containsKey:tableView.pointerString];
+    BOOL grouped = tableView.__style == UITableViewStyleGrouped;
     CGFloat height = [tableView.delegate tableView:tableView heightForHeaderInSection:section];
     NSString *title = [tableView.dataSource tableView:tableView titleForHeaderInSection:section];
     if (title == nil) {
         if (grouped) {
             UIView *header = [[[UIView alloc] initWithFrame:CGRectMake(.0, .0, tableView.frame.size.width, 30.0f)] autorelease];
-            header.backgroundColor = [UI7Kit kit].backgroundColor;
+            header.backgroundColor = [UI7Color groupedTableViewSectionBackgroundColor];
             return header;
         } else {
             return [[[UIView alloc] initWithFrame:CGRectZero] autorelease];
@@ -170,10 +177,20 @@ UIView *UI7TableViewDelegateViewForHeaderInSection(id self, SEL _cmd, UITableVie
 
     CGFloat groupHeight = grouped ? 30.0f : .0f;
     UILabel *view = [[[UILabel alloc] initWithFrame:CGRectMake(.0, groupHeight, tableView.frame.size.width, height - groupHeight)] autorelease];
-    view.backgroundColor = [UI7Kit kit].backgroundColor;
+    if (grouped) {
+        view.backgroundColor = [UI7Color groupedTableViewSectionBackgroundColor];
+    } else {
+        view.backgroundColor = [UI7Kit kit].backgroundColor;
+    }
 
-    view.text = [@"    " stringByAppendingString:title];
-    view.font = [UI7Font systemFontOfSize:14.0 attribute:UI7FontAttributeBold];
+    if (grouped) {
+        view.text = [@"   " stringByAppendingString:[title uppercaseString]];
+        view.font = [UI7Font systemFontOfSize:14.0 attribute:UI7FontAttributeLight];
+        view.textColor = [UIColor darkGrayColor];
+    } else {
+        view.text = [@"    " stringByAppendingString:title];
+        view.font = [UI7Font systemFontOfSize:14.0 attribute:UI7FontAttributeBold];
+    }
 
     if (grouped) {
         UIView *holder = [[[UIView alloc] initWithFrame:CGRectMake(.0, .0, tableView.frame.size.width, height)] autorelease];

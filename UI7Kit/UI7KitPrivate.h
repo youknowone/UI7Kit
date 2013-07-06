@@ -8,7 +8,7 @@
 
 //  Don't access here as much as possible.
 
-extern NSMutableDictionary *UI7TintColors;
+UIKIT_EXTERN NSMutableDictionary *UI7TintColors;
 
 @interface UIView (Private)
 

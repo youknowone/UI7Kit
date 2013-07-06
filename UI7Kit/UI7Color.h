@@ -14,5 +14,6 @@
 + (UIColor *)defaultTintColor;
 + (UIColor *)defaultEmphasizedColor;
 + (UIColor *)defaultTrackTintColor;
++ (UIColor *)groupedTableViewSectionBackgroundColor;
 
 @end
