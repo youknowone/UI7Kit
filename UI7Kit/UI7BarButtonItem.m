@@ -13,6 +13,16 @@
 #import "UI7BarButtonItem.h"
 
 
+UIImage *UI7BarButtonItemImages[30] = { nil, };
+
+@interface UIBarButtonItem (Private)
+
+@property(nonatomic,readonly) BOOL isSystemItem;
+@property(nonatomic,readonly) UIBarButtonSystemItem systemItem;
+
+@end
+
+
 @implementation UIBarButtonItem (Patch)
 
 // backup
@@ -48,7 +58,7 @@
 }
 
 - (void)_barButtonItemInit {
-    [self _barButtonItemInitWithFont:[UI7Font systemFontOfSize:17.0 attribute:UI7FontAttributeLight]];
+    [self _barButtonItemInitWithFont:[UI7Font systemFontOfSize:17.0 attribute:self.style == UIBarButtonItemStyleDone ? UI7FontAttributeMedium : UI7FontAttributeLight]];
 }
 
 @end
@@ -86,17 +96,29 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [self __initWithCoder:aDecoder];
-    [self _barButtonItemInit];
+    if (self != nil) {
+//        NSLog(@"%d", self.style);
+        if (self.isSystemItem && (self.systemItem == UIBarButtonSystemItemSave || self.systemItem == UIBarButtonSystemItemDone)) {
+            self.style = UIBarButtonItemStyleDone;
+        } else {
+            self.style = UIBarButtonItemStylePlain;
+        }
+        // NOTE: I have no idea how to enable tintColor but disable glow effect.
+        self.tintColor = [UI7Kit kit].tintColor;
+        [self _barButtonItemInit];
+//        [self _setImageHasEffects:NO];
+//        [[self _toolbarButton] _showPressedIndicator:NO];
+    }
     return self;
 }
 
 - (id)initWithBarButtonSystemItem:(UIBarButtonSystemItem)systemItem target:(id)target action:(SEL)action {
     UIFont *font = [UI7Font systemFontOfSize:17.0 attribute:UI7FontAttributeLight];
     switch (systemItem) {
-        case UIBarButtonSystemItemAdd:
+        case UIBarButtonSystemItemAdd: {
             self = [super initWithTitle:@"＋" style:UIBarButtonItemStylePlain target:target action:action];
             font = [UI7Font systemFontOfSize:22.0 attribute:UI7FontAttributeMedium];
-            break;
+        }   break;
         case UIBarButtonSystemItemCompose:
         case UIBarButtonSystemItemReply:
         case UIBarButtonSystemItemAction:
@@ -104,10 +126,15 @@
         case UIBarButtonSystemItemTrash:
             //TODO
             break;
-        default:
+        default: {
             self = [self __initWithBarButtonSystemItem:systemItem target:target action:action];
+            if (systemItem == UIBarButtonSystemItemSave || systemItem == UIBarButtonSystemItemDone) {
+                self.style = UIBarButtonItemStyleDone;
+            }
+        }
     }
     [self _barButtonItemInitWithFont:font];
+
     return self;
 }
 
