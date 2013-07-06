@@ -479,17 +479,21 @@
             </objects>
             <point key="canvasLocation" x="1206" y="768"/>
         </scene>
-        <!--View Controller-->
+        <!--Picker View Controller - PickerView-->
         <scene sceneID="kby-Pr-2sw">
             <objects>
-                <viewController id="lpa-9a-8P4" sceneMemberID="viewController">
+                <viewController id="lpa-9a-8P4" customClass="UITPickerViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bhc-2i-P6S">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" id="f48-GI-3P7">
+                            <pickerView contentMode="scaleToFill" id="f48-GI-3P7" customClass="UI7PickerView">
                                 <rect key="frame" x="0.0" y="15" width="320" height="216"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="lpa-9a-8P4" id="1G2-mC-ZIo"/>
+                                    <outlet property="delegate" destination="lpa-9a-8P4" id="OS5-TE-HFv"/>
+                                </connections>
                             </pickerView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" id="hZl-Wa-2pc">
                                 <rect key="frame" x="0.0" y="239" width="320" height="216"/>
@@ -522,7 +526,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="fhg-74-JKW"/>
+                    <navigationItem key="navigationItem" title="PickerView" id="fhg-74-JKW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="guG-jU-ycD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1253,6 +1257,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     <classes>
         <class className="UI7Button" superclassName="UIButton">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UI7Button.h"/>
+        </class>
+        <class className="UI7PickerView" superclassName="UIPickerView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UI7PickerView.h"/>
         </class>
         <class className="UI7RoundedRectButton" superclassName="UI7Button">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UI7RoundedRectButton.h"/>

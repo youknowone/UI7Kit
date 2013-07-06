@@ -3,7 +3,7 @@
 //  UI7Kit
 //
 //  Created by Jeong YunWon on 13. 7. 5..
-//  Copyright (c) 2013년 youknowone.org. All rights reserved.
+//  Copyright (c) 2013 youknowone.org. All rights reserved.
 //
 
 #import "UITPickerViewController.h"
@@ -33,6 +33,14 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 2;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return 20;
 }
 
 @end

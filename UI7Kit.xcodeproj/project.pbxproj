@@ -35,6 +35,7 @@
 		383E6A831775CF0100EF7ADA /* UI7Font.m in Sources */ = {isa = PBXBuildFile; fileRef = 383E6A821775CF0100EF7ADA /* UI7Font.m */; };
 		38505B30176B1575004A7725 /* UI7AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 38505B2F176B1575004A7725 /* UI7AlertView.m */; };
 		3854926B1783C5D800165B68 /* UITGroupedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3854926A1783C5D800165B68 /* UITGroupedTableViewController.m */; };
+		385C6CC11786C86F00A182C0 /* UI7PickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 385C6CC01786C86F00A182C0 /* UI7PickerView.m */; };
 		385CE660177009680076C02A /* UI7KitCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 38013FE3176F8352003B7809 /* UI7KitCore.m */; };
 		3861E06B1771F9BC00AA8DE4 /* UI7ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3861E06A1771F9BC00AA8DE4 /* UI7ProgressView.m */; };
 		387558B1176DD00600AE5C8B /* UI7TabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 387558B0176DD00600AE5C8B /* UI7TabBar.m */; };
@@ -59,6 +60,7 @@
 		38BC0E5D173E821700F36497 /* UITSubviewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38BC0E5B173E821700F36497 /* UITSubviewTableViewController.m */; };
 		38C46562177F277000A883EA /* UI7Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C46561177F277000A883EA /* UI7Color.m */; };
 		38C46565177F3C6E00A883EA /* UI7SearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C46564177F3C6D00A883EA /* UI7SearchBar.m */; };
+		38C6779A1786CA6100B00C61 /* UITPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C677991786CA6100B00C61 /* UITPickerViewController.m */; };
 		38CE37D6176F657800AC0C89 /* UI7SegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 38CE37D4176F4C8400AC0C89 /* UI7SegmentedControl.m */; };
 		38D1C937177EF7B70026135A /* UI7Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D1C936177EF7B70026135A /* UI7Tool.m */; };
 		38EEF9C7176A366C0085B09B /* UI7Button.m in Sources */ = {isa = PBXBuildFile; fileRef = 38EEF9C6176A366C0085B09B /* UI7Button.m */; };
@@ -152,6 +154,8 @@
 		38505B2F176B1575004A7725 /* UI7AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7AlertView.m; sourceTree = "<group>"; };
 		385492691783C5D800165B68 /* UITGroupedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITGroupedTableViewController.h; sourceTree = "<group>"; };
 		3854926A1783C5D800165B68 /* UITGroupedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITGroupedTableViewController.m; sourceTree = "<group>"; };
+		385C6CBF1786C86F00A182C0 /* UI7PickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7PickerView.h; sourceTree = "<group>"; };
+		385C6CC01786C86F00A182C0 /* UI7PickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7PickerView.m; sourceTree = "<group>"; };
 		3861E0691771F9BC00AA8DE4 /* UI7ProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7ProgressView.h; sourceTree = "<group>"; };
 		3861E06A1771F9BC00AA8DE4 /* UI7ProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7ProgressView.m; sourceTree = "<group>"; };
 		38740492176825D900C0BB18 /* UI7Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7Utilities.h; sourceTree = "<group>"; };
@@ -187,6 +191,8 @@
 		38C46561177F277000A883EA /* UI7Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7Color.m; sourceTree = "<group>"; };
 		38C46563177F3C6D00A883EA /* UI7SearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7SearchBar.h; sourceTree = "<group>"; };
 		38C46564177F3C6D00A883EA /* UI7SearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7SearchBar.m; sourceTree = "<group>"; };
+		38C677981786CA6100B00C61 /* UITPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITPickerViewController.h; sourceTree = "<group>"; };
+		38C677991786CA6100B00C61 /* UITPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITPickerViewController.m; sourceTree = "<group>"; };
 		38C7A9761495181800381910 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		38C7A9771495181800381910 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		38C7A9781495181800381910 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -410,6 +416,8 @@
 				3861E06A1771F9BC00AA8DE4 /* UI7ProgressView.m */,
 				38F0C7AF177C3F2C00645662 /* UI7TextField.h */,
 				38F0C7B0177C3F2C00645662 /* UI7TextField.m */,
+				385C6CBF1786C86F00A182C0 /* UI7PickerView.h */,
+				385C6CC01786C86F00A182C0 /* UI7PickerView.m */,
 				380174601769FE390049D26C /* Resources */,
 				38017426176989660049D26C /* Supporting Files */,
 			);
@@ -440,6 +448,8 @@
 				3854926A1783C5D800165B68 /* UITGroupedTableViewController.m */,
 				381595A71784936A001CC0CD /* UITSegmentedControlViewController.h */,
 				381595A81784936A001CC0CD /* UITSegmentedControlViewController.m */,
+				38C677981786CA6100B00C61 /* UITPickerViewController.h */,
+				38C677991786CA6100B00C61 /* UITPickerViewController.m */,
 				3888FC60176C7C7900489638 /* UITIssue1ViewController.h */,
 				3888FC61176C7C7900489638 /* UITIssue1ViewController.m */,
 				38D1C935177EF7B70026135A /* UI7Tool.h */,
@@ -659,6 +669,7 @@
 				383E6A831775CF0100EF7ADA /* UI7Font.m in Sources */,
 				38C46562177F277000A883EA /* UI7Color.m in Sources */,
 				38C46565177F3C6E00A883EA /* UI7SearchBar.m in Sources */,
+				385C6CC11786C86F00A182C0 /* UI7PickerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,6 +698,7 @@
 				382B58061780427800D46754 /* UITTintViewController.m in Sources */,
 				3854926B1783C5D800165B68 /* UITGroupedTableViewController.m in Sources */,
 				381595A91784936A001CC0CD /* UITSegmentedControlViewController.m in Sources */,
+				38C6779A1786CA6100B00C61 /* UITPickerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

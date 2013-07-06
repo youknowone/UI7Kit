@@ -3,11 +3,11 @@
 //  UI7Kit
 //
 //  Created by Jeong YunWon on 13. 7. 5..
-//  Copyright (c) 2013년 youknowone.org. All rights reserved.
+//  Copyright (c) 2013 youknowone.org. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <UI7Kit/UI7Utilities.h>
 
-@interface UI7PickerView : UIPickerView
+@interface UI7PickerView : UIPickerView<UI7Patch>
 
 @end
