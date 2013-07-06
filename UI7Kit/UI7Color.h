@@ -8,10 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+@interface UIColor (UI7Kit)
+
+- (UIColor *)highligtedColor;
+
+@end
+
+
 @interface UI7Color : UIColor
 
++ (UIColor *)defaultBarColor;
++ (UIColor *)blackBarColor;
+
 + (UIColor *)defaultBackgroundColor;
-+ (UIColor *)blackBackgroundColor;
 + (UIColor *)defaultTintColor;
 + (UIColor *)defaultEmphasizedColor;
 + (UIColor *)defaultTrackTintColor;

@@ -17,7 +17,7 @@
 - (void)__setBarStyle:(UIBarStyle)barStyle { assert(NO); }
 
 - (void)_toolbarInit {
-    self.backgroundColor = [UI7Kit kit].backgroundColor;
+    [self setBarStyle:self.barStyle];
 
     UIGraphicsBeginImageContext(CGSizeMake(1.0, 3.0));
     CGContextRef context = UIGraphicsGetCurrentContext();

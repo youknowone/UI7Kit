@@ -36,10 +36,10 @@ NSMutableDictionary *UI7TabBarStyles = nil;
 
     switch (barStyle) {
         case UIBarStyleDefault: {
-            self.backgroundColor = [UI7Kit kit].backgroundColor;
+            self.backgroundColor = [UI7Color defaultBarColor];
         }   break;
         case UIBarStyleBlackOpaque: {
-            self.backgroundColor = [UI7Color blackBackgroundColor];
+            self.backgroundColor = [UI7Color blackBarColor];
         }   break;
         default:
             break;
@@ -55,9 +55,10 @@ NSMutableDictionary *UI7TabBarStyles = nil;
 - (id)__initWithFrame:(CGRect)frame { assert(NO); return nil; }
 
 - (void)_tabBarInit {
+    [self _setBarStyle:self.barStyle];
+
     self.tintColor = [UIColor grayColor];
     self.selectedImageTintColor = [UI7Kit kit].tintColor;
-    self.backgroundColor = [UI7Kit kit].backgroundColor;
 
     UIGraphicsBeginImageContext(CGSizeMake(1.0, 3.0));
     CGContextRef context = UIGraphicsGetCurrentContext();

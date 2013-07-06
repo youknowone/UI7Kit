@@ -50,6 +50,7 @@ NSAPropertyGetter(titleLabel, @"_titleLabel");
 }
 
 - (void)_setTheme {
+    self.opaque = NO;
     self.backgroundColor = UIColor.clearColor;
 
     for (id view in self.subviews) {
@@ -82,25 +83,28 @@ NSAPropertyGetter(titleLabel, @"_titleLabel");
         
         [button setBackgroundColor:[UIColor darkGrayColor]];
         
-        UIBezierPath *path;
+        UIBezierPath *path = nil;
         
         if (index == 0) {
-            if (self.titleLabel.text.length > 1) {
-                path = [UIBezierPath bezierPathWithRoundedRect:button.bounds cornerRadius:.0f];
-            } else {
+            if (self.titleLabel.text.length == 0) {
                 path = [UIBezierPath bezierPathWithRoundedRect:button.bounds byRoundingCorners:UIRectCornerTopLeft|UIRectCornerTopRight cornerRadii:UI7ControlRadiusSize];
             }
         } else if ((NSInteger)index == self.cancelButtonIndex) {
-            path = [UIBezierPath bezierPathWithRoundedRect:button.bounds byRoundingCorners:UIRectCornerAllCorners cornerRadii:UI7ControlRadiusSize];
+            path = [UIBezierPath bezierPathWithRoundedRect:button.bounds cornerRadius:UI7ControlRadius];
         } else if (index == self.buttons.count - 1 - (self.cancelButtonIndex >= 0 ? 1 : 0)) {
             path = [UIBezierPath bezierPathWithRoundedRect:button.bounds byRoundingCorners:UIRectCornerBottomLeft|UIRectCornerBottomRight cornerRadii:UI7ControlRadiusSize];
-        } else {
-            path = [UIBezierPath bezierPathWithRoundedRect:button.bounds cornerRadius:.0f];
         }
+
+        button.backgroundColor = [UIColor clearColor];
+        UIColor *selectedColor = [UIColor colorWith8bitWhite:231 alpha:231];
+        if (path) {
+            [button setBackgroundImage:[path imageWithFillColor:[UI7Color defaultBarColor]] forState:UIControlStateNormal];
         
-        [button setBackgroundImage:[path imageWithFillColor:[UI7Color defaultBackgroundColor]] forState:UIControlStateNormal];
-        
-        [button setBackgroundImage:[path imageWithFillColor:[UIColor lightTextColor]] forState:UIControlStateHighlighted];
+            [button setBackgroundImage:[path imageWithFillColor:selectedColor] forState:UIControlStateHighlighted];
+        } else {
+            [button setBackgroundImage:[UIImage imageWithColor:[UI7Color defaultBarColor] size:button.bounds.size] forState:UIControlStateNormal];
+            [button setBackgroundImage:[UIImage imageWithColor:selectedColor size:button.bounds.size] forState:UIControlStateHighlighted];
+        }
         
         UIColor *color = nil;
         if ((self.destructiveButtonIndex == (NSInteger)index)&&(self.destructiveButtonIndex!=self.cancelButtonIndex)) {
@@ -111,6 +115,8 @@ NSAPropertyGetter(titleLabel, @"_titleLabel");
         [button setTitleColor:color forState:UIControlStateNormal];
         [button setTitleColor:color forState:UIControlStateHighlighted];
         button.titleLabel.shadowOffset = CGSizeZero;
+
+        button.opaque = NO;
     }];
 
     CGRect frame = self.frame;
@@ -123,7 +129,7 @@ NSAPropertyGetter(titleLabel, @"_titleLabel");
         tframe.origin.y += 10.0f;
         self.titleLabel.frame = tframe;
 
-        UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(8.0f, 10.0f, self.frame.size.width - 16.0f, 24.5f + self.titleLabel.frame.size.height) byRoundingCorners:UIRectCornerTopLeft|UIRectCornerTopRight cornerRadii:UI7ControlRadiusSize];
+        UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(8.0f, 10.0f, self.frame.size.width - 16.0f, 25.0f + self.titleLabel.frame.size.height) byRoundingCorners:UIRectCornerTopLeft|UIRectCornerTopRight cornerRadii:UI7ControlRadiusSize];
         UIImageView *backgroundView = [[[UIImageView alloc] initWithImage:[path imageWithFillColor:[UI7Color defaultBackgroundColor]]] autorelease];
         
         [self insertSubview:backgroundView belowSubview:self.titleLabel];

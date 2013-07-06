@@ -8,14 +8,31 @@
 
 #import "UI7Color.h"
 
+
+@implementation UIColor (UI7Kit)
+
+- (UIColor *)highligtedColor {
+    return [UIColor colorWithRed:0.75f + self.components.red / 4.0f
+                           green:0.75f + self.components.green / 4.0f
+                            blue:0.75f + self.components.blue / 4.0f
+                           alpha:self.components.alpha];
+}
+
+@end
+
+
 @implementation UI7Color
+
++ (UIColor *)defaultBarColor {
+    return [UIColor colorWith8bitWhite:255 alpha:231];
+}
+
++ (UIColor *)blackBarColor {
+    return [UIColor colorWith8bitWhite:15 alpha:231];
+}
 
 + (UIColor *)defaultBackgroundColor {
     return [UIColor colorWith8bitWhite:248 alpha:255];
-}
-
-+ (UIColor *)blackBackgroundColor {
-    return [UIColor colorWith8bitWhite:25 alpha:255];
 }
 
 + (UIColor *)defaultTintColor {

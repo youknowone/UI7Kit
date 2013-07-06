@@ -236,7 +236,7 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
 
     // background image
     self.backgroundView.frame = CGRectMake(7.0, .0, UI7AlertViewWidth, lastButtonFrame.origin.y + lastButtonFrame.size.height);
-    self.backgroundView.image = [UIImage roundedImageWithSize:self.backgroundView.frame.size color:[UIColor colorWith8bitWhite:234 alpha:248] radius:6.0];
+    self.backgroundView.image = [UIImage roundedImageWithSize:self.backgroundView.frame.size color:[UI7Color defaultBarColor] radius:6.0];
 }
 
 - (void)dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated {

@@ -45,19 +45,6 @@
 @end
 
 
-
-@implementation UIColor (iOS7)
-
-- (UIColor *)highligtedColor {
-    return [UIColor colorWithRed:0.75f + self.components.red / 4.0f
-                           green:0.75f + self.components.green / 4.0f
-                            blue:0.75f + self.components.blue / 4.0f
-                           alpha:self.components.alpha];
-}
-
-@end
-
-
 const CGFloat UI7ControlRadius = 4.0f;
 const CGSize UI7ControlRadiusSize = {4.0f, 4.0f};
 const CGFloat UI7ControlRowHeight = 44.0f;

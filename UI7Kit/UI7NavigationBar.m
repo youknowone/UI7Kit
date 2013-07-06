@@ -31,7 +31,9 @@
 - (void)__pushNavigationItem:(UINavigationItem *)item { assert(NO); }
 
 - (void)_navigationBarInit {
-    self.backgroundColor = [UI7Kit kit].backgroundColor;
+    [self setBarStyle:self.barStyle];
+
+    self.backgroundColor = [UI7Color defaultBarColor];
     UIGraphicsBeginImageContext(CGSizeMake(1.0, 3.0));
     CGContextRef context = UIGraphicsGetCurrentContext();
     [[UIColor colorWith8bitWhite:178 alpha:255] set];
@@ -94,11 +96,11 @@
 
     switch (barStyle) {
         case UIBarStyleDefault: {
-            self.backgroundColor = [UI7Kit kit].backgroundColor;
+            self.backgroundColor = [UI7Color defaultBarColor];
         }   break;
         case UIBarStyleBlackOpaque:
         case UIBarStyleBlackTranslucent: {
-            self.backgroundColor = [UI7Color blackBackgroundColor];
+            self.backgroundColor = [UI7Color blackBarColor];
         }   break;
         default:
             break;
