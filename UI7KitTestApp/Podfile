@@ -1,2 +1,2 @@
 platform :ios, '5.0'
-pod 'UI7Kit'
+pod 'UI7Kit', :git => 'https://github.com/youknowone/UI7Kit.git'

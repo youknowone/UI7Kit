@@ -17,6 +17,8 @@
 		381595C21785B74C001CC0CD /* UITSubviewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 381595BB1785B74C001CC0CD /* UITSubviewTableViewController.m */; };
 		381595C41785B74C001CC0CD /* UITTintViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 381595BF1785B74C001CC0CD /* UITTintViewController.m */; };
 		381C00AD17172CE20067C936 /* UITTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 381C00AB17172CE20067C936 /* UITTextViewController.m */; };
+		3895CE2317884EAC00612CF7 /* UITIssue12ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3895CE2217884EAC00612CF7 /* UITIssue12ViewController.m */; };
+		3895CE2F178851D800612CF7 /* UITPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3895CE2E178851D800612CF7 /* UITPickerViewController.m */; };
 		38F068181636F8C8002723AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383764E213373155007072FD /* UIKit.framework */; };
 		38F068191636F8C8002723AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383764D713373154007072FD /* Foundation.framework */; };
 		38F0681A1636F8C8002723AB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383764E513373155007072FD /* CoreGraphics.framework */; };
@@ -53,6 +55,10 @@
 		383764D713373154007072FD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		383764E213373155007072FD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		383764E513373155007072FD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3895CE2117884EAC00612CF7 /* UITIssue12ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITIssue12ViewController.h; sourceTree = "<group>"; };
+		3895CE2217884EAC00612CF7 /* UITIssue12ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITIssue12ViewController.m; sourceTree = "<group>"; };
+		3895CE2D178851D800612CF7 /* UITPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITPickerViewController.h; sourceTree = "<group>"; };
+		3895CE2E178851D800612CF7 /* UITPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITPickerViewController.m; sourceTree = "<group>"; };
 		38C7A9891495181800381910 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		38F068161636F8C8002723AB /* UI7KitTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UI7KitTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38F0681D1636F8C8002723AB /* UI7KitTestApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UI7KitTestApp-Info.plist"; sourceTree = "<group>"; };
@@ -130,8 +136,6 @@
 				381595AE1785B73A001CC0CD /* UITAlertViewController.m */,
 				381595B01785B742001CC0CD /* UITGroupedTableViewController.h */,
 				381595B11785B742001CC0CD /* UITGroupedTableViewController.m */,
-				381595B21785B742001CC0CD /* UITIssue1ViewController.h */,
-				381595B31785B742001CC0CD /* UITIssue1ViewController.m */,
 				381595B61785B74B001CC0CD /* UITPreparedCellTableViewController.h */,
 				381595B71785B74B001CC0CD /* UITPreparedCellTableViewController.m */,
 				381595B81785B74B001CC0CD /* UITSegmentedControlViewController.h */,
@@ -140,6 +144,12 @@
 				381595BB1785B74C001CC0CD /* UITSubviewTableViewController.m */,
 				381595BE1785B74C001CC0CD /* UITTintViewController.h */,
 				381595BF1785B74C001CC0CD /* UITTintViewController.m */,
+				3895CE2D178851D800612CF7 /* UITPickerViewController.h */,
+				3895CE2E178851D800612CF7 /* UITPickerViewController.m */,
+				381595B21785B742001CC0CD /* UITIssue1ViewController.h */,
+				381595B31785B742001CC0CD /* UITIssue1ViewController.m */,
+				3895CE2117884EAC00612CF7 /* UITIssue12ViewController.h */,
+				3895CE2217884EAC00612CF7 /* UITIssue12ViewController.m */,
 				3801745E1769F3B50049D26C /* Storyboard.storyboard */,
 				38F0681C1636F8C8002723AB /* Supporting Files */,
 			);
@@ -259,8 +269,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3895CE2317884EAC00612CF7 /* UITIssue12ViewController.m in Sources */,
 				38F068221636F8C8002723AB /* main.m in Sources */,
 				38F068261636F8C8002723AB /* UITAppDelegate.m in Sources */,
+				3895CE2F178851D800612CF7 /* UITPickerViewController.m in Sources */,
 				38F0682F1636F8C8002723AB /* UITMasterViewController.m in Sources */,
 				38F068321636F8C9002723AB /* UITDetailViewController.m in Sources */,
 				381C00AD17172CE20067C936 /* UITTextViewController.m in Sources */,
