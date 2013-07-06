@@ -26,7 +26,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+
+    UISegmentedControl *segmentedControl = [[[UISegmentedControl alloc] initWithItems:@[@"Item1", @"Item2", @"Item3"]] autorelease];
+    segmentedControl.frame = CGRectMake(20.0, 10.0, 280, segmentedControl.frame.size.height);
+    [self.view addSubview:segmentedControl];
 }
 
 - (void)didReceiveMemoryWarning

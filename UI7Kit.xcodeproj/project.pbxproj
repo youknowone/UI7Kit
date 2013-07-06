@@ -25,6 +25,7 @@
 		3801745B1769C5D90049D26C /* UI7TableViewCellDisclosureIndicator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3801745A1769C5D90049D26C /* UI7TableViewCellDisclosureIndicator@2x.png */; };
 		3801745F1769F3B50049D26C /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3801745E1769F3B50049D26C /* Storyboard.storyboard */; };
 		38017462176A245B0049D26C /* UI7NavigationBarBackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 38017461176A245B0049D26C /* UI7NavigationBarBackButton.png */; };
+		3810413317884A4300A85540 /* UITIssue12ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3810413217884A4300A85540 /* UITIssue12ViewController.m */; };
 		381582471771E72C0045713A /* UI7Slider.m in Sources */ = {isa = PBXBuildFile; fileRef = 381582461771E72C0045713A /* UI7Slider.m */; };
 		381595A91784936A001CC0CD /* UITSegmentedControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 381595A81784936A001CC0CD /* UITSegmentedControlViewController.m */; };
 		381C00AD17172CE20067C936 /* UITTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 381C00AB17172CE20067C936 /* UITTextViewController.m */; };
@@ -130,6 +131,8 @@
 		3801745A1769C5D90049D26C /* UI7TableViewCellDisclosureIndicator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7TableViewCellDisclosureIndicator@2x.png"; sourceTree = "<group>"; };
 		3801745E1769F3B50049D26C /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		38017461176A245B0049D26C /* UI7NavigationBarBackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7NavigationBarBackButton.png; sourceTree = "<group>"; };
+		3810413117884A4300A85540 /* UITIssue12ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITIssue12ViewController.h; sourceTree = "<group>"; };
+		3810413217884A4300A85540 /* UITIssue12ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITIssue12ViewController.m; sourceTree = "<group>"; };
 		381582451771E72C0045713A /* UI7Slider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7Slider.h; sourceTree = "<group>"; };
 		381582461771E72C0045713A /* UI7Slider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7Slider.m; sourceTree = "<group>"; };
 		381595A71784936A001CC0CD /* UITSegmentedControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITSegmentedControlViewController.h; sourceTree = "<group>"; };
@@ -452,6 +455,8 @@
 				38C677991786CA6100B00C61 /* UITPickerViewController.m */,
 				3888FC60176C7C7900489638 /* UITIssue1ViewController.h */,
 				3888FC61176C7C7900489638 /* UITIssue1ViewController.m */,
+				3810413117884A4300A85540 /* UITIssue12ViewController.h */,
+				3810413217884A4300A85540 /* UITIssue12ViewController.m */,
 				38D1C935177EF7B70026135A /* UI7Tool.h */,
 				38D1C936177EF7B70026135A /* UI7Tool.m */,
 				38F0681C1636F8C8002723AB /* Supporting Files */,
@@ -699,6 +704,7 @@
 				3854926B1783C5D800165B68 /* UITGroupedTableViewController.m in Sources */,
 				381595A91784936A001CC0CD /* UITSegmentedControlViewController.m in Sources */,
 				38C6779A1786CA6100B00C61 /* UITPickerViewController.m in Sources */,
+				3810413317884A4300A85540 /* UITIssue12ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

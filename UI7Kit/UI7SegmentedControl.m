@@ -39,6 +39,8 @@
 
 #import "UI7KitPrivate.h"
 
+CGFloat UI7SegmentedControlHeight = 29.0f;
+
 NSMutableDictionary *UI7SegmentedControlTintColors = nil;
 
 @implementation UISegmentedControl (Patch)
@@ -46,6 +48,7 @@ NSMutableDictionary *UI7SegmentedControlTintColors = nil;
 - (void)awakeFromNib { [super awakeFromNib]; }
 
 - (id)__initWithItems:(NSArray *)items { assert(NO); return nil; }
+- (id)__initWithFrame:(CGRect)frame { assert(NO); return nil; }
 - (void)__awakeFromNib { assert(NO); }
 - (UIColor *)__tintColor { assert(NO); return nil; }
 - (void)__setTintColor:(UIColor *)tintColor { assert(NO); }
@@ -55,7 +58,7 @@ NSMutableDictionary *UI7SegmentedControlTintColors = nil;
     self.layer.borderWidth = 1.0f;
 
     CGRect frame = self.frame;
-    frame.size.height = 29.0f;
+    frame.size.height = UI7SegmentedControlHeight;
     self.frame = frame;
 
     [self _tintColorUpdated];
@@ -105,6 +108,7 @@ NSMutableDictionary *UI7SegmentedControlTintColors = nil;
         Class target = [UISegmentedControl class];
 
         [target copyToSelector:@selector(__initWithItems:) fromSelector:@selector(initWithItems:)];
+        [target copyToSelector:@selector(__initWithFrame:) fromSelector:@selector(initWithFrame:)];
         [target copyToSelector:@selector(__awakeFromNib) fromSelector:@selector(awakeFromNib)];
         [target copyToSelector:@selector(__tintColor) fromSelector:@selector(tintColor)];
         [target copyToSelector:@selector(__setTintColor:) fromSelector:@selector(setTintColor:)];
@@ -115,6 +119,7 @@ NSMutableDictionary *UI7SegmentedControlTintColors = nil;
     Class target = [UISegmentedControl class];
 
     [self exportSelector:@selector(initWithItems:) toClass:target];
+    [self exportSelector:@selector(initWithFrame:) toClass:target];
     [self exportSelector:@selector(awakeFromNib) toClass:target];
     [self exportSelector:@selector(tintColor) toClass:target];
     [self exportSelector:@selector(setTintColor:) toClass:target];
@@ -134,7 +139,7 @@ NSMutableDictionary *UI7SegmentedControlTintColors = nil;
 }
 
 - (id)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
+    self = [self __initWithFrame:frame];
     if (self != nil) {
         [self _segmentedControlInit];
     }

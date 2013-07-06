@@ -35,7 +35,7 @@ NSAPropertyGetter(tables, @"_tables");
 
 + (void)initialize {
     if (self == [UI7PickerView class]) {
-        Class target = [UIPickerView class];
+//        Class target = [UIPickerView class];
 
 
     }

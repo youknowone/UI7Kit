@@ -8,6 +8,8 @@
 
 #import <UI7Kit/UI7Utilities.h>
 
+UIKIT_EXTERN CGFloat UI7SegmentedControlHeight;
+
 @interface UI7SegmentedControl : UISegmentedControl<UI7Patch>
 
 @end

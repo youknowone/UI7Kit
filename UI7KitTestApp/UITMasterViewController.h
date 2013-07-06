@@ -11,6 +11,9 @@
 
 @interface UITMasterViewController : UIViewController<UISplitViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
-@property(nonatomic, strong) IBOutlet UITableView *listTableView;
+@property(nonatomic,strong) IBOutlet UITableView *listTableView;
+@property(nonatomic,strong) IBOutlet UISegmentedControl *styleSegmentedControl;
+
+- (IBAction)styleChanged:(id)sender;
 
 @end
