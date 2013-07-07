@@ -120,17 +120,15 @@ NSAPropertyGetter(titleLabel, @"_titleLabel");
     }];
 
     CGRect frame = self.frame;
-    frame.origin.y += self.buttons.count * 3.0f;
+    frame.origin.y += self.buttons.count * 9.0f;
 
     if (self.titleLabel.text.length > 0) {
-        frame.origin.y += 20.0f;
-
         CGRect tframe = self.titleLabel.frame;
         tframe.origin.y += 10.0f;
         self.titleLabel.frame = tframe;
 
-        UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(8.0f, 10.0f, self.frame.size.width - 16.0f, 25.0f + self.titleLabel.frame.size.height) byRoundingCorners:UIRectCornerTopLeft|UIRectCornerTopRight cornerRadii:UI7ControlRadiusSize];
-        UIImageView *backgroundView = [[[UIImageView alloc] initWithImage:[path imageWithFillColor:[UI7Color defaultBackgroundColor]]] autorelease];
+        UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(8.0f, 10.0f, self.frame.size.width - 16.0f, 24.5f + self.titleLabel.frame.size.height) byRoundingCorners:UIRectCornerTopLeft|UIRectCornerTopRight cornerRadii:UI7ControlRadiusSize];
+        UIImageView *backgroundView = [[[UIImageView alloc] initWithImage:[path imageWithFillColor:[UI7Color defaultBarColor]]] autorelease];
         
         [self insertSubview:backgroundView belowSubview:self.titleLabel];
     }
