@@ -15,5 +15,6 @@ UIKIT_EXTERN NSMutableDictionary *UI7TintColors;
 - (UIColor *)_tintColor;
 - (UIColor *)__tintColor;
 - (void)_tintColorUpdated;
+- (void)_backgroundColorUpdated;
 
 @end

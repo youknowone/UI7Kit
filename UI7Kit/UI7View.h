@@ -11,7 +11,14 @@
 @interface UIView (iOS7)
 
 #if __IPHONE_OS_VERSION_MAX_ALLOWED < 70000
-@property(nonatomic, retain) UIColor *tintColor;
+@property(nonatomic,strong) UIColor *tintColor;
 #endif
+
+@property(nonatomic,readonly) UIColor *stackedBackroundColor;
+
+@end
+
+
+@interface UI7View: UIView<UI7Patch>
 
 @end

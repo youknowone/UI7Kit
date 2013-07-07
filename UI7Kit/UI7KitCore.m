@@ -45,6 +45,7 @@ UI7Kit *UI7KitSharedObject = nil;
 + (void)patch {
     for (NSString *className in @[
          @"UI7Font",
+         @"UI7View",
          @"UI7ViewController",
          @"UI7AlertView",
          @"UI7ActionSheet",

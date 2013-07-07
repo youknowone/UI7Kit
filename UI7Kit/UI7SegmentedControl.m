@@ -62,6 +62,7 @@ NSMutableDictionary *UI7SegmentedControlTintColors = nil;
     self.frame = frame;
 
     [self _tintColorUpdated];
+    [self _backgroundColorUpdated];
 }
 
 - (void)_tintColorUpdated {
@@ -84,9 +85,6 @@ NSMutableDictionary *UI7SegmentedControlTintColors = nil;
     NSDictionary *highlightedAttributes = @{UITextAttributeTextColor: tintColor};
     [self setTitleTextAttributes:highlightedAttributes forState:UIControlStateHighlighted];
 
-    NSDictionary *selectedAttributes = @{UITextAttributeTextColor: [UIColor whiteColor]};
-    [self setTitleTextAttributes:selectedAttributes forState:UIControlStateSelected];
-
     [self setBackgroundImage:backgroundImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     [self setBackgroundImage:highlightedBackgroundImage forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
     [self setBackgroundImage:selectedBackgroundImage forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
@@ -94,6 +92,11 @@ NSMutableDictionary *UI7SegmentedControlTintColors = nil;
     [self setDividerImage:tintColor.image forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
 
     self.layer.borderColor = tintColor.CGColor;
+}
+
+- (void)_backgroundColorUpdated {
+    NSDictionary *selectedAttributes = @{UITextAttributeTextColor: self.stackedBackroundColor};
+    [self setTitleTextAttributes:selectedAttributes forState:UIControlStateSelected];
 }
 
 @end
