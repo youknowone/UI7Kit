@@ -54,6 +54,7 @@
 - (void)showActionSheet1:(UISwitch *)sender {
     NSString *title = @"Title";
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:title delegate:nil cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Destructive" otherButtonTitles:@"Other", @"Buttons", nil];
+    actionSheet.actionSheetStyle = (UIActionSheetStyle)self.navigationController.navigationBar.barStyle;
     if (self.tabBarController) {
         [actionSheet showFromTabBar:self.tabBarController.tabBar];
     } else {
@@ -63,6 +64,7 @@
 
 - (void)showActionSheet2:(UISwitch *)sender {
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:nil cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Destructive" otherButtonTitles:@"Other", @"Buttons", nil];
+    actionSheet.actionSheetStyle = (UIActionSheetStyle)self.navigationController.navigationBar.barStyle;
     if (self.tabBarController) {
         [actionSheet showFromTabBar:self.tabBarController.tabBar];
     } else {
@@ -73,6 +75,7 @@
 - (void)showActionSheet3:(UISwitch *)sender {
     NSString *title = @"Title";
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:title delegate:nil cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Destructive" otherButtonTitles:@"Other", @"Buttons", @"Is", @"Many", @"At", @"This", @"Time", nil];
+    actionSheet.actionSheetStyle = (UIActionSheetStyle)self.navigationController.navigationBar.barStyle;
     if (self.tabBarController) {
         [actionSheet showFromTabBar:self.tabBarController.tabBar];
     } else {
@@ -83,6 +86,7 @@
 - (void)showActionSheet4:(UISwitch *)sender {
     NSString *title = @"Title is long long longer at this time. How long? This long.";
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:title delegate:nil cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Destructive" otherButtonTitles:@"Other", @"Buttons", @"Is", @"Many", @"At", @"This", @"Time", nil];
+    actionSheet.actionSheetStyle = (UIActionSheetStyle)self.navigationController.navigationBar.barStyle;
     if (self.tabBarController) {
         [actionSheet showFromTabBar:self.tabBarController.tabBar];
     } else {
