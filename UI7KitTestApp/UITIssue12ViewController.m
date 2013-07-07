@@ -51,10 +51,7 @@
         [segmentedControl setTitleTextAttributes:deselectedAttributesDictionary forState:UIControlStateNormal];
         [segmentedControl setTitleTextAttributes:selectedAttributesDictionary forState:UIControlStateSelected];
 
-        for (NSUInteger i = 0; i < [segmentedControl.subviews count]; i++)
-        {
-            [[segmentedControl.subviews objectAtIndex:i] setTintColor:[UIColor redColor]];
-        }
+        segmentedControl.tintColor = [UIColor colorWith32bitColor:arc4random()];
     }
 }
 
