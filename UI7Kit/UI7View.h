@@ -12,6 +12,7 @@
 
 #if __IPHONE_OS_VERSION_MAX_ALLOWED < 70000
 @property(nonatomic,strong) UIColor *tintColor;
+- (void)tintColorDidChange;
 #endif
 
 @property(nonatomic,readonly) UIColor *stackedBackroundColor;

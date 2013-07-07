@@ -13,6 +13,7 @@ NSMutableDictionary *UI7TintColors = nil;
 @implementation UIView (Patch)
 
 - (void)__view_setBackgroundColor:(UIColor *)backgroundColor { assert(NO); }
+- (void)_tintColorDidChange { }
 
 @end
 
@@ -28,6 +29,7 @@ NSMutableDictionary *UI7TintColors = nil;
             [self addMethodForSelector:@selector(setTintColor:) fromMethod:[self methodForSelector:@selector(_view_setTintColor:)]];
             [self copyToSelector:@selector(__view_dealloc) fromSelector:@selector(dealloc)];
             [self copyToSelector:@selector(dealloc) fromSelector:@selector(_view_dealloc)];
+            [self addMethodForSelector:@selector(tintColorDidChange) fromMethod:[self methodForSelector:@selector(_tintColorDidChange)]];
         }
     }
 }
@@ -76,6 +78,7 @@ NSMutableDictionary *UI7TintColors = nil;
 }
 
 - (void)_tintColorUpdated {
+    [self tintColorDidChange];
     for (UIView *subview in self.subviews) {
         if ([subview respondsToSelector:@selector(_tintColorUpdated)]) {
             [subview _tintColorUpdated];
