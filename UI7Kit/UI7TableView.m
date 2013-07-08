@@ -49,6 +49,16 @@
 @end
 
 
+@protocol UI7TableViewDelegate
+
+- (UIView *)__tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section;
+- (UIView *)__tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section;
+- (CGFloat)__tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section;
+- (CGFloat)__tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section;
+
+@end
+
+
 @implementation UI7TableView
 
 // TODO: implement 'setAccessoryType' to fake accessories.
@@ -135,9 +145,17 @@
     return UITableViewStylePlain;
 }
 
-CGFloat UI7TableViewDelegateHeightForHeaderInSection(id self, SEL _cmd, UITableView *tableView, NSUInteger section) {
+CGFloat _UI7TableViewDelegateNoHeightForHeaderFooterInSection(id self, SEL _cmd, UITableView *tableView, NSUInteger section) {
+    return -1.0f;
+}
+
+CGFloat _UI7TableViewDelegateHeightForHeaderInSection(id self, SEL _cmd, UITableView *tableView, NSUInteger section) {
+    CGFloat height = [self __tableView:tableView heightForHeaderInSection:section];
+    if (height != -1.0f) {
+        return height;
+    }
+    height = .0f;
     NSString *title = [tableView.dataSource tableView:tableView titleForHeaderInSection:section];
-    CGFloat height = .0f;
 //    if ([UI7TableViewStyleIsGrouped containsKey:tableView.pointerString]) {
     if (tableView.__style == UITableViewStyleGrouped) {
         if (title) {
@@ -153,7 +171,11 @@ CGFloat UI7TableViewDelegateHeightForHeaderInSection(id self, SEL _cmd, UITableV
     return height;
 }
 
-CGFloat UI7TableViewDelegateHeightForFooterInSection(id self, SEL _cmd, UITableView *tableView, NSUInteger section) {
+CGFloat _UI7TableViewDelegateHeightForFooterInSection(id self, SEL _cmd, UITableView *tableView, NSUInteger section) {
+    CGFloat height = [self __tableView:tableView heightForFooterInSection:section];
+    if (height != -1.0f) {
+        return height;
+    }
     NSString *title = [tableView.dataSource tableView:tableView titleForFooterInSection:section];
     if (title) {
         return tableView.sectionFooterHeight;
@@ -161,7 +183,15 @@ CGFloat UI7TableViewDelegateHeightForFooterInSection(id self, SEL _cmd, UITableV
     return .0;
 }
 
-UIView *UI7TableViewDelegateViewForHeaderInSection(id self, SEL _cmd, UITableView *tableView, NSUInteger section) {
+UIView *_UI7TableViewDelegateNilViewForHeaderFooterInSection(id self, SEL _cmd, UITableView *tableView, NSUInteger section) {
+    return nil;
+}
+
+UIView *_UI7TableViewDelegateViewForHeaderInSection(id self, SEL _cmd, UITableView *tableView, NSUInteger section) {
+    UIView *view = [self __tableView:tableView viewForHeaderInSection:section];
+    if (view) {
+        return view;
+    }
     BOOL grouped = tableView.__style == UITableViewStyleGrouped;
     CGFloat height = [tableView.delegate tableView:tableView heightForHeaderInSection:section];
     NSString *title = [tableView.dataSource tableView:tableView titleForHeaderInSection:section];
@@ -176,43 +206,54 @@ UIView *UI7TableViewDelegateViewForHeaderInSection(id self, SEL _cmd, UITableVie
     }
 
     CGFloat groupHeight = grouped ? 30.0f : .0f;
-    UILabel *view = [[[UILabel alloc] initWithFrame:CGRectMake(.0, groupHeight, tableView.frame.size.width, height - groupHeight)] autorelease];
+    UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(.0, groupHeight, tableView.frame.size.width, height - groupHeight)] autorelease];
     if (grouped) {
-        view.backgroundColor = [UI7Color groupedTableViewSectionBackgroundColor];
+        label.backgroundColor = [UI7Color groupedTableViewSectionBackgroundColor];
     } else {
-        view.backgroundColor = [UI7Kit kit].backgroundColor;
+        label.backgroundColor = [UI7Kit kit].backgroundColor;
     }
 
     if (grouped) {
-        view.text = [@"   " stringByAppendingString:[title uppercaseString]];
-        view.font = [UI7Font systemFontOfSize:14.0 attribute:UI7FontAttributeLight];
-        view.textColor = [UIColor darkGrayColor];
+        label.text = [@"   " stringByAppendingString:[title uppercaseString]];
+        label.font = [UI7Font systemFontOfSize:14.0 attribute:UI7FontAttributeLight];
+        label.textColor = [UIColor darkGrayColor];
     } else {
-        view.text = [@"    " stringByAppendingString:title];
-        view.font = [UI7Font systemFontOfSize:14.0 attribute:UI7FontAttributeBold];
+        label.text = [@"    " stringByAppendingString:title];
+        label.font = [UI7Font systemFontOfSize:14.0 attribute:UI7FontAttributeBold];
     }
 
     if (grouped) {
-        UIView *holder = [[[UIView alloc] initWithFrame:CGRectMake(.0, .0, tableView.frame.size.width, height)] autorelease];
-        [holder addSubview:view];
-        holder.backgroundColor = view.backgroundColor;
-        view = (id)holder;
+        view = [[[UIView alloc] initWithFrame:CGRectMake(.0, .0, tableView.frame.size.width, height)] autorelease];
+        [view addSubview:label];
+        view.backgroundColor = label.backgroundColor;
+    } else {
+        view = label;
     }
     return view;
 }
 
-UIView *UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableView *tableView, NSUInteger section) {
+UIView *_UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableView *tableView, NSUInteger section) {
+    UIView *view = [self __tableView:tableView viewForFooterInSection:section];
+    if (view) {
+        return view;
+    }
     CGFloat height = [tableView.delegate tableView:tableView heightForFooterInSection:section];
     NSString *title = [tableView.dataSource tableView:tableView titleForFooterInSection:section];
     if (title == nil) {
         return [[[UIView alloc] initWithFrame:CGRectZero] autorelease];
     }
     
-    UILabel *view = [[[UILabel alloc] initWithFrame:CGRectMake(.0, .0, tableView.frame.size.width, height)] autorelease];
-    view.backgroundColor = [UI7Kit kit].backgroundColor;
-    view.text = [@"    " stringByAppendingString:title]; // TODO: do this pretty later
-    view.font = [UI7Font systemFontOfSize:14.0 attribute:UI7FontAttributeBold];
-    return view;
+    UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(.0, .0, tableView.frame.size.width, height)] autorelease];
+    label.backgroundColor = [UI7Kit kit].backgroundColor;
+    if (tableView.__style == UITableViewStyleGrouped) {
+        label.text = [@"   " stringByAppendingString:[title uppercaseString]];
+        label.font = [UI7Font systemFontOfSize:14.0 attribute:UI7FontAttributeLight];
+        label.textColor = [UIColor darkGrayColor];
+    } else {
+        label.text = [@"    " stringByAppendingString:title]; // TODO: do this pretty later
+        label.font = [UI7Font systemFontOfSize:14.0 attribute:UI7FontAttributeBold];
+    }
+    return label;
 }
 
 - (void)setDelegate:(id<UITableViewDelegate>)delegate {
@@ -225,30 +266,42 @@ UIView *UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableVie
     }
     if (delegate) {
         Class delegateClass = [(NSObject *)delegate class];
-        if ([self.dataSource respondsToSelector:@selector(tableView:titleForHeaderInSection:)] && ![delegate respondsToSelector:@selector(tableView:viewForHeaderInSection:)]) {
-            [delegateClass addMethodForSelector:@selector(tableView:viewForHeaderInSection:) implementation:(IMP)UI7TableViewDelegateViewForHeaderInSection types:@"@16@0:4@8i12"];
-            if (![delegate respondsToSelector:@selector(tableView:heightForHeaderInSection:)]) {
-                [delegateClass addMethodForSelector:@selector(tableView:heightForHeaderInSection:) implementation:(IMP)UI7TableViewDelegateHeightForHeaderInSection types:@"f16@0:4@8i12"];
+        if ([self.dataSource respondsToSelector:@selector(tableView:titleForHeaderInSection:)]) {
+            if ([delegate respondsToSelector:@selector(tableView:viewForHeaderInSection:)] && ![delegate respondsToSelector:@selector(__tableView:viewForHeaderInSection:)]) {
+                [delegateClass addMethodForSelector:@selector(__tableView:viewForHeaderInSection:) fromMethod:[delegateClass methodForSelector:@selector(tableView:viewForHeaderInSection:)]];
+                [delegateClass methodForSelector:@selector(tableView:viewForHeaderInSection:)].implementation = (IMP)_UI7TableViewDelegateViewForHeaderInSection;
+            } else {
+                [delegateClass addMethodForSelector:@selector(__tableView:viewForHeaderInSection:) implementation:(IMP)_UI7TableViewDelegateNilViewForHeaderFooterInSection types:@"@16@0:4@8i12"];
+                [delegateClass addMethodForSelector:@selector(tableView:viewForHeaderInSection:) implementation:(IMP)_UI7TableViewDelegateViewForHeaderInSection types:@"@16@0:4@8i12"];
+            }
+            if ([delegate respondsToSelector:@selector(tableView:heightForHeaderInSection:)] && ![delegate respondsToSelector:@selector(__tableView:heightForHeaderInSection:)]) {
+                [delegateClass addMethodForSelector:@selector(__tableView:heightForHeaderInSection:) fromMethod:[delegateClass methodForSelector:@selector(tableView:heightForHeaderInSection:)]];
+                [delegateClass methodForSelector:@selector(tableView:heightForHeaderInSection:)].implementation = (IMP)_UI7TableViewDelegateHeightForHeaderInSection;
+            } else {
+                [delegateClass addMethodForSelector:@selector(__tableView:heightForHeaderInSection:) implementation:(IMP)_UI7TableViewDelegateNoHeightForHeaderFooterInSection types:@"f16@0:4@8i12"];
+                [delegateClass addMethodForSelector:@selector(tableView:heightForHeaderInSection:) implementation:(IMP)_UI7TableViewDelegateHeightForHeaderInSection types:@"f16@0:4@8i12"];
             }
         }
-        if ([self.dataSource respondsToSelector:@selector(tableView:titleForFooterInSection:)] && ![delegate respondsToSelector:@selector(tableView:viewForFooterInSection:)]) {
-            [delegateClass addMethodForSelector:@selector(tableView:viewForFooterInSection:) implementation:(IMP)UI7TableViewDelegateViewForFooterInSection types:@"@16@0:4@8i12"];
-            if (![delegate respondsToSelector:@selector(tableView:heightForFooterInSection:)]) {
-                [delegateClass addMethodForSelector:@selector(tableView:heightForFooterInSection:) implementation:(IMP)UI7TableViewDelegateHeightForFooterInSection types:@"f16@0:4@8i12"];
+        if ([self.dataSource respondsToSelector:@selector(tableView:titleForFooterInSection:)]) {
+            if ([delegate respondsToSelector:@selector(tableView:viewForFooterInSection:)] && ![delegate respondsToSelector:@selector(__tableView:viewForFooterInSection:)]) {
+                NSAMethod *method = [delegateClass methodForSelector:@selector(tableView:viewForFooterInSection:)];
+                [delegateClass addMethodForSelector:@selector(__tableView:viewForFooterInSection:) fromMethod:method];
+                method.implementation = (IMP)_UI7TableViewDelegateViewForHeaderInSection;
+            } else {
+                [delegateClass addMethodForSelector:@selector(__tableView:viewForFooterInSection:) implementation:(IMP)_UI7TableViewDelegateNilViewForHeaderFooterInSection types:@"@16@0:4@8i12"];
+                [delegateClass addMethodForSelector:@selector(tableView:viewForFooterInSection:) implementation:(IMP)_UI7TableViewDelegateViewForFooterInSection types:@"@16@0:4@8i12"];
+            }
+            if ([delegate respondsToSelector:@selector(tableView:heightForFooterInSection:)] && ![delegate respondsToSelector:@selector(__tableView:heightForFooterInSection:)]) {
+                [delegateClass addMethodForSelector:@selector(__tableView:heightForFooterInSection:) fromMethod:[delegateClass methodForSelector:@selector(tableView:heightForFooterInSection:)]];
+                [delegateClass methodForSelector:@selector(tableView:heightForFooterInSection:)].implementation = (IMP)_UI7TableViewDelegateHeightForFooterInSection;
+            } else {
+                [delegateClass addMethodForSelector:@selector(__tableView:heightForFooterInSection:) implementation:(IMP)_UI7TableViewDelegateNoHeightForHeaderFooterInSection types:@"f16@0:4@8i12"];
+                [delegateClass addMethodForSelector:@selector(tableView:heightForFooterInSection:) implementation:(IMP)_UI7TableViewDelegateHeightForFooterInSection types:@"f16@0:4@8i12"];
             }
         }
     }
     [self __setDelegate:delegate];
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 // TODO: ok.. do this next time.
 //- (BOOL)_delegateWantsHeaderViewForSection:(NSUInteger)section {
@@ -325,6 +378,26 @@ UIView *UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableVie
         [self _tableViewCellInit];
     }
     return self;
+}
+
+@end
+
+
+@implementation UI7TableViewController
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    return self;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    CGFloat height = [super tableView:tableView heightForHeaderInSection:section];
+    return height;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *view = [super tableView:tableView viewForHeaderInSection:section];
+    return view;
 }
 
 @end

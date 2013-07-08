@@ -14,7 +14,14 @@ UIKIT_EXTERN NSMutableDictionary *UI7TintColors;
 
 - (UIColor *)_tintColor;
 - (UIColor *)__tintColor;
-- (void)_tintColorUpdated;
+- (void)_tintColorUpdated; // implement tintColorDidChange to access here.
 - (void)_backgroundColorUpdated;
+
+@end
+
+
+@interface UITableView (Private)
+
+@property(nonatomic,readonly) UITableViewStyle __style;
 
 @end

@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 youknowone.org. All rights reserved.
 //
 
+#import "UI7KitPrivate.h"
 #import "UI7NavigationBar.h"
 #import "UI7BarButtonItem.h"
 
@@ -111,24 +112,6 @@ static NSMutableDictionary *UI7ViewControllerEditButtonItems = nil;
         UI7ViewControllerEditButtonItems[self.pointerString] = item;
     }
     return item;
-}
-
-@end
-
-
-@implementation UI7TableViewController
-
-// Dynamic patch is not required
-
-+ (void)initialize {
-    if (self == [UI7TableViewController class]) {
-        Class source = [UI7ViewController class];
-        Class target = [UI7TableViewController class];
-
-        [source exportSelector:@selector(navigationItem) toClass:target];
-        [source exportSelector:@selector(editButtonItem) toClass:target];
-        [source exportSelector:@selector(setTitle:) toClass:target];
-    }
 }
 
 @end

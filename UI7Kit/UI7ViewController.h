@@ -9,8 +9,3 @@
 @interface UI7ViewController : UIViewController<UI7Patch>
 
 @end
-
-
-@interface UI7TableViewController : UITableViewController
-
-@end
