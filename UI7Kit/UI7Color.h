@@ -10,6 +10,7 @@
 
 @interface UIColor (UI7Kit)
 
+- (UIColor *)highligtedColorForBackgroundColor:(UIColor *)backgroundColor;
 - (UIColor *)highligtedColor;
 
 @end
