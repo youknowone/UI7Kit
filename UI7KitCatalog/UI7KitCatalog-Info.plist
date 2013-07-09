@@ -35,6 +35,8 @@
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSMainNibFile~ipad</key>
+	<string>Catalog-iPad</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Catalog</string>
 	<key>UIRequiredDeviceCapabilities</key>
