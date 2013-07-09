@@ -110,6 +110,9 @@ NSMutableDictionary *UI7TintColors = nil;
         }
         view = view.superview;
     }
+    if (alpha == .0) {
+        return [UIColor whiteColor];
+    }
     return [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
 }
 
