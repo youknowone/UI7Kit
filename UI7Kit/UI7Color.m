@@ -30,11 +30,11 @@
 @implementation UI7Color
 
 + (UIColor *)defaultBarColor {
-    return [UIColor colorWith8bitWhite:255 alpha:231];
+    return [UIColor colorWith8bitWhite:255 alpha:250];
 }
 
 + (UIColor *)blackBarColor {
-    return [UIColor colorWith8bitWhite:15 alpha:231];
+    return [UIColor colorWith8bitWhite:90 alpha:250];
 }
 
 + (UIColor *)defaultBackgroundColor {
