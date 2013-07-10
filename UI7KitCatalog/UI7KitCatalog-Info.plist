@@ -14,6 +14,20 @@
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
+				<string>Icon_60x60</string>
+				<string>icon_57x57@2x.png</string>
+				<string>icon_57x57.png</string>
+			</array>
+		</dict>
+	</dict>
+	<key>CFBundleIcons~ipad</key>
+	<dict>
+		<key>CFBundlePrimaryIcon</key>
+		<dict>
+			<key>CFBundleIconFiles</key>
+			<array>
+				<string>icon_72x72</string>
+				<string>Icon_60x60</string>
 				<string>icon_57x57@2x.png</string>
 				<string>icon_57x57.png</string>
 			</array>
@@ -37,6 +51,29 @@
 	<true/>
 	<key>NSMainNibFile~ipad</key>
 	<string>Catalog-iPad</string>
+	<key>UILaunchImages</key>
+	<array>
+		<dict>
+			<key>UILaunchImageMinimumOSVersion</key>
+			<string>7.0</string>
+			<key>UILaunchImageName</key>
+			<string>Default</string>
+			<key>UILaunchImageOrientation</key>
+			<string>Portrait</string>
+			<key>UILaunchImageSize</key>
+			<string>{320, 568}</string>
+		</dict>
+		<dict>
+			<key>UILaunchImageMinimumOSVersion</key>
+			<string>7.0</string>
+			<key>UILaunchImageName</key>
+			<string>Default</string>
+			<key>UILaunchImageOrientation</key>
+			<string>Portrait</string>
+			<key>UILaunchImageSize</key>
+			<string>{320, 480}</string>
+		</dict>
+	</array>
 	<key>UIMainStoryboardFile</key>
 	<string>Catalog</string>
 	<key>UIRequiredDeviceCapabilities</key>
