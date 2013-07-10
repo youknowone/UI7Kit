@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UICMainListViewController : UIViewController
+@interface UICMainListViewController : UITableViewController
 
 @end

@@ -281,15 +281,17 @@ UIView *_UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableVi
             if ([delegate respondsToSelector:@selector(tableView:viewForHeaderInSection:)]) {
                 if (![delegateClass methodForSelector:@selector(__tableView:viewForHeaderInSection:)]) {
                     [delegateClass addMethodForSelector:@selector(__tableView:viewForHeaderInSection:) fromMethod:[delegateClass methodForSelector:@selector(tableView:viewForHeaderInSection:)]];
+                    [delegateClass addMethodForSelector:@selector(tableView:viewForHeaderInSection:) implementation:(IMP)_UI7TableViewDelegateViewForHeaderInSection types:@"@16@0:4@8i12"];
                     [delegateClass methodForSelector:@selector(tableView:viewForHeaderInSection:)].implementation = (IMP)_UI7TableViewDelegateViewForHeaderInSection;
                 }
             } else {
                 [delegateClass addMethodForSelector:@selector(__tableView:viewForHeaderInSection:) implementation:(IMP)_UI7TableViewDelegateNilViewForHeaderFooterInSection types:@"@16@0:4@8i12"];
                 [delegateClass addMethodForSelector:@selector(tableView:viewForHeaderInSection:) implementation:(IMP)_UI7TableViewDelegateViewForHeaderInSection types:@"@16@0:4@8i12"];
             }
-            if ([delegate respondsToSelector:@selector(tableView:heightForHeaderInSection:)] && ![delegate respondsToSelector:@selector(__tableView:heightForHeaderInSection:)]) {
-                if ([delegateClass methodForSelector:@selector(__tableView:viewForHeaderInSection:)]) {
+            if ([delegate respondsToSelector:@selector(tableView:heightForHeaderInSection:)]) {
+                if (![delegateClass methodForSelector:@selector(__tableView:heightForHeaderInSection:)]) {
                     [delegateClass addMethodForSelector:@selector(__tableView:heightForHeaderInSection:) fromMethod:[delegateClass methodForSelector:@selector(tableView:heightForHeaderInSection:)]];
+                    [delegateClass addMethodForSelector:@selector(tableView:heightForHeaderInSection:) implementation:(IMP)_UI7TableViewDelegateHeightForHeaderInSection types:@"@16@0:4@8i12"];
                     [delegateClass methodForSelector:@selector(tableView:heightForHeaderInSection:)].implementation = (IMP)_UI7TableViewDelegateHeightForHeaderInSection;
                 }
             } else {
@@ -298,17 +300,23 @@ UIView *_UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableVi
             }
         }
         if ([self.dataSource respondsToSelector:@selector(tableView:titleForFooterInSection:)]) {
-            if ([delegate respondsToSelector:@selector(tableView:viewForFooterInSection:)] && ![delegate respondsToSelector:@selector(__tableView:viewForFooterInSection:)]) {
-                NSAMethod *method = [delegateClass methodForSelector:@selector(tableView:viewForFooterInSection:)];
-                [delegateClass addMethodForSelector:@selector(__tableView:viewForFooterInSection:) fromMethod:method];
-                method.implementation = (IMP)_UI7TableViewDelegateViewForHeaderInSection;
+            if ([delegate respondsToSelector:@selector(tableView:viewForFooterInSection:)]) {
+                if (![delegateClass methodForSelector:@selector(__tableView:viewForFooterInSection:)]) {
+                    NSAMethod *method = [delegateClass methodForSelector:@selector(tableView:viewForFooterInSection:)];
+                    [delegateClass addMethodForSelector:@selector(__tableView:viewForFooterInSection:) fromMethod:method];
+                    [delegateClass addMethodForSelector:@selector(tableView:viewForFooterInSection:) implementation:(IMP)_UI7TableViewDelegateViewForFooterInSection types:@"@16@0:4@8i12"];
+                    method.implementation = (IMP)_UI7TableViewDelegateViewForFooterInSection;
+                }
             } else {
                 [delegateClass addMethodForSelector:@selector(__tableView:viewForFooterInSection:) implementation:(IMP)_UI7TableViewDelegateNilViewForHeaderFooterInSection types:@"@16@0:4@8i12"];
                 [delegateClass addMethodForSelector:@selector(tableView:viewForFooterInSection:) implementation:(IMP)_UI7TableViewDelegateViewForFooterInSection types:@"@16@0:4@8i12"];
             }
-            if ([delegate respondsToSelector:@selector(tableView:heightForFooterInSection:)] && ![delegate respondsToSelector:@selector(__tableView:heightForFooterInSection:)]) {
-                [delegateClass addMethodForSelector:@selector(__tableView:heightForFooterInSection:) fromMethod:[delegateClass methodForSelector:@selector(tableView:heightForFooterInSection:)]];
-                [delegateClass methodForSelector:@selector(tableView:heightForFooterInSection:)].implementation = (IMP)_UI7TableViewDelegateHeightForFooterInSection;
+            if ([delegate respondsToSelector:@selector(tableView:heightForFooterInSection:)]) {
+                if (![delegateClass methodForSelector:@selector(__tableView:heightForFooterInSection:)]) {
+                    [delegateClass addMethodForSelector:@selector(__tableView:heightForFooterInSection:) fromMethod:[delegateClass methodForSelector:@selector(tableView:heightForFooterInSection:)]];
+                    [delegateClass addMethodForSelector:@selector(tableView:heightForFooterInSection:) implementation:(IMP)_UI7TableViewDelegateHeightForFooterInSection types:@"f16@0:4@8i12"];
+                    [delegateClass methodForSelector:@selector(tableView:heightForFooterInSection:)].implementation = (IMP)_UI7TableViewDelegateHeightForFooterInSection;
+                }
             } else {
                 [delegateClass addMethodForSelector:@selector(__tableView:heightForFooterInSection:) implementation:(IMP)_UI7TableViewDelegateNoHeightForHeaderFooterInSection types:@"f16@0:4@8i12"];
                 [delegateClass addMethodForSelector:@selector(tableView:heightForFooterInSection:) implementation:(IMP)_UI7TableViewDelegateHeightForFooterInSection types:@"f16@0:4@8i12"];
