@@ -302,10 +302,9 @@ UIView *_UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableVi
         if ([self.dataSource respondsToSelector:@selector(tableView:titleForFooterInSection:)]) {
             if ([delegate respondsToSelector:@selector(tableView:viewForFooterInSection:)]) {
                 if (![delegateClass methodForSelector:@selector(__tableView:viewForFooterInSection:)]) {
-                    NSAMethod *method = [delegateClass methodForSelector:@selector(tableView:viewForFooterInSection:)];
-                    [delegateClass addMethodForSelector:@selector(__tableView:viewForFooterInSection:) fromMethod:method];
+                    [delegateClass addMethodForSelector:@selector(__tableView:viewForFooterInSection:) fromMethod:[delegateClass methodForSelector:@selector(tableView:viewForFooterInSection:)]];
                     [delegateClass addMethodForSelector:@selector(tableView:viewForFooterInSection:) implementation:(IMP)_UI7TableViewDelegateViewForFooterInSection types:@"@16@0:4@8i12"];
-                    method.implementation = (IMP)_UI7TableViewDelegateViewForFooterInSection;
+                    [delegateClass methodForSelector:@selector(tableView:viewForFooterInSection:)].implementation = (IMP)_UI7TableViewDelegateViewForFooterInSection;
                 }
             } else {
                 [delegateClass addMethodForSelector:@selector(__tableView:viewForFooterInSection:) implementation:(IMP)_UI7TableViewDelegateNilViewForHeaderFooterInSection types:@"@16@0:4@8i12"];
