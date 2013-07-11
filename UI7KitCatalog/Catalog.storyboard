@@ -366,12 +366,12 @@
             </objects>
             <point key="canvasLocation" x="798" y="217"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar Controller - Table View Components-->
         <scene sceneID="QqZ-2I-MtT">
             <objects>
                 <tabBarController definesPresentationContext="YES" id="Qx1-Ht-dsD" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="AKL-qp-PUC"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationItem key="navigationItem" title="Table View Components" id="AKL-qp-PUC"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="b4O-VB-Fb8">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -461,10 +461,10 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Section header #3" footerTitle="Section footer #3" id="nRb-7N-aDZ">
+                            <tableViewSection headerTitle="" footerTitle="Section footer #3" id="nRb-7N-aDZ">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Rbi-tH-TX6" detailTextLabel="TFh-eK-sWO" style="IBUITableViewCellStyleValue1" id="3Z9-8D-Q1Z">
-                                        <rect key="frame" x="0.0" y="374" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="346" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3Z9-8D-Q1Z" id="HQX-hu-UCy">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -488,7 +488,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Xhh-GL-bcG" detailTextLabel="zVI-05-lnM" style="IBUITableViewCellStyleValue2" id="zst-cS-AJj">
-                                        <rect key="frame" x="0.0" y="418" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="390" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zst-cS-AJj" id="k3Q-Lc-VyO">
                                             <rect key="frame" x="0.0" y="0.0" width="273" height="43"/>

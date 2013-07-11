@@ -13,7 +13,7 @@
 
 //NSMutableDictionary *UI7TableViewStyleIsGrouped = nil;
 
-CGFloat UI7TableViewGroupedTableSectionSeperatorHeight = 35.0f;
+CGFloat UI7TableViewGroupedTableSectionSeperatorHeight = 28.0f;
 
 @implementation UITableView (Patch)
 
@@ -169,13 +169,13 @@ CGFloat _UI7TableViewDelegateHeightForHeaderInSection(id self, SEL _cmd, UITable
     NSString *title = [tableView.dataSource tableView:tableView titleForHeaderInSection:section];
 //    if ([UI7TableViewStyleIsGrouped containsKey:tableView.pointerString]) {
     if (tableView.__style == UITableViewStyleGrouped) {
-        if (title) {
+        if (title.length > 0) {
             height = UI7TableViewGroupedTableSectionSeperatorHeight + 20.0f;
         } else {
             height = UI7TableViewGroupedTableSectionSeperatorHeight;
         }
     } else {
-        if (title) {
+        if (title.length > 0) {
             height = tableView.sectionHeaderHeight;
         }
     }
@@ -188,7 +188,10 @@ CGFloat _UI7TableViewDelegateHeightForFooterInSection(id self, SEL _cmd, UITable
         return height;
     }
     NSString *title = [tableView.dataSource tableView:tableView titleForFooterInSection:section];
-    if (title) {
+    if (title.length > 0) {
+        if (tableView.__style == UITableViewStyleGrouped) {
+            return 25.0;
+        }
         return tableView.sectionFooterHeight;
     }
     return .0;
@@ -218,19 +221,16 @@ UIView *_UI7TableViewDelegateViewForHeaderInSection(id self, SEL _cmd, UITableVi
 
     CGFloat groupHeight = grouped ? UI7TableViewGroupedTableSectionSeperatorHeight : .0f;
     UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(.0, groupHeight, tableView.frame.size.width, height - groupHeight)] autorelease];
-    if (grouped) {
-        label.backgroundColor = [UI7Color groupedTableViewSectionBackgroundColor];
-    } else {
-        label.backgroundColor = [UI7Kit kit].backgroundColor;
-    }
 
     if (grouped) {
         label.text = [@"   " stringByAppendingString:[title uppercaseString]];
-        label.font = [UI7Font systemFontOfSize:14.0 attribute:UI7FontAttributeLight];
-        label.textColor = [UIColor darkGrayColor];
+        label.font = [UI7Font systemFontOfSize:14.0 attribute:UI7FontAttributeNone];
+        label.textColor = [UIColor colorWith8bitWhite:77 alpha:255];
+        label.backgroundColor = [UIColor colorWith8bitRed:239 green:239 blue:244 alpha:255];
     } else {
         label.text = [@"    " stringByAppendingString:title];
-        label.font = [UI7Font systemFontOfSize:14.0 attribute:UI7FontAttributeBold];
+        label.font = [UI7Font systemFontOfSize:14.0 attribute:UI7FontAttributeMedium];
+        label.backgroundColor = [UIColor colorWith8bitRed:248 green:248 blue:248 alpha:255];
     }
 
     if (grouped) {
@@ -255,14 +255,15 @@ UIView *_UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableVi
     }
     
     UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(.0, .0, tableView.frame.size.width, height)] autorelease];
-    label.backgroundColor = [UI7Kit kit].backgroundColor;
     if (tableView.__style == UITableViewStyleGrouped) {
-        label.text = [@"   " stringByAppendingString:[title uppercaseString]];
-        label.font = [UI7Font systemFontOfSize:14.0 attribute:UI7FontAttributeLight];
-        label.textColor = [UIColor darkGrayColor];
+        label.text = [@"   " stringByAppendingString:title];
+        label.font = [UI7Font systemFontOfSize:14.0 attribute:UI7FontAttributeNone];
+        label.textColor = [UIColor colorWith8bitWhite:128 alpha:255];
+        label.backgroundColor = [UIColor colorWith8bitRed:239 green:239 blue:244 alpha:255];
     } else {
         label.text = [@"    " stringByAppendingString:title]; // TODO: do this pretty later
-        label.font = [UI7Font systemFontOfSize:14.0 attribute:UI7FontAttributeBold];
+        label.font = [UI7Font systemFontOfSize:14.0 attribute:UI7FontAttributeMedium];
+        label.backgroundColor = [UIColor colorWith8bitRed:248 green:248 blue:248 alpha:255];
     }
     return label;
 }
@@ -358,8 +359,6 @@ UIView *_UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableVi
 - (id)__initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier { assert(NO); return nil; }
 
 - (void)_tableViewCellInit {
-    self.textLabel.font = [UI7Font systemFontOfSize:18.0 attribute:UI7FontAttributeLight];
-    self.detailTextLabel.font = [UI7Font systemFontOfSize:17.0 attribute:UI7FontAttributeLight]; // FIXME: not sure
     self.textLabel.highlightedTextColor = self.textLabel.textColor;
     self.detailTextLabel.highlightedTextColor = self.detailTextLabel.textColor; // FIXME: not sure
     self.selectedBackgroundView = [UIColor colorWith8bitWhite:217 alpha:255].image.view;
