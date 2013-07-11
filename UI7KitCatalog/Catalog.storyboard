@@ -380,6 +380,7 @@
                     <connections>
                         <segue destination="a1g-p5-cXz" kind="relationship" relationship="viewControllers" id="KKP-Ie-hm8"/>
                         <segue destination="dix-Nq-Hcs" kind="relationship" relationship="viewControllers" id="YFN-dv-J7u"/>
+                        <segue destination="mZg-op-Qyc" kind="relationship" relationship="viewControllers" id="PCr-wg-i7s"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E36-Dg-2Az" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -525,6 +526,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NQ7-A6-u9C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="798" y="882"/>
+        </scene>
+        <!--Bare Table View Controller - Bare-->
+        <scene sceneID="gxl-UE-t1R">
+            <objects>
+                <tableViewController id="mZg-op-Qyc" customClass="UICBareTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="IcK-nD-ChX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="mZg-op-Qyc" id="sCc-ZJ-jp4"/>
+                            <outlet property="delegate" destination="mZg-op-Qyc" id="J77-Sf-8HT"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Bare" id="H80-J4-bko"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LRc-Zs-gsn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="798" y="1552"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

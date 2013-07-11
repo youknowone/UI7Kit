@@ -36,6 +36,10 @@ CGFloat UI7TableViewGroupedTableSectionSeperatorHeight = 28.0f;
     [self __dealloc];
 }
 
+- (id)__dequeueReusableCellWithIdentifier:(NSString *)identifier forIndexPath:(NSIndexPath *)indexPath {
+    return [self dequeueReusableCellWithIdentifier:identifier];
+}
+
 @end
 
 
@@ -90,6 +94,10 @@ CGFloat UI7TableViewGroupedTableSectionSeperatorHeight = 28.0f;
     [self exportSelector:@selector(awakeFromNib) toClass:target];
     [self exportSelector:@selector(setDelegate:) toClass:target];
     [self exportSelector:@selector(style) toClass:target];
+
+    if (![target methodForSelector:@selector(dequeueReusableCellWithIdentifier:forIndexPath:)]) {
+        [target addMethodForSelector:@selector(dequeueReusableCellWithIdentifier:forIndexPath:) fromMethod:[self methodForSelector:@selector(__dequeueReusableCellWithIdentifier:forIndexPath:)]];
+    }
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
@@ -358,6 +366,11 @@ UIView *_UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableVi
 - (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
 - (id)__initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier { assert(NO); return nil; }
 
+- (void)_tableViewCellInitTheme {
+    self.textLabel.font = [UI7Font systemFontOfSize:self.textLabel.font.pointSize attribute:UI7FontAttributeLight];
+    self.detailTextLabel.font = [UI7Font systemFontOfSize:self.detailTextLabel.font.pointSize attribute:UI7FontAttributeNone];
+}
+
 - (void)_tableViewCellInit {
     self.textLabel.highlightedTextColor = self.textLabel.textColor;
     self.detailTextLabel.highlightedTextColor = self.detailTextLabel.textColor; // FIXME: not sure
@@ -396,6 +409,7 @@ UIView *_UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableVi
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [self __initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self != nil) {
+        [self _tableViewCellInitTheme]; // not adjusted now
         [self _tableViewCellInit];
     }
     return self;

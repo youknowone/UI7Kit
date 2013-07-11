@@ -113,6 +113,7 @@
 		38F0682F1636F8C8002723AB /* UITMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38F0682E1636F8C8002723AB /* UITMasterViewController.m */; };
 		38F068321636F8C9002723AB /* UITDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38F068311636F8C9002723AB /* UITDetailViewController.m */; };
 		38F0C7B1177C3F2C00645662 /* UI7TextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 38F0C7B0177C3F2C00645662 /* UI7TextField.m */; };
+		38FB2AA2178F06B1000491FE /* UICBareTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FB2AA1178F06B1000491FE /* UICBareTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -289,6 +290,8 @@
 		38F0C7B0177C3F2C00645662 /* UI7TextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7TextField.m; sourceTree = "<group>"; };
 		38F2BA431767599400F12168 /* UI7NavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7NavigationBar.h; sourceTree = "<group>"; };
 		38F2BA441767599400F12168 /* UI7NavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7NavigationBar.m; sourceTree = "<group>"; };
+		38FB2AA0178F06B1000491FE /* UICBareTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICBareTableViewController.h; sourceTree = "<group>"; };
+		38FB2AA1178F06B1000491FE /* UICBareTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICBareTableViewController.m; sourceTree = "<group>"; };
 		55EED93614CF421499E970F0 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		C081AB61224D42EF8B7ABD3F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -442,6 +445,8 @@
 				38DBEB7B178C6F28000EFC5C /* UICMainListViewController.m */,
 				38DBEB74178C67FB000EFC5C /* UICGlobalSettingsViewController.h */,
 				38DBEB75178C67FB000EFC5C /* UICGlobalSettingsViewController.m */,
+				38FB2AA0178F06B1000491FE /* UICBareTableViewController.h */,
+				38FB2AA1178F06B1000491FE /* UICBareTableViewController.m */,
 				384BF426178A176600485BED /* Supporting Files */,
 			);
 			path = UI7KitCatalog;
@@ -886,6 +891,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38DBEB79178C6A27000EFC5C /* UICUserDefaults.m in Sources */,
+				38FB2AA2178F06B1000491FE /* UICBareTableViewController.m in Sources */,
 				38DBEB76178C67FB000EFC5C /* UICGlobalSettingsViewController.m in Sources */,
 				384BF42C178A176600485BED /* main.m in Sources */,
 				38DBEB7C178C6F28000EFC5C /* UICMainListViewController.m in Sources */,
