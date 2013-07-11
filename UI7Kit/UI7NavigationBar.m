@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 youknowone.org. All rights reserved.
 //
 
+#import "UI7KitPrivate.h"
 #import "UI7Font.h"
 #import "UI7Color.h"
 #import "UI7BarButtonItem.h"
@@ -43,11 +44,6 @@
 
     [self setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
     [self setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsLandscapePhone];
-    [self setTitleTextAttributes:@{
-                                   UITextAttributeFont: [UI7Font systemFontOfSize:17.0 attribute:UI7FontAttributeMedium],
-                                   UITextAttributeTextColor: [UIColor blackColor],
-                                   UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetZero],
-                                   }];
 }
 
 @end
@@ -94,16 +90,36 @@
 - (void)setBarStyle:(UIBarStyle)barStyle {
     [self __setBarStyle:barStyle];
 
+    UIColor *backgroundColor = nil;
+    UIColor *titleColor = nil;
     switch (barStyle) {
         case UIBarStyleDefault: {
-            self.backgroundColor = [UI7Color defaultBarColor];
+            backgroundColor = [UI7Color defaultBarColor];
+            titleColor = [UIColor blackColor];
         }   break;
         case UIBarStyleBlackOpaque:
         case UIBarStyleBlackTranslucent: {
-            self.backgroundColor = [UI7Color blackBarColor];
+            backgroundColor = [UI7Color blackBarColor];
+            titleColor = [UIColor whiteColor];
         }   break;
         default:
             break;
+    }
+    if (titleColor) {
+        [self setTitleTextAttributes:@{
+                                       UITextAttributeFont: [UI7Font systemFontOfSize:17.0 attribute:UI7FontAttributeMedium],
+                                       UITextAttributeTextShadowColor: [UIColor clearColor],
+                                       UITextAttributeTextColor: titleColor,
+                                       UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetZero],
+                                       }];
+        // Trick to force rerender title
+        NSString *title = [self.topItem.title retain];
+        self.topItem.title = @"";
+        self.topItem.title = title;
+        [title release];
+    }
+    if (backgroundColor) {
+        self.backgroundColor = backgroundColor;
     }
 }
 
@@ -124,7 +140,6 @@
 //    dlog(DEBUG_NAVIGATIONBAR, @"ccurrentBackButton: %@ %@", button, [button title]);
 //    return button;
 //}
-
 
 @end
 
