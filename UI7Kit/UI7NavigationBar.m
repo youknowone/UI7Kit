@@ -26,6 +26,8 @@
 
 @implementation UINavigationBar (Patch)
 
+- (id)init { return [super init]; }
+- (id)__init { assert(NO); return nil; }
 - (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
 - (id)__initWithFrame:(CGRect)frame { assert(NO); return nil; }
 - (void)__setBarStyle:(UIBarStyle)barStyle { assert(NO); }
@@ -34,7 +36,6 @@
 - (void)_navigationBarInit {
     [self setBarStyle:self.barStyle];
 
-    self.backgroundColor = [UI7Color defaultBarColor];
     UIGraphicsBeginImageContext(CGSizeMake(1.0, 3.0));
     CGContextRef context = UIGraphicsGetCurrentContext();
     [[UIColor colorWith8bitWhite:178 alpha:255] set];
@@ -55,6 +56,7 @@
     if (self == [UI7NavigationBar class]) {
         Class target = [UINavigationBar class];
 
+        [target copyToSelector:@selector(__init) fromSelector:@selector(init)];
         [target copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
         [target copyToSelector:@selector(__initWithFrame:) fromSelector:@selector(initWithFrame:)];
         [target copyToSelector:@selector(__setBarStyle:) fromSelector:@selector(setBarStyle:)];
@@ -65,10 +67,19 @@
 + (void)patch {
     Class target =  [UINavigationBar class];
 
+    [self exportSelector:@selector(init) toClass:target];
     [self exportSelector:@selector(initWithCoder:) toClass:target];
     [self exportSelector:@selector(initWithFrame:) toClass:target];
     [self exportSelector:@selector(setBarStyle:) toClass:target];
     [self exportSelector:@selector(pushNavigationItem:) toClass:target];
+}
+
+- (id)init {
+    self = [self __init];
+    if (self) {
+        [self _navigationBarInit];
+    }
+    return self;
 }
 
 - (id)initWithFrame:(CGRect)frame {

@@ -96,6 +96,8 @@
 		38C6779A1786CA6100B00C61 /* UITPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C677991786CA6100B00C61 /* UITPickerViewController.m */; };
 		38CE37D6176F657800AC0C89 /* UI7SegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 38CE37D4176F4C8400AC0C89 /* UI7SegmentedControl.m */; };
 		38D1C937177EF7B70026135A /* UI7Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D1C936177EF7B70026135A /* UI7Tool.m */; };
+		38D3310317906FE3009576B2 /* UITIssue41ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D3310217906FE3009576B2 /* UITIssue41ViewController.m */; };
+		38D3310517911022009576B2 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38D3310417911022009576B2 /* MessageUI.framework */; };
 		38DBEB76178C67FB000EFC5C /* UICGlobalSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DBEB75178C67FB000EFC5C /* UICGlobalSettingsViewController.m */; };
 		38DBEB79178C6A27000EFC5C /* UICUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DBEB78178C6A27000EFC5C /* UICUserDefaults.m */; };
 		38DBEB7C178C6F28000EFC5C /* UICMainListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DBEB7B178C6F28000EFC5C /* UICMainListViewController.m */; };
@@ -259,6 +261,9 @@
 		38CE37D4176F4C8400AC0C89 /* UI7SegmentedControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UI7SegmentedControl.m; sourceTree = "<group>"; };
 		38D1C935177EF7B70026135A /* UI7Tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7Tool.h; sourceTree = "<group>"; };
 		38D1C936177EF7B70026135A /* UI7Tool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7Tool.m; sourceTree = "<group>"; };
+		38D3310117906FE3009576B2 /* UITIssue41ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITIssue41ViewController.h; sourceTree = "<group>"; };
+		38D3310217906FE3009576B2 /* UITIssue41ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITIssue41ViewController.m; sourceTree = "<group>"; };
+		38D3310417911022009576B2 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		38DBEB74178C67FB000EFC5C /* UICGlobalSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICGlobalSettingsViewController.h; sourceTree = "<group>"; };
 		38DBEB75178C67FB000EFC5C /* UICGlobalSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICGlobalSettingsViewController.m; sourceTree = "<group>"; };
 		38DBEB77178C6A27000EFC5C /* UICUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICUserDefaults.h; sourceTree = "<group>"; };
@@ -333,6 +338,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38D3310517911022009576B2 /* MessageUI.framework in Frameworks */,
 				38AF86CF1769BC8000BFBD29 /* libUI7Kit.a in Frameworks */,
 				38F068181636F8C8002723AB /* UIKit.framework in Frameworks */,
 				38F068191636F8C8002723AB /* Foundation.framework in Frameworks */,
@@ -397,6 +403,7 @@
 		383764C913373154007072FD = {
 			isa = PBXGroup;
 			children = (
+				38D3310417911022009576B2 /* MessageUI.framework */,
 				38D7EB31176753A600B1DCAE /* UI7Kit */,
 				38017438176989660049D26C /* UI7KitTests */,
 				38F0681B1636F8C8002723AB /* TestApp */,
@@ -435,7 +442,6 @@
 		384BF425178A176600485BED /* UI7KitCatalog */ = {
 			isa = PBXGroup;
 			children = (
-				38DBEB7E178C7346000EFC5C /* iPad */,
 				384BF443178A19D600485BED /* Catalog.storyboard */,
 				38DBEB77178C6A27000EFC5C /* UICUserDefaults.h */,
 				38DBEB78178C6A27000EFC5C /* UICUserDefaults.m */,
@@ -534,13 +540,6 @@
 			path = UI7Kit;
 			sourceTree = "<group>";
 		};
-		38DBEB7E178C7346000EFC5C /* iPad */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = iPad;
-			sourceTree = "<group>";
-		};
 		38F0681B1636F8C8002723AB /* TestApp */ = {
 			isa = PBXGroup;
 			children = (
@@ -571,6 +570,8 @@
 				3888FC61176C7C7900489638 /* UITIssue1ViewController.m */,
 				3810413117884A4300A85540 /* UITIssue12ViewController.h */,
 				3810413217884A4300A85540 /* UITIssue12ViewController.m */,
+				38D3310117906FE3009576B2 /* UITIssue41ViewController.h */,
+				38D3310217906FE3009576B2 /* UITIssue41ViewController.m */,
 				38D1C935177EF7B70026135A /* UI7Tool.h */,
 				38D1C936177EF7B70026135A /* UI7Tool.m */,
 				38F0681C1636F8C8002723AB /* Supporting Files */,
@@ -918,6 +919,7 @@
 				381595A91784936A001CC0CD /* UITSegmentedControlViewController.m in Sources */,
 				38C6779A1786CA6100B00C61 /* UITPickerViewController.m in Sources */,
 				3810413317884A4300A85540 /* UITIssue12ViewController.m in Sources */,
+				38D3310317906FE3009576B2 /* UITIssue41ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

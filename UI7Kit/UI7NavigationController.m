@@ -11,8 +11,25 @@
 
 #import "UI7NavigationController.h"
 
+
+@interface UINavigationController (Accessor)
+
+@property(nonatomic,assign) Class navigationBarClass;
+
+@end
+
+
+@implementation UINavigationController (Accessor)
+
+NSAPropertyGetter(navigationBarClass, @"_navigationBarClass");
+NSAPropertyAssignSetter(setNavigationBarClass, @"_navigationBarClass");
+
+@end
+
+
 @implementation UINavigationController (Patch)
 
+- (id)__init { assert(NO); return nil; }
 - (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
 - (id)__initWithRootViewController:(UIViewController *)rootViewController { assert(NO); return nil; }
 
@@ -35,6 +52,7 @@
     if (self == [UI7NavigationController class]) {
         Class target = [UINavigationController class];
 
+        [target copyToSelector:@selector(__init) fromSelector:@selector(init)];
         [target copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
         [target copyToSelector:@selector(__initWithRootViewController:) fromSelector:@selector(initWithRootViewController:)];
     }
@@ -47,6 +65,13 @@
     [self exportSelector:@selector(initWithRootViewController:) toClass:target];
 }
 
+- (id)init {
+    self = [self initWithNavigationBarClass:[UI7NavigationBar class] toolbarClass:[UI7Toolbar class]];
+    if (self != nil) {
+        [self _navigationControllerInit];
+    }
+    return self;
+}
 
 - (id)initWithRootViewController:(UIViewController *)rootViewController {
     self = [self initWithNavigationBarClass:[UI7NavigationBar class] toolbarClass:[UI7Toolbar class]];
@@ -57,6 +82,12 @@
     return self;
 }
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self.navigationBarClass = [UI7NavigationBar class];
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+
+    return self;
+}
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     // no idea yet
