@@ -3,7 +3,7 @@ UI7Kit
 
 UI7Kit is a GUI toolkit to backport flat-style UIKit from iOS7 to iOS5/iOS6. Additionally, UI7Kit can be used to patch legacy UIKit to UI7Kit in runtime.
 
-NOTE: This project is very immature and in progressing. It is not a good idea that try this for complex real-world product. Reporting or contributing any missing feature would be appreciated.
+NOTE: This project is not very mature yet. You may meet some bugs or unexpected behaviors for complex real-world product.
 
 Goal
 ----
@@ -74,7 +74,6 @@ If you have problem with missing methods, 'pod update' usually solves it.
 
 How to install to my project
 ----------------------------
-NOTE: This project is very immature yet.
 
 If you don't have cocoapods, visit http://www.cocoapods.org or follow steps below:
 
@@ -93,7 +92,7 @@ If you have Podfile, add 'UI7Kit'. Or follow steps below:
 This command will generate or edit `YourProject.xcworkspace`.
 Open this instead of your original `YourProject.xcodeproj`.
 
-Implementations
----------------
+Apps using UI7Kit
+-----------------
 
-- Hope to list here something ;)
+- UI7Kit: [https://itunes.apple.com/app/id444076697](https://itunes.apple.com/app/id444076697)
