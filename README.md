@@ -95,4 +95,4 @@ Open this instead of your original `YourProject.xcodeproj`.
 Apps using UI7Kit
 -----------------
 
-- UI7Kit: [https://itunes.apple.com/app/id444076697](https://itunes.apple.com/app/id444076697)
+- QRQR: [https://itunes.apple.com/app/id444076697](https://itunes.apple.com/app/id444076697)
