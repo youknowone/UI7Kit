@@ -141,7 +141,8 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
 - (id)init {
     self = [self __init];
     if (self != nil) {
-//        self.dimsBackground = NO; // need better
+        SEL setDimsBackground = NSSelectorFromString([@"set" stringByAppendingString:@"DimsBackground:"]);
+        [self performSelector:setDimsBackground withObject:(id)NO];
         self.backgroundImageView = [UIImage clearImage].view;
         self.backgroundView = [[[UIImageView alloc] init] autorelease];
         [self addSubview:self.backgroundView];
@@ -153,11 +154,11 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
     [self __show];;
 
     // dim view - not available before setDimsBackground as NO
-//    UIView *view = self.dimView = [[[UIADimmingView alloc] initWithFrame:self.superview.bounds] autorelease];
-//    view.alpha = 0.4;
-//    view.hidden = YES;
-//    [view setHidden:NO animated:YES];
-//    [self.window insertSubview:view belowSubview:self];
+    UIView *view = self.dimView = [[[UIADimmingView alloc] initWithFrame:self.superview.bounds] autorelease];
+    view.alpha = 0.4;
+    view.hidden = YES;
+    [view setHidden:NO animated:YES];
+    [self.window insertSubview:view belowSubview:self];
 
     // common UI attributes
     self.titleLabel.textColor = self.bodyTextLabel.textColor = [UIColor blackColor];
