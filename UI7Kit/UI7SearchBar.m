@@ -36,6 +36,8 @@
                 [(UITextField *)searchBarSubview setBorderStyle:UITextBorderStyleRoundedRect];
         }
     }
+
+    self.searchTextPositionAdjustment = UIOffsetMake(15.0, 0.0);
 }
 
 @end
