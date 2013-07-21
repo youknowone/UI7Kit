@@ -115,17 +115,19 @@ NSMutableDictionary *UI7TextFieldBorderStyleIsBordered = nil;
 }
 
 - (CGRect)textRectForBounds:(CGRect)bounds {
+    CGRect rect = [self __textRectForBounds:bounds];
     if ([UI7TextFieldBorderStyleIsBordered containsKey:self.pointerString]) {
-        return CGRectInset(bounds, 8.0f, UI7ControlRadius);
+        rect = CGRectInset(rect, 8.0f, UI7ControlRadius);
     }
-    return [self __textRectForBounds:bounds];
+    return rect;
 }
 
 - (CGRect)editingRectForBounds:(CGRect)bounds {
+    CGRect rect = [self __editingRectForBounds:bounds];
     if ([UI7TextFieldBorderStyleIsBordered containsKey:self.pointerString]) {
-        return CGRectInset(bounds, 8.0f, UI7ControlRadius);
+        rect = CGRectInset(rect, 8.0f, UI7ControlRadius);
     }
-    return [self __editingRectForBounds:bounds];
+    return rect;
 }
 
 @end

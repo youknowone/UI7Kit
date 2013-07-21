@@ -381,6 +381,27 @@
                                             <segue destination="mmf-wD-M3e" kind="push" id="oIi-Zx-Rmc"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="#45" textLabel="hNn-NJ-MW4" style="IBUITableViewCellStyleDefault" id="BC8-pB-sxP">
+                                        <rect key="frame" x="0.0" y="506" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="#45" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hNn-NJ-MW4">
+                                                    <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="mkM-Zg-keP" kind="push" id="hxY-iy-bhK"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="VOL-Ip-gE2" id="oVc-S7-0t5"/>
@@ -533,6 +554,71 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J05-TM-dBM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="428" y="2611"/>
+        </scene>
+        <!--View Controller - TextField-->
+        <scene sceneID="e3o-H5-QtJ">
+            <objects>
+                <viewController id="mkM-Zg-keP" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Htc-59-tNL">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TEST" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" clearButtonMode="always" id="wOP-j2-1sA">
+                                <rect key="frame" x="173" y="57" width="109" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TEST" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" clearButtonMode="unlessEditing" id="7Bu-eT-nCe">
+                                <rect key="frame" x="173" y="95" width="109" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TEST" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" id="JwA-gG-MQY">
+                                <rect key="frame" x="173" y="133" width="109" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TEST" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" id="MBi-rr-SEo">
+                                <rect key="frame" x="173" y="20" width="109" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TEST" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" id="6ic-qQ-GCk">
+                                <rect key="frame" x="36" y="57" width="109" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TEST" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="unlessEditing" id="4Ks-od-0RM">
+                                <rect key="frame" x="36" y="95" width="109" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TEST" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" id="tqK-ov-zsq">
+                                <rect key="frame" x="36" y="133" width="109" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TEST" borderStyle="roundedRect" minimumFontSize="17" id="rm9-3N-vHa">
+                                <rect key="frame" x="36" y="20" width="109" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="TextField" id="dAW-w1-IKQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="656-Lr-Dyy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="428" y="3265"/>
         </scene>
         <!--Grouped Table View Controller - Grouped Table View-->
         <scene sceneID="1Zn-Zu-v1U">
@@ -1360,6 +1446,92 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="UI7NavigationBarBackButton.png" width="50" height="33"/>
         <image name="UI7TabBarItemFavoriteSelected.png" width="30" height="30"/>
     </resources>
+    <classes>
+        <class className="UI7Button" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UI7Button.h"/>
+        </class>
+        <class className="UI7PickerView" superclassName="UIPickerView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UI7PickerView.h"/>
+        </class>
+        <class className="UI7RoundedRectButton" superclassName="UI7Button">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UI7RoundedRectButton.h"/>
+        </class>
+        <class className="UIAPlaceholderTextView" superclassName="UITextView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIAPlaceholderTextView.h"/>
+        </class>
+        <class className="UITAlertViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITAlertViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="defaultButton1:"/>
+                <relationship kind="action" name="defaultButton2:"/>
+                <relationship kind="action" name="defaultButton3:"/>
+                <relationship kind="action" name="inputButton1:"/>
+                <relationship kind="action" name="inputButton2:"/>
+                <relationship kind="action" name="inputButton3:"/>
+                <relationship kind="action" name="inputField2:"/>
+            </relationships>
+        </class>
+        <class className="UITDetailViewController" superclassName="UITTintViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="showActionSheet1:"/>
+                <relationship kind="action" name="showActionSheet2:"/>
+                <relationship kind="action" name="showActionSheet3:"/>
+                <relationship kind="action" name="showActionSheet4:"/>
+                <relationship kind="action" name="showAlertView1:"/>
+                <relationship kind="action" name="showAlertView2:"/>
+                <relationship kind="action" name="showAlertView3:"/>
+                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
+            </relationships>
+        </class>
+        <class className="UITGroupedTableViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITGroupedTableViewController.h"/>
+        </class>
+        <class className="UITIssue12ViewController" superclassName="UITTintViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITIssue12ViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="segmentedControl" candidateClass="UISegmentedControl"/>
+            </relationships>
+        </class>
+        <class className="UITIssue1ViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITIssue1ViewController.h"/>
+        </class>
+        <class className="UITIssue41ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITIssue41ViewController.h"/>
+        </class>
+        <class className="UITMasterViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITMasterViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="styleChanged:"/>
+                <relationship kind="outlet" name="listTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="styleSegmentedControl" candidateClass="UISegmentedControl"/>
+            </relationships>
+        </class>
+        <class className="UITPickerViewController" superclassName="UITTintViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITPickerViewController.h"/>
+        </class>
+        <class className="UITSegmentedControlViewController" superclassName="UITTintViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITSegmentedControlViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="segmented1" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="segmented2" candidateClass="UISegmentedControl"/>
+            </relationships>
+        </class>
+        <class className="UITTextViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITTextViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="resign:"/>
+                <relationship kind="action" name="switched:"/>
+                <relationship kind="outlet" name="textView" candidateClass="UIAPlaceholderTextView"/>
+            </relationships>
+        </class>
+        <class className="UITTintViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITTintViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="colorChanged:"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
