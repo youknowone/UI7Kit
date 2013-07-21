@@ -35,6 +35,7 @@ Example with current code. (0.0.16)
 ![Current status](https://raw.github.com/youknowone/UI7Kit/master/UI7Kit.png).
 
 - [Quick video of 0.0.16 test app](http://www.youtube.com/watch?v=xVA5MAbUW44)
+- [Step by step video of 0.2 - QRQR](http://www.youtube.com/watch?v=M2P1Um20py4)
 
 Contact
 -------
@@ -96,3 +97,10 @@ Apps using UI7Kit
 -----------------
 
 - QRQR: [https://itunes.apple.com/app/id444076697](https://itunes.apple.com/app/id444076697)
+
+Do you like this project?
+-------------------------
+
+Is this project joyful or helpful enough for you? Tip me ;)
+
+- [gittip.com/youknowone](https://www.gittip.com/youknowone/)
