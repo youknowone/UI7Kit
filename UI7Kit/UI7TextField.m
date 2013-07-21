@@ -10,7 +10,7 @@
 
 #import "UI7TextField.h"
 
-NSMutableDictionary *UI7TextFieldBorderStyleIsBordered = nil;
+NSString *UI7TextFieldBorderStyleIsBordered = @"UI7TextFieldBorderStyleIsBordered";
 
 @implementation UITextField (Patch)
 
@@ -22,14 +22,6 @@ NSMutableDictionary *UI7TextFieldBorderStyleIsBordered = nil;
 - (void)__setBorderStyle:(UITextBorderStyle)borderStyle { assert(NO); }
 - (CGRect)__textRectForBounds:(CGRect)bounds { assert(NO); return CGRectZero; }
 - (CGRect)__editingRectForBounds:(CGRect)bounds { assert(NO); return CGRectZero; }
-- (void)__dealloc { assert(NO); }
-
-- (void)_dealloc {
-    if ([UI7TextFieldBorderStyleIsBordered containsKey:self.pointerString]) {
-        [UI7TextFieldBorderStyleIsBordered removeObjectForKey:self.pointerString];
-    }
-    [self __dealloc];
-}
 
 - (void)_textFieldInit {
 
@@ -41,11 +33,8 @@ NSMutableDictionary *UI7TextFieldBorderStyleIsBordered = nil;
 
 + (void)initialize {
     if (self == [UI7TextField class]) {
-        UI7TextFieldBorderStyleIsBordered = [[NSMutableDictionary alloc] init];
-
         Class target = [UITextField class];
 
-        [target copyToSelector:@selector(__dealloc) fromSelector:@selector(dealloc)];
         [target copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
 //        [origin copyToSelector:@selector(__initWithFrame:) fromSelector:@selector(initWithFrame:)];
         [target copyToSelector:@selector(__borderStyle) fromSelector:@selector(borderStyle)];
@@ -58,19 +47,12 @@ NSMutableDictionary *UI7TextFieldBorderStyleIsBordered = nil;
 + (void)patch {
     Class target = [UITextField class];
 
-    [self exportSelector:@selector(dealloc) toClass:target];
     [self exportSelector:@selector(initWithFrame:) toClass:target];
     [self exportSelector:@selector(initWithCoder:) toClass:target];
     [self exportSelector:@selector(borderStyle) toClass:target];
     [self exportSelector:@selector(setBorderStyle:) toClass:target];
     [self exportSelector:@selector(textRectForBounds:) toClass:target];
     [self exportSelector:@selector(editingRectForBounds:) toClass:target];
-}
-
-- (void)dealloc {
-    [self _dealloc];
-    return;
-    [super dealloc];
 }
 
 //- (id)initWithFrame:(CGRect)frame {
@@ -91,24 +73,24 @@ NSMutableDictionary *UI7TextFieldBorderStyleIsBordered = nil;
 
 - (void)setBorderStyle:(UITextBorderStyle)borderStyle {
     if (borderStyle == UITextBorderStyleRoundedRect) {
-        [UI7TextFieldBorderStyleIsBordered setObject:@(YES) forKey:self.pointerString];
+        [self setAssociatedObject:@(YES) forKey:UI7TextFieldBorderStyleIsBordered];
         [self __setBorderStyle:UITextBorderStyleNone];
         self.layer.cornerRadius = UI7ControlRadius;
         self.layer.borderWidth = 1.0f;
         self.layer.borderColor = [UIColor lightGrayColor].CGColor;
     } else {
-        if ([UI7TextFieldBorderStyleIsBordered containsKey:self.pointerString]) {
+        if ([self associatedObjectForKey:UI7TextFieldBorderStyleIsBordered]) {
             self.layer.cornerRadius = .0;
             self.layer.borderWidth = .0;
             self.layer.borderColor = [UIColor clearColor].CGColor;
-            [UI7TextFieldBorderStyleIsBordered removeObjectForKey:self.pointerString];
+            [self removeAssociatedObjectForKey:UI7TextFieldBorderStyleIsBordered];
         }
         [self __setBorderStyle:borderStyle];
     }
 }
 
 - (UITextBorderStyle)borderStyle {
-    if ([UI7TextFieldBorderStyleIsBordered containsKey:self.pointerString]) {
+    if ([self associatedObjectForKey:UI7TextFieldBorderStyleIsBordered]) {
         return UITextBorderStyleRoundedRect;
     }
     return [self __borderStyle];
@@ -116,7 +98,7 @@ NSMutableDictionary *UI7TextFieldBorderStyleIsBordered = nil;
 
 - (CGRect)textRectForBounds:(CGRect)bounds {
     CGRect rect = [self __textRectForBounds:bounds];
-    if ([UI7TextFieldBorderStyleIsBordered containsKey:self.pointerString]) {
+    if ([self associatedObjectForKey:UI7TextFieldBorderStyleIsBordered]) {
         rect = CGRectInset(rect, 8.0f, UI7ControlRadius);
     }
     return rect;
@@ -124,7 +106,7 @@ NSMutableDictionary *UI7TextFieldBorderStyleIsBordered = nil;
 
 - (CGRect)editingRectForBounds:(CGRect)bounds {
     CGRect rect = [self __editingRectForBounds:bounds];
-    if ([UI7TextFieldBorderStyleIsBordered containsKey:self.pointerString]) {
+    if ([self associatedObjectForKey:UI7TextFieldBorderStyleIsBordered]) {
         rect = CGRectInset(rect, 8.0f, UI7ControlRadius);
     }
     return rect;

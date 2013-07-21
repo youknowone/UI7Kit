@@ -11,8 +11,6 @@
 
 #import "UI7TableView.h"
 
-//NSMutableDictionary *UI7TableViewStyleIsGrouped = nil;
-
 CGFloat UI7TableViewGroupedTableSectionSeperatorHeight = 28.0f;
 
 @implementation UITableView (Patch)
@@ -27,14 +25,6 @@ CGFloat UI7TableViewGroupedTableSectionSeperatorHeight = 28.0f;
 }
 
 - (void)awakeFromNib { }
-
-- (void)__dealloc { assert(NO); }
-- (void)_dealloc {
-//    if ([UI7TableViewStyleIsGrouped containsKey:self.pointerString]) {
-//        [UI7TableViewStyleIsGrouped removeObjectForKey:self.pointerString];
-//    }
-    [self __dealloc];
-}
 
 - (id)__dequeueReusableCellWithIdentifier:(NSString *)identifier forIndexPath:(NSIndexPath *)indexPath {
     return [self dequeueReusableCellWithIdentifier:identifier];
@@ -73,11 +63,8 @@ CGFloat UI7TableViewGroupedTableSectionSeperatorHeight = 28.0f;
 
 + (void)initialize {
     if (self == [UI7TableView class]) {
-//        UI7TableViewStyleIsGrouped = [[NSMutableDictionary alloc] init];
-
         Class target = [UITableView class];
 
-        [target copyToSelector:@selector(__dealloc) fromSelector:@selector(dealloc)];
         [target copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
         [target copyToSelector:@selector(__initWithFrame:) fromSelector:@selector(initWithFrame:)];
         [target copyToSelector:@selector(__setDelegate:) fromSelector:@selector(setDelegate:)];
@@ -88,7 +75,6 @@ CGFloat UI7TableViewGroupedTableSectionSeperatorHeight = 28.0f;
 + (void)patch {
     Class target = [UITableView class];
 
-    [self exportSelector:@selector(dealloc) toClass:target];
     [self exportSelector:@selector(initWithCoder:) toClass:target];
     [self exportSelector:@selector(initWithFrame:) toClass:target];
     [self exportSelector:@selector(awakeFromNib) toClass:target];
@@ -152,12 +138,6 @@ CGFloat UI7TableViewGroupedTableSectionSeperatorHeight = 28.0f;
     if (self.__style == UITableViewStyleGrouped && self.superview == nil && [self.backgroundColor isEqual:[UIColor clearColor]]) {
         self.backgroundColor = [UIColor whiteColor];
     }
-}
-
-- (void)dealloc {
-    [self _dealloc];
-    return;
-    [super dealloc];
 }
 
 - (UITableViewStyle)style {

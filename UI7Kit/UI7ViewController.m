@@ -12,8 +12,8 @@
 
 #import "UI7ViewController.h"
 
-static NSMutableDictionary *UI7ViewControllerNavigationItems = nil;
-static NSMutableDictionary *UI7ViewControllerEditButtonItems = nil;
+static NSString *UI7ViewControllerNavigationItem = @"UI7ViewControllerNavigationItem";
+static NSString *UI7ViewControllerEditButtonItem = @"UI7ViewControllerEditButtonItem";
 
 @interface UIViewController (Private)
 
@@ -26,13 +26,6 @@ static NSMutableDictionary *UI7ViewControllerEditButtonItems = nil;
 
 - (id)__initViewControllerWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil { assert(NO); return nil; }
 - (id)__initViewControllerWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
-- (id)__deallocViewController { assert(NO); }
-
-- (void)_dealloc {
-    [UI7ViewControllerNavigationItems removeObjectForKey:self.pointerString];
-    [UI7ViewControllerEditButtonItems removeObjectForKey:self.pointerString];
-    [self __deallocViewController];
-}
 
 - (void)_viewControllerInit {
     
@@ -49,14 +42,10 @@ static NSMutableDictionary *UI7ViewControllerEditButtonItems = nil;
 
 + (void)initialize {
     if (self == [UI7ViewController class]) {
-        UI7ViewControllerNavigationItems = [[NSMutableDictionary alloc] init];
-        UI7ViewControllerEditButtonItems = [[NSMutableDictionary alloc] init];
-
         Class target = [UIViewController class];
 
         [target copyToSelector:@selector(__initViewControllerWithCoder:) fromSelector:@selector(initWithCoder:)];
         [target copyToSelector:@selector(__initViewControllerWithNibName:bundle:) fromSelector:@selector(initWithNibName:bundle:)];
-        [target copyToSelector:@selector(__deallocViewController) fromSelector:@selector(dealloc)];
     }
 }
 
@@ -65,13 +54,6 @@ static NSMutableDictionary *UI7ViewControllerEditButtonItems = nil;
 
     [self exportSelector:@selector(initWithCoder:) toClass:target];
     [self exportSelector:@selector(initWithNibName:bundle:) toClass:target];
-    [self copyToSelector:@selector(dealloc) fromSelector:@selector(_dealloc)];
-}
-
-- (void)dealloc {
-    [super _dealloc];
-    return;
-    [super dealloc];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
@@ -96,20 +78,20 @@ static NSMutableDictionary *UI7ViewControllerEditButtonItems = nil;
 }
 
 - (UINavigationItem *)navigationItem {
-    UI7NavigationItem *item = UI7ViewControllerNavigationItems[self.pointerString];
+    UI7NavigationItem *item = [self associatedObjectForKey:UI7ViewControllerNavigationItem];
     if (item == nil) {
         item = [[[UI7NavigationItem alloc] initWithTitle:self.title] autorelease];
-        UI7ViewControllerNavigationItems[self.pointerString] = item;
+        [self setAssociatedObject:item forKey:UI7ViewControllerNavigationItem];
     }
     return item;
 }
 
 - (UIBarButtonItem *)editButtonItem {
-    UI7BarButtonItem *item = UI7ViewControllerEditButtonItems[self.pointerString];
+    UI7BarButtonItem *item = [self associatedObjectForKey:UI7ViewControllerEditButtonItem];
     if (item == nil) {
         SEL toggleSelector = NSSelectorFromString([@"_toggle" stringByAppendingString:@"Editing:"]);
         item = [[[UI7BarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:toggleSelector] autorelease];
-        UI7ViewControllerEditButtonItems[self.pointerString] = item;
+        [self setAssociatedObject:item forKey:UI7ViewControllerEditButtonItem];
     }
     return item;
 }

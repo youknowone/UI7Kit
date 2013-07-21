@@ -12,8 +12,8 @@
 
 #import "UI7ProgressView.h"
 
-NSMutableDictionary *UI7ProgressViewTrackTintColors = nil;
-NSMutableDictionary *UI7ProgressViewProgressTintColors = nil;
+NSString *UI7ProgressViewTrackTintColor = @"UI7ProgressViewTrackTintColor";
+NSString *UI7ProgressViewProgressTintColor = @"UI7ProgressViewProgressTintColor";
 
 @implementation UIProgressView (Patch)
 
@@ -49,20 +49,9 @@ NSMutableDictionary *UI7ProgressViewProgressTintColors = nil;
 
 - (void)_tintColorUpdated {
     [super _tintColorUpdated];
-    if (![UI7ProgressViewProgressTintColors containsKey:self.pointerString]) {
+    if (![self associatedObjectForKey:UI7ProgressViewProgressTintColor]) {
         [self _progressTintColorUpdated];
     }
-}
-
-- (void)__dealloc { assert(NO); }
-- (void)_dealloc {
-    if ([UI7ProgressViewTrackTintColors containsKey:self.pointerString]) {
-        [UI7ProgressViewTrackTintColors removeObjectForKey:self.pointerString];
-    }
-    if ([UI7ProgressViewProgressTintColors containsKey:self.pointerString]) {
-        [UI7ProgressViewProgressTintColors removeObjectForKey:self.pointerString];
-    }
-    [self __dealloc];
 }
 
 @end
@@ -77,7 +66,6 @@ NSMutableDictionary *UI7ProgressViewProgressTintColors = nil;
         [target copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
         [target copyToSelector:@selector(__initWithFrame:) fromSelector:@selector(initWithFrame:)];
         [target copyToSelector:@selector(__initWithProgressViewStyle:) fromSelector:@selector(initWithProgressViewStyle:)];
-        [target copyToSelector:@selector(__dealloc) fromSelector:@selector(dealloc)];
     }
 }
 
@@ -91,7 +79,6 @@ NSMutableDictionary *UI7ProgressViewProgressTintColors = nil;
     [self exportSelector:@selector(setTrackTintColor:) toClass:target];
     [self exportSelector:@selector(progressTintColor) toClass:target];
     [self exportSelector:@selector(setProgressTintColor:) toClass:target];
-    [self exportSelector:@selector(dealloc) toClass:target];
 }
 
 - (id)initWithFrame:(CGRect)frame {
@@ -119,38 +106,28 @@ NSMutableDictionary *UI7ProgressViewProgressTintColors = nil;
 }
 
 - (UIColor *)trackTintColor {
-    if ([UI7ProgressViewTrackTintColors containsKey:self.pointerString]) {
-        return UI7ProgressViewTrackTintColors[self.pointerString];
+    UIColor *color = [self associatedObjectForKey:UI7ProgressViewTrackTintColor];
+    if (color) {
+        return color;
     }
     return [UI7Color defaultTrackTintColor];
 }
 
 - (void)setTrackTintColor:(UIColor *)tintColor {
-    if (tintColor) {
-        UI7ProgressViewTrackTintColors[self.pointerString] = tintColor;
-    } else {
-        if ([UI7ProgressViewTrackTintColors containsKey:self.pointerString]) {
-            [UI7ProgressViewTrackTintColors removeObjectForKey:self.pointerString];
-        }
-    }
+    [self setAssociatedObject:tintColor forKey:UI7ProgressViewTrackTintColor];
     [self _trackTintColorUpdated];
 }
 
 - (UIColor *)progressTintColor {
-    if ([UI7ProgressViewProgressTintColors containsKey:self.pointerString]) {
-        return UI7ProgressViewProgressTintColors[self.pointerString];
+    UIColor *color = [self associatedObjectForKey:UI7ProgressViewProgressTintColor];
+    if (color) {
+        return color;
     }
     return self.tintColor;
 }
 
 - (void)setProgressTintColor:(UIColor *)tintColor {
-    if (tintColor) {
-        UI7ProgressViewProgressTintColors[self.pointerString] = tintColor;
-    } else {
-        if ([UI7ProgressViewProgressTintColors containsKey:self.pointerString]) {
-            [UI7ProgressViewProgressTintColors removeObjectForKey:self.pointerString];
-        }
-    }
+    [self setAssociatedObject:tintColor forKey:UI7ProgressViewProgressTintColor];
     [self _progressTintColorUpdated];
 }
 

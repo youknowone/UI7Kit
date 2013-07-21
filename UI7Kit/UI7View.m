@@ -8,7 +8,7 @@
 
 #import "UI7View.h"
 
-NSMutableDictionary *UI7TintColors = nil;
+static NSString *UI7ViewTintColor = @"UI7ViewTintColor";
 
 @implementation UIView (Patch)
 
@@ -23,20 +23,17 @@ NSMutableDictionary *UI7TintColors = nil;
 + (void)initialize {
     if (self == [UIView class]) {
         if ([UIDevice currentDevice].needsUI7Kit) {
-            UI7TintColors = [[NSMutableDictionary alloc] init];
-
             [self addMethodForSelector:@selector(tintColor) fromMethod:[self methodForSelector:@selector(_view_tintColor)]];
             [self addMethodForSelector:@selector(setTintColor:) fromMethod:[self methodForSelector:@selector(_view_setTintColor:)]];
-            [self copyToSelector:@selector(__view_dealloc) fromSelector:@selector(dealloc)];
-            [self copyToSelector:@selector(dealloc) fromSelector:@selector(_view_dealloc)];
             [self addMethodForSelector:@selector(tintColorDidChange) fromMethod:[self methodForSelector:@selector(_tintColorDidChange)]];
         }
     }
 }
 
 - (UIColor *)_view_tintColor {
-    if ([UI7TintColors containsKey:self.pointerString]) {
-        return UI7TintColors[self.pointerString];
+    UIColor *color = [self associatedObjectForKey:UI7ViewTintColor];
+    if (color) {
+        return color;
     }
     if (self.superview) {
         return self.superview.tintColor;
@@ -45,23 +42,8 @@ NSMutableDictionary *UI7TintColors = nil;
 }
 
 - (void)_view_setTintColor:(UIColor *)color {
-    if (color) {
-        UI7TintColors[self.pointerString] = color;
-    } else {
-        if ([UI7TintColors containsKey:self.pointerString]) {
-            [UI7TintColors removeObjectForKey:self.pointerString];
-        }
-    }
+    [self setAssociatedObject:color forKey:UI7ViewTintColor];
     [self _tintColorUpdated];
-}
-
-- (void)__view_dealloc { assert(NO); }
-
-- (void)_view_dealloc {
-    if ([UI7TintColors containsKey:self.pointerString]) {
-        [UI7TintColors removeObjectForKey:self.pointerString];
-    }
-    [self __view_dealloc];
 }
 
 - (UIColor *)__tintColor { assert(NO); return nil; }

@@ -12,7 +12,7 @@
 #import "UI7TabBar.h"
 
 
-NSMutableDictionary *UI7TabBarStyles = nil;
+NSString *UI7TabBarStyle = @"UI7TabBarStyle";
 
 @interface UITabBar (Private)
 
@@ -27,12 +27,12 @@ NSMutableDictionary *UI7TabBarStyles = nil;
 @implementation UITabBar (UI7Kit)
 
 - (UIBarStyle)_barStyle {
-    NSNumber *styleNumber = UI7TabBarStyles[self.pointerString];
+    NSNumber *styleNumber = [self associatedObjectForKey:UI7TabBarStyle];
     return styleNumber.integerValue;
 }
 
 - (void)_setBarStyle:(UIBarStyle)barStyle {
-    UI7TabBarStyles[self.pointerString] = @(barStyle);
+    [self setAssociatedObject:@(barStyle) forKey:UI7TabBarStyle];
 
     switch (barStyle) {
         case UIBarStyleDefault: {
@@ -94,8 +94,6 @@ NSMutableDictionary *UI7TabBarStyles = nil;
 
 + (void)initialize {
     if (self == [UI7TabBar class]) {
-        UI7TabBarStyles = [[NSMutableDictionary alloc] init];
-
         Class target = [UITabBar class];
 
         [target copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];

@@ -12,8 +12,8 @@
 
 #import "UI7Slider.h"
 
-NSMutableDictionary *UI7SliderMinimumTrackTintColors = nil;
-NSMutableDictionary *UI7SliderMaximumTrackTintColors = nil;
+NSString *UI7SliderMinimumTrackTintColor = @"UI7SliderMinimumTrackTintColor";
+NSString *UI7SliderMaximumTrackTintColor = @"UI7SliderMaximumTrackTintColor";
 
 @implementation UISlider (Patch)
 
@@ -42,22 +42,10 @@ NSMutableDictionary *UI7SliderMaximumTrackTintColors = nil;
 - (void)_tintColorUpdated {
     [super _tintColorUpdated];
 
-    if (![UI7SliderMinimumTrackTintColors containsKey:self.pointerString]) {
+    if (![self associatedObjectForKey:UI7SliderMinimumTrackTintColor]) {
         [self _minimumTrackTintColorUpdated];
     }
 }
-
-- (void)__dealloc { assert(NO); }
-- (void)_dealloc {
-    if ([UI7SliderMinimumTrackTintColors containsKey:self.pointerString]) {
-        [UI7SliderMinimumTrackTintColors removeObjectForKey:self.pointerString];
-    }
-    if ([UI7SliderMaximumTrackTintColors containsKey:self.pointerString]) {
-        [UI7SliderMaximumTrackTintColors removeObjectForKey:self.pointerString];
-    }
-    [self __dealloc];
-}
-
 
 @end
 
@@ -66,14 +54,10 @@ NSMutableDictionary *UI7SliderMaximumTrackTintColors = nil;
 
 + (void)initialize {
     if (self == [UI7Slider class]) {
-        UI7SliderMinimumTrackTintColors = [[NSMutableDictionary alloc] init];
-        UI7SliderMaximumTrackTintColors = [[NSMutableDictionary alloc] init];
-
         Class target = [UISlider class];
 
         [target copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
         [target copyToSelector:@selector(__initWithFrame:) fromSelector:@selector(initWithFrame:)];
-        [target copyToSelector:@selector(__dealloc) fromSelector:@selector(dealloc)];
     }
 }
 
@@ -88,14 +72,7 @@ NSMutableDictionary *UI7SliderMaximumTrackTintColors = nil;
     [self exportSelector:@selector(setMaximumTrackTintColor:) toClass:target];
 }
 
-- (void)dealloc {
-    [self _dealloc];
-    return
-    [super dealloc];
-}
-
-- (id)initWithFrame:(CGRect)frame
-{
+- (id)initWithFrame:(CGRect)frame {
     self = [self __initWithFrame:frame];
     if (self) {
         [self _sliderInitTheme];
@@ -116,38 +93,28 @@ NSMutableDictionary *UI7SliderMaximumTrackTintColors = nil;
 }
 
 - (UIColor *)minimumTrackTintColor {
-    if ([UI7SliderMinimumTrackTintColors containsKey:self.pointerString]) {
-        return UI7SliderMinimumTrackTintColors[self.pointerString];
+    UIColor *color = [self associatedObjectForKey:UI7SliderMinimumTrackTintColor];
+    if (color) {
+        return color;
     }
     return self.tintColor;
 }
 
 - (void)setMinimumTrackTintColor:(UIColor *)tintColor {
-    if (tintColor) {
-        UI7SliderMinimumTrackTintColors[self.pointerString] = tintColor;
-    } else {
-        if ([UI7SliderMinimumTrackTintColors containsKey:self.pointerString]) {
-            [UI7SliderMinimumTrackTintColors removeObjectForKey:self.pointerString];
-        }
-    }
+    [self setAssociatedObject:tintColor forKey:UI7SliderMinimumTrackTintColor];
     [self _minimumTrackTintColorUpdated];
 }
 
 - (UIColor *)maximumTrackTintColor {
-    if ([UI7SliderMaximumTrackTintColors containsKey:self.pointerString]) {
-        return UI7SliderMaximumTrackTintColors[self.pointerString];
+    UIColor *color = [self associatedObjectForKey:UI7SliderMaximumTrackTintColor];
+    if (color) {
+        return color;
     }
     return [UI7Color defaultTrackTintColor];
 }
 
 - (void)setMaximumTrackTintColor:(UIColor *)tintColor {
-    if (tintColor) {
-        UI7SliderMaximumTrackTintColors[self.pointerString] = tintColor;
-    } else {
-        if ([UI7SliderMaximumTrackTintColors containsKey:self.pointerString]) {
-            [UI7SliderMaximumTrackTintColors removeObjectForKey:self.pointerString];
-        }
-    }
+    [self setAssociatedObject:tintColor forKey:UI7SliderMaximumTrackTintColor];
     [self _maximumTrackTintColorUpdated];
 }
 

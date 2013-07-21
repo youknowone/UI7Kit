@@ -41,8 +41,6 @@
 
 CGFloat UI7SegmentedControlHeight = 29.0f;
 
-NSMutableDictionary *UI7SegmentedControlTintColors = nil;
-
 @implementation UISegmentedControl (Patch)
 
 - (void)awakeFromNib { [super awakeFromNib]; }
@@ -106,8 +104,6 @@ NSMutableDictionary *UI7SegmentedControlTintColors = nil;
 
 + (void)initialize {
     if (self == [UI7SegmentedControl class]) {
-        UI7SegmentedControlTintColors = [[NSMutableDictionary alloc] init];
-
         Class target = [UISegmentedControl class];
 
         [target copyToSelector:@selector(__initWithItems:) fromSelector:@selector(initWithItems:)];

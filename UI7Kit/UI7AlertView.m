@@ -27,9 +27,9 @@ const CGFloat UI7AlertViewWidth = 270.0f;
 @end
 
 
-static NSMutableDictionary *UI7AlertViewDimViews = nil;
-static NSMutableDictionary *UI7AlertViewBackgroundViews = nil;
-static NSMutableDictionary *UI7AlertViewStrokeViews = nil;
+static NSString *UI7AlertViewDimView = @"UI7AlertViewDimView";
+static NSString *UI7AlertViewBackgroundView = @"UI7AlertViewBackgroundView";
+static NSString *UI7AlertViewStrokeViews = @"UI7AlertViewStrokeViews";
 
 
 @interface UIAlertView (Accessor)
@@ -49,27 +49,27 @@ NSAPropertyGetter(backgroundImageView, @"_backgroundImageView")
 NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
 
 - (UIView *)dimView {
-    return UI7AlertViewDimViews[self.pointerString];
+    return [self associatedObjectForKey:UI7AlertViewDimView];
 }
 
 - (void)setDimView:(UIView *)dimView {
-    UI7AlertViewDimViews[self.pointerString] = dimView;
+    [self setAssociatedObject:dimView forKey:UI7AlertViewDimView];
 }
 
 - (UIView *)backgroundView {
-    return UI7AlertViewBackgroundViews[self.pointerString];
+    return [self associatedObjectForKey:UI7AlertViewBackgroundView];
 }
 
 - (void)setBackgroundView:(UIView *)backgroundView {
-    UI7AlertViewBackgroundViews[self.pointerString] = backgroundView;
+    [self setAssociatedObject:backgroundView forKey:UI7AlertViewBackgroundView];
 }
 
 - (NSMutableArray *)strokeViews {
-    return UI7AlertViewStrokeViews[self.pointerString];
+    return [self associatedObjectForKey:UI7AlertViewStrokeViews];
 }
 
 - (void)setStrokeViews:(NSMutableArray *)strokeViews {
-    UI7AlertViewStrokeViews[self.pointerString] = strokeViews;
+    [self setAssociatedObject:strokeViews forKey:UI7AlertViewStrokeViews];
 }
 
 @end
@@ -95,14 +95,6 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
 - (void)__show { assert(NO); }
 - (void)__dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated { assert(NO); }
 
-- (void)__dealloc { assert(NO); }
-- (void)_dealloc {
-    [UI7AlertViewDimViews removeObjectForKey:self.pointerString];
-    [UI7AlertViewBackgroundViews removeObjectForKey:self.pointerString];
-    [UI7AlertViewStrokeViews removeObjectForKey:self.pointerString];
-    [self __dealloc];
-}
-
 @end
 
 
@@ -110,15 +102,10 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
 
 + (void)initialize {
     if (self == [UI7AlertView class]) {
-        UI7AlertViewDimViews = [[NSMutableDictionary alloc] init];
-        UI7AlertViewBackgroundViews = [[NSMutableDictionary alloc] init];
-        UI7AlertViewStrokeViews = [[NSMutableDictionary alloc] init];
-
         Class target = [UIAlertView class];
 
         [target copyToSelector:@selector(__init) fromSelector:@selector(init)];
         [target copyToSelector:@selector(__show) fromSelector:@selector(show)];
-        [target copyToSelector:@selector(__dealloc) fromSelector:@selector(dealloc)];
         [target copyToSelector:@selector(__dismissWithClickedButtonIndex:animated:) fromSelector:@selector(dismissWithClickedButtonIndex:animated:)];
     }
 }
@@ -130,12 +117,6 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
     [self exportSelector:@selector(show) toClass:target];
     [self exportSelector:@selector(dealloc) toClass:target];
     [self exportSelector:@selector(dismissWithClickedButtonIndex:animated:) toClass:target];
-}
-
-- (void)dealloc {
-    [super _dealloc];
-    return;
-    [super dealloc];
 }
 
 - (id)init {

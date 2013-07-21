@@ -8,6 +8,7 @@
 
 #import "UI7Switch.h"
 #import <KLSwitch/KLSwitch.h>
+
 @implementation UISwitch (Patch)
 
 - (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
@@ -22,7 +23,9 @@
         self.thumbTintColor = [UIColor whiteColor];
     }
 }
+
 @end
+
 
 @implementation UI7Switch
 

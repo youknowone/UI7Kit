@@ -44,11 +44,6 @@ NSAPropertyGetter(titleLabel, @"_titleLabel");
 - (void)__showFromToolbar:(UIToolbar *)view { assert(NO); }
 - (void)__showInView:(UIView *)view { assert(NO); }
 
-- (void)__dealloc { assert(NO); }
-- (void)_dealloc {
-    [self __dealloc];
-}
-
 - (void)_setTheme {
     self.opaque = NO;
     self.backgroundColor = UIColor.clearColor;
@@ -158,7 +153,6 @@ NSAPropertyGetter(titleLabel, @"_titleLabel");
         [target copyToSelector:@selector(__showFromTabBar:) fromSelector:@selector(showFromTabBar:)];
         [target copyToSelector:@selector(__showFromToolbar:) fromSelector:@selector(showFromToolbar:)];
         [target copyToSelector:@selector(__showInView:) fromSelector:@selector(showInView:)];
-        [target copyToSelector:@selector(__dealloc) fromSelector:@selector(dealloc)];
     }
 }
 
@@ -171,17 +165,9 @@ NSAPropertyGetter(titleLabel, @"_titleLabel");
     [self exportSelector:@selector(showFromTabBar:) toClass:target];
     [self exportSelector:@selector(showFromToolbar:) toClass:target];
     [self exportSelector:@selector(showInView:) toClass:target];
-    [self exportSelector:@selector(dealloc) toClass:target];
     [self exportSelector:@selector(drawRect:) toClass:target];
 
 }
-
-- (void)dealloc {
-    [super _dealloc];
-    return;
-    [super dealloc];
-}
-
 
 - (id)init {
     self = [self __init];
