@@ -29,13 +29,22 @@
     [super viewDidLoad];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+- (void)show:(id)sender {
     MFMailComposeViewController *composeViewController = [[MFMailComposeViewController alloc] init];
     composeViewController.delegate = self;
     [self presentModalViewController:composeViewController animated:YES];
     composeViewController.topViewController.title = @"Send mail";
     [composeViewController setSubject:@"Subject"];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+
+    UINavigationBar *bar = [[[UINavigationBar alloc] initWithFrame:CGRectMake(.0, .0, self.view.frame.size.width, 44.0)] autorelease];
+    [bar pushNavigationItem:[[[UINavigationItem alloc] initWithTitle:@"Title"] autorelease] animated:NO];
+    [self.view addSubview:bar];
+
+    bar.topItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(show:)];
 }
 
 - (void)didReceiveMemoryWarning
