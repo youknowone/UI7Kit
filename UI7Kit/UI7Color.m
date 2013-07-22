@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 youknowone.org. All rights reserved.
 //
 
+#import <UIKitExtension/UIKitExtension.h>
 #import "UI7Color.h"
-
 
 @implementation UIColor (UI7Kit)
 

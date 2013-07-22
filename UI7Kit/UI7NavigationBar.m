@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 youknowone.org. All rights reserved.
 //
 
+#import <cdebug/debug.h>
 #import "UI7KitPrivate.h"
 #import "UI7Font.h"
 #import "UI7Color.h"

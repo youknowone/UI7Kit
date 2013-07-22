@@ -8,6 +8,8 @@
 
 //  Don't access here as much as possible.
 
+#import <UI7Kit/UI7Utilities.h>
+
 UIKIT_EXTERN NSMutableDictionary *UI7TintColors;
 
 @interface UIView (Private)

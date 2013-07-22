@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 youknowone.org. All rights reserved.
 //
 
+#import "UI7Utilities.h"
 #import "UI7KitTests.h"
 
 @interface TableViewDelegate : NSObject<UITableViewDelegate, UI7Patch>
