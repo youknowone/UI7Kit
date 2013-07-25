@@ -28,12 +28,13 @@
     
     UIBarButtonItem *searchBarButton = [UIBarButtonItem appearanceWhenContainedIn:[UISearchBar class], nil];
     [searchBarButton setBackgroundImage:[UIColor clearColor].image forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    [searchBarButton setTitleTextAttributes:@{UITextAttributeFont:[UIFont systemFontOfSize:16]} forState:UIControlStateNormal];
-    [searchBarButton setTitleTextAttributes:@{UITextAttributeTextColor:[UIColor lightGrayColor]} forState:UIControlStateHighlighted];
+    [searchBarButton setTitleTextAttributes:@{UITextAttributeFont:[UIFont systemFontOfSize:16], UITextAttributeTextColor : [UIColor colorWithRed:0.286 green:0.494 blue:0.961 alpha:1.000], UITextAttributeTextShadowOffset : [NSValue valueWithUIOffset:UIOffsetMake(0, 0)],} forState:UIControlStateNormal];
+    [searchBarButton setTitleTextAttributes:@{UITextAttributeTextColor:[UIColor lightGrayColor], UITextAttributeTextShadowOffset : [NSValue valueWithUIOffset:UIOffsetMake(0, 0)],} forState:UIControlStateHighlighted];
 
     for (UIView *searchBarSubview in [self subviews]) {
-        if ([searchBarSubview conformsToProtocol:@protocol(UITextInputTraits)]) {                
-                [(UITextField *)searchBarSubview setBorderStyle:UITextBorderStyleRoundedRect];
+        if ([searchBarSubview respondsToSelector:@selector(setBorderStyle:)]) {
+            [(UITextField *)searchBarSubview setBorderStyle:UITextBorderStyleRoundedRect];
+            searchBarSubview.layer.borderColor = UIColor.clearColor.CGColor;
         }
     }
 }
