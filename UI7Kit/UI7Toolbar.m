@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 youknowone.org. All rights reserved.
 //
 
+#import "UI7KitPrivate.h"
 #import "UI7Color.h"
 
 #import "UI7Toolbar.h"
@@ -36,6 +37,14 @@
     UIGraphicsEndImageContext();
 
     [self setBackgroundImage:backgroundImage forToolbarPosition:UIToolbarPositionTop barMetrics:UIBarMetricsDefault];
+}
+
+- (void)_tintColorUpdated {
+    [super _tintColorUpdated];
+    for (UIBarButtonItem *item in self.items) {
+        item.appearanceSuperview = self.superview;
+        [item _tintColorUpdated];
+    }
 }
 
 @end

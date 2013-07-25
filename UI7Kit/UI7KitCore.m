@@ -29,6 +29,7 @@ UI7Kit *UI7KitSharedObject = nil;
 
 - (void)dealloc {
     self.tintColor = nil;
+    self.backgroundColor = nil;
     [super dealloc];
 }
 
@@ -51,6 +52,7 @@ UI7Kit *UI7KitSharedObject = nil;
          @"UI7ActionSheet",
          @"UI7BarButtonItem",
          @"UI7NavigationBar",
+         @"UI7NavigationItem",
          @"UI7NavigationController",
          @"UI7TabBar",
          @"UI7TabBarItem",

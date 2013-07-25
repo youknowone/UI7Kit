@@ -12,6 +12,6 @@
 
 @end
 
-@interface UI7NavigationItem : UINavigationItem
+@interface UI7NavigationItem : UINavigationItem<UI7Patch>
 
 @end

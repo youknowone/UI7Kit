@@ -67,6 +67,7 @@ CGFloat UI7SegmentedControlHeight = 29.0f;
     [super _tintColorUpdated];
 
     UIColor *tintColor = self.tintColor;
+    if (tintColor == nil) return;
     // Set background images
 
     UIImage *backgroundImage = [UIColor clearColor].image;

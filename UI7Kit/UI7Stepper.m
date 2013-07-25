@@ -35,20 +35,22 @@
 
 - (void)_tintColorUpdated {
     [super _tintColorUpdated];
+    UIColor *tintColor = self.tintColor;
+    if (tintColor == nil) return;
 
     if ([self respondsToSelector:@selector(setBackgroundImage:forState:)]) {
         NSDictionary *backColors = @{
                                      @(UIControlStateNormal): [UIColor clearColor],
-                                     @(UIControlStateHighlighted): self.tintColor.highligtedColor,
+                                     @(UIControlStateHighlighted): tintColor.highligtedColor,
                                      @(UIControlStateDisabled): [UIColor clearColor],
                                      };
         NSDictionary *titleColors = @{
-                                      @(UIControlStateNormal): self.tintColor,
-                                      @(UIControlStateHighlighted): self.tintColor.highligtedColor,
-                                      @(UIControlStateDisabled): self.tintColor.highligtedColor,
+                                      @(UIControlStateNormal): tintColor,
+                                      @(UIControlStateHighlighted): tintColor.highligtedColor,
+                                      @(UIControlStateDisabled): tintColor.highligtedColor,
                                       };
 
-        [self setDividerImage:self.tintColor.image forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal];
+        [self setDividerImage:tintColor.image forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal];
 
         for (NSNumber *stateNumber in @[@(UIControlStateNormal), @(UIControlStateHighlighted), @(UIControlStateDisabled)]) {
             UIControlState state = (UIControlState)(stateNumber.integerValue);
@@ -74,7 +76,7 @@
         //        }
     }
 
-    self.layer.borderColor = self.tintColor.CGColor;
+    self.layer.borderColor = tintColor.CGColor;
 }
 
 @end

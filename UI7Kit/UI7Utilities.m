@@ -19,15 +19,6 @@
 @end
 
 
-@implementation NSObject (Pointer)
-
-- (NSString *)pointerString {
-    return [@"%p" format:self];
-}
-
-@end
-
-
 @implementation NSObject (MethodCopying)
 
 + (void)copyToSelector:(SEL)toSelector fromSelector:(SEL)fromSelector {

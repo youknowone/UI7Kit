@@ -18,13 +18,6 @@
 @end
 
 
-@interface NSObject (Pointer)
-
-@property(nonatomic, readonly) NSString *pointerString;
-
-@end
-
-
 @interface NSObject (MethodCopying)
 
 + (void)copyToSelector:(SEL)toSelector fromSelector:(SEL)fromSelector;

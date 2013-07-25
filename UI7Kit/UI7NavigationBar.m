@@ -17,6 +17,26 @@
 #define DEBUG_NAVIGATIONBAR NO
 
 
+@interface UINavigationItem (Accessor)
+
+@property(nonatomic,assign) UINavigationBar *navigationBar;
+@property(nonatomic,readonly) UIColor *tintColor;
+
+@end
+
+
+@implementation UINavigationItem (Accessor)
+
+NSAPropertyGetter(navigationBar, @"_navigationBar");
+NSAPropertyAssignSetter(setNavigationBar, @"_navigationBar");
+
+- (UIColor *)tintColor {
+    return self.navigationBar.tintColor;
+}
+
+@end
+
+
 @interface UINavigationBar (Private)
 
 - (void)pushNavigationItem:(UINavigationItem *)item;
@@ -33,6 +53,8 @@
 - (id)__initWithFrame:(CGRect)frame { assert(NO); return nil; }
 - (void)__setBarStyle:(UIBarStyle)barStyle { assert(NO); }
 - (void)__pushNavigationItem:(UINavigationItem *)item { assert(NO); }
+- (UIColor *)__tintColor { assert(NO); return nil; }
+- (void)__setTintColor:(UIColor *)tintColor { assert(NO); }
 
 - (void)_navigationBarInit {
     [self setBarStyle:self.barStyle];
@@ -46,6 +68,13 @@
 
     [self setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
     [self setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsLandscapePhone];
+}
+
+- (void)_tintColorUpdated {
+    [super _tintColorUpdated];
+    for (UINavigationItem *item in self.items) {
+        [item _tintColorUpdated];
+    }
 }
 
 @end
@@ -62,6 +91,8 @@
         [target copyToSelector:@selector(__initWithFrame:) fromSelector:@selector(initWithFrame:)];
         [target copyToSelector:@selector(__setBarStyle:) fromSelector:@selector(setBarStyle:)];
         [target copyToSelector:@selector(__pushNavigationItem:) fromSelector:@selector(pushNavigationItem:)];
+        [target copyToSelector:@selector(__tintColor) fromSelector:@selector(tintColor)];
+        [target copyToSelector:@selector(__setTintColor:) fromSelector:@selector(setTintColor:)];
     }
 }
 
@@ -73,6 +104,8 @@
     [self exportSelector:@selector(initWithFrame:) toClass:target];
     [self exportSelector:@selector(setBarStyle:) toClass:target];
     [self exportSelector:@selector(pushNavigationItem:) toClass:target];
+    [self exportSelector:@selector(tintColor) toClass:target];
+    [self exportSelector:@selector(setTintColor:) toClass:target];
 }
 
 - (id)init {
@@ -118,12 +151,13 @@
             break;
     }
     if (titleColor) {
-        [self setTitleTextAttributes:@{
-                                       UITextAttributeFont: [UI7Font systemFontOfSize:17.0 attribute:UI7FontAttributeMedium],
-                                       UITextAttributeTextShadowColor: [UIColor clearColor],
-                                       UITextAttributeTextColor: titleColor,
-                                       UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetZero],
-                                       }];
+        NSDictionary *dict = @{
+                               UITextAttributeFont: [UI7Font systemFontOfSize:17.0 attribute:UI7FontAttributeMedium],
+                               UITextAttributeTextShadowColor: [UIColor clearColor],
+                               UITextAttributeTextColor: titleColor,
+                               UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetZero],
+                               };
+        self.titleTextAttributes = dict;
         // Trick to force rerender title
         NSString *title = [self.topItem.title retain];
         self.topItem.title = @"";
@@ -143,8 +177,13 @@
     [self __pushNavigationItem:item];
     dlog(DEBUG_NAVIGATIONBAR, @"pushNavigationItem: %@", self.backItem.backBarButtonItem);
     if (self.backItem.backBarButtonItem == nil) {
-        self.backItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStyleBordered target:nil action:nil];  // this may cause problem if some code depends on existance of this value.
+        UIBarButtonItem *barButtonItem = [[UI7BarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStyleBordered target:nil action:nil];  // this may cause problem if some code depends on existance of this value.
+        barButtonItem.appearanceSuperview = self.backItem;
+        [barButtonItem _tintColorUpdated];
+        self.backItem.backBarButtonItem = barButtonItem;
     }
+//    item.navigationBar = self;
+    [item _tintColorUpdated];
 }
 //
 //- (id)currentBackButton {
@@ -153,22 +192,75 @@
 //    return button;
 //}
 
+- (UIColor *)tintColor {
+    UIColor *color = [self __tintColor];
+    if (color == nil) {
+        color = [self _tintColor];
+    }
+    return color;
+}
+
+- (void)setTintColor:(UIColor *)tintColor {
+    [self __setTintColor:tintColor];
+    [self _tintColorUpdated];
+}
+
 @end
 
 
-@interface UI7NavigationItem (Patch)
+
+
+@implementation UINavigationItem (UI7NavigationItem)
+
+- (void)_tintColorUpdated {
+    self.leftBarButtonItem.appearanceSuperview = self;
+    [self.leftBarButtonItem _tintColorUpdated];
+    self.rightBarButtonItem.appearanceSuperview = self;
+    [self.rightBarButtonItem _tintColorUpdated];
+    self.backBarButtonItem.appearanceSuperview = self;
+    [self.backBarButtonItem _tintColorUpdated];
+}
 
 @end
 
+
+@implementation UINavigationItem (Patch)
+
+- (id)__init { assert(NO); return nil; }
+- (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
+- (id)__initWithTitle:(NSString *)title { assert(NO); return nil; }
+- (void)__setLeftBarButtonItem:(UIBarButtonItem *)leftBarButtonItem { assert(NO); }
+- (void)__setRightBarButtonItem:(UIBarButtonItem *)rightBarButtonItem { assert(NO); }
+- (void)__setBackBarButtonItem:(UIBarButtonItem *)backBarButtonItem { assert(NO); }
+
+@end
 
 @implementation UI7NavigationItem
 
-- (void)_navigationItemInit {
-//    self.backBarButtonItem
++ (void)initialize {
+    if (self == [UI7NavigationItem class]) {
+        Class target = [UINavigationItem class];
+
+        [target copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
+        [target copyToSelector:@selector(__initWithTitle:) fromSelector:@selector(initWithTitle:)];
+        [target copyToSelector:@selector(__setLeftBarButtonItem:) fromSelector:@selector(setLeftBarButtonItem:)];
+        [target copyToSelector:@selector(__setRightBarButtonItem:) fromSelector:@selector(setRightBarButtonItem:)];
+        [target copyToSelector:@selector(__setBackBarButtonItem:) fromSelector:@selector(setBackBarButtonItem:)];
+    }
+}
+
++ (void)patch {
+    Class target = [UINavigationItem class];
+
+    [self exportSelector:@selector(initWithCoder:) toClass:target];
+    [self exportSelector:@selector(initWithTitle:) toClass:target];
+    [self exportSelector:@selector(setLeftBarButtonItem:) toClass:target];
+    [self exportSelector:@selector(setRightBarButtonItem:) toClass:target];
+    [self exportSelector:@selector(setBackBarButtonItem:) toClass:target];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
-    self = [super initWithCoder:aDecoder];
+    self = [self __initWithCoder:aDecoder];
     if (self != nil) {
 
     }
@@ -176,11 +268,29 @@
 }
 
 - (id)initWithTitle:(NSString *)title {
-    self = [super initWithTitle:title];
+    self = [self __initWithTitle:title];
     if (self != nil) {
         
     }
     return self;
+}
+
+- (void)setLeftBarButtonItem:(UIBarButtonItem *)barButtonItem {
+    [self __setLeftBarButtonItem:barButtonItem];
+    barButtonItem.appearanceSuperview = self;
+    [barButtonItem _tintColorUpdated];
+}
+
+- (void)setRightBarButtonItem:(UIBarButtonItem *)barButtonItem {
+    [self __setRightBarButtonItem:barButtonItem];
+    barButtonItem.appearanceSuperview = self;
+    [barButtonItem _tintColorUpdated];
+}
+
+- (void)setBackBarButtonItem:(UIBarButtonItem *)barButtonItem {
+    [self __setBackBarButtonItem:barButtonItem];
+    barButtonItem.appearanceSuperview = self;
+    [barButtonItem _tintColorUpdated];
 }
 
 //- (UIBarButtonItem *)backBarButtonItem {

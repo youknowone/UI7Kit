@@ -71,6 +71,7 @@
 		385C6CC11786C86F00A182C0 /* UI7PickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 385C6CC01786C86F00A182C0 /* UI7PickerView.m */; };
 		385CE660177009680076C02A /* UI7KitCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 38013FE3176F8352003B7809 /* UI7KitCore.m */; };
 		3861E06B1771F9BC00AA8DE4 /* UI7ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3861E06A1771F9BC00AA8DE4 /* UI7ProgressView.m */; };
+		38717F77179F6009003D9602 /* UI7Window.m in Sources */ = {isa = PBXBuildFile; fileRef = 38717F76179F6007003D9602 /* UI7Window.m */; };
 		387558B1176DD00600AE5C8B /* UI7TabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 387558B0176DD00600AE5C8B /* UI7TabBar.m */; };
 		387558B4176DD03F00AE5C8B /* UI7TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 387558B3176DD03F00AE5C8B /* UI7TabBarController.m */; };
 		387558BB176DEDDF00AE5C8B /* UI7TabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 387558BA176DEDDE00AE5C8B /* UI7TabBarItem.m */; };
@@ -218,6 +219,8 @@
 		385C6CC01786C86F00A182C0 /* UI7PickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7PickerView.m; sourceTree = "<group>"; };
 		3861E0691771F9BC00AA8DE4 /* UI7ProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7ProgressView.h; sourceTree = "<group>"; };
 		3861E06A1771F9BC00AA8DE4 /* UI7ProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7ProgressView.m; sourceTree = "<group>"; };
+		38717F75179F6006003D9602 /* UI7Window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7Window.h; sourceTree = "<group>"; };
+		38717F76179F6007003D9602 /* UI7Window.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7Window.m; sourceTree = "<group>"; };
 		38740492176825D900C0BB18 /* UI7Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7Utilities.h; sourceTree = "<group>"; };
 		38740493176825D900C0BB18 /* UI7Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7Utilities.m; sourceTree = "<group>"; };
 		387558AF176DD00600AE5C8B /* UI7TabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7TabBar.h; sourceTree = "<group>"; };
@@ -494,6 +497,8 @@
 				38C46561177F277000A883EA /* UI7Color.m */,
 				3886F7021770B10700890D47 /* UI7View.h */,
 				3886F7031770B10700890D47 /* UI7View.m */,
+				38717F75179F6006003D9602 /* UI7Window.h */,
+				38717F76179F6007003D9602 /* UI7Window.m */,
 				3801740D176771CF0049D26C /* UI7ViewController.h */,
 				3801740E176771CF0049D26C /* UI7ViewController.m */,
 				38505B2E176B1575004A7725 /* UI7AlertView.h */,
@@ -876,6 +881,7 @@
 				38C46562177F277000A883EA /* UI7Color.m in Sources */,
 				38C46565177F3C6E00A883EA /* UI7SearchBar.m in Sources */,
 				385C6CC11786C86F00A182C0 /* UI7PickerView.m in Sources */,
+				38717F77179F6009003D9602 /* UI7Window.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

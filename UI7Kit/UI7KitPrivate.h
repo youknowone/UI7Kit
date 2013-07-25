@@ -10,9 +10,9 @@
 
 #import <UI7Kit/UI7Utilities.h>
 
-UIKIT_EXTERN NSMutableDictionary *UI7TintColors;
+UIKIT_EXTERN NSString *UI7AppearanceSuperview;
 
-@interface UIView (Private)
+@interface UIView (UI7View)
 
 - (UIColor *)_tintColor;
 - (UIColor *)__tintColor;
@@ -22,7 +22,30 @@ UIKIT_EXTERN NSMutableDictionary *UI7TintColors;
 @end
 
 
-@interface UITableView (Private)
+@interface UINavigationItem (UI7NavigationItem)
+
+- (void)_tintColorUpdated; // implement tintColorDidChange to access here.
+
+@end
+
+
+@interface UIBarButtonItem (UI7BarButtonItem)
+
+@property(assign) id appearanceSuperview;
+- (void)_tintColorUpdated; // implement tintColorDidChange to access here.
+
+@end
+
+
+@interface UITabBarItem (UI7TabBarItem)
+
+@property(assign) id appearanceSuperview;
+- (void)_tintColorUpdated; // implement tintColorDidChange to access here.
+
+@end
+
+
+@interface UITableView (UI7TableView)
 
 @property(nonatomic,readonly) UITableViewStyle __style;
 

@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 youknowone.org. All rights reserved.
 //
 
+#import "UI7KitPrivate.h"
 #import "UI7TabBarItem.h"
 
 @interface UITabBarItem (Private)
@@ -22,7 +23,28 @@
 @end
 
 
+@implementation UITabBarItem (UI7TabBarItem)
+
+- (id)appearanceSuperview {
+    return [self associatedObjectForKey:UI7AppearanceSuperview];
+}
+
+- (void)setAppearanceSuperview:(id)appearanceSuperview {
+    [self setAssociatedObject:appearanceSuperview forKey:UI7AppearanceSuperview policy:OBJC_ASSOCIATION_ASSIGN];
+}
+
+- (void)_tintColorUpdated {
+
+}
+
+@end
+
+
 @implementation UITabBarItem (Patch)
+
++ (void)initialize {
+    [UI7TabBarItem self];
+}
 
 - (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
 

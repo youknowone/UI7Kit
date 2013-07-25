@@ -8,6 +8,7 @@
 
 #import "UI7View.h"
 
+NSString *UI7AppearanceSuperview = @"UI7AppearanceSuperview";
 static NSString *UI7ViewTintColor = @"UI7ViewTintColor";
 
 @implementation UIView (Patch)
@@ -38,7 +39,7 @@ static NSString *UI7ViewTintColor = @"UI7ViewTintColor";
     if (self.superview) {
         return self.superview.tintColor;
     }
-    return [[UI7Kit kit] tintColor];
+    return self.window.tintColor;
 }
 
 - (void)_view_setTintColor:(UIColor *)color {
@@ -53,13 +54,15 @@ static NSString *UI7ViewTintColor = @"UI7ViewTintColor";
     if (tintColor == nil) {
         tintColor = self.superview.tintColor;
         if (tintColor == nil) {
-            tintColor = [UI7Kit kit].tintColor;
+            tintColor = self.window.tintColor;
         }
     }
     return tintColor;
 }
 
 - (void)_tintColorUpdated {
+    if (self.tintColor == nil) return;
+
     [self tintColorDidChange];
     for (UIView *subview in self.subviews) {
         if ([subview respondsToSelector:@selector(_tintColorUpdated)]) {
@@ -69,6 +72,8 @@ static NSString *UI7ViewTintColor = @"UI7ViewTintColor";
 }
 
 - (void)_backgroundColorUpdated {
+    if (self.backgroundColor == nil) return;
+
     for (UIView *subview in self.subviews) {
         if (subview.backgroundColor.components.alpha < 1.0f && [subview respondsToSelector:@selector(_backgroundColorUpdated)]) {
             [subview _backgroundColorUpdated];
@@ -98,6 +103,20 @@ static NSString *UI7ViewTintColor = @"UI7ViewTintColor";
     return [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
 }
 
+- (void)_didMoveToSuperview {
+    if (self.tintColor) {
+        [self _tintColorUpdated];
+    }
+    [self _backgroundColorUpdated];
+}
+
+- (void)_didMoveToWindow {
+    if (self.tintColor) {
+        [self _tintColorUpdated];
+    }
+    [self _backgroundColorUpdated];
+}
+
 @end
 
 
@@ -115,6 +134,8 @@ static NSString *UI7ViewTintColor = @"UI7ViewTintColor";
     Class target = [UIView class];
 
     [self exportSelector:@selector(setBackgroundColor:) toClass:target];
+    [self copyToSelector:@selector(didMoveToSuperview) fromSelector:@selector(_didMoveToSuperview)];
+    [self copyToSelector:@selector(didMoveToWindow) fromSelector:@selector(_didMoveToWindow)];
 }
 
 - (void)setBackgroundColor:(UIColor *)backgroundColor {
@@ -123,3 +144,4 @@ static NSString *UI7ViewTintColor = @"UI7ViewTintColor";
 }
 
 @end
+

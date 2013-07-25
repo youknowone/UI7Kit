@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 youknowone.org. All rights reserved.
 //
 
+#import "UI7KitPrivate.h"
+#import "UI7View.h"
 #import "UI7Font.h"
 #import "UI7Color.h"
 
@@ -46,6 +48,11 @@ NSString *UI7TabBarStyle = @"UI7TabBarStyle";
     }
 }
 
+- (void)_tintColorUpdated {
+    [super _tintColorUpdated];
+    self.selectedImageTintColor = self.superview.tintColor;
+}
+
 @end
 
 
@@ -58,7 +65,7 @@ NSString *UI7TabBarStyle = @"UI7TabBarStyle";
     [self _setBarStyle:self.barStyle];
 
     self.tintColor = [UIColor grayColor];
-    self.selectedImageTintColor = [UI7Kit kit].tintColor;
+    self.selectedImageTintColor = self.superview.tintColor;
 
     UIGraphicsBeginImageContext(CGSizeMake(1.0, 3.0));
     CGContextRef context = UIGraphicsGetCurrentContext();

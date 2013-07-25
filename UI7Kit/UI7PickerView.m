@@ -89,3 +89,14 @@ NSAPropertyGetter(tables, @"_tables");
 }
 
 @end
+
+
+@interface _UI7PickerView: UIView
+
+@end
+
+
+@implementation _UI7PickerView
+
+
+@end
