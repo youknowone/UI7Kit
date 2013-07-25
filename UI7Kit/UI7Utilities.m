@@ -11,9 +11,13 @@
 @implementation UIDevice (iOS7)
 
 - (BOOL)needsUI7Kit {
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
     NSArray *versionParts = [self.systemVersion componentsSeparatedByString:@"."];
     NSInteger major = [versionParts[0] integerValue];
     return major < 7;
+#else
+    return YES;
+#endif
 }
 
 @end
