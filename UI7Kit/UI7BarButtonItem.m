@@ -148,7 +148,6 @@ UIImage *UI7BarButtonItemImages[30] = { nil, };
         case UIBarButtonSystemItemOrganize:
         case UIBarButtonSystemItemTrash:
             //TODO
-            break;
         default: {
             self = [self __initWithBarButtonSystemItem:systemItem target:target action:action];
             if (systemItem == UIBarButtonSystemItemSave || systemItem == UIBarButtonSystemItemDone) {
