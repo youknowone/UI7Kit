@@ -45,13 +45,13 @@ UIImage *UI7BarButtonItemImages[30] = { nil, };
     [self setBackButtonBackgroundImage:backImage forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
     [self setTitleTextAttributes:@{
              UITextAttributeFont:font,
-        UITextAttributeTextColor:self.tintColor,
+        UITextAttributeTextColor:self.tintColor ?: [UI7Color defaultTintColor],
  UITextAttributeTextShadowOffset:[NSValue valueWithUIOffset:UIOffsetZero]
      }
                         forState:UIControlStateNormal];
     [self setTitleTextAttributes:@{
              UITextAttributeFont:font,
-        UITextAttributeTextColor:self.tintColor.highligtedColor,
+        UITextAttributeTextColor:self.tintColor.highligtedColor ?: [UI7Color defaultTintColor].highligtedColor,
  UITextAttributeTextShadowOffset:[NSValue valueWithUIOffset:UIOffsetZero],
      }
                         forState:UIControlStateHighlighted];
