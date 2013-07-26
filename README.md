@@ -97,6 +97,7 @@ Apps using UI7Kit
 -----------------
 
 - QRQR: [https://itunes.apple.com/app/id444076697](https://itunes.apple.com/app/id444076697)
+- MAFOR Marine Forecast Decoder: [https://itunes.apple.com/app/id674865491](https://itunes.apple.com/app/id674865491)
 
 Do you like this project?
 -------------------------
