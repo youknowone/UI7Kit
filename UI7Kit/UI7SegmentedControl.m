@@ -59,7 +59,6 @@ CGFloat UI7SegmentedControlHeight = 29.0f;
     frame.size.height = UI7SegmentedControlHeight;
     self.frame = frame;
 
-    [self _tintColorUpdated];
     [self _backgroundColorUpdated];
 }
 
@@ -121,8 +120,10 @@ CGFloat UI7SegmentedControlHeight = 29.0f;
     [self exportSelector:@selector(initWithItems:) toClass:target];
     [self exportSelector:@selector(initWithFrame:) toClass:target];
     [self exportSelector:@selector(awakeFromNib) toClass:target];
-    [self exportSelector:@selector(tintColor) toClass:target];
-    [self exportSelector:@selector(setTintColor:) toClass:target];
+    if (![UIDevice currentDevice].iOS7) {
+        [self exportSelector:@selector(tintColor) toClass:target];
+        [self exportSelector:@selector(setTintColor:) toClass:target];
+    }
 }
 
 - (void)awakeFromNib {

@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 youknowone.org. All rights reserved.
 //
 
+#import "UI7KitPrivate.h"
 #import "UI7View.h"
 
 NSString *UI7AppearanceSuperview = @"UI7AppearanceSuperview";
@@ -24,15 +25,30 @@ static NSString *UI7ViewTintColor = @"UI7ViewTintColor";
 + (void)initialize {
     if (self == [UIView class]) {
         if ([UIDevice currentDevice].needsUI7Kit) {
-            [self addMethodForSelector:@selector(tintColor) fromMethod:[self methodForSelector:@selector(_view_tintColor)]];
-            [self addMethodForSelector:@selector(setTintColor:) fromMethod:[self methodForSelector:@selector(_view_setTintColor:)]];
-            [self addMethodForSelector:@selector(tintColorDidChange) fromMethod:[self methodForSelector:@selector(_tintColorDidChange)]];
+            if ([UIDevice currentDevice].iOS7) {
+                [self copyToSelector:@selector(_current_tintColor) fromSelector:@selector(tintColor)];
+                [self copyToSelector:@selector(_current_setTintColor:) fromSelector:@selector(setTintColor:)];
+                [self copyToSelector:@selector(tintColor) fromSelector:@selector(_view_tintColor)];
+                [self copyToSelector:@selector(setTintColor:) fromSelector:@selector(_view_setTintColor:)];
+            } else {
+                [self addMethodForSelector:@selector(tintColorDidChange) fromMethod:[self methodForSelector:@selector(_tintColorDidChange)]];
+                [self addMethodForSelector:@selector(tintColor) fromMethod:[self methodForSelector:@selector(_view_tintColor)]];
+                [self addMethodForSelector:@selector(setTintColor:) fromMethod:[self methodForSelector:@selector(_view_setTintColor:)]];
+            }
         }
     }
 }
 
+- (UIColor *)_current_tintColor {
+    return [self associatedObjectForKey:UI7ViewTintColor];
+}
+
+- (void)_current_setTintColor:(UIColor *)color {
+    [self setAssociatedObject:color forKey:UI7ViewTintColor];
+}
+
 - (UIColor *)_view_tintColor {
-    UIColor *color = [self associatedObjectForKey:UI7ViewTintColor];
+    UIColor *color = [self _current_tintColor];
     if (color) {
         return color;
     }
@@ -43,11 +59,9 @@ static NSString *UI7ViewTintColor = @"UI7ViewTintColor";
 }
 
 - (void)_view_setTintColor:(UIColor *)color {
-    [self setAssociatedObject:color forKey:UI7ViewTintColor];
+    [self _current_setTintColor:color];
     [self _tintColorUpdated];
 }
-
-- (UIColor *)__tintColor { assert(NO); return nil; }
 
 - (UIColor *)_tintColor {
     UIColor *tintColor = [self _view_tintColor];
@@ -61,8 +75,6 @@ static NSString *UI7ViewTintColor = @"UI7ViewTintColor";
 }
 
 - (void)_tintColorUpdated {
-    if (self.tintColor == nil) return;
-
     [self tintColorDidChange];
     for (UIView *subview in self.subviews) {
         if ([subview respondsToSelector:@selector(_tintColorUpdated)]) {
@@ -104,16 +116,12 @@ static NSString *UI7ViewTintColor = @"UI7ViewTintColor";
 }
 
 - (void)_didMoveToSuperview {
-    if (self.tintColor) {
-        [self _tintColorUpdated];
-    }
+    [self _tintColorUpdated];
     [self _backgroundColorUpdated];
 }
 
 - (void)_didMoveToWindow {
-    if (self.tintColor) {
-        [self _tintColorUpdated];
-    }
+    [self _tintColorUpdated];
     [self _backgroundColorUpdated];
 }
 
@@ -134,8 +142,8 @@ static NSString *UI7ViewTintColor = @"UI7ViewTintColor";
     Class target = [UIView class];
 
     [self exportSelector:@selector(setBackgroundColor:) toClass:target];
-    [self copyToSelector:@selector(didMoveToSuperview) fromSelector:@selector(_didMoveToSuperview)];
-    [self copyToSelector:@selector(didMoveToWindow) fromSelector:@selector(_didMoveToWindow)];
+    [target copyToSelector:@selector(didMoveToSuperview) fromSelector:@selector(_didMoveToSuperview)];
+    [target copyToSelector:@selector(didMoveToWindow) fromSelector:@selector(_didMoveToWindow)];
 }
 
 - (void)setBackgroundColor:(UIColor *)backgroundColor {

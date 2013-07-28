@@ -84,16 +84,19 @@
     Class target = [UIButton class];
 
     [self exportSelector:@selector(initWithCoder:) toClass:target];
-    [target methodForSelector:@selector(tintColor)].implementation = [target methodForSelector:@selector(_tintColor)].implementation;
     [target classMethodObjectForSelector:@selector(buttonWithType:)].implementation = [self.class classMethodObjectForSelector:@selector(buttonWithType:)].implementation;
     [self exportSelector:@selector(drawRect:) toClass:target];
     [NSClassFromString(@"UIRoundedRectButton") addMethodForSelector:@selector(initWithCoder:) fromMethod:[self methodForSelector:@selector(_UIRoundedRectButton_initWithCoder:)]];
+
+    if (![UIDevice currentDevice].iOS7) {
+        [target methodForSelector:@selector(tintColor)].implementation = [target methodForSelector:@selector(_tintColor)].implementation;
+    }
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [self __initWithCoder:aDecoder];
     if (self != nil) {
-        [self _tintColorUpdated];
+
     }
     return self;
 }
@@ -116,12 +119,12 @@
     self.layer.cornerRadius = 6.0;
     self.backgroundColor = self.tintColor;
     [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [self setTitleColor:self.tintColor.highligtedColor forState:UIControlStateHighlighted];
-    [self setTitleColor:self.tintColor.highligtedColor forState:UIControlStateSelected];
 }
 
 - (void)_tintColorUpdated {
     self.backgroundColor = self.tintColor;
+    [self setTitleColor:self.tintColor.highligtedColor forState:UIControlStateHighlighted];
+    [self setTitleColor:self.tintColor.highligtedColor forState:UIControlStateSelected];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {

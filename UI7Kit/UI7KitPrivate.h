@@ -15,7 +15,6 @@ UIKIT_EXTERN NSString *UI7AppearanceSuperview;
 @interface UIView (UI7View)
 
 - (UIColor *)_tintColor;
-- (UIColor *)__tintColor;
 - (void)_tintColorUpdated; // implement tintColorDidChange to access here.
 - (void)_backgroundColorUpdated;
 

@@ -47,6 +47,7 @@
 }
 
 - (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
+- (id)__updateImageWithTintColor:(UIColor *)tintColor isSelected:(BOOL)selected getImageOffset:(UIOffset *)offset { assert(NO); return nil; }
 
 - (void)_tabBarItemInit {
 
@@ -62,6 +63,7 @@
         Class target = [UITabBarItem class];
 
         [target copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
+        [target copyToSelector:@selector(__updateImageWithTintColor:isSelected:getImageOffset:) fromSelector:@selector(_updateImageWithTintColor:isSelected:getImageOffset:)];
     }
 }
 
@@ -98,6 +100,9 @@
 
 - (id)_updateImageWithTintColor:(UIColor *)tintColor isSelected:(BOOL)selected getImageOffset:(UIOffset *)offset {
     UIImage *image = [self.image imageByFilledWithColor:tintColor];
+    if ([UIDevice currentDevice].iOS7) {
+        return image;
+    }
     if (image == nil) return nil;
 
     if (selected) {

@@ -104,8 +104,10 @@ NSAPropertyAssignSetter(setNavigationBar, @"_navigationBar");
     [self exportSelector:@selector(initWithFrame:) toClass:target];
     [self exportSelector:@selector(setBarStyle:) toClass:target];
     [self exportSelector:@selector(pushNavigationItem:) toClass:target];
-    [self exportSelector:@selector(tintColor) toClass:target];
-    [self exportSelector:@selector(setTintColor:) toClass:target];
+    if (![UIDevice currentDevice].iOS7) {
+        [self exportSelector:@selector(tintColor) toClass:target];
+        [self exportSelector:@selector(setTintColor:) toClass:target];
+    }
 }
 
 - (id)init {
@@ -213,12 +215,22 @@ NSAPropertyAssignSetter(setNavigationBar, @"_navigationBar");
 @implementation UINavigationItem (UI7NavigationItem)
 
 - (void)_tintColorUpdated {
-    self.leftBarButtonItem.appearanceSuperview = self;
-    [self.leftBarButtonItem _tintColorUpdated];
-    self.rightBarButtonItem.appearanceSuperview = self;
-    [self.rightBarButtonItem _tintColorUpdated];
-    self.backBarButtonItem.appearanceSuperview = self;
-    [self.backBarButtonItem _tintColorUpdated];
+    UIBarButtonItem *item = nil;
+    item = self.leftBarButtonItem;
+    if (item) {
+        item.appearanceSuperview = self;
+        [item _tintColorUpdated];
+    }
+    item = self.rightBarButtonItem;
+    if (item) {
+        item.appearanceSuperview = self;
+        [item _tintColorUpdated];
+    }
+    item = self.backBarButtonItem;
+    if (item) {
+        item.appearanceSuperview = self;
+        [item _tintColorUpdated];
+    }
 }
 
 @end

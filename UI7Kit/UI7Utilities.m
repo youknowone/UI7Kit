@@ -10,14 +10,34 @@
 
 @implementation UIDevice (iOS7)
 
+- (NSInteger)majorVersion {
+    static NSInteger result = -1;
+    if (result == -1) {
+        NSArray *versionParts = [self.systemVersion componentsSeparatedByString:@"."];
+        NSInteger major = [versionParts[0] integerValue];
+        result = major;
+    }
+    return (BOOL)result;
+}
+
+- (BOOL)isIOS7 {
+    static NSInteger result = -1;
+    if (result == -1) {
+        result = [self majorVersion] >= 7;
+    }
+    return (BOOL)result;
+}
+
 - (BOOL)needsUI7Kit {
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
-    NSArray *versionParts = [self.systemVersion componentsSeparatedByString:@"."];
-    NSInteger major = [versionParts[0] integerValue];
-    return major < 7;
-#else
-    return YES;
-#endif
+    static NSInteger result = -1;
+    if (result == -1) {
+        #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
+        result = ![self isIOS7];
+        #else
+        result = YES;
+        #endif
+    }
+    return (BOOL)result;
 }
 
 @end

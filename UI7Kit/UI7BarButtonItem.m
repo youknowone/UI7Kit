@@ -42,9 +42,9 @@ UIImage *UI7BarButtonItemImages[30] = { nil, };
      *  To implement this in right way, UINavigationBar -drawRect: should be rewritten entirely, in my guess.
      */
     UIImage *backImage = [UIImage imageNamed:@"UI7NavigationBarBackButton"];
-    backImage = [backImage imageByFilledWithColor:self.tintColor];
+    backImage = [backImage imageByFilledWithColor:tintColor];
     [self setBackButtonBackgroundImage:backImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault]; // @2x is not retina image
-    backImage = [backImage imageByFilledWithColor:self.tintColor.highligtedColor];
+    backImage = [backImage imageByFilledWithColor:tintColor.highligtedColor];
     [self setBackButtonBackgroundImage:backImage forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
     [self setTitleTextAttributes:@{
              UITextAttributeFont:font,
@@ -84,8 +84,6 @@ UIImage *UI7BarButtonItemImages[30] = { nil, };
 
     UIColor *tintColor = self.tintColor;
     if (tintColor == nil) return;
-
-    [self _tintColorUpdated];
 }
 
 - (void)_barButtonItemInit {

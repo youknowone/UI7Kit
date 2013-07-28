@@ -26,11 +26,11 @@
 
 - (id)__init { assert(NO); return nil; }
 - (void)__awakeFromNib { assert(NO); }
+- (UIColor *)__tintColor { assert(NO); return nil; }
 
 - (void)_stepperInit {
     self.layer.cornerRadius = UI7ControlRadius;
     self.layer.borderWidth = 1.0f;
-    [self _tintColorUpdated];
 }
 
 - (void)_tintColorUpdated {
@@ -90,12 +90,8 @@
         [target copyToSelector:@selector(__init) fromSelector:@selector(initWithItems:)];
         [target copyToSelector:@selector(__awakeFromNib) fromSelector:@selector(awakeFromNib)];
 
-        NSAMethod *tintColorMethod = [target methodForSelector:@selector(tintColor)];
-        NSAMethod *viewTintColorMethod = [target methodForSelector:@selector(_view_tintColor)];
-        if (tintColorMethod.implementation != viewTintColorMethod.implementation) {
-            [target methodForSelector:@selector(__tintColor)].implementation = tintColorMethod.implementation;
-        } else {
-            [target addMethodForSelector:@selector(tintColor) fromMethod:[target methodForSelector:@selector(__tintColor)]];
+        if ([UIDevice currentDevice].majorVersion == 6) {
+            [target copyToSelector:@selector(__tintColor) fromSelector:@selector(tintColor)];
         }
     }
 }
@@ -105,7 +101,9 @@
 
     [self exportSelector:@selector(initWithItems:) toClass:target];
     [self exportSelector:@selector(awakeFromNib) toClass:target];
-    [target methodForSelector:@selector(tintColor)].implementation = [target methodForSelector:@selector(_tintColor)].implementation;
+    if (![UIDevice currentDevice].iOS7) {
+        [target methodForSelector:@selector(tintColor)].implementation = [target methodForSelector:@selector(_tintColor)].implementation;
+    }
 }
 
 - (void)awakeFromNib {

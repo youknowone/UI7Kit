@@ -102,7 +102,7 @@ NSAPropertyGetter(titleLabel, @"_titleLabel");
         }
         
         UIColor *color = nil;
-        if ((self.destructiveButtonIndex == (NSInteger)index)&&(self.destructiveButtonIndex!=self.cancelButtonIndex)) {
+        if ((self.destructiveButtonIndex == (NSInteger)index) && (self.destructiveButtonIndex != self.cancelButtonIndex)) {
             color = [UI7Color defaultEmphasizedColor];
         } else {
             color = [UI7Color defaultTintColor];
