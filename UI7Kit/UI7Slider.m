@@ -19,6 +19,8 @@ NSString *UI7SliderMaximumTrackTintColor = @"UI7SliderMaximumTrackTintColor";
 
 - (id)__initWithFrame:(CGRect)frame { assert(NO); return nil; }
 - (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
+- (UIColor *)__minimumTrackTintColor { assert(NO); return nil; }
+- (UIColor *)__maximumTrackTintColor { assert(NO); return nil; }
 
 - (void)_sliderInitTheme {
     self.thumbTintColor = [UIColor whiteColor];
@@ -58,6 +60,8 @@ NSString *UI7SliderMaximumTrackTintColor = @"UI7SliderMaximumTrackTintColor";
 
         [target copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
         [target copyToSelector:@selector(__initWithFrame:) fromSelector:@selector(initWithFrame:)];
+        [target copyToSelector:@selector(__minimumTrackTintColor) fromSelector:@selector(minimumTrackTintColor)];
+        [target copyToSelector:@selector(__maximumTrackTintColor) fromSelector:@selector(maximumTrackTintColor)];
     }
 }
 
@@ -87,6 +91,7 @@ NSString *UI7SliderMaximumTrackTintColor = @"UI7SliderMaximumTrackTintColor";
         if (![aDecoder containsValueForKey:@"UIThumbTintColor"]) {
             self.thumbTintColor = [UIColor whiteColor];
         }
+        // NOTE: Becasue built-in -initWithCoder: calls -setMinimumTrackColor: and -setMaximumTrackColor:, additional work is not required.
         [self _sliderInit];
     }
     return self;

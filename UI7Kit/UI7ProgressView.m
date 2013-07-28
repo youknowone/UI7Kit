@@ -20,6 +20,8 @@ NSString *UI7ProgressViewProgressTintColor = @"UI7ProgressViewProgressTintColor"
 - (id)__initWithFrame:(CGRect)frame { assert(NO); return nil; }
 - (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
 - (id)__initWithProgressViewStyle:(UIProgressViewStyle)style { assert(NO); return nil; }
+- (UIColor *)__trackTintColor { assert(NO); return nil; }
+- (UIColor *)__progressTintColor { assert(NO); return nil; }
 
 - (void)_progressViewInit {
     self.progressViewStyle = UIProgressViewStyleDefault; // bar type has no difference in iOS7
@@ -66,6 +68,8 @@ NSString *UI7ProgressViewProgressTintColor = @"UI7ProgressViewProgressTintColor"
         [target copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
         [target copyToSelector:@selector(__initWithFrame:) fromSelector:@selector(initWithFrame:)];
         [target copyToSelector:@selector(__initWithProgressViewStyle:) fromSelector:@selector(initWithProgressViewStyle:)];
+        [target copyToSelector:@selector(__trackTintColor) fromSelector:@selector(trackTintColor)];
+        [target copyToSelector:@selector(__progressTintColor) fromSelector:@selector(progressTintColor)];
     }
 }
 
@@ -92,6 +96,12 @@ NSString *UI7ProgressViewProgressTintColor = @"UI7ProgressViewProgressTintColor"
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [self __initWithCoder:aDecoder];
     if (self != nil) {
+        if ([aDecoder containsValueForKey:@"UIProgressTrackTintColor"]) {
+            self.trackTintColor = [self __trackTintColor];
+        }
+        if ([aDecoder containsValueForKey:@"UIProgressProgressTintColor"]) {
+            self.progressTintColor = [self __progressTintColor];
+        }
         [self _progressViewInit];
     }
     return self;
