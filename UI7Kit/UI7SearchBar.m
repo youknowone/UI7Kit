@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 youknowone.org. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
 #import "UI7Color.h"
 #import "UI7SearchBar.h"
 
@@ -28,7 +29,7 @@
     
     UIBarButtonItem *searchBarButton = [UIBarButtonItem appearanceWhenContainedIn:[UISearchBar class], nil];
     [searchBarButton setBackgroundImage:[UIColor clearColor].image forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    [searchBarButton setTitleTextAttributes:@{UITextAttributeFont:[UIFont systemFontOfSize:16], UITextAttributeTextColor : [UIColor colorWithRed:0.286 green:0.494 blue:0.961 alpha:1.000], UITextAttributeTextShadowOffset : [NSValue valueWithUIOffset:UIOffsetMake(0, 0)],} forState:UIControlStateNormal];
+    [searchBarButton setTitleTextAttributes:@{UITextAttributeFont:[UIFont systemFontOfSize:16], UITextAttributeTextColor : [UIColor colorWithRed:0.286f green:0.494f blue:0.961f alpha:1.000f], UITextAttributeTextShadowOffset : [NSValue valueWithUIOffset:UIOffsetZero],} forState:UIControlStateNormal];
     [searchBarButton setTitleTextAttributes:@{UITextAttributeTextColor:[UIColor lightGrayColor], UITextAttributeTextShadowOffset : [NSValue valueWithUIOffset:UIOffsetMake(0, 0)],} forState:UIControlStateHighlighted];
 
     for (UIView *searchBarSubview in [self subviews]) {
