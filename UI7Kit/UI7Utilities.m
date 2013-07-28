@@ -14,7 +14,7 @@
     static NSInteger result = -1;
     if (result == -1) {
         NSArray *versionParts = [self.systemVersion componentsSeparatedByString:@"."];
-        NSInteger major = [versionParts[0] integerValue];
+        NSInteger major = [[versionParts objectAtIndex:0] integerValue]; // NOTE: Do not use objc3 syntax. It makes error in some environment.
         result = major;
     }
     return (BOOL)result;
