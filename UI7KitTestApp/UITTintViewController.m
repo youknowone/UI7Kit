@@ -36,11 +36,12 @@
 }
 
 - (void)colorChanged:(UISlider *)sender {
-    UIColor *color = self.view.tintColor;
+    UIWindow *window = self.view.window;
+    UIColor *color = window.tintColor;
     CGFloat red = sender.tag == 0 ? sender.value : color.components.red;
     CGFloat green = sender.tag == 1 ? sender.value : color.components.green;
     CGFloat blue = sender.tag == 2 ? sender.value : color.components.blue;
-    self.view.tintColor = [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
+    window.tintColor = [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
 }
 
 @end

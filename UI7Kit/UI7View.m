@@ -48,6 +48,7 @@ static NSString *UI7ViewTintColor = @"UI7ViewTintColor";
 }
 
 - (UIColor *)_view_tintColor {
+    // UIWindow -> UILayoutContainerView -> UITransitionView -> UIViewControllerWrapperView -> UILayoutContainerView -> UINavigationTransitaionView -> UIViewControllerWrapperView -> UIView (UIViewController)
     UIColor *color = [self _current_tintColor];
     if (color) {
         return color;

@@ -6,13 +6,14 @@
 //  Copyright (c) 2013 youknowone.org. All rights reserved.
 //
 
+#import "UI7KitPrivate.h"
 #import "UI7View.h"
 #import "UI7Window.h"
 
 @implementation UIWindow (Private)
 
 - (UIColor *)tintColor {
-    UIColor *color = [super tintColor];
+    UIColor *color = [super _current_tintColor];
     if (color == nil) {
         color = [UI7Kit kit].tintColor;
     }

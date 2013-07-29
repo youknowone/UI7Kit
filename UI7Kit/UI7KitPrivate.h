@@ -14,6 +14,7 @@ UIKIT_EXTERN NSString *UI7AppearanceSuperview;
 
 @interface UIView (UI7View)
 
+- (UIColor *)_current_tintColor; // tint color of current layer.
 - (UIColor *)_tintColor;
 - (void)_tintColorUpdated; // implement tintColorDidChange to access here.
 - (void)_backgroundColorUpdated;
