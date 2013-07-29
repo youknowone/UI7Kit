@@ -47,8 +47,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-    UIBarButtonItem *addButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showAlert:)] autorelease];
-    self.navigationItem.rightBarButtonItem = addButton;
+    [self genButton:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,9 +55,14 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)showAlert:(id)sender {
-    UIAlertView *alertView = [[[UIAlertView alloc] initWithTitle:@"title" message:@"message" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] autorelease];
-    [alertView show];
+- (void)genButton:(id)sender {
+    NSInteger systemItem = arc4random() % UIBarButtonSystemItemPageCurl;
+    if (systemItem == UIBarButtonSystemItemFixedSpace || systemItem == UIBarButtonSystemItemFlexibleSpace) {
+        systemItem = 0;
+    }
+    NSLog(@"genbutton: %d", systemItem);
+    UIBarButtonItem *button = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:systemItem target:self action:@selector(genButton:)] autorelease];
+    self.navigationItem.rightBarButtonItem = button;
 }
 
 #pragma mark - Table View

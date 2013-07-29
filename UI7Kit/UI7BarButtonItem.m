@@ -23,6 +23,37 @@ UIImage *UI7BarButtonItemImages[30] = { nil, };
 @end
 
 
+NSString *UI7BarButtonItemSystemNames[] = {
+    @"Done",
+    @"Cancel",
+    @"Edit",
+    @"Save",
+    @"Add",
+    nil,
+    nil,
+    @"Compose",
+    @"Reply",
+    @"Action",
+    @"Organize",
+    @"Bookmarks",
+    @"Search",
+    @"Refresh",
+    @"Stop",
+    @"Camera",
+    @"Trash",
+    @"Play",
+    @"Pause",
+    @"Rewind",
+    @"FastForward",
+#if __IPHONE_3_0 <= __IPHONE_OS_VERSION_MAX_ALLOWED
+    @"Undo",
+    @"Redo",
+#endif
+#if __IPHONE_4_0 <= __IPHONE_OS_VERSION_MAX_ALLOWED
+    @"PageCurl",
+#endif
+};
+
 @implementation UIBarButtonItem (UI7BarButtonItem)
 
 - (id)appearanceSuperview {
@@ -58,6 +89,7 @@ UIImage *UI7BarButtonItemImages[30] = { nil, };
  UITextAttributeTextShadowOffset:[NSValue valueWithUIOffset:UIOffsetZero],
      }
                         forState:UIControlStateHighlighted];
+    self.image = [self.image imageByFilledWithColor:self.tintColor];
 }
 
 @end
@@ -136,16 +168,26 @@ UIImage *UI7BarButtonItemImages[30] = { nil, };
 - (id)initWithBarButtonSystemItem:(UIBarButtonSystemItem)systemItem target:(id)target action:(SEL)action {
     UIFont *font = [UI7Font systemFontOfSize:17.0 attribute:UI7FontAttributeLight];
     switch (systemItem) {
-        case UIBarButtonSystemItemAdd: {
-            self = [super initWithTitle:@"＋" style:UIBarButtonItemStylePlain target:target action:action];
-            font = [UI7Font systemFontOfSize:22.0 attribute:UI7FontAttributeMedium];
-        }   break;
+        case UIBarButtonSystemItemAdd:
         case UIBarButtonSystemItemCompose:
         case UIBarButtonSystemItemReply:
         case UIBarButtonSystemItemAction:
         case UIBarButtonSystemItemOrganize:
+        case UIBarButtonSystemItemBookmarks:
+        case UIBarButtonSystemItemSearch:
+        case UIBarButtonSystemItemRefresh:
+        case UIBarButtonSystemItemStop:
+        case UIBarButtonSystemItemCamera:
         case UIBarButtonSystemItemTrash:
-            //TODO
+        case UIBarButtonSystemItemPlay:
+        case UIBarButtonSystemItemPause:
+        case UIBarButtonSystemItemRewind:
+        case UIBarButtonSystemItemFastForward:
+        {
+            NSString *name = UI7BarButtonItemSystemNames[systemItem];
+            UIImage *image = [UIImage imageNamed:[@"UI7BarButtonIcon%@" format:name]];
+            self = [self initWithImage:image style:UIBarButtonItemStyleBordered target:target action:action];
+        }   break;
         default: {
             self = [self __initWithBarButtonSystemItem:systemItem target:target action:action];
             if (systemItem == UIBarButtonSystemItemSave || systemItem == UIBarButtonSystemItemDone) {

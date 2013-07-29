@@ -219,9 +219,7 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
 
 - (void)dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated {
     [self __dismissWithClickedButtonIndex:buttonIndex animated:animated];
-    if (animated) {
-        [self.dimView setHidden:YES animated:YES];
-    }
+    [self.dimView setHidden:YES animated:animated];
 }
 
 @end
