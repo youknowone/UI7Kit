@@ -201,12 +201,12 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
         frame.origin.y = baseHeight + UI7ControlRowHeight * (rows - 1);
         button.frame = frame;
 
-        frame.size.height = 0.5f;
+        CGFloat strokeWidth = [[UIScreen mainScreen] scale] != 1.0f ? 0.5f : 1.0f;
         CGRect sframe;
         if (frame.origin.x < frame.size.width) {
-            sframe = CGRectMake(7.0, frame.origin.y, UI7AlertViewWidth, 0.5);
+            sframe = CGRectMake(7.0, frame.origin.y, UI7AlertViewWidth, strokeWidth);
         } else {
-            sframe = CGRectMake(142.0, frame.origin.y, 0.5, UI7ControlRowHeight);
+            sframe = CGRectMake(142.0, frame.origin.y, strokeWidth, UI7ControlRowHeight);
         }
         UIView *strokeView = [[[UIView alloc] initWithFrame:sframe] autorelease];
         strokeView.backgroundColor = [UIColor colorWith8bitWhite:182 alpha:255];
