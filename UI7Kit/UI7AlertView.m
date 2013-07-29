@@ -86,17 +86,14 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
 
 @interface UI7AlertView ()
 
+- (void)relayout;
 
 @end
 
 
-@implementation UIAlertView (Patch)
+@implementation UIAlertView (UI7AlertView)
 
-- (id)init { return [super init]; }
-- (id)__init { assert(NO); return nil; }
-- (void)__dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated { assert(NO); }
-
-- (void)layoutSubviews {
+- (void)relayout {
     // dim view - not available before setDimsBackground as NO
     UIView *view = self.dimView = [[[UIADimmingView alloc] initWithFrame:self.superview.bounds] autorelease];
     view.alpha = 0.4;
@@ -187,6 +184,16 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
 @end
 
 
+@implementation UIAlertView (Patch)
+
+- (id)init { return [super init]; }
+- (id)__init { assert(NO); return nil; }
+- (void)__show { assert(NO); }
+- (void)__dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated { assert(NO); }
+
+@end
+
+
 @implementation UI7AlertView
 
 + (void)initialize {
@@ -194,6 +201,7 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
         Class target = [UIAlertView class];
 
         [target copyToSelector:@selector(__init) fromSelector:@selector(init)];
+        [target copyToSelector:@selector(__show) fromSelector:@selector(show)];
         [target copyToSelector:@selector(__dismissWithClickedButtonIndex:animated:) fromSelector:@selector(dismissWithClickedButtonIndex:animated:)];
     }
 }
@@ -202,6 +210,7 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
     Class target = [UIAlertView class];
 
     [self exportSelector:@selector(init) toClass:target];
+    [self exportSelector:@selector(show) toClass:target];
     [self exportSelector:@selector(dismissWithClickedButtonIndex:animated:) toClass:target];
 }
 
@@ -215,6 +224,13 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
         [self addSubview:self.backgroundView];
     }
     return self;
+}
+
+
+- (void)show {
+    [self __show];
+
+    [self relayout];
 }
 
 - (void)dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated {
