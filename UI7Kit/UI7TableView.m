@@ -61,6 +61,8 @@ CGFloat UI7TableViewGroupedTableSectionSeperatorHeight = 28.0f;
 
 // TODO: implement 'setAccessoryType' to fake accessories.
 
+UIColor *UI7TableViewGroupedViewPatternColor = nil;
+
 + (void)initialize {
     if (self == [UI7TableView class]) {
         Class target = [UITableView class];
@@ -106,7 +108,14 @@ CGFloat UI7TableViewGroupedTableSectionSeperatorHeight = 28.0f;
 //    }
     if (self) {
         if (self.__style == UITableViewStyleGrouped) {
-            self.backgroundColor = [UIColor clearColor];
+            if (UI7TableViewGroupedViewPatternColor == nil) {
+                UI7TableViewGroupedViewPatternColor = [[[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped] autorelease].backgroundColor;
+            }
+            UIColor *color = [aDecoder decodeObjectForKey:@"UIBackgroundColor"];
+            if (color == UI7TableViewGroupedViewPatternColor) {
+                self.backgroundColor = [UIColor clearColor];
+            }
+
             self.backgroundView = nil;
             if (self.separatorStyle == UITableViewCellSeparatorStyleSingleLineEtched) {
                 self.separatorStyle = UITableViewCellSeparatorStyleNone;
