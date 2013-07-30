@@ -25,6 +25,7 @@
 		3801745B1769C5D90049D26C /* UI7TableViewCellDisclosureIndicator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3801745A1769C5D90049D26C /* UI7TableViewCellDisclosureIndicator@2x.png */; };
 		3801745F1769F3B50049D26C /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3801745E1769F3B50049D26C /* Storyboard.storyboard */; };
 		38017462176A245B0049D26C /* UI7NavigationBarBackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 38017461176A245B0049D26C /* UI7NavigationBarBackButton.png */; };
+		3805FBA517A81CB9008487A9 /* UITBarItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3805FBA417A81CB9008487A9 /* UITBarItemViewController.m */; };
 		38078A65178DB7A00010B6D5 /* Icon_60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38078A62178DB7A00010B6D5 /* Icon_60x60@2x.png */; };
 		38078A66178DB7A00010B6D5 /* Icon_60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38078A62178DB7A00010B6D5 /* Icon_60x60@2x.png */; };
 		38078A67178DB7A00010B6D5 /* icon_72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = 38078A63178DB7A00010B6D5 /* icon_72x72.png */; };
@@ -57,10 +58,6 @@
 		384BF44A178A1F4200485BED /* UI7TableViewCellDisclosureIndicator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3801745A1769C5D90049D26C /* UI7TableViewCellDisclosureIndicator@2x.png */; };
 		384BF44B178A1F4200485BED /* UI7NavigationBarBackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 38017461176A245B0049D26C /* UI7NavigationBarBackButton.png */; };
 		384BF44C178A1F4200485BED /* UI7NavigationBarBackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 387558C4176DFA8600AE5C8B /* UI7NavigationBarBackButton@2x.png */; };
-		384BF44D178A1F4200485BED /* UI7TabBarItemFavoriteSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 387558BC176DF36700AE5C8B /* UI7TabBarItemFavoriteSelected.png */; };
-		384BF44E178A1F4200485BED /* UI7TabBarItemFavoriteSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 387558BD176DF36700AE5C8B /* UI7TabBarItemFavoriteSelected@2x.png */; };
-		384BF44F178A1F4200485BED /* UI7TabBarItemFavoriteUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 387558BE176DF36700AE5C8B /* UI7TabBarItemFavoriteUnselected.png */; };
-		384BF450178A1F4200485BED /* UI7TabBarItemFavoriteUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 387558BF176DF36700AE5C8B /* UI7TabBarItemFavoriteUnselected@2x.png */; };
 		384BF452178A230E00485BED /* icon_57x57@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 384BF451178A230E00485BED /* icon_57x57@2x.png */; };
 		384BF454178A231100485BED /* icon_57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 384BF453178A231100485BED /* icon_57x57.png */; };
 		384BF455178A2DB100485BED /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 38F068271636F8C8002723AB /* Default.png */; };
@@ -71,6 +68,46 @@
 		385C6CC11786C86F00A182C0 /* UI7PickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 385C6CC01786C86F00A182C0 /* UI7PickerView.m */; };
 		385CE660177009680076C02A /* UI7KitCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 38013FE3176F8352003B7809 /* UI7KitCore.m */; };
 		3861E06B1771F9BC00AA8DE4 /* UI7ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3861E06A1771F9BC00AA8DE4 /* UI7ProgressView.m */; };
+		3865157217A81EF300E10B72 /* UI7TabBarItemBookmarksUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865155E17A81EF300E10B72 /* UI7TabBarItemBookmarksUnselected.png */; };
+		3865157317A81EF300E10B72 /* UI7TabBarItemBookmarksUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865155E17A81EF300E10B72 /* UI7TabBarItemBookmarksUnselected.png */; };
+		3865157417A81EF300E10B72 /* UI7TabBarItemBookmarksUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865155F17A81EF300E10B72 /* UI7TabBarItemBookmarksUnselected@2x.png */; };
+		3865157517A81EF300E10B72 /* UI7TabBarItemBookmarksUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865155F17A81EF300E10B72 /* UI7TabBarItemBookmarksUnselected@2x.png */; };
+		3865157617A81EF300E10B72 /* UI7TabBarItemContactsUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156017A81EF300E10B72 /* UI7TabBarItemContactsUnselected.png */; };
+		3865157717A81EF300E10B72 /* UI7TabBarItemContactsUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156017A81EF300E10B72 /* UI7TabBarItemContactsUnselected.png */; };
+		3865157817A81EF300E10B72 /* UI7TabBarItemContactsUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156117A81EF300E10B72 /* UI7TabBarItemContactsUnselected@2x.png */; };
+		3865157917A81EF300E10B72 /* UI7TabBarItemContactsUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156117A81EF300E10B72 /* UI7TabBarItemContactsUnselected@2x.png */; };
+		3865157A17A81EF300E10B72 /* UI7TabBarItemDownloadsUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156217A81EF300E10B72 /* UI7TabBarItemDownloadsUnselected.png */; };
+		3865157B17A81EF300E10B72 /* UI7TabBarItemDownloadsUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156217A81EF300E10B72 /* UI7TabBarItemDownloadsUnselected.png */; };
+		3865157C17A81EF300E10B72 /* UI7TabBarItemDownloadsUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156317A81EF300E10B72 /* UI7TabBarItemDownloadsUnselected@2x.png */; };
+		3865157D17A81EF300E10B72 /* UI7TabBarItemDownloadsUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156317A81EF300E10B72 /* UI7TabBarItemDownloadsUnselected@2x.png */; };
+		3865157E17A81EF300E10B72 /* UI7TabBarItemFavoriteSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156417A81EF300E10B72 /* UI7TabBarItemFavoriteSelected.png */; };
+		3865157F17A81EF300E10B72 /* UI7TabBarItemFavoriteSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156417A81EF300E10B72 /* UI7TabBarItemFavoriteSelected.png */; };
+		3865158017A81EF300E10B72 /* UI7TabBarItemFavoriteSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156517A81EF300E10B72 /* UI7TabBarItemFavoriteSelected@2x.png */; };
+		3865158117A81EF300E10B72 /* UI7TabBarItemFavoriteSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156517A81EF300E10B72 /* UI7TabBarItemFavoriteSelected@2x.png */; };
+		3865158217A81EF300E10B72 /* UI7TabBarItemFavoriteUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156617A81EF300E10B72 /* UI7TabBarItemFavoriteUnselected.png */; };
+		3865158317A81EF300E10B72 /* UI7TabBarItemFavoriteUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156617A81EF300E10B72 /* UI7TabBarItemFavoriteUnselected.png */; };
+		3865158417A81EF300E10B72 /* UI7TabBarItemFavoriteUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156717A81EF300E10B72 /* UI7TabBarItemFavoriteUnselected@2x.png */; };
+		3865158517A81EF300E10B72 /* UI7TabBarItemFavoriteUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156717A81EF300E10B72 /* UI7TabBarItemFavoriteUnselected@2x.png */; };
+		3865158617A81EF300E10B72 /* UI7TabBarItemHistoryUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156817A81EF300E10B72 /* UI7TabBarItemHistoryUnselected.png */; };
+		3865158717A81EF300E10B72 /* UI7TabBarItemHistoryUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156817A81EF300E10B72 /* UI7TabBarItemHistoryUnselected.png */; };
+		3865158817A81EF300E10B72 /* UI7TabBarItemHistoryUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156917A81EF300E10B72 /* UI7TabBarItemHistoryUnselected@2x.png */; };
+		3865158917A81EF300E10B72 /* UI7TabBarItemHistoryUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156917A81EF300E10B72 /* UI7TabBarItemHistoryUnselected@2x.png */; };
+		3865158A17A81EF300E10B72 /* UI7TabBarItemMoreUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156A17A81EF300E10B72 /* UI7TabBarItemMoreUnselected.png */; };
+		3865158B17A81EF300E10B72 /* UI7TabBarItemMoreUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156A17A81EF300E10B72 /* UI7TabBarItemMoreUnselected.png */; };
+		3865158C17A81EF300E10B72 /* UI7TabBarItemMoreUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156B17A81EF300E10B72 /* UI7TabBarItemMoreUnselected@2x.png */; };
+		3865158D17A81EF300E10B72 /* UI7TabBarItemMoreUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156B17A81EF300E10B72 /* UI7TabBarItemMoreUnselected@2x.png */; };
+		3865158E17A81EF300E10B72 /* UI7TabBarItemMostRecentUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156C17A81EF300E10B72 /* UI7TabBarItemMostRecentUnselected.png */; };
+		3865158F17A81EF300E10B72 /* UI7TabBarItemMostRecentUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156C17A81EF300E10B72 /* UI7TabBarItemMostRecentUnselected.png */; };
+		3865159017A81EF300E10B72 /* UI7TabBarItemMostRecentUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156D17A81EF300E10B72 /* UI7TabBarItemMostRecentUnselected@2x.png */; };
+		3865159117A81EF300E10B72 /* UI7TabBarItemMostRecentUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156D17A81EF300E10B72 /* UI7TabBarItemMostRecentUnselected@2x.png */; };
+		3865159217A81EF300E10B72 /* UI7TabBarItemMostViewedUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156E17A81EF300E10B72 /* UI7TabBarItemMostViewedUnselected.png */; };
+		3865159317A81EF300E10B72 /* UI7TabBarItemMostViewedUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156E17A81EF300E10B72 /* UI7TabBarItemMostViewedUnselected.png */; };
+		3865159417A81EF300E10B72 /* UI7TabBarItemMostViewedUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156F17A81EF300E10B72 /* UI7TabBarItemMostViewedUnselected@2x.png */; };
+		3865159517A81EF300E10B72 /* UI7TabBarItemMostViewedUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156F17A81EF300E10B72 /* UI7TabBarItemMostViewedUnselected@2x.png */; };
+		3865159617A81EF300E10B72 /* UI7TabBarItemSearchUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865157017A81EF300E10B72 /* UI7TabBarItemSearchUnselected.png */; };
+		3865159717A81EF300E10B72 /* UI7TabBarItemSearchUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865157017A81EF300E10B72 /* UI7TabBarItemSearchUnselected.png */; };
+		3865159817A81EF300E10B72 /* UI7TabBarItemSearchUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865157117A81EF300E10B72 /* UI7TabBarItemSearchUnselected@2x.png */; };
+		3865159917A81EF300E10B72 /* UI7TabBarItemSearchUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865157117A81EF300E10B72 /* UI7TabBarItemSearchUnselected@2x.png */; };
 		3866035117A6A60C004EEE3F /* UITIssue39ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3866035017A6A60C004EEE3F /* UITIssue39ViewController.m */; };
 		386603CA17A6BB78004EEE3F /* UI7BarButtonIconAction.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603AC17A6BB78004EEE3F /* UI7BarButtonIconAction.png */; };
 		386603CB17A6BB78004EEE3F /* UI7BarButtonIconAction.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603AC17A6BB78004EEE3F /* UI7BarButtonIconAction.png */; };
@@ -136,10 +173,6 @@
 		387558B1176DD00600AE5C8B /* UI7TabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 387558B0176DD00600AE5C8B /* UI7TabBar.m */; };
 		387558B4176DD03F00AE5C8B /* UI7TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 387558B3176DD03F00AE5C8B /* UI7TabBarController.m */; };
 		387558BB176DEDDF00AE5C8B /* UI7TabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 387558BA176DEDDE00AE5C8B /* UI7TabBarItem.m */; };
-		387558C0176DF36700AE5C8B /* UI7TabBarItemFavoriteSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 387558BC176DF36700AE5C8B /* UI7TabBarItemFavoriteSelected.png */; };
-		387558C1176DF36700AE5C8B /* UI7TabBarItemFavoriteSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 387558BD176DF36700AE5C8B /* UI7TabBarItemFavoriteSelected@2x.png */; };
-		387558C2176DF36700AE5C8B /* UI7TabBarItemFavoriteUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 387558BE176DF36700AE5C8B /* UI7TabBarItemFavoriteUnselected.png */; };
-		387558C3176DF36700AE5C8B /* UI7TabBarItemFavoriteUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 387558BF176DF36700AE5C8B /* UI7TabBarItemFavoriteUnselected@2x.png */; };
 		387558C5176DFA8600AE5C8B /* UI7NavigationBarBackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 387558C4176DFA8600AE5C8B /* UI7NavigationBarBackButton@2x.png */; };
 		387A6FE4176CC58F00B91354 /* UI7ActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 387A6FE3176CC58F00B91354 /* UI7ActionSheet.m */; };
 		3886F6FE17709EF300890D47 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3886F6FD17709EF300890D47 /* QuartzCore.framework */; };
@@ -238,6 +271,8 @@
 		3801745A1769C5D90049D26C /* UI7TableViewCellDisclosureIndicator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7TableViewCellDisclosureIndicator@2x.png"; sourceTree = "<group>"; };
 		3801745E1769F3B50049D26C /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		38017461176A245B0049D26C /* UI7NavigationBarBackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7NavigationBarBackButton.png; sourceTree = "<group>"; };
+		3805FBA317A81CB9008487A9 /* UITBarItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITBarItemViewController.h; sourceTree = "<group>"; };
+		3805FBA417A81CB9008487A9 /* UITBarItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITBarItemViewController.m; sourceTree = "<group>"; };
 		38078A62178DB7A00010B6D5 /* Icon_60x60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon_60x60@2x.png"; path = "Icon.iconset/Icon_60x60@2x.png"; sourceTree = "<group>"; };
 		38078A63178DB7A00010B6D5 /* icon_72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_72x72.png; path = Icon.iconset/icon_72x72.png; sourceTree = "<group>"; };
 		38078A64178DB7A00010B6D5 /* icon_72x72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_72x72@2x.png"; path = "Icon.iconset/icon_72x72@2x.png"; sourceTree = "<group>"; };
@@ -280,6 +315,26 @@
 		385C6CC01786C86F00A182C0 /* UI7PickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7PickerView.m; sourceTree = "<group>"; };
 		3861E0691771F9BC00AA8DE4 /* UI7ProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7ProgressView.h; sourceTree = "<group>"; };
 		3861E06A1771F9BC00AA8DE4 /* UI7ProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7ProgressView.m; sourceTree = "<group>"; };
+		3865155E17A81EF300E10B72 /* UI7TabBarItemBookmarksUnselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7TabBarItemBookmarksUnselected.png; sourceTree = "<group>"; };
+		3865155F17A81EF300E10B72 /* UI7TabBarItemBookmarksUnselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7TabBarItemBookmarksUnselected@2x.png"; sourceTree = "<group>"; };
+		3865156017A81EF300E10B72 /* UI7TabBarItemContactsUnselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7TabBarItemContactsUnselected.png; sourceTree = "<group>"; };
+		3865156117A81EF300E10B72 /* UI7TabBarItemContactsUnselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7TabBarItemContactsUnselected@2x.png"; sourceTree = "<group>"; };
+		3865156217A81EF300E10B72 /* UI7TabBarItemDownloadsUnselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7TabBarItemDownloadsUnselected.png; sourceTree = "<group>"; };
+		3865156317A81EF300E10B72 /* UI7TabBarItemDownloadsUnselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7TabBarItemDownloadsUnselected@2x.png"; sourceTree = "<group>"; };
+		3865156417A81EF300E10B72 /* UI7TabBarItemFavoriteSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7TabBarItemFavoriteSelected.png; sourceTree = "<group>"; };
+		3865156517A81EF300E10B72 /* UI7TabBarItemFavoriteSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7TabBarItemFavoriteSelected@2x.png"; sourceTree = "<group>"; };
+		3865156617A81EF300E10B72 /* UI7TabBarItemFavoriteUnselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7TabBarItemFavoriteUnselected.png; sourceTree = "<group>"; };
+		3865156717A81EF300E10B72 /* UI7TabBarItemFavoriteUnselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7TabBarItemFavoriteUnselected@2x.png"; sourceTree = "<group>"; };
+		3865156817A81EF300E10B72 /* UI7TabBarItemHistoryUnselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7TabBarItemHistoryUnselected.png; sourceTree = "<group>"; };
+		3865156917A81EF300E10B72 /* UI7TabBarItemHistoryUnselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7TabBarItemHistoryUnselected@2x.png"; sourceTree = "<group>"; };
+		3865156A17A81EF300E10B72 /* UI7TabBarItemMoreUnselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7TabBarItemMoreUnselected.png; sourceTree = "<group>"; };
+		3865156B17A81EF300E10B72 /* UI7TabBarItemMoreUnselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7TabBarItemMoreUnselected@2x.png"; sourceTree = "<group>"; };
+		3865156C17A81EF300E10B72 /* UI7TabBarItemMostRecentUnselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7TabBarItemMostRecentUnselected.png; sourceTree = "<group>"; };
+		3865156D17A81EF300E10B72 /* UI7TabBarItemMostRecentUnselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7TabBarItemMostRecentUnselected@2x.png"; sourceTree = "<group>"; };
+		3865156E17A81EF300E10B72 /* UI7TabBarItemMostViewedUnselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7TabBarItemMostViewedUnselected.png; sourceTree = "<group>"; };
+		3865156F17A81EF300E10B72 /* UI7TabBarItemMostViewedUnselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7TabBarItemMostViewedUnselected@2x.png"; sourceTree = "<group>"; };
+		3865157017A81EF300E10B72 /* UI7TabBarItemSearchUnselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7TabBarItemSearchUnselected.png; sourceTree = "<group>"; };
+		3865157117A81EF300E10B72 /* UI7TabBarItemSearchUnselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7TabBarItemSearchUnselected@2x.png"; sourceTree = "<group>"; };
 		3866034F17A6A60C004EEE3F /* UITIssue39ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITIssue39ViewController.h; sourceTree = "<group>"; };
 		3866035017A6A60C004EEE3F /* UITIssue39ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITIssue39ViewController.m; sourceTree = "<group>"; };
 		386603AC17A6BB78004EEE3F /* UI7BarButtonIconAction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7BarButtonIconAction.png; sourceTree = "<group>"; };
@@ -322,10 +377,6 @@
 		387558B3176DD03F00AE5C8B /* UI7TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7TabBarController.m; sourceTree = "<group>"; };
 		387558B9176DEDDE00AE5C8B /* UI7TabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7TabBarItem.h; sourceTree = "<group>"; };
 		387558BA176DEDDE00AE5C8B /* UI7TabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7TabBarItem.m; sourceTree = "<group>"; };
-		387558BC176DF36700AE5C8B /* UI7TabBarItemFavoriteSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7TabBarItemFavoriteSelected.png; sourceTree = "<group>"; };
-		387558BD176DF36700AE5C8B /* UI7TabBarItemFavoriteSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7TabBarItemFavoriteSelected@2x.png"; sourceTree = "<group>"; };
-		387558BE176DF36700AE5C8B /* UI7TabBarItemFavoriteUnselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7TabBarItemFavoriteUnselected.png; sourceTree = "<group>"; };
-		387558BF176DF36700AE5C8B /* UI7TabBarItemFavoriteUnselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7TabBarItemFavoriteUnselected@2x.png"; sourceTree = "<group>"; };
 		387558C4176DFA8600AE5C8B /* UI7NavigationBarBackButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7NavigationBarBackButton@2x.png"; sourceTree = "<group>"; };
 		387A6FE2176CC58F00B91354 /* UI7ActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7ActionSheet.h; sourceTree = "<group>"; };
 		387A6FE3176CC58F00B91354 /* UI7ActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7ActionSheet.m; sourceTree = "<group>"; };
@@ -517,10 +568,26 @@
 				3801745A1769C5D90049D26C /* UI7TableViewCellDisclosureIndicator@2x.png */,
 				38017461176A245B0049D26C /* UI7NavigationBarBackButton.png */,
 				387558C4176DFA8600AE5C8B /* UI7NavigationBarBackButton@2x.png */,
-				387558BC176DF36700AE5C8B /* UI7TabBarItemFavoriteSelected.png */,
-				387558BD176DF36700AE5C8B /* UI7TabBarItemFavoriteSelected@2x.png */,
-				387558BE176DF36700AE5C8B /* UI7TabBarItemFavoriteUnselected.png */,
-				387558BF176DF36700AE5C8B /* UI7TabBarItemFavoriteUnselected@2x.png */,
+				3865155E17A81EF300E10B72 /* UI7TabBarItemBookmarksUnselected.png */,
+				3865155F17A81EF300E10B72 /* UI7TabBarItemBookmarksUnselected@2x.png */,
+				3865156017A81EF300E10B72 /* UI7TabBarItemContactsUnselected.png */,
+				3865156117A81EF300E10B72 /* UI7TabBarItemContactsUnselected@2x.png */,
+				3865156217A81EF300E10B72 /* UI7TabBarItemDownloadsUnselected.png */,
+				3865156317A81EF300E10B72 /* UI7TabBarItemDownloadsUnselected@2x.png */,
+				3865156417A81EF300E10B72 /* UI7TabBarItemFavoriteSelected.png */,
+				3865156517A81EF300E10B72 /* UI7TabBarItemFavoriteSelected@2x.png */,
+				3865156617A81EF300E10B72 /* UI7TabBarItemFavoriteUnselected.png */,
+				3865156717A81EF300E10B72 /* UI7TabBarItemFavoriteUnselected@2x.png */,
+				3865156817A81EF300E10B72 /* UI7TabBarItemHistoryUnselected.png */,
+				3865156917A81EF300E10B72 /* UI7TabBarItemHistoryUnselected@2x.png */,
+				3865156A17A81EF300E10B72 /* UI7TabBarItemMoreUnselected.png */,
+				3865156B17A81EF300E10B72 /* UI7TabBarItemMoreUnselected@2x.png */,
+				3865156C17A81EF300E10B72 /* UI7TabBarItemMostRecentUnselected.png */,
+				3865156D17A81EF300E10B72 /* UI7TabBarItemMostRecentUnselected@2x.png */,
+				3865156E17A81EF300E10B72 /* UI7TabBarItemMostViewedUnselected.png */,
+				3865156F17A81EF300E10B72 /* UI7TabBarItemMostViewedUnselected@2x.png */,
+				3865157017A81EF300E10B72 /* UI7TabBarItemSearchUnselected.png */,
+				3865157117A81EF300E10B72 /* UI7TabBarItemSearchUnselected@2x.png */,
 			);
 			name = Resources;
 			path = ../Resources;
@@ -680,6 +747,8 @@
 				382B58051780427800D46754 /* UITTintViewController.m */,
 				38F068301636F8C8002723AB /* UITDetailViewController.h */,
 				38F068311636F8C9002723AB /* UITDetailViewController.m */,
+				3805FBA317A81CB9008487A9 /* UITBarItemViewController.h */,
+				3805FBA417A81CB9008487A9 /* UITBarItemViewController.m */,
 				38485C5E1710974C0001A99D /* UITPreparedCellTableViewController.h */,
 				38485C5F1710974C0001A99D /* UITPreparedCellTableViewController.m */,
 				381C00AA17172CE20067C936 /* UITTextViewController.h */,
@@ -850,55 +919,71 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3865157F17A81EF300E10B72 /* UI7TabBarItemFavoriteSelected.png in Resources */,
 				38078A6A178DB7A00010B6D5 /* icon_72x72@2x.png in Resources */,
 				38078A66178DB7A00010B6D5 /* Icon_60x60@2x.png in Resources */,
+				3865158B17A81EF300E10B72 /* UI7TabBarItemMoreUnselected.png in Resources */,
 				384BF42A178A176600485BED /* InfoPlist.strings in Resources */,
 				384BF444178A19D600485BED /* Catalog.storyboard in Resources */,
+				3865157B17A81EF300E10B72 /* UI7TabBarItemDownloadsUnselected.png in Resources */,
 				384BF445178A1F4200485BED /* UI7ButtonImageAdd.png in Resources */,
 				38078A68178DB7A00010B6D5 /* icon_72x72.png in Resources */,
 				384BF446178A1F4200485BED /* UI7ButtonImageAdd@2x.png in Resources */,
+				3865159717A81EF300E10B72 /* UI7TabBarItemSearchUnselected.png in Resources */,
 				384BF447178A1F4200485BED /* UI7ButtonImageInfo.png in Resources */,
 				384BF448178A1F4200485BED /* UI7ButtonImageInfo@2x.png in Resources */,
+				3865159317A81EF300E10B72 /* UI7TabBarItemMostViewedUnselected.png in Resources */,
 				384BF449178A1F4200485BED /* UI7TableViewCellDisclosureIndicator.png in Resources */,
 				384BF44A178A1F4200485BED /* UI7TableViewCellDisclosureIndicator@2x.png in Resources */,
 				384BF44B178A1F4200485BED /* UI7NavigationBarBackButton.png in Resources */,
 				384BF44C178A1F4200485BED /* UI7NavigationBarBackButton@2x.png in Resources */,
-				384BF44D178A1F4200485BED /* UI7TabBarItemFavoriteSelected.png in Resources */,
-				384BF44E178A1F4200485BED /* UI7TabBarItemFavoriteSelected@2x.png in Resources */,
-				384BF44F178A1F4200485BED /* UI7TabBarItemFavoriteUnselected.png in Resources */,
-				384BF450178A1F4200485BED /* UI7TabBarItemFavoriteUnselected@2x.png in Resources */,
 				384BF455178A2DB100485BED /* Default.png in Resources */,
+				3865158317A81EF300E10B72 /* UI7TabBarItemFavoriteUnselected.png in Resources */,
 				384BF456178A2DB100485BED /* Default@2x.png in Resources */,
 				384BF457178A2DB100485BED /* Default-568h@2x.png in Resources */,
 				386603CB17A6BB78004EEE3F /* UI7BarButtonIconAction.png in Resources */,
 				386603CD17A6BB78004EEE3F /* UI7BarButtonIconAction@2x.png in Resources */,
 				386603CF17A6BB78004EEE3F /* UI7BarButtonIconAdd.png in Resources */,
+				3865158F17A81EF300E10B72 /* UI7TabBarItemMostRecentUnselected.png in Resources */,
 				386603D117A6BB78004EEE3F /* UI7BarButtonIconAdd@2x.png in Resources */,
 				386603D317A6BB78004EEE3F /* UI7BarButtonIconBookmarks.png in Resources */,
 				386603D517A6BB78004EEE3F /* UI7BarButtonIconBookmarks@2x.png in Resources */,
+				3865158117A81EF300E10B72 /* UI7TabBarItemFavoriteSelected@2x.png in Resources */,
 				386603D717A6BB78004EEE3F /* UI7BarButtonIconCamera.png in Resources */,
 				386603D917A6BB78004EEE3F /* UI7BarButtonIconCamera@2x.png in Resources */,
 				386603DB17A6BB78004EEE3F /* UI7BarButtonIconCompose.png in Resources */,
+				3865157717A81EF300E10B72 /* UI7TabBarItemContactsUnselected.png in Resources */,
 				386603DD17A6BB78004EEE3F /* UI7BarButtonIconCompose@2x.png in Resources */,
+				3865158517A81EF300E10B72 /* UI7TabBarItemFavoriteUnselected@2x.png in Resources */,
 				386603DF17A6BB78004EEE3F /* UI7BarButtonIconFastForward.png in Resources */,
 				386603E117A6BB78004EEE3F /* UI7BarButtonIconFastForward@2x.png in Resources */,
 				386603E317A6BB78004EEE3F /* UI7BarButtonIconOrganize.png in Resources */,
 				386603E517A6BB78004EEE3F /* UI7BarButtonIconOrganize@2x.png in Resources */,
 				386603E717A6BB78004EEE3F /* UI7BarButtonIconPause.png in Resources */,
+				3865159917A81EF300E10B72 /* UI7TabBarItemSearchUnselected@2x.png in Resources */,
+				3865159517A81EF300E10B72 /* UI7TabBarItemMostViewedUnselected@2x.png in Resources */,
+				3865158D17A81EF300E10B72 /* UI7TabBarItemMoreUnselected@2x.png in Resources */,
 				386603E917A6BB78004EEE3F /* UI7BarButtonIconPause@2x.png in Resources */,
 				386603EB17A6BB78004EEE3F /* UI7BarButtonIconPlay.png in Resources */,
 				386603ED17A6BB78004EEE3F /* UI7BarButtonIconPlay@2x.png in Resources */,
 				386603EF17A6BB78004EEE3F /* UI7BarButtonIconRefresh.png in Resources */,
+				3865157917A81EF300E10B72 /* UI7TabBarItemContactsUnselected@2x.png in Resources */,
 				386603F117A6BB78004EEE3F /* UI7BarButtonIconRefresh@2x.png in Resources */,
+				3865158717A81EF300E10B72 /* UI7TabBarItemHistoryUnselected.png in Resources */,
+				3865157D17A81EF300E10B72 /* UI7TabBarItemDownloadsUnselected@2x.png in Resources */,
 				386603F317A6BB78004EEE3F /* UI7BarButtonIconReply.png in Resources */,
 				386603F517A6BB78004EEE3F /* UI7BarButtonIconReply@2x.png in Resources */,
 				386603F717A6BB78004EEE3F /* UI7BarButtonIconRewind.png in Resources */,
 				386603F917A6BB78004EEE3F /* UI7BarButtonIconRewind@2x.png in Resources */,
 				386603FB17A6BB78004EEE3F /* UI7BarButtonIconSearch.png in Resources */,
+				3865158917A81EF300E10B72 /* UI7TabBarItemHistoryUnselected@2x.png in Resources */,
+				3865157517A81EF300E10B72 /* UI7TabBarItemBookmarksUnselected@2x.png in Resources */,
 				386603FD17A6BB78004EEE3F /* UI7BarButtonIconSearch@2x.png in Resources */,
 				386603FF17A6BB78004EEE3F /* UI7BarButtonIconStop.png in Resources */,
+				3865159117A81EF300E10B72 /* UI7TabBarItemMostRecentUnselected@2x.png in Resources */,
 				3866040117A6BB78004EEE3F /* UI7BarButtonIconStop@2x.png in Resources */,
 				3866040317A6BB78004EEE3F /* UI7BarButtonIconTrash.png in Resources */,
+				3865157317A81EF300E10B72 /* UI7TabBarItemBookmarksUnselected.png in Resources */,
 				3866040517A6BB78004EEE3F /* UI7BarButtonIconTrash@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -911,53 +996,69 @@
 				388FC1E5177303AA0084574E /* UI7ButtonImageInfo@2x.png in Resources */,
 				38F068281636F8C8002723AB /* Default.png in Resources */,
 				38F0682A1636F8C8002723AB /* Default@2x.png in Resources */,
+				3865157E17A81EF300E10B72 /* UI7TabBarItemFavoriteSelected.png in Resources */,
 				38078A69178DB7A00010B6D5 /* icon_72x72@2x.png in Resources */,
+				3865158A17A81EF300E10B72 /* UI7TabBarItemMoreUnselected.png in Resources */,
 				38F0682C1636F8C8002723AB /* Default-568h@2x.png in Resources */,
 				388FC1E3177303AA0084574E /* UI7ButtonImageAdd@2x.png in Resources */,
 				388FC1E4177303AA0084574E /* UI7ButtonImageInfo.png in Resources */,
+				3865158C17A81EF300E10B72 /* UI7TabBarItemMoreUnselected@2x.png in Resources */,
 				388FC1E2177303AA0084574E /* UI7ButtonImageAdd.png in Resources */,
 				3801741617682DDA0049D26C /* UI7TableViewCellDisclosureIndicator.png in Resources */,
 				3801745B1769C5D90049D26C /* UI7TableViewCellDisclosureIndicator@2x.png in Resources */,
 				38078A65178DB7A00010B6D5 /* Icon_60x60@2x.png in Resources */,
 				3801745F1769F3B50049D26C /* Storyboard.storyboard in Resources */,
+				3865157217A81EF300E10B72 /* UI7TabBarItemBookmarksUnselected.png in Resources */,
 				38017462176A245B0049D26C /* UI7NavigationBarBackButton.png in Resources */,
-				387558C0176DF36700AE5C8B /* UI7TabBarItemFavoriteSelected.png in Resources */,
+				3865158817A81EF300E10B72 /* UI7TabBarItemHistoryUnselected@2x.png in Resources */,
 				38078A67178DB7A00010B6D5 /* icon_72x72.png in Resources */,
-				387558C1176DF36700AE5C8B /* UI7TabBarItemFavoriteSelected@2x.png in Resources */,
-				387558C2176DF36700AE5C8B /* UI7TabBarItemFavoriteUnselected.png in Resources */,
-				387558C3176DF36700AE5C8B /* UI7TabBarItemFavoriteUnselected@2x.png in Resources */,
+				3865158617A81EF300E10B72 /* UI7TabBarItemHistoryUnselected.png in Resources */,
 				387558C5176DFA8600AE5C8B /* UI7NavigationBarBackButton@2x.png in Resources */,
 				384BF452178A230E00485BED /* icon_57x57@2x.png in Resources */,
 				384BF454178A231100485BED /* icon_57x57.png in Resources */,
 				386603CA17A6BB78004EEE3F /* UI7BarButtonIconAction.png in Resources */,
+				3865159217A81EF300E10B72 /* UI7TabBarItemMostViewedUnselected.png in Resources */,
 				386603CC17A6BB78004EEE3F /* UI7BarButtonIconAction@2x.png in Resources */,
 				386603CE17A6BB78004EEE3F /* UI7BarButtonIconAdd.png in Resources */,
 				386603D017A6BB78004EEE3F /* UI7BarButtonIconAdd@2x.png in Resources */,
 				386603D217A6BB78004EEE3F /* UI7BarButtonIconBookmarks.png in Resources */,
+				3865157617A81EF300E10B72 /* UI7TabBarItemContactsUnselected.png in Resources */,
+				3865158017A81EF300E10B72 /* UI7TabBarItemFavoriteSelected@2x.png in Resources */,
 				386603D417A6BB78004EEE3F /* UI7BarButtonIconBookmarks@2x.png in Resources */,
 				386603D617A6BB78004EEE3F /* UI7BarButtonIconCamera.png in Resources */,
+				3865158217A81EF300E10B72 /* UI7TabBarItemFavoriteUnselected.png in Resources */,
 				386603D817A6BB78004EEE3F /* UI7BarButtonIconCamera@2x.png in Resources */,
 				386603DA17A6BB78004EEE3F /* UI7BarButtonIconCompose.png in Resources */,
 				386603DC17A6BB78004EEE3F /* UI7BarButtonIconCompose@2x.png in Resources */,
+				3865159017A81EF300E10B72 /* UI7TabBarItemMostRecentUnselected@2x.png in Resources */,
 				386603DE17A6BB78004EEE3F /* UI7BarButtonIconFastForward.png in Resources */,
 				386603E017A6BB78004EEE3F /* UI7BarButtonIconFastForward@2x.png in Resources */,
 				386603E217A6BB78004EEE3F /* UI7BarButtonIconOrganize.png in Resources */,
+				3865157C17A81EF300E10B72 /* UI7TabBarItemDownloadsUnselected@2x.png in Resources */,
+				3865159617A81EF300E10B72 /* UI7TabBarItemSearchUnselected.png in Resources */,
 				386603E417A6BB78004EEE3F /* UI7BarButtonIconOrganize@2x.png in Resources */,
 				386603E617A6BB78004EEE3F /* UI7BarButtonIconPause.png in Resources */,
 				386603E817A6BB78004EEE3F /* UI7BarButtonIconPause@2x.png in Resources */,
 				386603EA17A6BB78004EEE3F /* UI7BarButtonIconPlay.png in Resources */,
 				386603EC17A6BB78004EEE3F /* UI7BarButtonIconPlay@2x.png in Resources */,
+				3865158E17A81EF300E10B72 /* UI7TabBarItemMostRecentUnselected.png in Resources */,
 				386603EE17A6BB78004EEE3F /* UI7BarButtonIconRefresh.png in Resources */,
 				386603F017A6BB78004EEE3F /* UI7BarButtonIconRefresh@2x.png in Resources */,
 				386603F217A6BB78004EEE3F /* UI7BarButtonIconReply.png in Resources */,
 				386603F417A6BB78004EEE3F /* UI7BarButtonIconReply@2x.png in Resources */,
 				386603F617A6BB78004EEE3F /* UI7BarButtonIconRewind.png in Resources */,
+				3865159417A81EF300E10B72 /* UI7TabBarItemMostViewedUnselected@2x.png in Resources */,
 				386603F817A6BB78004EEE3F /* UI7BarButtonIconRewind@2x.png in Resources */,
 				386603FA17A6BB78004EEE3F /* UI7BarButtonIconSearch.png in Resources */,
 				386603FC17A6BB78004EEE3F /* UI7BarButtonIconSearch@2x.png in Resources */,
 				386603FE17A6BB78004EEE3F /* UI7BarButtonIconStop.png in Resources */,
+				3865158417A81EF300E10B72 /* UI7TabBarItemFavoriteUnselected@2x.png in Resources */,
 				3866040017A6BB78004EEE3F /* UI7BarButtonIconStop@2x.png in Resources */,
+				3865157417A81EF300E10B72 /* UI7TabBarItemBookmarksUnselected@2x.png in Resources */,
+				3865159817A81EF300E10B72 /* UI7TabBarItemSearchUnselected@2x.png in Resources */,
+				3865157A17A81EF300E10B72 /* UI7TabBarItemDownloadsUnselected.png in Resources */,
 				3866040217A6BB78004EEE3F /* UI7BarButtonIconTrash.png in Resources */,
+				3865157817A81EF300E10B72 /* UI7TabBarItemContactsUnselected@2x.png in Resources */,
 				3866040417A6BB78004EEE3F /* UI7BarButtonIconTrash@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1112,6 +1213,7 @@
 				3810413317884A4300A85540 /* UITIssue12ViewController.m in Sources */,
 				38D3310317906FE3009576B2 /* UITIssue41ViewController.m in Sources */,
 				3866035117A6A60C004EEE3F /* UITIssue39ViewController.m in Sources */,
+				3805FBA517A81CB9008487A9 /* UITBarItemViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -149,7 +149,7 @@ NSString *UI7BarButtonItemSystemNames[] = {
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
-    self = [self __initWithCoder:aDecoder];
+    self = [self __initWithCoder:aDecoder]; // no information for system item >:(
     if (self != nil) {
 //        NSLog(@"%d", self.style);
         if (self.isSystemItem && (self.systemItem == UIBarButtonSystemItemSave || self.systemItem == UIBarButtonSystemItemDone)) {
