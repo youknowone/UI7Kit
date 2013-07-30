@@ -17,6 +17,7 @@
 		381595C21785B74C001CC0CD /* UITSubviewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 381595BB1785B74C001CC0CD /* UITSubviewTableViewController.m */; };
 		381595C41785B74C001CC0CD /* UITTintViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 381595BF1785B74C001CC0CD /* UITTintViewController.m */; };
 		381C00AD17172CE20067C936 /* UITTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 381C00AB17172CE20067C936 /* UITTextViewController.m */; };
+		3865159C17A8225E00E10B72 /* UITBarItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3865159B17A8225E00E10B72 /* UITBarItemViewController.m */; };
 		38699EAC17977EEE00A0DA96 /* icon_29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = 38699E9E17977EEE00A0DA96 /* icon_29x29.png */; };
 		38699EAD17977EEE00A0DA96 /* icon_29x29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38699E9F17977EEE00A0DA96 /* icon_29x29@2x.png */; };
 		38699EAE17977EEE00A0DA96 /* icon_50x50.png in Resources */ = {isa = PBXBuildFile; fileRef = 38699EA017977EEE00A0DA96 /* icon_50x50.png */; };
@@ -72,6 +73,8 @@
 		383764D713373154007072FD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		383764E213373155007072FD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		383764E513373155007072FD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3865159A17A8225E00E10B72 /* UITBarItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITBarItemViewController.h; sourceTree = "<group>"; };
+		3865159B17A8225E00E10B72 /* UITBarItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITBarItemViewController.m; sourceTree = "<group>"; };
 		38699E9E17977EEE00A0DA96 /* icon_29x29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_29x29.png; path = Icon.iconset/icon_29x29.png; sourceTree = "<group>"; };
 		38699E9F17977EEE00A0DA96 /* icon_29x29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_29x29@2x.png"; path = "Icon.iconset/icon_29x29@2x.png"; sourceTree = "<group>"; };
 		38699EA017977EEE00A0DA96 /* icon_50x50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_50x50.png; path = Icon.iconset/icon_50x50.png; sourceTree = "<group>"; };
@@ -166,6 +169,8 @@
 				38F068251636F8C8002723AB /* UITAppDelegate.m */,
 				38F0682D1636F8C8002723AB /* UITMasterViewController.h */,
 				38F0682E1636F8C8002723AB /* UITMasterViewController.m */,
+				3865159A17A8225E00E10B72 /* UITBarItemViewController.h */,
+				3865159B17A8225E00E10B72 /* UITBarItemViewController.m */,
 				38F068301636F8C8002723AB /* UITDetailViewController.h */,
 				38F068311636F8C9002723AB /* UITDetailViewController.m */,
 				381C00AA17172CE20067C936 /* UITTextViewController.h */,
@@ -348,6 +353,7 @@
 				381C00AD17172CE20067C936 /* UITTextViewController.m in Sources */,
 				381595AF1785B73A001CC0CD /* UITAlertViewController.m in Sources */,
 				381595B41785B742001CC0CD /* UITGroupedTableViewController.m in Sources */,
+				3865159C17A8225E00E10B72 /* UITBarItemViewController.m in Sources */,
 				381595B51785B742001CC0CD /* UITIssue1ViewController.m in Sources */,
 				381595C01785B74C001CC0CD /* UITPreparedCellTableViewController.m in Sources */,
 				38B0109017A6C52D0056D9B4 /* UITIssue39ViewController.m in Sources */,
