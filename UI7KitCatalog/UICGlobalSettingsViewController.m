@@ -39,3 +39,24 @@
 }
 
 @end
+
+
+@implementation UICTintColorSettingsViewController
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
+    UIAColorComponents *components = UICUserDefaults.globalTintColor.components;
+    self.redSlider.value = components.red;
+    self.greenSlider.value = components.green;
+    self.blueSlider.value = components.blue;
+}
+
+- (void)colorChanged:(id)sender {
+    UIColor *tintColor = [UIColor colorWithRed:self.redSlider.value green:self.greenSlider.value blue:self.blueSlider.value alpha:1.0];
+    self.view.window.tintColor = tintColor;
+    self.view.tintColor = tintColor;
+    UICUserDefaults.globalTintColor = tintColor;
+}
+
+@end

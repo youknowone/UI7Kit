@@ -17,3 +17,12 @@
 - (IBAction)barStyleChanged:(id)sender;
 
 @end
+
+
+@interface UICTintColorSettingsViewController : UIViewController
+
+@property(nonatomic,strong) IBOutlet UISlider *redSlider, *greenSlider, *blueSlider;
+
+- (IBAction)colorChanged:(id)sender;
+
+@end

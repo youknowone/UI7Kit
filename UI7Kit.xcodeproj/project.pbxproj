@@ -108,6 +108,7 @@
 		3865159717A81EF300E10B72 /* UI7TabBarItemSearchUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865157017A81EF300E10B72 /* UI7TabBarItemSearchUnselected.png */; };
 		3865159817A81EF300E10B72 /* UI7TabBarItemSearchUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865157117A81EF300E10B72 /* UI7TabBarItemSearchUnselected@2x.png */; };
 		3865159917A81EF300E10B72 /* UI7TabBarItemSearchUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865157117A81EF300E10B72 /* UI7TabBarItemSearchUnselected@2x.png */; };
+		3865159D17A89D2900E10B72 /* UI7Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D1C936177EF7B70026135A /* UI7Tool.m */; };
 		3866035117A6A60C004EEE3F /* UITIssue39ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3866035017A6A60C004EEE3F /* UITIssue39ViewController.m */; };
 		386603CA17A6BB78004EEE3F /* UI7BarButtonIconAction.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603AC17A6BB78004EEE3F /* UI7BarButtonIconAction.png */; };
 		386603CB17A6BB78004EEE3F /* UI7BarButtonIconAction.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603AC17A6BB78004EEE3F /* UI7BarButtonIconAction.png */; };
@@ -1184,6 +1185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38DBEB79178C6A27000EFC5C /* UICUserDefaults.m in Sources */,
+				3865159D17A89D2900E10B72 /* UI7Tool.m in Sources */,
 				38FB2AA2178F06B1000491FE /* UICBareTableViewController.m in Sources */,
 				38DBEB76178C67FB000EFC5C /* UICGlobalSettingsViewController.m in Sources */,
 				384BF42C178A176600485BED /* main.m in Sources */,

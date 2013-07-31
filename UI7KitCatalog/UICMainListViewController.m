@@ -15,8 +15,7 @@
 
 @implementation UICMainListViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
 
     UIBarStyle style = UICUserDefaults.globalBarStyle;
@@ -25,10 +24,12 @@
     self.navigationController.navigationBar.barStyle = style;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    UIColor *tintColor = UICUserDefaults.globalTintColor;
+    if (tintColor) {
+        self.view.window.tintColor = tintColor;
+    }
 }
 
 @end
