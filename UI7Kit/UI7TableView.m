@@ -113,7 +113,7 @@ UIColor *UI7TableViewGroupedViewPatternColor = nil;
             }
             UIColor *color = [aDecoder decodeObjectForKey:@"UIBackgroundColor"];
             if (color == UI7TableViewGroupedViewPatternColor) {
-                self.backgroundColor = [UIColor clearColor];
+                self.backgroundColor = [UI7Color groupedTableViewSectionBackgroundColor];
             }
 
             self.backgroundView = nil;
@@ -223,7 +223,7 @@ UIView *_UI7TableViewDelegateViewForHeaderInSection(id self, SEL _cmd, UITableVi
         label.text = [@"   " stringByAppendingString:[title uppercaseString]];
         label.font = [UI7Font systemFontOfSize:14.0 attribute:UI7FontAttributeNone];
         label.textColor = [UIColor colorWith8bitWhite:77 alpha:255];
-        label.backgroundColor = [UIColor colorWith8bitRed:239 green:239 blue:244 alpha:255];
+        label.backgroundColor = [UI7Color groupedTableViewSectionBackgroundColor];
     } else {
         label.text = [@"    " stringByAppendingString:title];
         label.font = [UI7Font systemFontOfSize:14.0 attribute:UI7FontAttributeMedium];
@@ -256,7 +256,7 @@ UIView *_UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableVi
         label.text = [@"   " stringByAppendingString:title];
         label.font = [UI7Font systemFontOfSize:14.0 attribute:UI7FontAttributeNone];
         label.textColor = [UIColor colorWith8bitWhite:128 alpha:255];
-        label.backgroundColor = [UIColor colorWith8bitRed:239 green:239 blue:244 alpha:255];
+        label.backgroundColor = [UI7Color groupedTableViewSectionBackgroundColor];
     } else {
         label.text = [@"    " stringByAppendingString:title]; // TODO: do this pretty later
         label.font = [UI7Font systemFontOfSize:14.0 attribute:UI7FontAttributeMedium];
@@ -341,11 +341,10 @@ UIView *_UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableVi
 @end
 
 
-@interface UITableViewCell (Patch)
+@interface UITableViewCell (Private)
 
-// backup
-- (id)__initWithCoder:(NSCoder *)aDecoder;
-- (id)__initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier;
+- (void)setTableViewStyle:(int)style;
+- (void)_setTableBackgroundCGColor:(CGColorRef)color withSystemColorName:(id)name;
 
 @end
 
@@ -354,6 +353,8 @@ UIView *_UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableVi
 
 - (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
 - (id)__initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier { assert(NO); return nil; }
+- (void)__setBackgroundColor:(UIColor *)backgroundColor { assert(NO); }
+- (void)__setTableViewStyle:(int)style { assert(NO); }
 
 - (void)_tableViewCellInitTheme {
     self.textLabel.font = [UI7Font systemFontOfSize:self.textLabel.font.pointSize attribute:UI7FontAttributeLight];
@@ -363,7 +364,12 @@ UIView *_UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableVi
 - (void)_tableViewCellInit {
     self.textLabel.highlightedTextColor = self.textLabel.textColor;
     self.detailTextLabel.highlightedTextColor = self.detailTextLabel.textColor; // FIXME: not sure
-    self.selectedBackgroundView = [UIColor colorWith8bitWhite:217 alpha:255].image.view;
+    self.backgroundView = [[[UIView alloc] init] autorelease];
+    self.selectedBackgroundView = [[[UIView alloc] init] autorelease];
+    self.selectedBackgroundView.backgroundColor = [UIColor colorWith8bitWhite:217 alpha:255];
+    self.textLabel.backgroundColor = [UIColor clearColor];
+    self.detailTextLabel.backgroundColor = [UIColor clearColor];
+    self.backgroundColor = [UIColor whiteColor];
 }
 
 @end
@@ -377,6 +383,8 @@ UIView *_UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableVi
 
         [target copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
         [target copyToSelector:@selector(__initWithStyle:reuseIdentifier:) fromSelector:@selector(initWithStyle:reuseIdentifier:)];
+        [target copyToSelector:@selector(__setBackgroundColor:) fromSelector:@selector(setBackgroundColor:)];
+        [target copyToSelector:@selector(__setTableViewStyle:) fromSelector:@selector(setTableViewStyle:)];
     }
 }
 
@@ -385,12 +393,19 @@ UIView *_UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableVi
 
     [self exportSelector:@selector(initWithCoder:) toClass:target];
     [self exportSelector:@selector(initWithStyle:reuseIdentifier:) toClass:target];
+    [self exportSelector:@selector(setBackgroundColor:) toClass:target];
+    [self exportSelector:@selector(setTableViewStyle:) toClass:target];
+    [self exportSelector:@selector(_setTableBackgroundCGColor:withSystemColorName:) toClass:target];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [self __initWithCoder:aDecoder];
     if (self != nil) {
+        UIColor *backgroundColor = [aDecoder decodeObjectForKey:@"UIBackgroundColor"];
         [self _tableViewCellInit];
+        if (backgroundColor) {
+            self.backgroundColor = backgroundColor;
+        }
     }
     return self;
 }
@@ -402,6 +417,21 @@ UIView *_UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableVi
         [self _tableViewCellInit];
     }
     return self;
+}
+
+- (void)setBackgroundColor:(UIColor *)backgroundColor {
+    [self __setBackgroundColor:backgroundColor];
+    self.backgroundView.backgroundColor = backgroundColor;
+}
+
+- (void)setTableViewStyle:(int)style {
+    UIColor *backgroundColor = self.backgroundColor;
+    [self __setTableViewStyle:style];
+    self.backgroundColor = backgroundColor;
+}
+
+- (void)_setTableBackgroundCGColor:(CGColorRef)color withSystemColorName:(id)name {
+
 }
 
 @end
