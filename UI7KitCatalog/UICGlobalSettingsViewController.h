@@ -12,6 +12,7 @@
 
 @property(nonatomic,strong) IBOutlet UISwitch *patchSwitch;
 @property(nonatomic,strong) IBOutlet UISegmentedControl *barStyleSegmentedControl;
+@property(nonatomic,strong) IBOutlet UITableViewCell *tintColorCell;
 
 - (IBAction)patchChanged:(id)sender;
 - (IBAction)barStyleChanged:(id)sender;

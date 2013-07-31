@@ -23,6 +23,16 @@
     self.barStyleSegmentedControl.selectedSegmentIndex = UICUserDefaults.globalBarStyle;
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+
+    UIImage *image = self.tintColorCell.imageView.image;
+    if (image == nil) {
+        image = [UIImage imageNamed:@"UI7TabBarItemFavoriteSelected"];
+    }
+    self.tintColorCell.imageView.image = [image imageByFilledWithColor:self.view.tintColor];
+}
+
 #pragma mark - events
 
 - (void)patchChanged:(UISwitch *)sender {
