@@ -48,6 +48,12 @@ NSAPropertyAssignSetter(setNavigationBarClass, @"_navigationBarClass");
 
 // TODO: Implement 'pushViewController' with new transition animation.
 
+- (id)_MFMailComposeViewController_init {
+    self = [self __init];
+    [self.navigationBar setTitleTextAttributes:@{}];
+    return self;
+}
+
 + (void)initialize {
     if (self == [UI7NavigationController class]) {
         Class target = [UINavigationController class];
@@ -63,6 +69,14 @@ NSAPropertyAssignSetter(setNavigationBarClass, @"_navigationBarClass");
 
     [self exportSelector:@selector(initWithCoder:) toClass:target];
     [self exportSelector:@selector(initWithRootViewController:) toClass:target];
+
+    Class MFMailComposeViewController = NSClassFromString(@"MFMailComposeViewController");
+    if (MFMailComposeViewController) {
+        [MFMailComposeViewController addMethodForSelector:@selector(__init) fromMethod:[MFMailComposeViewController methodForSelector:@selector(init)]];
+        NSAMethod *method = [self methodForSelector:@selector(_MFMailComposeViewController_init)];
+        [MFMailComposeViewController addMethodForSelector:@selector(init) fromMethod:method];
+        [MFMailComposeViewController methodForSelector:@selector(init)].implementation = method.implementation;
+    }
 }
 
 - (id)init {
