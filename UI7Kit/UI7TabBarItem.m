@@ -11,6 +11,7 @@
 #import "UI7KitPrivate.h"
 #import "UI7TabBarItem.h"
 
+
 NSString *UI7BarButtonItemTitles[] = {
     @"More",
     @"Favorites",
@@ -40,6 +41,7 @@ NSString *UI7BarButtonItemIconNames[] = {
     @"MostRecent",
     @"MostViewed",
 };
+
 
 @interface UITabBarItem (Private)
 
@@ -130,7 +132,11 @@ NSString *UI7BarButtonItemIconNames[] = {
     self = [self __initWithCoder:aDecoder];
     if (self != nil) {
         if (self.isSystemItem) {
-            // TODO: not easy...
+            UITabBarSystemItem item = self.systemItem;
+            UITabBarItem *newItem = [[UI7TabBarItem alloc] initWithTabBarSystemItem:item tag:self.tag];
+            newItem.badgeValue = self.badgeValue;
+            [self release];
+            self = (id)newItem;
         }
         [self _tabBarItemInit];
         self.selectedImage = [UIImage clearImage];

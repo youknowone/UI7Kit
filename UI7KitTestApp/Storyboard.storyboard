@@ -580,7 +580,7 @@
             <objects>
                 <viewController id="7kN-uz-lKd" customClass="UITIssue39ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vGo-9Y-6lY">
-                        <rect key="frame" x="0.0" y="64" width="320" height="878"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="1409"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="m92-eE-S4r" customClass="UI7RoundedRectButton">
@@ -1284,7 +1284,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </items>
                             </toolbar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" id="nd5-7v-AZF">
-                                <rect key="frame" x="142" y="68" width="29" height="31"/>
+                                <rect key="frame" x="145" y="70" width="29" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal">
@@ -1394,7 +1394,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </connections>
                             </slider>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.95110059306569339" blue="0.7166115419708029" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="WHi-68-sfv"/>
                     <navigationItem key="navigationItem" title="Custom" id="Smb-Od-3s9">
