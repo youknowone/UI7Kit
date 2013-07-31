@@ -56,7 +56,11 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
-    UIAColorComponents *components = UICUserDefaults.globalTintColor.components;
+    UIColor *color = UICUserDefaults.globalTintColor;
+    if (color == nil) {
+        color = [UI7Kit kit].tintColor;
+    }
+    UIAColorComponents *components = color.components;
     self.redSlider.value = components.red;
     self.greenSlider.value = components.green;
     self.blueSlider.value = components.blue;
