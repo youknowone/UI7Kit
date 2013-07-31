@@ -127,8 +127,7 @@ NSString *UI7TabBarStyle = @"UI7TabBarStyle";
     return self;
 }
 
-- (id)initWithFrame:(CGRect)frame
-{
+- (id)initWithFrame:(CGRect)frame {
     self = [self __initWithFrame:frame];
     if (self) {
         [self _tabBarInit];

@@ -74,7 +74,7 @@ NSString *UI7BarButtonItemSystemNames[] = {
      */
     UIImage *backImage = [UIImage imageNamed:@"UI7NavigationBarBackButton"];
     backImage = [backImage imageByFilledWithColor:tintColor];
-    [self setBackButtonBackgroundImage:backImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault]; // @2x is not retina image
+    [self setBackButtonBackgroundImage:backImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     backImage = [backImage imageByFilledWithColor:tintColor.highligtedColor];
     [self setBackButtonBackgroundImage:backImage forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
     [self setTitleTextAttributes:@{
@@ -89,7 +89,7 @@ NSString *UI7BarButtonItemSystemNames[] = {
  UITextAttributeTextShadowOffset:[NSValue valueWithUIOffset:UIOffsetZero],
      }
                         forState:UIControlStateHighlighted];
-    self.image = [self.image imageByFilledWithColor:self.tintColor];
+    self.image = [self.image imageByFilledWithColor:tintColor];
 }
 
 @end
@@ -149,18 +149,15 @@ NSString *UI7BarButtonItemSystemNames[] = {
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
-    self = [self __initWithCoder:aDecoder]; // no information for system item >:(
+    self = [self __initWithCoder:aDecoder];
     if (self != nil) {
-//        NSLog(@"%d", self.style);
-        if (self.isSystemItem && (self.systemItem == UIBarButtonSystemItemSave || self.systemItem == UIBarButtonSystemItemDone)) {
-            self.style = UIBarButtonItemStyleDone;
-        } else {
-            self.style = UIBarButtonItemStylePlain;
+        if ([aDecoder containsValueForKey:@"UISystemItem"]) {
+            UIBarButtonSystemItem item = [aDecoder decodeIntegerForKey:@"UISystemItem"];
+            id new = [[self.class alloc] initWithBarButtonSystemItem:item target:self.target action:self.action];
+            [self release];
+            self = new;
         }
-        // NOTE: I have no idea how to enable tintColor but disable glow effect.
         [self _barButtonItemInit];
-//        [self _setImageHasEffects:NO];
-//        [[self _toolbarButton] _showPressedIndicator:NO];
     }
     return self;
 }

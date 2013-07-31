@@ -133,7 +133,7 @@ NSString *UI7BarButtonItemIconNames[] = {
     if (self != nil) {
         if (self.isSystemItem) {
             UITabBarSystemItem item = self.systemItem;
-            UITabBarItem *newItem = [[UI7TabBarItem alloc] initWithTabBarSystemItem:item tag:self.tag];
+            UITabBarItem *newItem = [[self.class alloc] initWithTabBarSystemItem:item tag:self.tag];
             newItem.badgeValue = self.badgeValue;
             [self release];
             self = (id)newItem;
