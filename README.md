@@ -98,10 +98,14 @@ Apps using UI7Kit
 
 - QRQR: [https://itunes.apple.com/app/id444076697](https://itunes.apple.com/app/id444076697)
 - MAFOR Marine Forecast Decoder: [https://itunes.apple.com/app/id674865491](https://itunes.apple.com/app/id674865491)
+- TouchMusic: [https://itunes.apple.com/app/id677386346](https://itunes.apple.com/app/id677386346)
 
 Do you like this project?
 -------------------------
 
 Is this project joyful or helpful enough for you? Tip me ;)
 
-- [gittip.com/youknowone](https://www.gittip.com/youknowone/)
+[![Gittip donate button](http://badgr.co/gittip/youknowone.png)](https://www.gittip.com/youknowone/ "Donate weekly to this project using Gittip")
+
+[![Paypal donate button](http://badgr.co/paypal/donate.png?bg=%23007aff)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=YZGSUCRH3Q478&item_name=UI7Kit%20support "One time donation to this project using Paypal")
+
