@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 youknowone.org. All rights reserved.
 //
 
+#import "UI7KitPrivate.h"
 #import "UI7Font.h"
 #import "UI7Color.h"
 
@@ -347,6 +348,7 @@ UIView *_UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableVi
         UITableViewCell *cell = [self cellForRowAtIndexPath:path];
         cell.tableView = self;
         cell.indexPath = path;
+        [cell _tintColorUpdated];
     }
 }
 

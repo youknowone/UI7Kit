@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 youknowone.org. All rights reserved.
 //
 
+#import "UI7KitPrivate.h"
 #import "UI7Font.h"
 #import "UI7Color.h"
 #import "UI7TableViewCell.h"
@@ -53,6 +54,7 @@
 
 - (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
 - (id)__initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier { assert(NO); return nil; }
+- (UIColor *)__tintColor { assert(NO); return  nil; }
 - (void)__setAccessoryType:(UITableViewCellAccessoryType)accessoryType { assert(NO); }
 - (void)__setBackgroundColor:(UIColor *)backgroundColor { assert(NO); }
 - (void)__setTableViewStyle:(int)style { assert(NO); }
@@ -80,6 +82,23 @@
     }
 }
 
+- (UIColor *)_tintColor {
+    UIColor *color = [self __tintColor];
+    if (color == nil) {
+        color = [self.tableView tintColor];
+    }
+    return color;
+}
+
+- (void)_tintColorUpdated {
+    if (self.accessoryType == UITableViewCellAccessoryCheckmark) {
+        UIColor *tintColor = self.tintColor;
+        if (tintColor) {
+            UIImageView *markView = (id)self.accessoryView;
+            markView.image = [markView.image imageByFilledWithColor:tintColor];
+        }
+    }
+}
 
 @end
 
@@ -135,6 +154,7 @@ UIImage *UI7TableViewCellAccessoryCheckmarkImageCreate() {
 
         [target copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
         [target copyToSelector:@selector(__initWithStyle:reuseIdentifier:) fromSelector:@selector(initWithStyle:reuseIdentifier:)];
+        [target copyToSelector:@selector(__tintColor) fromSelector:@selector(tintColor)];
         [target copyToSelector:@selector(__setAccessoryType:) fromSelector:@selector(setAccessoryType:)];
         [target copyToSelector:@selector(__setBackgroundColor:) fromSelector:@selector(setBackgroundColor:)];
         [target copyToSelector:@selector(__setTableViewStyle:) fromSelector:@selector(setTableViewStyle:)];
@@ -149,6 +169,7 @@ UIImage *UI7TableViewCellAccessoryCheckmarkImageCreate() {
 
     [self exportSelector:@selector(initWithCoder:) toClass:target];
     [self exportSelector:@selector(initWithStyle:reuseIdentifier:) toClass:target];
+    [self exportSelector:@selector(tintColor) toClass:target];
     [self exportSelector:@selector(setAccessoryType:) toClass:target];
     [self exportSelector:@selector(setBackgroundColor:) toClass:target];
     [self exportSelector:@selector(setTableViewStyle:) toClass:target];
@@ -219,13 +240,17 @@ UIImage *UI7TableViewCellAccessoryCheckmarkImageCreate() {
             [button addTarget:self action:@selector(_accessoryButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
             self.accessoryView = button;
         }   break;
-        case UITableViewCellAccessoryCheckmark:
+        case UITableViewCellAccessoryCheckmark: {
             self.accessoryView = UI7TableViewCellAccessoryCheckmarkImage.view;
-            break;
+        }   break;
         default:
             [self __setAccessoryType:accessoryType];
             break;
     }
+}
+
+- (UIColor *)tintColor {
+    return [self _tintColor];
 }
 
 @end
