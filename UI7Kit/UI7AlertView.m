@@ -84,13 +84,6 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
 @end
 
 
-@interface UI7AlertView ()
-
-- (void)relayout;
-
-@end
-
-
 @implementation UIAlertView (UI7AlertView)
 
 - (void)relayout {

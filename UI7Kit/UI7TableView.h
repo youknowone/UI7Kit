@@ -21,10 +21,6 @@
 @end
 
 
-@interface UI7TableViewCell : UITableViewCell<UI7Patch>
-
-@end
-
 
 @interface UI7TableViewController : UITableViewController
 

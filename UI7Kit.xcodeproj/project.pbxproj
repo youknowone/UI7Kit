@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		15315B9E98864B01A283D8AB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C081AB61224D42EF8B7ABD3F /* libPods.a */; };
-		3801741617682DDA0049D26C /* UI7TableViewCellDisclosureIndicator.png in Resources */ = {isa = PBXBuildFile; fileRef = 3801741517682DDA0049D26C /* UI7TableViewCellDisclosureIndicator.png */; };
 		38017432176989660049D26C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38C7A9891495181800381910 /* SenTestingKit.framework */; };
 		38017433176989660049D26C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383764E213373155007072FD /* UIKit.framework */; };
 		38017434176989660049D26C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383764D713373154007072FD /* Foundation.framework */; };
@@ -22,10 +21,10 @@
 		38017454176989B80049D26C /* UI7ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3801740E176771CF0049D26C /* UI7ViewController.m */; };
 		38017455176989B80049D26C /* UI7NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E58A8E1767554200F6ED19 /* UI7NavigationController.m */; };
 		38017456176989B80049D26C /* UI7TableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 382F54281767863B004D6F59 /* UI7TableView.m */; };
-		3801745B1769C5D90049D26C /* UI7TableViewCellDisclosureIndicator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3801745A1769C5D90049D26C /* UI7TableViewCellDisclosureIndicator@2x.png */; };
 		3801745F1769F3B50049D26C /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3801745E1769F3B50049D26C /* Storyboard.storyboard */; };
 		38017462176A245B0049D26C /* UI7NavigationBarBackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 38017461176A245B0049D26C /* UI7NavigationBarBackButton.png */; };
 		3805FBA517A81CB9008487A9 /* UITBarItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3805FBA417A81CB9008487A9 /* UITBarItemViewController.m */; };
+		3805FBB717AAAD56008487A9 /* UI7TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3805FBB617AAAD56008487A9 /* UI7TableViewCell.m */; };
 		38078A65178DB7A00010B6D5 /* Icon_60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38078A62178DB7A00010B6D5 /* Icon_60x60@2x.png */; };
 		38078A66178DB7A00010B6D5 /* Icon_60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38078A62178DB7A00010B6D5 /* Icon_60x60@2x.png */; };
 		38078A67178DB7A00010B6D5 /* icon_72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = 38078A63178DB7A00010B6D5 /* icon_72x72.png */; };
@@ -54,8 +53,6 @@
 		384BF446178A1F4200485BED /* UI7ButtonImageAdd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 388FC1DF177303AA0084574E /* UI7ButtonImageAdd@2x.png */; };
 		384BF447178A1F4200485BED /* UI7ButtonImageInfo.png in Resources */ = {isa = PBXBuildFile; fileRef = 388FC1E0177303AA0084574E /* UI7ButtonImageInfo.png */; };
 		384BF448178A1F4200485BED /* UI7ButtonImageInfo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 388FC1E1177303AA0084574E /* UI7ButtonImageInfo@2x.png */; };
-		384BF449178A1F4200485BED /* UI7TableViewCellDisclosureIndicator.png in Resources */ = {isa = PBXBuildFile; fileRef = 3801741517682DDA0049D26C /* UI7TableViewCellDisclosureIndicator.png */; };
-		384BF44A178A1F4200485BED /* UI7TableViewCellDisclosureIndicator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3801745A1769C5D90049D26C /* UI7TableViewCellDisclosureIndicator@2x.png */; };
 		384BF44B178A1F4200485BED /* UI7NavigationBarBackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 38017461176A245B0049D26C /* UI7NavigationBarBackButton.png */; };
 		384BF44C178A1F4200485BED /* UI7NavigationBarBackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 387558C4176DFA8600AE5C8B /* UI7NavigationBarBackButton@2x.png */; };
 		384BF452178A230E00485BED /* icon_57x57@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 384BF451178A230E00485BED /* icon_57x57@2x.png */; };
@@ -261,7 +258,6 @@
 		3801740E176771CF0049D26C /* UI7ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7ViewController.m; sourceTree = "<group>"; };
 		38017410176776020049D26C /* UI7BarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7BarButtonItem.h; sourceTree = "<group>"; };
 		38017411176776020049D26C /* UI7BarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7BarButtonItem.m; sourceTree = "<group>"; };
-		3801741517682DDA0049D26C /* UI7TableViewCellDisclosureIndicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7TableViewCellDisclosureIndicator.png; sourceTree = "<group>"; };
 		38017423176989650049D26C /* libUI7Kit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUI7Kit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		38017427176989660049D26C /* UI7Kit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UI7Kit-Prefix.pch"; sourceTree = "<group>"; };
 		38017431176989660049D26C /* UI7KitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UI7KitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -269,11 +265,12 @@
 		3801743C176989660049D26C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3801743E176989660049D26C /* UI7KitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UI7KitTests.h; sourceTree = "<group>"; };
 		3801743F176989660049D26C /* UI7KitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UI7KitTests.m; sourceTree = "<group>"; };
-		3801745A1769C5D90049D26C /* UI7TableViewCellDisclosureIndicator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7TableViewCellDisclosureIndicator@2x.png"; sourceTree = "<group>"; };
 		3801745E1769F3B50049D26C /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		38017461176A245B0049D26C /* UI7NavigationBarBackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7NavigationBarBackButton.png; sourceTree = "<group>"; };
 		3805FBA317A81CB9008487A9 /* UITBarItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITBarItemViewController.h; sourceTree = "<group>"; };
 		3805FBA417A81CB9008487A9 /* UITBarItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITBarItemViewController.m; sourceTree = "<group>"; };
+		3805FBB517AAAD56008487A9 /* UI7TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7TableViewCell.h; sourceTree = "<group>"; };
+		3805FBB617AAAD56008487A9 /* UI7TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7TableViewCell.m; sourceTree = "<group>"; };
 		38078A62178DB7A00010B6D5 /* Icon_60x60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon_60x60@2x.png"; path = "Icon.iconset/Icon_60x60@2x.png"; sourceTree = "<group>"; };
 		38078A63178DB7A00010B6D5 /* icon_72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_72x72.png; path = Icon.iconset/icon_72x72.png; sourceTree = "<group>"; };
 		38078A64178DB7A00010B6D5 /* icon_72x72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_72x72@2x.png"; path = "Icon.iconset/icon_72x72@2x.png"; sourceTree = "<group>"; };
@@ -565,8 +562,6 @@
 				388FC1DF177303AA0084574E /* UI7ButtonImageAdd@2x.png */,
 				388FC1E0177303AA0084574E /* UI7ButtonImageInfo.png */,
 				388FC1E1177303AA0084574E /* UI7ButtonImageInfo@2x.png */,
-				3801741517682DDA0049D26C /* UI7TableViewCellDisclosureIndicator.png */,
-				3801745A1769C5D90049D26C /* UI7TableViewCellDisclosureIndicator@2x.png */,
 				38017461176A245B0049D26C /* UI7NavigationBarBackButton.png */,
 				387558C4176DFA8600AE5C8B /* UI7NavigationBarBackButton@2x.png */,
 				3865155E17A81EF300E10B72 /* UI7TabBarItemBookmarksUnselected.png */,
@@ -714,6 +709,8 @@
 				38C46564177F3C6D00A883EA /* UI7SearchBar.m */,
 				382F54271767863B004D6F59 /* UI7TableView.h */,
 				382F54281767863B004D6F59 /* UI7TableView.m */,
+				3805FBB517AAAD56008487A9 /* UI7TableViewCell.h */,
+				3805FBB617AAAD56008487A9 /* UI7TableViewCell.m */,
 				38EEF9C5176A366C0085B09B /* UI7Button.h */,
 				38EEF9C6176A366C0085B09B /* UI7Button.m */,
 				38EEF9C8176A482C0085B09B /* UI7Switch.h */,
@@ -934,8 +931,6 @@
 				384BF447178A1F4200485BED /* UI7ButtonImageInfo.png in Resources */,
 				384BF448178A1F4200485BED /* UI7ButtonImageInfo@2x.png in Resources */,
 				3865159317A81EF300E10B72 /* UI7TabBarItemMostViewedUnselected.png in Resources */,
-				384BF449178A1F4200485BED /* UI7TableViewCellDisclosureIndicator.png in Resources */,
-				384BF44A178A1F4200485BED /* UI7TableViewCellDisclosureIndicator@2x.png in Resources */,
 				384BF44B178A1F4200485BED /* UI7NavigationBarBackButton.png in Resources */,
 				384BF44C178A1F4200485BED /* UI7NavigationBarBackButton@2x.png in Resources */,
 				384BF455178A2DB100485BED /* Default.png in Resources */,
@@ -1005,8 +1000,6 @@
 				388FC1E4177303AA0084574E /* UI7ButtonImageInfo.png in Resources */,
 				3865158C17A81EF300E10B72 /* UI7TabBarItemMoreUnselected@2x.png in Resources */,
 				388FC1E2177303AA0084574E /* UI7ButtonImageAdd.png in Resources */,
-				3801741617682DDA0049D26C /* UI7TableViewCellDisclosureIndicator.png in Resources */,
-				3801745B1769C5D90049D26C /* UI7TableViewCellDisclosureIndicator@2x.png in Resources */,
 				38078A65178DB7A00010B6D5 /* Icon_60x60@2x.png in Resources */,
 				3801745F1769F3B50049D26C /* Storyboard.storyboard in Resources */,
 				3865157217A81EF300E10B72 /* UI7TabBarItemBookmarksUnselected.png in Resources */,
@@ -1169,6 +1162,7 @@
 				38C46565177F3C6E00A883EA /* UI7SearchBar.m in Sources */,
 				385C6CC11786C86F00A182C0 /* UI7PickerView.m in Sources */,
 				38717F77179F6009003D9602 /* UI7Window.m in Sources */,
+				3805FBB717AAAD56008487A9 /* UI7TableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

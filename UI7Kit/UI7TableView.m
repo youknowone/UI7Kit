@@ -13,12 +13,28 @@
 
 CGFloat UI7TableViewGroupedTableSectionSeperatorHeight = 28.0f;
 
+@interface UITableViewCell (Accessor)
+
+@property(nonatomic,assign) UITableView *tableView;
+@property(nonatomic,strong) NSIndexPath *indexPath;
+
+@end
+
+
+@interface UITableView ()
+
+- (void)_updateVisibleCellsNow:(BOOL)flag;
+
+@end
+
+
 @implementation UITableView (Patch)
 
 - (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
 - (id)__initWithFrame:(CGRect)frame { assert(NO); return nil; }
 - (void)__setDelegate:(id<UITableViewDelegate>)delegate { assert(NO); return; }
 - (UITableViewStyle)__style { assert(NO); return 0; }
+- (void)__updateVisibleCellsNow:(BOOL)flag { assert(NO); }
 
 - (void)_tableViewInit {
 
@@ -71,6 +87,7 @@ UIColor *UI7TableViewGroupedViewPatternColor = nil;
         [target copyToSelector:@selector(__initWithFrame:) fromSelector:@selector(initWithFrame:)];
         [target copyToSelector:@selector(__setDelegate:) fromSelector:@selector(setDelegate:)];
         [target copyToSelector:@selector(__style) fromSelector:@selector(style)];
+        [target copyToSelector:@selector(__updateVisibleCellsNow:) fromSelector:@selector(_updateVisibleCellsNow:)];
     }
 }
 
@@ -82,6 +99,7 @@ UIColor *UI7TableViewGroupedViewPatternColor = nil;
     [self exportSelector:@selector(awakeFromNib) toClass:target];
     [self exportSelector:@selector(setDelegate:) toClass:target];
     [self exportSelector:@selector(style) toClass:target];
+    [self exportSelector:@selector(_updateVisibleCellsNow:) toClass:target];
 
     if (![target methodForSelector:@selector(dequeueReusableCellWithIdentifier:forIndexPath:)]) {
         [target addMethodForSelector:@selector(dequeueReusableCellWithIdentifier:forIndexPath:) fromMethod:[self methodForSelector:@selector(__dequeueReusableCellWithIdentifier:forIndexPath:)]];
@@ -323,6 +341,15 @@ UIView *_UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableVi
     [self __setDelegate:delegate];
 }
 
+- (void)_updateVisibleCellsNow:(BOOL)flag {
+    [self __updateVisibleCellsNow:flag];
+    for (NSIndexPath *path in self.indexPathsForVisibleRows) {
+        UITableViewCell *cell = [self cellForRowAtIndexPath:path];
+        cell.tableView = self;
+        cell.indexPath = path;
+    }
+}
+
 // TODO: ok.. do this next time.
 //- (BOOL)_delegateWantsHeaderViewForSection:(NSUInteger)section {
 //    return YES;
@@ -341,100 +368,6 @@ UIView *_UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableVi
 @end
 
 
-@interface UITableViewCell (Private)
-
-- (void)setTableViewStyle:(int)style;
-- (void)_setTableBackgroundCGColor:(CGColorRef)color withSystemColorName:(id)name;
-
-@end
-
-
-@implementation UITableViewCell (Patch)
-
-- (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
-- (id)__initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier { assert(NO); return nil; }
-- (void)__setBackgroundColor:(UIColor *)backgroundColor { assert(NO); }
-- (void)__setTableViewStyle:(int)style { assert(NO); }
-
-- (void)_tableViewCellInitTheme {
-    self.textLabel.font = [UI7Font systemFontOfSize:self.textLabel.font.pointSize attribute:UI7FontAttributeLight];
-    self.detailTextLabel.font = [UI7Font systemFontOfSize:self.detailTextLabel.font.pointSize attribute:UI7FontAttributeNone];
-}
-
-- (void)_tableViewCellInit {
-    self.textLabel.highlightedTextColor = self.textLabel.textColor;
-    self.detailTextLabel.highlightedTextColor = self.detailTextLabel.textColor; // FIXME: not sure
-    self.backgroundView = [[[UIView alloc] init] autorelease];
-    self.selectedBackgroundView = [[[UIView alloc] init] autorelease];
-    self.selectedBackgroundView.backgroundColor = [UIColor colorWith8bitWhite:217 alpha:255];
-    self.textLabel.backgroundColor = [UIColor clearColor];
-    self.detailTextLabel.backgroundColor = [UIColor clearColor];
-    self.backgroundColor = [UIColor whiteColor];
-}
-
-@end
-
-
-@implementation UI7TableViewCell
-
-+ (void)initialize {
-    if (self == [UI7TableViewCell class]) {
-        Class target = [UITableViewCell class];
-
-        [target copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
-        [target copyToSelector:@selector(__initWithStyle:reuseIdentifier:) fromSelector:@selector(initWithStyle:reuseIdentifier:)];
-        [target copyToSelector:@selector(__setBackgroundColor:) fromSelector:@selector(setBackgroundColor:)];
-        [target copyToSelector:@selector(__setTableViewStyle:) fromSelector:@selector(setTableViewStyle:)];
-    }
-}
-
-+ (void)patch {
-    Class target = [UITableViewCell class];
-
-    [self exportSelector:@selector(initWithCoder:) toClass:target];
-    [self exportSelector:@selector(initWithStyle:reuseIdentifier:) toClass:target];
-    [self exportSelector:@selector(setBackgroundColor:) toClass:target];
-    [self exportSelector:@selector(setTableViewStyle:) toClass:target];
-    [self exportSelector:@selector(_setTableBackgroundCGColor:withSystemColorName:) toClass:target];
-}
-
-- (id)initWithCoder:(NSCoder *)aDecoder {
-    self = [self __initWithCoder:aDecoder];
-    if (self != nil) {
-        UIColor *backgroundColor = [aDecoder decodeObjectForKey:@"UIBackgroundColor"];
-        [self _tableViewCellInit];
-        if (backgroundColor) {
-            self.backgroundColor = backgroundColor;
-        }
-    }
-    return self;
-}
-
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
-    self = [self __initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self != nil) {
-        [self _tableViewCellInitTheme]; // not adjusted now
-        [self _tableViewCellInit];
-    }
-    return self;
-}
-
-- (void)setBackgroundColor:(UIColor *)backgroundColor {
-    [self __setBackgroundColor:backgroundColor];
-    self.backgroundView.backgroundColor = backgroundColor;
-}
-
-- (void)setTableViewStyle:(int)style {
-    UIColor *backgroundColor = self.backgroundColor;
-    [self __setTableViewStyle:style];
-    self.backgroundColor = backgroundColor;
-}
-
-- (void)_setTableBackgroundCGColor:(CGColorRef)color withSystemColorName:(id)name {
-
-}
-
-@end
 
 
 @implementation UI7TableViewController
