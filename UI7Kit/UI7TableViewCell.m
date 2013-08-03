@@ -217,6 +217,10 @@ UIImage *UI7TableViewCellAccessoryCheckmarkImageCreate() {
 }
 
 - (void)setAccessoryType:(UITableViewCellAccessoryType)accessoryType {
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < 70000
+    #pragma clang diagnostic push
+    #pragma clang diagnostic ignored "-Wswitch"
+#endif
     switch (accessoryType) {
         case UITableViewCellAccessoryDisclosureIndicator: {
             self.accessoryView = UI7TableViewCellAccessoryDisclosureIndicatorImage.view;
@@ -248,6 +252,9 @@ UIImage *UI7TableViewCellAccessoryCheckmarkImageCreate() {
             [self __setAccessoryType:accessoryType];
             break;
     }
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < 70000
+    #pragma clang diagnostic pop
+#endif
 }
 
 - (UIColor *)tintColor {
