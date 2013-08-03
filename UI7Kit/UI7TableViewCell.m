@@ -7,6 +7,7 @@
 //
 
 #import "UI7KitPrivate.h"
+#import "UI7View.h"
 #import "UI7Font.h"
 #import "UI7Color.h"
 #import "UI7TableViewCell.h"
