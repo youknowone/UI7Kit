@@ -8,6 +8,8 @@
 
 #import <UI7Kit/UI7Utilities.h>
 
+#define UIButtonTypeSystem UIButtonTypeRoundedRect
+
 @interface UI7Button : UIButton<UI7Patch>
 
 @end

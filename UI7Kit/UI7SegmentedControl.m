@@ -72,7 +72,7 @@ CGFloat UI7SegmentedControlHeight = 29.0f;
 
     UIImage *backgroundImage = [UIColor clearColor].image;
     UIImage *selectedBackgroundImage = [UIImage roundedImageWithSize:CGSizeMake(10.0f, self.frame.size.height) color:tintColor radius:UI7ControlRadius];
-    UIImage *highlightedBackgroundImage = [UIImage roundedImageWithSize:CGSizeMake(10.0f, self.frame.size.height) color:[tintColor highligtedColorForBackgroundColor:self.stackedBackroundColor] radius:UI7ControlRadius];
+    UIImage *highlightedBackgroundImage = [UIImage roundedImageWithSize:CGSizeMake(10.0f, self.frame.size.height) color:[tintColor highligtedColorForBackgroundColor:self.stackedBackgroundColor] radius:UI7ControlRadius];
 
     NSDictionary *attributes = @{
                                  UITextAttributeFont: [UI7Font systemFontOfSize:13.0 attribute:UI7FontAttributeMedium],
@@ -94,7 +94,7 @@ CGFloat UI7SegmentedControlHeight = 29.0f;
 }
 
 - (void)_backgroundColorUpdated {
-    NSDictionary *selectedAttributes = @{UITextAttributeTextColor: self.stackedBackroundColor};
+    NSDictionary *selectedAttributes = @{UITextAttributeTextColor: self.stackedBackgroundColor};
     [self setTitleTextAttributes:selectedAttributes forState:UIControlStateSelected];
 }
 

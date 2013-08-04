@@ -7,6 +7,8 @@
 //
 
 #import "UI7Utilities.h"
+#import "UI7Button.h"
+
 #import "UI7KitTests.h"
 
 @interface TableViewDelegate : NSObject<UITableViewDelegate, UI7Patch>
@@ -37,11 +39,25 @@
     [super tearDown];
 }
 
-- (void)testTypeEncoding
-{
+- (void)testTypeEncoding {
     Class class = [TableViewDelegate class];
     STAssertEqualObjects([class methodForSelector:@selector(tableView:heightForHeaderInSection:)].typeEncoding, @"f16@0:4@8i12", @"");
     STAssertEqualObjects([class methodForSelector:@selector(tableView:viewForHeaderInSection:)].typeEncoding, @"@16@0:4@8i12", @"");
+}
+
+- (void)testButtonTintColor {
+    {
+        UIButton *b = [UIButton buttonWithType:UIButtonTypeCustom];
+        b.tintColor = [UIColor redColor];
+        UIColor *c = b.tintColor;
+        STAssertEqualObjects(c, nil, @"");
+    }
+    {
+        UIButton *b = [UI7Button buttonWithType:UIButtonTypeCustom];
+        b.tintColor = [UIColor redColor];
+        UIColor *c = b.tintColor;
+        STAssertEqualObjects(c, nil, @"");
+    }
 }
 
 @end

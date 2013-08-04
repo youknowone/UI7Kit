@@ -50,13 +50,13 @@ static NSString *UI7ViewTintColor = @"UI7ViewTintColor";
 - (UIColor *)_view_tintColor {
     // UIWindow -> UILayoutContainerView -> UITransitionView -> UIViewControllerWrapperView -> UILayoutContainerView -> UINavigationTransitaionView -> UIViewControllerWrapperView -> UIView (UIViewController)
     UIColor *color = [self _current_tintColor];
-    if (color) {
-        return color;
+    if (color == nil) {
+        color = self.superview.tintColor;
+        if (color == nil) {
+            color = self.window.tintColor;
+        }
     }
-    if (self.superview) {
-        return self.superview.tintColor;
-    }
-    return self.window.tintColor;
+    return color;
 }
 
 - (void)_view_setTintColor:(UIColor *)color {
@@ -66,13 +66,11 @@ static NSString *UI7ViewTintColor = @"UI7ViewTintColor";
 
 - (UIColor *)_tintColor {
     UIColor *tintColor = [self _view_tintColor];
-    if (tintColor == nil) {
-        tintColor = self.superview.tintColor;
-        if (tintColor == nil) {
-            tintColor = self.window.tintColor;
-        }
-    }
     return tintColor;
+}
+
+- (void)_setTintColor:(UIColor *)color {
+    [self _view_setTintColor:color];
 }
 
 - (void)_tintColorUpdated {
@@ -94,7 +92,7 @@ static NSString *UI7ViewTintColor = @"UI7ViewTintColor";
     }
 }
 
-- (UIColor *)stackedBackroundColor {
+- (UIColor *)stackedBackgroundColor {
     CGFloat red = .0, green = .0, blue = .0, alpha = .0;
     UIView *view = self;
     while (view && alpha < 1.0f) {

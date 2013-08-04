@@ -183,6 +183,7 @@
 		388FC1E4177303AA0084574E /* UI7ButtonImageInfo.png in Resources */ = {isa = PBXBuildFile; fileRef = 388FC1E0177303AA0084574E /* UI7ButtonImageInfo.png */; };
 		388FC1E5177303AA0084574E /* UI7ButtonImageInfo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 388FC1E1177303AA0084574E /* UI7ButtonImageInfo@2x.png */; };
 		38AF86CF1769BC8000BFBD29 /* libUI7Kit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38017423176989650049D26C /* libUI7Kit.a */; };
+		38B9678317AC2DE90061E1EC /* UICRoundedRectButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B9678217AC2DE90061E1EC /* UICRoundedRectButtonViewController.m */; };
 		38BC0E5D173E821700F36497 /* UITSubviewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38BC0E5B173E821700F36497 /* UITSubviewTableViewController.m */; };
 		38C46562177F277000A883EA /* UI7Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C46561177F277000A883EA /* UI7Color.m */; };
 		38C46565177F3C6E00A883EA /* UI7SearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C46564177F3C6D00A883EA /* UI7SearchBar.m */; };
@@ -390,6 +391,8 @@
 		388FC1E0177303AA0084574E /* UI7ButtonImageInfo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7ButtonImageInfo.png; sourceTree = "<group>"; };
 		388FC1E1177303AA0084574E /* UI7ButtonImageInfo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7ButtonImageInfo@2x.png"; sourceTree = "<group>"; };
 		388FC1E6177345970084574E /* UI7KitPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7KitPrivate.h; sourceTree = "<group>"; };
+		38B9678117AC2DE90061E1EC /* UICRoundedRectButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICRoundedRectButtonViewController.h; sourceTree = "<group>"; };
+		38B9678217AC2DE90061E1EC /* UICRoundedRectButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICRoundedRectButtonViewController.m; sourceTree = "<group>"; };
 		38BC0E5A173E821700F36497 /* UITSubviewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITSubviewTableViewController.h; sourceTree = "<group>"; };
 		38BC0E5B173E821700F36497 /* UITSubviewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITSubviewTableViewController.m; sourceTree = "<group>"; };
 		38C46560177F277000A883EA /* UI7Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7Color.h; sourceTree = "<group>"; };
@@ -632,16 +635,9 @@
 			isa = PBXGroup;
 			children = (
 				384BF443178A19D600485BED /* Catalog.storyboard */,
-				38DBEB77178C6A27000EFC5C /* UICUserDefaults.h */,
-				38DBEB78178C6A27000EFC5C /* UICUserDefaults.m */,
-				384BF42E178A176600485BED /* UICAppDelegate.h */,
-				384BF42F178A176600485BED /* UICAppDelegate.m */,
-				38DBEB7A178C6F28000EFC5C /* UICMainListViewController.h */,
-				38DBEB7B178C6F28000EFC5C /* UICMainListViewController.m */,
-				38DBEB74178C67FB000EFC5C /* UICGlobalSettingsViewController.h */,
-				38DBEB75178C67FB000EFC5C /* UICGlobalSettingsViewController.m */,
-				38FB2AA0178F06B1000491FE /* UICBareTableViewController.h */,
-				38FB2AA1178F06B1000491FE /* UICBareTableViewController.m */,
+				38B9678017AC2D920061E1EC /* App & Settings */,
+				38B9677F17AC2D820061E1EC /* Common */,
+				38B9678417AC2DF20061E1EC /* Advanced */,
 				384BF426178A176600485BED /* Supporting Files */,
 			);
 			path = UI7KitCatalog;
@@ -656,6 +652,39 @@
 				384BF42D178A176600485BED /* UI7KitCatalog-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		38B9677F17AC2D820061E1EC /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				38FB2AA0178F06B1000491FE /* UICBareTableViewController.h */,
+				38FB2AA1178F06B1000491FE /* UICBareTableViewController.m */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		38B9678017AC2D920061E1EC /* App & Settings */ = {
+			isa = PBXGroup;
+			children = (
+				38DBEB77178C6A27000EFC5C /* UICUserDefaults.h */,
+				38DBEB78178C6A27000EFC5C /* UICUserDefaults.m */,
+				384BF42E178A176600485BED /* UICAppDelegate.h */,
+				384BF42F178A176600485BED /* UICAppDelegate.m */,
+				38DBEB7A178C6F28000EFC5C /* UICMainListViewController.h */,
+				38DBEB7B178C6F28000EFC5C /* UICMainListViewController.m */,
+				38DBEB74178C67FB000EFC5C /* UICGlobalSettingsViewController.h */,
+				38DBEB75178C67FB000EFC5C /* UICGlobalSettingsViewController.m */,
+			);
+			name = "App & Settings";
+			sourceTree = "<group>";
+		};
+		38B9678417AC2DF20061E1EC /* Advanced */ = {
+			isa = PBXGroup;
+			children = (
+				38B9678117AC2DE90061E1EC /* UICRoundedRectButtonViewController.h */,
+				38B9678217AC2DE90061E1EC /* UICRoundedRectButtonViewController.m */,
+			);
+			name = Advanced;
 			sourceTree = "<group>";
 		};
 		38C7A9751495181800381910 /* Other Frameworks */ = {
@@ -1180,6 +1209,7 @@
 			files = (
 				38DBEB79178C6A27000EFC5C /* UICUserDefaults.m in Sources */,
 				3865159D17A89D2900E10B72 /* UI7Tool.m in Sources */,
+				38B9678317AC2DE90061E1EC /* UICRoundedRectButtonViewController.m in Sources */,
 				38FB2AA2178F06B1000491FE /* UICBareTableViewController.m in Sources */,
 				38DBEB76178C67FB000EFC5C /* UICGlobalSettingsViewController.m in Sources */,
 				384BF42C178A176600485BED /* main.m in Sources */,

@@ -8,17 +8,31 @@
 
 #import <QuartzCore/QuartzCore.h>
 
+#import "UI7KitPrivate.h"
+#import "UI7View.h"
 #import "UI7Font.h"
 
 #import "UI7Button.h"
 
-#import "UI7KitPrivate.h"
+@interface NSObject (UI7ButtonContent)
+
+@property(retain) NSAttributedString * attributedTitle;
+@property(retain) UIImage * background;
+@property(retain) UIImage * image;
+@property(readonly) BOOL isEmpty;
+@property(retain) UIColor * shadowColor;
+@property(retain) NSString * title;
+@property(retain) UIColor * titleColor;
+
+@end
+
 
 @implementation UIButton (Patch)
 
 - (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
 + (id)__buttonWithType:(UIButtonType)buttonType { assert(NO); return nil; }
 - (UIColor *)__tintColor { assert(NO); return nil; }
+- (void)__setTintColor:(UIColor *)tintColor { assert(NO); }
 //- (void)__drawRect:(CGRect)rect { assert(NO); }
 
 - (void)_buttonInitTheme {
@@ -29,8 +43,13 @@
     [super _tintColorUpdated];
     switch (self.buttonType) {
         case UIButtonTypeCustom:
-        case UIButtonTypeRoundedRect:
-            break;
+        case UIButtonTypeRoundedRect: {
+            UIColor *tintColor = self.tintColor;
+            [self setTitleColor:tintColor forState:UIControlStateNormal];
+            UIColor *highlightedTintColor = tintColor.highligtedColor;
+            [self setTitleColor:highlightedTintColor forState:UIControlStateHighlighted];
+            [self setTitleColor:highlightedTintColor forState:UIControlStateSelected];
+        }   break;
         case UIButtonTypeDetailDisclosure:
         case UIButtonTypeInfoDark:
         case UIButtonTypeInfoLight: {
@@ -77,6 +96,12 @@
         [target copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
         [target classMethodForSelector:@selector(__buttonWithType:)].implementation = [target classMethodForSelector:@selector(buttonWithType:)].implementation;
         [target copyToSelector:@selector(__tintColor) fromSelector:@selector(tintColor)];
+        [target copyToSelector:@selector(__setTintColor:) fromSelector:@selector(setTintColor:)];
+
+        if (![UIDevice currentDevice].iOS7) {
+            [self copyToSelector:@selector(tintColor) fromSelector:@selector(___tintColor)];
+            [self copyToSelector:@selector(setTintColor:) fromSelector:@selector(___setTintColor:)];
+        }
     }
 }
 
@@ -89,14 +114,31 @@
     [NSClassFromString(@"UIRoundedRectButton") addMethodForSelector:@selector(initWithCoder:) fromMethod:[self methodForSelector:@selector(_UIRoundedRectButton_initWithCoder:)]];
 
     if (![UIDevice currentDevice].iOS7) {
-        [target methodForSelector:@selector(tintColor)].implementation = [target methodForSelector:@selector(_tintColor)].implementation;
+        [self exportSelector:@selector(tintColor) toClass:target];
+        [self exportSelector:@selector(setTintColor:) toClass:target];
     }
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [self __initWithCoder:aDecoder];
     if (self != nil) {
-
+        UIColor *color = [aDecoder decodeObjectForKey:@"UITintColor"];
+        if (color) {
+            self.tintColor = color;
+        }
+        #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
+        if (![UIDevice currentDevice].isIOS7) {
+            static UIColor *defaultTitleColor = nil;
+            if (defaultTitleColor == nil) {
+                defaultTitleColor = [[UIColor colorWithRed:0.21960785f green:0.32941177f blue:0.52941180f alpha:1.0] retain];
+            }
+            NSDictionary *statefulContents = [aDecoder decodeObjectForKey:@"UIButtonStatefulContent"];
+            NSObject *normalStatefulContent = statefulContents[@0];
+            if ([normalStatefulContent.titleColor isEqual:defaultTitleColor]) {
+                [self setTitleColor:nil forState:UIControlStateNormal];
+            }
+        }
+        #endif
     }
     return self;
 }
@@ -110,6 +152,18 @@
     return [self __buttonWithType:buttonType];
 }
 
+- (UIColor *)___tintColor {
+    UIColor *color = [self __tintColor];
+    if (color) {
+        return color;
+    }
+    return [self _tintColor];
+}
+
+- (void)___setTintColor:(UIColor *)tintColor {
+    [self _setTintColor:tintColor];
+}
+
 @end
 
 
@@ -117,14 +171,19 @@
 
 - (void)_roundedRectButtonInit {
     self.layer.cornerRadius = 6.0;
-    self.backgroundColor = self.tintColor;
     [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 }
 
 - (void)_tintColorUpdated {
-    self.backgroundColor = self.tintColor;
-    [self setTitleColor:self.tintColor.highligtedColor forState:UIControlStateHighlighted];
-    [self setTitleColor:self.tintColor.highligtedColor forState:UIControlStateSelected];
+    UIColor *tintColor = self.tintColor;
+    if (tintColor == nil) return;
+
+    UIColor *backgroundColor = self.superview.stackedBackgroundColor;
+    self.backgroundColor = tintColor;
+    [self setTitleColor:backgroundColor forState:UIControlStateNormal];
+    UIColor *highlightedTintColor = [tintColor highligtedColorForBackgroundColor:backgroundColor];
+    [self setTitleColor:highlightedTintColor forState:UIControlStateHighlighted];
+    [self setTitleColor:highlightedTintColor forState:UIControlStateSelected];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
@@ -141,7 +200,12 @@
 
 - (void)setTintColor:(UIColor *)tintColor {
     [super setTintColor:tintColor];
-    [self _tintColorUpdated];
+    [self _tintColorUpdated]; // for iOS6 SDK + iOS7
+}
+
+- (void)tintColorDidChange {
+    [super tintColorDidChange];
+    [self _tintColorUpdated]; // for iOS7
 }
 
 @end

@@ -170,7 +170,6 @@ UIImage *UI7TableViewCellAccessoryCheckmarkImageCreate() {
 
     [self exportSelector:@selector(initWithCoder:) toClass:target];
     [self exportSelector:@selector(initWithStyle:reuseIdentifier:) toClass:target];
-    [self exportSelector:@selector(tintColor) toClass:target];
     [self exportSelector:@selector(setAccessoryType:) toClass:target];
     [self exportSelector:@selector(setBackgroundColor:) toClass:target];
     [self exportSelector:@selector(setTableViewStyle:) toClass:target];
@@ -255,10 +254,6 @@ UIImage *UI7TableViewCellAccessoryCheckmarkImageCreate() {
 #if __IPHONE_OS_VERSION_MAX_ALLOWED < 70000
     #pragma clang diagnostic pop
 #endif
-}
-
-- (UIColor *)tintColor {
-    return [self _tintColor];
 }
 
 @end

@@ -13,12 +13,6 @@
 
 #import "UI7KitPrivate.h"
 
-@interface UIView ()
-
-- (UIColor *)_view_tintColor;
-
-@end
-
 
 @implementation UIStepper (Patch)
 

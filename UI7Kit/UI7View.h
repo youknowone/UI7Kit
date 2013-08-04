@@ -15,7 +15,7 @@
 - (void)tintColorDidChange;
 #endif
 
-@property(nonatomic,readonly) UIColor *stackedBackroundColor;
+@property(nonatomic,readonly) UIColor *stackedBackgroundColor;
 
 @end
 
