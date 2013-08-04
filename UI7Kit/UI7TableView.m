@@ -22,7 +22,7 @@ CGFloat UI7TableViewGroupedTableSectionSeperatorHeight = 28.0f;
 @end
 
 
-@interface UITableView ()
+@interface UITableView (Private)
 
 - (void)_updateVisibleCellsNow:(BOOL)flag;
 

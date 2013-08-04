@@ -14,16 +14,6 @@
 - (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
 - (id)__initWithFrame:(CGRect)frame { assert(NO); return nil; }
 
-- (void)_switchInit {
-   // self.onTintColor = [UIColor colorWith8bitRed:76 green:217 blue:100 alpha:255];
-    if ([self respondsToSelector:@selector(onImage)]) {
-        self.onImage = [UIImage clearImage];
-        self.offImage = [UIImage clearImage];
-        self.tintColor = self.tintColor;
-        self.thumbTintColor = [UIColor whiteColor];
-    }
-}
-
 @end
 
 
@@ -46,41 +36,29 @@
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
-    //Create a dummy to grab IB props from
-    UISwitch* dummySwitch = [self __initWithCoder:aDecoder];
-    if (self != nil) {
-        [dummySwitch _switchInit];
-    }
-    
+    [self release];
+
     //Reassign self and set to a KLSwitch copying propertie from dummy
-    self = (UI7Switch*)[[KLSwitch alloc] initWithCoder:aDecoder];
+    self = (UI7Switch *)[[KLSwitch alloc] initWithCoder:aDecoder];
     if (self != nil) {
-        [self setOn:dummySwitch.on animated: NO];
+        BOOL on = [aDecoder decodeBoolForKey:@"UISwitchOn"];
+        [self setOn:on animated:NO];
         if ([aDecoder containsValueForKey:@"UISwitchOnTintColor"]) {
-            self.onTintColor = dummySwitch.onTintColor;
+            self.onTintColor = [aDecoder decodeObjectForKey:@"UISwitchOnTintColor"];
         } else {
             self.onTintColor = [UIColor colorWith8bitRed:69 green:215 blue:117 alpha:255];
+        }
+        if ([aDecoder containsValueForKey:@"UISwitchThumbTintColor"]) {
+            self.thumbTintColor = [aDecoder decodeObjectForKey:@"UISwitchThumbTintColor"];
         }
     }
     return self;
 }
 
-- (id)initWithFrame:(CGRect)frame
-{
-    //Create a dummy to grab IB props from
-    UISwitch* dummySwitch = [self __initWithFrame:frame];
-    if (self != nil) {
-        [dummySwitch _switchInit];
-    }
-    
+- (id)initWithFrame:(CGRect)frame {
+    [self release];
     //Reassign self and set to a KLSwitch copying propertie from dummy
-    self = (UI7Switch*)[[KLSwitch alloc]
-                        initWithFrame:frame];
-    if (self != nil) {
-        [self setOn: dummySwitch.on
-           animated: NO];
-        self.onTintColor = dummySwitch.onTintColor;
-    }
+    self = (UI7Switch *)[[KLSwitch alloc] initWithFrame:frame];
     return self;
 }
 @end

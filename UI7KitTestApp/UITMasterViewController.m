@@ -42,6 +42,7 @@
                     @39,
                     @41,
                     @45,
+                    @59,
                     ];
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.

@@ -378,7 +378,7 @@
                                         <rect key="frame" x="0.0" y="462" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="#39" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MBD-yE-fbc">
@@ -399,7 +399,7 @@
                                         <rect key="frame" x="0.0" y="506" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="#41" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bsa-Cb-UP7">
@@ -420,7 +420,7 @@
                                         <rect key="frame" x="0.0" y="550" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="#45" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hNn-NJ-MW4">
@@ -435,6 +435,27 @@
                                         </view>
                                         <connections>
                                             <segue destination="mkM-Zg-keP" kind="push" id="hxY-iy-bhK"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="#59" textLabel="Kx5-wR-PF9" style="IBUITableViewCellStyleDefault" id="EQn-fC-jly">
+                                        <rect key="frame" x="0.0" y="594" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="#59" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Kx5-wR-PF9">
+                                                    <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="E3r-lu-Ln3" kind="push" id="b0G-fG-Ui2"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -687,6 +708,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="656-Lr-Dyy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="420" y="3858"/>
+        </scene>
+        <!--View Controller - UISwitch position-->
+        <scene sceneID="ElA-63-bLA">
+            <objects>
+                <viewController id="E3r-lu-Ln3" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gvy-7X-vnQ">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="dQI-9T-nIQ">
+                                <rect key="frame" x="122" y="144" width="79" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="yk6-DY-Ilx">
+                                <rect key="frame" x="122" y="203" width="79" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                            <view contentMode="scaleToFill" id="nsq-0s-Pun">
+                                <rect key="frame" x="-46" y="73" width="160" height="228"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.49817518248175185" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="Rd1-31-cjy">
+                                <rect key="frame" x="207" y="79" width="160" height="228"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.49213047445255476" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="UISwitch position" id="YV1-wx-DLP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jw3-uS-JID" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="420" y="5215"/>
         </scene>
         <!--Grouped Table View Controller - Grouped Table View-->
         <scene sceneID="1Zn-Zu-v1U">
@@ -1526,105 +1582,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="UI7NavigationBarBackButton.png" width="50" height="33"/>
         <image name="UI7TabBarItemFavoriteSelected.png" width="30" height="30"/>
     </resources>
-    <classes>
-        <class className="UI7Button" superclassName="UIButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UI7Button.h"/>
-        </class>
-        <class className="UI7PickerView" superclassName="UIPickerView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UI7PickerView.h"/>
-        </class>
-        <class className="UI7RoundedRectButton" superclassName="UI7Button">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UI7RoundedRectButton.h"/>
-        </class>
-        <class className="UIAPlaceholderTextView" superclassName="UITextView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIAPlaceholderTextView.h"/>
-        </class>
-        <class className="UITAlertViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITAlertViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="defaultButton1:"/>
-                <relationship kind="action" name="defaultButton2:"/>
-                <relationship kind="action" name="defaultButton3:"/>
-                <relationship kind="action" name="inputButton1:"/>
-                <relationship kind="action" name="inputButton2:"/>
-                <relationship kind="action" name="inputButton3:"/>
-                <relationship kind="action" name="inputField2:"/>
-            </relationships>
-        </class>
-        <class className="UITBarItemViewController" superclassName="UITTintViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITBarItemViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="addTabBar:"/>
-                <relationship kind="outlet" name="tabBar" candidateClass="UITabBar"/>
-            </relationships>
-        </class>
-        <class className="UITDetailViewController" superclassName="UITTintViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITDetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="showActionSheet1:"/>
-                <relationship kind="action" name="showActionSheet2:"/>
-                <relationship kind="action" name="showActionSheet3:"/>
-                <relationship kind="action" name="showActionSheet4:"/>
-                <relationship kind="action" name="showAlertView1:"/>
-                <relationship kind="action" name="showAlertView2:"/>
-                <relationship kind="action" name="showAlertView3:"/>
-                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
-            </relationships>
-        </class>
-        <class className="UITGroupedTableViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITGroupedTableViewController.h"/>
-        </class>
-        <class className="UITIssue12ViewController" superclassName="UITTintViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITIssue12ViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="segmentedControl" candidateClass="UISegmentedControl"/>
-            </relationships>
-        </class>
-        <class className="UITIssue1ViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITIssue1ViewController.h"/>
-        </class>
-        <class className="UITIssue39ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITIssue39ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="showAlert:"/>
-            </relationships>
-        </class>
-        <class className="UITIssue41ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITIssue41ViewController.h"/>
-        </class>
-        <class className="UITMasterViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITMasterViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="styleChanged:"/>
-                <relationship kind="outlet" name="listTableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="styleSegmentedControl" candidateClass="UISegmentedControl"/>
-            </relationships>
-        </class>
-        <class className="UITPickerViewController" superclassName="UITTintViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITPickerViewController.h"/>
-        </class>
-        <class className="UITSegmentedControlViewController" superclassName="UITTintViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITSegmentedControlViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="segmented1" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="segmented2" candidateClass="UISegmentedControl"/>
-            </relationships>
-        </class>
-        <class className="UITTextViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITTextViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="resign:"/>
-                <relationship kind="action" name="switched:"/>
-                <relationship kind="outlet" name="textView" candidateClass="UIAPlaceholderTextView"/>
-            </relationships>
-        </class>
-        <class className="UITTintViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITTintViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="colorChanged:"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
