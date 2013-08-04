@@ -1,13 +1,13 @@
 UI7Kit
 ======
 
-UI7Kit is a GUI toolkit to backport flat-style UIKit from iOS7 to iOS5/iOS6. Additionally, UI7Kit can be used to patch legacy UIKit to UI7Kit in runtime.
+UI7Kit is a GUI toolkit which can backport flat-style UIKit from iOS7 to iOS5/iOS6. Additionally, UI7Kit can also be used to patch legacy UIKit to UI7Kit in runtime.
 
-NOTE: This project is not very mature yet. You may meet some bugs or unexpected behaviors for complex real-world product.
+NOTE: This project is not mature yet and is being refined. You may come across some bugs or unexpected behaviors for complex real-world product.
 
 Goal
 ----
-- Implement flat-style iOS7 theme to iOS5/6 (Except status bar).
+- Import flat-style iOS7 theme to work on iOS5/6 (Except status bar and blur effect).
 - Patch the classic UIKit to UI7Kit in runtime. (Renew your legacy app just in a line!)
 - 100% UIKit compatibility.
 
@@ -32,15 +32,17 @@ Example
 -------
 Example with current code. (0.0.16)
 
+The phones on the left most column of the screenshot are iOS7, and the phones on the middle and right columns are iOS5 or iOS6.
+
 ![Current status](https://raw.github.com/youknowone/UI7Kit/master/UI7Kit.png).
 
 - [Quick video of 0.0.16 test app](http://www.youtube.com/watch?v=xVA5MAbUW44)
 - [Step by step video of 0.2 - QRQR](http://www.youtube.com/watch?v=M2P1Um20py4)
 
-Contact
--------
+Contact methods
+---------------
 
-- Github issues are appreciated.
+- Leave a github issue. [New issue](https://github.com/youknowone/UI7Kit/issues/new).
 - Email: Address is in LICENSE or git log.
 - IRC: Visit irc://irc.freenode.org/#youknowone for instant message. (You need an IRC client)
 
@@ -70,7 +72,7 @@ Update source code and cocoapods
     pod update
     open UI7Kit.xcworkspace # You should open xcwordspace
 
-If you have problem with missing methods, 'pod update' usually solves it.
+If you have any problems with missing methods, `pod update` usually solves the problem.
 
 
 How to install to my project
@@ -103,9 +105,8 @@ Apps using UI7Kit
 Do you like this project?
 -------------------------
 
-Is this project joyful or helpful enough for you? Tip me ;)
+Is this project was enjoyable for you to use, or it was helpful, a tip would be greatly appreciated. Thank you ;)
 
 [![Gittip donate button](http://badgr.co/gittip/youknowone.png)](https://www.gittip.com/youknowone/ "Donate weekly to this project using Gittip")
-
 [![Paypal donate button](http://badgr.co/paypal/donate.png?bg=%23007aff)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=YZGSUCRH3Q478&item_name=UI7Kit%20support "One time donation to this project using Paypal")
 
