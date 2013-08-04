@@ -608,10 +608,10 @@
             </objects>
             <point key="canvasLocation" x="319" y="-377"/>
         </scene>
-        <!--View Controller-->
+        <!--Switch View Controller - Switch-->
         <scene sceneID="zq5-UU-aql">
             <objects>
-                <viewController id="C0b-Hk-lxb" sceneMemberID="viewController">
+                <viewController id="C0b-Hk-lxb" customClass="UICSwitchViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1gb-yv-DEa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -623,14 +623,17 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="f8l-cK-Y6o">
                                 <rect key="frame" x="251" y="229" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.99512431569343063" green="0.56498061131386856" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="DWj-px-sFs">
                                 <rect key="frame" x="251" y="268" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="1" green="0.56498061131386856" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="lL8-Jz-JNM">
                                 <rect key="frame" x="251" y="127" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.99694913321167888" green="0.56498061131386856" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
                             </switch>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="On" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EwV-2D-IwB">
                                 <rect key="frame" x="195" y="98" width="23" height="21"/>
@@ -695,7 +698,11 @@ Builder</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="f9k-0d-zxb"/>
+                    <navigationItem key="navigationItem" title="Switch" id="f9k-0d-zxb"/>
+                    <connections>
+                        <outlet property="onTintColorSwitch" destination="f8l-cK-Y6o" id="ZxI-ci-5dV"/>
+                        <outlet property="thumbTintColorSwitch" destination="DWj-px-sFs" id="IZ0-zv-aWT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EfY-A4-s0z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
