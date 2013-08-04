@@ -33,17 +33,10 @@ NSString *UI7SliderMaximumTrackTintColor = @"UI7SliderMaximumTrackTintColor";
 }
 
 - (void)_sliderInit {
-//    UIGraphicsBeginImageContextWithOptions(CGSizeMake(30.0, 30.0), NO, .0);
-//    CGContextRef context = UIGraphicsGetCurrentContext();
-//    [[UIColor whiteColor] set];
-//    CGContextFillEllipseInRect(context, CGRectMake(1.0, 1.0, 28.0, 28.0));
-//    [[UIColor grayColor] set];
-//    CGContextStrokeEllipseInRect(context, CGRectMake(1.0, 1.0, 28.0, 28.0));
-//    [self setThumbImage:UIGraphicsGetImageFromCurrentImageContext() forState:UIControlStateNormal];
-//    [self setThumbImage:UIGraphicsGetImageFromCurrentImageContext() forState:UIControlStateHighlighted];
-//    UIGraphicsEndImageContext();
+    UIImage *image = [UIImage imageNamed:@"UI7SliderThumb"];
+    [self setThumbImage:image forState:UIControlStateNormal];
+    [self setThumbImage:image forState:UIControlStateHighlighted];
 
-    self.thumbTintColor = [UIColor whiteColor];
     [self _minimumTrackTintColorUpdated];
     [self _maximumTrackTintColorUpdated];
 }

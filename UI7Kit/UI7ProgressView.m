@@ -33,7 +33,7 @@ NSString *UI7ProgressViewProgressTintColor = @"UI7ProgressViewProgressTintColor"
     UIGraphicsBeginImageContextWithOptions(CGSizeMake(1.0, 9.0), NO, .0);
     CGContextRef context = UIGraphicsGetCurrentContext();
     [self.trackTintColor set];
-    CGContextFillRect(context, CGRectMake(.0, 4.0, 1.0, 2.0));
+    CGContextFillRect(context, CGRectMake(.0, .0, 1.0, 2.0));
     UIImage *trackImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     self.trackImage = trackImage;
@@ -43,7 +43,7 @@ NSString *UI7ProgressViewProgressTintColor = @"UI7ProgressViewProgressTintColor"
     UIGraphicsBeginImageContextWithOptions(CGSizeMake(1.0, 9.0), NO, .0);
     CGContextRef context = UIGraphicsGetCurrentContext();
     [self.progressTintColor set];
-    CGContextFillRect(context, CGRectMake(.0, 4.0, 1.0, 2.0));
+    CGContextFillRect(context, CGRectMake(.0, .0, 1.0, 2.0));
     UIImage *progressImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     self.progressImage = progressImage;

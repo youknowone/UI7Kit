@@ -184,6 +184,10 @@
 		388FC1E5177303AA0084574E /* UI7ButtonImageInfo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 388FC1E1177303AA0084574E /* UI7ButtonImageInfo@2x.png */; };
 		38AD076617AE7C4E0000E5BA /* UICSwitchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38AD076517AE7C4E0000E5BA /* UICSwitchViewController.m */; };
 		38AD076917AE84CE0000E5BA /* UICSliderProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38AD076817AE84CE0000E5BA /* UICSliderProgressViewController.m */; };
+		38AD076B17AEC1060000E5BA /* UI7SliderThumb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38AD076A17AEC1060000E5BA /* UI7SliderThumb@2x.png */; };
+		38AD076C17AEC1060000E5BA /* UI7SliderThumb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38AD076A17AEC1060000E5BA /* UI7SliderThumb@2x.png */; };
+		38AD076E17AEC4780000E5BA /* UI7SliderThumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 38AD076D17AEC4780000E5BA /* UI7SliderThumb.png */; };
+		38AD076F17AEC4780000E5BA /* UI7SliderThumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 38AD076D17AEC4780000E5BA /* UI7SliderThumb.png */; };
 		38AF86CF1769BC8000BFBD29 /* libUI7Kit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38017423176989650049D26C /* libUI7Kit.a */; };
 		38B9678317AC2DE90061E1EC /* UICRoundedRectButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B9678217AC2DE90061E1EC /* UICRoundedRectButtonViewController.m */; };
 		38BC0E5D173E821700F36497 /* UITSubviewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38BC0E5B173E821700F36497 /* UITSubviewTableViewController.m */; };
@@ -397,6 +401,8 @@
 		38AD076517AE7C4E0000E5BA /* UICSwitchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICSwitchViewController.m; sourceTree = "<group>"; };
 		38AD076717AE84CE0000E5BA /* UICSliderProgressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICSliderProgressViewController.h; sourceTree = "<group>"; };
 		38AD076817AE84CE0000E5BA /* UICSliderProgressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICSliderProgressViewController.m; sourceTree = "<group>"; };
+		38AD076A17AEC1060000E5BA /* UI7SliderThumb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7SliderThumb@2x.png"; sourceTree = "<group>"; };
+		38AD076D17AEC4780000E5BA /* UI7SliderThumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7SliderThumb.png; sourceTree = "<group>"; };
 		38B9678117AC2DE90061E1EC /* UICRoundedRectButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICRoundedRectButtonViewController.h; sourceTree = "<group>"; };
 		38B9678217AC2DE90061E1EC /* UICRoundedRectButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICRoundedRectButtonViewController.m; sourceTree = "<group>"; };
 		38BC0E5A173E821700F36497 /* UITSubviewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITSubviewTableViewController.h; sourceTree = "<group>"; };
@@ -573,6 +579,8 @@
 				388FC1E1177303AA0084574E /* UI7ButtonImageInfo@2x.png */,
 				38017461176A245B0049D26C /* UI7NavigationBarBackButton.png */,
 				387558C4176DFA8600AE5C8B /* UI7NavigationBarBackButton@2x.png */,
+				38AD076D17AEC4780000E5BA /* UI7SliderThumb.png */,
+				38AD076A17AEC1060000E5BA /* UI7SliderThumb@2x.png */,
 				3865155E17A81EF300E10B72 /* UI7TabBarItemBookmarksUnselected.png */,
 				3865155F17A81EF300E10B72 /* UI7TabBarItemBookmarksUnselected@2x.png */,
 				3865156017A81EF300E10B72 /* UI7TabBarItemContactsUnselected.png */,
@@ -969,6 +977,7 @@
 				3865159717A81EF300E10B72 /* UI7TabBarItemSearchUnselected.png in Resources */,
 				384BF447178A1F4200485BED /* UI7ButtonImageInfo.png in Resources */,
 				384BF448178A1F4200485BED /* UI7ButtonImageInfo@2x.png in Resources */,
+				38AD076F17AEC4780000E5BA /* UI7SliderThumb.png in Resources */,
 				3865159317A81EF300E10B72 /* UI7TabBarItemMostViewedUnselected.png in Resources */,
 				384BF44B178A1F4200485BED /* UI7NavigationBarBackButton.png in Resources */,
 				384BF44C178A1F4200485BED /* UI7NavigationBarBackButton@2x.png in Resources */,
@@ -997,6 +1006,7 @@
 				386603E717A6BB78004EEE3F /* UI7BarButtonIconPause.png in Resources */,
 				3865159917A81EF300E10B72 /* UI7TabBarItemSearchUnselected@2x.png in Resources */,
 				3865159517A81EF300E10B72 /* UI7TabBarItemMostViewedUnselected@2x.png in Resources */,
+				38AD076C17AEC1060000E5BA /* UI7SliderThumb@2x.png in Resources */,
 				3865158D17A81EF300E10B72 /* UI7TabBarItemMoreUnselected@2x.png in Resources */,
 				386603E917A6BB78004EEE3F /* UI7BarButtonIconPause@2x.png in Resources */,
 				386603EB17A6BB78004EEE3F /* UI7BarButtonIconPlay.png in Resources */,
@@ -1079,6 +1089,7 @@
 				386603F017A6BB78004EEE3F /* UI7BarButtonIconRefresh@2x.png in Resources */,
 				386603F217A6BB78004EEE3F /* UI7BarButtonIconReply.png in Resources */,
 				386603F417A6BB78004EEE3F /* UI7BarButtonIconReply@2x.png in Resources */,
+				38AD076B17AEC1060000E5BA /* UI7SliderThumb@2x.png in Resources */,
 				386603F617A6BB78004EEE3F /* UI7BarButtonIconRewind.png in Resources */,
 				3865159417A81EF300E10B72 /* UI7TabBarItemMostViewedUnselected@2x.png in Resources */,
 				386603F817A6BB78004EEE3F /* UI7BarButtonIconRewind@2x.png in Resources */,
@@ -1091,6 +1102,7 @@
 				3865159817A81EF300E10B72 /* UI7TabBarItemSearchUnselected@2x.png in Resources */,
 				3865157A17A81EF300E10B72 /* UI7TabBarItemDownloadsUnselected.png in Resources */,
 				3866040217A6BB78004EEE3F /* UI7BarButtonIconTrash.png in Resources */,
+				38AD076E17AEC4780000E5BA /* UI7SliderThumb.png in Resources */,
 				3865157817A81EF300E10B72 /* UI7TabBarItemContactsUnselected@2x.png in Resources */,
 				3866040417A6BB78004EEE3F /* UI7BarButtonIconTrash@2x.png in Resources */,
 			);
