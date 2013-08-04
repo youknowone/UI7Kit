@@ -105,7 +105,7 @@ Apps using UI7Kit
 Do you like this project?
 -------------------------
 
-Is this project was enjoyable for you to use, or it was helpful, a tip would be greatly appreciated. Thank you ;)
+If this project was enjoyable for you to use, or if it was helpful, a tip would be greatly appreciated. Thank you ;)
 
 [![Gittip donate button](http://badgr.co/gittip/youknowone.png)](https://www.gittip.com/youknowone/ "Donate weekly to this project using Gittip")
 [![Paypal donate button](http://badgr.co/paypal/donate.png?bg=%23007aff)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=YZGSUCRH3Q478&item_name=UI7Kit%20support "One time donation to this project using Paypal")
