@@ -22,10 +22,6 @@ NSString *UI7SliderMaximumTrackTintColor = @"UI7SliderMaximumTrackTintColor";
 - (UIColor *)__minimumTrackTintColor { assert(NO); return nil; }
 - (UIColor *)__maximumTrackTintColor { assert(NO); return nil; }
 
-- (void)_sliderInitTheme {
-    self.thumbTintColor = [UIColor whiteColor];
-}
-
 - (void)_minimumTrackTintColorUpdated {
     UIImage *image = [UIImage imageWithColor:self.minimumTrackTintColor size:CGSizeMake(1.0, 2.0)];
     [self setMinimumTrackImage:image forState:UIControlStateNormal];
@@ -37,6 +33,17 @@ NSString *UI7SliderMaximumTrackTintColor = @"UI7SliderMaximumTrackTintColor";
 }
 
 - (void)_sliderInit {
+//    UIGraphicsBeginImageContextWithOptions(CGSizeMake(30.0, 30.0), NO, .0);
+//    CGContextRef context = UIGraphicsGetCurrentContext();
+//    [[UIColor whiteColor] set];
+//    CGContextFillEllipseInRect(context, CGRectMake(1.0, 1.0, 28.0, 28.0));
+//    [[UIColor grayColor] set];
+//    CGContextStrokeEllipseInRect(context, CGRectMake(1.0, 1.0, 28.0, 28.0));
+//    [self setThumbImage:UIGraphicsGetImageFromCurrentImageContext() forState:UIControlStateNormal];
+//    [self setThumbImage:UIGraphicsGetImageFromCurrentImageContext() forState:UIControlStateHighlighted];
+//    UIGraphicsEndImageContext();
+
+    self.thumbTintColor = [UIColor whiteColor];
     [self _minimumTrackTintColorUpdated];
     [self _maximumTrackTintColorUpdated];
 }
@@ -79,7 +86,6 @@ NSString *UI7SliderMaximumTrackTintColor = @"UI7SliderMaximumTrackTintColor";
 - (id)initWithFrame:(CGRect)frame {
     self = [self __initWithFrame:frame];
     if (self) {
-        [self _sliderInitTheme];
         [self _sliderInit];
     }
     return self;
@@ -88,9 +94,7 @@ NSString *UI7SliderMaximumTrackTintColor = @"UI7SliderMaximumTrackTintColor";
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [self __initWithCoder:aDecoder];
     if (self != nil) {
-        if (![aDecoder containsValueForKey:@"UIThumbTintColor"]) {
-            self.thumbTintColor = [UIColor whiteColor];
-        }
+        self.thumbTintColor = [UIColor whiteColor];
         // NOTE: Becasue built-in -initWithCoder: calls -setMinimumTrackColor: and -setMaximumTrackColor:, additional work is not required.
         [self _sliderInit];
     }

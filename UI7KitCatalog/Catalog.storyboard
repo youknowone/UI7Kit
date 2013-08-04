@@ -96,8 +96,28 @@
                                             <segue destination="C0b-Hk-lxb" kind="push" id="YGx-SC-kJ2"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="hW4-DU-0qo" style="IBUITableViewCellStyleDefault" id="R0H-2g-f0g">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="8AN-wP-mgM" style="IBUITableViewCellStyleDefault" id="dKl-cc-OG3">
                                         <rect key="frame" x="0.0" y="299" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dKl-cc-OG3" id="RCa-XY-BEP">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Slider and Progress view" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8AN-wP-mgM">
+                                                    <rect key="frame" x="15" y="0.0" width="270" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Phk-Cr-2a1" kind="push" id="i32-Nt-a0B"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="hW4-DU-0qo" style="IBUITableViewCellStyleDefault" id="R0H-2g-f0g">
+                                        <rect key="frame" x="0.0" y="343" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="R0H-2g-f0g" id="Yng-tK-8jO">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -118,7 +138,7 @@
                             <tableViewSection headerTitle="Advanced" id="4cg-WV-kMJ">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="YYW-0u-jSV" style="IBUITableViewCellStyleDefault" id="SnI-lt-czV">
-                                        <rect key="frame" x="0.0" y="391" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="435" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SnI-lt-czV" id="aa8-no-9qd">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -707,6 +727,115 @@ Builder</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EfY-A4-s0z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="681" y="-377"/>
+        </scene>
+        <!--Slider Progress View Controller - Slider and Progress view-->
+        <scene sceneID="cdI-Ua-IKo">
+            <objects>
+                <viewController id="Phk-Cr-2a1" customClass="UICSliderProgressViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="G9Y-Mj-joH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default bars" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1Rf-1k-eNZ">
+                                <rect key="frame" x="20" y="86" width="93" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Interface Builder colors" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hCI-RL-zUc">
+                                <rect key="frame" x="20" y="175" width="178" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Code colors" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TI4-Sh-qp8">
+                                <rect key="frame" x="20" y="263" width="94" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" id="yaW-2o-sgV" customClass="UICSliderProgressView">
+                                <rect key="frame" x="20" y="115" width="280" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" id="MyZ-I1-IQq">
+                                        <rect key="frame" x="0.0" y="36" width="280" height="2"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </progressView>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="kgN-UB-IBY">
+                                        <rect key="frame" x="-2" y="0.0" width="284" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="changed:" destination="yaW-2o-sgV" eventType="valueChanged" id="LTl-KA-N4k"/>
+                                        </connections>
+                                    </slider>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="progressView" destination="MyZ-I1-IQq" id="p1g-4r-qld"/>
+                                    <outlet property="slider" destination="kgN-UB-IBY" id="h13-4Y-0Jg"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" id="TNH-oc-nja" customClass="UICSliderProgressView">
+                                <rect key="frame" x="20" y="204" width="280" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" id="7QQ-6D-MLc">
+                                        <rect key="frame" x="0.0" y="36" width="280" height="2"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="progressTintColor" red="0.99401231751824815" green="0.56498061131386856" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                        <color key="trackTintColor" red="0.0" green="0.82111085766423353" blue="0.40496692518248173" alpha="1" colorSpace="deviceRGB"/>
+                                    </progressView>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="5VN-lL-mQZ">
+                                        <rect key="frame" x="-2" y="0.0" width="284" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="minimumTrackTintColor" red="0.99689210766423353" green="0.56498061131386856" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                        <color key="maximumTrackTintColor" red="0.0" green="0.81920050182481752" blue="0.40496692518248173" alpha="1" colorSpace="deviceRGB"/>
+                                        <color key="thumbTintColor" red="0.48209397810218979" green="0.0" blue="0.40496692518248173" alpha="1" colorSpace="deviceRGB"/>
+                                        <connections>
+                                            <action selector="changed:" destination="TNH-oc-nja" eventType="valueChanged" id="YER-JJ-81H"/>
+                                        </connections>
+                                    </slider>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="progressView" destination="7QQ-6D-MLc" id="22t-pT-CXL"/>
+                                    <outlet property="slider" destination="5VN-lL-mQZ" id="JlH-lf-CmL"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" id="GQC-rZ-YQA" customClass="UICSliderProgressView">
+                                <rect key="frame" x="20" y="292" width="280" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" id="zcN-Qm-mQQ">
+                                        <rect key="frame" x="0.0" y="36" width="280" height="2"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </progressView>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="Hx4-ST-ySb">
+                                        <rect key="frame" x="-2" y="0.0" width="284" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="changed:" destination="GQC-rZ-YQA" eventType="valueChanged" id="pba-gt-BY1"/>
+                                        </connections>
+                                    </slider>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="progressView" destination="zcN-Qm-mQQ" id="IWt-HT-YTG"/>
+                                    <outlet property="slider" destination="Hx4-ST-ySb" id="e9n-DX-Tc1"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Slider and Progress view" id="OSx-sI-dy7"/>
+                    <connections>
+                        <outlet property="codeView" destination="GQC-rZ-YQA" id="Ieq-UO-SCZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bzD-cp-nm3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1046" y="-377"/>
         </scene>
         <!--Table View Controller - Grouped-->
         <scene sceneID="k2T-Ok-sU5">

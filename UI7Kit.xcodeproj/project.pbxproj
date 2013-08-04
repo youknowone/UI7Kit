@@ -183,6 +183,7 @@
 		388FC1E4177303AA0084574E /* UI7ButtonImageInfo.png in Resources */ = {isa = PBXBuildFile; fileRef = 388FC1E0177303AA0084574E /* UI7ButtonImageInfo.png */; };
 		388FC1E5177303AA0084574E /* UI7ButtonImageInfo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 388FC1E1177303AA0084574E /* UI7ButtonImageInfo@2x.png */; };
 		38AD076617AE7C4E0000E5BA /* UICSwitchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38AD076517AE7C4E0000E5BA /* UICSwitchViewController.m */; };
+		38AD076917AE84CE0000E5BA /* UICSliderProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38AD076817AE84CE0000E5BA /* UICSliderProgressViewController.m */; };
 		38AF86CF1769BC8000BFBD29 /* libUI7Kit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38017423176989650049D26C /* libUI7Kit.a */; };
 		38B9678317AC2DE90061E1EC /* UICRoundedRectButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B9678217AC2DE90061E1EC /* UICRoundedRectButtonViewController.m */; };
 		38BC0E5D173E821700F36497 /* UITSubviewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38BC0E5B173E821700F36497 /* UITSubviewTableViewController.m */; };
@@ -394,6 +395,8 @@
 		388FC1E6177345970084574E /* UI7KitPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7KitPrivate.h; sourceTree = "<group>"; };
 		38AD076417AE7C4E0000E5BA /* UICSwitchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICSwitchViewController.h; sourceTree = "<group>"; };
 		38AD076517AE7C4E0000E5BA /* UICSwitchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICSwitchViewController.m; sourceTree = "<group>"; };
+		38AD076717AE84CE0000E5BA /* UICSliderProgressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICSliderProgressViewController.h; sourceTree = "<group>"; };
+		38AD076817AE84CE0000E5BA /* UICSliderProgressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICSliderProgressViewController.m; sourceTree = "<group>"; };
 		38B9678117AC2DE90061E1EC /* UICRoundedRectButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICRoundedRectButtonViewController.h; sourceTree = "<group>"; };
 		38B9678217AC2DE90061E1EC /* UICRoundedRectButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICRoundedRectButtonViewController.m; sourceTree = "<group>"; };
 		38BC0E5A173E821700F36497 /* UITSubviewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITSubviewTableViewController.h; sourceTree = "<group>"; };
@@ -664,6 +667,8 @@
 				38FB2AA1178F06B1000491FE /* UICBareTableViewController.m */,
 				38AD076417AE7C4E0000E5BA /* UICSwitchViewController.h */,
 				38AD076517AE7C4E0000E5BA /* UICSwitchViewController.m */,
+				38AD076717AE84CE0000E5BA /* UICSliderProgressViewController.h */,
+				38AD076817AE84CE0000E5BA /* UICSliderProgressViewController.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -1220,6 +1225,7 @@
 				384BF42C178A176600485BED /* main.m in Sources */,
 				38AD076617AE7C4E0000E5BA /* UICSwitchViewController.m in Sources */,
 				38DBEB7C178C6F28000EFC5C /* UICMainListViewController.m in Sources */,
+				38AD076917AE84CE0000E5BA /* UICSliderProgressViewController.m in Sources */,
 				384BF430178A176600485BED /* UICAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
