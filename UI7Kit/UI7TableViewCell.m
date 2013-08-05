@@ -221,6 +221,9 @@ UIImage *UI7TableViewCellAccessoryCheckmarkImageCreate() {
     #pragma clang diagnostic ignored "-Wswitch"
 #endif
     switch (accessoryType) {
+        case UITableViewCellAccessoryNone: {
+            self.accessoryView = nil;
+        }   break;
         case UITableViewCellAccessoryDisclosureIndicator: {
             self.accessoryView = UI7TableViewCellAccessoryDisclosureIndicatorImage.view;
         }   break;
