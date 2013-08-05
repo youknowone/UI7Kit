@@ -102,9 +102,9 @@
 
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
-    UIImage *originalImage = [UIImage imageNamed:@"UI7TableViewCellDisclosureIndicator"];
+    UIImage *originalImage = [UIImage imageNamed:@"UI7TabBarItemFavoriteSelected"];
     // TEST: UIImage -imageByResizingToSize:
-    UIImage *bulletImage = [originalImage imageByResizingToSize:CGSizeMake(15.0, 20.0)];
+    UIImage *bulletImage = [originalImage imageByResizingToSize:CGSizeMake(20.0, 20.0)];
     cell.imageView.image = bulletImage;
 
     cell.textLabel.text = cellIdentifier;

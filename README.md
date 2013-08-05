@@ -30,7 +30,7 @@ Case 3: Partial dynamic patch
 
 Example
 -------
-Example with current code. (0.0.16)
+Example with current code. (0.7.4)
 
 The phones on the left most column of the screenshot are iOS7, and the phones on the middle and right columns are iOS5 or iOS6.
 
