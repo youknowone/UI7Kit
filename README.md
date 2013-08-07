@@ -11,6 +11,17 @@ Goal
 - Patch the classic UIKit to UI7Kit in runtime. (Renew your legacy app just in a line!)
 - 100% UIKit compatibility.
 
+Fundraising and aim for 1.0
+---------------------------
+- [www.bountysource.com/fundraisers/445-ui7kit-1-0](https://www.bountysource.com/fundraisers/445-ui7kit-1-0)
+
+- Except picker view, all of the UI-prefixed controls with basic options should look like iOS7 things, under iOS6.
+- Picker view should be imitated, but as similar as possible.
+- Tint color and background color should work just as they would in iOS7.
+- Both interface builder and code should work.
+- All of Interface builder settings should be read, unless it is technically available.
+
+
 How to use
 ----------
 Case 1: Dynamic patch (Mostly recommended)
