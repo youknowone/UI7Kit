@@ -343,6 +343,12 @@ UIView *_UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableVi
 }
 
 - (void)_updateVisibleCellsNow:(BOOL)flag {
+    // NOTE: Workaround for indexPathsForVisibleRows overriding, especially for Sensible table view.
+    if ([self associatedObjectForKey:@"UI7TableViewCellUpdating"]) {
+        return;
+    }
+    [self setAssociatedObject:@(YES) forKey:@"UI7TableViewCellUpdating"];
+
     [self __updateVisibleCellsNow:flag];
     for (NSIndexPath *path in self.indexPathsForVisibleRows) {
         UITableViewCell *cell = [self cellForRowAtIndexPath:path];
@@ -350,6 +356,8 @@ UIView *_UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableVi
         cell.indexPath = path;
         [cell _tintColorUpdated];
     }
+
+    [self setAssociatedObject:nil forKey:@"UI7TableViewCellUpdating"];
 }
 
 // TODO: ok.. do this next time.
