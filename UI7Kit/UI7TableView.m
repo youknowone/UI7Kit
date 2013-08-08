@@ -76,8 +76,6 @@ CGFloat UI7TableViewGroupedTableSectionSeperatorHeight = 28.0f;
 
 @implementation UI7TableView
 
-// TODO: implement 'setAccessoryType' to fake accessories.
-
 UIColor *UI7TableViewGroupedViewPatternColor = nil;
 
 + (void)initialize {

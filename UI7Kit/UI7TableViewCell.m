@@ -16,6 +16,7 @@
 
 @property(nonatomic,assign) UITableView *tableView;
 @property(nonatomic,strong) NSIndexPath *indexPath;
+@property(nonatomic,assign,setter=___setAccessoryType:) UITableViewCellAccessoryType ___accessoryType;
 
 @end
 
@@ -38,6 +39,15 @@
 
 - (void)setIndexPath:(NSIndexPath *)indexPath {
     [self setAssociatedObject:indexPath forKey:@"UI7TableViewCellIndexPath" policy:OBJC_ASSOCIATION_RETAIN];
+}
+
+- (UITableViewCellAccessoryType)___accessoryType {
+    NSNumber *type = [self associatedObjectForKey:@"UI7TableViewCellAccessoryType"];
+    return type.integerValue;
+}
+
+- (void)___setAccessoryType:(UITableViewCellAccessoryType)accessoryType {
+    [self setAssociatedObject:@(accessoryType) forKey:@"UI7TableViewCellAccessoryType"];
 }
 
 @end
@@ -174,6 +184,7 @@ UIImage *UI7TableViewCellAccessoryCheckmarkImageCreate() {
     [self exportSelector:@selector(setBackgroundColor:) toClass:target];
     [self exportSelector:@selector(setTableViewStyle:) toClass:target];
     [self exportSelector:@selector(_setTableBackgroundCGColor:withSystemColorName:) toClass:target];
+    [self exportSelector:@selector(accessoryType) toClass:target];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
@@ -254,9 +265,14 @@ UIImage *UI7TableViewCellAccessoryCheckmarkImageCreate() {
             [self __setAccessoryType:accessoryType];
             break;
     }
+    self.___accessoryType = accessoryType;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED < 70000
     #pragma clang diagnostic pop
 #endif
+}
+
+- (UITableViewCellAccessoryType)accessoryType {
+    return self.___accessoryType;
 }
 
 @end
