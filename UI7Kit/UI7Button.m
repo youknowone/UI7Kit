@@ -29,6 +29,8 @@
 
 @implementation UIButton (Patch)
 
+UIColor *UI7ButtonDefaultTitleColor = nil;
+
 - (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
 + (id)__buttonWithType:(UIButtonType)buttonType { assert(NO); return nil; }
 - (UIColor *)__tintColor { assert(NO); return nil; }
@@ -44,11 +46,14 @@
     switch (self.buttonType) {
         case UIButtonTypeCustom:
         case UIButtonTypeRoundedRect: {
-            UIColor *tintColor = self.tintColor;
-            [self setTitleColor:tintColor forState:UIControlStateNormal];
-            UIColor *highlightedTintColor = tintColor.highligtedColor;
-            [self setTitleColor:highlightedTintColor forState:UIControlStateHighlighted];
-            [self setTitleColor:highlightedTintColor forState:UIControlStateSelected];
+            UIColor *textTitleColor = [self titleColorForState:UIControlStateNormal];
+            if (textTitleColor == nil) {
+                textTitleColor = self.tintColor;
+            }
+            [self setTitleColor:textTitleColor forState:UIControlStateNormal];
+            UIColor *highlightedTextTitleColor = textTitleColor.highligtedColor;
+            [self setTitleColor:highlightedTextTitleColor forState:UIControlStateHighlighted];
+            [self setTitleColor:highlightedTextTitleColor forState:UIControlStateSelected];
         }   break;
         case UIButtonTypeDetailDisclosure:
         case UIButtonTypeInfoDark:
@@ -102,6 +107,8 @@
             [self copyToSelector:@selector(tintColor) fromSelector:@selector(___tintColor)];
             [self copyToSelector:@selector(setTintColor:) fromSelector:@selector(___setTintColor:)];
         }
+
+        UI7ButtonDefaultTitleColor = [[UIColor colorWithRed:0.21960785f green:0.32941177f blue:0.52941180f alpha:1.0] retain];
     }
 }
 
@@ -126,19 +133,11 @@
         if (color) {
             self.tintColor = color;
         }
-        #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
-        if (![UIDevice currentDevice].isIOS7) {
-            static UIColor *defaultTitleColor = nil;
-            if (defaultTitleColor == nil) {
-                defaultTitleColor = [[UIColor colorWithRed:0.21960785f green:0.32941177f blue:0.52941180f alpha:1.0] retain];
-            }
-            NSDictionary *statefulContents = [aDecoder decodeObjectForKey:@"UIButtonStatefulContent"];
-            NSObject *normalStatefulContent = statefulContents[@0];
-            if ([normalStatefulContent.titleColor isEqual:defaultTitleColor]) {
-                [self setTitleColor:nil forState:UIControlStateNormal];
-            }
+        NSDictionary *statefulContents = [aDecoder decodeObjectForKey:@"UIButtonStatefulContent"];
+        NSObject *normalStatefulContent = statefulContents[@0];
+        if ([normalStatefulContent.titleColor isEqual:UI7ButtonDefaultTitleColor]) {
+            [self setTitleColor:nil forState:UIControlStateNormal];
         }
-        #endif
     }
     return self;
 }
