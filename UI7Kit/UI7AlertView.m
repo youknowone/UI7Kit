@@ -131,10 +131,17 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
     }
     baseHeight += 14.5f;
 
+    NSMutableArray *buttons = [[self.buttons mutableCopy] autorelease];
+    UIButton *cancelButton = nil;
+    if (self.cancelButtonIndex >= 0) {
+        cancelButton = self.buttons[self.cancelButtonIndex];
+        [buttons moveObjectAtIndex:self.cancelButtonIndex toIndex:buttons.count - 1];
+    }
+
     NSInteger rows = 0;
-    for (NSUInteger index = 0; index < self.buttons.count; index++) {
-        UIButton *button = self.buttons[index];
-        if (self.cancelButtonIndex == (NSInteger)index) {
+    for (NSUInteger index = 0; index < buttons.count; index++) {
+        UIButton *button = buttons[index];
+        if (button == cancelButton) {
             button.titleLabel.font = [UI7Font systemFontOfSize:16.0 attribute:UI7FontAttributeMedium];
         } else {
             button.titleLabel.font = [UI7Font systemFontOfSize:16.0 attribute:UI7FontAttributeLight];
@@ -147,9 +154,7 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
         [button setBackgroundImage:nil forState:UIControlStateDisabled];
 
         CGRect frame = button.frame;
-        if (frame.origin.x < frame.size.width) {
-            rows += 1;
-        }
+        rows += 1;
         frame.size.height = UI7ControlRowHeight - 0.5f;
         frame.origin.y = baseHeight + UI7ControlRowHeight * (rows - 1);
         button.frame = frame;
@@ -160,6 +165,7 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
             sframe = CGRectMake(7.0, frame.origin.y, UI7AlertViewWidth, strokeWidth);
         } else {
             sframe = CGRectMake(142.0, frame.origin.y, strokeWidth, UI7ControlRowHeight);
+            rows -= 1;
         }
         UIView *strokeView = [[[UIView alloc] initWithFrame:sframe] autorelease];
         strokeView.backgroundColor = [UIColor colorWith8bitWhite:182 alpha:255];
@@ -167,7 +173,7 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
         [self.strokeViews addObject:strokeView];
     }
 
-    CGRect lastButtonFrame = [self.buttons.lastObject frame];
+    CGRect lastButtonFrame = [buttons.lastObject frame];
 
     // background image
     self.backgroundView.frame = CGRectMake(7.0, .0, UI7AlertViewWidth, lastButtonFrame.origin.y + lastButtonFrame.size.height);
