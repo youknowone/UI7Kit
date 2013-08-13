@@ -182,6 +182,7 @@
 		388FC1E3177303AA0084574E /* UI7ButtonImageAdd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 388FC1DF177303AA0084574E /* UI7ButtonImageAdd@2x.png */; };
 		388FC1E4177303AA0084574E /* UI7ButtonImageInfo.png in Resources */ = {isa = PBXBuildFile; fileRef = 388FC1E0177303AA0084574E /* UI7ButtonImageInfo.png */; };
 		388FC1E5177303AA0084574E /* UI7ButtonImageInfo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 388FC1E1177303AA0084574E /* UI7ButtonImageInfo@2x.png */; };
+		3893F03217B94A5E00FEEADD /* UITIssue71ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3893F03117B94A5E00FEEADD /* UITIssue71ViewController.m */; };
 		38AD076617AE7C4E0000E5BA /* UICSwitchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38AD076517AE7C4E0000E5BA /* UICSwitchViewController.m */; };
 		38AD076917AE84CE0000E5BA /* UICSliderProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38AD076817AE84CE0000E5BA /* UICSliderProgressViewController.m */; };
 		38AD076B17AEC1060000E5BA /* UI7SliderThumb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38AD076A17AEC1060000E5BA /* UI7SliderThumb@2x.png */; };
@@ -397,6 +398,8 @@
 		388FC1E0177303AA0084574E /* UI7ButtonImageInfo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7ButtonImageInfo.png; sourceTree = "<group>"; };
 		388FC1E1177303AA0084574E /* UI7ButtonImageInfo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7ButtonImageInfo@2x.png"; sourceTree = "<group>"; };
 		388FC1E6177345970084574E /* UI7KitPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7KitPrivate.h; sourceTree = "<group>"; };
+		3893F03017B94A5E00FEEADD /* UITIssue71ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITIssue71ViewController.h; sourceTree = "<group>"; };
+		3893F03117B94A5E00FEEADD /* UITIssue71ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITIssue71ViewController.m; sourceTree = "<group>"; };
 		38AD076417AE7C4E0000E5BA /* UICSwitchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICSwitchViewController.h; sourceTree = "<group>"; };
 		38AD076517AE7C4E0000E5BA /* UICSwitchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICSwitchViewController.m; sourceTree = "<group>"; };
 		38AD076717AE84CE0000E5BA /* UICSliderProgressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICSliderProgressViewController.h; sourceTree = "<group>"; };
@@ -609,7 +612,6 @@
 		383764C913373154007072FD = {
 			isa = PBXGroup;
 			children = (
-				38D3310417911022009576B2 /* MessageUI.framework */,
 				38D7EB31176753A600B1DCAE /* UI7Kit */,
 				38017438176989660049D26C /* UI7KitTests */,
 				38F0681B1636F8C8002723AB /* TestApp */,
@@ -639,6 +641,7 @@
 				383764E513373155007072FD /* CoreGraphics.framework */,
 				38C7A9891495181800381910 /* SenTestingKit.framework */,
 				3886F6FD17709EF300890D47 /* QuartzCore.framework */,
+				38D3310417911022009576B2 /* MessageUI.framework */,
 				38C7A9751495181800381910 /* Other Frameworks */,
 				C081AB61224D42EF8B7ABD3F /* libPods.a */,
 			);
@@ -816,6 +819,8 @@
 				3866035017A6A60C004EEE3F /* UITIssue39ViewController.m */,
 				38D3310117906FE3009576B2 /* UITIssue41ViewController.h */,
 				38D3310217906FE3009576B2 /* UITIssue41ViewController.m */,
+				3893F03017B94A5E00FEEADD /* UITIssue71ViewController.h */,
+				3893F03117B94A5E00FEEADD /* UITIssue71ViewController.m */,
 				38D1C935177EF7B70026135A /* UI7Tool.h */,
 				38D1C936177EF7B70026135A /* UI7Tool.m */,
 				38F0681C1636F8C8002723AB /* Supporting Files */,
@@ -1264,6 +1269,7 @@
 				38D3310317906FE3009576B2 /* UITIssue41ViewController.m in Sources */,
 				3866035117A6A60C004EEE3F /* UITIssue39ViewController.m in Sources */,
 				3805FBA517A81CB9008487A9 /* UITBarItemViewController.m in Sources */,
+				3893F03217B94A5E00FEEADD /* UITIssue71ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
