@@ -8,7 +8,7 @@
 
 #import "UI7Switch.h"
 
-#if !defined(UI7SWITCH_KLSWITCH) && !defined(UI7SWITCH_MBSWITCH)
+#if !defined(UI7SWITCH_KLSWITCH) && !defined(UI7SWITCH_MBSWITCH) && !defined(UI7SWITCH_SEVENSWITCH)
 #   define UI7SWITCH_KLSWITCH 1
 #endif
 
@@ -21,6 +21,9 @@
 - (void)configure;
 @end
 #   define UI7SwitchImplementation MBSwitch
+#elif UI7SWITCH_SEVENSWITCH
+#   import <SevenSwitch/SevenSwitch.h>
+#   define UI7SwitchImplementation SevenSwitch
 #else
 #   error UI7Switch implementation class is missing.
 #endif
