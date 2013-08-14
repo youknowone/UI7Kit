@@ -67,7 +67,7 @@ UI7Kit *UI7KitSharedObject = nil;
          @"UI7Stepper",
          @"UI7Slider",
          @"UI7ProgressView",
-         //@"UI7PickerView",
+         @"UI7PickerView",
          ]) {
         Class class = NSClassFromString(className);
         [class patch];

@@ -59,35 +59,40 @@
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
-    [self release];
+    NSString *className = self.class.name;
+    if ([className isEqual:@"UISwitch"] || [className isEqual:@"UI7Switch"]) {
+        [self release];
 
-    //Reassign self and set to a KLSwitch copying propertie from dummy
-    self = (UI7Switch *)[[UI7SwitchImplementation alloc] initWithCoder:aDecoder];
-    if (self != nil) {
-        #if UI7SWITCH_MBSWITCH
-        [self configure];
-        #endif
-        BOOL on = [aDecoder decodeBoolForKey:@"UISwitchOn"];
-        [self setOn:on animated:NO];
-        if ([aDecoder containsValueForKey:@"UISwitchOnTintColor"]) {
-            self.onTintColor = [aDecoder decodeObjectForKey:@"UISwitchOnTintColor"];
-        } else {
-            self.onTintColor = [UIColor colorWith8bitRed:69 green:215 blue:117 alpha:255];
-        }
-        if ([aDecoder containsValueForKey:@"UISwitchThumbTintColor"]) {
-            self.thumbTintColor = [aDecoder decodeObjectForKey:@"UISwitchThumbTintColor"];
-        }
-        CGRect frame = self.frame;
-        if (frame.size.width != 51.0f) {
-            frame.size.height = 31.0f;
-            #if UI7SWITCH_KLSWITCH
-            frame.origin.x += 20.0f;
-            #elif UI7SWITCH_MBSWITCH
-            frame.origin.x += (frame.size.width - 51.0f) / 2;
+        //Reassign self and set to a KLSwitch copying propertie from dummy
+        self = (UI7Switch *)[[UI7SwitchImplementation alloc] initWithCoder:aDecoder];
+        if (self != nil) {
+            #if UI7SWITCH_MBSWITCH
+            [self configure];
             #endif
-            frame.size.width = 51.0f;
-            self.frame = frame;
+            BOOL on = [aDecoder decodeBoolForKey:@"UISwitchOn"];
+            [self setOn:on animated:NO];
+            if ([aDecoder containsValueForKey:@"UISwitchOnTintColor"]) {
+                self.onTintColor = [aDecoder decodeObjectForKey:@"UISwitchOnTintColor"];
+            } else {
+                self.onTintColor = [UIColor colorWith8bitRed:69 green:215 blue:117 alpha:255];
+            }
+            if ([aDecoder containsValueForKey:@"UISwitchThumbTintColor"]) {
+                self.thumbTintColor = [aDecoder decodeObjectForKey:@"UISwitchThumbTintColor"];
+            }
+            CGRect frame = self.frame;
+            if (frame.size.width != 51.0f) {
+                frame.size.height = 31.0f;
+                #if UI7SWITCH_KLSWITCH
+                frame.origin.x += 20.0f;
+                #elif UI7SWITCH_MBSWITCH
+                frame.origin.x += (frame.size.width - 51.0f) / 2;
+                #endif
+                frame.size.width = 51.0f;
+                self.frame = frame;
+            }
         }
+    } else {
+        self = [self __initWithCoder:aDecoder];
     }
     return self;
 }
@@ -99,9 +104,16 @@
 #endif
 
 - (id)initWithFrame:(CGRect)frame {
-    [self release];
-    //Reassign self and set to a KLSwitch copying propertie from dummy
-    self = (UI7Switch *)[[UI7SwitchImplementation alloc] initWithFrame:frame];
+    NSString *className = self.class.name;
+    if ([className isEqual:@"UISwitch"] || [className isEqual:@"UI7Switch"]) {
+        [self release];
+
+        //Reassign self and set to a KLSwitch copying propertie from dummy
+        self = (UI7Switch *)[[UI7SwitchImplementation alloc] initWithFrame:frame];
+    } else {
+        self = [self __initWithFrame:frame];
+    }
     return self;
 }
+
 @end

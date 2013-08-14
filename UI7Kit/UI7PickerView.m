@@ -316,7 +316,8 @@ NSAPropertyGetter(bottomGradient, @"_bottomGradient");
 }
 
 - (id)initWithFrame:(CGRect)frame {
-    if ([UIDevice currentDevice].needsUI7Kit) {
+    NSString *className = self.class.name;
+    if ([UIDevice currentDevice].needsUI7Kit && ([className isEqual:@"UIPickerView"] || [className isEqual:@"UI7PickerView"])) {
         [self release];
         return (id)[[UI7PickerLikeView alloc] initWithFrame:frame];
     }
@@ -325,23 +326,13 @@ NSAPropertyGetter(bottomGradient, @"_bottomGradient");
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
-    if ([UIDevice currentDevice].needsUI7Kit) {
+    NSString *className = self.class.name;
+    if ([UIDevice currentDevice].needsUI7Kit && ([className isEqual:@"UIPickerView"] || [className isEqual:@"UI7PickerView"])) {
         [self release];
         return (id)[[UI7PickerLikeView alloc] initWithCoder:aDecoder];
     }
     self = [self __initWithCoder:aDecoder];
     return self;
 }
-
-@end
-
-
-@interface _UI7PickerView: UIView
-
-@end
-
-
-@implementation _UI7PickerView
-
 
 @end
