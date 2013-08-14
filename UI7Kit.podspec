@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.license      = "2-clause BSD"
   s.author       = { "Jeong YunWon" => "jeong@youknowone.org" }
   s.source       = { :git => "https://github.com/youknowone/UI7Kit.git", :tag => "0.7.9" }
-  s.dependency "FoundationExtension", "~> 0.38"
+  s.dependency "FoundationExtension", "~> 0.39"
   s.dependency "KLSwitch", "~> 1.5"
 
   s.platform     = :ios, '5.0'

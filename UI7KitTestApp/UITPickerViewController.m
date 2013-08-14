@@ -29,6 +29,10 @@
 	// Do any additional setup after loading the view.
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    NSLog(@"%@", [self.pickerView topGradient]);
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -41,6 +45,10 @@
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     return 20;
+}
+
+- (void)backgroundColorChanged:(UISlider *)sender {
+    self.view.backgroundColor = [UIColor colorWithRed:sender.value green:sender.value * sender.value blue:1.0 - pow(1 - sender.value, 2) alpha:1.0];
 }
 
 @end

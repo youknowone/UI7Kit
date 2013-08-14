@@ -12,12 +12,7 @@
 @implementation UIColor (UI7Kit)
 
 - (UIColor *)highligtedColorForBackgroundColor:(UIColor *)backgroundColor {
-    UIAColorComponents *selfComponents = self.components;
-    UIAColorComponents *backgroundComponents = backgroundColor.components;
-    return [UIColor colorWithRed:backgroundComponents.red * (backgroundComponents.red * 0.75f + selfComponents.red * 0.25f)
-                           green:backgroundComponents.green * (backgroundComponents.green * 0.75f + selfComponents.green * 0.25f)
-                            blue:backgroundComponents.blue * (backgroundComponents.blue * 0.75f + selfComponents.blue * 0.25f)
-                           alpha:selfComponents.alpha];
+    return [[self mixedColorWithColor:backgroundColor ratio:0.25] colorWithAlpha:self.components.alpha];
 }
 
 - (UIColor *)highligtedColor {

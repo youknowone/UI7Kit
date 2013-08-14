@@ -10,4 +10,8 @@
 
 @interface UITPickerViewController : UITTintViewController<UIPickerViewDataSource>
 
+@property(strong,nonatomic) IBOutlet UIPickerView *pickerView;
+
+- (IBAction)backgroundColorChanged:(id)sender;
+
 @end

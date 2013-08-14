@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="RC6-zb-YZU">
     <dependencies>
-        <deployment defaultVersion="1552" identifier="iOS"/>
         <development version="4600" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -794,14 +793,14 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="cell" textLabel="VFo-69-Jmg" style="IBUITableViewCellStyleDefault" id="jB9-Cr-Oao">
-                                        <rect key="frame" x="0.0" y="119" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="46" width="320" height="46"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Grouped" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VFo-69-Jmg">
-                                                    <rect key="frame" x="15" y="0.0" width="290" height="43"/>
+                                                    <rect key="frame" x="10" y="0.0" width="280" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -834,7 +833,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" id="f48-GI-3P7" customClass="UI7PickerView">
+                            <pickerView contentMode="scaleToFill" id="f48-GI-3P7">
                                 <rect key="frame" x="0.0" y="15" width="320" height="216"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
@@ -870,10 +869,20 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
 </data>
                                 </timeZone>
                             </datePicker>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="QWp-kL-Ef8">
+                                <rect key="frame" x="0.0" y="224" width="320" height="23"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="backgroundColorChanged:" destination="lpa-9a-8P4" eventType="touchUpInside" id="AgV-IC-oUw"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="PickerView" id="fhg-74-JKW"/>
+                    <connections>
+                        <outlet property="pickerView" destination="f48-GI-3P7" id="RVH-tD-bvs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="guG-jU-ycD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1618,108 +1627,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="UI7NavigationBarBackButton.png" width="50" height="33"/>
         <image name="UI7TabBarItemFavoriteSelected.png" width="30" height="30"/>
     </resources>
-    <classes>
-        <class className="UI7Button" superclassName="UIButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UI7Button.h"/>
-        </class>
-        <class className="UI7PickerView" superclassName="UIPickerView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UI7PickerView.h"/>
-        </class>
-        <class className="UI7RoundedRectButton" superclassName="UI7Button">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UI7RoundedRectButton.h"/>
-        </class>
-        <class className="UIAPlaceholderTextView" superclassName="UITextView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIAPlaceholderTextView.h"/>
-        </class>
-        <class className="UITAlertViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITAlertViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="defaultButton1:"/>
-                <relationship kind="action" name="defaultButton2:"/>
-                <relationship kind="action" name="defaultButton3:"/>
-                <relationship kind="action" name="inputButton1:"/>
-                <relationship kind="action" name="inputButton2:"/>
-                <relationship kind="action" name="inputButton3:"/>
-                <relationship kind="action" name="inputField2:"/>
-            </relationships>
-        </class>
-        <class className="UITBarItemViewController" superclassName="UITTintViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITBarItemViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="addTabBar:"/>
-                <relationship kind="outlet" name="tabBar" candidateClass="UITabBar"/>
-            </relationships>
-        </class>
-        <class className="UITDetailViewController" superclassName="UITTintViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITDetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="showActionSheet1:"/>
-                <relationship kind="action" name="showActionSheet2:"/>
-                <relationship kind="action" name="showActionSheet3:"/>
-                <relationship kind="action" name="showActionSheet4:"/>
-                <relationship kind="action" name="showAlertView1:"/>
-                <relationship kind="action" name="showAlertView2:"/>
-                <relationship kind="action" name="showAlertView3:"/>
-                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
-            </relationships>
-        </class>
-        <class className="UITGroupedTableViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITGroupedTableViewController.h"/>
-        </class>
-        <class className="UITIssue12ViewController" superclassName="UITTintViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITIssue12ViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="segmentedControl" candidateClass="UISegmentedControl"/>
-            </relationships>
-        </class>
-        <class className="UITIssue1ViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITIssue1ViewController.h"/>
-        </class>
-        <class className="UITIssue39ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITIssue39ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="showAlert:"/>
-            </relationships>
-        </class>
-        <class className="UITIssue41ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITIssue41ViewController.h"/>
-        </class>
-        <class className="UITIssue71ViewController" superclassName="UITTintViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITIssue71ViewController.h"/>
-        </class>
-        <class className="UITMasterViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITMasterViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="styleChanged:"/>
-                <relationship kind="outlet" name="listTableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="styleSegmentedControl" candidateClass="UISegmentedControl"/>
-            </relationships>
-        </class>
-        <class className="UITPickerViewController" superclassName="UITTintViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITPickerViewController.h"/>
-        </class>
-        <class className="UITSegmentedControlViewController" superclassName="UITTintViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITSegmentedControlViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="segmented1" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="segmented2" candidateClass="UISegmentedControl"/>
-            </relationships>
-        </class>
-        <class className="UITTextViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITTextViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="resign:"/>
-                <relationship kind="action" name="switched:"/>
-                <relationship kind="outlet" name="textView" candidateClass="UIAPlaceholderTextView"/>
-            </relationships>
-        </class>
-        <class className="UITTintViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITTintViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="colorChanged:"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
