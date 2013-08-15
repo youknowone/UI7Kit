@@ -257,7 +257,7 @@ UIImage *UI7PickerLikeViewGradientImage(UIColor *maskColor, CGFloat topGradient,
         cell.textLabel.textAlignment = UITextAlignmentCenter;
         cell.selectedBackgroundView = [UIColor clearColor].image.view;
         cell.backgroundColor = [UIColor clearColor];
-//        cell.textLabel.font = [UI7Font iOS7SystemFontOfSize:cell.textLabel.font.pointSize attribute:UI7FontAttributeLight]; // weird behavior
+        cell.textLabel.font = [UI7Font iOS7SystemFontOfSize:cell.textLabel.font.pointSize attribute:UI7FontAttributeLight]; // weird behavior
     }
     UIView *view = [self viewForRow:indexPath.row forComponent:componentIndex];
     if (view) {

@@ -33,6 +33,7 @@ CGFloat UI7TableViewGroupedTableSectionSeperatorHeight = 28.0f;
 
 - (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
 - (id)__initWithFrame:(CGRect)frame { assert(NO); return nil; }
+- (id)__initWithFrame:(CGRect)frame style:(UITableViewStyle)style { assert(NO); return nil; }
 - (void)__setDelegate:(id<UITableViewDelegate>)delegate { assert(NO); return; }
 - (UITableViewStyle)__style { assert(NO); return 0; }
 - (void)__updateVisibleCellsNow:(BOOL)flag { assert(NO); }
@@ -84,6 +85,7 @@ UIColor *UI7TableViewGroupedViewPatternColor = nil;
 
         [target copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
         [target copyToSelector:@selector(__initWithFrame:) fromSelector:@selector(initWithFrame:)];
+        [target copyToSelector:@selector(__initWithFrame:style:) fromSelector:@selector(initWithFrame:style:)];
         [target copyToSelector:@selector(__setDelegate:) fromSelector:@selector(setDelegate:)];
         [target copyToSelector:@selector(__style) fromSelector:@selector(style)];
         [target copyToSelector:@selector(__updateVisibleCellsNow:) fromSelector:@selector(_updateVisibleCellsNow:)];
@@ -95,6 +97,7 @@ UIColor *UI7TableViewGroupedViewPatternColor = nil;
 
     [self exportSelector:@selector(initWithCoder:) toClass:target];
     [self exportSelector:@selector(initWithFrame:) toClass:target];
+    [self exportSelector:@selector(initWithFrame:style:) toClass:target];
     [self exportSelector:@selector(awakeFromNib) toClass:target];
     [self exportSelector:@selector(setDelegate:) toClass:target];
     [self exportSelector:@selector(style) toClass:target];
@@ -152,7 +155,7 @@ UIColor *UI7TableViewGroupedViewPatternColor = nil;
 }
 
 - (id)initWithFrame:(CGRect)frame style:(UITableViewStyle)style {
-    self = [self __initWithFrame:frame];
+    self = [self __initWithFrame:frame style:style];
     if (self) {
 //        [UI7TableViewStyleIsGrouped setObject:@(YES) forKey:self.pointerString];
         [self _tableViewInit];
