@@ -11,6 +11,8 @@
 
 #import "UI7Utilities.h"
 
+NSMutableArray *UI7KitAutopatchException = nil;
+
 @implementation UI7Kit
 
 @synthesize tintColor=_tintColor;
@@ -39,8 +41,13 @@ UI7Kit *UI7KitSharedObject = nil;
 
 + (void)initialize {
     if (self == [UI7Kit class]) {
+        UI7KitAutopatchException = [[NSMutableArray alloc] init];
         UI7KitSharedObject = [[UI7Kit alloc] init];
     }
+}
+
++ (void)excludeClassNamesFromAutopatch:(NSArray *)names {
+    [UI7KitAutopatchException addObjectsFromArray:names];
 }
 
 + (void)patch {
@@ -69,6 +76,9 @@ UI7Kit *UI7KitSharedObject = nil;
          @"UI7ProgressView",
          @"UI7PickerView",
          ]) {
+        if ([UI7KitAutopatchException containsObject:className]) {
+            continue;
+        }
         Class class = NSClassFromString(className);
         [class patch];
     }

@@ -24,6 +24,7 @@
 @property(nonatomic,strong) UIColor *tintColor; // Global Tint
 @property(nonatomic,strong) UIColor *backgroundColor; // Background color
 
++ (void)excludeClassNamesFromAutopatch:(NSArray *)names; // excludes from autopatch
 + (UI7Kit *)kit;
 
 @end
