@@ -61,7 +61,7 @@ NSAPropertyAssignSetter(setNavigationBar, @"_navigationBar");
 
     UIGraphicsBeginImageContext(CGSizeMake(1.0, 3.0));
     CGContextRef context = UIGraphicsGetCurrentContext();
-    [[UIColor colorWith8bitWhite:178 alpha:255] set];
+    [(UIColor *)[UIColor colorWith8bitWhite:178 alpha:255] set];
     CGContextFillRect(context, CGRectMake(.0, 2.0, 1.0, 1.0));
     UIImage *backgroundImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();

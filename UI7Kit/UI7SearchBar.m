@@ -19,7 +19,7 @@
     CGFloat height = self.frame.size.height;
     UIGraphicsBeginImageContext(CGSizeMake(1.0, height));
     CGContextRef context = UIGraphicsGetCurrentContext();
-    [[UIColor colorWith8bitWhite:178 alpha:255] set];
+    [(UIColor *)[UIColor colorWith8bitWhite:178 alpha:255] set];
     CGContextFillRect(context, CGRectMake(.0, height - 1.0f, 1.0f, 1.0f));
     UIImage *backgroundImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
