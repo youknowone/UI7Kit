@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
   s.name         = "UI7Kit"
-  s.version      = "0.8"
+  s.version      = "0.8.1"
   s.summary      = "UI7Kit is a GUI toolkit to implement iOS7 look & feel UIKit under iOS5/iOS6. It is also supported that patching UIKit to UI7Kit in runtime."
   s.homepage     = "https://github.com/youknowone/UI7Kit"
   s.license      = "2-clause BSD"
   s.author       = { "Jeong YunWon" => "jeong@youknowone.org" }
-  s.source       = { :git => "https://github.com/youknowone/UI7Kit.git", :tag => "0.8" }
+  s.source       = { :git => "https://github.com/youknowone/UI7Kit.git", :tag => "0.8.1" }
   s.dependency "FoundationExtension", "~> 0.39"
   s.dependency "KLSwitch", "~> 1.5"
 

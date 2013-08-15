@@ -31,6 +31,7 @@
 		38078A68178DB7A00010B6D5 /* icon_72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = 38078A63178DB7A00010B6D5 /* icon_72x72.png */; };
 		38078A69178DB7A00010B6D5 /* icon_72x72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38078A64178DB7A00010B6D5 /* icon_72x72@2x.png */; };
 		38078A6A178DB7A00010B6D5 /* icon_72x72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38078A64178DB7A00010B6D5 /* icon_72x72@2x.png */; };
+		380F341817BCECBD003B45A9 /* UICPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380F341717BCECBD003B45A9 /* UICPickerViewController.m */; };
 		3810413317884A4300A85540 /* UITIssue12ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3810413217884A4300A85540 /* UITIssue12ViewController.m */; };
 		381582471771E72C0045713A /* UI7Slider.m in Sources */ = {isa = PBXBuildFile; fileRef = 381582461771E72C0045713A /* UI7Slider.m */; };
 		381595A91784936A001CC0CD /* UITSegmentedControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 381595A81784936A001CC0CD /* UITSegmentedControlViewController.m */; };
@@ -282,6 +283,8 @@
 		38078A62178DB7A00010B6D5 /* Icon_60x60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon_60x60@2x.png"; path = "Icon.iconset/Icon_60x60@2x.png"; sourceTree = "<group>"; };
 		38078A63178DB7A00010B6D5 /* icon_72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_72x72.png; path = Icon.iconset/icon_72x72.png; sourceTree = "<group>"; };
 		38078A64178DB7A00010B6D5 /* icon_72x72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_72x72@2x.png"; path = "Icon.iconset/icon_72x72@2x.png"; sourceTree = "<group>"; };
+		380F341617BCECBD003B45A9 /* UICPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICPickerViewController.h; sourceTree = "<group>"; };
+		380F341717BCECBD003B45A9 /* UICPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICPickerViewController.m; sourceTree = "<group>"; };
 		3810413117884A4300A85540 /* UITIssue12ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITIssue12ViewController.h; sourceTree = "<group>"; };
 		3810413217884A4300A85540 /* UITIssue12ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITIssue12ViewController.m; sourceTree = "<group>"; };
 		381582451771E72C0045713A /* UI7Slider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7Slider.h; sourceTree = "<group>"; };
@@ -680,6 +683,8 @@
 				38AD076517AE7C4E0000E5BA /* UICSwitchViewController.m */,
 				38AD076717AE84CE0000E5BA /* UICSliderProgressViewController.h */,
 				38AD076817AE84CE0000E5BA /* UICSliderProgressViewController.m */,
+				380F341617BCECBD003B45A9 /* UICPickerViewController.h */,
+				380F341717BCECBD003B45A9 /* UICPickerViewController.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -1242,6 +1247,7 @@
 				384BF42C178A176600485BED /* main.m in Sources */,
 				38AD076617AE7C4E0000E5BA /* UICSwitchViewController.m in Sources */,
 				38DBEB7C178C6F28000EFC5C /* UICMainListViewController.m in Sources */,
+				380F341817BCECBD003B45A9 /* UICPickerViewController.m in Sources */,
 				38AD076917AE84CE0000E5BA /* UICSliderProgressViewController.m in Sources */,
 				384BF430178A176600485BED /* UICAppDelegate.m in Sources */,
 			);

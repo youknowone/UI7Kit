@@ -74,3 +74,36 @@
 }
 
 @end
+
+
+@implementation UICBackgroundColorSettingsViewController
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
+    UIColor *color = UICUserDefaults.globalBackgroundColor;
+    if (color == nil) {
+        color = [UIColor whiteColor];
+    }
+    UIAColorComponents *components = color.components;
+    self.redSlider.value = components.red;
+    self.greenSlider.value = components.green;
+    self.blueSlider.value = components.blue;
+
+    color = UICUserDefaults.globalTintColor;
+    if (color == nil) {
+        color = [UI7Kit kit].tintColor;
+    }
+    self.redSlider.minimumTrackTintColor = color;
+    self.greenSlider.minimumTrackTintColor = color;
+    self.blueSlider.minimumTrackTintColor = color;
+}
+
+- (void)colorChanged:(id)sender {
+    UIColor *color = [UIColor colorWithRed:self.redSlider.value green:self.greenSlider.value blue:self.blueSlider.value alpha:1.0];
+    self.view.window.backgroundColor = color;
+    self.view.backgroundColor = color;
+    UICUserDefaults.globalBackgroundColor = color;
+}
+
+@end

@@ -27,3 +27,12 @@
 - (IBAction)colorChanged:(id)sender;
 
 @end
+
+
+@interface UICBackgroundColorSettingsViewController : UIViewController
+
+@property(nonatomic,strong) IBOutlet UISlider *redSlider, *greenSlider, *blueSlider;
+
+- (IBAction)colorChanged:(id)sender;
+
+@end

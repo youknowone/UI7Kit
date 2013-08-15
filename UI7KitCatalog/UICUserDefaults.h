@@ -15,5 +15,6 @@
 @property(nonatomic) BOOL globalPatch;
 @property(nonatomic) UIBarStyle globalBarStyle;
 @property(nonatomic) UIColor *globalTintColor;
+@property(nonatomic) UIColor *globalBackgroundColor;
 
 @end

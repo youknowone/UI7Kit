@@ -49,4 +49,40 @@
     [self setObject:@(components.blue) forKey:@"GlobalTintColorBlue"];
 }
 
+- (UIColor *)globalBackgroundColor {
+    NSNumber *red = [self objectForKey:@"GlobalBackgroundColorRed"];
+    NSNumber *green = [self objectForKey:@"GlobalBackgroundColorGreen"];
+    NSNumber *blue = [self objectForKey:@"GlobalBackgroundColorBlue"];
+
+    if (red && green && blue) {
+        return [UIColor colorWithRed:red.floatValue green:green.floatValue blue:blue.floatValue alpha:1.0f];
+    }
+
+    return nil;
+}
+
+- (void)setGlobalBackgroundColor:(UIColor *)globalBackgroundColor {
+    UIAColorComponents *components = globalBackgroundColor.components;
+
+    [self setObject:@(components.red) forKey:@"GlobalBackgroundColorRed"];
+    [self setObject:@(components.green) forKey:@"GlobalBackgroundColorGreen"];
+    [self setObject:@(components.blue) forKey:@"GlobalBackgroundColorBlue"];
+}
+
+@end
+
+
+@implementation UIViewController (BackgroundColor)
+
+- (void)viewWillAppear:(BOOL)animated {
+    if ([self isKindOfClass:[UITableViewController class]]) {
+        return;
+    }
+    UIColor *color = UICUserDefaults.globalBackgroundColor;
+    if (color == nil) {
+        color = [UIColor whiteColor];
+    }
+    self.view.backgroundColor = UICUserDefaults.globalBackgroundColor;
+}
+
 @end
