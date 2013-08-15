@@ -66,7 +66,9 @@
 - (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
 - (id)__initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier { assert(NO); return nil; }
 - (UIColor *)__tintColor { assert(NO); return  nil; }
+- (UITableViewCellAccessoryType)__accessoryType { assert(NO); return 0; }
 - (void)__setAccessoryType:(UITableViewCellAccessoryType)accessoryType { assert(NO); }
+- (void)__setAccessoryView:(UIView *)accessoryView { assert(NO); }
 - (void)__setBackgroundColor:(UIColor *)backgroundColor { assert(NO); }
 - (void)__setTableViewStyle:(int)style { assert(NO); }
 
@@ -166,7 +168,9 @@ UIImage *UI7TableViewCellAccessoryCheckmarkImageCreate() {
         [target copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
         [target copyToSelector:@selector(__initWithStyle:reuseIdentifier:) fromSelector:@selector(initWithStyle:reuseIdentifier:)];
         [target copyToSelector:@selector(__tintColor) fromSelector:@selector(tintColor)];
+        [target copyToSelector:@selector(__accessoryType) fromSelector:@selector(accessoryType)];
         [target copyToSelector:@selector(__setAccessoryType:) fromSelector:@selector(setAccessoryType:)];
+        [target copyToSelector:@selector(__setAccessoryView:) fromSelector:@selector(setAccessoryView:)];
         [target copyToSelector:@selector(__setBackgroundColor:) fromSelector:@selector(setBackgroundColor:)];
         [target copyToSelector:@selector(__setTableViewStyle:) fromSelector:@selector(setTableViewStyle:)];
 
@@ -180,11 +184,12 @@ UIImage *UI7TableViewCellAccessoryCheckmarkImageCreate() {
 
     [self exportSelector:@selector(initWithCoder:) toClass:target];
     [self exportSelector:@selector(initWithStyle:reuseIdentifier:) toClass:target];
+    [self exportSelector:@selector(accessoryType) toClass:target];
     [self exportSelector:@selector(setAccessoryType:) toClass:target];
+    [self exportSelector:@selector(setAccessoryView:) toClass:target];
     [self exportSelector:@selector(setBackgroundColor:) toClass:target];
     [self exportSelector:@selector(setTableViewStyle:) toClass:target];
     [self exportSelector:@selector(_setTableBackgroundCGColor:withSystemColorName:) toClass:target];
-    [self exportSelector:@selector(accessoryType) toClass:target];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
@@ -196,7 +201,7 @@ UIImage *UI7TableViewCellAccessoryCheckmarkImageCreate() {
             self.backgroundColor = backgroundColor;
         }
         if (self.accessoryView == nil) {
-            self.accessoryType = [self accessoryType]; // trigger patched setter
+            self.accessoryType = [self __accessoryType]; // trigger patched setter
         }
     }
     return self;
@@ -226,6 +231,11 @@ UIImage *UI7TableViewCellAccessoryCheckmarkImageCreate() {
     // NOTE: Do nothing here!
 }
 
+- (void)setAccessoryView:(UIView *)accessoryView {
+    self.___accessoryType = UITableViewCellAccessoryNone;
+    [self __setAccessoryView:accessoryView];
+}
+
 - (void)setAccessoryType:(UITableViewCellAccessoryType)accessoryType {
 #if __IPHONE_OS_VERSION_MAX_ALLOWED < 70000
     #pragma clang diagnostic push
@@ -233,10 +243,10 @@ UIImage *UI7TableViewCellAccessoryCheckmarkImageCreate() {
 #endif
     switch (accessoryType) {
         case UITableViewCellAccessoryNone: {
-            self.accessoryView = nil;
+            [self __setAccessoryView:nil];
         }   break;
         case UITableViewCellAccessoryDisclosureIndicator: {
-            self.accessoryView = UI7TableViewCellAccessoryDisclosureIndicatorImage.view;
+            [self __setAccessoryView:UI7TableViewCellAccessoryDisclosureIndicatorImage.view];
         }   break;
         case UITableViewCellAccessoryDetailDisclosureButton: {
             UIButton *button = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
@@ -251,15 +261,15 @@ UIImage *UI7TableViewCellAccessoryCheckmarkImageCreate() {
             [view addSubview:button];
             [view addSubview:indicator];
 
-            self.accessoryView = view;
+            [self __setAccessoryView:view];
         }   break;
         case UITableViewCellAccessoryDetailButton: {
             UIButton *button = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
             [button addTarget:self action:@selector(_accessoryButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
-            self.accessoryView = button;
+            [self __setAccessoryView:button];
         }   break;
         case UITableViewCellAccessoryCheckmark: {
-            self.accessoryView = UI7TableViewCellAccessoryCheckmarkImage.view;
+            [self __setAccessoryView:UI7TableViewCellAccessoryCheckmarkImage.view];
         }   break;
         default:
             [self __setAccessoryType:accessoryType];
