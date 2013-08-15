@@ -8,8 +8,11 @@
 
 #import <QuartzCore/QuartzCore.h>
 #import "UI7KitPrivate.h"
+#import "UI7Font.h"
 #import "UI7View.h"
 #import "UI7PickerView.h"
+#import "UI7TableView.h"
+#import "UI7TableViewCell.h"
 
 @interface UI7PickerLikeView ()
 
@@ -157,7 +160,7 @@ UIImage *UI7PickerLikeViewGradientImage(UIColor *maskColor, CGFloat topGradient,
 
     NSInteger number = [self.dataSource numberOfComponentsInPickerView:(id)self];
     for (NSInteger i = 0; i < number; i++) {
-        UITableView *table = [[[UITableView alloc] initWithFrame:CGRectMake(.0, .0, self.frame.size.width / number, self.frame.size.height)] autorelease];
+        UI7TableView *table = [[[UI7TableView alloc] initWithFrame:CGRectMake(.0, .0, self.frame.size.width / number, self.frame.size.height)] autorelease];
         table.showsVerticalScrollIndicator = NO;
         table.separatorStyle = UITableViewCellSeparatorStyleNone;
         table.dataSource = self;
@@ -208,11 +211,7 @@ UIImage *UI7PickerLikeViewGradientImage(UIColor *maskColor, CGFloat topGradient,
 
 - (NSInteger)selectedRowInComponent:(NSInteger)component {
     UITableView *table = self.tables[component];
-    NSArray *visibleCells = table.visibleCells;
-    NSUInteger count = visibleCells.count;
-    UITableViewCell *selectedCell = visibleCells[count / 2];
-    NSIndexPath *path = [table indexPathForCell:selectedCell];
-    return path.row; // rough impl
+    return [table indexPathForSelectedRow].row;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -223,8 +222,14 @@ UIImage *UI7PickerLikeViewGradientImage(UIColor *maskColor, CGFloat topGradient,
     UITableView *table = (id)scrollView;
     CGFloat rowHeight = [self rowSizeForComponent:[self.tables indexOfObject:table]].height;
     NSInteger index = (NSInteger)((table.contentOffset.y + rowHeight * 0.5) / rowHeight);
-    if (index < 0) index = 0;
-    if (index >= [table numberOfRowsInSection:0]) index = [table numberOfRowsInSection:0];
+    if (index < 0) {
+        index = 0;
+    } else {
+        NSInteger rowCount = [table numberOfRowsInSection:0];
+        if (index >= rowCount) {
+            index = rowCount;
+        }
+    }
     [table selectRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0] animated:YES scrollPosition:UITableViewScrollPositionMiddle];
 }
 
@@ -248,10 +253,11 @@ UIImage *UI7PickerLikeViewGradientImage(UIColor *maskColor, CGFloat topGradient,
     NSString *identifier = [@"%d" format0:nil, componentIndex];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) {
-        cell = [UITableViewCell cellWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = (id)[UI7TableViewCell cellWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         cell.textLabel.textAlignment = UITextAlignmentCenter;
         cell.selectedBackgroundView = [UIColor clearColor].image.view;
         cell.backgroundColor = [UIColor clearColor];
+//        cell.textLabel.font = [UI7Font iOS7SystemFontOfSize:cell.textLabel.font.pointSize attribute:UI7FontAttributeLight]; // weird behavior
     }
     UIView *view = [self viewForRow:indexPath.row forComponent:componentIndex];
     if (view) {
