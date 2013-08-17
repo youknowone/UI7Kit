@@ -233,6 +233,12 @@ UIImage *UI7PickerLikeViewGradientImage(UIColor *maskColor, CGFloat topGradient,
     [table selectRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0] animated:YES scrollPosition:UITableViewScrollPositionMiddle];
 }
 
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
+    UITableView *tableView = (UITableView *)scrollView;
+    CGFloat rowHeight = tableView.rowHeight;
+    targetContentOffset->y = (NSInteger)((targetContentOffset->y + rowHeight / 2) / rowHeight) * rowHeight;
+}
+
 #pragma mark table view delegate
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
