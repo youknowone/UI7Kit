@@ -9,7 +9,7 @@
 #import "UI7Switch.h"
 
 #if !defined(UI7SWITCH_KLSWITCH) && !defined(UI7SWITCH_MBSWITCH) && !defined(UI7SWITCH_SEVENSWITCH)
-#   define UI7SWITCH_KLSWITCH 1
+#   define UI7SWITCH_SEVENSWITCH 1
 #endif
 
 #if UI7SWITCH_KLSWITCH
