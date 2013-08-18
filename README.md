@@ -112,6 +112,7 @@ Apps using UI7Kit
 - QRQR: [https://itunes.apple.com/app/id444076697](https://itunes.apple.com/app/id444076697)
 - MAFOR Marine Forecast Decoder: [https://itunes.apple.com/app/id674865491](https://itunes.apple.com/app/id674865491)
 - TouchMusic: [https://itunes.apple.com/app/id677386346](https://itunes.apple.com/app/id677386346)
+- Slader [https://itunes.apple.com/us/app/slader/id579962583?ls=1&mt=8](https://itunes.apple.com/us/app/slader/id579962583?ls=1&mt=8)
 
 Do you like this project?
 -------------------------
