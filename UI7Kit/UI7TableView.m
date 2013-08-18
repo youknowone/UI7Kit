@@ -31,15 +31,29 @@ CGFloat UI7TableViewGroupedTableSectionSeperatorHeight = 28.0f;
 
 @implementation UITableView (Patch)
 
+UIColor *UI7TableViewGroupedViewPatternColor = nil;
+
 - (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
 - (id)__initWithFrame:(CGRect)frame { assert(NO); return nil; }
 - (id)__initWithFrame:(CGRect)frame style:(UITableViewStyle)style { assert(NO); return nil; }
 - (void)__setDelegate:(id<UITableViewDelegate>)delegate { assert(NO); return; }
+- (void)__setDataSource:(id<UITableViewDataSource>)dataSource { assert(NO); return; }
 - (UITableViewStyle)__style { assert(NO); return 0; }
 - (void)__updateVisibleCellsNow:(BOOL)flag { assert(NO); }
 
 - (void)_tableViewInit {
 
+}
+
+- (void)_tableViewInitGrouped {
+    if (UI7TableViewGroupedViewPatternColor == nil) {
+        UI7TableViewGroupedViewPatternColor = [[[UITableView alloc] __initWithFrame:CGRectZero style:UITableViewStyleGrouped] autorelease].backgroundColor;
+    }
+
+    self.backgroundView = nil;
+    if (self.separatorStyle == UITableViewCellSeparatorStyleSingleLineEtched) {
+        self.separatorStyle = UITableViewCellSeparatorStyleNone;
+    }
 }
 
 - (void)awakeFromNib { }
@@ -77,8 +91,6 @@ CGFloat UI7TableViewGroupedTableSectionSeperatorHeight = 28.0f;
 
 @implementation UI7TableView
 
-UIColor *UI7TableViewGroupedViewPatternColor = nil;
-
 + (void)initialize {
     if (self == [UI7TableView class]) {
         Class target = [UITableView class];
@@ -87,6 +99,7 @@ UIColor *UI7TableViewGroupedViewPatternColor = nil;
         [target copyToSelector:@selector(__initWithFrame:) fromSelector:@selector(initWithFrame:)];
         [target copyToSelector:@selector(__initWithFrame:style:) fromSelector:@selector(initWithFrame:style:)];
         [target copyToSelector:@selector(__setDelegate:) fromSelector:@selector(setDelegate:)];
+        [target copyToSelector:@selector(__setDataSource:) fromSelector:@selector(setDataSource:)];
         [target copyToSelector:@selector(__style) fromSelector:@selector(style)];
         [target copyToSelector:@selector(__updateVisibleCellsNow:) fromSelector:@selector(_updateVisibleCellsNow:)];
     }
@@ -128,17 +141,10 @@ UIColor *UI7TableViewGroupedViewPatternColor = nil;
 //    }
     if (self) {
         if (self.__style == UITableViewStyleGrouped) {
-            if (UI7TableViewGroupedViewPatternColor == nil) {
-                UI7TableViewGroupedViewPatternColor = [[[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped] autorelease].backgroundColor;
-            }
+            [self _tableViewInitGrouped];
             UIColor *color = [aDecoder decodeObjectForKey:@"UIBackgroundColor"];
             if (color == UI7TableViewGroupedViewPatternColor) {
                 self.backgroundColor = [UI7Color groupedTableViewSectionBackgroundColor];
-            }
-
-            self.backgroundView = nil;
-            if (self.separatorStyle == UITableViewCellSeparatorStyleSingleLineEtched) {
-                self.separatorStyle = UITableViewCellSeparatorStyleNone;
             }
         }
         [self _tableViewInit];
@@ -157,7 +163,9 @@ UIColor *UI7TableViewGroupedViewPatternColor = nil;
 - (id)initWithFrame:(CGRect)frame style:(UITableViewStyle)style {
     self = [self __initWithFrame:frame style:style];
     if (self) {
-//        [UI7TableViewStyleIsGrouped setObject:@(YES) forKey:self.pointerString];
+        if (style == UITableViewStyleGrouped) {
+            [self _tableViewInitGrouped];
+        }
         [self _tableViewInit];
     }
     return self;
@@ -283,6 +291,15 @@ UIView *_UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableVi
         label.backgroundColor = [UIColor colorWith8bitRed:248 green:248 blue:248 alpha:255];
     }
     return label;
+}
+
+- (void)setDataSource:(id<UITableViewDataSource>)dataSource {
+    [self __setDataSource:dataSource];
+    if (self.delegate) {
+        id delegate = self.delegate;
+        [self __setDelegate:nil];
+        self.delegate = delegate;
+    }
 }
 
 - (void)setDelegate:(id<UITableViewDelegate>)delegate {
