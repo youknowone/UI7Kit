@@ -20,4 +20,6 @@
 - (IBAction)showActionSheet3:(id)sender;
 - (IBAction)showActionSheet4:(id)sender;
 
+- (IBAction)changeStepperColor:(id)sender;
+
 @end

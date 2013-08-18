@@ -94,4 +94,8 @@
     }
 }
 
+- (void)changeStepperColor:(UIStepper *)sender {
+    sender.tintColor = [UIColor colorWith8bitRed:60 + sender.value green:120 + sender.value blue:180 + sender.value alpha:255];
+}
+
 @end

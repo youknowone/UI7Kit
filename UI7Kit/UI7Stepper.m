@@ -21,6 +21,7 @@
 - (id)__init { assert(NO); return nil; }
 - (void)__awakeFromNib { assert(NO); }
 - (UIColor *)__tintColor { assert(NO); return nil; }
+- (void)__setTintColor:(UIColor *)color { assert(NO); }
 
 - (void)_stepperInit {
     self.layer.cornerRadius = UI7ControlRadius;
@@ -86,6 +87,7 @@
 
         if ([UIDevice currentDevice].majorVersion == 6) {
             [target copyToSelector:@selector(__tintColor) fromSelector:@selector(tintColor)];
+            [target copyToSelector:@selector(__setTintColor:) fromSelector:@selector(setTintColor:)];
         }
     }
 }
@@ -97,6 +99,7 @@
     [self exportSelector:@selector(awakeFromNib) toClass:target];
     if (![UIDevice currentDevice].iOS7) {
         [target methodForSelector:@selector(tintColor)].implementation = [target methodForSelector:@selector(_tintColor)].implementation;
+        [target methodForSelector:@selector(setTintColor:)].implementation = [target methodForSelector:@selector(_setTintColor:)].implementation;
     }
 }
 
@@ -123,6 +126,10 @@
 
 - (UIColor *)tintColor {
     return [super _tintColor];
+}
+
+- (void)setTintColor:(UIColor *)color {
+    [super _setTintColor:color];
 }
 
 @end
