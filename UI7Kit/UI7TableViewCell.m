@@ -72,11 +72,6 @@
 - (void)__setBackgroundColor:(UIColor *)backgroundColor { assert(NO); }
 - (void)__setTableViewStyle:(int)style { assert(NO); }
 
-- (void)_tableViewCellInitTheme {
-    self.textLabel.font = [UI7Font systemFontOfSize:self.textLabel.font.pointSize attribute:UI7FontAttributeLight];
-    self.detailTextLabel.font = [UI7Font systemFontOfSize:self.detailTextLabel.font.pointSize attribute:UI7FontAttributeNone];
-}
-
 - (void)_tableViewCellInit {
     self.textLabel.highlightedTextColor = self.textLabel.textColor;
     self.detailTextLabel.highlightedTextColor = self.detailTextLabel.textColor; // FIXME: not sure
@@ -210,7 +205,25 @@ UIImage *UI7TableViewCellAccessoryCheckmarkImageCreate() {
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [self __initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self != nil) {
-        [self _tableViewCellInitTheme]; // not adjusted now
+        switch (style) {
+            case UITableViewCellStyleDefault:
+            case UITableViewCellStyleSubtitle: {
+                self.textLabel.font = [UI7Font systemFontOfSize:18.0f attribute:UI7FontAttributeNone];
+                self.detailTextLabel.font = [UI7Font systemFontOfSize:12.0f attribute:UI7FontAttributeNone];
+            }   break;
+            case UITableViewCellStyleValue1: {
+                UIFont *font = [UI7Font systemFontOfSize:17.0f attribute:UI7FontAttributeNone];
+                self.textLabel.font = font;
+                self.detailTextLabel.font = font;
+            }   break;
+            case UITableViewCellStyleValue2: {
+                UIFont *font = [UI7Font systemFontOfSize:14.0f attribute:UI7FontAttributeNone];
+                self.textLabel.font = font;
+                self.detailTextLabel.font = font;
+            }   break;
+            default:
+                break;
+        }
         [self _tableViewCellInit];
     }
     return self;
