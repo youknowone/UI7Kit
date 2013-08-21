@@ -346,6 +346,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="accessoryView" destination="i3y-Op-wKC" id="ErZ-Gv-J1I"/>
                                         </connections>

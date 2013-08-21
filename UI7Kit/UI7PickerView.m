@@ -222,15 +222,15 @@ UIImage *UI7PickerLikeViewGradientImage(UIColor *maskColor, CGFloat topGradient,
     UITableView *table = (id)scrollView;
     CGFloat rowHeight = [self rowSizeForComponent:[self.tables indexOfObject:table]].height;
     NSInteger index = (NSInteger)((table.contentOffset.y + rowHeight * 0.5) / rowHeight);
-    if (index < 0) {
-        index = 0;
-    } else {
-        NSInteger rowCount = [table numberOfRowsInSection:0];
-        if (index >= rowCount) {
-            index = rowCount;
-        }
+
+    if ([self.delegate respondsToSelector:@selector(pickerView:didSelectRow:inComponent:)]) {
+        NSInteger component = [self.tables indexOfObject:table];
+        [self.delegate pickerView:(id)self didSelectRow:index inComponent:component];
     }
-    [table selectRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0] animated:YES scrollPosition:UITableViewScrollPositionMiddle];
+}
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
+    [self scrollViewDidEndDecelerating:scrollView];
 }
 
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {

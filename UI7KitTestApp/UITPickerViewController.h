@@ -8,7 +8,7 @@
 
 #import "UITTintViewController.h"
 
-@interface UITPickerViewController : UITTintViewController<UIPickerViewDataSource>
+@interface UITPickerViewController : UITTintViewController<UIPickerViewDataSource, UIPickerViewDelegate>
 
 @property(strong,nonatomic) IBOutlet UIPickerView *pickerView;
 
