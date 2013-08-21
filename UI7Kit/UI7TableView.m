@@ -113,6 +113,7 @@ UIColor *UI7TableViewGroupedViewPatternColor = nil;
     [self exportSelector:@selector(initWithFrame:style:) toClass:target];
     [self exportSelector:@selector(awakeFromNib) toClass:target];
     [self exportSelector:@selector(setDelegate:) toClass:target];
+    [self exportSelector:@selector(setDataSource:) toClass:target];
     [self exportSelector:@selector(style) toClass:target];
     [self exportSelector:@selector(_updateVisibleCellsNow:) toClass:target];
 
