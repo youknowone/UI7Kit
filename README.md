@@ -106,6 +106,47 @@ If you have Podfile, add 'UI7Kit'. Or follow steps below:
 This command will generate or edit `YourProject.xcworkspace`.
 Open this instead of your original `YourProject.xcodeproj`.
 
+
+How to install one or two components
+------------------------------------
+
+Follow the above for installing CocoaPods, but instead make your app Podfile look like this:
+
+    pod 'UI7Kit/UI7Slider'
+
+#### Individual components reference
+
+    pod 'UI7Kit/UI7ActionSheet'
+    pod 'UI7Kit/UI7AlertView'
+    pod 'UI7Kit/UI7BarButtonItem'
+    pod 'UI7Kit/UI7Button'
+    pod 'UI7Kit/UI7Color'
+    pod 'UI7Kit/UI7Font'
+    pod 'UI7Kit/UI7Font'
+    pod 'UI7Kit/UI7NavigationBar'
+    pod 'UI7Kit/UI7NavigationController'
+    pod 'UI7Kit/UI7PickerView'
+    pod 'UI7Kit/UI7ProgressView'
+    pod 'UI7Kit/UI7SegmentedControl'
+    pod 'UI7Kit/UI7Slider'
+    pod 'UI7Kit/UI7Stepper'
+    pod 'UI7Kit/UI7TabBar'
+    pod 'UI7Kit/UI7TabBarController'
+    pod 'UI7Kit/UI7TabBarItem'
+    pod 'UI7Kit/UI7TableView'
+    pod 'UI7Kit/UI7TableViewCell'
+    pod 'UI7Kit/UI7TextField'
+    pod 'UI7Kit/UI7Toolbar'
+    pod 'UI7Kit/UI7View'
+    pod 'UI7Kit/UI7ViewController'
+
+#### Special case for Switches (pick one)
+
+    pod 'UI7Kit/UI7Switch/SevenSwitch'  # use SevenSwitch (default)
+    pod 'UI7Kit/UI7Switch/KLSwitch'     # use KLSwitch
+    pod 'UI7Kit/UI7Switch/MBSwitch'     # use MBSwitch
+
+
 Apps using UI7Kit
 -----------------
 
