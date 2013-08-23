@@ -9,6 +9,6 @@
 #endif
 
 #ifdef __OBJC__
+    #undef COCOAPODS
     #import <UI7Kit/UI7Kit.h>
-    #import <QuartzCore/QuartzCore.h>
 #endif

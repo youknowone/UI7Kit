@@ -8,7 +8,7 @@
 
 /*!
  *      #import <UI7Kit/UI7Kit.h>
- *      UI7KitPatchAll(NO); // in main.m, before UIApplicationMain()
+ *      [UI7Kit patchIfNeeded]; // in main.m, before UIApplicationMain()
  */
 
 
