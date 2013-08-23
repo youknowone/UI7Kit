@@ -70,7 +70,7 @@ UIColor *UI7ButtonDefaultTitleColor = nil;
 //- (void)__drawRect:(CGRect)rect { assert(NO); }
 
 - (void)_buttonInitTheme {
-    self.titleLabel.font = [UI7Font systemFontOfSize:self.titleLabel.font.pointSize attribute:UI7FontAttributeLight];
+    self.titleLabel.font = [UI7Font systemFontOfSize:[UIFont buttonFontSize] attribute:UI7FontAttributeLight];
 }
 
 - (void)_tintColorUpdated {

@@ -51,6 +51,7 @@
         b.tintColor = [UIColor redColor];
         UIColor *c = b.tintColor;
         STAssertEqualObjects(c, nil, @"");
+        STAssertEquals(b.titleLabel.font.pointSize, [UIFont buttonFontSize], @"");
     }
     {
         UIButton *b = [UI7Button buttonWithType:UIButtonTypeCustom];
@@ -58,6 +59,13 @@
         UIColor *c = b.tintColor;
         STAssertEqualObjects(c, nil, @"");
     }
+}
+
+- (void)testSystemFontSize {
+    STAssertEquals([UIFont buttonFontSize], 18.0f, @"");
+    STAssertEquals([UIFont labelFontSize], 17.0f, @"");
+    STAssertEquals([UIFont systemFontSize], 14.0f, @"");
+    STAssertEquals([UIFont smallSystemFontSize], 12.0f, @"");
 }
 
 @end

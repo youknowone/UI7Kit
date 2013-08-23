@@ -208,16 +208,16 @@ UIImage *UI7TableViewCellAccessoryCheckmarkImageCreate() {
         switch (style) {
             case UITableViewCellStyleDefault:
             case UITableViewCellStyleSubtitle: {
-                self.textLabel.font = [UI7Font systemFontOfSize:18.0f attribute:UI7FontAttributeNone];
-                self.detailTextLabel.font = [UI7Font systemFontOfSize:12.0f attribute:UI7FontAttributeNone];
+                self.textLabel.font = [UI7Font systemFontOfSize:[UIFont buttonFontSize] attribute:UI7FontAttributeNone];
+                self.detailTextLabel.font = [UI7Font systemFontOfSize:[UIFont smallSystemFontSize] attribute:UI7FontAttributeNone];
             }   break;
             case UITableViewCellStyleValue1: {
-                UIFont *font = [UI7Font systemFontOfSize:17.0f attribute:UI7FontAttributeNone];
+                UIFont *font = [UI7Font systemFontOfSize:[UIFont labelFontSize] attribute:UI7FontAttributeNone];
                 self.textLabel.font = font;
                 self.detailTextLabel.font = font;
             }   break;
             case UITableViewCellStyleValue2: {
-                UIFont *font = [UI7Font systemFontOfSize:14.0f attribute:UI7FontAttributeNone];
+                UIFont *font = [UI7Font systemFontOfSize:[UIFont systemFontSize] attribute:UI7FontAttributeNone];
                 self.textLabel.font = font;
                 self.detailTextLabel.font = font;
             }   break;
