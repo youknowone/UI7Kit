@@ -48,6 +48,8 @@
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    NSInteger selectedRow = [pickerView selectedRowInComponent:component];
+    assert(selectedRow == row);
     NSLog(@"select %d %d", component, row);
 }
 
