@@ -6,6 +6,9 @@
 //  Copyright (c) 2013 youknowone.org. All rights reserved.
 //
 
+#if BLOCKSKIT
+    #import <BlocksKit/BlocksKit.h>
+#endif
 #import "UITAlertViewController.h"
 
 @interface UITAlertViewController ()
@@ -43,6 +46,17 @@
 - (void)defaultButton2:(id)sender {
     UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Title" message:@"Message" delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil] autorelease];
     [alert show];
+}
+
+- (void)blockskitButton2:(id)sender {
+    #if BLOCKSKIT
+    UIAlertView *alertView = [UIAlertView alertViewWithTitle:@"Activate Your Account" message:@"You need to activate your account."];
+    [alertView addButtonWithTitle:@"Activate" handler:^{
+
+    }];
+    [alertView setCancelButtonWithTitle:@"Later" handler:nil];
+    [alertView show];
+    #endif
 }
 
 - (void)defaultButton3:(id)sender {

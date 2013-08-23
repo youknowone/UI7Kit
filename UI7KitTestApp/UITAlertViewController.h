@@ -12,6 +12,7 @@
 
 - (IBAction)defaultButton1:(id)sender;
 - (IBAction)defaultButton2:(id)sender;
+- (IBAction)blockskitButton2:(id)sender;
 - (IBAction)defaultButton3:(id)sender;
 - (IBAction)inputButton1:(id)sender;
 - (IBAction)inputButton2:(id)sender;

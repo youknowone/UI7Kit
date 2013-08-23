@@ -981,7 +981,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5tb-bd-9Hs">
-                                <rect key="frame" x="20" y="71" width="280" height="44"/>
+                                <rect key="frame" x="20" y="71" width="134" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="2 Buttons">
@@ -993,6 +993,21 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </state>
                                 <connections>
                                     <action selector="defaultButton2:" destination="Jwg-fJ-bVs" eventType="touchUpInside" id="ewH-au-M5N"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Aec-Of-VFV">
+                                <rect key="frame" x="166" y="71" width="134" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="blocks kit">
+                                    <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="blockskitButton2:" destination="Jwg-fJ-bVs" eventType="touchUpInside" id="hj1-PF-nMh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RMM-aG-Pd9">
@@ -1630,6 +1645,111 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="UI7NavigationBarBackButton.png" width="50" height="33"/>
         <image name="UI7TabBarItemFavoriteSelected.png" width="30" height="30"/>
     </resources>
+    <classes>
+        <class className="UI7Button" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UI7Button.h"/>
+        </class>
+        <class className="UI7RoundedRectButton" superclassName="UI7Button">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UI7RoundedRectButton.h"/>
+        </class>
+        <class className="UIAPlaceholderTextView" superclassName="UITextView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIAPlaceholderTextView.h"/>
+        </class>
+        <class className="UITAlertViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITAlertViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="blockskitButton2:"/>
+                <relationship kind="action" name="defaultButton1:"/>
+                <relationship kind="action" name="defaultButton2:"/>
+                <relationship kind="action" name="defaultButton3:"/>
+                <relationship kind="action" name="inputButton1:"/>
+                <relationship kind="action" name="inputButton2:"/>
+                <relationship kind="action" name="inputButton3:"/>
+                <relationship kind="action" name="inputField2:"/>
+            </relationships>
+        </class>
+        <class className="UITBarItemViewController" superclassName="UITTintViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITBarItemViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addTabBar:"/>
+                <relationship kind="outlet" name="tabBar" candidateClass="UITabBar"/>
+            </relationships>
+        </class>
+        <class className="UITDetailViewController" superclassName="UITTintViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="changeStepperColor:"/>
+                <relationship kind="action" name="showActionSheet1:"/>
+                <relationship kind="action" name="showActionSheet2:"/>
+                <relationship kind="action" name="showActionSheet3:"/>
+                <relationship kind="action" name="showActionSheet4:"/>
+                <relationship kind="action" name="showAlertView1:"/>
+                <relationship kind="action" name="showAlertView2:"/>
+                <relationship kind="action" name="showAlertView3:"/>
+                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
+            </relationships>
+        </class>
+        <class className="UITGroupedTableViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITGroupedTableViewController.h"/>
+        </class>
+        <class className="UITIssue12ViewController" superclassName="UITTintViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITIssue12ViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="segmentedControl" candidateClass="UISegmentedControl"/>
+            </relationships>
+        </class>
+        <class className="UITIssue1ViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITIssue1ViewController.h"/>
+        </class>
+        <class className="UITIssue39ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITIssue39ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="showAlert:"/>
+            </relationships>
+        </class>
+        <class className="UITIssue41ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITIssue41ViewController.h"/>
+        </class>
+        <class className="UITIssue71ViewController" superclassName="UITTintViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITIssue71ViewController.h"/>
+        </class>
+        <class className="UITMasterViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITMasterViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="styleChanged:"/>
+                <relationship kind="outlet" name="listTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="styleSegmentedControl" candidateClass="UISegmentedControl"/>
+            </relationships>
+        </class>
+        <class className="UITPickerViewController" superclassName="UITTintViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITPickerViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backgroundColorChanged:"/>
+                <relationship kind="outlet" name="pickerView" candidateClass="UIPickerView"/>
+            </relationships>
+        </class>
+        <class className="UITSegmentedControlViewController" superclassName="UITTintViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITSegmentedControlViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="segmented1" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="segmented2" candidateClass="UISegmentedControl"/>
+            </relationships>
+        </class>
+        <class className="UITTextViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITTextViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="resign:"/>
+                <relationship kind="action" name="switched:"/>
+                <relationship kind="outlet" name="textView" candidateClass="UIAPlaceholderTextView"/>
+            </relationships>
+        </class>
+        <class className="UITTintViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITTintViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="colorChanged:"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

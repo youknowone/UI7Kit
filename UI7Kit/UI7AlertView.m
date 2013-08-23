@@ -139,6 +139,7 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
     }
 
     NSInteger rows = 0;
+    CGFloat lastY = .0f;
     for (NSUInteger index = 0; index < buttons.count; index++) {
         UIButton *button = buttons[index];
         if (button == cancelButton) {
@@ -154,7 +155,10 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
         [button setBackgroundImage:nil forState:UIControlStateDisabled];
 
         CGRect frame = button.frame;
-        rows += 1;
+        if (lastY != frame.origin.y) {
+            rows += 1;
+            lastY = frame.origin.y;
+        }
         frame.size.height = UI7ControlRowHeight - 0.5f;
         frame.origin.y = baseHeight + UI7ControlRowHeight * (rows - 1);
         button.frame = frame;
@@ -165,7 +169,6 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
             sframe = CGRectMake(7.0, frame.origin.y, UI7AlertViewWidth, strokeWidth);
         } else {
             sframe = CGRectMake(142.0, frame.origin.y, strokeWidth, UI7ControlRowHeight);
-            rows -= 1;
         }
         UIView *strokeView = [[[UIView alloc] initWithFrame:sframe] autorelease];
         strokeView.backgroundColor = [UIColor colorWith8bitWhite:182 alpha:255];
