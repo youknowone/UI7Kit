@@ -60,6 +60,20 @@ CGFloat UI7SegmentedControlHeight = 29.0f;
     frame.size.height = UI7SegmentedControlHeight;
     self.frame = frame;
 
+#if defined(__IPHONE_6_0) || __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_6_0
+    if ([NSLayoutConstraint class]) {
+        NSLayoutConstraint *heightConstraint =[NSLayoutConstraint
+                                               constraintWithItem:self
+                                               attribute:NSLayoutAttributeHeight
+                                               relatedBy:NSLayoutRelationEqual
+                                               toItem:nil
+                                               attribute:NSLayoutAttributeHeight
+                                               multiplier:1.0
+                                               constant:self.frame.size.height];
+        [self addConstraint:heightConstraint];
+        [self setNeedsUpdateConstraints];
+    }
+#endif
     [self _backgroundColorUpdated];
 }
 
