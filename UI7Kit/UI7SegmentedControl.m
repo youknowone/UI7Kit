@@ -39,10 +39,6 @@
 
 #import "UI7KitPrivate.h"
 
-#if defined(__IPHONE_6_0) && (__IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_6_0)
-#   define UI7KIT_HAS_CONSTRAINTS
-#endif
-
 CGFloat UI7SegmentedControlHeight = 29.0f;
 
 @implementation UISegmentedControl (Patch)
@@ -67,14 +63,11 @@ CGFloat UI7SegmentedControlHeight = 29.0f;
     [self _backgroundColorUpdated];
 }
 
-
-#ifdef UI7KIT_HAS_CONSTRAINTS
 - (CGSize)intrinsicContentSize {
     CGSize superCS = [super intrinsicContentSize];
     return CGSizeMake(MAX(self.frame.size.width, 2*superCS.width + superCS.height),
                       MAX(self.frame.size.height, superCS.height));
 }
-#endif
 
 - (void)_tintColorUpdated {
     [super _tintColorUpdated];
@@ -136,9 +129,7 @@ CGFloat UI7SegmentedControlHeight = 29.0f;
     [self exportSelector:@selector(initWithFrame:) toClass:target];
     [self exportSelector:@selector(awakeFromNib) toClass:target];
     [self exportSelector:@selector(setFrame:) toClass:target];
-#ifdef UI7KIT_HAS_CONSTRAINTS
     [self exportSelector:@selector(intrinsicContentSize) toClass:target];
-#endif
     if (![UIDevice currentDevice].iOS7) {
         [self exportSelector:@selector(tintColor) toClass:target];
         [self exportSelector:@selector(setTintColor:) toClass:target];
