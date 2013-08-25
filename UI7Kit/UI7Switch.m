@@ -58,6 +58,7 @@
         #if UI7SWITCH_MBSWITCH
         [self exportSelector:@selector(awakeFromNib) toClass:[UI7SwitchImplementation class]];
         #endif
+        [self exportSelector:@selector(intrinsicContentSize) toClass:[UI7SwitchImplementation class]];
     }
 }
 
@@ -112,6 +113,11 @@
 
 }
 #endif
+
+// at least 51.0 x 20.0
+- (CGSize)intrinsicContentSize {
+    return CGSizeMake(51.0f, 20.0f);
+}
 
 - (id)initWithFrame:(CGRect)frame {
     NSString *className = self.class.name;
