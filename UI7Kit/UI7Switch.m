@@ -28,6 +28,10 @@
 #   error UI7Switch implementation class is missing.
 #endif
 
+#define UI7SwitchWidthDefault 51.0f
+#define UI7SwitchHeightDefault 31.0f
+#define UI7SwitchSizeDefault CGSizeMake(UI7SwitchWidthDefault, UI7SwitchHeightDefault)
+
 @implementation UISwitch (Patch)
 
 - (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
@@ -43,6 +47,15 @@
 - (CGSize)intrinsicContentSize {
     return CGSizeMake(51.0f, 31.0f);
 }
+
+#if UI7SWITCH_SEVENSWITCH
+
+- (void)setFrame:(CGRect)frame {
+    frame.size = UI7SwitchSizeDefault;
+    [super setFrame:frame];
+}
+
+#endif
 
 @end
 
@@ -89,14 +102,14 @@
                 self.thumbTintColor = [aDecoder decodeObjectForKey:@"UISwitchThumbTintColor"];
             }
             CGRect frame = self.frame;
-            if (frame.size.width != 51.0f) {
-                frame.size.height = 31.0f;
+            if (frame.size.width != UI7SwitchWidthDefault) {
+                frame.size.height = UI7SwitchHeightDefault;
                 #if UI7SWITCH_KLSWITCH
                 frame.origin.x += 20.0f;
                 #elif UI7SWITCH_MBSWITCH
-                frame.origin.x += (frame.size.width - 51.0f) / 2;
+                frame.origin.x += (frame.size.width - UI7SwitchWidthDefault) / 2;
                 #endif
-                frame.size.width = 51.0f;
+                frame.size.width = UI7SwitchWidthDefault;
                 self.frame = frame;
             }
         }
@@ -117,7 +130,7 @@
     if ([className isEqual:@"UISwitch"] || [className isEqual:@"UI7Switch"]) {
         [self release];
 
-        //Reassign self and set to a KLSwitch copying propertie from dummy
+        frame.size = UI7SwitchSizeDefault;
         self = (UI7Switch *)[[UI7SwitchImplementation alloc] initWithFrame:frame];
     } else {
         self = [self __initWithFrame:frame];
