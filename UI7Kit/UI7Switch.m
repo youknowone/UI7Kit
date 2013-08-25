@@ -28,6 +28,10 @@
 #   error UI7Switch implementation class is missing.
 #endif
 
+#if defined(__IPHONE_6_0) && (__IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_6_0)
+#   define UI7KIT_HAS_CONSTRAINTS
+#endif
+
 @implementation UISwitch (Patch)
 
 - (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
@@ -94,6 +98,32 @@
     } else {
         self = [self __initWithCoder:aDecoder];
     }
+#ifdef UI7KIT_HAS_CONSTRAINTS
+    if ([NSLayoutConstraint class]) {
+        NSLayoutConstraint *heightConstraint = [NSLayoutConstraint
+                                               constraintWithItem:self
+                                               attribute:NSLayoutAttributeHeight
+                                               relatedBy:NSLayoutRelationEqual
+                                               toItem:nil
+                                               attribute:NSLayoutAttributeHeight
+                                               multiplier:1.0
+                                               constant:self.frame.size.height];
+        
+        [self addConstraint:heightConstraint];
+        NSLayoutConstraint *widthConstraint = [NSLayoutConstraint
+                                               constraintWithItem:self
+                                               attribute:NSLayoutAttributeWidth
+                                               relatedBy:NSLayoutRelationEqual
+                                               toItem:nil
+                                               attribute:NSLayoutAttributeWidth
+                                               multiplier:1.0
+                                               constant:self.frame.size.width];
+        
+        [self addConstraint:widthConstraint];
+
+        [self setNeedsUpdateConstraints];
+    }
+#endif
     return self;
 }
 
@@ -113,6 +143,32 @@
     } else {
         self = [self __initWithFrame:frame];
     }
+#ifdef UI7KIT_HAS_CONSTRAINTS
+    if ([NSLayoutConstraint class]) {
+        NSLayoutConstraint *heightConstraint = [NSLayoutConstraint
+                                               constraintWithItem:self
+                                               attribute:NSLayoutAttributeHeight
+                                               relatedBy:NSLayoutRelationEqual
+                                               toItem:nil
+                                               attribute:NSLayoutAttributeHeight
+                                               multiplier:1.0
+                                               constant:self.frame.size.height];
+        
+        [self addConstraint:heightConstraint];
+        NSLayoutConstraint *widthConstraint = [NSLayoutConstraint
+                                               constraintWithItem:self
+                                               attribute:NSLayoutAttributeWidth
+                                               relatedBy:NSLayoutRelationEqual
+                                               toItem:nil
+                                               attribute:NSLayoutAttributeWidth
+                                               multiplier:1.0
+                                               constant:self.frame.size.width];
+        
+        [self addConstraint:widthConstraint];
+
+        [self setNeedsUpdateConstraints];
+    }
+#endif
     return self;
 }
 
