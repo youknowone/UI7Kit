@@ -52,6 +52,9 @@
         #if UI7SWITCH_MBSWITCH
         [self exportSelector:@selector(awakeFromNib) toClass:[UI7SwitchImplementation class]];
         #endif
+#ifdef UI7KIT_HAS_CONSTRAINTS
+        [self exportSelector:@selector(intrinsicContentSize) toClass:[UI7SwitchImplementation class]];
+#endif
     }
 }
 
@@ -98,38 +101,19 @@
     } else {
         self = [self __initWithCoder:aDecoder];
     }
-#ifdef UI7KIT_HAS_CONSTRAINTS
-    if ([NSLayoutConstraint class]) {
-        NSLayoutConstraint *heightConstraint = [NSLayoutConstraint
-                                               constraintWithItem:self
-                                               attribute:NSLayoutAttributeHeight
-                                               relatedBy:NSLayoutRelationEqual
-                                               toItem:nil
-                                               attribute:NSLayoutAttributeHeight
-                                               multiplier:1.0
-                                               constant:self.frame.size.height];
-        
-        [self addConstraint:heightConstraint];
-        NSLayoutConstraint *widthConstraint = [NSLayoutConstraint
-                                               constraintWithItem:self
-                                               attribute:NSLayoutAttributeWidth
-                                               relatedBy:NSLayoutRelationEqual
-                                               toItem:nil
-                                               attribute:NSLayoutAttributeWidth
-                                               multiplier:1.0
-                                               constant:self.frame.size.width];
-        
-        [self addConstraint:widthConstraint];
-
-        [self setNeedsUpdateConstraints];
-    }
-#endif
     return self;
 }
 
 #if UI7SWITCH_MBSWITCH
 - (void)awakeFromNib {
 
+}
+#endif
+
+#ifdef UI7KIT_HAS_CONSTRAINTS
+// at least 51.0 x 20.0
+- (CGSize)intrinsicContentSize {
+    return CGSizeMake(51.0f, 20.0f);
 }
 #endif
 
@@ -143,32 +127,6 @@
     } else {
         self = [self __initWithFrame:frame];
     }
-#ifdef UI7KIT_HAS_CONSTRAINTS
-    if ([NSLayoutConstraint class]) {
-        NSLayoutConstraint *heightConstraint = [NSLayoutConstraint
-                                               constraintWithItem:self
-                                               attribute:NSLayoutAttributeHeight
-                                               relatedBy:NSLayoutRelationEqual
-                                               toItem:nil
-                                               attribute:NSLayoutAttributeHeight
-                                               multiplier:1.0
-                                               constant:self.frame.size.height];
-        
-        [self addConstraint:heightConstraint];
-        NSLayoutConstraint *widthConstraint = [NSLayoutConstraint
-                                               constraintWithItem:self
-                                               attribute:NSLayoutAttributeWidth
-                                               relatedBy:NSLayoutRelationEqual
-                                               toItem:nil
-                                               attribute:NSLayoutAttributeWidth
-                                               multiplier:1.0
-                                               constant:self.frame.size.width];
-        
-        [self addConstraint:widthConstraint];
-
-        [self setNeedsUpdateConstraints];
-    }
-#endif
     return self;
 }
 
