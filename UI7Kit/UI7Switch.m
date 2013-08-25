@@ -28,10 +28,6 @@
 #   error UI7Switch implementation class is missing.
 #endif
 
-#if defined(__IPHONE_6_0) && (__IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_6_0)
-#   define UI7KIT_HAS_CONSTRAINTS
-#endif
-
 @implementation UISwitch (Patch)
 
 - (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
@@ -52,9 +48,7 @@
         #if UI7SWITCH_MBSWITCH
         [self exportSelector:@selector(awakeFromNib) toClass:[UI7SwitchImplementation class]];
         #endif
-#ifdef UI7KIT_HAS_CONSTRAINTS
         [self exportSelector:@selector(intrinsicContentSize) toClass:[UI7SwitchImplementation class]];
-#endif
     }
 }
 
@@ -110,12 +104,10 @@
 }
 #endif
 
-#ifdef UI7KIT_HAS_CONSTRAINTS
 // at least 51.0 x 20.0
 - (CGSize)intrinsicContentSize {
     return CGSizeMake(51.0f, 20.0f);
 }
-#endif
 
 - (id)initWithFrame:(CGRect)frame {
     NSString *className = self.class.name;
