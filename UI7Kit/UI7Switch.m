@@ -37,6 +37,16 @@
 @end
 
 
+@implementation UI7SwitchImplementation (Patch)
+
+// at least 51.0 x 31.0
+- (CGSize)intrinsicContentSize {
+    return CGSizeMake(51.0f, 31.0f);
+}
+
+@end
+
+
 @implementation UI7Switch
 
 + (void)initialize {
