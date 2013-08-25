@@ -73,7 +73,6 @@
     if ([className isEqual:@"UISwitch"] || [className isEqual:@"UI7Switch"]) {
         [self release];
 
-        //Reassign self and set to a KLSwitch copying propertie from dummy
         self = (UI7Switch *)[[UI7SwitchImplementation alloc] initWithCoder:aDecoder];
         if (self != nil) {
             #if UI7SWITCH_MBSWITCH

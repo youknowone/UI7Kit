@@ -64,9 +64,9 @@ CGFloat UI7SegmentedControlHeight = 29.0f;
 }
 
 - (CGSize)intrinsicContentSize {
-    CGSize superCS = [super intrinsicContentSize];
-    return CGSizeMake(MAX(self.frame.size.width, 2*superCS.width + superCS.height),
-                      MAX(self.frame.size.height, superCS.height));
+    CGSize contentSize = [super intrinsicContentSize];
+    contentSize.height = MAX(29.0f, contentSize.height);
+    return contentSize;
 }
 
 - (void)_tintColorUpdated {
@@ -129,7 +129,6 @@ CGFloat UI7SegmentedControlHeight = 29.0f;
     [self exportSelector:@selector(initWithFrame:) toClass:target];
     [self exportSelector:@selector(awakeFromNib) toClass:target];
     [self exportSelector:@selector(setFrame:) toClass:target];
-    [self exportSelector:@selector(intrinsicContentSize) toClass:target];
     if (![UIDevice currentDevice].iOS7) {
         [self exportSelector:@selector(tintColor) toClass:target];
         [self exportSelector:@selector(setTintColor:) toClass:target];
