@@ -40,6 +40,7 @@
 #import "UI7KitPrivate.h"
 
 CGFloat UI7SegmentedControlHeight = 29.0f;
+CGFloat UI7SegmentedControlCellWidthDefault = 80.0f;
 
 @implementation UISegmentedControl (Patch)
 
@@ -157,8 +158,12 @@ CGFloat UI7SegmentedControlHeight = 29.0f;
 }
 
 - (void)setFrame:(CGRect)frame {
+    // keep the minimal size
     if (frame.size.height <= 1.0f) {
         frame.size.height = UI7SegmentedControlHeight;
+    }
+    if (frame.size.width <= 1.0f) {
+        frame.size.width = 1.0f + UI7SegmentedControlCellWidthDefault * self.numberOfSegments;
     }
     [self __setFrame:frame];
 }
