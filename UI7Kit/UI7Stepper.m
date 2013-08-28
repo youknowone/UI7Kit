@@ -98,8 +98,8 @@
     [self exportSelector:@selector(initWithItems:) toClass:target];
     [self exportSelector:@selector(awakeFromNib) toClass:target];
     if (![UIDevice currentDevice].iOS7) {
-        [target methodForSelector:@selector(tintColor)].implementation = [target methodForSelector:@selector(_tintColor)].implementation;
-        [target methodForSelector:@selector(setTintColor:)].implementation = [target methodForSelector:@selector(_setTintColor:)].implementation;
+        [target methodObjectForSelector:@selector(tintColor)].implementation = [target methodObjectForSelector:@selector(_tintColor)].implementation;
+        [target methodObjectForSelector:@selector(setTintColor:)].implementation = [target methodObjectForSelector:@selector(_setTintColor:)].implementation;
     }
 }
 

@@ -114,8 +114,8 @@ NSString *UI7TabBarStyle = @"UI7TabBarStyle";
     [self exportSelector:@selector(initWithCoder:) toClass:target];
     [self exportSelector:@selector(initWithFrame:) toClass:target];
 
-    [target addMethodForSelector:@selector(barStyle) fromMethod:[target methodForSelector:@selector(_barStyle)]];
-    [target addMethodForSelector:@selector(setBarStyle:) fromMethod:[target methodForSelector:@selector(_setBarStyle:)]];
+    [target addMethodForSelector:@selector(barStyle) fromMethod:[target methodObjectForSelector:@selector(_barStyle)]];
+    [target addMethodForSelector:@selector(setBarStyle:) fromMethod:[target methodObjectForSelector:@selector(_setBarStyle:)]];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {

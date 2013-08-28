@@ -45,14 +45,14 @@
 @implementation NSObject (MethodCopying)
 
 + (void)copyToSelector:(SEL)toSelector fromSelector:(SEL)fromSelector {
-    NSAMethod *toMethod = [self methodForSelector:toSelector];
-    NSAMethod *fromMethod = [self methodForSelector:fromSelector];
+    NSAMethod *toMethod = [self methodObjectForSelector:toSelector];
+    NSAMethod *fromMethod = [self methodObjectForSelector:fromSelector];
     toMethod.implementation = fromMethod.implementation;
 }
 
 + (void)exportSelector:(SEL)selector toClass:(Class )toClass {
-    NSAMethod *fromMethod = [self methodForSelector:selector];
-    NSAMethod *toMethod = [toClass methodForSelector:selector];
+    NSAMethod *fromMethod = [self methodObjectForSelector:selector];
+    NSAMethod *toMethod = [toClass methodObjectForSelector:selector];
     toMethod.implementation = fromMethod.implementation;
 }
 

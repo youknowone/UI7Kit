@@ -41,8 +41,8 @@
 
 - (void)testTypeEncoding {
     Class class = [TableViewDelegate class];
-    STAssertEqualObjects([class methodForSelector:@selector(tableView:heightForHeaderInSection:)].typeEncoding, @"f16@0:4@8i12", @"");
-    STAssertEqualObjects([class methodForSelector:@selector(tableView:viewForHeaderInSection:)].typeEncoding, @"@16@0:4@8i12", @"");
+    STAssertEqualObjects([class methodObjectForSelector:@selector(tableView:heightForHeaderInSection:)].typeEncoding, @"f16@0:4@8i12", @"");
+    STAssertEqualObjects([class methodObjectForSelector:@selector(tableView:viewForHeaderInSection:)].typeEncoding, @"@16@0:4@8i12", @"");
 }
 
 - (void)testButtonTintColor {

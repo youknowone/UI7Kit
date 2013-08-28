@@ -132,7 +132,7 @@ UIColor *UI7ButtonDefaultTitleColor = nil;
 
         [target copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
         [target copyToSelector:@selector(__initWithFrame:) fromSelector:@selector(initWithFrame:)];
-        [target classMethodForSelector:@selector(__buttonWithType:)].implementation = [target classMethodForSelector:@selector(buttonWithType:)].implementation;
+        [target classMethodObjectForSelector:@selector(__buttonWithType:)].implementation = [target classMethodObjectForSelector:@selector(buttonWithType:)].implementation;
         [target copyToSelector:@selector(__setTitleColor:forState:) fromSelector:@selector(setTitleColor:forState:)];
         [target copyToSelector:@selector(__setBackgroundColor:) fromSelector:@selector(setBackgroundColor:)];
         [target copyToSelector:@selector(__tintColor) fromSelector:@selector(tintColor)];
@@ -155,7 +155,7 @@ UIColor *UI7ButtonDefaultTitleColor = nil;
     [target classMethodObjectForSelector:@selector(buttonWithType:)].implementation = [self.class classMethodObjectForSelector:@selector(buttonWithType:)].implementation;
     [self exportSelector:@selector(setTitleColor:forState:) toClass:target];
     [self exportSelector:@selector(drawRect:) toClass:target];
-    [NSClassFromString(@"UIRoundedRectButton") addMethodForSelector:@selector(initWithCoder:) fromMethod:[self methodForSelector:@selector(_UIRoundedRectButton_initWithCoder:)]];
+    [NSClassFromString(@"UIRoundedRectButton") addMethodForSelector:@selector(initWithCoder:) fromMethod:[self methodObjectForSelector:@selector(_UIRoundedRectButton_initWithCoder:)]];
 
     if (![UIDevice currentDevice].iOS7) {
         [self exportSelector:@selector(tintColor) toClass:target];

@@ -31,9 +31,9 @@ static NSString *UI7ViewTintColor = @"UI7ViewTintColor";
                 [self copyToSelector:@selector(tintColor) fromSelector:@selector(_view_tintColor)];
                 [self copyToSelector:@selector(setTintColor:) fromSelector:@selector(_view_setTintColor:)];
             } else {
-                [self addMethodForSelector:@selector(tintColorDidChange) fromMethod:[self methodForSelector:@selector(_tintColorDidChange)]];
-                [self addMethodForSelector:@selector(tintColor) fromMethod:[self methodForSelector:@selector(_view_tintColor)]];
-                [self addMethodForSelector:@selector(setTintColor:) fromMethod:[self methodForSelector:@selector(_view_setTintColor:)]];
+                [self addMethodForSelector:@selector(tintColorDidChange) fromMethod:[self methodObjectForSelector:@selector(_tintColorDidChange)]];
+                [self addMethodForSelector:@selector(tintColor) fromMethod:[self methodObjectForSelector:@selector(_view_tintColor)]];
+                [self addMethodForSelector:@selector(setTintColor:) fromMethod:[self methodObjectForSelector:@selector(_view_setTintColor:)]];
             }
         }
     }
