@@ -119,7 +119,8 @@ NSString *UI7BarButtonItemSystemNames[] = {
 }
 
 - (void)_barButtonItemInit {
-    [self _barButtonItemInitWithFont:[UI7Font systemFontOfSize:17.0 attribute:self.style == UIBarButtonItemStyleDone ? UI7FontAttributeMedium : UI7FontAttributeLight]];
+    UIFont *font = [UI7Font systemFontOfSize:17.0 attribute:self.style == UIBarButtonItemStyleDone ? UI7FontAttributeMedium : UI7FontAttributeLight];
+    [self _barButtonItemInitWithFont:font];
 }
 
 
