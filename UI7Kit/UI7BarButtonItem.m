@@ -182,7 +182,7 @@ NSString *UI7BarButtonItemSystemNames[] = {
         case UIBarButtonSystemItemFastForward:
         {
             NSString *name = UI7BarButtonItemSystemNames[systemItem];
-            UIImage *image = [UIImage imageNamed:[@"UI7BarButtonIcon%@" format:name]];
+            UIImage *image = [UIImage imageNamed:[@"UI7BarButtonItemIcon%@" format:name]];
             self = [self initWithImage:image style:UIBarButtonItemStyleBordered target:target action:action];
         }   break;
         default: {
