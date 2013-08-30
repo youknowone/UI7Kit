@@ -20,6 +20,7 @@
 
 + (UIColor *)defaultBarColor;
 + (UIColor *)blackBarColor;
++ (UIColor *)blackTabBarColor;
 
 + (UIColor *)defaultBackgroundColor;
 + (UIColor *)defaultTintColor;

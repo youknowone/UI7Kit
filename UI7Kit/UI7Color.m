@@ -32,6 +32,10 @@
     return [UIColor colorWith8bitWhite:90 alpha:250];
 }
 
++ (UIColor *)blackTabBarColor {
+    return [UIColor colorWith8bitWhite:15 alpha:240];
+}
+
 + (UIColor *)defaultBackgroundColor {
     return [UIColor colorWith8bitWhite:248 alpha:255];
 }
