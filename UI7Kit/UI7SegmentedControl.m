@@ -54,14 +54,6 @@ CGFloat UI7SegmentedControlCellWidthDefault = 80.0f;
 - (void)__setTintColor:(UIColor *)tintColor { assert(NO); }
 - (void)__setFrame:(CGRect)frame { assert(NO); }
 
-- (void)_segmentedControlInitTheme {
-    NSDictionary *attributes = @{
-                                 UITextAttributeFont: [UI7Font systemFontOfSize:13.0 attribute:UI7FontAttributeMedium],
-                                 UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetZero],
-                                 };
-    [self setTitleTextAttributes:attributes forState:UIControlStateNormal];
-}
-
 - (void)_segmentedControlInit {
     self.layer.cornerRadius = UI7ControlRadius;
     self.layer.borderWidth = 1.0f;
@@ -90,16 +82,19 @@ CGFloat UI7SegmentedControlCellWidthDefault = 80.0f;
     UIImage *selectedBackgroundImage = [UIImage roundedImageWithSize:CGSizeMake(10.0f, self.frame.size.height) color:tintColor radius:UI7ControlRadius];
     UIImage *highlightedBackgroundImage = [UIImage roundedImageWithSize:CGSizeMake(10.0f, self.frame.size.height) color:[tintColor highligtedColorForBackgroundColor:self.stackedBackgroundColor] radius:UI7ControlRadius];
 
-    NSDictionary *basicAttributes = [self titleTextAttributesForState:UIControlStateNormal];
-    if (basicAttributes == nil) {
-        [self _segmentedControlInitTheme];
-        basicAttributes = [self titleTextAttributesForState:UIControlStateNormal];
+    NSDictionary *oldAttributes = [self titleTextAttributesForState:UIControlStateNormal];
+    NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
+    if (oldAttributes[UITextAttributeFont]) {
+        attributes[UITextAttributeFont] = oldAttributes[UITextAttributeFont];
+    } else {
+        attributes[UITextAttributeFont] = [UI7Font systemFontOfSize:13.0 attribute:UI7FontAttributeMedium];
     }
-    NSDictionary *attributes = @{
-                                 UITextAttributeFont: basicAttributes[UITextAttributeFont],
-                                 UITextAttributeTextShadowOffset: basicAttributes[UITextAttributeTextShadowOffset],
-                                 UITextAttributeTextColor: tintColor,
-                                 };
+    if (oldAttributes[UITextAttributeTextShadowOffset]) {
+        attributes[UITextAttributeTextShadowOffset] = oldAttributes[UITextAttributeTextShadowOffset];
+    } else {
+        attributes[UITextAttributeTextShadowOffset] = [NSValue valueWithUIOffset:UIOffsetZero];
+    }
+    attributes[UITextAttributeTextColor] = tintColor;
     [self setTitleTextAttributes:attributes forState:UIControlStateNormal];
 
     NSDictionary *highlightedAttributes = @{UITextAttributeTextColor: tintColor};
