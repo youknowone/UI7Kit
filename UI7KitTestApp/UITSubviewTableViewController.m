@@ -1,6 +1,6 @@
 //
 //  UITSubviewTableViewController.m
-//  FoundationExtension
+//  UI7Kit
 //
 //  Created by Jeong YunWon on 13. 5. 11..
 //  Copyright (c) 2013 youknowone.org. All rights reserved.

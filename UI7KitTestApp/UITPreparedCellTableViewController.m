@@ -1,6 +1,6 @@
 //
 //  UITPreparedCellTableViewController.m
-//  FoundationExtension
+//  UI7Kit
 //
 //  Created by Jeong YunWon on 13. 4. 7..
 //  Copyright (c) 2013 youknowone.org. All rights reserved.

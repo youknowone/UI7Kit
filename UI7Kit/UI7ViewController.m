@@ -1,6 +1,6 @@
 //
 //  UI7ViewController.m
-//  FoundationExtension
+//  UI7Kit
 //
 //  Created by Jeong YunWon on 13. 6. 11..
 //  Copyright (c) 2013 youknowone.org. All rights reserved.
