@@ -43,6 +43,20 @@
 
 @implementation UI7SwitchImplementation (Patch)
 
++ (BOOL)isSubclassOfClass:(Class)aClass {
+    if (aClass == [UIPickerView class]) {
+        return YES;
+    }
+    return [super isSubclassOfClass:aClass];
+}
+
+- (BOOL)isKindOfClass:(Class)aClass {
+    if (aClass == [UIPickerView class]) {
+        return YES;
+    }
+    return [super isKindOfClass:aClass];
+}
+
 // at least 51.0 x 31.0
 - (CGSize)intrinsicContentSize {
     return CGSizeMake(51.0f, 31.0f);

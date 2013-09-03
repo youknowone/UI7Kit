@@ -59,6 +59,13 @@ CGFloat UI7PickerLikeViewRowHeight = 36.0f;
     return [super isSubclassOfClass:aClass];
 }
 
+- (BOOL)isKindOfClass:(Class)aClass {
+    if (aClass == [UIPickerView class]) {
+        return YES;
+    }
+    return [super isKindOfClass:aClass];
+}
+
 UIImage *UI7PickerLikeViewGradientImage(UIColor *maskColor, CGFloat topGradient, CGFloat buttomGradient, CGFloat height) {
     UIGraphicsBeginImageContextWithOptions(CGSizeMake(1.0, height), NO, .0);
     CGContextRef context = UIGraphicsGetCurrentContext();
