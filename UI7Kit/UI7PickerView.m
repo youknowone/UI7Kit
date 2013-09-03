@@ -14,6 +14,8 @@
 #import "UI7TableView.h"
 #import "UI7TableViewCell.h"
 
+CGFloat UI7PickerLikeViewRowHeight = 36.0f;
+
 @interface UI7PickerLikeView ()
 
 @property(nonatomic, strong) NSMutableArray *tables;
@@ -31,8 +33,8 @@
 @property(nonatomic, strong) UIView                    *topLineView;
 @property(nonatomic, strong) UIView                    *bottomLineView;
 
-
 @end
+
 
 @interface _UI7PickerViewGradientView : UIView
 
@@ -95,13 +97,14 @@ UIImage *UI7PickerLikeViewGradientImage(UIColor *maskColor, CGFloat topGradient,
 }
 
 - (void)_updateGradient {
+    CGFloat rowHeight = UI7PickerLikeViewRowHeight;
     CGFloat width = self.frame.size.width;
-    CGFloat height = (self.frame.size.height - 36.0f) / 2;
+    CGFloat height = (self.frame.size.height - rowHeight) / 2;
     UIColor *maskColor = self.stackedBackgroundColor;
     self.topGradient.frame = CGRectMake(.0, .0, width, height);
     self.topLineView.frame = CGRectMake(.0, height, width, 1.0f);
-    self.bottomGradient.frame = CGRectMake(.0, height + 36.0f, width, height);
-    self.bottomLineView.frame = CGRectMake(.0, height + 35.0f, width, 1.0f);
+    self.bottomGradient.frame = CGRectMake(.0, height + rowHeight, width, height);
+    self.bottomLineView.frame = CGRectMake(.0, height + rowHeight - 1, width, 1.0f);
 
     self.topGradient.image = UI7PickerLikeViewGradientImage(maskColor, .0f, .5f, height);
     self.bottomGradient.image = UI7PickerLikeViewGradientImage(maskColor, .5f, .0f, height);
@@ -123,6 +126,10 @@ UIImage *UI7PickerLikeViewGradientImage(UIColor *maskColor, CGFloat topGradient,
     self = [super initWithCoder:aDecoder];
     [self _initPickerView];
     return self;
+}
+
+- (CGSize)intrinsicContentSize {
+    return CGSizeMake(self.frame.size.width, 216.0f);
 }
 
 - (void)layoutSubviews {
@@ -166,7 +173,7 @@ UIImage *UI7PickerLikeViewGradientImage(UIColor *maskColor, CGFloat topGradient,
         table.dataSource = self;
         table.delegate = self;
         table.backgroundColor = [UIColor clearColor];
-        table.rowHeight = 36.0f;
+        table.rowHeight = UI7PickerLikeViewRowHeight;
         [self addSubview:table];
         [self.tables addObject:table];
     }
@@ -187,7 +194,7 @@ UIImage *UI7PickerLikeViewGradientImage(UIColor *maskColor, CGFloat topGradient,
 
 - (CGSize)rowSizeForComponent:(NSInteger)component {
     UITableView *table = self.tables[component];
-    CGSize size = CGSizeMake(table.frame.size.width, 36.0f);
+    CGSize size = CGSizeMake(table.frame.size.width, UI7PickerLikeViewRowHeight);
     if ([self.delegate respondsToSelector:@selector(pickerView:rowHeightForComponent:)]) {
         size.height = [self.delegate pickerView:(id)self rowHeightForComponent:component];
     }
