@@ -8,6 +8,6 @@
 
 #import <UI7Kit/UI7Utilities.h>
 
-@interface UI7ActionSheet : UIActionSheet
+@interface UI7ActionSheet : UIActionSheet<UI7Patch>
 
 @end
