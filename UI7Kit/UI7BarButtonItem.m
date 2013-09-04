@@ -99,6 +99,7 @@ NSString *UI7BarButtonItemSystemNames[] = {
 
 // backup
 - (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
+- (id)__initWithImage:(UIImage *)image style:(UIBarButtonItemStyle)style target:(id)target action:(SEL)action { assert(NO); return nil; }
 - (id)__initWithBarButtonSystemItem:(UIBarButtonSystemItem)systemItem target:(id)target action:(SEL)action { assert(NO); return nil; }
 - (id)__initWithTitle:(NSString *)title style:(UIBarButtonItemStyle)style target:(id)target action:(SEL)action { assert(NO); return nil; }
 - (UIColor *)__tintColor { assert(NO); return nil; }
@@ -135,6 +136,7 @@ NSString *UI7BarButtonItemSystemNames[] = {
 
         [target copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
         [target copyToSelector:@selector(__initWithTitle:style:target:action:) fromSelector:@selector(initWithTitle:style:target:action:)];
+        [target copyToSelector:@selector(__initWithImage:style:target:action:) fromSelector:@selector(initWithImage:style:target:action:)];
         [target copyToSelector:@selector(__initWithBarButtonSystemItem:target:action:) fromSelector:@selector(initWithBarButtonSystemItem:target:action:)];
         [target copyToSelector:@selector(__tintColor) fromSelector:@selector(tintColor)];
     }
@@ -144,6 +146,7 @@ NSString *UI7BarButtonItemSystemNames[] = {
     Class target =  [UIBarButtonItem class];
 
     [self exportSelector:@selector(initWithCoder:) toClass:target];
+    [self exportSelector:@selector(initWithImage:style:target:action:) toClass:target];
     [self exportSelector:@selector(initWithBarButtonSystemItem:target:action:) toClass:target];
     [self exportSelector:@selector(initWithTitle:style:target:action:) toClass:target];
     [self exportSelector:@selector(tintColor) toClass:target];
@@ -160,6 +163,12 @@ NSString *UI7BarButtonItemSystemNames[] = {
         }
         [self _barButtonItemInit];
     }
+    return self;
+}
+
+- (id)initWithImage:(UIImage *)image style:(UIBarButtonItemStyle)style target:(id)target action:(SEL)action {
+    self = [self __initWithImage:image style:style target:target action:action];
+    [self _barButtonItemInit];
     return self;
 }
 
