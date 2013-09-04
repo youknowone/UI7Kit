@@ -42,7 +42,7 @@ UIColor *UI7TableViewGroupedViewPatternColor = nil;
 - (void)__updateVisibleCellsNow:(BOOL)flag { assert(NO); }
 
 - (void)_tableViewInit {
-
+    self.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)_tableViewInitGrouped {
