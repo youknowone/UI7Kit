@@ -11,17 +11,6 @@ Goal
 - Patch the classic UIKit to UI7Kit in runtime. (Renew your legacy app just in a line!)
 - 100% UIKit compatibility.
 
-Fundraising and aim for 1.0
----------------------------
-- [www.bountysource.com/fundraisers/445-ui7kit-1-0](https://www.bountysource.com/fundraisers/445-ui7kit-1-0)
-
-- Except picker view, all of the UI-prefixed controls with basic options should look like iOS7 things, under iOS6.
-- Picker view should be imitated, but as similar as possible.
-- Tint color and background color should work just as they would in iOS7.
-- Both interface builder and code should work.
-- All of Interface builder settings should be read, unless it is technically available.
-
-
 How to use
 ----------
 Case 1: Dynamic patch (Mostly recommended)
@@ -114,6 +103,13 @@ Apps using UI7Kit
 - MAFOR Marine Forecast Decoder: [https://itunes.apple.com/app/id674865491](https://itunes.apple.com/app/id674865491)
 - TouchMusic: [https://itunes.apple.com/app/id677386346](https://itunes.apple.com/app/id677386346)
 - Slader: [https://itunes.apple.com/app/id579962583](https://itunes.apple.com/app/id579962583)
+
+
+Authors
+-------
+
+I am not maintaining authors list manually, but I am carefully keeping git author to track this. See:
+- [https://github.com/youknowone/UI7Kit/graphs/contributors](https://github.com/youknowone/UI7Kit/graphs/contributors)
 
 
 How to install one or two components
