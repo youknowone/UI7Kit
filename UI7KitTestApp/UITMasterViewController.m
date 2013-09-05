@@ -34,6 +34,7 @@
                      @"GroupedTableView",
                      @"SegmentedControl",
                      @"PickerView",
+                     @"Popover",
                      ];
     self.issues = @[
                     @1,

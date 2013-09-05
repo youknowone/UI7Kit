@@ -139,15 +139,18 @@ NSAPropertyGetter(titleLabel, @"_titleLabel");
 
     if (!isPhone) {
         UIView *ssuperview = self.superview.superview;
-        frame = ssuperview.frame;
-        frame.size.height += 45.0f;
-        ssuperview.frame = frame;
-        [ssuperview.subviews[0] setHidden:YES];
-        UIView *dimmingView = [[[UIView alloc] initWithFrame:self.window.bounds] autorelease];
-        dimmingView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.15];
-        dimmingView.hidden = YES;
-        [ssuperview.superview insertSubview:dimmingView belowSubview:ssuperview];
-        [dimmingView setHidden:NO animated:YES];
+        UIView *firstSubview = ssuperview.subviews[0];
+        if (self.superview != firstSubview) {
+            frame = ssuperview.frame;
+            frame.size.height += 45.0f;
+            ssuperview.frame = frame;
+            [firstSubview setHidden:YES];
+            UIView *dimmingView = [[[UIView alloc] initWithFrame:self.window.bounds] autorelease];
+            dimmingView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.15];
+            dimmingView.hidden = YES;
+            [ssuperview.superview insertSubview:dimmingView belowSubview:ssuperview];
+            [dimmingView setHidden:NO animated:YES];
+        }
     }
 }
 

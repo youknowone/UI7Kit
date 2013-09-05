@@ -178,6 +178,7 @@
 		3886F7011770AAD800890D47 /* UI7Stepper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886F7001770AAD700890D47 /* UI7Stepper.m */; };
 		3886F7041770B10800890D47 /* UI7View.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886F7031770B10700890D47 /* UI7View.m */; };
 		388722D717D8EBCF00E2EDE2 /* UITIssue101ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 388722D617D8EBCF00E2EDE2 /* UITIssue101ViewController.m */; };
+		388722DA17D8F25B00E2EDE2 /* UITPopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 388722D917D8F25B00E2EDE2 /* UITPopoverViewController.m */; };
 		3888FC62176C7C7900489638 /* UITIssue1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3888FC61176C7C7900489638 /* UITIssue1ViewController.m */; };
 		3888FC63176C8EAD00489638 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383764E513373155007072FD /* CoreGraphics.framework */; };
 		388FC1E2177303AA0084574E /* UI7ButtonImageAdd.png in Resources */ = {isa = PBXBuildFile; fileRef = 388FC1DE177303AA0084574E /* UI7ButtonImageAdd.png */; };
@@ -397,6 +398,8 @@
 		3886F7031770B10700890D47 /* UI7View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7View.m; sourceTree = "<group>"; };
 		388722D517D8EBCF00E2EDE2 /* UITIssue101ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITIssue101ViewController.h; sourceTree = "<group>"; };
 		388722D617D8EBCF00E2EDE2 /* UITIssue101ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITIssue101ViewController.m; sourceTree = "<group>"; };
+		388722D817D8F25B00E2EDE2 /* UITPopoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITPopoverViewController.h; sourceTree = "<group>"; };
+		388722D917D8F25B00E2EDE2 /* UITPopoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITPopoverViewController.m; sourceTree = "<group>"; };
 		3888FC60176C7C7900489638 /* UITIssue1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITIssue1ViewController.h; sourceTree = "<group>"; };
 		3888FC61176C7C7900489638 /* UITIssue1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITIssue1ViewController.m; sourceTree = "<group>"; };
 		388FC1DE177303AA0084574E /* UI7ButtonImageAdd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7ButtonImageAdd.png; sourceTree = "<group>"; };
@@ -819,6 +822,8 @@
 				381595A81784936A001CC0CD /* UITSegmentedControlViewController.m */,
 				38C677981786CA6100B00C61 /* UITPickerViewController.h */,
 				38C677991786CA6100B00C61 /* UITPickerViewController.m */,
+				388722D817D8F25B00E2EDE2 /* UITPopoverViewController.h */,
+				388722D917D8F25B00E2EDE2 /* UITPopoverViewController.m */,
 				3888FC60176C7C7900489638 /* UITIssue1ViewController.h */,
 				3888FC61176C7C7900489638 /* UITIssue1ViewController.m */,
 				3810413117884A4300A85540 /* UITIssue12ViewController.h */,
@@ -1282,6 +1287,7 @@
 				3805FBA517A81CB9008487A9 /* UITBarItemViewController.m in Sources */,
 				3893F03217B94A5E00FEEADD /* UITIssue71ViewController.m in Sources */,
 				388722D717D8EBCF00E2EDE2 /* UITIssue101ViewController.m in Sources */,
+				388722DA17D8F25B00E2EDE2 /* UITPopoverViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
