@@ -19,6 +19,9 @@
 
 - (void)_toolbarInit {
     [self setBarStyle:self.barStyle];
+    
+    if ([self respondsToSelector:@selector(setShadowImage:forToolbarPosition:)])
+        [self setShadowImage:[[UIImage alloc] init] forToolbarPosition:UIToolbarPositionAny];
 
     UIGraphicsBeginImageContext(CGSizeMake(1.0, 3.0));
     CGContextRef context = UIGraphicsGetCurrentContext();
