@@ -478,6 +478,27 @@
                                             <segue destination="Xsh-Xu-21n" kind="push" id="3gM-vn-mM5"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="#101" textLabel="K15-L0-8sr" style="IBUITableViewCellStyleDefault" id="Ttt-hb-rGX">
+                                        <rect key="frame" x="0.0" y="682" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="#101" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="K15-L0-8sr">
+                                                    <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="Cur-x0-2Xx" kind="push" id="XrK-vy-9FE"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="VOL-Ip-gE2" id="oVc-S7-0t5"/>
@@ -778,6 +799,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9aA-IO-rwH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="420" y="5896"/>
+        </scene>
+        <!--Issue101 View Controller-->
+        <scene sceneID="db9-tb-tHE">
+            <objects>
+                <viewController id="Cur-x0-2Xx" customClass="UITIssue101ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="exm-UV-lnu">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="sUb-pJ-xmB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mfZ-nE-hBr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="421" y="6546"/>
         </scene>
         <!--Grouped Table View Controller - Grouped Table View-->
         <scene sceneID="1Zn-Zu-v1U">

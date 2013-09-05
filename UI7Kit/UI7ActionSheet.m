@@ -60,6 +60,7 @@ NSAPropertyGetter(titleLabel, @"_titleLabel");
     BOOL isPhone = [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone;
     CGFloat leftMargin = isPhone ? 8.0f : .0f;
 
+    __block CGFloat lowestY = .0;
     [self.buttons applyProcedureWithIndex:^(id obj, NSUInteger index) {
         UIButton *button = obj; // UIAlertButton
         
@@ -72,6 +73,7 @@ NSAPropertyGetter(titleLabel, @"_titleLabel");
         } else {
             frame.origin.y = self.titleLabel.frame.size.height + 35.0f + index * UI7ControlRowHeight;
         }
+        lowestY = MAX(lowestY, frame.origin.y);
         button.frame = frame;
         
         if (self.cancelButtonIndex == (NSInteger)index) {
@@ -119,7 +121,8 @@ NSAPropertyGetter(titleLabel, @"_titleLabel");
     }];
 
     CGRect frame = self.frame;
-    frame.origin.y += self.buttons.count * 9.0f;
+    frame.size.height = lowestY + UI7ControlRowHeight + 6.0f;
+    frame.origin.y = self.superview.frame.size.height - frame.size.height;
 
     if (self.titleLabel.text.length > 0) {
         CGRect tframe = self.titleLabel.frame;
