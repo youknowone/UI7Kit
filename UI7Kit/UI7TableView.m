@@ -164,7 +164,9 @@ UIColor *UI7TableViewGroupedViewPatternColor = nil;
 - (id)initWithFrame:(CGRect)frame style:(UITableViewStyle)style {
     self = [self __initWithFrame:frame style:style];
     if (self) {
+        self.backgroundColor = [UI7Color whiteColor];
         if (style == UITableViewStyleGrouped) {
+            self.backgroundColor = [UI7Color groupTableViewBackgroundColor];
             [self _tableViewInitGrouped];
         }
         [self _tableViewInit];
@@ -174,7 +176,7 @@ UIColor *UI7TableViewGroupedViewPatternColor = nil;
 
 - (void)awakeFromNib {
     if (self.__style == UITableViewStyleGrouped && self.superview == nil && [self.backgroundColor isEqual:[UIColor clearColor]]) {
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = [UI7Color groupTableViewBackgroundColor];
     }
 }
 
