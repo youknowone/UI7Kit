@@ -59,6 +59,8 @@ NSAPropertyAssignSetter(setNavigationBar, @"_navigationBar");
 - (void)_navigationBarInit {
     [self setBarStyle:self.barStyle];
 
+    [self setShadowImage:[[UIImage alloc] init]];
+    
     UIGraphicsBeginImageContext(CGSizeMake(1.0, 3.0));
     CGContextRef context = UIGraphicsGetCurrentContext();
     [(UIColor *)[UIColor colorWith8bitWhite:178 alpha:255] set];
