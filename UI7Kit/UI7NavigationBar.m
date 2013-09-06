@@ -258,8 +258,8 @@ NSAPropertyAssignSetter(setNavigationBar, @"_navigationBar");
 
         [target copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
         [target copyToSelector:@selector(__initWithTitle:) fromSelector:@selector(initWithTitle:)];
-        [target copyToSelector:@selector(__setLeftBarButtonItem:animated:) fromSelector:@selector(setLeftBarButtonItem:)];
-        [target copyToSelector:@selector(__setRightBarButtonItem:animated:) fromSelector:@selector(setRightBarButtonItem:)];
+        [target copyToSelector:@selector(__setLeftBarButtonItem:animated:) fromSelector:@selector(setLeftBarButtonItem:animated:)];
+        [target copyToSelector:@selector(__setRightBarButtonItem:animated:) fromSelector:@selector(setRightBarButtonItem:animated:)];
         [target copyToSelector:@selector(__setBackBarButtonItem:) fromSelector:@selector(setBackBarButtonItem:)];
     }
 }
