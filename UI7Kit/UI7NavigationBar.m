@@ -244,8 +244,8 @@ NSAPropertyAssignSetter(setNavigationBar, @"_navigationBar");
 - (id)__init { assert(NO); return nil; }
 - (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
 - (id)__initWithTitle:(NSString *)title { assert(NO); return nil; }
-- (void)__setLeftBarButtonItem:(UIBarButtonItem *)leftBarButtonItem { assert(NO); }
-- (void)__setRightBarButtonItem:(UIBarButtonItem *)rightBarButtonItem { assert(NO); }
+- (void)__setLeftBarButtonItem:(UIBarButtonItem *)leftBarButtonItem animated:(BOOL)animated { assert(NO); }
+- (void)__setRightBarButtonItem:(UIBarButtonItem *)rightBarButtonItem animated:(BOOL)animated { assert(NO); }
 - (void)__setBackBarButtonItem:(UIBarButtonItem *)backBarButtonItem { assert(NO); }
 
 @end
@@ -258,8 +258,8 @@ NSAPropertyAssignSetter(setNavigationBar, @"_navigationBar");
 
         [target copyToSelector:@selector(__initWithCoder:) fromSelector:@selector(initWithCoder:)];
         [target copyToSelector:@selector(__initWithTitle:) fromSelector:@selector(initWithTitle:)];
-        [target copyToSelector:@selector(__setLeftBarButtonItem:) fromSelector:@selector(setLeftBarButtonItem:)];
-        [target copyToSelector:@selector(__setRightBarButtonItem:) fromSelector:@selector(setRightBarButtonItem:)];
+        [target copyToSelector:@selector(__setLeftBarButtonItem:animated:) fromSelector:@selector(setLeftBarButtonItem:)];
+        [target copyToSelector:@selector(__setRightBarButtonItem:animated:) fromSelector:@selector(setRightBarButtonItem:)];
         [target copyToSelector:@selector(__setBackBarButtonItem:) fromSelector:@selector(setBackBarButtonItem:)];
     }
 }
@@ -269,8 +269,8 @@ NSAPropertyAssignSetter(setNavigationBar, @"_navigationBar");
 
     [self exportSelector:@selector(initWithCoder:) toClass:target];
     [self exportSelector:@selector(initWithTitle:) toClass:target];
-    [self exportSelector:@selector(setLeftBarButtonItem:) toClass:target];
-    [self exportSelector:@selector(setRightBarButtonItem:) toClass:target];
+    [self exportSelector:@selector(setLeftBarButtonItem:animated:) toClass:target];
+    [self exportSelector:@selector(setRightBarButtonItem:animated:) toClass:target];
     [self exportSelector:@selector(setBackBarButtonItem:) toClass:target];
 }
 
@@ -290,14 +290,14 @@ NSAPropertyAssignSetter(setNavigationBar, @"_navigationBar");
     return self;
 }
 
-- (void)setLeftBarButtonItem:(UIBarButtonItem *)barButtonItem {
-    [self __setLeftBarButtonItem:barButtonItem];
+- (void)setLeftBarButtonItem:(UIBarButtonItem *)barButtonItem animated:(BOOL)animated {
+    [self __setLeftBarButtonItem:barButtonItem animated:animated];
     barButtonItem.appearanceSuperview = self;
     [barButtonItem _tintColorUpdated];
 }
 
-- (void)setRightBarButtonItem:(UIBarButtonItem *)barButtonItem {
-    [self __setRightBarButtonItem:barButtonItem];
+- (void)setRightBarButtonItem:(UIBarButtonItem *)barButtonItem animated:(BOOL)animated {
+    [self __setRightBarButtonItem:barButtonItem animated:animated];
     barButtonItem.appearanceSuperview = self;
     [barButtonItem _tintColorUpdated];
 }
