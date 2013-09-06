@@ -131,6 +131,9 @@ UIImage *UI7PickerLikeViewGradientImage(UIColor *maskColor, CGFloat topGradient,
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
+    CGRect frame = self.frame;
+    frame.size.height = 216.0f;
+    self.frame = frame;
     [self _initPickerView];
     return self;
 }
@@ -281,13 +284,16 @@ UIImage *UI7PickerLikeViewGradientImage(UIColor *maskColor, CGFloat topGradient,
     }
     UIView *view = [self viewForRow:indexPath.row forComponent:componentIndex];
     if (view) {
-        
+
     } else {
-        NSString *title = @"?";
-        if ([self.delegate respondsToSelector:@selector(pickerView:titleForRow:forComponent:)]) {
-            title = [self.delegate pickerView:(id)self titleForRow:indexPath.row forComponent:componentIndex];
+
+        if ([self.delegate respondsToSelector:@selector(pickerView:attributedTitleForRow:forComponent:)]) {
+            cell.textLabel.attributedText = [self.delegate pickerView:(id)self attributedTitleForRow:indexPath.row forComponent:componentIndex];
+        }else if ([self.delegate respondsToSelector:@selector(pickerView:titleForRow:forComponent:)]) {
+            cell.textLabel.text = [self.delegate pickerView:(id)self titleForRow:indexPath.row forComponent:componentIndex];
+            
         }
-        cell.textLabel.text = title;
+        
     }
     return cell;
 }
