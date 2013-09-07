@@ -82,7 +82,7 @@
     if (color == nil) {
         color = [UIColor whiteColor];
     }
-    self.view.backgroundColor = UICUserDefaults.globalBackgroundColor;
+    self.view.backgroundColor = color;
 }
 
 @end
