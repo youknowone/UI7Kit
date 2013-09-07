@@ -227,7 +227,7 @@ UIColor *UI7ButtonDefaultTitleColor = nil;
 @implementation UI7RoundedRectButton
 
 - (void)_roundedRectButtonInit {
-    self.layer.cornerRadius = 6.0;
+    self.layer.cornerRadius = self.cornerRadius ? self.cornerRadius.floatValue : 6.0f;
     [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 }
 

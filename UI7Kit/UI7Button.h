@@ -17,4 +17,6 @@
 
 @interface UI7RoundedRectButton : UI7Button
 
+@property(copy,nonatomic) NSNumber *cornerRadius;
+
 @end
