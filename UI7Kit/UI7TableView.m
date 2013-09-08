@@ -16,8 +16,8 @@ CGFloat UI7TableViewGroupedTableSectionSeperatorHeight = 28.0f;
 
 @interface UITableViewCell (Accessor)
 
-@property(nonatomic,assign) UITableView *tableView;
-@property(nonatomic,strong) NSIndexPath *indexPath;
+@property(nonatomic,readonly) UITableView *tableView;
+@property(nonatomic,readonly) NSIndexPath *indexPath;
 
 @end
 
@@ -373,8 +373,6 @@ UIView *_UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableVi
     [self __updateVisibleCellsNow:flag];
     for (NSIndexPath *path in self.indexPathsForVisibleRows) {
         UITableViewCell *cell = [self cellForRowAtIndexPath:path];
-        cell.tableView = self;
-        cell.indexPath = path;
         [cell _tintColorUpdated];
     }
 
