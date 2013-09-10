@@ -33,9 +33,14 @@
     [searchBarButton setTitleTextAttributes:@{UITextAttributeTextColor:[UIColor lightGrayColor], UITextAttributeTextShadowOffset : [NSValue valueWithUIOffset:UIOffsetMake(0, 0)],} forState:UIControlStateHighlighted];
 
     for (UIView *searchBarSubview in [self subviews]) {
-        if ([searchBarSubview respondsToSelector:@selector(setBorderStyle:)]) {
-            [(UITextField *)searchBarSubview setBorderStyle:UITextBorderStyleRoundedRect];
-            searchBarSubview.layer.borderColor = UIColor.clearColor.CGColor;
+        if ([searchBarSubview isKindOfClass:[UITextField class]]) {
+            UITextField *textField = (UITextField *)searchBarSubview;
+            textField.backgroundColor = [UIColor whiteColor];
+            textField.borderStyle = UITextBorderStyleRoundedRect;
+            textField.layer.borderColor = UIColor.clearColor.CGColor;
+            textField.layer.borderWidth = 0.f;
+            textField.layer.cornerRadius = 5.0f;
+            textField.background = nil;
         }
     }
 }
