@@ -52,6 +52,12 @@ CGFloat UI7PickerLikeViewRowHeight = 36.0f;
 
 @implementation UI7PickerLikeView
 
+- (void)setFrame:(CGRect)frame
+{
+    [super setFrame:frame];
+    [self layoutSubviews];
+}
+
 + (BOOL)isSubclassOfClass:(Class)aClass {
     if (aClass == [UIPickerView class]) {
         return YES;
@@ -171,11 +177,16 @@ UIImage *UI7PickerLikeViewGradientImage(UIColor *maskColor, CGFloat topGradient,
     }
 }
 
+- (NSInteger)numberOfComponents
+{
+    return [self.dataSource numberOfComponentsInPickerView:(id)self];
+}
+
 - (void)setDataSource:(id<UIPickerViewDataSource>)dataSource {
     self->_dataSource = dataSource;
     self.tables = [NSMutableArray array];
 
-    NSInteger number = [self.dataSource numberOfComponentsInPickerView:(id)self];
+    NSInteger number = [self numberOfComponents];
     for (NSInteger i = 0; i < number; i++) {
         UI7TableView *table = [[[UI7TableView alloc] initWithFrame:CGRectMake(.0, .0, self.frame.size.width / number, self.frame.size.height)] autorelease];
         table.showsVerticalScrollIndicator = NO;
