@@ -207,6 +207,12 @@ UIColor *UI7ButtonDefaultTitleColor = nil;
         self.___textTitleColor = color;
         [self _tintColorUpdated];
     }
+    
+    NSString *name; SEL selector; IMP impl;
+    name = [@"__set" stringByAppendingString:@"TitleColor:forState:"];
+    selector = NSSelectorFromString(name);
+    impl = class_getMethodImplementation(self.class, selector);
+    impl(self, selector, color, state);
 }
 
 - (UIColor *)___tintColor {
