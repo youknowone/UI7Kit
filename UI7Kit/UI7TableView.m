@@ -50,7 +50,9 @@ UIColor *UI7TableViewGroupedViewPatternColor = nil;
         UI7TableViewGroupedViewPatternColor = [[[UITableView alloc] __initWithFrame:CGRectZero style:UITableViewStyleGrouped] autorelease].backgroundColor;
     }
 
-    self.backgroundView = nil;
+    if (![NSStringFromClass([self class]) hasPrefix:@"AB"]) {
+        self.backgroundView = nil;
+    }
     if (self.separatorStyle == UITableViewCellSeparatorStyleSingleLineEtched) {
         self.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
@@ -145,7 +147,9 @@ UIColor *UI7TableViewGroupedViewPatternColor = nil;
             [self _tableViewInitGrouped];
             UIColor *color = [aDecoder decodeObjectForKey:@"UIBackgroundColor"];
             if (color == UI7TableViewGroupedViewPatternColor) {
-                self.backgroundColor = [UI7Color groupedTableViewSectionBackgroundColor];
+                if (![NSStringFromClass([self class]) hasPrefix:@"AB"]) {
+                    return;
+                }
             }
         }
         [self _tableViewInit];

@@ -213,12 +213,18 @@ UIImage *UI7TableViewCellAccessoryCheckmarkImageCreate() {
 
 - (void)setBackgroundColor:(UIColor *)backgroundColor {
     [self __setBackgroundColor:backgroundColor];
+    if ([NSStringFromClass([self class]) hasPrefix:@"AB"]) {
+        return;
+    }
     self.backgroundView.backgroundColor = backgroundColor;
 }
 
 - (void)setTableViewStyle:(int)style {
     UIColor *backgroundColor = self.backgroundColor;
     [self __setTableViewStyle:style];
+    if ([NSStringFromClass([self class]) hasPrefix:@"AB"]) {
+        return;
+    }
     self.backgroundColor = backgroundColor;
 }
 
