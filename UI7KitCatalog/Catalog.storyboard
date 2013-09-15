@@ -313,7 +313,9 @@
                                 <rect key="frame" x="274" y="141" width="40" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="1" green="0.57647058819999997" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
-                                <state key="normal" title="Btn"/>
+                                <state key="normal" title="Btn">
+                                    <color key="titleColor" red="1" green="0.48950729929999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6cn-yd-aGh" customClass="UI7BorderedRoundedRectButton">
                                 <rect key="frame" x="274" y="183" width="40" height="34"/>

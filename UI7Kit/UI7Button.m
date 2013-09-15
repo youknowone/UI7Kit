@@ -173,6 +173,9 @@ UIColor *UI7ButtonDefaultTitleColor = nil;
         NSDictionary *statefulContents = [aDecoder decodeObjectForKey:@"UIButtonStatefulContent"];
         NSObject *normalStatefulContent = statefulContents[@0];
         if ([normalStatefulContent.titleColor isEqual:UI7ButtonDefaultTitleColor]) {
+            [self setTitleColor:nil forState:UIControlStateNormal];
+            self.___textTitleColor = nil;
+        } else {
             self.___textTitleColor = [self titleColorForState:UIControlStateNormal];
         }
     }
@@ -286,20 +289,19 @@ UIColor *UI7ButtonDefaultTitleColor = nil;
     UIColor *tintColor = self.tintColor;
     if (tintColor == nil) return;
 
-    self.layer.borderColor = tintColor.CGColor;
     UIColor *textTitleColor = self.___textTitleColor;
-    if (tintColor) {
+    if (textTitleColor == nil) {
         textTitleColor = tintColor;
     }
     [self __setTitleColor:textTitleColor forState:UIControlStateNormal];
     UIColor *highlightedTextTitleColor = textTitleColor.highligtedColor;
     [self __setTitleColor:highlightedTextTitleColor forState:UIControlStateHighlighted];
     [self __setTitleColor:highlightedTextTitleColor forState:UIControlStateSelected];
+    self.layer.borderColor = textTitleColor.CGColor;
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
-    self.___backgroundColor = [aDecoder decodeObjectForKey:@"UIBackgroundColor"];
     [self _roundedRectButtonInit];
     return self;
 }
@@ -308,11 +310,6 @@ UIColor *UI7ButtonDefaultTitleColor = nil;
     self = [super initWithFrame:frame];
     [self _roundedRectButtonInit];
     return self;
-}
-
-- (void)setBackgroundColor:(UIColor *)backgroundColor {
-    self.___backgroundColor = backgroundColor;
-    [self _tintColorUpdated];
 }
 
 - (void)setTintColor:(UIColor *)tintColor {
