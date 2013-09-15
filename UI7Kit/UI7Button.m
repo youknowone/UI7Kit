@@ -173,9 +173,6 @@ UIColor *UI7ButtonDefaultTitleColor = nil;
         NSDictionary *statefulContents = [aDecoder decodeObjectForKey:@"UIButtonStatefulContent"];
         NSObject *normalStatefulContent = statefulContents[@0];
         if ([normalStatefulContent.titleColor isEqual:UI7ButtonDefaultTitleColor]) {
-            [self setTitleColor:nil forState:UIControlStateNormal];
-            self.___textTitleColor = nil;
-        } else {
             self.___textTitleColor = [self titleColorForState:UIControlStateNormal];
         }
     }
@@ -245,6 +242,59 @@ UIColor *UI7ButtonDefaultTitleColor = nil;
     UIColor *highlightedTintColor = [tintColor highligtedColorForBackgroundColor:backgroundColor];
     [self __setTitleColor:highlightedTintColor forState:UIControlStateHighlighted];
     [self __setTitleColor:highlightedTintColor forState:UIControlStateSelected];
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    self.___backgroundColor = [aDecoder decodeObjectForKey:@"UIBackgroundColor"];
+    [self _roundedRectButtonInit];
+    return self;
+}
+
+- (id)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    [self _roundedRectButtonInit];
+    return self;
+}
+
+- (void)setBackgroundColor:(UIColor *)backgroundColor {
+    self.___backgroundColor = backgroundColor;
+    [self _tintColorUpdated];
+}
+
+- (void)setTintColor:(UIColor *)tintColor {
+    [super setTintColor:tintColor];
+    [self _tintColorUpdated]; // for iOS6 SDK + iOS7
+}
+
+- (void)tintColorDidChange {
+    [super tintColorDidChange];
+    [self _tintColorUpdated]; // for iOS7
+}
+
+@end
+
+
+@implementation UI7BorderedRoundedRectButton
+
+- (void)_roundedRectButtonInit {
+    self.layer.cornerRadius = self.cornerRadius ? self.cornerRadius.floatValue : 6.0f;
+    self.layer.borderWidth = self.borderWidth ? self.borderWidth.floatValue : 1.0f;
+}
+
+- (void)_tintColorUpdated {
+    UIColor *tintColor = self.tintColor;
+    if (tintColor == nil) return;
+
+    self.layer.borderColor = tintColor.CGColor;
+    UIColor *textTitleColor = self.___textTitleColor;
+    if (tintColor) {
+        textTitleColor = tintColor;
+    }
+    [self __setTitleColor:textTitleColor forState:UIControlStateNormal];
+    UIColor *highlightedTextTitleColor = textTitleColor.highligtedColor;
+    [self __setTitleColor:highlightedTextTitleColor forState:UIControlStateHighlighted];
+    [self __setTitleColor:highlightedTextTitleColor forState:UIControlStateSelected];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {

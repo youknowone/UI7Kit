@@ -27,9 +27,11 @@
     UIColor *color = [UIColor colorWithHTMLExpression:@"#af8"];
     self.roundedCodeButton.tintColor = color;
     self.codeButton.tintColor = color;
+    self.borderedCodeButton.tintColor = color;
     NSLog(@"button colors: %@ %@ %@", color, self.codeButton.tintColor, self.roundedCodeButton.tintColor);
     assert([self.roundedCodeButton.tintColor isEqual:color]);
     assert([self.codeButton.tintColor isEqual:color]);
+    assert([self.borderedCodeButton.tintColor isEqual:color]);
 }
 
 @end

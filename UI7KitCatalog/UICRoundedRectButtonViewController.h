@@ -10,6 +10,6 @@
 
 @interface UICRoundedRectButtonViewController : UIViewController
 
-@property(nonatomic,strong) IBOutlet UIButton *codeButton, *roundedCodeButton;
+@property(nonatomic,strong) IBOutlet UIButton *codeButton, *roundedCodeButton, *borderedCodeButton;
 
 @end
