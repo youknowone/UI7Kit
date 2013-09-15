@@ -52,12 +52,6 @@ CGFloat UI7PickerLikeViewRowHeight = 36.0f;
 
 @implementation UI7PickerLikeView
 
-- (void)setFrame:(CGRect)frame
-{
-    [super setFrame:frame];
-    [self layoutSubviews];
-}
-
 + (BOOL)isSubclassOfClass:(Class)aClass {
     if (aClass == [UIPickerView class]) {
         return YES;
@@ -107,6 +101,8 @@ UIImage *UI7PickerLikeViewGradientImage(UIColor *maskColor, CGFloat topGradient,
     [self addSubview:self.bottomGradient];
     [self addSubview:self.topLineView];
     [self addSubview:self.bottomLineView];
+
+    self.autoresizesSubviews = YES;
 }
 
 - (void)_updateGradient {
@@ -177,8 +173,7 @@ UIImage *UI7PickerLikeViewGradientImage(UIColor *maskColor, CGFloat topGradient,
     }
 }
 
-- (NSInteger)numberOfComponents
-{
+- (NSInteger)numberOfComponents {
     return [self.dataSource numberOfComponentsInPickerView:(id)self];
 }
 
