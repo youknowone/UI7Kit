@@ -1,11 +1,12 @@
 Pod::Spec.new do |s|
   s.name         = "UI7Kit"
-  s.version      = "0.8.27"
+  s.version      = "0.9"
   s.summary      = "UI7Kit is a GUI toolkit to implement iOS7 look & feel UIKit under iOS5/iOS6. It is also supported that patching UIKit to UI7Kit in runtime."
   s.homepage     = "https://github.com/youknowone/UI7Kit"
+  s.screenshots  = "https://raw.github.com/youknowone/UI7Kit/master/UI7Kit.png",
   s.license      = "2-clause BSD"
   s.author       = { "Jeong YunWon" => "jeong@youknowone.org" }
-  s.source       = { :git => "https://github.com/youknowone/UI7Kit.git", :tag => "0.8.27" }
+  s.source       = { :git => "https://github.com/youknowone/UI7Kit.git", :tag => "0.9" }
 
   s.platform     = :ios, '5.0'
   s.header_dir = "UI7Kit"
@@ -38,6 +39,7 @@ Pod::Spec.new do |s|
     'UI7View'                 => [%w(UI7View.{h,m})                ,  [                                                                                            ],  %w(          )],
     'UI7ViewController'       => [%w(UI7ViewController.{h,m})      ,  [%w(UI7Kit/UI7NavigationBar), %w(UI7Kit/UI7BarButtonItem)                                    ],  %w(          )],
     'UI7Window'               => [%w(UI7Window.{h,m})              ,  [%w(UI7Kit/UI7View)                                                                          ],  %w(          )],
+    'UI7PopoverController'    => [%w(UI7PopoverController.{h,m})   ,  [%w(GIKPopoverBackgroundView)                                                                ],  %w(QuartzCore)],
   }
   components.map do |component, values|
     s.subspec component do |c|

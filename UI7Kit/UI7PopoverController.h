@@ -7,7 +7,14 @@
 //
 
 #import <UI7Kit/UI7Utilities.h>
+#import <GIKPopoverBackgroundView/GIKPopoverBackgroundView.h>
 
 @interface UI7PopoverController : UIPopoverController<UI7Patch>
+
+@end
+
+
+@interface UI7PopoverBackgroundView : GIKPopoverBackgroundView
+
 
 @end

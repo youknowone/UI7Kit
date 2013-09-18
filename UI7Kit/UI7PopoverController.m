@@ -6,13 +6,48 @@
 //  Copyright (c) 2013 youknowone.org. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
 #import "UI7PopoverController.h"
+
+@implementation UIPopoverController (Patch)
+
+- (id)__initWithContentViewController:(UIViewController *)viewController { assert(NO); return nil; }
+
+@end
 
 
 @implementation UI7PopoverController
 
-+ (void)patch {
++ (void)initialize {
+    if (self == [UI7PopoverController class]) {
+        Class target = [UIPopoverController class];
 
+        [target copyToSelector:@selector(__initWithContentViewController:) fromSelector:@selector(initWithContentViewController:)];
+    }
+}
+
++ (void)patch {
+    Class target = [UIPopoverController class];
+
+    [self exportSelector:@selector(initWithContentViewController:) toClass:target];
+}
+
+- (id)initWithContentViewController:(UIViewController *)viewController {
+    self = [self __initWithContentViewController:viewController];
+    if (self != nil) {
+        [self setPopoverBackgroundViewClass:[UI7PopoverBackgroundView class]];
+    }
+    return self;
+}
+
+@end
+
+
+@implementation UI7PopoverBackgroundView
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    self.layer.shadowRadius = 500.0f; // immitate dimming view
 }
 
 @end
