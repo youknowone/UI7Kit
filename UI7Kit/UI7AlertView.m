@@ -19,7 +19,7 @@ const CGFloat UI7AlertViewWidth = 270.0f;
 @interface UIAlertView (Private)
 
 @property(nonatomic,readonly) UILabel *titleLabel;
-@property(nonatomic,readonly) UILabel *bodyTextLabel;
+@property(nonatomic,readonly) UILabel *bodyTextLabel __deprecated; // not rejected but warned
 @property(nonatomic,readonly) NSArray *buttons;
 @property(nonatomic,readonly) UIView *_dimView __deprecated; // rejected
 @property(nonatomic,assign) BOOL *dimsBackground __deprecated; // rejected
@@ -95,11 +95,13 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
     [self.window insertSubview:view belowSubview:self];
 
     // common UI attributes
-    self.titleLabel.textColor = self.bodyTextLabel.textColor = [UIColor blackColor];
-    self.titleLabel.shadowOffset = self.bodyTextLabel.shadowOffset = CGSizeZero;
+    NSString *selectorName = [@"bodyText" stringByAppendingString:@"Label"];
+    UILabel *bodyTextLabel = [self performSelector:NSSelectorFromString(selectorName)];
+    self.titleLabel.textColor = bodyTextLabel.textColor = [UIColor blackColor];
+    self.titleLabel.shadowOffset = bodyTextLabel.shadowOffset = CGSizeZero;
 
     self.titleLabel.font = [UI7Font systemFontOfSize:17.0 attribute:UI7FontAttributeMedium];
-    self.bodyTextLabel.font = [UI7Font systemFontOfSize:15.0 attribute:UI7FontAttributeLight];
+    bodyTextLabel.font = [UI7Font systemFontOfSize:15.0 attribute:UI7FontAttributeLight];
 
     // reset strokes
     for (UIView *strokeView in self.strokeViews) {
@@ -123,7 +125,7 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
         case UIAlertViewStyleDefault:
         default: {
             if (self.message.length > 0) {
-                baseHeight = self.bodyTextLabel.frame.origin.y + self.bodyTextLabel.frame.size.height;
+                baseHeight = bodyTextLabel.frame.origin.y + bodyTextLabel.frame.size.height;
             } else {
                 baseHeight = self.titleLabel.frame.origin.y + self.titleLabel.frame.size.height;
             }

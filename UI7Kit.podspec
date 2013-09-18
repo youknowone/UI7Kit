@@ -1,12 +1,12 @@
 Pod::Spec.new do |s|
   s.name         = "UI7Kit"
-  s.version      = "0.9"
+  s.version      = "0.9.1"
   s.summary      = "UI7Kit is a GUI toolkit to implement iOS7 look & feel UIKit under iOS5/iOS6. It is also supported that patching UIKit to UI7Kit in runtime."
   s.homepage     = "https://github.com/youknowone/UI7Kit"
   s.screenshots  = "https://raw.github.com/youknowone/UI7Kit/master/UI7Kit.png",
   s.license      = "2-clause BSD"
   s.author       = { "Jeong YunWon" => "jeong@youknowone.org" }
-  s.source       = { :git => "https://github.com/youknowone/UI7Kit.git", :tag => "0.9" }
+  s.source       = { :git => "https://github.com/youknowone/UI7Kit.git", :tag => "0.9.1" }
 
   s.platform     = :ios, '5.0'
   s.header_dir = "UI7Kit"
@@ -97,7 +97,7 @@ Pod::Spec.new do |s|
 #include <UIKitExtension/UIKitExtension.h>
 #include <UI7Kit/UI7Kit.h>
     '
-    core.dependency 'FoundationExtension', '~> 0.43'
+    core.dependency 'FoundationExtension', '~> 0.43.1'
     core.dependency 'cdebug'
     core.dependency 'UI7Kit/UI7Color'
   end
