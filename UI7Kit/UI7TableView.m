@@ -240,12 +240,20 @@ UIView *_UI7TableViewDelegateNilViewForHeaderFooterInSection(id self, SEL _cmd, 
 }
 
 UIView *_UI7TableViewDelegateViewForHeaderInSection(id self, SEL _cmd, UITableView *tableView, NSUInteger section) {
+    static BOOL recursive = NO;
+
     UIView *view = [self __tableView:tableView viewForHeaderInSection:section];
     if (view) {
         return view;
     }
+    if (recursive) {
+        return nil;
+    }
     BOOL grouped = tableView.__style == UITableViewStyleGrouped;
+
+    recursive = YES;
     CGFloat height = [tableView.delegate tableView:tableView heightForHeaderInSection:section];
+    recursive = NO;
     NSString *title = nil;
     if ([tableView.dataSource respondsToSelector:@selector(tableView:titleForHeaderInSection:)]) {
         title = [tableView.dataSource tableView:tableView titleForHeaderInSection:section];
@@ -285,11 +293,17 @@ UIView *_UI7TableViewDelegateViewForHeaderInSection(id self, SEL _cmd, UITableVi
 }
 
 UIView *_UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableView *tableView, NSUInteger section) {
+    static BOOL recursive = NO;
     UIView *view = [self __tableView:tableView viewForFooterInSection:section];
     if (view) {
         return view;
     }
+    if (recursive) {
+        return nil;
+    }
+    recursive = YES;
     CGFloat height = [tableView.delegate tableView:tableView heightForFooterInSection:section];
+    recursive = NO;
     NSString *title = nil;
     if ([tableView.dataSource respondsToSelector:@selector(tableView:titleForFooterInSection:)]) {
         title = [tableView.dataSource tableView:tableView titleForFooterInSection:section];
