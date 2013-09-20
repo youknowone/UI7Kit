@@ -135,6 +135,44 @@ NSAPropertyGetter(titleLabel, @"_titleLabel");
         [self insertSubview:backgroundView belowSubview:self.titleLabel];
     }
 
+    UIView *lastView = self.subviews[self.subviews.count - 1];
+    if (![lastView isKindOfClass:[UIButton class]]) {
+        if (frame.origin.y >= 0) {
+            for (UIView *view in self.subviews) {
+                view.hidden = NO;
+            }
+            lastView.hidden = YES;
+        } else {
+            CGFloat diff = frame.size.height - self.superview.bounds.size.height;
+            frame = self.superview.bounds;
+            CGFloat top = 2000.0f;
+            for (UIButton *button in self.buttons) {
+                if (button.hidden) continue;
+                if (button.frame.origin.y <= lastView.frame.origin.y) continue;
+                CGFloat bottom = button.frame.origin.y + button.frame.size.height;
+                if (bottom >= frame.size.height) {
+                    CGRect bframe = button.frame;
+                    bframe.origin.y -= diff;
+                    button.frame = bframe;
+                }
+                top = MIN(top, button.frame.origin.y);
+            }
+            [lastView.subviews[1] setHidden:YES];
+
+            UIButton *aButton = self.buttons[0];
+            CGRect tframe = lastView.frame;
+            tframe.origin.y += 1.0f;
+            tframe.size.height = top - tframe.origin.y - 10.0f;
+            tframe.origin.x = aButton.frame.origin.x;
+            tframe.size.width = aButton.frame.size.width;
+            lastView.frame = tframe;
+            UITableView *tableView = lastView.subviews[0];
+            tableView.frame = lastView.bounds;
+            //tableView.rowHeight = UI7ControlRowHeight; // separator become ugly
+            tableView.layer.cornerRadius = .0f;
+        }
+    }
+
     self.frame = frame;
 
     if (!isPhone) {
