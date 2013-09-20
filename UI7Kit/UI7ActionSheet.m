@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 youknowone.org. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
+
 #import "UI7Font.h"
 #import "UI7Color.h"
 
@@ -43,6 +45,8 @@ NSAPropertyGetter(titleLabel, @"_titleLabel");
 - (void)__showFromTabBar:(UITabBar *)view { assert(NO); }
 - (void)__showFromToolbar:(UIToolbar *)view { assert(NO); }
 - (void)__showInView:(UIView *)view { assert(NO); }
+- (UITableViewCell *)__tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath { assert(NO); return nil; }
+- (CGFloat)__tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath { assert(NO); return .0f; }
 
 - (void)_setTheme {
     self.opaque = NO;
@@ -162,14 +166,26 @@ NSAPropertyGetter(titleLabel, @"_titleLabel");
             UIButton *aButton = self.buttons[0];
             CGRect tframe = lastView.frame;
             tframe.origin.y += 1.0f;
-            tframe.size.height = top - tframe.origin.y - 10.0f;
+            tframe.size.height = top - tframe.origin.y - 8.0f;
             tframe.origin.x = aButton.frame.origin.x;
             tframe.size.width = aButton.frame.size.width;
             lastView.frame = tframe;
             UITableView *tableView = lastView.subviews[0];
-            tableView.frame = lastView.bounds;
-            //tableView.rowHeight = UI7ControlRowHeight; // separator become ugly
+            CGRect bound = lastView.bounds;
+            bound.size.height -= UI7ControlRadius;
+            tableView.frame = bound;
             tableView.layer.cornerRadius = .0f;
+            tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+            tableView.backgroundView = nil;
+            //tableView.rowHeight = UI7ControlRowHeight;
+
+            CGRect footerFrame = CGRectMake(.0, .0, bound.size.width, UI7ControlRadius);
+            UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:footerFrame byRoundingCorners:UIRectCornerBottomLeft|UIRectCornerBottomRight cornerRadii:UI7ControlRadiusSize];
+            UIImageView *footerView = [[UIImageView alloc] initWithImage:[path imageWithFillColor:[UI7Color defaultBarColor]]];
+            footerFrame.origin = tableView.frame.origin;
+            footerFrame.origin.y += tableView.frame.size.height;
+            footerView.frame = footerFrame;
+            [lastView addSubview:footerView];
         }
     }
 
@@ -192,7 +208,6 @@ NSAPropertyGetter(titleLabel, @"_titleLabel");
     }
 }
 
-
 @end
 
 
@@ -202,7 +217,6 @@ NSAPropertyGetter(titleLabel, @"_titleLabel");
 
 
 @implementation UI7ActionSheet
-
 
 + (void)initialize {
     if (self == [UI7ActionSheet class]) {
@@ -214,6 +228,8 @@ NSAPropertyGetter(titleLabel, @"_titleLabel");
         [target copyToSelector:@selector(__showFromTabBar:) fromSelector:@selector(showFromTabBar:)];
         [target copyToSelector:@selector(__showFromToolbar:) fromSelector:@selector(showFromToolbar:)];
         [target copyToSelector:@selector(__showInView:) fromSelector:@selector(showInView:)];
+        //[target copyToSelector:@selector(__tableView:cellForRowAtIndexPath:) fromSelector:@selector(tableView:cellForRowAtIndexPath:)];
+        //[target copyToSelector:@selector(__tableView:heightForRowAtIndexPath:) fromSelector:@selector(tableView:heightForRowAtIndexPath:)];
     }
 }
 
@@ -227,7 +243,8 @@ NSAPropertyGetter(titleLabel, @"_titleLabel");
     [self exportSelector:@selector(showFromToolbar:) toClass:target];
     [self exportSelector:@selector(showInView:) toClass:target];
     [self exportSelector:@selector(drawRect:) toClass:target];
-
+    //[self exportSelector:@selector(tableView:cellForRowAtIndexPath:) toClass:target];
+    //[self exportSelector:@selector(tableView:heightForRowAtIndexPath:) toClass:target];
 }
 
 - (id)init {
