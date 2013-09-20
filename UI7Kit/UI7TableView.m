@@ -191,6 +191,9 @@ CGFloat _UI7TableViewDelegateNoHeightForHeaderFooterInSection(id self, SEL _cmd,
 CGFloat _UI7TableViewDelegateHeightForHeaderInSection(id self, SEL _cmd, UITableView *tableView, NSUInteger section) {
     CGFloat height = [self __tableView:tableView heightForHeaderInSection:section];
     if (height != -1.0f) {
+        if (tableView.__style == UITableViewStyleGrouped) {
+            height += UI7TableViewGroupedTableSectionSeperatorHeight;
+        }
         return height;
     }
     height = .0f;
