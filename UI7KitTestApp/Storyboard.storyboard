@@ -499,8 +499,29 @@
                                             <segue destination="E3r-lu-Ln3" kind="push" id="b0G-fG-Ui2"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="#71" textLabel="sdL-bQ-6LS" style="IBUITableViewCellStyleDefault" id="iq3-Vg-loc">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="#68" textLabel="Abg-bB-DAp" style="IBUITableViewCellStyleDefault" id="HOV-JY-O77">
                                         <rect key="frame" x="0.0" y="726" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="#68" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Abg-bB-DAp">
+                                                    <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="ZH5-Ee-lyy" kind="push" id="6bc-2B-tEZ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="#71" textLabel="sdL-bQ-6LS" style="IBUITableViewCellStyleDefault" id="iq3-Vg-loc">
+                                        <rect key="frame" x="0.0" y="770" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
@@ -516,9 +537,12 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <connections>
+                                            <segue destination="6TC-pd-2kQ" kind="push" id="BF2-AP-RPq"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="#101" textLabel="K15-L0-8sr" style="IBUITableViewCellStyleDefault" id="Ttt-hb-rGX">
-                                        <rect key="frame" x="0.0" y="770" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="814" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
@@ -639,18 +663,22 @@
             </objects>
             <point key="canvasLocation" x="420" y="1288"/>
         </scene>
-        <!--View Controller - UISearchBar-->
+        <!--Issue68 View Controller - UISearchBar-->
         <scene sceneID="FNs-An-U9Y">
             <objects>
-                <viewController id="ZH5-Ee-lyy" sceneMemberID="viewController">
+                <viewController id="ZH5-Ee-lyy" customClass="UITIssue68ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3br-DS-VuM">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" id="w0t-Qv-IQO">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <searchBar contentMode="redraw" prompt="Prompt" placeholder="placeholder" showsScopeBar="YES" id="w0t-Qv-IQO">
+                                <rect key="frame" x="0.0" y="14" width="320" height="119"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Scope</string>
+                                    <string>Scope2</string>
+                                </scopeButtonTitles>
                                 <connections>
                                     <outlet property="delegate" destination="ZH5-Ee-lyy" id="SGi-zk-dbt"/>
                                 </connections>
@@ -664,7 +692,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="33J-Sm-pTd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="4QG-fO-JHw">
+                <searchDisplayController searchResultsTitle="Title" id="4QG-fO-JHw">
                     <connections>
                         <outlet property="delegate" destination="ZH5-Ee-lyy" id="Cxx-K4-eLb"/>
                         <outlet property="searchBar" destination="w0t-Qv-IQO" id="YIO-ut-LCQ"/>
@@ -1887,6 +1915,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="action" name="showAlert:"/>
             </relationships>
         </class>
+        <class className="UITIssue68ViewController" superclassName="UITTintViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITIssue68ViewController.h"/>
+        </class>
         <class className="UITMasterViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UITMasterViewController.h"/>
             <relationships>
@@ -1939,6 +1970,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="qMc-oN-F80"/>
         <segue reference="pzO-pP-TC2"/>
     </inferredMetricsTieBreakers>
 </document>

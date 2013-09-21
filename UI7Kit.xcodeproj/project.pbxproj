@@ -120,6 +120,8 @@
 		38AF0E8117EDF3DE00CF0C30 /* UITabBarMostRecentTemplate.png in Resources */ = {isa = PBXBuildFile; fileRef = 38AF0E7E17EDF3DE00CF0C30 /* UITabBarMostRecentTemplate.png */; };
 		38AF0E8217EDF3DE00CF0C30 /* UITabBarMostRecentTemplate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38AF0E7F17EDF3DE00CF0C30 /* UITabBarMostRecentTemplate@2x.png */; };
 		38AF0E8317EDF3DE00CF0C30 /* UITabBarMostRecentTemplate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38AF0E7F17EDF3DE00CF0C30 /* UITabBarMostRecentTemplate@2x.png */; };
+		38AF0E8617EDFF2D00CF0C30 /* UITIssue68ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38AF0E8517EDFF2D00CF0C30 /* UITIssue68ViewController.m */; };
+		38AF0E8717EDFF2D00CF0C30 /* UITIssue68ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38AF0E8517EDFF2D00CF0C30 /* UITIssue68ViewController.m */; };
 		38AF86CF1769BC8000BFBD29 /* libUI7Kit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38017423176989650049D26C /* libUI7Kit.a */; };
 		38B9678317AC2DE90061E1EC /* UICRoundedRectButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B9678217AC2DE90061E1EC /* UICRoundedRectButtonViewController.m */; };
 		38BC0E5D173E821700F36497 /* UITSubviewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38BC0E5B173E821700F36497 /* UITSubviewTableViewController.m */; };
@@ -309,6 +311,8 @@
 		38AD076D17AEC4780000E5BA /* UI7SliderThumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7SliderThumb.png; sourceTree = "<group>"; };
 		38AF0E7E17EDF3DE00CF0C30 /* UITabBarMostRecentTemplate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UITabBarMostRecentTemplate.png; sourceTree = "<group>"; };
 		38AF0E7F17EDF3DE00CF0C30 /* UITabBarMostRecentTemplate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UITabBarMostRecentTemplate@2x.png"; sourceTree = "<group>"; };
+		38AF0E8417EDFF2D00CF0C30 /* UITIssue68ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITIssue68ViewController.h; sourceTree = "<group>"; };
+		38AF0E8517EDFF2D00CF0C30 /* UITIssue68ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITIssue68ViewController.m; sourceTree = "<group>"; };
 		38B9678117AC2DE90061E1EC /* UICRoundedRectButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICRoundedRectButtonViewController.h; sourceTree = "<group>"; };
 		38B9678217AC2DE90061E1EC /* UICRoundedRectButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICRoundedRectButtonViewController.m; sourceTree = "<group>"; };
 		38BC0E5A173E821700F36497 /* UITSubviewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITSubviewTableViewController.h; sourceTree = "<group>"; };
@@ -693,6 +697,8 @@
 				3810413217884A4300A85540 /* UITIssue12ViewController.m */,
 				3866034F17A6A60C004EEE3F /* UITIssue39ViewController.h */,
 				3866035017A6A60C004EEE3F /* UITIssue39ViewController.m */,
+				38AF0E8417EDFF2D00CF0C30 /* UITIssue68ViewController.h */,
+				38AF0E8517EDFF2D00CF0C30 /* UITIssue68ViewController.m */,
 				388722D517D8EBCF00E2EDE2 /* UITIssue101ViewController.h */,
 				388722D617D8EBCF00E2EDE2 /* UITIssue101ViewController.m */,
 				38D1C935177EF7B70026135A /* UI7Tool.h */,
@@ -1035,6 +1041,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38DBEB79178C6A27000EFC5C /* UICUserDefaults.m in Sources */,
+				38AF0E8717EDFF2D00CF0C30 /* UITIssue68ViewController.m in Sources */,
 				3865159D17A89D2900E10B72 /* UI7Tool.m in Sources */,
 				38B9678317AC2DE90061E1EC /* UICRoundedRectButtonViewController.m in Sources */,
 				38FB2AA2178F06B1000491FE /* UICBareTableViewController.m in Sources */,
@@ -1071,6 +1078,7 @@
 				3805FBA517A81CB9008487A9 /* UITBarItemViewController.m in Sources */,
 				388722D717D8EBCF00E2EDE2 /* UITIssue101ViewController.m in Sources */,
 				388722DA17D8F25B00E2EDE2 /* UITPopoverViewController.m in Sources */,
+				38AF0E8617EDFF2D00CF0C30 /* UITIssue68ViewController.m in Sources */,
 				38460CF917ED6CF900AF8C53 /* UITExternalViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

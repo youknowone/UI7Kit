@@ -8,6 +8,11 @@
 
 #import "UI7Tool.h"
 
+@implementation UIViewController (Patch)
+
+@end
+
+
 @implementation NSCoder (Patch)
 
 + (void)initialize {
