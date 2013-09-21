@@ -148,7 +148,7 @@ UIColor *UI7TableViewGroupedViewPatternColor = nil;
             UIColor *color = [aDecoder decodeObjectForKey:@"UIBackgroundColor"];
             if (color == UI7TableViewGroupedViewPatternColor) {
                 if (![NSStringFromClass([self class]) hasPrefix:@"AB"]) {
-                    return;
+                    self.backgroundColor = [UI7Color groupedTableViewSectionBackgroundColor];
                 }
             }
         }
