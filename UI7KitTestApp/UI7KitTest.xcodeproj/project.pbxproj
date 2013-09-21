@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		334FC6E52496488ABAB3C0F1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D48B79081B44C186893DD8 /* libPods.a */; };
 		3801745F1769F3B50049D26C /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3801745E1769F3B50049D26C /* Storyboard.storyboard */; };
-		380F341317BA6BED003B45A9 /* UITIssue71ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380F341217BA6BED003B45A9 /* UITIssue71ViewController.m */; };
 		380F728217D8EC11009133AF /* UITIssue101ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380F728117D8EC11009133AF /* UITIssue101ViewController.m */; };
 		381595AF1785B73A001CC0CD /* UITAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 381595AE1785B73A001CC0CD /* UITAlertViewController.m */; };
 		381595B41785B742001CC0CD /* UITGroupedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 381595B11785B742001CC0CD /* UITGroupedTableViewController.m */; };
@@ -37,8 +36,9 @@
 		38699EB917977EEE00A0DA96 /* icon_512x512@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38699EAB17977EEE00A0DA96 /* icon_512x512@2x.png */; };
 		3895CE2317884EAC00612CF7 /* UITIssue12ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3895CE2217884EAC00612CF7 /* UITIssue12ViewController.m */; };
 		3895CE2F178851D800612CF7 /* UITPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3895CE2E178851D800612CF7 /* UITPickerViewController.m */; };
+		38ABF34317ED7A3F002F1DD1 /* UITExternalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38ABF34217ED7A3F002F1DD1 /* UITExternalViewController.m */; };
+		38ABF34517ED7ACF002F1DD1 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38ABF34417ED7ACF002F1DD1 /* AddressBookUI.framework */; };
 		38B0109017A6C52D0056D9B4 /* UITIssue39ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B0108F17A6C52D0056D9B4 /* UITIssue39ViewController.m */; };
-		38D331E91796DAF8009576B2 /* UITIssue41ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D331E81796DAF8009576B2 /* UITIssue41ViewController.m */; };
 		38D331EB1796DB65009576B2 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38D331EA1796DB65009576B2 /* MessageUI.framework */; };
 		38F068181636F8C8002723AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383764E213373155007072FD /* UIKit.framework */; };
 		38F068191636F8C8002723AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383764D713373154007072FD /* Foundation.framework */; };
@@ -57,8 +57,6 @@
 		1CD6397DC4464AEBBF4476CE /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		20D48B79081B44C186893DD8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3801745E1769F3B50049D26C /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
-		380F341117BA6BED003B45A9 /* UITIssue71ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITIssue71ViewController.h; sourceTree = "<group>"; };
-		380F341217BA6BED003B45A9 /* UITIssue71ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITIssue71ViewController.m; sourceTree = "<group>"; };
 		380F728017D8EC11009133AF /* UITIssue101ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITIssue101ViewController.h; sourceTree = "<group>"; };
 		380F728117D8EC11009133AF /* UITIssue101ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITIssue101ViewController.m; sourceTree = "<group>"; };
 		381595AD1785B73A001CC0CD /* UITAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITAlertViewController.h; sourceTree = "<group>"; };
@@ -102,11 +100,12 @@
 		3895CE2217884EAC00612CF7 /* UITIssue12ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITIssue12ViewController.m; sourceTree = "<group>"; };
 		3895CE2D178851D800612CF7 /* UITPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITPickerViewController.h; sourceTree = "<group>"; };
 		3895CE2E178851D800612CF7 /* UITPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITPickerViewController.m; sourceTree = "<group>"; };
+		38ABF34117ED7A3F002F1DD1 /* UITExternalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITExternalViewController.h; sourceTree = "<group>"; };
+		38ABF34217ED7A3F002F1DD1 /* UITExternalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITExternalViewController.m; sourceTree = "<group>"; };
+		38ABF34417ED7ACF002F1DD1 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		38B0108E17A6C52D0056D9B4 /* UITIssue39ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITIssue39ViewController.h; sourceTree = "<group>"; };
 		38B0108F17A6C52D0056D9B4 /* UITIssue39ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITIssue39ViewController.m; sourceTree = "<group>"; };
 		38C7A9891495181800381910 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		38D331E71796DAF8009576B2 /* UITIssue41ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITIssue41ViewController.h; sourceTree = "<group>"; };
-		38D331E81796DAF8009576B2 /* UITIssue41ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITIssue41ViewController.m; sourceTree = "<group>"; };
 		38D331EA1796DB65009576B2 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		38F068161636F8C8002723AB /* UI7KitTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UI7KitTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38F0681D1636F8C8002723AB /* UI7KitTestApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UI7KitTestApp-Info.plist"; sourceTree = "<group>"; };
@@ -129,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38ABF34517ED7ACF002F1DD1 /* AddressBookUI.framework in Frameworks */,
 				38D331EB1796DB65009576B2 /* MessageUI.framework in Frameworks */,
 				38F068181636F8C8002723AB /* UIKit.framework in Frameworks */,
 				38F068191636F8C8002723AB /* Foundation.framework in Frameworks */,
@@ -161,6 +161,7 @@
 		383764D613373154007072FD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				38ABF34417ED7ACF002F1DD1 /* AddressBookUI.framework */,
 				383764D713373154007072FD /* Foundation.framework */,
 				383764E213373155007072FD /* UIKit.framework */,
 				383764E513373155007072FD /* CoreGraphics.framework */,
@@ -200,16 +201,14 @@
 				384163FF17E9F81E00AB7F8A /* UITPopoverViewController.m */,
 				3895CE2D178851D800612CF7 /* UITPickerViewController.h */,
 				3895CE2E178851D800612CF7 /* UITPickerViewController.m */,
+				38ABF34117ED7A3F002F1DD1 /* UITExternalViewController.h */,
+				38ABF34217ED7A3F002F1DD1 /* UITExternalViewController.m */,
 				381595B21785B742001CC0CD /* UITIssue1ViewController.h */,
 				381595B31785B742001CC0CD /* UITIssue1ViewController.m */,
 				3895CE2117884EAC00612CF7 /* UITIssue12ViewController.h */,
 				3895CE2217884EAC00612CF7 /* UITIssue12ViewController.m */,
 				38B0108E17A6C52D0056D9B4 /* UITIssue39ViewController.h */,
 				38B0108F17A6C52D0056D9B4 /* UITIssue39ViewController.m */,
-				38D331E71796DAF8009576B2 /* UITIssue41ViewController.h */,
-				38D331E81796DAF8009576B2 /* UITIssue41ViewController.m */,
-				380F341117BA6BED003B45A9 /* UITIssue71ViewController.h */,
-				380F341217BA6BED003B45A9 /* UITIssue71ViewController.m */,
 				380F728017D8EC11009133AF /* UITIssue101ViewController.h */,
 				380F728117D8EC11009133AF /* UITIssue101ViewController.m */,
 				3801745E1769F3B50049D26C /* Storyboard.storyboard */,
@@ -359,6 +358,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38ABF34317ED7A3F002F1DD1 /* UITExternalViewController.m in Sources */,
 				3895CE2317884EAC00612CF7 /* UITIssue12ViewController.m in Sources */,
 				38F068221636F8C8002723AB /* main.m in Sources */,
 				38F068261636F8C8002723AB /* UITAppDelegate.m in Sources */,
@@ -366,7 +366,6 @@
 				38F0682F1636F8C8002723AB /* UITMasterViewController.m in Sources */,
 				38F068321636F8C9002723AB /* UITDetailViewController.m in Sources */,
 				381C00AD17172CE20067C936 /* UITTextViewController.m in Sources */,
-				380F341317BA6BED003B45A9 /* UITIssue71ViewController.m in Sources */,
 				381595AF1785B73A001CC0CD /* UITAlertViewController.m in Sources */,
 				381595B41785B742001CC0CD /* UITGroupedTableViewController.m in Sources */,
 				3865159C17A8225E00E10B72 /* UITBarItemViewController.m in Sources */,
@@ -378,7 +377,6 @@
 				380F728217D8EC11009133AF /* UITIssue101ViewController.m in Sources */,
 				381595C21785B74C001CC0CD /* UITSubviewTableViewController.m in Sources */,
 				381595C41785B74C001CC0CD /* UITTintViewController.m in Sources */,
-				38D331E91796DAF8009576B2 /* UITIssue41ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -35,6 +35,7 @@
                      @"SegmentedControl",
                      @"PickerView",
                      @"Popover",
+                     @"External",
                      ];
     self.issues = @[
                     @1,
