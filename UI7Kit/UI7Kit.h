@@ -1,5 +1,5 @@
 //
-//  UIKit7.h
+//  UI7Kit.h
 //  UI7Kit
 //
 //  Created by Jeong YunWon on 13. 6. 11..
@@ -110,10 +110,10 @@
 #ifdef COCOAPODS_POD_AVAILABLE_UI7Kit_UI7Stepper
 #import <UI7Kit/UI7Stepper.h>
 #endif
-#ifdef COCOAPODS_POD_AVAILABLE_UI7Kit_UI7TabBarItem
+#ifdef COCOAPODS_POD_AVAILABLE_UI7Kit_UI7TabBar
 #import <UI7Kit/UI7TabBar.h>
 #endif
-#ifdef COCOAPODS_POD_AVAILABLE_UI7Kit_UI7TabBar
+#ifdef COCOAPODS_POD_AVAILABLE_UI7Kit_UI7TabBarItem
 #import <UI7Kit/UI7TabBarItem.h>
 #endif
 #ifdef COCOAPODS_POD_AVAILABLE_UI7Kit_UI7TabBarController

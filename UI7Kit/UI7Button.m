@@ -90,14 +90,14 @@ UIColor *UI7ButtonDefaultTitleColor = nil;
         case UIButtonTypeDetailDisclosure:
         case UIButtonTypeInfoDark:
         case UIButtonTypeInfoLight: {
-            UIImage *image = [UIImage imageNamed:@"UI7ButtonImageInfo"];
+            UIImage *image = [UIImage imageNamed:@"UIAccessoryButtonInfo"];
             image = [image imageByFilledWithColor:self.tintColor];
             [self setImage:image forState:UIControlStateNormal];
             image = [image imageByFilledWithColor:self.tintColor.highligtedColor];
             [self setImage:image forState:UIControlStateHighlighted];
         }   break;
         case UIButtonTypeContactAdd: {
-            UIImage *image = [UIImage imageNamed:@"UI7ButtonImageAdd"];
+            UIImage *image = [UIImage imageNamed:@"UIAccessoryButtonPlus"];
             image = [image imageByFilledWithColor:self.tintColor];
             [self setImage:image forState:UIControlStateNormal];
             image = [image imageByFilledWithColor:self.tintColor.highligtedColor];

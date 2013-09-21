@@ -12,7 +12,7 @@
 #import "UI7TabBarItem.h"
 
 
-NSString *UI7BarButtonItemTitles[] = {
+NSString *UI7TabBarItemTitles[] = {
     @"More",
     @"Favorites",
     @"Featured",
@@ -27,11 +27,11 @@ NSString *UI7BarButtonItemTitles[] = {
     @"Most Viewed",
 };
 
-NSString *UI7BarButtonItemIconNames[] = {
+NSString *UI7TabBarItemIconNames[] = {
     @"More",
-    @"Favorite",
-    @"Favorite",
-    @"Favorite",
+    @"Favorites",
+    @"Favorites",
+    @"Favorites",
     @"History",
     @"Contacts",
     @"History",
@@ -118,9 +118,9 @@ NSString *UI7BarButtonItemIconNames[] = {
 }
 
 - (id)initWithTabBarSystemItem:(UITabBarSystemItem)systemItem tag:(NSInteger)tag {
-    NSString *iconName = UI7BarButtonItemIconNames[systemItem];
-    NSString *title = UI7BarButtonItemTitles[systemItem];
-    UIImage *unselected = [UIImage imageNamed:[@"UI7TabBarItem%@Unselected" format:iconName]];
+    NSString *iconName = UI7TabBarItemIconNames[systemItem];
+    NSString *title = UI7TabBarItemTitles[systemItem];
+    UIImage *unselected = [UIImage imageNamed:[@"UITabBar%@Template" format:iconName]];
 //    UIImage *selected = [UIImage imageNamed:[@"UI7TabBarItem%@Selected" format:iconName]];
     dassert(unselected);
     self = [self initWithTitle:title image:unselected tag:tag];

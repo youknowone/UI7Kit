@@ -13,8 +13,6 @@
 #import "UI7BarButtonItem.h"
 
 
-UIImage *UI7BarButtonItemImages[30] = { nil, };
-
 @interface UIBarButtonItem (Private)
 
 @property(nonatomic,readonly) BOOL isSystemItem;
@@ -23,12 +21,12 @@ UIImage *UI7BarButtonItemImages[30] = { nil, };
 @end
 
 
-NSString *UI7BarButtonItemSystemNames[] = {
+NSString *UI7BarButtonItemIconNames[] = {
     @"Done",
     @"Cancel",
     @"Edit",
     @"Save",
-    @"Add",
+    @"New",
     nil,
     nil,
     @"Compose",
@@ -191,9 +189,11 @@ NSString *UI7BarButtonItemSystemNames[] = {
         case UIBarButtonSystemItemRewind:
         case UIBarButtonSystemItemFastForward:
         {
-            NSString *name = UI7BarButtonItemSystemNames[systemItem];
-            UIImage *image = [UIImage imageNamed:[@"UI7BarButtonItemIcon%@" format:name]];
+            NSString *name = UI7BarButtonItemIconNames[systemItem];
+            UIImage *image = [UIImage imageNamed:[@"UIButtonBar%@" format:name]];
             self = [self initWithImage:image style:UIBarButtonItemStyleBordered target:target action:action];
+            image = [UIImage imageNamed:@"UIButtonbar%@Landscape"];
+            [self setBackgroundImage:image forState:UIControlStateNormal barMetrics:UIBarMetricsLandscapePhone];
         }   break;
         default: {
             self = [self __initWithBarButtonSystemItem:systemItem target:target action:action];

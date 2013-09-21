@@ -41,6 +41,7 @@
     if (self == [UI7ActivityViewController class]) {
         Class target = [UIActivityViewController class];
 
+        [target addMethodForSelector:@selector(viewWillAppear:) fromMethod:[self methodObjectForSelector:@selector(viewWillAppear:)]]; // fill if empty
         [target copyToSelector:@selector(___viewWillAppear:) fromSelector:@selector(viewWillAppear:)];
     }
 }

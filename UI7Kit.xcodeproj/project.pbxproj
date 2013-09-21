@@ -54,10 +54,6 @@
 		384BF441178A188000485BED /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C081AB61224D42EF8B7ABD3F /* libPods.a */; };
 		384BF442178A188E00485BED /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C081AB61224D42EF8B7ABD3F /* libPods.a */; };
 		384BF444178A19D600485BED /* Catalog.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 384BF443178A19D600485BED /* Catalog.storyboard */; };
-		384BF445178A1F4200485BED /* UI7ButtonImageAdd.png in Resources */ = {isa = PBXBuildFile; fileRef = 388FC1DE177303AA0084574E /* UI7ButtonImageAdd.png */; };
-		384BF446178A1F4200485BED /* UI7ButtonImageAdd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 388FC1DF177303AA0084574E /* UI7ButtonImageAdd@2x.png */; };
-		384BF447178A1F4200485BED /* UI7ButtonImageInfo.png in Resources */ = {isa = PBXBuildFile; fileRef = 388FC1E0177303AA0084574E /* UI7ButtonImageInfo.png */; };
-		384BF448178A1F4200485BED /* UI7ButtonImageInfo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 388FC1E1177303AA0084574E /* UI7ButtonImageInfo@2x.png */; };
 		384BF44B178A1F4200485BED /* UI7NavigationBarBackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 38017461176A245B0049D26C /* UI7NavigationBarBackButton.png */; };
 		384BF44C178A1F4200485BED /* UI7NavigationBarBackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 387558C4176DFA8600AE5C8B /* UI7NavigationBarBackButton@2x.png */; };
 		384BF452178A230E00485BED /* icon_57x57@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 384BF451178A230E00485BED /* icon_57x57@2x.png */; };
@@ -70,108 +66,8 @@
 		385C6CC11786C86F00A182C0 /* UI7PickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 385C6CC01786C86F00A182C0 /* UI7PickerView.m */; };
 		385CE660177009680076C02A /* UI7KitCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 38013FE3176F8352003B7809 /* UI7KitCore.m */; };
 		3861E06B1771F9BC00AA8DE4 /* UI7ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3861E06A1771F9BC00AA8DE4 /* UI7ProgressView.m */; };
-		3865157217A81EF300E10B72 /* UI7TabBarItemBookmarksUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865155E17A81EF300E10B72 /* UI7TabBarItemBookmarksUnselected.png */; };
-		3865157317A81EF300E10B72 /* UI7TabBarItemBookmarksUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865155E17A81EF300E10B72 /* UI7TabBarItemBookmarksUnselected.png */; };
-		3865157417A81EF300E10B72 /* UI7TabBarItemBookmarksUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865155F17A81EF300E10B72 /* UI7TabBarItemBookmarksUnselected@2x.png */; };
-		3865157517A81EF300E10B72 /* UI7TabBarItemBookmarksUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865155F17A81EF300E10B72 /* UI7TabBarItemBookmarksUnselected@2x.png */; };
-		3865157617A81EF300E10B72 /* UI7TabBarItemContactsUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156017A81EF300E10B72 /* UI7TabBarItemContactsUnselected.png */; };
-		3865157717A81EF300E10B72 /* UI7TabBarItemContactsUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156017A81EF300E10B72 /* UI7TabBarItemContactsUnselected.png */; };
-		3865157817A81EF300E10B72 /* UI7TabBarItemContactsUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156117A81EF300E10B72 /* UI7TabBarItemContactsUnselected@2x.png */; };
-		3865157917A81EF300E10B72 /* UI7TabBarItemContactsUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156117A81EF300E10B72 /* UI7TabBarItemContactsUnselected@2x.png */; };
-		3865157A17A81EF300E10B72 /* UI7TabBarItemDownloadsUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156217A81EF300E10B72 /* UI7TabBarItemDownloadsUnselected.png */; };
-		3865157B17A81EF300E10B72 /* UI7TabBarItemDownloadsUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156217A81EF300E10B72 /* UI7TabBarItemDownloadsUnselected.png */; };
-		3865157C17A81EF300E10B72 /* UI7TabBarItemDownloadsUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156317A81EF300E10B72 /* UI7TabBarItemDownloadsUnselected@2x.png */; };
-		3865157D17A81EF300E10B72 /* UI7TabBarItemDownloadsUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156317A81EF300E10B72 /* UI7TabBarItemDownloadsUnselected@2x.png */; };
-		3865157E17A81EF300E10B72 /* UI7TabBarItemFavoriteSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156417A81EF300E10B72 /* UI7TabBarItemFavoriteSelected.png */; };
-		3865157F17A81EF300E10B72 /* UI7TabBarItemFavoriteSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156417A81EF300E10B72 /* UI7TabBarItemFavoriteSelected.png */; };
-		3865158017A81EF300E10B72 /* UI7TabBarItemFavoriteSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156517A81EF300E10B72 /* UI7TabBarItemFavoriteSelected@2x.png */; };
-		3865158117A81EF300E10B72 /* UI7TabBarItemFavoriteSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156517A81EF300E10B72 /* UI7TabBarItemFavoriteSelected@2x.png */; };
-		3865158217A81EF300E10B72 /* UI7TabBarItemFavoriteUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156617A81EF300E10B72 /* UI7TabBarItemFavoriteUnselected.png */; };
-		3865158317A81EF300E10B72 /* UI7TabBarItemFavoriteUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156617A81EF300E10B72 /* UI7TabBarItemFavoriteUnselected.png */; };
-		3865158417A81EF300E10B72 /* UI7TabBarItemFavoriteUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156717A81EF300E10B72 /* UI7TabBarItemFavoriteUnselected@2x.png */; };
-		3865158517A81EF300E10B72 /* UI7TabBarItemFavoriteUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156717A81EF300E10B72 /* UI7TabBarItemFavoriteUnselected@2x.png */; };
-		3865158617A81EF300E10B72 /* UI7TabBarItemHistoryUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156817A81EF300E10B72 /* UI7TabBarItemHistoryUnselected.png */; };
-		3865158717A81EF300E10B72 /* UI7TabBarItemHistoryUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156817A81EF300E10B72 /* UI7TabBarItemHistoryUnselected.png */; };
-		3865158817A81EF300E10B72 /* UI7TabBarItemHistoryUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156917A81EF300E10B72 /* UI7TabBarItemHistoryUnselected@2x.png */; };
-		3865158917A81EF300E10B72 /* UI7TabBarItemHistoryUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156917A81EF300E10B72 /* UI7TabBarItemHistoryUnselected@2x.png */; };
-		3865158A17A81EF300E10B72 /* UI7TabBarItemMoreUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156A17A81EF300E10B72 /* UI7TabBarItemMoreUnselected.png */; };
-		3865158B17A81EF300E10B72 /* UI7TabBarItemMoreUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156A17A81EF300E10B72 /* UI7TabBarItemMoreUnselected.png */; };
-		3865158C17A81EF300E10B72 /* UI7TabBarItemMoreUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156B17A81EF300E10B72 /* UI7TabBarItemMoreUnselected@2x.png */; };
-		3865158D17A81EF300E10B72 /* UI7TabBarItemMoreUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156B17A81EF300E10B72 /* UI7TabBarItemMoreUnselected@2x.png */; };
-		3865158E17A81EF300E10B72 /* UI7TabBarItemMostRecentUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156C17A81EF300E10B72 /* UI7TabBarItemMostRecentUnselected.png */; };
-		3865158F17A81EF300E10B72 /* UI7TabBarItemMostRecentUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156C17A81EF300E10B72 /* UI7TabBarItemMostRecentUnselected.png */; };
-		3865159017A81EF300E10B72 /* UI7TabBarItemMostRecentUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156D17A81EF300E10B72 /* UI7TabBarItemMostRecentUnselected@2x.png */; };
-		3865159117A81EF300E10B72 /* UI7TabBarItemMostRecentUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156D17A81EF300E10B72 /* UI7TabBarItemMostRecentUnselected@2x.png */; };
-		3865159217A81EF300E10B72 /* UI7TabBarItemMostViewedUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156E17A81EF300E10B72 /* UI7TabBarItemMostViewedUnselected.png */; };
-		3865159317A81EF300E10B72 /* UI7TabBarItemMostViewedUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156E17A81EF300E10B72 /* UI7TabBarItemMostViewedUnselected.png */; };
-		3865159417A81EF300E10B72 /* UI7TabBarItemMostViewedUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156F17A81EF300E10B72 /* UI7TabBarItemMostViewedUnselected@2x.png */; };
-		3865159517A81EF300E10B72 /* UI7TabBarItemMostViewedUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865156F17A81EF300E10B72 /* UI7TabBarItemMostViewedUnselected@2x.png */; };
-		3865159617A81EF300E10B72 /* UI7TabBarItemSearchUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865157017A81EF300E10B72 /* UI7TabBarItemSearchUnselected.png */; };
-		3865159717A81EF300E10B72 /* UI7TabBarItemSearchUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865157017A81EF300E10B72 /* UI7TabBarItemSearchUnselected.png */; };
-		3865159817A81EF300E10B72 /* UI7TabBarItemSearchUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865157117A81EF300E10B72 /* UI7TabBarItemSearchUnselected@2x.png */; };
-		3865159917A81EF300E10B72 /* UI7TabBarItemSearchUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3865157117A81EF300E10B72 /* UI7TabBarItemSearchUnselected@2x.png */; };
 		3865159D17A89D2900E10B72 /* UI7Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D1C936177EF7B70026135A /* UI7Tool.m */; };
 		3866035117A6A60C004EEE3F /* UITIssue39ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3866035017A6A60C004EEE3F /* UITIssue39ViewController.m */; };
-		386603CA17A6BB78004EEE3F /* UI7BarButtonItemIconAction.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603AC17A6BB78004EEE3F /* UI7BarButtonItemIconAction.png */; };
-		386603CB17A6BB78004EEE3F /* UI7BarButtonItemIconAction.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603AC17A6BB78004EEE3F /* UI7BarButtonItemIconAction.png */; };
-		386603CC17A6BB78004EEE3F /* UI7BarButtonItemIconAction@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603AD17A6BB78004EEE3F /* UI7BarButtonItemIconAction@2x.png */; };
-		386603CD17A6BB78004EEE3F /* UI7BarButtonItemIconAction@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603AD17A6BB78004EEE3F /* UI7BarButtonItemIconAction@2x.png */; };
-		386603CE17A6BB78004EEE3F /* UI7BarButtonItemIconAdd.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603AE17A6BB78004EEE3F /* UI7BarButtonItemIconAdd.png */; };
-		386603CF17A6BB78004EEE3F /* UI7BarButtonItemIconAdd.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603AE17A6BB78004EEE3F /* UI7BarButtonItemIconAdd.png */; };
-		386603D017A6BB78004EEE3F /* UI7BarButtonItemIconAdd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603AF17A6BB78004EEE3F /* UI7BarButtonItemIconAdd@2x.png */; };
-		386603D117A6BB78004EEE3F /* UI7BarButtonItemIconAdd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603AF17A6BB78004EEE3F /* UI7BarButtonItemIconAdd@2x.png */; };
-		386603D217A6BB78004EEE3F /* UI7BarButtonItemIconBookmarks.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603B017A6BB78004EEE3F /* UI7BarButtonItemIconBookmarks.png */; };
-		386603D317A6BB78004EEE3F /* UI7BarButtonItemIconBookmarks.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603B017A6BB78004EEE3F /* UI7BarButtonItemIconBookmarks.png */; };
-		386603D417A6BB78004EEE3F /* UI7BarButtonItemIconBookmarks@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603B117A6BB78004EEE3F /* UI7BarButtonItemIconBookmarks@2x.png */; };
-		386603D517A6BB78004EEE3F /* UI7BarButtonItemIconBookmarks@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603B117A6BB78004EEE3F /* UI7BarButtonItemIconBookmarks@2x.png */; };
-		386603D617A6BB78004EEE3F /* UI7BarButtonItemIconCamera.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603B217A6BB78004EEE3F /* UI7BarButtonItemIconCamera.png */; };
-		386603D717A6BB78004EEE3F /* UI7BarButtonItemIconCamera.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603B217A6BB78004EEE3F /* UI7BarButtonItemIconCamera.png */; };
-		386603D817A6BB78004EEE3F /* UI7BarButtonItemIconCamera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603B317A6BB78004EEE3F /* UI7BarButtonItemIconCamera@2x.png */; };
-		386603D917A6BB78004EEE3F /* UI7BarButtonItemIconCamera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603B317A6BB78004EEE3F /* UI7BarButtonItemIconCamera@2x.png */; };
-		386603DA17A6BB78004EEE3F /* UI7BarButtonItemIconCompose.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603B417A6BB78004EEE3F /* UI7BarButtonItemIconCompose.png */; };
-		386603DB17A6BB78004EEE3F /* UI7BarButtonItemIconCompose.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603B417A6BB78004EEE3F /* UI7BarButtonItemIconCompose.png */; };
-		386603DC17A6BB78004EEE3F /* UI7BarButtonItemIconCompose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603B517A6BB78004EEE3F /* UI7BarButtonItemIconCompose@2x.png */; };
-		386603DD17A6BB78004EEE3F /* UI7BarButtonItemIconCompose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603B517A6BB78004EEE3F /* UI7BarButtonItemIconCompose@2x.png */; };
-		386603DE17A6BB78004EEE3F /* UI7BarButtonItemIconFastForward.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603B617A6BB78004EEE3F /* UI7BarButtonItemIconFastForward.png */; };
-		386603DF17A6BB78004EEE3F /* UI7BarButtonItemIconFastForward.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603B617A6BB78004EEE3F /* UI7BarButtonItemIconFastForward.png */; };
-		386603E017A6BB78004EEE3F /* UI7BarButtonItemIconFastForward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603B717A6BB78004EEE3F /* UI7BarButtonItemIconFastForward@2x.png */; };
-		386603E117A6BB78004EEE3F /* UI7BarButtonItemIconFastForward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603B717A6BB78004EEE3F /* UI7BarButtonItemIconFastForward@2x.png */; };
-		386603E217A6BB78004EEE3F /* UI7BarButtonItemIconOrganize.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603B817A6BB78004EEE3F /* UI7BarButtonItemIconOrganize.png */; };
-		386603E317A6BB78004EEE3F /* UI7BarButtonItemIconOrganize.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603B817A6BB78004EEE3F /* UI7BarButtonItemIconOrganize.png */; };
-		386603E417A6BB78004EEE3F /* UI7BarButtonItemIconOrganize@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603B917A6BB78004EEE3F /* UI7BarButtonItemIconOrganize@2x.png */; };
-		386603E517A6BB78004EEE3F /* UI7BarButtonItemIconOrganize@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603B917A6BB78004EEE3F /* UI7BarButtonItemIconOrganize@2x.png */; };
-		386603E617A6BB78004EEE3F /* UI7BarButtonItemIconPause.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603BA17A6BB78004EEE3F /* UI7BarButtonItemIconPause.png */; };
-		386603E717A6BB78004EEE3F /* UI7BarButtonItemIconPause.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603BA17A6BB78004EEE3F /* UI7BarButtonItemIconPause.png */; };
-		386603E817A6BB78004EEE3F /* UI7BarButtonItemIconPause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603BB17A6BB78004EEE3F /* UI7BarButtonItemIconPause@2x.png */; };
-		386603E917A6BB78004EEE3F /* UI7BarButtonItemIconPause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603BB17A6BB78004EEE3F /* UI7BarButtonItemIconPause@2x.png */; };
-		386603EA17A6BB78004EEE3F /* UI7BarButtonItemIconPlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603BC17A6BB78004EEE3F /* UI7BarButtonItemIconPlay.png */; };
-		386603EB17A6BB78004EEE3F /* UI7BarButtonItemIconPlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603BC17A6BB78004EEE3F /* UI7BarButtonItemIconPlay.png */; };
-		386603EC17A6BB78004EEE3F /* UI7BarButtonItemIconPlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603BD17A6BB78004EEE3F /* UI7BarButtonItemIconPlay@2x.png */; };
-		386603ED17A6BB78004EEE3F /* UI7BarButtonItemIconPlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603BD17A6BB78004EEE3F /* UI7BarButtonItemIconPlay@2x.png */; };
-		386603EE17A6BB78004EEE3F /* UI7BarButtonItemIconRefresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603BE17A6BB78004EEE3F /* UI7BarButtonItemIconRefresh.png */; };
-		386603EF17A6BB78004EEE3F /* UI7BarButtonItemIconRefresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603BE17A6BB78004EEE3F /* UI7BarButtonItemIconRefresh.png */; };
-		386603F017A6BB78004EEE3F /* UI7BarButtonItemIconRefresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603BF17A6BB78004EEE3F /* UI7BarButtonItemIconRefresh@2x.png */; };
-		386603F117A6BB78004EEE3F /* UI7BarButtonItemIconRefresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603BF17A6BB78004EEE3F /* UI7BarButtonItemIconRefresh@2x.png */; };
-		386603F217A6BB78004EEE3F /* UI7BarButtonItemIconReply.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603C017A6BB78004EEE3F /* UI7BarButtonItemIconReply.png */; };
-		386603F317A6BB78004EEE3F /* UI7BarButtonItemIconReply.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603C017A6BB78004EEE3F /* UI7BarButtonItemIconReply.png */; };
-		386603F417A6BB78004EEE3F /* UI7BarButtonItemIconReply@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603C117A6BB78004EEE3F /* UI7BarButtonItemIconReply@2x.png */; };
-		386603F517A6BB78004EEE3F /* UI7BarButtonItemIconReply@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603C117A6BB78004EEE3F /* UI7BarButtonItemIconReply@2x.png */; };
-		386603F617A6BB78004EEE3F /* UI7BarButtonItemIconRewind.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603C217A6BB78004EEE3F /* UI7BarButtonItemIconRewind.png */; };
-		386603F717A6BB78004EEE3F /* UI7BarButtonItemIconRewind.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603C217A6BB78004EEE3F /* UI7BarButtonItemIconRewind.png */; };
-		386603F817A6BB78004EEE3F /* UI7BarButtonItemIconRewind@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603C317A6BB78004EEE3F /* UI7BarButtonItemIconRewind@2x.png */; };
-		386603F917A6BB78004EEE3F /* UI7BarButtonItemIconRewind@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603C317A6BB78004EEE3F /* UI7BarButtonItemIconRewind@2x.png */; };
-		386603FA17A6BB78004EEE3F /* UI7BarButtonItemIconSearch.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603C417A6BB78004EEE3F /* UI7BarButtonItemIconSearch.png */; };
-		386603FB17A6BB78004EEE3F /* UI7BarButtonItemIconSearch.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603C417A6BB78004EEE3F /* UI7BarButtonItemIconSearch.png */; };
-		386603FC17A6BB78004EEE3F /* UI7BarButtonItemIconSearch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603C517A6BB78004EEE3F /* UI7BarButtonItemIconSearch@2x.png */; };
-		386603FD17A6BB78004EEE3F /* UI7BarButtonItemIconSearch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603C517A6BB78004EEE3F /* UI7BarButtonItemIconSearch@2x.png */; };
-		386603FE17A6BB78004EEE3F /* UI7BarButtonItemIconStop.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603C617A6BB78004EEE3F /* UI7BarButtonItemIconStop.png */; };
-		386603FF17A6BB78004EEE3F /* UI7BarButtonItemIconStop.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603C617A6BB78004EEE3F /* UI7BarButtonItemIconStop.png */; };
-		3866040017A6BB78004EEE3F /* UI7BarButtonItemIconStop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603C717A6BB78004EEE3F /* UI7BarButtonItemIconStop@2x.png */; };
-		3866040117A6BB78004EEE3F /* UI7BarButtonItemIconStop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603C717A6BB78004EEE3F /* UI7BarButtonItemIconStop@2x.png */; };
-		3866040217A6BB78004EEE3F /* UI7BarButtonItemIconTrash.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603C817A6BB78004EEE3F /* UI7BarButtonItemIconTrash.png */; };
-		3866040317A6BB78004EEE3F /* UI7BarButtonItemIconTrash.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603C817A6BB78004EEE3F /* UI7BarButtonItemIconTrash.png */; };
-		3866040417A6BB78004EEE3F /* UI7BarButtonItemIconTrash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603C917A6BB78004EEE3F /* UI7BarButtonItemIconTrash@2x.png */; };
-		3866040517A6BB78004EEE3F /* UI7BarButtonItemIconTrash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 386603C917A6BB78004EEE3F /* UI7BarButtonItemIconTrash@2x.png */; };
 		38717F77179F6009003D9602 /* UI7Window.m in Sources */ = {isa = PBXBuildFile; fileRef = 38717F76179F6007003D9602 /* UI7Window.m */; };
 		387558B1176DD00600AE5C8B /* UI7TabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 387558B0176DD00600AE5C8B /* UI7TabBar.m */; };
 		387558B4176DD03F00AE5C8B /* UI7TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 387558B3176DD03F00AE5C8B /* UI7TabBarController.m */; };
@@ -185,10 +81,6 @@
 		388722DA17D8F25B00E2EDE2 /* UITPopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 388722D917D8F25B00E2EDE2 /* UITPopoverViewController.m */; };
 		3888FC62176C7C7900489638 /* UITIssue1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3888FC61176C7C7900489638 /* UITIssue1ViewController.m */; };
 		3888FC63176C8EAD00489638 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383764E513373155007072FD /* CoreGraphics.framework */; };
-		388FC1E2177303AA0084574E /* UI7ButtonImageAdd.png in Resources */ = {isa = PBXBuildFile; fileRef = 388FC1DE177303AA0084574E /* UI7ButtonImageAdd.png */; };
-		388FC1E3177303AA0084574E /* UI7ButtonImageAdd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 388FC1DF177303AA0084574E /* UI7ButtonImageAdd@2x.png */; };
-		388FC1E4177303AA0084574E /* UI7ButtonImageInfo.png in Resources */ = {isa = PBXBuildFile; fileRef = 388FC1E0177303AA0084574E /* UI7ButtonImageInfo.png */; };
-		388FC1E5177303AA0084574E /* UI7ButtonImageInfo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 388FC1E1177303AA0084574E /* UI7ButtonImageInfo@2x.png */; };
 		38ABF34817ED87FB002F1DD1 /* UI7ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38ABF34717ED87FB002F1DD1 /* UI7ActivityViewController.m */; };
 		38ABF35717EDBA4E002F1DD1 /* PopoverBackgroundArrowDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ABF34917EDBA4E002F1DD1 /* PopoverBackgroundArrowDown.png */; };
 		38ABF35817EDBA4E002F1DD1 /* PopoverBackgroundArrowDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ABF34917EDBA4E002F1DD1 /* PopoverBackgroundArrowDown.png */; };
@@ -224,6 +116,10 @@
 		38AD076C17AEC1060000E5BA /* UI7SliderThumb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38AD076A17AEC1060000E5BA /* UI7SliderThumb@2x.png */; };
 		38AD076E17AEC4780000E5BA /* UI7SliderThumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 38AD076D17AEC4780000E5BA /* UI7SliderThumb.png */; };
 		38AD076F17AEC4780000E5BA /* UI7SliderThumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 38AD076D17AEC4780000E5BA /* UI7SliderThumb.png */; };
+		38AF0E8017EDF3DE00CF0C30 /* UITabBarMostRecentTemplate.png in Resources */ = {isa = PBXBuildFile; fileRef = 38AF0E7E17EDF3DE00CF0C30 /* UITabBarMostRecentTemplate.png */; };
+		38AF0E8117EDF3DE00CF0C30 /* UITabBarMostRecentTemplate.png in Resources */ = {isa = PBXBuildFile; fileRef = 38AF0E7E17EDF3DE00CF0C30 /* UITabBarMostRecentTemplate.png */; };
+		38AF0E8217EDF3DE00CF0C30 /* UITabBarMostRecentTemplate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38AF0E7F17EDF3DE00CF0C30 /* UITabBarMostRecentTemplate@2x.png */; };
+		38AF0E8317EDF3DE00CF0C30 /* UITabBarMostRecentTemplate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38AF0E7F17EDF3DE00CF0C30 /* UITabBarMostRecentTemplate@2x.png */; };
 		38AF86CF1769BC8000BFBD29 /* libUI7Kit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38017423176989650049D26C /* libUI7Kit.a */; };
 		38B9678317AC2DE90061E1EC /* UICRoundedRectButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B9678217AC2DE90061E1EC /* UICRoundedRectButtonViewController.m */; };
 		38BC0E5D173E821700F36497 /* UITSubviewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38BC0E5B173E821700F36497 /* UITSubviewTableViewController.m */; };
@@ -362,58 +258,8 @@
 		385C6CC01786C86F00A182C0 /* UI7PickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7PickerView.m; sourceTree = "<group>"; };
 		3861E0691771F9BC00AA8DE4 /* UI7ProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7ProgressView.h; sourceTree = "<group>"; };
 		3861E06A1771F9BC00AA8DE4 /* UI7ProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7ProgressView.m; sourceTree = "<group>"; };
-		3865155E17A81EF300E10B72 /* UI7TabBarItemBookmarksUnselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7TabBarItemBookmarksUnselected.png; sourceTree = "<group>"; };
-		3865155F17A81EF300E10B72 /* UI7TabBarItemBookmarksUnselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7TabBarItemBookmarksUnselected@2x.png"; sourceTree = "<group>"; };
-		3865156017A81EF300E10B72 /* UI7TabBarItemContactsUnselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7TabBarItemContactsUnselected.png; sourceTree = "<group>"; };
-		3865156117A81EF300E10B72 /* UI7TabBarItemContactsUnselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7TabBarItemContactsUnselected@2x.png"; sourceTree = "<group>"; };
-		3865156217A81EF300E10B72 /* UI7TabBarItemDownloadsUnselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7TabBarItemDownloadsUnselected.png; sourceTree = "<group>"; };
-		3865156317A81EF300E10B72 /* UI7TabBarItemDownloadsUnselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7TabBarItemDownloadsUnselected@2x.png"; sourceTree = "<group>"; };
-		3865156417A81EF300E10B72 /* UI7TabBarItemFavoriteSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7TabBarItemFavoriteSelected.png; sourceTree = "<group>"; };
-		3865156517A81EF300E10B72 /* UI7TabBarItemFavoriteSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7TabBarItemFavoriteSelected@2x.png"; sourceTree = "<group>"; };
-		3865156617A81EF300E10B72 /* UI7TabBarItemFavoriteUnselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7TabBarItemFavoriteUnselected.png; sourceTree = "<group>"; };
-		3865156717A81EF300E10B72 /* UI7TabBarItemFavoriteUnselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7TabBarItemFavoriteUnselected@2x.png"; sourceTree = "<group>"; };
-		3865156817A81EF300E10B72 /* UI7TabBarItemHistoryUnselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7TabBarItemHistoryUnselected.png; sourceTree = "<group>"; };
-		3865156917A81EF300E10B72 /* UI7TabBarItemHistoryUnselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7TabBarItemHistoryUnselected@2x.png"; sourceTree = "<group>"; };
-		3865156A17A81EF300E10B72 /* UI7TabBarItemMoreUnselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7TabBarItemMoreUnselected.png; sourceTree = "<group>"; };
-		3865156B17A81EF300E10B72 /* UI7TabBarItemMoreUnselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7TabBarItemMoreUnselected@2x.png"; sourceTree = "<group>"; };
-		3865156C17A81EF300E10B72 /* UI7TabBarItemMostRecentUnselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7TabBarItemMostRecentUnselected.png; sourceTree = "<group>"; };
-		3865156D17A81EF300E10B72 /* UI7TabBarItemMostRecentUnselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7TabBarItemMostRecentUnselected@2x.png"; sourceTree = "<group>"; };
-		3865156E17A81EF300E10B72 /* UI7TabBarItemMostViewedUnselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7TabBarItemMostViewedUnselected.png; sourceTree = "<group>"; };
-		3865156F17A81EF300E10B72 /* UI7TabBarItemMostViewedUnselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7TabBarItemMostViewedUnselected@2x.png"; sourceTree = "<group>"; };
-		3865157017A81EF300E10B72 /* UI7TabBarItemSearchUnselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7TabBarItemSearchUnselected.png; sourceTree = "<group>"; };
-		3865157117A81EF300E10B72 /* UI7TabBarItemSearchUnselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7TabBarItemSearchUnselected@2x.png"; sourceTree = "<group>"; };
 		3866034F17A6A60C004EEE3F /* UITIssue39ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITIssue39ViewController.h; sourceTree = "<group>"; };
 		3866035017A6A60C004EEE3F /* UITIssue39ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITIssue39ViewController.m; sourceTree = "<group>"; };
-		386603AC17A6BB78004EEE3F /* UI7BarButtonItemIconAction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7BarButtonItemIconAction.png; sourceTree = "<group>"; };
-		386603AD17A6BB78004EEE3F /* UI7BarButtonItemIconAction@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7BarButtonItemIconAction@2x.png"; sourceTree = "<group>"; };
-		386603AE17A6BB78004EEE3F /* UI7BarButtonItemIconAdd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7BarButtonItemIconAdd.png; sourceTree = "<group>"; };
-		386603AF17A6BB78004EEE3F /* UI7BarButtonItemIconAdd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7BarButtonItemIconAdd@2x.png"; sourceTree = "<group>"; };
-		386603B017A6BB78004EEE3F /* UI7BarButtonItemIconBookmarks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7BarButtonItemIconBookmarks.png; sourceTree = "<group>"; };
-		386603B117A6BB78004EEE3F /* UI7BarButtonItemIconBookmarks@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7BarButtonItemIconBookmarks@2x.png"; sourceTree = "<group>"; };
-		386603B217A6BB78004EEE3F /* UI7BarButtonItemIconCamera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7BarButtonItemIconCamera.png; sourceTree = "<group>"; };
-		386603B317A6BB78004EEE3F /* UI7BarButtonItemIconCamera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7BarButtonItemIconCamera@2x.png"; sourceTree = "<group>"; };
-		386603B417A6BB78004EEE3F /* UI7BarButtonItemIconCompose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7BarButtonItemIconCompose.png; sourceTree = "<group>"; };
-		386603B517A6BB78004EEE3F /* UI7BarButtonItemIconCompose@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7BarButtonItemIconCompose@2x.png"; sourceTree = "<group>"; };
-		386603B617A6BB78004EEE3F /* UI7BarButtonItemIconFastForward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7BarButtonItemIconFastForward.png; sourceTree = "<group>"; };
-		386603B717A6BB78004EEE3F /* UI7BarButtonItemIconFastForward@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7BarButtonItemIconFastForward@2x.png"; sourceTree = "<group>"; };
-		386603B817A6BB78004EEE3F /* UI7BarButtonItemIconOrganize.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7BarButtonItemIconOrganize.png; sourceTree = "<group>"; };
-		386603B917A6BB78004EEE3F /* UI7BarButtonItemIconOrganize@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7BarButtonItemIconOrganize@2x.png"; sourceTree = "<group>"; };
-		386603BA17A6BB78004EEE3F /* UI7BarButtonItemIconPause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7BarButtonItemIconPause.png; sourceTree = "<group>"; };
-		386603BB17A6BB78004EEE3F /* UI7BarButtonItemIconPause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7BarButtonItemIconPause@2x.png"; sourceTree = "<group>"; };
-		386603BC17A6BB78004EEE3F /* UI7BarButtonItemIconPlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7BarButtonItemIconPlay.png; sourceTree = "<group>"; };
-		386603BD17A6BB78004EEE3F /* UI7BarButtonItemIconPlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7BarButtonItemIconPlay@2x.png"; sourceTree = "<group>"; };
-		386603BE17A6BB78004EEE3F /* UI7BarButtonItemIconRefresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7BarButtonItemIconRefresh.png; sourceTree = "<group>"; };
-		386603BF17A6BB78004EEE3F /* UI7BarButtonItemIconRefresh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7BarButtonItemIconRefresh@2x.png"; sourceTree = "<group>"; };
-		386603C017A6BB78004EEE3F /* UI7BarButtonItemIconReply.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7BarButtonItemIconReply.png; sourceTree = "<group>"; };
-		386603C117A6BB78004EEE3F /* UI7BarButtonItemIconReply@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7BarButtonItemIconReply@2x.png"; sourceTree = "<group>"; };
-		386603C217A6BB78004EEE3F /* UI7BarButtonItemIconRewind.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7BarButtonItemIconRewind.png; sourceTree = "<group>"; };
-		386603C317A6BB78004EEE3F /* UI7BarButtonItemIconRewind@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7BarButtonItemIconRewind@2x.png"; sourceTree = "<group>"; };
-		386603C417A6BB78004EEE3F /* UI7BarButtonItemIconSearch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7BarButtonItemIconSearch.png; sourceTree = "<group>"; };
-		386603C517A6BB78004EEE3F /* UI7BarButtonItemIconSearch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7BarButtonItemIconSearch@2x.png"; sourceTree = "<group>"; };
-		386603C617A6BB78004EEE3F /* UI7BarButtonItemIconStop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7BarButtonItemIconStop.png; sourceTree = "<group>"; };
-		386603C717A6BB78004EEE3F /* UI7BarButtonItemIconStop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7BarButtonItemIconStop@2x.png"; sourceTree = "<group>"; };
-		386603C817A6BB78004EEE3F /* UI7BarButtonItemIconTrash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7BarButtonItemIconTrash.png; sourceTree = "<group>"; };
-		386603C917A6BB78004EEE3F /* UI7BarButtonItemIconTrash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7BarButtonItemIconTrash@2x.png"; sourceTree = "<group>"; };
 		38717F75179F6006003D9602 /* UI7Window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7Window.h; sourceTree = "<group>"; };
 		38717F76179F6007003D9602 /* UI7Window.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7Window.m; sourceTree = "<group>"; };
 		38740492176825D900C0BB18 /* UI7Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7Utilities.h; sourceTree = "<group>"; };
@@ -438,10 +284,6 @@
 		388722D917D8F25B00E2EDE2 /* UITPopoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITPopoverViewController.m; sourceTree = "<group>"; };
 		3888FC60176C7C7900489638 /* UITIssue1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITIssue1ViewController.h; sourceTree = "<group>"; };
 		3888FC61176C7C7900489638 /* UITIssue1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITIssue1ViewController.m; sourceTree = "<group>"; };
-		388FC1DE177303AA0084574E /* UI7ButtonImageAdd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7ButtonImageAdd.png; sourceTree = "<group>"; };
-		388FC1DF177303AA0084574E /* UI7ButtonImageAdd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7ButtonImageAdd@2x.png"; sourceTree = "<group>"; };
-		388FC1E0177303AA0084574E /* UI7ButtonImageInfo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7ButtonImageInfo.png; sourceTree = "<group>"; };
-		388FC1E1177303AA0084574E /* UI7ButtonImageInfo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7ButtonImageInfo@2x.png"; sourceTree = "<group>"; };
 		388FC1E6177345970084574E /* UI7KitPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7KitPrivate.h; sourceTree = "<group>"; };
 		38ABF34617ED87FB002F1DD1 /* UI7ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7ActivityViewController.h; sourceTree = "<group>"; };
 		38ABF34717ED87FB002F1DD1 /* UI7ActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7ActivityViewController.m; sourceTree = "<group>"; };
@@ -465,6 +307,8 @@
 		38AD076817AE84CE0000E5BA /* UICSliderProgressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICSliderProgressViewController.m; sourceTree = "<group>"; };
 		38AD076A17AEC1060000E5BA /* UI7SliderThumb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7SliderThumb@2x.png"; sourceTree = "<group>"; };
 		38AD076D17AEC4780000E5BA /* UI7SliderThumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7SliderThumb.png; sourceTree = "<group>"; };
+		38AF0E7E17EDF3DE00CF0C30 /* UITabBarMostRecentTemplate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UITabBarMostRecentTemplate.png; sourceTree = "<group>"; };
+		38AF0E7F17EDF3DE00CF0C30 /* UITabBarMostRecentTemplate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UITabBarMostRecentTemplate@2x.png"; sourceTree = "<group>"; };
 		38B9678117AC2DE90061E1EC /* UICRoundedRectButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICRoundedRectButtonViewController.h; sourceTree = "<group>"; };
 		38B9678217AC2DE90061E1EC /* UICRoundedRectButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICRoundedRectButtonViewController.m; sourceTree = "<group>"; };
 		38BC0E5A173E821700F36497 /* UITSubviewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITSubviewTableViewController.h; sourceTree = "<group>"; };
@@ -619,64 +463,12 @@
 				38ABF35417EDBA4E002F1DD1 /* PopoverBackgroundArrowUp@2x.png */,
 				38ABF35517EDBA4E002F1DD1 /* PopoverBackgroundArrowUpRight.png */,
 				38ABF35617EDBA4E002F1DD1 /* PopoverBackgroundArrowUpRight@2x.png */,
-				386603AC17A6BB78004EEE3F /* UI7BarButtonItemIconAction.png */,
-				386603AD17A6BB78004EEE3F /* UI7BarButtonItemIconAction@2x.png */,
-				386603AE17A6BB78004EEE3F /* UI7BarButtonItemIconAdd.png */,
-				386603AF17A6BB78004EEE3F /* UI7BarButtonItemIconAdd@2x.png */,
-				386603B017A6BB78004EEE3F /* UI7BarButtonItemIconBookmarks.png */,
-				386603B117A6BB78004EEE3F /* UI7BarButtonItemIconBookmarks@2x.png */,
-				386603B217A6BB78004EEE3F /* UI7BarButtonItemIconCamera.png */,
-				386603B317A6BB78004EEE3F /* UI7BarButtonItemIconCamera@2x.png */,
-				386603B417A6BB78004EEE3F /* UI7BarButtonItemIconCompose.png */,
-				386603B517A6BB78004EEE3F /* UI7BarButtonItemIconCompose@2x.png */,
-				386603B617A6BB78004EEE3F /* UI7BarButtonItemIconFastForward.png */,
-				386603B717A6BB78004EEE3F /* UI7BarButtonItemIconFastForward@2x.png */,
-				386603B817A6BB78004EEE3F /* UI7BarButtonItemIconOrganize.png */,
-				386603B917A6BB78004EEE3F /* UI7BarButtonItemIconOrganize@2x.png */,
-				386603BA17A6BB78004EEE3F /* UI7BarButtonItemIconPause.png */,
-				386603BB17A6BB78004EEE3F /* UI7BarButtonItemIconPause@2x.png */,
-				386603BC17A6BB78004EEE3F /* UI7BarButtonItemIconPlay.png */,
-				386603BD17A6BB78004EEE3F /* UI7BarButtonItemIconPlay@2x.png */,
-				386603BE17A6BB78004EEE3F /* UI7BarButtonItemIconRefresh.png */,
-				386603BF17A6BB78004EEE3F /* UI7BarButtonItemIconRefresh@2x.png */,
-				386603C017A6BB78004EEE3F /* UI7BarButtonItemIconReply.png */,
-				386603C117A6BB78004EEE3F /* UI7BarButtonItemIconReply@2x.png */,
-				386603C217A6BB78004EEE3F /* UI7BarButtonItemIconRewind.png */,
-				386603C317A6BB78004EEE3F /* UI7BarButtonItemIconRewind@2x.png */,
-				386603C417A6BB78004EEE3F /* UI7BarButtonItemIconSearch.png */,
-				386603C517A6BB78004EEE3F /* UI7BarButtonItemIconSearch@2x.png */,
-				386603C617A6BB78004EEE3F /* UI7BarButtonItemIconStop.png */,
-				386603C717A6BB78004EEE3F /* UI7BarButtonItemIconStop@2x.png */,
-				386603C817A6BB78004EEE3F /* UI7BarButtonItemIconTrash.png */,
-				386603C917A6BB78004EEE3F /* UI7BarButtonItemIconTrash@2x.png */,
-				388FC1DE177303AA0084574E /* UI7ButtonImageAdd.png */,
-				388FC1DF177303AA0084574E /* UI7ButtonImageAdd@2x.png */,
-				388FC1E0177303AA0084574E /* UI7ButtonImageInfo.png */,
-				388FC1E1177303AA0084574E /* UI7ButtonImageInfo@2x.png */,
 				38017461176A245B0049D26C /* UI7NavigationBarBackButton.png */,
 				387558C4176DFA8600AE5C8B /* UI7NavigationBarBackButton@2x.png */,
 				38AD076D17AEC4780000E5BA /* UI7SliderThumb.png */,
 				38AD076A17AEC1060000E5BA /* UI7SliderThumb@2x.png */,
-				3865155E17A81EF300E10B72 /* UI7TabBarItemBookmarksUnselected.png */,
-				3865155F17A81EF300E10B72 /* UI7TabBarItemBookmarksUnselected@2x.png */,
-				3865156017A81EF300E10B72 /* UI7TabBarItemContactsUnselected.png */,
-				3865156117A81EF300E10B72 /* UI7TabBarItemContactsUnselected@2x.png */,
-				3865156217A81EF300E10B72 /* UI7TabBarItemDownloadsUnselected.png */,
-				3865156317A81EF300E10B72 /* UI7TabBarItemDownloadsUnselected@2x.png */,
-				3865156417A81EF300E10B72 /* UI7TabBarItemFavoriteSelected.png */,
-				3865156517A81EF300E10B72 /* UI7TabBarItemFavoriteSelected@2x.png */,
-				3865156617A81EF300E10B72 /* UI7TabBarItemFavoriteUnselected.png */,
-				3865156717A81EF300E10B72 /* UI7TabBarItemFavoriteUnselected@2x.png */,
-				3865156817A81EF300E10B72 /* UI7TabBarItemHistoryUnselected.png */,
-				3865156917A81EF300E10B72 /* UI7TabBarItemHistoryUnselected@2x.png */,
-				3865156A17A81EF300E10B72 /* UI7TabBarItemMoreUnselected.png */,
-				3865156B17A81EF300E10B72 /* UI7TabBarItemMoreUnselected@2x.png */,
-				3865156C17A81EF300E10B72 /* UI7TabBarItemMostRecentUnselected.png */,
-				3865156D17A81EF300E10B72 /* UI7TabBarItemMostRecentUnselected@2x.png */,
-				3865156E17A81EF300E10B72 /* UI7TabBarItemMostViewedUnselected.png */,
-				3865156F17A81EF300E10B72 /* UI7TabBarItemMostViewedUnselected@2x.png */,
-				3865157017A81EF300E10B72 /* UI7TabBarItemSearchUnselected.png */,
-				3865157117A81EF300E10B72 /* UI7TabBarItemSearchUnselected@2x.png */,
+				38AF0E7E17EDF3DE00CF0C30 /* UITabBarMostRecentTemplate.png */,
+				38AF0E7F17EDF3DE00CF0C30 /* UITabBarMostRecentTemplate@2x.png */,
 			);
 			name = Resources;
 			path = ../Resources;
@@ -1051,86 +843,34 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3865157F17A81EF300E10B72 /* UI7TabBarItemFavoriteSelected.png in Resources */,
 				38078A6A178DB7A00010B6D5 /* icon_72x72@2x.png in Resources */,
 				38078A66178DB7A00010B6D5 /* Icon_60x60@2x.png in Resources */,
-				3865158B17A81EF300E10B72 /* UI7TabBarItemMoreUnselected.png in Resources */,
 				384BF42A178A176600485BED /* InfoPlist.strings in Resources */,
 				384BF444178A19D600485BED /* Catalog.storyboard in Resources */,
-				3865157B17A81EF300E10B72 /* UI7TabBarItemDownloadsUnselected.png in Resources */,
-				384BF445178A1F4200485BED /* UI7ButtonImageAdd.png in Resources */,
 				38078A68178DB7A00010B6D5 /* icon_72x72.png in Resources */,
-				384BF446178A1F4200485BED /* UI7ButtonImageAdd@2x.png in Resources */,
-				3865159717A81EF300E10B72 /* UI7TabBarItemSearchUnselected.png in Resources */,
 				38ABF36C17EDBA4E002F1DD1 /* PopoverBackgroundArrowUp.png in Resources */,
-				384BF447178A1F4200485BED /* UI7ButtonImageInfo.png in Resources */,
 				38ABF36417EDBA4E002F1DD1 /* PopoverBackgroundArrowSideBottom.png in Resources */,
-				384BF448178A1F4200485BED /* UI7ButtonImageInfo@2x.png in Resources */,
 				38AD076F17AEC4780000E5BA /* UI7SliderThumb.png in Resources */,
-				3865159317A81EF300E10B72 /* UI7TabBarItemMostViewedUnselected.png in Resources */,
+				38AF0E8317EDF3DE00CF0C30 /* UITabBarMostRecentTemplate@2x.png in Resources */,
 				38ABF36617EDBA4E002F1DD1 /* PopoverBackgroundArrowSideBottom@2x.png in Resources */,
 				384BF44B178A1F4200485BED /* UI7NavigationBarBackButton.png in Resources */,
 				384BF44C178A1F4200485BED /* UI7NavigationBarBackButton@2x.png in Resources */,
 				384BF455178A2DB100485BED /* Default.png in Resources */,
-				3865158317A81EF300E10B72 /* UI7TabBarItemFavoriteUnselected.png in Resources */,
 				384BF456178A2DB100485BED /* Default@2x.png in Resources */,
 				384BF457178A2DB100485BED /* Default-568h@2x.png in Resources */,
-				386603CB17A6BB78004EEE3F /* UI7BarButtonItemIconAction.png in Resources */,
 				38ABF35817EDBA4E002F1DD1 /* PopoverBackgroundArrowDown.png in Resources */,
-				386603CD17A6BB78004EEE3F /* UI7BarButtonItemIconAction@2x.png in Resources */,
-				386603CF17A6BB78004EEE3F /* UI7BarButtonItemIconAdd.png in Resources */,
-				3865158F17A81EF300E10B72 /* UI7TabBarItemMostRecentUnselected.png in Resources */,
-				386603D117A6BB78004EEE3F /* UI7BarButtonItemIconAdd@2x.png in Resources */,
-				386603D317A6BB78004EEE3F /* UI7BarButtonItemIconBookmarks.png in Resources */,
-				386603D517A6BB78004EEE3F /* UI7BarButtonItemIconBookmarks@2x.png in Resources */,
-				3865158117A81EF300E10B72 /* UI7TabBarItemFavoriteSelected@2x.png in Resources */,
-				386603D717A6BB78004EEE3F /* UI7BarButtonItemIconCamera.png in Resources */,
-				386603D917A6BB78004EEE3F /* UI7BarButtonItemIconCamera@2x.png in Resources */,
-				386603DB17A6BB78004EEE3F /* UI7BarButtonItemIconCompose.png in Resources */,
 				38ABF36A17EDBA4E002F1DD1 /* PopoverBackgroundArrowSideTop@2x.png in Resources */,
 				38ABF35C17EDBA4E002F1DD1 /* PopoverBackgroundArrowDownRight.png in Resources */,
-				3865157717A81EF300E10B72 /* UI7TabBarItemContactsUnselected.png in Resources */,
+				38AF0E8117EDF3DE00CF0C30 /* UITabBarMostRecentTemplate.png in Resources */,
 				38ABF35E17EDBA4E002F1DD1 /* PopoverBackgroundArrowDownRight@2x.png in Resources */,
-				386603DD17A6BB78004EEE3F /* UI7BarButtonItemIconCompose@2x.png in Resources */,
-				3865158517A81EF300E10B72 /* UI7TabBarItemFavoriteUnselected@2x.png in Resources */,
 				38ABF35A17EDBA4E002F1DD1 /* PopoverBackgroundArrowDown@2x.png in Resources */,
-				386603DF17A6BB78004EEE3F /* UI7BarButtonItemIconFastForward.png in Resources */,
-				386603E117A6BB78004EEE3F /* UI7BarButtonItemIconFastForward@2x.png in Resources */,
-				386603E317A6BB78004EEE3F /* UI7BarButtonItemIconOrganize.png in Resources */,
-				386603E517A6BB78004EEE3F /* UI7BarButtonItemIconOrganize@2x.png in Resources */,
 				38ABF36217EDBA4E002F1DD1 /* PopoverBackgroundArrowSide@2x.png in Resources */,
-				386603E717A6BB78004EEE3F /* UI7BarButtonItemIconPause.png in Resources */,
-				3865159917A81EF300E10B72 /* UI7TabBarItemSearchUnselected@2x.png in Resources */,
-				3865159517A81EF300E10B72 /* UI7TabBarItemMostViewedUnselected@2x.png in Resources */,
 				38AD076C17AEC1060000E5BA /* UI7SliderThumb@2x.png in Resources */,
-				3865158D17A81EF300E10B72 /* UI7TabBarItemMoreUnselected@2x.png in Resources */,
-				386603E917A6BB78004EEE3F /* UI7BarButtonItemIconPause@2x.png in Resources */,
-				386603EB17A6BB78004EEE3F /* UI7BarButtonItemIconPlay.png in Resources */,
-				386603ED17A6BB78004EEE3F /* UI7BarButtonItemIconPlay@2x.png in Resources */,
-				386603EF17A6BB78004EEE3F /* UI7BarButtonItemIconRefresh.png in Resources */,
-				3865157917A81EF300E10B72 /* UI7TabBarItemContactsUnselected@2x.png in Resources */,
 				38ABF37217EDBA4E002F1DD1 /* PopoverBackgroundArrowUpRight@2x.png in Resources */,
-				386603F117A6BB78004EEE3F /* UI7BarButtonItemIconRefresh@2x.png in Resources */,
-				3865158717A81EF300E10B72 /* UI7TabBarItemHistoryUnselected.png in Resources */,
-				3865157D17A81EF300E10B72 /* UI7TabBarItemDownloadsUnselected@2x.png in Resources */,
-				386603F317A6BB78004EEE3F /* UI7BarButtonItemIconReply.png in Resources */,
-				386603F517A6BB78004EEE3F /* UI7BarButtonItemIconReply@2x.png in Resources */,
-				386603F717A6BB78004EEE3F /* UI7BarButtonItemIconRewind.png in Resources */,
-				386603F917A6BB78004EEE3F /* UI7BarButtonItemIconRewind@2x.png in Resources */,
-				386603FB17A6BB78004EEE3F /* UI7BarButtonItemIconSearch.png in Resources */,
 				38ABF36817EDBA4E002F1DD1 /* PopoverBackgroundArrowSideTop.png in Resources */,
 				38ABF36E17EDBA4E002F1DD1 /* PopoverBackgroundArrowUp@2x.png in Resources */,
-				3865158917A81EF300E10B72 /* UI7TabBarItemHistoryUnselected@2x.png in Resources */,
-				3865157517A81EF300E10B72 /* UI7TabBarItemBookmarksUnselected@2x.png in Resources */,
-				386603FD17A6BB78004EEE3F /* UI7BarButtonItemIconSearch@2x.png in Resources */,
-				386603FF17A6BB78004EEE3F /* UI7BarButtonItemIconStop.png in Resources */,
-				3865159117A81EF300E10B72 /* UI7TabBarItemMostRecentUnselected@2x.png in Resources */,
-				3866040117A6BB78004EEE3F /* UI7BarButtonItemIconStop@2x.png in Resources */,
 				38ABF36017EDBA4E002F1DD1 /* PopoverBackgroundArrowSide.png in Resources */,
 				38ABF37017EDBA4E002F1DD1 /* PopoverBackgroundArrowUpRight.png in Resources */,
-				3866040317A6BB78004EEE3F /* UI7BarButtonItemIconTrash.png in Resources */,
-				3865157317A81EF300E10B72 /* UI7TabBarItemBookmarksUnselected.png in Resources */,
-				3866040517A6BB78004EEE3F /* UI7BarButtonItemIconTrash@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1139,87 +879,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				38F068201636F8C8002723AB /* InfoPlist.strings in Resources */,
-				388FC1E5177303AA0084574E /* UI7ButtonImageInfo@2x.png in Resources */,
 				38F068281636F8C8002723AB /* Default.png in Resources */,
 				38F0682A1636F8C8002723AB /* Default@2x.png in Resources */,
-				3865157E17A81EF300E10B72 /* UI7TabBarItemFavoriteSelected.png in Resources */,
 				38ABF36717EDBA4E002F1DD1 /* PopoverBackgroundArrowSideTop.png in Resources */,
 				38078A69178DB7A00010B6D5 /* icon_72x72@2x.png in Resources */,
-				3865158A17A81EF300E10B72 /* UI7TabBarItemMoreUnselected.png in Resources */,
 				38F0682C1636F8C8002723AB /* Default-568h@2x.png in Resources */,
-				388FC1E3177303AA0084574E /* UI7ButtonImageAdd@2x.png in Resources */,
-				388FC1E4177303AA0084574E /* UI7ButtonImageInfo.png in Resources */,
 				38ABF35917EDBA4E002F1DD1 /* PopoverBackgroundArrowDown@2x.png in Resources */,
-				3865158C17A81EF300E10B72 /* UI7TabBarItemMoreUnselected@2x.png in Resources */,
 				38ABF35717EDBA4E002F1DD1 /* PopoverBackgroundArrowDown.png in Resources */,
-				388FC1E2177303AA0084574E /* UI7ButtonImageAdd.png in Resources */,
 				38ABF35F17EDBA4E002F1DD1 /* PopoverBackgroundArrowSide.png in Resources */,
 				38078A65178DB7A00010B6D5 /* Icon_60x60@2x.png in Resources */,
 				3801745F1769F3B50049D26C /* Storyboard.storyboard in Resources */,
-				3865157217A81EF300E10B72 /* UI7TabBarItemBookmarksUnselected.png in Resources */,
 				38017462176A245B0049D26C /* UI7NavigationBarBackButton.png in Resources */,
 				38ABF36F17EDBA4E002F1DD1 /* PopoverBackgroundArrowUpRight.png in Resources */,
-				3865158817A81EF300E10B72 /* UI7TabBarItemHistoryUnselected@2x.png in Resources */,
 				38078A67178DB7A00010B6D5 /* icon_72x72.png in Resources */,
 				38ABF36117EDBA4E002F1DD1 /* PopoverBackgroundArrowSide@2x.png in Resources */,
 				38ABF36D17EDBA4E002F1DD1 /* PopoverBackgroundArrowUp@2x.png in Resources */,
-				3865158617A81EF300E10B72 /* UI7TabBarItemHistoryUnselected.png in Resources */,
 				387558C5176DFA8600AE5C8B /* UI7NavigationBarBackButton@2x.png in Resources */,
+				38AF0E8017EDF3DE00CF0C30 /* UITabBarMostRecentTemplate.png in Resources */,
 				384BF452178A230E00485BED /* icon_57x57@2x.png in Resources */,
 				384BF454178A231100485BED /* icon_57x57.png in Resources */,
-				386603CA17A6BB78004EEE3F /* UI7BarButtonItemIconAction.png in Resources */,
-				3865159217A81EF300E10B72 /* UI7TabBarItemMostViewedUnselected.png in Resources */,
+				38AF0E8217EDF3DE00CF0C30 /* UITabBarMostRecentTemplate@2x.png in Resources */,
 				38ABF36917EDBA4E002F1DD1 /* PopoverBackgroundArrowSideTop@2x.png in Resources */,
-				386603CC17A6BB78004EEE3F /* UI7BarButtonItemIconAction@2x.png in Resources */,
-				386603CE17A6BB78004EEE3F /* UI7BarButtonItemIconAdd.png in Resources */,
-				386603D017A6BB78004EEE3F /* UI7BarButtonItemIconAdd@2x.png in Resources */,
-				386603D217A6BB78004EEE3F /* UI7BarButtonItemIconBookmarks.png in Resources */,
-				3865157617A81EF300E10B72 /* UI7TabBarItemContactsUnselected.png in Resources */,
-				3865158017A81EF300E10B72 /* UI7TabBarItemFavoriteSelected@2x.png in Resources */,
-				386603D417A6BB78004EEE3F /* UI7BarButtonItemIconBookmarks@2x.png in Resources */,
-				386603D617A6BB78004EEE3F /* UI7BarButtonItemIconCamera.png in Resources */,
 				38ABF36517EDBA4E002F1DD1 /* PopoverBackgroundArrowSideBottom@2x.png in Resources */,
-				3865158217A81EF300E10B72 /* UI7TabBarItemFavoriteUnselected.png in Resources */,
-				386603D817A6BB78004EEE3F /* UI7BarButtonItemIconCamera@2x.png in Resources */,
-				386603DA17A6BB78004EEE3F /* UI7BarButtonItemIconCompose.png in Resources */,
 				38ABF36317EDBA4E002F1DD1 /* PopoverBackgroundArrowSideBottom.png in Resources */,
-				386603DC17A6BB78004EEE3F /* UI7BarButtonItemIconCompose@2x.png in Resources */,
 				38ABF37117EDBA4E002F1DD1 /* PopoverBackgroundArrowUpRight@2x.png in Resources */,
-				3865159017A81EF300E10B72 /* UI7TabBarItemMostRecentUnselected@2x.png in Resources */,
-				386603DE17A6BB78004EEE3F /* UI7BarButtonItemIconFastForward.png in Resources */,
-				386603E017A6BB78004EEE3F /* UI7BarButtonItemIconFastForward@2x.png in Resources */,
-				386603E217A6BB78004EEE3F /* UI7BarButtonItemIconOrganize.png in Resources */,
-				3865157C17A81EF300E10B72 /* UI7TabBarItemDownloadsUnselected@2x.png in Resources */,
-				3865159617A81EF300E10B72 /* UI7TabBarItemSearchUnselected.png in Resources */,
-				386603E417A6BB78004EEE3F /* UI7BarButtonItemIconOrganize@2x.png in Resources */,
-				386603E617A6BB78004EEE3F /* UI7BarButtonItemIconPause.png in Resources */,
-				386603E817A6BB78004EEE3F /* UI7BarButtonItemIconPause@2x.png in Resources */,
 				38ABF36B17EDBA4E002F1DD1 /* PopoverBackgroundArrowUp.png in Resources */,
-				386603EA17A6BB78004EEE3F /* UI7BarButtonItemIconPlay.png in Resources */,
-				386603EC17A6BB78004EEE3F /* UI7BarButtonItemIconPlay@2x.png in Resources */,
-				3865158E17A81EF300E10B72 /* UI7TabBarItemMostRecentUnselected.png in Resources */,
-				386603EE17A6BB78004EEE3F /* UI7BarButtonItemIconRefresh.png in Resources */,
-				386603F017A6BB78004EEE3F /* UI7BarButtonItemIconRefresh@2x.png in Resources */,
-				386603F217A6BB78004EEE3F /* UI7BarButtonItemIconReply.png in Resources */,
-				386603F417A6BB78004EEE3F /* UI7BarButtonItemIconReply@2x.png in Resources */,
 				38AD076B17AEC1060000E5BA /* UI7SliderThumb@2x.png in Resources */,
 				38ABF35D17EDBA4E002F1DD1 /* PopoverBackgroundArrowDownRight@2x.png in Resources */,
-				386603F617A6BB78004EEE3F /* UI7BarButtonItemIconRewind.png in Resources */,
-				3865159417A81EF300E10B72 /* UI7TabBarItemMostViewedUnselected@2x.png in Resources */,
-				386603F817A6BB78004EEE3F /* UI7BarButtonItemIconRewind@2x.png in Resources */,
 				38ABF35B17EDBA4E002F1DD1 /* PopoverBackgroundArrowDownRight.png in Resources */,
-				386603FA17A6BB78004EEE3F /* UI7BarButtonItemIconSearch.png in Resources */,
-				386603FC17A6BB78004EEE3F /* UI7BarButtonItemIconSearch@2x.png in Resources */,
-				386603FE17A6BB78004EEE3F /* UI7BarButtonItemIconStop.png in Resources */,
-				3865158417A81EF300E10B72 /* UI7TabBarItemFavoriteUnselected@2x.png in Resources */,
-				3866040017A6BB78004EEE3F /* UI7BarButtonItemIconStop@2x.png in Resources */,
-				3865157417A81EF300E10B72 /* UI7TabBarItemBookmarksUnselected@2x.png in Resources */,
-				3865159817A81EF300E10B72 /* UI7TabBarItemSearchUnselected@2x.png in Resources */,
-				3865157A17A81EF300E10B72 /* UI7TabBarItemDownloadsUnselected.png in Resources */,
-				3866040217A6BB78004EEE3F /* UI7BarButtonItemIconTrash.png in Resources */,
 				38AD076E17AEC4780000E5BA /* UI7SliderThumb.png in Resources */,
-				3865157817A81EF300E10B72 /* UI7TabBarItemContactsUnselected@2x.png in Resources */,
-				3866040417A6BB78004EEE3F /* UI7BarButtonItemIconTrash@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
