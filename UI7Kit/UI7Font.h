@@ -8,17 +8,33 @@
 
 #import <UI7Kit/UI7Utilities.h>
 
-UIKIT_EXTERN NSString *UI7FontAttributeNone;
-UIKIT_EXTERN NSString *UI7FontAttributeUltraLight;
-UIKIT_EXTERN NSString *UI7FontAttributeUltraLightItalic;
-UIKIT_EXTERN NSString *UI7FontAttributeLight;
-UIKIT_EXTERN NSString *UI7FontAttributeLightItalic;
-UIKIT_EXTERN NSString *UI7FontAttributeMedium;
-UIKIT_EXTERN NSString *UI7FontAttributeItalic;
-UIKIT_EXTERN NSString *UI7FontAttributeBold;
-UIKIT_EXTERN NSString *UI7FontAttributeBoldItalic;
-UIKIT_EXTERN NSString *UI7FontAttributeCondensedBold;
-UIKIT_EXTERN NSString *UI7FontAttributeCondensedBlack;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < 70000
+UIKIT_EXTERN NSString *const UIFontTextStyleHeadline;
+UIKIT_EXTERN NSString *const UIFontTextStyleBody;
+UIKIT_EXTERN NSString *const UIFontTextStyleSubheadline;
+UIKIT_EXTERN NSString *const UIFontTextStyleFootnote;
+UIKIT_EXTERN NSString *const UIFontTextStyleCaption1;
+UIKIT_EXTERN NSString *const UIFontTextStyleCaption2;
+
+@interface UIFont (iOS7)
+
++ (UIFont *)preferredFontForTextStyle:(NSString *)style;
+
+@end
+#endif
+
+UIKIT_EXTERN NSString *const UI7FontAttributeNone;
+UIKIT_EXTERN NSString *const UI7FontAttributeUltraLight;
+UIKIT_EXTERN NSString *const UI7FontAttributeUltraLightItalic;
+UIKIT_EXTERN NSString *const UI7FontAttributeLight;
+UIKIT_EXTERN NSString *const UI7FontAttributeLightItalic;
+UIKIT_EXTERN NSString *const UI7FontAttributeMedium;
+UIKIT_EXTERN NSString *const UI7FontAttributeItalic;
+UIKIT_EXTERN NSString *const UI7FontAttributeBold;
+UIKIT_EXTERN NSString *const UI7FontAttributeBoldItalic;
+UIKIT_EXTERN NSString *const UI7FontAttributeCondensedBold;
+UIKIT_EXTERN NSString *const UI7FontAttributeCondensedBlack;
+
 
 @interface UI7Font : UIFont<UI7Patch>
 
@@ -36,7 +52,7 @@ UIKIT_EXTERN NSString *UI7FontWeightMedium __deprecated;
 //! @deprecated Use UI7FontAttributeBold
 UIKIT_EXTERN NSString *UI7FontWeightBold __deprecated;
 
-@interface UIFont (iOS7)
+@interface UIFont (UI7Kit)
 
 + (UIFont *)iOS7SystemFontOfSize:(CGFloat)fontSize attribute:(NSString *)attribute;
 

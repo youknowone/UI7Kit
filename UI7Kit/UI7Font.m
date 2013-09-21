@@ -8,21 +8,54 @@
 
 #import "UI7Font.h"
 
-NSString *UI7FontAttributeNone = nil;
-NSString *UI7FontAttributeUltraLight = @"UltraLight";
-NSString *UI7FontAttributeUltraLightItalic = @"UltraLightItalic";
-NSString *UI7FontAttributeLight = @"Light";
-NSString *UI7FontAttributeLightItalic = @"LightItalic";
-NSString *UI7FontAttributeMedium = @"Medium";
-NSString *UI7FontAttributeItalic = @"Italic";
-NSString *UI7FontAttributeBold = @"Bold";
-NSString *UI7FontAttributeBoldItalic = @"BoldItalic";
-NSString *UI7FontAttributeCondensedBold = @"CondensedBold";
-NSString *UI7FontAttributeCondensedBlack = @"CondensedBlack";
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < 70000
+NSString *const UIFontTextStyleHeadline = @"UICTFontTextStyleHeadline";
+NSString *const UIFontTextStyleSubheadline = @"UICTFontTextStyleSubhead";
+NSString *const UIFontTextStyleBody = @"UICTFontTextStyleBody";
+NSString *const UIFontTextStyleFootnote = @"UICTFontTextStyleFootnote";
+NSString *const UIFontTextStyleCaption1 = @"UICTFontTextStyleCaption1";
+NSString *const UIFontTextStyleCaption2 = @"UICTFontTextStyleCaption2";
+#endif
+
+
+NSString *const UI7FontAttributeNone = nil;
+NSString *const UI7FontAttributeUltraLight = @"UltraLight";
+NSString *const UI7FontAttributeUltraLightItalic = @"UltraLightItalic";
+NSString *const UI7FontAttributeLight = @"Light";
+NSString *const UI7FontAttributeLightItalic = @"LightItalic";
+NSString *const UI7FontAttributeMedium = @"Medium";
+NSString *const UI7FontAttributeItalic = @"Italic";
+NSString *const UI7FontAttributeBold = @"Bold";
+NSString *const UI7FontAttributeBoldItalic = @"BoldItalic";
+NSString *const UI7FontAttributeCondensedBold = @"CondensedBold";
+NSString *const UI7FontAttributeCondensedBlack = @"CondensedBlack";
+
+@implementation UIFont (Patch)
+
++ (UIFont *)__preferredFontForTextStyle:(NSString *)style {
+    static NSDictionary *fontAttributes = nil;
+    if (fontAttributes == nil) {
+        fontAttributes = [@{
+                           UIFontTextStyleHeadline: @[@".Helvetica Neue Interface", @16.0],
+                           UIFontTextStyleSubheadline: @[@".Helvetica Neue Interface", @14.0],
+                           UIFontTextStyleBody: @[@".Helvetica Neue Interface", @16.0],
+                           UIFontTextStyleFootnote: @[@".Helvetica Neue Interface", @12.0],
+                           UIFontTextStyleCaption1: @[@".Helvetica Neue Interface", @11.0],
+                           UIFontTextStyleCaption2: @[@".Helvetica Neue Interface", @11.0],
+                          } retain];
+    }
+    NSArray *fontAttribute = fontAttributes[style];
+    return [UIFont fontWithName:@"Helvetica Neue" size:[fontAttribute[1] floatValue]];
+}
+
+@end
+
 
 @implementation UI7Font
 
 + (void)patch {
+    [UIFont addClassMethodForSelector:@selector(preferredFontForTextStyle:) fromMethod:[UIFont classMethodObjectForSelector:@selector(__preferredFontForTextStyle:)]];
+
     Class target = [UI7Font class];
     [self exportSelector:@selector(systemFontOfSize:) toClass:target];
     [self exportSelector:@selector(boldSystemFontOfSize:) toClass:target];
@@ -52,7 +85,7 @@ NSString *UI7FontWeightLight = @"Light";
 NSString *UI7FontWeightMedium = @"Medium";
 NSString *UI7FontWeightBold = @"Bold";
 
-@implementation UIFont (iOS7)
+@implementation UIFont (UI7Kit)
 
 + (UIFont *)iOS7SystemFontOfSize:(CGFloat)fontSize attribute:(NSString *)attribute {
     NSString *fontName = attribute ? [@"HelveticaNeue-%@" format:attribute] : @"Helvetica Neue";
