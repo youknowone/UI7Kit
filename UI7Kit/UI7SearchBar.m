@@ -10,6 +10,28 @@
 #import "UI7Color.h"
 #import "UI7SearchBar.h"
 
+
+@interface UISearchBar (Private)
+
+@property(retain) UIImage * scopeBarBackgroundImage;
+
+@end
+
+
+@interface UISearchBar (Accessor)
+
+@property(readonly) UISegmentedControl *scopeBar;
+
+@end
+
+
+@implementation UISearchBar (Accessor)
+
+NSAPropertyGetter(scopeBar, @"_scopeBar");
+
+@end
+
+
 @implementation UISearchBar (Patch)
 
 - (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
@@ -42,6 +64,17 @@
             textField.layer.cornerRadius = 5.0f;
             textField.background = nil;
         }
+    }
+
+    self.scopeBarBackgroundImage = [self.backgroundColor image];
+
+    {
+        UIColor *tintColor = [[UI7Kit kit] tintColor];
+
+        UISegmentedControl *segmented = self.scopeBar;
+        segmented.clipsToBounds = NO;
+        segmented.layer.borderWidth = .0f;
+        segmented.tintColor = tintColor;
     }
 }
 

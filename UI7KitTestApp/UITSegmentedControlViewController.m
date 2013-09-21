@@ -14,28 +14,12 @@
 
 @implementation UITSegmentedControlViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
 
     UISegmentedControl *segmentedControl = [[[UISegmentedControl alloc] initWithItems:@[@"Item1", @"Item2", @"Item3"]] autorelease];
     segmentedControl.frame = CGRectMake(20.0, 10.0, 280, segmentedControl.frame.size.height);
     [self.view addSubview:segmentedControl];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)colorChanged:(id)sender {
