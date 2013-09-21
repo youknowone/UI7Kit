@@ -7,6 +7,8 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
+#import <UI7Kit/UI7Utilities.h>
+
 #import "UI7PopoverController.h"
 
 @implementation UIPopoverController (Patch)
@@ -43,10 +45,20 @@
 @end
 
 
+@interface UI7PopoverBackgroundView (Private)
+
+@property (strong, nonatomic) UIImageView *popoverBackground;
+
+@end
+
+
 @implementation UI7PopoverBackgroundView
 
 - (void)layoutSubviews {
+    self.backgroundColor = [UIColor whiteColor];
+    self.layer.cornerRadius = 10.0f;
     [super layoutSubviews];
+    //self.popoverBackground.image = [self.popoverBackground.image imageByFilledWithColor:[UIColor whiteColor]];
     self.layer.shadowRadius = 500.0f; // immitate dimming view
 }
 

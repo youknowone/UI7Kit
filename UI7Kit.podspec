@@ -39,7 +39,6 @@ Pod::Spec.new do |s|
     'UI7View'                 => [%w(UI7View.{h,m})                ,  [                                                                                            ],  %w(          )],
     'UI7ViewController'       => [%w(UI7ViewController.{h,m})      ,  [%w(UI7Kit/UI7NavigationBar), %w(UI7Kit/UI7BarButtonItem)                                    ],  %w(          )],
     'UI7Window'               => [%w(UI7Window.{h,m})              ,  [%w(UI7Kit/UI7View)                                                                          ],  %w(          )],
-    'UI7PopoverController'    => [%w(UI7PopoverController.{h,m})   ,  [%w(GIKPopoverBackgroundView)                                                                ],  %w(QuartzCore)],
   }
   components.map do |component, values|
     s.subspec component do |c|
@@ -88,6 +87,13 @@ Pod::Spec.new do |s|
     end
   end
 
+  s.subspec 'UI7PopoverController' do |ss|
+    ss.source_files = 'UI7Kit/UI7PopoverController.{h,m}'
+    ss.resources = 'Resources/Popover*'
+    ss.dependency 'GIKPopoverBackgroundView/Core'
+    ss.framework 'QuartzCore'
+  end
+
   s.subspec 'Core' do |core|
     core.source_files           = 'UI7Kit/UI7{Kit,Utilities}*.{h,m}' 
     core.public_header_files    = 'UI7Kit/UI7{Kit,Utilities}*.h'
@@ -107,5 +113,6 @@ Pod::Spec.new do |s|
       all.dependency "UI7Kit/#{component}"
     end
     all.dependency 'UI7Kit/UI7Switch/SevenSwitch'
+    all.dependency 'UI7Kit/UI7PopoverController'
   end
 end
