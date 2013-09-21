@@ -189,6 +189,35 @@
 		388FC1E3177303AA0084574E /* UI7ButtonImageAdd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 388FC1DF177303AA0084574E /* UI7ButtonImageAdd@2x.png */; };
 		388FC1E4177303AA0084574E /* UI7ButtonImageInfo.png in Resources */ = {isa = PBXBuildFile; fileRef = 388FC1E0177303AA0084574E /* UI7ButtonImageInfo.png */; };
 		388FC1E5177303AA0084574E /* UI7ButtonImageInfo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 388FC1E1177303AA0084574E /* UI7ButtonImageInfo@2x.png */; };
+		38ABF34817ED87FB002F1DD1 /* UI7ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38ABF34717ED87FB002F1DD1 /* UI7ActivityViewController.m */; };
+		38ABF35717EDBA4E002F1DD1 /* PopoverBackgroundArrowDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ABF34917EDBA4E002F1DD1 /* PopoverBackgroundArrowDown.png */; };
+		38ABF35817EDBA4E002F1DD1 /* PopoverBackgroundArrowDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ABF34917EDBA4E002F1DD1 /* PopoverBackgroundArrowDown.png */; };
+		38ABF35917EDBA4E002F1DD1 /* PopoverBackgroundArrowDown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ABF34A17EDBA4E002F1DD1 /* PopoverBackgroundArrowDown@2x.png */; };
+		38ABF35A17EDBA4E002F1DD1 /* PopoverBackgroundArrowDown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ABF34A17EDBA4E002F1DD1 /* PopoverBackgroundArrowDown@2x.png */; };
+		38ABF35B17EDBA4E002F1DD1 /* PopoverBackgroundArrowDownRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ABF34B17EDBA4E002F1DD1 /* PopoverBackgroundArrowDownRight.png */; };
+		38ABF35C17EDBA4E002F1DD1 /* PopoverBackgroundArrowDownRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ABF34B17EDBA4E002F1DD1 /* PopoverBackgroundArrowDownRight.png */; };
+		38ABF35D17EDBA4E002F1DD1 /* PopoverBackgroundArrowDownRight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ABF34C17EDBA4E002F1DD1 /* PopoverBackgroundArrowDownRight@2x.png */; };
+		38ABF35E17EDBA4E002F1DD1 /* PopoverBackgroundArrowDownRight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ABF34C17EDBA4E002F1DD1 /* PopoverBackgroundArrowDownRight@2x.png */; };
+		38ABF35F17EDBA4E002F1DD1 /* PopoverBackgroundArrowSide.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ABF34D17EDBA4E002F1DD1 /* PopoverBackgroundArrowSide.png */; };
+		38ABF36017EDBA4E002F1DD1 /* PopoverBackgroundArrowSide.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ABF34D17EDBA4E002F1DD1 /* PopoverBackgroundArrowSide.png */; };
+		38ABF36117EDBA4E002F1DD1 /* PopoverBackgroundArrowSide@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ABF34E17EDBA4E002F1DD1 /* PopoverBackgroundArrowSide@2x.png */; };
+		38ABF36217EDBA4E002F1DD1 /* PopoverBackgroundArrowSide@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ABF34E17EDBA4E002F1DD1 /* PopoverBackgroundArrowSide@2x.png */; };
+		38ABF36317EDBA4E002F1DD1 /* PopoverBackgroundArrowSideBottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ABF34F17EDBA4E002F1DD1 /* PopoverBackgroundArrowSideBottom.png */; };
+		38ABF36417EDBA4E002F1DD1 /* PopoverBackgroundArrowSideBottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ABF34F17EDBA4E002F1DD1 /* PopoverBackgroundArrowSideBottom.png */; };
+		38ABF36517EDBA4E002F1DD1 /* PopoverBackgroundArrowSideBottom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ABF35017EDBA4E002F1DD1 /* PopoverBackgroundArrowSideBottom@2x.png */; };
+		38ABF36617EDBA4E002F1DD1 /* PopoverBackgroundArrowSideBottom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ABF35017EDBA4E002F1DD1 /* PopoverBackgroundArrowSideBottom@2x.png */; };
+		38ABF36717EDBA4E002F1DD1 /* PopoverBackgroundArrowSideTop.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ABF35117EDBA4E002F1DD1 /* PopoverBackgroundArrowSideTop.png */; };
+		38ABF36817EDBA4E002F1DD1 /* PopoverBackgroundArrowSideTop.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ABF35117EDBA4E002F1DD1 /* PopoverBackgroundArrowSideTop.png */; };
+		38ABF36917EDBA4E002F1DD1 /* PopoverBackgroundArrowSideTop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ABF35217EDBA4E002F1DD1 /* PopoverBackgroundArrowSideTop@2x.png */; };
+		38ABF36A17EDBA4E002F1DD1 /* PopoverBackgroundArrowSideTop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ABF35217EDBA4E002F1DD1 /* PopoverBackgroundArrowSideTop@2x.png */; };
+		38ABF36B17EDBA4E002F1DD1 /* PopoverBackgroundArrowUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ABF35317EDBA4E002F1DD1 /* PopoverBackgroundArrowUp.png */; };
+		38ABF36C17EDBA4E002F1DD1 /* PopoverBackgroundArrowUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ABF35317EDBA4E002F1DD1 /* PopoverBackgroundArrowUp.png */; };
+		38ABF36D17EDBA4E002F1DD1 /* PopoverBackgroundArrowUp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ABF35417EDBA4E002F1DD1 /* PopoverBackgroundArrowUp@2x.png */; };
+		38ABF36E17EDBA4E002F1DD1 /* PopoverBackgroundArrowUp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ABF35417EDBA4E002F1DD1 /* PopoverBackgroundArrowUp@2x.png */; };
+		38ABF36F17EDBA4E002F1DD1 /* PopoverBackgroundArrowUpRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ABF35517EDBA4E002F1DD1 /* PopoverBackgroundArrowUpRight.png */; };
+		38ABF37017EDBA4E002F1DD1 /* PopoverBackgroundArrowUpRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ABF35517EDBA4E002F1DD1 /* PopoverBackgroundArrowUpRight.png */; };
+		38ABF37117EDBA4E002F1DD1 /* PopoverBackgroundArrowUpRight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ABF35617EDBA4E002F1DD1 /* PopoverBackgroundArrowUpRight@2x.png */; };
+		38ABF37217EDBA4E002F1DD1 /* PopoverBackgroundArrowUpRight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ABF35617EDBA4E002F1DD1 /* PopoverBackgroundArrowUpRight@2x.png */; };
 		38AD076617AE7C4E0000E5BA /* UICSwitchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38AD076517AE7C4E0000E5BA /* UICSwitchViewController.m */; };
 		38AD076917AE84CE0000E5BA /* UICSliderProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38AD076817AE84CE0000E5BA /* UICSliderProgressViewController.m */; };
 		38AD076B17AEC1060000E5BA /* UI7SliderThumb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38AD076A17AEC1060000E5BA /* UI7SliderThumb@2x.png */; };
@@ -414,6 +443,22 @@
 		388FC1E0177303AA0084574E /* UI7ButtonImageInfo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7ButtonImageInfo.png; sourceTree = "<group>"; };
 		388FC1E1177303AA0084574E /* UI7ButtonImageInfo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI7ButtonImageInfo@2x.png"; sourceTree = "<group>"; };
 		388FC1E6177345970084574E /* UI7KitPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7KitPrivate.h; sourceTree = "<group>"; };
+		38ABF34617ED87FB002F1DD1 /* UI7ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7ActivityViewController.h; sourceTree = "<group>"; };
+		38ABF34717ED87FB002F1DD1 /* UI7ActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7ActivityViewController.m; sourceTree = "<group>"; };
+		38ABF34917EDBA4E002F1DD1 /* PopoverBackgroundArrowDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PopoverBackgroundArrowDown.png; sourceTree = "<group>"; };
+		38ABF34A17EDBA4E002F1DD1 /* PopoverBackgroundArrowDown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PopoverBackgroundArrowDown@2x.png"; sourceTree = "<group>"; };
+		38ABF34B17EDBA4E002F1DD1 /* PopoverBackgroundArrowDownRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PopoverBackgroundArrowDownRight.png; sourceTree = "<group>"; };
+		38ABF34C17EDBA4E002F1DD1 /* PopoverBackgroundArrowDownRight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PopoverBackgroundArrowDownRight@2x.png"; sourceTree = "<group>"; };
+		38ABF34D17EDBA4E002F1DD1 /* PopoverBackgroundArrowSide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PopoverBackgroundArrowSide.png; sourceTree = "<group>"; };
+		38ABF34E17EDBA4E002F1DD1 /* PopoverBackgroundArrowSide@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PopoverBackgroundArrowSide@2x.png"; sourceTree = "<group>"; };
+		38ABF34F17EDBA4E002F1DD1 /* PopoverBackgroundArrowSideBottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PopoverBackgroundArrowSideBottom.png; sourceTree = "<group>"; };
+		38ABF35017EDBA4E002F1DD1 /* PopoverBackgroundArrowSideBottom@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PopoverBackgroundArrowSideBottom@2x.png"; sourceTree = "<group>"; };
+		38ABF35117EDBA4E002F1DD1 /* PopoverBackgroundArrowSideTop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PopoverBackgroundArrowSideTop.png; sourceTree = "<group>"; };
+		38ABF35217EDBA4E002F1DD1 /* PopoverBackgroundArrowSideTop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PopoverBackgroundArrowSideTop@2x.png"; sourceTree = "<group>"; };
+		38ABF35317EDBA4E002F1DD1 /* PopoverBackgroundArrowUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PopoverBackgroundArrowUp.png; sourceTree = "<group>"; };
+		38ABF35417EDBA4E002F1DD1 /* PopoverBackgroundArrowUp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PopoverBackgroundArrowUp@2x.png"; sourceTree = "<group>"; };
+		38ABF35517EDBA4E002F1DD1 /* PopoverBackgroundArrowUpRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PopoverBackgroundArrowUpRight.png; sourceTree = "<group>"; };
+		38ABF35617EDBA4E002F1DD1 /* PopoverBackgroundArrowUpRight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PopoverBackgroundArrowUpRight@2x.png"; sourceTree = "<group>"; };
 		38AD076417AE7C4E0000E5BA /* UICSwitchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICSwitchViewController.h; sourceTree = "<group>"; };
 		38AD076517AE7C4E0000E5BA /* UICSwitchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICSwitchViewController.m; sourceTree = "<group>"; };
 		38AD076717AE84CE0000E5BA /* UICSliderProgressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICSliderProgressViewController.h; sourceTree = "<group>"; };
@@ -560,6 +605,20 @@
 		380174601769FE390049D26C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				38ABF34917EDBA4E002F1DD1 /* PopoverBackgroundArrowDown.png */,
+				38ABF34A17EDBA4E002F1DD1 /* PopoverBackgroundArrowDown@2x.png */,
+				38ABF34B17EDBA4E002F1DD1 /* PopoverBackgroundArrowDownRight.png */,
+				38ABF34C17EDBA4E002F1DD1 /* PopoverBackgroundArrowDownRight@2x.png */,
+				38ABF34D17EDBA4E002F1DD1 /* PopoverBackgroundArrowSide.png */,
+				38ABF34E17EDBA4E002F1DD1 /* PopoverBackgroundArrowSide@2x.png */,
+				38ABF34F17EDBA4E002F1DD1 /* PopoverBackgroundArrowSideBottom.png */,
+				38ABF35017EDBA4E002F1DD1 /* PopoverBackgroundArrowSideBottom@2x.png */,
+				38ABF35117EDBA4E002F1DD1 /* PopoverBackgroundArrowSideTop.png */,
+				38ABF35217EDBA4E002F1DD1 /* PopoverBackgroundArrowSideTop@2x.png */,
+				38ABF35317EDBA4E002F1DD1 /* PopoverBackgroundArrowUp.png */,
+				38ABF35417EDBA4E002F1DD1 /* PopoverBackgroundArrowUp@2x.png */,
+				38ABF35517EDBA4E002F1DD1 /* PopoverBackgroundArrowUpRight.png */,
+				38ABF35617EDBA4E002F1DD1 /* PopoverBackgroundArrowUpRight@2x.png */,
 				386603AC17A6BB78004EEE3F /* UI7BarButtonItemIconAction.png */,
 				386603AD17A6BB78004EEE3F /* UI7BarButtonItemIconAction@2x.png */,
 				386603AE17A6BB78004EEE3F /* UI7BarButtonItemIconAdd.png */,
@@ -796,6 +855,8 @@
 				385C6CC01786C86F00A182C0 /* UI7PickerView.m */,
 				380F728D17DA0016009133AF /* UI7PopoverController.h */,
 				380F728E17DA0016009133AF /* UI7PopoverController.m */,
+				38ABF34617ED87FB002F1DD1 /* UI7ActivityViewController.h */,
+				38ABF34717ED87FB002F1DD1 /* UI7ActivityViewController.m */,
 				380174601769FE390049D26C /* Resources */,
 				38017426176989660049D26C /* Supporting Files */,
 			);
@@ -1001,10 +1062,13 @@
 				38078A68178DB7A00010B6D5 /* icon_72x72.png in Resources */,
 				384BF446178A1F4200485BED /* UI7ButtonImageAdd@2x.png in Resources */,
 				3865159717A81EF300E10B72 /* UI7TabBarItemSearchUnselected.png in Resources */,
+				38ABF36C17EDBA4E002F1DD1 /* PopoverBackgroundArrowUp.png in Resources */,
 				384BF447178A1F4200485BED /* UI7ButtonImageInfo.png in Resources */,
+				38ABF36417EDBA4E002F1DD1 /* PopoverBackgroundArrowSideBottom.png in Resources */,
 				384BF448178A1F4200485BED /* UI7ButtonImageInfo@2x.png in Resources */,
 				38AD076F17AEC4780000E5BA /* UI7SliderThumb.png in Resources */,
 				3865159317A81EF300E10B72 /* UI7TabBarItemMostViewedUnselected.png in Resources */,
+				38ABF36617EDBA4E002F1DD1 /* PopoverBackgroundArrowSideBottom@2x.png in Resources */,
 				384BF44B178A1F4200485BED /* UI7NavigationBarBackButton.png in Resources */,
 				384BF44C178A1F4200485BED /* UI7NavigationBarBackButton@2x.png in Resources */,
 				384BF455178A2DB100485BED /* Default.png in Resources */,
@@ -1012,6 +1076,7 @@
 				384BF456178A2DB100485BED /* Default@2x.png in Resources */,
 				384BF457178A2DB100485BED /* Default-568h@2x.png in Resources */,
 				386603CB17A6BB78004EEE3F /* UI7BarButtonItemIconAction.png in Resources */,
+				38ABF35817EDBA4E002F1DD1 /* PopoverBackgroundArrowDown.png in Resources */,
 				386603CD17A6BB78004EEE3F /* UI7BarButtonItemIconAction@2x.png in Resources */,
 				386603CF17A6BB78004EEE3F /* UI7BarButtonItemIconAdd.png in Resources */,
 				3865158F17A81EF300E10B72 /* UI7TabBarItemMostRecentUnselected.png in Resources */,
@@ -1022,13 +1087,18 @@
 				386603D717A6BB78004EEE3F /* UI7BarButtonItemIconCamera.png in Resources */,
 				386603D917A6BB78004EEE3F /* UI7BarButtonItemIconCamera@2x.png in Resources */,
 				386603DB17A6BB78004EEE3F /* UI7BarButtonItemIconCompose.png in Resources */,
+				38ABF36A17EDBA4E002F1DD1 /* PopoverBackgroundArrowSideTop@2x.png in Resources */,
+				38ABF35C17EDBA4E002F1DD1 /* PopoverBackgroundArrowDownRight.png in Resources */,
 				3865157717A81EF300E10B72 /* UI7TabBarItemContactsUnselected.png in Resources */,
+				38ABF35E17EDBA4E002F1DD1 /* PopoverBackgroundArrowDownRight@2x.png in Resources */,
 				386603DD17A6BB78004EEE3F /* UI7BarButtonItemIconCompose@2x.png in Resources */,
 				3865158517A81EF300E10B72 /* UI7TabBarItemFavoriteUnselected@2x.png in Resources */,
+				38ABF35A17EDBA4E002F1DD1 /* PopoverBackgroundArrowDown@2x.png in Resources */,
 				386603DF17A6BB78004EEE3F /* UI7BarButtonItemIconFastForward.png in Resources */,
 				386603E117A6BB78004EEE3F /* UI7BarButtonItemIconFastForward@2x.png in Resources */,
 				386603E317A6BB78004EEE3F /* UI7BarButtonItemIconOrganize.png in Resources */,
 				386603E517A6BB78004EEE3F /* UI7BarButtonItemIconOrganize@2x.png in Resources */,
+				38ABF36217EDBA4E002F1DD1 /* PopoverBackgroundArrowSide@2x.png in Resources */,
 				386603E717A6BB78004EEE3F /* UI7BarButtonItemIconPause.png in Resources */,
 				3865159917A81EF300E10B72 /* UI7TabBarItemSearchUnselected@2x.png in Resources */,
 				3865159517A81EF300E10B72 /* UI7TabBarItemMostViewedUnselected@2x.png in Resources */,
@@ -1039,6 +1109,7 @@
 				386603ED17A6BB78004EEE3F /* UI7BarButtonItemIconPlay@2x.png in Resources */,
 				386603EF17A6BB78004EEE3F /* UI7BarButtonItemIconRefresh.png in Resources */,
 				3865157917A81EF300E10B72 /* UI7TabBarItemContactsUnselected@2x.png in Resources */,
+				38ABF37217EDBA4E002F1DD1 /* PopoverBackgroundArrowUpRight@2x.png in Resources */,
 				386603F117A6BB78004EEE3F /* UI7BarButtonItemIconRefresh@2x.png in Resources */,
 				3865158717A81EF300E10B72 /* UI7TabBarItemHistoryUnselected.png in Resources */,
 				3865157D17A81EF300E10B72 /* UI7TabBarItemDownloadsUnselected@2x.png in Resources */,
@@ -1047,12 +1118,16 @@
 				386603F717A6BB78004EEE3F /* UI7BarButtonItemIconRewind.png in Resources */,
 				386603F917A6BB78004EEE3F /* UI7BarButtonItemIconRewind@2x.png in Resources */,
 				386603FB17A6BB78004EEE3F /* UI7BarButtonItemIconSearch.png in Resources */,
+				38ABF36817EDBA4E002F1DD1 /* PopoverBackgroundArrowSideTop.png in Resources */,
+				38ABF36E17EDBA4E002F1DD1 /* PopoverBackgroundArrowUp@2x.png in Resources */,
 				3865158917A81EF300E10B72 /* UI7TabBarItemHistoryUnselected@2x.png in Resources */,
 				3865157517A81EF300E10B72 /* UI7TabBarItemBookmarksUnselected@2x.png in Resources */,
 				386603FD17A6BB78004EEE3F /* UI7BarButtonItemIconSearch@2x.png in Resources */,
 				386603FF17A6BB78004EEE3F /* UI7BarButtonItemIconStop.png in Resources */,
 				3865159117A81EF300E10B72 /* UI7TabBarItemMostRecentUnselected@2x.png in Resources */,
 				3866040117A6BB78004EEE3F /* UI7BarButtonItemIconStop@2x.png in Resources */,
+				38ABF36017EDBA4E002F1DD1 /* PopoverBackgroundArrowSide.png in Resources */,
+				38ABF37017EDBA4E002F1DD1 /* PopoverBackgroundArrowUpRight.png in Resources */,
 				3866040317A6BB78004EEE3F /* UI7BarButtonItemIconTrash.png in Resources */,
 				3865157317A81EF300E10B72 /* UI7TabBarItemBookmarksUnselected.png in Resources */,
 				3866040517A6BB78004EEE3F /* UI7BarButtonItemIconTrash@2x.png in Resources */,
@@ -1068,25 +1143,33 @@
 				38F068281636F8C8002723AB /* Default.png in Resources */,
 				38F0682A1636F8C8002723AB /* Default@2x.png in Resources */,
 				3865157E17A81EF300E10B72 /* UI7TabBarItemFavoriteSelected.png in Resources */,
+				38ABF36717EDBA4E002F1DD1 /* PopoverBackgroundArrowSideTop.png in Resources */,
 				38078A69178DB7A00010B6D5 /* icon_72x72@2x.png in Resources */,
 				3865158A17A81EF300E10B72 /* UI7TabBarItemMoreUnselected.png in Resources */,
 				38F0682C1636F8C8002723AB /* Default-568h@2x.png in Resources */,
 				388FC1E3177303AA0084574E /* UI7ButtonImageAdd@2x.png in Resources */,
 				388FC1E4177303AA0084574E /* UI7ButtonImageInfo.png in Resources */,
+				38ABF35917EDBA4E002F1DD1 /* PopoverBackgroundArrowDown@2x.png in Resources */,
 				3865158C17A81EF300E10B72 /* UI7TabBarItemMoreUnselected@2x.png in Resources */,
+				38ABF35717EDBA4E002F1DD1 /* PopoverBackgroundArrowDown.png in Resources */,
 				388FC1E2177303AA0084574E /* UI7ButtonImageAdd.png in Resources */,
+				38ABF35F17EDBA4E002F1DD1 /* PopoverBackgroundArrowSide.png in Resources */,
 				38078A65178DB7A00010B6D5 /* Icon_60x60@2x.png in Resources */,
 				3801745F1769F3B50049D26C /* Storyboard.storyboard in Resources */,
 				3865157217A81EF300E10B72 /* UI7TabBarItemBookmarksUnselected.png in Resources */,
 				38017462176A245B0049D26C /* UI7NavigationBarBackButton.png in Resources */,
+				38ABF36F17EDBA4E002F1DD1 /* PopoverBackgroundArrowUpRight.png in Resources */,
 				3865158817A81EF300E10B72 /* UI7TabBarItemHistoryUnselected@2x.png in Resources */,
 				38078A67178DB7A00010B6D5 /* icon_72x72.png in Resources */,
+				38ABF36117EDBA4E002F1DD1 /* PopoverBackgroundArrowSide@2x.png in Resources */,
+				38ABF36D17EDBA4E002F1DD1 /* PopoverBackgroundArrowUp@2x.png in Resources */,
 				3865158617A81EF300E10B72 /* UI7TabBarItemHistoryUnselected.png in Resources */,
 				387558C5176DFA8600AE5C8B /* UI7NavigationBarBackButton@2x.png in Resources */,
 				384BF452178A230E00485BED /* icon_57x57@2x.png in Resources */,
 				384BF454178A231100485BED /* icon_57x57.png in Resources */,
 				386603CA17A6BB78004EEE3F /* UI7BarButtonItemIconAction.png in Resources */,
 				3865159217A81EF300E10B72 /* UI7TabBarItemMostViewedUnselected.png in Resources */,
+				38ABF36917EDBA4E002F1DD1 /* PopoverBackgroundArrowSideTop@2x.png in Resources */,
 				386603CC17A6BB78004EEE3F /* UI7BarButtonItemIconAction@2x.png in Resources */,
 				386603CE17A6BB78004EEE3F /* UI7BarButtonItemIconAdd.png in Resources */,
 				386603D017A6BB78004EEE3F /* UI7BarButtonItemIconAdd@2x.png in Resources */,
@@ -1095,10 +1178,13 @@
 				3865158017A81EF300E10B72 /* UI7TabBarItemFavoriteSelected@2x.png in Resources */,
 				386603D417A6BB78004EEE3F /* UI7BarButtonItemIconBookmarks@2x.png in Resources */,
 				386603D617A6BB78004EEE3F /* UI7BarButtonItemIconCamera.png in Resources */,
+				38ABF36517EDBA4E002F1DD1 /* PopoverBackgroundArrowSideBottom@2x.png in Resources */,
 				3865158217A81EF300E10B72 /* UI7TabBarItemFavoriteUnselected.png in Resources */,
 				386603D817A6BB78004EEE3F /* UI7BarButtonItemIconCamera@2x.png in Resources */,
 				386603DA17A6BB78004EEE3F /* UI7BarButtonItemIconCompose.png in Resources */,
+				38ABF36317EDBA4E002F1DD1 /* PopoverBackgroundArrowSideBottom.png in Resources */,
 				386603DC17A6BB78004EEE3F /* UI7BarButtonItemIconCompose@2x.png in Resources */,
+				38ABF37117EDBA4E002F1DD1 /* PopoverBackgroundArrowUpRight@2x.png in Resources */,
 				3865159017A81EF300E10B72 /* UI7TabBarItemMostRecentUnselected@2x.png in Resources */,
 				386603DE17A6BB78004EEE3F /* UI7BarButtonItemIconFastForward.png in Resources */,
 				386603E017A6BB78004EEE3F /* UI7BarButtonItemIconFastForward@2x.png in Resources */,
@@ -1108,6 +1194,7 @@
 				386603E417A6BB78004EEE3F /* UI7BarButtonItemIconOrganize@2x.png in Resources */,
 				386603E617A6BB78004EEE3F /* UI7BarButtonItemIconPause.png in Resources */,
 				386603E817A6BB78004EEE3F /* UI7BarButtonItemIconPause@2x.png in Resources */,
+				38ABF36B17EDBA4E002F1DD1 /* PopoverBackgroundArrowUp.png in Resources */,
 				386603EA17A6BB78004EEE3F /* UI7BarButtonItemIconPlay.png in Resources */,
 				386603EC17A6BB78004EEE3F /* UI7BarButtonItemIconPlay@2x.png in Resources */,
 				3865158E17A81EF300E10B72 /* UI7TabBarItemMostRecentUnselected.png in Resources */,
@@ -1116,9 +1203,11 @@
 				386603F217A6BB78004EEE3F /* UI7BarButtonItemIconReply.png in Resources */,
 				386603F417A6BB78004EEE3F /* UI7BarButtonItemIconReply@2x.png in Resources */,
 				38AD076B17AEC1060000E5BA /* UI7SliderThumb@2x.png in Resources */,
+				38ABF35D17EDBA4E002F1DD1 /* PopoverBackgroundArrowDownRight@2x.png in Resources */,
 				386603F617A6BB78004EEE3F /* UI7BarButtonItemIconRewind.png in Resources */,
 				3865159417A81EF300E10B72 /* UI7TabBarItemMostViewedUnselected@2x.png in Resources */,
 				386603F817A6BB78004EEE3F /* UI7BarButtonItemIconRewind@2x.png in Resources */,
+				38ABF35B17EDBA4E002F1DD1 /* PopoverBackgroundArrowDownRight.png in Resources */,
 				386603FA17A6BB78004EEE3F /* UI7BarButtonItemIconSearch.png in Resources */,
 				386603FC17A6BB78004EEE3F /* UI7BarButtonItemIconSearch@2x.png in Resources */,
 				386603FE17A6BB78004EEE3F /* UI7BarButtonItemIconStop.png in Resources */,
@@ -1241,6 +1330,7 @@
 				385C6CC11786C86F00A182C0 /* UI7PickerView.m in Sources */,
 				38717F77179F6009003D9602 /* UI7Window.m in Sources */,
 				3805FBB717AAAD56008487A9 /* UI7TableViewCell.m in Sources */,
+				38ABF34817ED87FB002F1DD1 /* UI7ActivityViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

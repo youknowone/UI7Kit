@@ -39,6 +39,7 @@ Pod::Spec.new do |s|
     'UI7View'                 => [%w(UI7View.{h,m})                ,  [                                                                                            ],  %w(          )],
     'UI7ViewController'       => [%w(UI7ViewController.{h,m})      ,  [%w(UI7Kit/UI7NavigationBar), %w(UI7Kit/UI7BarButtonItem)                                    ],  %w(          )],
     'UI7Window'               => [%w(UI7Window.{h,m})              ,  [%w(UI7Kit/UI7View)                                                                          ],  %w(          )],
+    'UI7ActivityViewController'=>[%w(UI7ActivityViewController.{h,m}),[%w(UI7Kit/UI7Font)                                                                          ],  %w(          )],
   }
   components.map do |component, values|
     s.subspec component do |c|
@@ -90,8 +91,8 @@ Pod::Spec.new do |s|
   s.subspec 'UI7PopoverController' do |ss|
     ss.source_files = 'UI7Kit/UI7PopoverController.{h,m}'
     ss.resources = 'Resources/Popover*'
+    ss.framework = 'QuartzCore'
     ss.dependency 'GIKPopoverBackgroundView/Core'
-    ss.framework 'QuartzCore'
   end
 
   s.subspec 'Core' do |core|

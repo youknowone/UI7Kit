@@ -8,17 +8,37 @@
 
 #import "UITExternalViewController.h"
 
+@interface UITTestActivity : UIActivity
+
+@end
+
+
+@implementation UITTestActivity
+
+- (NSString *)activityType {
+    return @"test";
+}
+
+- (NSString *)activityTitle {
+    return @"Test Activity";
+}
+
+- (UIImage *)activityImage {
+    return [UIColor redColor].image;
+}
+
+- (BOOL)canPerformWithActivityItems:(NSArray *)activityItems {
+    return YES;
+}
+
+@end
+
+
 @interface UITExternalViewController ()
 
 @end
 
 @implementation UITExternalViewController
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
-}
 
 - (void)showImagePicker:(id)sender {
     UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
@@ -27,11 +47,11 @@
     imagePickerController.allowsEditing = true;
     imagePickerController.mediaTypes = @[@"public.image"];
     imagePickerController.delegate = self;
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        [self presentModalViewController:imagePickerController animated:true];
+    } else {
         UIPopoverController *controller = [[UIPopoverController alloc] initWithContentViewController:imagePickerController];
         [controller presentPopoverFromRect:CGRectMake(.0f, .0f, 300.0f, 600.0f) inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-    } else {
-        [self presentModalViewController:imagePickerController animated:true];
     }
 }
 
@@ -69,7 +89,19 @@
 }
 
 - (void)showActivityController:(id)sender {
-    
+    NSArray *applicationActivities = @[[[[UITTestActivity alloc] init] autorelease]];
+
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[@"activity"] applicationActivities:applicationActivities];
+
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        [self presentViewController:activityViewController animated:YES completion:NULL];
+    } else {
+        UIPopoverController *popover = [[UIPopoverController alloc] initWithContentViewController:activityViewController];
+        [popover presentPopoverFromRect:CGRectMake(.0, .0, 300, 600)
+                                 inView:self.view
+               permittedArrowDirections:UIPopoverArrowDirectionAny
+                               animated:YES];
+    }
 }
 
 

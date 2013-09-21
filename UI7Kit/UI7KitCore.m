@@ -76,6 +76,7 @@ UI7Kit *UI7KitSharedObject = nil;
          @"UI7ProgressView",
          @"UI7PickerView",
          @"UI7PopoverController",
+         @"UI7ActivityViewController",
          ]) {
         if ([UI7KitAutopatchException containsObject:className]) {
             continue;
