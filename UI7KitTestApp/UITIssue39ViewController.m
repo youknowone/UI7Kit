@@ -14,27 +14,6 @@
 
 @implementation UITIssue39ViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (void)showAlert:(id)sender {
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Issue #39" message:@"Continuous alert view call test." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Keep going", nil];
     [alertView show];

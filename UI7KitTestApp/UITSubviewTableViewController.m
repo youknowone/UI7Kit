@@ -35,8 +35,7 @@
     [self->tableView setEditing:!self->tableView.editing animated:YES];
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
 
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(edit:)];
@@ -58,12 +57,6 @@
 
         [views addObject:anImageView];
     }
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (NSUInteger)subviewTableViewNumberOfSubviews:(UIASubviewTableView *)scrollView {
