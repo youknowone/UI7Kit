@@ -279,7 +279,7 @@ UIView *_UI7TableViewDelegateViewForHeaderInSection(id self, SEL _cmd, UITableVi
         label.text = [@"   " stringByAppendingString:[title uppercaseString]];
         label.font = [UI7Font systemFontOfSize:14.0 attribute:UI7FontAttributeNone];
         label.textColor = [UIColor colorWith8bitWhite:77 alpha:255];
-        label.backgroundColor = [UI7Color groupedTableViewSectionBackgroundColor];
+        label.backgroundColor = [UIColor clearColor];
     } else {
         label.text = [@"    " stringByAppendingString:title];
         label.font = [UI7Font systemFontOfSize:14.0 attribute:UI7FontAttributeMedium];
@@ -289,7 +289,7 @@ UIView *_UI7TableViewDelegateViewForHeaderInSection(id self, SEL _cmd, UITableVi
     if (grouped) {
         view = [[[UIView alloc] initWithFrame:CGRectMake(.0, .0, tableView.frame.size.width, height)] autorelease];
         [view addSubview:label];
-        view.backgroundColor = label.backgroundColor;
+        view.backgroundColor = [UI7Color groupedTableViewSectionBackgroundColor];
     } else {
         view = label;
     }

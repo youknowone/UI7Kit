@@ -53,7 +53,7 @@
 }
 
 + (UIColor *)groupedTableViewSectionBackgroundColor {
-    return [UIColor colorWith8bitRed:239 green:239 blue:244 alpha:255];
+    return [UIColor colorWithWhite:.0f alpha:0.063f];
 }
 
 + (UIColor *)groupTableViewBackgroundColor {
