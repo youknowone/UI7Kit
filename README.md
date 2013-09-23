@@ -13,6 +13,7 @@ Goal
 
 How to use
 ----------
+
 Case 1: Dynamic patch (Mostly recommended)
 
     #import <UI7Kit/UI7Kit.h>
@@ -27,6 +28,12 @@ Case 3: Partial dynamic patch
 
     #import <UI7Kit/UI7Kit.h>
     [UI7<class> patchIfNeeded]; // ex) [UI7TableView patch];
+
+Global tint color (Optional)
+
+    [[UI7Kit kit] setTintColor:<UIColor object>]
+
+NOTE: See below to install or setup your projects.
 
 Example
 -------
