@@ -18,10 +18,6 @@
 
 @implementation UITMasterViewController
 						
-- (void)dealloc {
-    self.details = nil;
-    [super dealloc];
-}
 
 - (void)viewDidLoad {
     self.details = @[
@@ -67,7 +63,7 @@
         systemItem = 0;
     }
     NSLog(@"genbutton: %d", systemItem);
-    UIBarButtonItem *button = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:systemItem target:self action:@selector(genButton:)] autorelease];
+    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:systemItem target:self action:@selector(genButton:)];
     self.navigationItem.rightBarButtonItem = button;
 }
 

@@ -30,7 +30,7 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    NSLog(@"%@", [self.pickerView topGradient]);
+    [super viewDidAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning

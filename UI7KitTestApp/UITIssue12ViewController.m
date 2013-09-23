@@ -27,26 +27,20 @@
 {
     [super viewDidLoad];
 
-    UISegmentedControl *segmented1 = [[[UISegmentedControl alloc] initWithItems:@[@"First", @"Second", @"Thired"]] autorelease];
+    UISegmentedControl *segmented1 = [[UISegmentedControl alloc] initWithItems:@[@"First", @"Second", @"Thired"]];
     segmented1.frame = CGRectMake(20.0, 60.0, 280.0, segmented1.frame.size.height);
     [self.view addSubview:segmented1];
 
-    UISegmentedControl *segmented2 = [[[UISegmentedControl alloc] initWithFrame:CGRectMake(20.0, 100.0, 280.0, UI7SegmentedControlHeight)] autorelease];
+    UISegmentedControl *segmented2 = [[UISegmentedControl alloc] initWithFrame:CGRectMake(20.0, 100.0, 280.0, UI7SegmentedControlHeight)];
     [segmented2 insertSegmentWithTitle:@"Third" atIndex:0 animated:NO];
     [segmented2 insertSegmentWithTitle:@"Second" atIndex:0 animated:NO];
     [segmented2 insertSegmentWithTitle:@"First" atIndex:0 animated:NO];
     [self.view addSubview:segmented2];
 
     for (UISegmentedControl *segmentedControl in @[self.segmentedControl, segmented1, segmented2]) {
-        NSDictionary * selectedAttributesDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
-                                                       [UIColor whiteColor],
-                                                       UITextAttributeTextColor,
-                                                       nil];
+        NSDictionary * selectedAttributesDictionary = @{UITextAttributeTextColor: [UIColor whiteColor]};
 
-        NSDictionary * deselectedAttributesDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
-                                                         [UIColor redColor],
-                                                         UITextAttributeTextColor,
-                                                         nil];
+        NSDictionary * deselectedAttributesDictionary = @{UITextAttributeTextColor: [UIColor redColor]};
 
         [segmentedControl setTitleTextAttributes:deselectedAttributesDictionary forState:UIControlStateNormal];
         [segmentedControl setTitleTextAttributes:selectedAttributesDictionary forState:UIControlStateSelected];

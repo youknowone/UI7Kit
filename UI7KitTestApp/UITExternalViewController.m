@@ -89,7 +89,7 @@
 }
 
 - (void)showActivityController:(id)sender {
-    NSArray *applicationActivities = @[[[[UITTestActivity alloc] init] autorelease]];
+    NSArray *applicationActivities = @[[[UITTestActivity alloc] init]];
 
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[@"activity"] applicationActivities:applicationActivities];
 

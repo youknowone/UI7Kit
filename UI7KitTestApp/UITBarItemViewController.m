@@ -37,7 +37,7 @@
 
 - (void)addTabBar:(id)sender {
     UITabBarSystemItem systemItem = arc4random() % (UITabBarSystemItemMostViewed + 1);
-    UITabBarItem *item = [[[UITabBarItem alloc] initWithTabBarSystemItem:systemItem tag:0] autorelease];
+    UITabBarItem *item = [[UITabBarItem alloc] initWithTabBarSystemItem:systemItem tag:0];
     self.tabBar.items = [self.tabBar.items arrayByAddingObject:item];
 }
 

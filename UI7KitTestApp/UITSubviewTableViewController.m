@@ -42,19 +42,19 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(edit:)];
 
     for (id x in @[@1, @2, @3]) {
-        UILabel *aLabel = [[[UILabel alloc] initWithFrame:CGRectMake(.0, .0, 320.0, 40.0)] autorelease];
+        UILabel *aLabel = [[UILabel alloc] initWithFrame:CGRectMake(.0, .0, 320.0, 40.0)];
         aLabel.text = @"TextLabel";
 
         [views addObject:aLabel];
 
-        UITextView *aTextView = [[[UITextView alloc] initWithFrame:CGRectMake(.0, .0, 320.0, 100.0)] autorelease];
+        UITextView *aTextView = [[UITextView alloc] initWithFrame:CGRectMake(.0, .0, 320.0, 100.0)];
         aTextView.text = @"Hi. This is Text View\nReally?";
 
         [views addObject:aTextView];
 
         UIImage *image = [UIImage imageNamed:@"Default"];
         image = [image imageByResizingToSize:CGSizeMake(250.0, 30.0)];
-        UIImageView *anImageView = [[[UIImageView alloc] initWithImage:image] autorelease];
+        UIImageView *anImageView = [[UIImageView alloc] initWithImage:image];
 
         [views addObject:anImageView];
     }

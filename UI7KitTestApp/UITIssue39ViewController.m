@@ -38,7 +38,6 @@
 - (void)showAlert:(id)sender {
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Issue #39" message:@"Continuous alert view call test." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Keep going", nil];
     [alertView show];
-    [alertView release];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
