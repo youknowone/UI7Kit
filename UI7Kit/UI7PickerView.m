@@ -98,7 +98,7 @@ UIImage *UI7PickerLikeViewGradientImage(UIColor *maskColor, CGFloat topGradient,
     self.bottomGradient.userInteractionEnabled = NO;
     self.topLineView = [[[UIView alloc] init] autorelease];
     self.bottomLineView = [[[UIView alloc] init] autorelease];
-    self.topLineView.backgroundColor = self.bottomLineView.backgroundColor = [UIColor lightGrayColor];
+    self.topLineView.backgroundColor = self.bottomLineView.backgroundColor = [UIColor colorWithWhite:.0f alpha:.09f];
 
     [self addSubview:self.topGradient];
     [self addSubview:self.bottomGradient];
