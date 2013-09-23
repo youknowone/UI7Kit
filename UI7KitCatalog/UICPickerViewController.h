@@ -10,5 +10,7 @@
 
 @interface UICPickerViewController : UIViewController<UIPickerViewDelegate, UIPickerViewDataSource>
 
+@property(nonatomic,retain) IBOutlet UIPickerView *pickerView;
+- (IBAction)toggleShowIndicator:(id)sender;
 
 @end

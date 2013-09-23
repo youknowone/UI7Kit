@@ -16,7 +16,10 @@
 
 CGFloat UI7PickerLikeViewRowHeight = 36.0f;
 
-@interface UI7PickerLikeView ()
+@interface UI7PickerLikeView () {
+    UIColor *_textColor;
+    UIColor *_selectionIndicatorColor;
+}
 
 @property(nonatomic, strong) NSMutableArray *tables;
 @property(nonatomic, strong) UIView                    *topFrame;
@@ -202,7 +205,7 @@ UIImage *UI7PickerLikeViewGradientImage(UIColor *maskColor, CGFloat topGradient,
 }
 
 - (UIView *)viewForRow:(NSInteger)row forComponent:(NSInteger)component {
-    if ([self respondsToSelector:@selector(pickerView:viewForRow:forComponent:reusingView:)]) {
+    if ([self.delegate respondsToSelector:@selector(pickerView:viewForRow:forComponent:reusingView:)]) {
         return [self.delegate pickerView:(id)self viewForRow:row forComponent:component reusingView:nil]; // temp
     }
     return nil;
@@ -290,7 +293,10 @@ UIImage *UI7PickerLikeViewGradientImage(UIColor *maskColor, CGFloat topGradient,
     }
     UIView *view = [self viewForRow:indexPath.row forComponent:componentIndex];
     if (view) {
-
+        cell.textLabel.text = @"";
+        [[cell associatedObjectForKey:@"content"] removeFromSuperview];
+        [cell.contentView addSubview:view];
+        [cell setAssociatedObject:view forKey:@"content"];
     } else {
         if ([self.delegate respondsToSelector:@selector(pickerView:attributedTitleForRow:forComponent:)]) {
             cell.textLabel.attributedText = [self.delegate pickerView:(id)self attributedTitleForRow:indexPath.row forComponent:componentIndex];
@@ -299,9 +305,37 @@ UIImage *UI7PickerLikeViewGradientImage(UIColor *maskColor, CGFloat topGradient,
         } else {
             cell.textLabel.text = @"?";
         }
-        
+        cell.textLabel.textColor = self.textColor ?: [UIColor darkTextColor];
     }
     return cell;
+}
+
+@end
+
+
+@implementation UI7PickerLikeView (Appearance)
+
+- (UIColor *)textColor {
+    return self->_textColor;
+}
+
+- (void)setTextColor:(UIColor *)textColor {
+    id value = self->_textColor;
+    self->_textColor = [textColor retain];
+    [value release];
+}
+
+- (UIColor *)selectionIndicatorColor {
+    return self->_selectionIndicatorColor;
+}
+
+- (void)setSelectionIndicatorColor:(UIColor *)selectionIndicatorColor {
+    id value = self->_selectionIndicatorColor;
+    self->_selectionIndicatorColor = [selectionIndicatorColor retain];
+    [value release];
+
+    self.topLineView.backgroundColor = selectionIndicatorColor;
+    self.bottomLineView.backgroundColor = selectionIndicatorColor;
 }
 
 @end

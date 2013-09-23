@@ -37,6 +37,14 @@
 @end
 
 
+@interface UI7PickerLikeView (Appearance)
+
+@property(nonatomic,retain) UIColor *textColor;
+@property(nonatomic,retain) UIColor *selectionIndicatorColor;
+
+@end
+
+
 @interface UI7PickerView : UIPickerView<UI7Patch>
 
 @end

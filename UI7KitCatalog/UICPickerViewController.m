@@ -8,35 +8,30 @@
 
 #import "UICPickerViewController.h"
 
+#import "UI7PickerView.h"
+
 @interface UICPickerViewController ()
 
 @end
 
 @implementation UICPickerViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+
+//    [(UI7PickerLikeView *)self.pickerView setTextColor:[UIColor redColor]];
+//    [(UI7PickerLikeView *)self.pickerView setSelectionIndicatorColor:[UIColor greenColor]];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)toggleShowIndicator:(id)sender {
+    assert(self.pickerView);
+    self.pickerView.showsSelectionIndicator = !self.pickerView.showsSelectionIndicator;
 }
+
+#pragma mark 
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    return 3;
+    return 4;
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
@@ -47,6 +42,8 @@
             return 12;
         case 2:
             return 30;
+        case 3:
+            return 2;
         default:
             break;
     }
@@ -59,16 +56,23 @@
         case 0: {
             title = [@"%d" format0:nil, 2000 + row];
         }   break;
-        case 1: {
+        case 1: case 2: {
             title = [@"%d" format0:nil, 1 + row];
-        }
-        case 2: {
-            title = [@"%d" format0:nil, 1 + row];
-        }
+        }   break;
+        case 3: {
+            title = nil;
+        }   break;
         default:
             break;
     }
     return title;
+}
+
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
+    if (component != 3) {
+        return nil;
+    }
+    return [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"UI7SliderThumb"]];
 }
 
 @end
