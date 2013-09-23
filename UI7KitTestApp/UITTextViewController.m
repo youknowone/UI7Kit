@@ -21,7 +21,9 @@ NSString *UITTextViewControllerLoremIpsum = @"Lorem ipsum dolor sit er elit lame
     self.textView.placeholderString = @"This is long long place holder may work ";
     // Do any additional setup after loading the view from its nib.
     self.textView.placeholderTextView.textAlignment = NSTextAlignmentCenter;
-    self.textView.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+    
+    UIFont *newFont = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+    self.textView.font = newFont;
 }
 
 - (void)switched:(UISwitch *)sender {

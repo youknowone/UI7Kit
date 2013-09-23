@@ -8,14 +8,13 @@
 
 #import "UI7Font.h"
 
-#if __IPHONE_OS_VERSION_MAX_ALLOWED < 70000
-NSString *const UIFontTextStyleHeadline = @"UICTFontTextStyleHeadline";
-NSString *const UIFontTextStyleSubheadline = @"UICTFontTextStyleSubhead";
-NSString *const UIFontTextStyleBody = @"UICTFontTextStyleBody";
-NSString *const UIFontTextStyleFootnote = @"UICTFontTextStyleFootnote";
-NSString *const UIFontTextStyleCaption1 = @"UICTFontTextStyleCaption1";
-NSString *const UIFontTextStyleCaption2 = @"UICTFontTextStyleCaption2";
-#endif
+
+NSString *const UI7FontTextStyleHeadline = @"UICTFontTextStyleHeadline";
+NSString *const UI7FontTextStyleSubheadline = @"UICTFontTextStyleSubhead";
+NSString *const UI7FontTextStyleBody = @"UICTFontTextStyleBody";
+NSString *const UI7FontTextStyleFootnote = @"UICTFontTextStyleFootnote";
+NSString *const UI7FontTextStyleCaption1 = @"UICTFontTextStyleCaption1";
+NSString *const UI7FontTextStyleCaption2 = @"UICTFontTextStyleCaption2";
 
 
 NSString *const UI7FontAttributeNone = nil;
@@ -29,6 +28,7 @@ NSString *const UI7FontAttributeBold = @"Bold";
 NSString *const UI7FontAttributeBoldItalic = @"BoldItalic";
 NSString *const UI7FontAttributeCondensedBold = @"CondensedBold";
 NSString *const UI7FontAttributeCondensedBlack = @"CondensedBlack";
+
 
 @implementation UIFont (Patch)
 

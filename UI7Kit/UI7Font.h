@@ -8,16 +8,25 @@
 
 #import <UI7Kit/UI7Utilities.h>
 
-#if __IPHONE_OS_VERSION_MAX_ALLOWED < 70000
-UIKIT_EXTERN NSString *const UIFontTextStyleHeadline;
-UIKIT_EXTERN NSString *const UIFontTextStyleBody;
-UIKIT_EXTERN NSString *const UIFontTextStyleSubheadline;
-UIKIT_EXTERN NSString *const UIFontTextStyleFootnote;
-UIKIT_EXTERN NSString *const UIFontTextStyleCaption1;
-UIKIT_EXTERN NSString *const UIFontTextStyleCaption2;
+UIKIT_EXTERN NSString *const UI7FontTextStyleHeadline;
+UIKIT_EXTERN NSString *const UI7FontTextStyleSubheadline;
+UIKIT_EXTERN NSString *const UI7FontTextStyleBody;
+UIKIT_EXTERN NSString *const UI7FontTextStyleFootnote;
+UIKIT_EXTERN NSString *const UI7FontTextStyleCaption1;
+UIKIT_EXTERN NSString *const UI7FontTextStyleCaption2;
 
+
+#define UIFontTextStyleHeadline UI7FontTextStyleHeadline
+#define UIFontTextStyleSubheadline UI7FontTextStyleSubheadline
+#define UIFontTextStyleBody UI7FontTextStyleBody
+#define UIFontTextStyleFootnote UI7FontTextStyleFootnote
+#define UIFontTextStyleCaption1 UI7FontTextStyleCaption1
+#define UIFontTextStyleCaption2 UI7FontTextStyleCaption2
+
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < 70000
 @interface UIFont (iOS7)
 
+//* 
 + (UIFont *)preferredFontForTextStyle:(NSString *)style;
 
 @end
