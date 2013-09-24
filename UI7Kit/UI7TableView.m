@@ -208,8 +208,10 @@ CGFloat _UI7TableViewDelegateHeightForHeaderInSection(id self, SEL _cmd, UITable
     }
 
     if (tableView.__style == UITableViewStyleGrouped) {
-        if (title.length > 0) {
-            height = UI7TableViewGroupedTableSectionSeperatorHeight + 20.0f;
+        UIFont *font = [UI7Font systemFontOfSize:14.0 attribute:UI7FontAttributeNone];
+        CGSize size = [title sizeWithFont:font constrainedToSize:CGSizeMake(tableView.frame.size.width, INFINITY)];
+        if (size.height > 0) {
+            height = UI7TableViewGroupedTableSectionSeperatorHeight + ceilf(size.height) + 2.0f;
         } else {
             height = UI7TableViewGroupedTableSectionSeperatorHeight;
         }
@@ -230,10 +232,17 @@ CGFloat _UI7TableViewDelegateHeightForFooterInSection(id self, SEL _cmd, UITable
     if ([tableView.dataSource respondsToSelector:@selector(tableView:titleForFooterInSection:)]) {
         title = [tableView.dataSource tableView:tableView titleForFooterInSection:section];
     }
-    if (title.length > 0) {
-        if (tableView.__style == UITableViewStyleGrouped) {
-            return 25.0;
+
+    if (tableView.__style == UITableViewStyleGrouped) {
+        UIFont *font = [UI7Font systemFontOfSize:14.0 attribute:UI7FontAttributeNone];
+        CGSize size = [title sizeWithFont:font constrainedToSize:CGSizeMake(tableView.frame.size.width, INFINITY)];
+        if (size.height > 0) {
+            return ceilf(size.height) + 7.0f;
+        } else {
+            return .0f;
         }
+    }
+    if (title.length > 0) {
         return tableView.sectionFooterHeight;
     }
     return .0;
@@ -244,27 +253,26 @@ UIView *_UI7TableViewDelegateNilViewForHeaderFooterInSection(id self, SEL _cmd, 
 }
 
 UIView *_UI7TableViewDelegateViewForHeaderInSection(id self, SEL _cmd, UITableView *tableView, NSUInteger section) {
-    static BOOL recursive = NO;
-
     UIView *view = [self __tableView:tableView viewForHeaderInSection:section];
     if (view) {
         return view;
     }
-    if (recursive) {
+    if ([tableView associatedObjectForKey:@"recursiveViewForHeader"]) {
         return nil;
     }
     BOOL grouped = tableView.__style == UITableViewStyleGrouped;
 
-    recursive = YES;
+    [tableView setAssociatedObject:@(YES) forKey:@"recursiveViewForHeader"];
     CGFloat height = [tableView.delegate tableView:tableView heightForHeaderInSection:section];
-    recursive = NO;
+    [tableView setAssociatedObject:nil forKey:@"recursiveViewForHeader"];
+
     NSString *title = nil;
     if ([tableView.dataSource respondsToSelector:@selector(tableView:titleForHeaderInSection:)]) {
         title = [tableView.dataSource tableView:tableView titleForHeaderInSection:section];
     }
     if (title == nil) {
         if (grouped) {
-            UIView *header = [[[UIView alloc] initWithFrame:CGRectMake(.0, .0, tableView.frame.size.width, UI7TableViewGroupedTableSectionSeperatorHeight)] autorelease];
+            UIView *header = [[[UIView alloc] initWithFrame:CGRectMake(.0, .0, tableView.frame.size.width - 12.0f, UI7TableViewGroupedTableSectionSeperatorHeight)] autorelease];
             header.backgroundColor = [UI7Color groupedTableViewSectionBackgroundColor];
             return header;
         } else {
@@ -273,41 +281,42 @@ UIView *_UI7TableViewDelegateViewForHeaderInSection(id self, SEL _cmd, UITableVi
     }
 
     CGFloat groupHeight = grouped ? UI7TableViewGroupedTableSectionSeperatorHeight : .0f;
-    UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(.0, groupHeight, tableView.frame.size.width, height - groupHeight)] autorelease];
-
     if (grouped) {
-        label.text = [@"   " stringByAppendingString:[title uppercaseString]];
+        UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(12.0f, groupHeight, tableView.frame.size.width - 12.0f, height - groupHeight)] autorelease];
+
+        label.numberOfLines = 100;
+        label.text = [title uppercaseString];
         label.font = [UI7Font systemFontOfSize:14.0 attribute:UI7FontAttributeNone];
         label.textColor = [UIColor colorWith8bitWhite:77 alpha:255];
         label.backgroundColor = [UIColor clearColor];
-    } else {
-        label.text = [@"    " stringByAppendingString:title];
-        label.font = [UI7Font systemFontOfSize:14.0 attribute:UI7FontAttributeMedium];
-        label.backgroundColor = [UIColor colorWith8bitRed:248 green:248 blue:248 alpha:255];
-    }
 
-    if (grouped) {
         view = [[[UIView alloc] initWithFrame:CGRectMake(.0, .0, tableView.frame.size.width, height)] autorelease];
         [view addSubview:label];
         view.backgroundColor = [UI7Color groupedTableViewSectionBackgroundColor];
     } else {
+        UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(.0, groupHeight, tableView.frame.size.width, height - groupHeight)] autorelease];
+
+        label.text = [@"    " stringByAppendingString:title];
+        label.font = [UI7Font systemFontOfSize:14.0 attribute:UI7FontAttributeMedium];
+        label.backgroundColor = [UIColor colorWith8bitRed:248 green:248 blue:248 alpha:255];
+
         view = label;
     }
+
     return view;
 }
 
 UIView *_UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableView *tableView, NSUInteger section) {
-    static BOOL recursive = NO;
     UIView *view = [self __tableView:tableView viewForFooterInSection:section];
     if (view) {
         return view;
     }
-    if (recursive) {
+    if ([tableView associatedObjectForKey:@"recursiveViewForFooter"]) {
         return nil;
     }
-    recursive = YES;
+    [tableView setAssociatedObject:@(YES) forKey:@"recursiveViewForFooter"];
     CGFloat height = [tableView.delegate tableView:tableView heightForFooterInSection:section];
-    recursive = NO;
+    [tableView setAssociatedObject:nil forKey:@"recursiveViewForFooter"];
     NSString *title = nil;
     if ([tableView.dataSource respondsToSelector:@selector(tableView:titleForFooterInSection:)]) {
         title = [tableView.dataSource tableView:tableView titleForFooterInSection:section];
@@ -315,19 +324,27 @@ UIView *_UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableVi
     if (title == nil) {
         return [[[UIView alloc] initWithFrame:CGRectZero] autorelease];
     }
-    
-    UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(.0, .0, tableView.frame.size.width, height)] autorelease];
+
     if (tableView.__style == UITableViewStyleGrouped) {
-        label.text = [@"   " stringByAppendingString:title];
-        label.font = [UI7Font systemFontOfSize:14.0 attribute:UI7FontAttributeNone];
-        label.textColor = [UIColor colorWith8bitWhite:128 alpha:255];
-        label.backgroundColor = [UI7Color groupedTableViewSectionBackgroundColor];
+        UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(12.0f, .0f, tableView.frame.size.width - 12.0f, height)] autorelease];
+        label.numberOfLines = 100;
+        label.text = title;
+        label.font = [UI7Font systemFontOfSize:15.0 attribute:UI7FontAttributeNone];
+        label.textColor = [UIColor colorWith8bitWhite:77 alpha:255];
+        label.backgroundColor = [UIColor clearColor];
+
+        view = [[[UIView alloc] initWithFrame:CGRectMake(.0, .0, tableView.frame.size.width, height)] autorelease];
+        [view addSubview:label];
+        view.backgroundColor = [UI7Color groupedTableViewSectionBackgroundColor];
     } else {
+        UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(.0, .0, tableView.frame.size.width, height)] autorelease];
         label.text = [@"    " stringByAppendingString:title]; // TODO: do this pretty later
         label.font = [UI7Font systemFontOfSize:14.0 attribute:UI7FontAttributeMedium];
         label.backgroundColor = [UIColor colorWith8bitRed:248 green:248 blue:248 alpha:255];
+
+        view = label;
     }
-    return label;
+    return view;
 }
 
 - (void)setDataSource:(id<UITableViewDataSource>)dataSource {
@@ -431,7 +448,6 @@ UIView *_UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableVi
 //}
 
 @end
-
 
 
 
