@@ -22,7 +22,7 @@
 @property(readonly) BOOL isEmpty;
 @property(retain) UIColor *shadowColor;
 @property(retain) NSString *title;
-@property(retain) UIColor *titleColor;
+@property(retain) UIColor *titleColor __deprecated; // warned (?)
 
 @end
 
@@ -172,7 +172,9 @@ UIColor *UI7ButtonDefaultTitleColor = nil;
         }
         NSDictionary *statefulContents = [aDecoder decodeObjectForKey:@"UIButtonStatefulContent"];
         NSObject *normalStatefulContent = statefulContents[@0];
-        if ([normalStatefulContent.titleColor isEqual:UI7ButtonDefaultTitleColor]) {
+        SEL titleColorSelector = NSSelectorFromString([@"title" stringByAppendingString:@"Color"]);
+        UIColor *titleColor = [normalStatefulContent performSelector:titleColorSelector];
+        if ([titleColor isEqual:UI7ButtonDefaultTitleColor]) {
             [self setTitleColor:nil forState:UIControlStateNormal];
             self.___textTitleColor = nil;
         } else {

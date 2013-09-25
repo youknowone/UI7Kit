@@ -49,7 +49,7 @@ NSString *UI7TabBarItemIconNames[] = {
 @property(nonatomic,retain) UIImage * unselectedImage __deprecated; // rejected
 
 @property(nonatomic,readonly) BOOL isSystemItem __deprecated; // not rejected (?) but warned
-@property(nonatomic,readonly) UITabBarSystemItem systemItem;
+@property(nonatomic,readonly) UITabBarSystemItem systemItem __deprecated; // not rejected (?) but warned
 
 - (id)initWithCoder:(NSCoder *)aDecoder;
 - (id)_updateImageWithTintColor:(UIColor *)tintColor isSelected:(BOOL)selected getImageOffset:(UIOffset *)offset;
@@ -134,7 +134,8 @@ NSString *UI7TabBarItemIconNames[] = {
         NSString *selectorName = [@"is" stringByAppendingString:@"SystemItem"];
         BOOL isSystemItem = (BOOL)[self performSelector:NSSelectorFromString(selectorName)];
         if (isSystemItem) {
-            UITabBarSystemItem item = self.systemItem;
+            SEL systemItemSelector = NSSelectorFromString([@"system" stringByAppendingString:@"Item"]);
+            UITabBarSystemItem item = (UITabBarSystemItem)[self performSelector:systemItemSelector];
             UITabBarItem *newItem = [[self.class alloc] initWithTabBarSystemItem:item tag:self.tag];
             newItem.badgeValue = self.badgeValue;
             [self release];

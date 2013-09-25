@@ -16,7 +16,7 @@
 @interface UIBarButtonItem (Private)
 
 @property(nonatomic,readonly) BOOL isSystemItem;
-@property(nonatomic,readonly) UIBarButtonSystemItem systemItem;
+@property(nonatomic,readonly) UIBarButtonSystemItem systemItem __deprecated; // not rejected (?) but warned;
 
 @end
 

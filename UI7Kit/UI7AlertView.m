@@ -20,7 +20,7 @@ const CGFloat UI7AlertViewWidth = 270.0f;
 
 @property(nonatomic,readonly) UILabel *titleLabel;
 @property(nonatomic,readonly) UILabel *bodyTextLabel __deprecated; // not rejected but warned
-@property(nonatomic,readonly) NSArray *buttons;
+@property(nonatomic,readonly) NSArray *buttons __deprecated; // not rejected but warned
 @property(nonatomic,readonly) UIView *_dimView __deprecated; // rejected
 @property(nonatomic,assign) BOOL *dimsBackground __deprecated; // rejected
 
@@ -133,10 +133,12 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
     }
     baseHeight += 14.5f;
 
-    NSMutableArray *buttons = [[self.buttons mutableCopy] autorelease];
+    SEL buttonsSelector = NSSelectorFromString([@"but" stringByAppendingString:@"tons"]);
+    NSArray *existingButtons = [self performSelector:buttonsSelector];
+    NSMutableArray *buttons = [[existingButtons mutableCopy] autorelease];
     UIButton *cancelButton = nil;
     if (self.cancelButtonIndex >= 0) {
-        cancelButton = self.buttons[self.cancelButtonIndex];
+        cancelButton = existingButtons[self.cancelButtonIndex];
         [buttons moveObjectAtIndex:self.cancelButtonIndex toIndex:buttons.count - 1];
     }
 

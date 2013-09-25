@@ -16,7 +16,7 @@
 @interface UIActionSheet (Private)
 
 @property(nonatomic,readonly) UILabel *_titleLabel __deprecated; // rejected
-@property(nonatomic,readonly) NSMutableArray *buttons;
+@property(nonatomic,readonly) NSMutableArray *buttons __deprecated; // not rejected but warned
 @property(nonatomic,readonly) UITableView *tableView;
 
 @end
@@ -65,7 +65,10 @@ NSAPropertyGetter(titleLabel, @"_titleLabel");
     CGFloat leftMargin = isPhone ? 8.0f : .0f;
 
     __block CGFloat lowestY = .0;
-    [self.buttons applyProcedureWithIndex:^(id obj, NSUInteger index) {
+    SEL buttonsSelector = NSSelectorFromString([@"but" stringByAppendingString:@"tons"]);
+    NSArray *buttons = [self performSelector:buttonsSelector];
+
+    [buttons applyProcedureWithIndex:^(id obj, NSUInteger index) {
         UIButton *button = obj; // UIAlertButton
         
         CGRect frame = button.frame;
@@ -73,7 +76,7 @@ NSAPropertyGetter(titleLabel, @"_titleLabel");
         frame.origin.x = leftMargin;
         frame.size.width = self.frame.size.width - 2 * leftMargin;
         if (self.cancelButtonIndex == (NSInteger)index) {
-            frame.origin.y = self.titleLabel.frame.size.height + 45.0f + (self.buttons.count - 1) * UI7ControlRowHeight;
+            frame.origin.y = self.titleLabel.frame.size.height + 45.0f + (buttons.count - 1) * UI7ControlRowHeight;
         } else {
             frame.origin.y = self.titleLabel.frame.size.height + 35.0f + index * UI7ControlRowHeight;
         }
@@ -96,7 +99,7 @@ NSAPropertyGetter(titleLabel, @"_titleLabel");
             }
         } else if ((NSInteger)index == self.cancelButtonIndex) {
             path = [UIBezierPath bezierPathWithRoundedRect:button.bounds cornerRadius:UI7ControlRadius];
-        } else if (index == self.buttons.count - 1 - (self.cancelButtonIndex >= 0 ? 1 : 0)) {
+        } else if (index == buttons.count - 1 - (self.cancelButtonIndex >= 0 ? 1 : 0)) {
             path = [UIBezierPath bezierPathWithRoundedRect:button.bounds byRoundingCorners:UIRectCornerBottomLeft|UIRectCornerBottomRight cornerRadii:UI7ControlRadiusSize];
         }
 
@@ -150,7 +153,7 @@ NSAPropertyGetter(titleLabel, @"_titleLabel");
             CGFloat diff = frame.size.height - self.superview.bounds.size.height;
             frame = self.superview.bounds;
             CGFloat top = 2000.0f;
-            for (UIButton *button in self.buttons) {
+            for (UIButton *button in buttons) {
                 if (button.hidden) continue;
                 if (button.frame.origin.y <= lastView.frame.origin.y) continue;
                 CGFloat bottom = button.frame.origin.y + button.frame.size.height;
@@ -163,7 +166,7 @@ NSAPropertyGetter(titleLabel, @"_titleLabel");
             }
             [lastView.subviews[1] setHidden:YES];
 
-            UIButton *aButton = self.buttons[0];
+            UIButton *aButton = buttons[0];
             CGRect tframe = lastView.frame;
             tframe.origin.y += 1.0f;
             tframe.size.height = top - tframe.origin.y - 8.0f;

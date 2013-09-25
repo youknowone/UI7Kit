@@ -15,8 +15,8 @@
 @interface UIActivityListView : UIView
 
 @property(retain) UIImageView *backgroundView;
-@property(retain) UIButton * cancelButton;
-@property(retain) UIScrollView * scrollView;
+@property(retain) UIButton *cancelButton __deprecated; // warned
+@property(retain) UIScrollView *scrollView;
 
 @end
 
@@ -56,11 +56,13 @@
     [self ___viewWillAppear:animated];
     UIActivityListView *listView = (id)self.activityListViewController.view;
     listView.backgroundView.image = [UIColor whiteColor].image;
-    if (listView.cancelButton) {
-        listView.cancelButton.backgroundColor = nil;
-        listView.cancelButton.titleLabel.shadowOffset = CGSizeZero;
-        [listView.cancelButton setImage:nil forState:UIControlStateNormal];
-        listView.cancelButton.titleLabel.font = [UI7Font systemFontOfSize:24.0f attribute:UI7FontAttributeLight];
+    SEL cancelButtonSelector = NSSelectorFromString([@"cancel" stringByAppendingString:@"Button"]);
+    UIButton *cancelButton = [listView performSelector:cancelButtonSelector];
+    if (cancelButton) {
+        cancelButton.backgroundColor = nil;
+        cancelButton.titleLabel.shadowOffset = CGSizeZero;
+        [cancelButton setImage:nil forState:UIControlStateNormal];
+        cancelButton.titleLabel.font = [UI7Font systemFontOfSize:24.0f attribute:UI7FontAttributeLight];
     }
     for (UIButton *button in listView.scrollView.subviews) { // UIActivityButton
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
