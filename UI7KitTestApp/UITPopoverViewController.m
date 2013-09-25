@@ -9,19 +9,18 @@
 #import "UITPopoverViewController.h"
 #import "UI7PopoverController.h"
 
-@interface UITPopoverViewController ()
-
-@end
 
 @implementation UITPopoverViewController
+
+@synthesize popoverController=__popoverController;
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 
     id controller = [self.storyboard instantiateViewControllerWithIdentifier:@"Popover"];
-    UIPopoverController *popover = [[UIPopoverController alloc] initWithContentViewController:controller];
+    self.popoverController = [[UIPopoverController alloc] initWithContentViewController:controller];
 
-    [popover presentPopoverFromRect:CGRectMake(.0, .0, 300, 600) inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    [self.popoverController presentPopoverFromRect:CGRectMake(.0, .0, 300, 600) inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
 
 @end

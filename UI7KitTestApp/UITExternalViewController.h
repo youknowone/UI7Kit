@@ -11,6 +11,8 @@
 
 @interface UITExternalViewController : UIViewController<UINavigationControllerDelegate, UIImagePickerControllerDelegate, MFMailComposeViewControllerDelegate, ABPeoplePickerNavigationControllerDelegate>
 
+@property(nonatomic,strong) UIPopoverController *popoverController;
+
 - (IBAction)showImagePicker:(id)sender;
 - (IBAction)showMailComposer:(id)sender;
 - (IBAction)showAddressBook:(id)sender;

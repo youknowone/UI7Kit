@@ -40,6 +40,8 @@
 
 @implementation UITExternalViewController
 
+@synthesize popoverController=__popoverController;
+
 - (void)showImagePicker:(id)sender {
     UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
     imagePickerController.modalPresentationStyle = UIModalPresentationCurrentContext;
@@ -96,8 +98,8 @@
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         [self presentViewController:activityViewController animated:YES completion:NULL];
     } else {
-        UIPopoverController *popover = [[UIPopoverController alloc] initWithContentViewController:activityViewController];
-        [popover presentPopoverFromRect:CGRectMake(.0, .0, 300, 600)
+        self.popoverController = [[UIPopoverController alloc] initWithContentViewController:activityViewController];
+        [self.popoverController presentPopoverFromRect:CGRectMake(.0, .0, 300, 600)
                                  inView:self.view
                permittedArrowDirections:UIPopoverArrowDirectionAny
                                animated:YES];

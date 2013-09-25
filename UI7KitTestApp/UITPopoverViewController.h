@@ -10,6 +10,8 @@
 
 @interface UITPopoverViewController : UIViewController
 
+@property(strong,nonatomic) UIPopoverController *popoverController;
+
 @end
 
 
