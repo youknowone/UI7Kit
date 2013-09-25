@@ -28,7 +28,7 @@
 
     UIImage *image = self.tintColorCell.imageView.image;
     if (image == nil) {
-        image = [UIImage imageNamed:@"UI7TabBarItemFavoriteSelected"];
+        image = [UIImage imageNamed:@"UITabBarFavoritesTemplateSelected"];
     }
     self.tintColorCell.imageView.image = [image imageByFilledWithColor:self.view.tintColor];
 }

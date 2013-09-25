@@ -161,7 +161,9 @@
     UIBarStyle style = sender.selectedSegmentIndex;
     [[UIApplication sharedApplication] setStatusBarStyle:(UIStatusBarStyle)style];
     self.navigationController.navigationBar.barStyle = style;
-    self.tabBarController.tabBar.barStyle = style;
+    if ([self.tabBarController.tabBar respondsToSelector:@selector(setBarStyle:)]) {
+        self.tabBarController.tabBar.barStyle = style;
+    }
 }
 
 @end
