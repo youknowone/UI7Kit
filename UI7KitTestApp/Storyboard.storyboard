@@ -65,7 +65,7 @@
                                 </items>
                             </navigationBar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="31D-2p-7gE">
-                                <rect key="frame" x="0.0" y="143" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="69" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem systemItem="edit" id="NQu-9R-E6R"/>
@@ -76,7 +76,7 @@
                                 </items>
                             </toolbar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="vgT-tM-B1l">
-                                <rect key="frame" x="0.0" y="187" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="113" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem title="Item" systemItem="redo" id="Wcd-Xl-AmS"/>
@@ -88,7 +88,7 @@
                                 </items>
                             </toolbar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Y46-Xj-hyK">
-                                <rect key="frame" x="0.0" y="231" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="157" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem systemItem="trash" id="BKf-5X-PCB"/>
@@ -100,7 +100,7 @@
                                 </items>
                             </toolbar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="b4B-e6-00p">
-                                <rect key="frame" x="0.0" y="275" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="201" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem systemItem="play" id="uJa-2Q-Y56"/>
@@ -111,7 +111,7 @@
                                 </items>
                             </toolbar>
                             <tabBar contentMode="scaleToFill" id="rFU-Do-cP1">
-                                <rect key="frame" x="0.0" y="360" width="320" height="49"/>
+                                <rect key="frame" x="0.0" y="286" width="320" height="49"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
@@ -124,7 +124,7 @@
                                 </items>
                             </tabBar>
                             <tabBar contentMode="scaleToFill" id="bH5-xc-fDV">
-                                <rect key="frame" x="0.0" y="409" width="320" height="49"/>
+                                <rect key="frame" x="0.0" y="335" width="320" height="49"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
@@ -579,7 +579,7 @@
                     <navigationItem key="navigationItem" id="HIG-nr-RKe">
                         <nil key="title"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="kUo-YC-fBn">
-                            <rect key="frame" x="14" y="7" width="292" height="30"/>
+                            <rect key="frame" x="103" y="7" width="115" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="Default"/>
@@ -678,7 +678,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" prompt="Prompt" placeholder="placeholder" showsScopeBar="YES" id="w0t-Qv-IQO">
-                                <rect key="frame" x="0.0" y="14" width="320" height="119"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="119"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <scopeButtonTitles>
@@ -814,11 +814,11 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="dQI-9T-nIQ">
-                                <rect key="frame" x="122" y="143" width="51" height="31"/>
+                                <rect key="frame" x="136" y="134" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="yk6-DY-Ilx">
-                                <rect key="frame" x="122" y="203" width="51" height="31"/>
+                                <rect key="frame" x="136" y="202" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
                             <view contentMode="scaleToFill" id="nsq-0s-Pun">

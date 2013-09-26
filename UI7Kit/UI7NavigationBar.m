@@ -247,6 +247,8 @@ NSAPropertyAssignSetter(setNavigationBar, @"_navigationBar");
 - (void)__setLeftBarButtonItem:(UIBarButtonItem *)leftBarButtonItem animated:(BOOL)animated { assert(NO); }
 - (void)__setRightBarButtonItem:(UIBarButtonItem *)rightBarButtonItem animated:(BOOL)animated { assert(NO); }
 - (void)__setBackBarButtonItem:(UIBarButtonItem *)backBarButtonItem { assert(NO); }
+- (void)__setLeftBarButtonItems:(NSArray *)items animated:(BOOL)animated { assert(NO); }
+- (void)__setRightBarButtonItems:(NSArray *)items animated:(BOOL)animated { assert(NO); }
 
 @end
 
@@ -261,6 +263,8 @@ NSAPropertyAssignSetter(setNavigationBar, @"_navigationBar");
         [target copyToSelector:@selector(__setLeftBarButtonItem:animated:) fromSelector:@selector(setLeftBarButtonItem:animated:)];
         [target copyToSelector:@selector(__setRightBarButtonItem:animated:) fromSelector:@selector(setRightBarButtonItem:animated:)];
         [target copyToSelector:@selector(__setBackBarButtonItem:) fromSelector:@selector(setBackBarButtonItem:)];
+        [target copyToSelector:@selector(__setLeftBarButtonItems:animated:) fromSelector:@selector(setLeftBarButtonItems:animated:)];
+        [target copyToSelector:@selector(__setRightBarButtonItems:animated:) fromSelector:@selector(setRightBarButtonItems:animated:)];
     }
 }
 
@@ -272,6 +276,8 @@ NSAPropertyAssignSetter(setNavigationBar, @"_navigationBar");
     [self exportSelector:@selector(setLeftBarButtonItem:animated:) toClass:target];
     [self exportSelector:@selector(setRightBarButtonItem:animated:) toClass:target];
     [self exportSelector:@selector(setBackBarButtonItem:) toClass:target];
+    [self exportSelector:@selector(setLeftBarButtonItems:animated:) toClass:target];
+    [self exportSelector:@selector(setRightBarButtonItems:animated:) toClass:target];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
@@ -306,6 +312,22 @@ NSAPropertyAssignSetter(setNavigationBar, @"_navigationBar");
     [self __setBackBarButtonItem:barButtonItem];
     barButtonItem.appearanceSuperview = self;
     [barButtonItem _tintColorUpdated];
+}
+
+- (void)setLeftBarButtonItems:(NSArray *)items animated:(BOOL)animated {
+    [self __setLeftBarButtonItems:items animated:animated];
+    for (UIBarButtonItem *barButtonItem in items) {
+        barButtonItem.appearanceSuperview = self;
+        [barButtonItem _tintColorUpdated];
+    }
+}
+
+- (void)setRightBarButtonItems:(NSArray *)items animated:(BOOL)animated {
+    [self __setRightBarButtonItems:items animated:animated];
+    for (UIBarButtonItem *barButtonItem in items) {
+        barButtonItem.appearanceSuperview = self;
+        [barButtonItem _tintColorUpdated];
+    }
 }
 
 //- (UIBarButtonItem *)backBarButtonItem {

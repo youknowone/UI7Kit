@@ -64,8 +64,10 @@
         systemItem = 0;
     }
     NSLog(@"genbutton: %d", systemItem);
-    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:systemItem target:self action:@selector(genButton:)];
-    self.navigationItem.rightBarButtonItem = button;
+    UIBarButtonItem *button1 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:systemItem target:self action:@selector(genButton:)];
+    UIBarButtonItem *button2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:systemItem target:self action:@selector(genButton:)];
+    NSArray *items = arc4random_uniform(2) == 0 ? @[button1] : @[button1, button2];
+    [self.navigationItem setRightBarButtonItems:items animated:YES];
 }
 
 #pragma mark - Table View
