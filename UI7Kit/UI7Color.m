@@ -25,7 +25,8 @@
 @implementation UI7Color
 
 + (UIColor *)defaultBarColor {
-    return [UIColor colorWith8bitWhite:255 alpha:167];
+//    return [UIColor colorWith8bitWhite:255 alpha:167];
+    return [UIColor colorWith8bitWhite:255 alpha:255]; // temporary revert
 }
 
 + (UIColor *)blackBarColor {

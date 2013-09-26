@@ -20,6 +20,9 @@
 						
 
 - (void)viewDidLoad {
+//    self.tabBarController.view.backgroundColor = [UIColor whiteColor];
+//    self.navigationController.view.backgroundColor = [UIColor whiteColor];
+
     self.details = @[
                      @"Detail",
                      @"Custom",
