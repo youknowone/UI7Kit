@@ -12,5 +12,6 @@
 
 @property(nonatomic,retain) IBOutlet UIPickerView *pickerView;
 - (IBAction)toggleShowIndicator:(id)sender;
+- (IBAction)selectToday:(id)sender;
 
 @end

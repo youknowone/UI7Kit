@@ -28,6 +28,13 @@
     self.pickerView.showsSelectionIndicator = !self.pickerView.showsSelectionIndicator;
 }
 
+- (void)selectToday:(id)sender {
+    NSDate *date = [NSDate date];
+    [self.pickerView selectRow:date.components.year - 2000 inComponent:0 animated:YES];
+    [self.pickerView selectRow:date.components.month inComponent:1 animated:YES];
+    [self.pickerView selectRow:date.components.day inComponent:2 animated:YES];
+}
+
 #pragma mark 
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
