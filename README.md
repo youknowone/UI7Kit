@@ -167,3 +167,18 @@ If this project was enjoyable for you to use, or if it was helpful, a tip would 
 [![Gittip donate button](http://badgr.co/gittip/youknowone.png)](https://www.gittip.com/youknowone/ "Donate weekly to this project using Gittip")
 [![Paypal donate button](http://badgr.co/paypal/donate.png?bg=%23007aff)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=YZGSUCRH3Q478&item_name=UI7Kit%20support "One time donation to this project using Paypal")
 
+
+Supports
+--------
+
+- @lqez: who supported UI7Kit from very early stage.
+- @thomassnielsen: thanks to spread words.
+- @disjukr: thanks for support, and good luck for d2fest.
+- @christianmarth
+- @Serheo
+- @JohnKFisher: thanks for bug report. and good luck for Parlance.
+- andyaude
+- @segiddins: thanks for support, and especially for the reports and patches. UI7Kit becomes really better with you.
+- @zulkis
+- @lukaszmargielewski
+
