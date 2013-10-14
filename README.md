@@ -182,3 +182,4 @@ Supports
 - @zulkis
 - @lukaszmargielewski
 
+- [D2 FEST awarded 3rd prize](http://d2fest.kr/prize-winners.html)!
