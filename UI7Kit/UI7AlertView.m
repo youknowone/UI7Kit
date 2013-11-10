@@ -234,9 +234,11 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
 
 
 - (void)show {
-    [self __show];
-
-    [self relayout];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self __show];
+        
+        [self relayout];
+    });
 }
 
 - (void)dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated {
