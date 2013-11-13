@@ -134,7 +134,6 @@ Follow the above for installing CocoaPods, but instead make your app Podfile loo
     pod 'UI7Kit/UI7Button'
     pod 'UI7Kit/UI7Color'
     pod 'UI7Kit/UI7Font'
-    pod 'UI7Kit/UI7Font'
     pod 'UI7Kit/UI7NavigationBar'
     pod 'UI7Kit/UI7NavigationController'
     pod 'UI7Kit/UI7PickerView'
