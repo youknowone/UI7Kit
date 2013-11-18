@@ -97,6 +97,11 @@ static NSString *UI7ViewTintColor = @"UI7ViewTintColor";
     UIView *view = self;
     while (view && alpha < 1.0f) {
         if (view.backgroundColor) {
+            CGPatternRef pattern = CGColorGetPattern(view.backgroundColor.CGColor);
+            if (pattern != NULL) {
+                // It will be perfect also to use pattern phase based on [view convertPoint:CGPointZero fromView:self] value
+                return view.backgroundColor;
+            }
             UIAColorComponents *components = view.backgroundColor.components;
             if (components.alpha > .0f) {
                 red = red * alpha + components.red * components.alpha;
