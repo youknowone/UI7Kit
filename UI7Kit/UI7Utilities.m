@@ -16,7 +16,7 @@
         NSNumber *majorVersion = [[self.systemVersion componentsSeparatedByString:@"."] objectAtIndex:0];
         result = majorVersion.integerValue;
     }
-    return (BOOL)result;
+    return result;
 }
 
 - (BOOL)isIOS7 {
