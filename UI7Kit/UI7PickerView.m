@@ -14,12 +14,6 @@
 #import "UI7TableView.h"
 #import "UI7TableViewCell.h"
 
-#ifdef __IPHONE_6_0
-# define ALIGN_CENTER NSTextAlignmentCenter
-#else
-# define ALIGN_CENTER UITextAlignmentCenter
-#endif
-
 CGFloat UI7PickerLikeViewRowHeight = 36.0f;
 
 @interface UI7PickerLikeView () {
@@ -292,7 +286,7 @@ UIImage *UI7PickerLikeViewGradientImage(UIColor *maskColor, CGFloat topGradient,
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) {
         cell = (id)[UI7TableViewCell cellWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-        cell.textLabel.textAlignment = ALIGN_CENTER;
+        cell.textLabel.textAlignment = NSTextAlignmentCenter;
         cell.selectedBackgroundView = [UIColor clearColor].image.view;
         cell.backgroundColor = [UIColor clearColor];
         cell.textLabel.font = [UI7Font iOS7SystemFontOfSize:cell.textLabel.font.pointSize attribute:UI7FontAttributeLight]; // weird behavior
