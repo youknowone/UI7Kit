@@ -51,10 +51,12 @@ NSAPropertyGetter(titleLabel, @"_titleLabel");
 - (void)_setTheme {
     self.opaque = NO;
     self.backgroundColor = UIColor.clearColor;
-
-    for (id view in self.subviews) {
-        if ([view isKindOfClass:[UIImageView class]]) {
-            [view removeFromSuperview]; // background image
+    
+    if (self.numberOfButtons > 0) { // if there is no buttons, keep the background image
+        for (id view in self.subviews) {
+            if ([view isKindOfClass:[UIImageView class]]) {
+                [view removeFromSuperview]; // background image
+            }
         }
     }
 
