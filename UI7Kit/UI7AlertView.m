@@ -180,10 +180,14 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
         [self.strokeViews addObject:strokeView];
     }
 
-    CGRect lastButtonFrame = [buttons.lastObject frame];
+    CGFloat viewHeight = baseHeight;
+    if ([buttons count] > 0) {
+        CGRect lastButtonFrame = [buttons.lastObject frame];
+        viewHeight = lastButtonFrame.origin.y + lastButtonFrame.size.height;
+    }
 
     // background image
-    self.backgroundView.frame = CGRectMake(7.0, .0, UI7AlertViewWidth, lastButtonFrame.origin.y + lastButtonFrame.size.height);
+    self.backgroundView.frame = CGRectMake(7.0, .0, UI7AlertViewWidth, viewHeight);
     self.backgroundView.image = [UIImage roundedImageWithSize:self.backgroundView.frame.size color:[UI7Color defaultBarColor] radius:6.0];
 }
 
