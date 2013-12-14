@@ -110,6 +110,9 @@ CGFloat UI7SegmentedControlCellWidthDefault = 80.0f;
 }
 
 - (void)_backgroundColorUpdated {
+    if ([self titleTextAttributesForState:UIControlStateSelected]) { //if i customize a new style, no need to update this.
+        return;
+    }
     NSDictionary *selectedAttributes = @{UITextAttributeTextColor: self.stackedBackgroundColor};
     [self setTitleTextAttributes:selectedAttributes forState:UIControlStateSelected];
 }
