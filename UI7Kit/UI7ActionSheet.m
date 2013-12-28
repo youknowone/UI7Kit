@@ -186,7 +186,7 @@ NSAPropertyGetter(titleLabel, @"_titleLabel");
 
             CGRect footerFrame = CGRectMake(.0, .0, bound.size.width, UI7ControlRadius);
             UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:footerFrame byRoundingCorners:UIRectCornerBottomLeft|UIRectCornerBottomRight cornerRadii:UI7ControlRadiusSize];
-            UIImageView *footerView = [[UIImageView alloc] initWithImage:[path imageWithFillColor:[UI7Color defaultBarColor]]];
+            UIImageView *footerView = [[[UIImageView alloc] initWithImage:[path imageWithFillColor:[UI7Color defaultBarColor]]] autorelease];
             footerFrame.origin = tableView.frame.origin;
             footerFrame.origin.y += tableView.frame.size.height;
             footerView.frame = footerFrame;

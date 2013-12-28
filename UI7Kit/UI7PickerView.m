@@ -75,6 +75,7 @@ UIImage *UI7PickerLikeViewGradientImage(UIColor *maskColor, CGFloat topGradient,
     UIColor *color = [UIColor colorWithWhite:topGradient alpha:1.0f];
     CGGradientRef gradient = CGGradientCreateWithColors(color.CGColorSpace, (CFArrayRef)@[(id)color.CGColor, (id)[UIColor colorWithWhite:buttomGradient alpha:1.0f].CGColor], NULL);
     CGContextDrawLinearGradient(context, gradient, CGPointMake(0.5, .0), CGPointMake(0.5, height), 3);
+    CFRelease(gradient);
     UIImage *maskImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
 
@@ -88,6 +89,8 @@ UIImage *UI7PickerLikeViewGradientImage(UIColor *maskColor, CGFloat topGradient,
                                         NULL, YES);
     CGImageRef masked = CGImageCreateWithMask([UIImage imageWithColor:maskColor size:CGSizeMake(1.0, height)].CGImage, mask);
     UIImage *maskedImage = [UIImage imageWithCGImage:masked];
+    CFRelease(mask);
+    CFRelease(masked);
     return maskedImage;
 }
 
