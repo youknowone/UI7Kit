@@ -273,7 +273,7 @@ UIView *_UI7TableViewDelegateViewForHeaderInSection(id self, SEL _cmd, UITableVi
     if (title == nil) {
         if (grouped) {
             UIView *header = [[[UIView alloc] initWithFrame:CGRectMake(.0, .0, tableView.frame.size.width - 12.0f, UI7TableViewGroupedTableSectionSeperatorHeight)] autorelease];
-            header.backgroundColor = [UI7Color groupedTableViewSectionBackgroundColor];
+            header.backgroundColor = [UI7Color clearColor];
             return header;
         } else {
             return [[[UIView alloc] initWithFrame:CGRectZero] autorelease];
@@ -292,7 +292,7 @@ UIView *_UI7TableViewDelegateViewForHeaderInSection(id self, SEL _cmd, UITableVi
 
         view = [[[UIView alloc] initWithFrame:CGRectMake(.0, .0, tableView.frame.size.width, height)] autorelease];
         [view addSubview:label];
-        view.backgroundColor = [UI7Color groupedTableViewSectionBackgroundColor];
+        view.backgroundColor = [UI7Color clearColor];
     } else {
         UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(.0, groupHeight, tableView.frame.size.width, height - groupHeight)] autorelease];
 
