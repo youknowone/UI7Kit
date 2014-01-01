@@ -1,12 +1,12 @@
 Pod::Spec.new do |s|
   s.name         = "UI7Kit"
-  s.version      = "0.9.15"
+  s.version      = "0.9.16"
   s.summary      = "UI7Kit is a GUI toolkit to implement iOS7 look & feel UIKit under iOS5/iOS6. It is also supported that patching UIKit to UI7Kit in runtime."
   s.homepage     = "https://github.com/youknowone/UI7Kit"
   s.screenshots  = "https://raw.github.com/youknowone/UI7Kit/master/UI7Kit.png",
   s.license      = "2-clause BSD"
   s.author       = { "Jeong YunWon" => "jeong@youknowone.org" }
-  s.source       = { :git => "https://github.com/youknowone/UI7Kit.git", :tag => "0.9.15" }
+  s.source       = { :git => "https://github.com/youknowone/UI7Kit.git", :tag => "0.9.16" }
 
   s.platform     = :ios, '5.0'
   s.header_dir = "UI7Kit"
@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
     'UI7Font'                  => [%w(UI7Font.{h,m})                  , [                                                                                                   ], %w(          )],
     'UI7NavigationBar'         => [%w(UI7NavigationBar.{h,m})         , [%w(UI7Kit/UI7Font), %w(UI7Kit/UI7Color), %w(UI7Kit/UI7BarButtonItem)                               ], %w(          )],
     'UI7NavigationController'  => [%w(UI7NavigationController.{h,m})  , [%w(UI7Kit/UI7Toolbar), %w(UI7Kit/UI7NavigationBar)                                                 ], %w(          )],
-    'UI7PickerView'            => [%w(UI7PickerView.{h,m})            , [%w(UI7Kit/UI7Font), %w(UI7Kit/UI7View), %w(UI7Kit/UI7TableView)                                    ], %w(QuartzCore)],
+    'UI7PickerView'            => [%w(UI7PickerView.{h,m})            , [%w(UI7Kit/UI7Font), %w(UI7Kit/UI7View), %w(UI7Kit/UI7TableView), %w(UI7Kit/UI7TableViewCell)       ], %w(QuartzCore)],
     'UI7ProgressView'          => [%w(UI7ProgressView.{h,m})          , [%w(UI7Kit/UI7Color), %w(UI7Kit/UI7View)                                                            ], %w(          )],
     'UI7SearchBar'             => [%w(UI7SearchBar.{h,m})             , [%w(UI7Kit/UI7Color)                                                                                ], %w(QuartzCore)],
     'UI7SegmentedControl'      => [%w(UI7SegmentedControl.{h,m})      , [%w(UI7Kit/UI7Font), %w(UI7Kit/UI7View)                                                             ], %w(QuartzCore)],
@@ -43,7 +43,7 @@ Pod::Spec.new do |s|
   }
   components.map do |component, values|
     s.subspec component do |c|
-      files, deps, res, framewrks = values
+      files, deps, framewrks = values
       c.source_files = files.map do |filespec|
         "UI7Kit/#{filespec}"
       end
@@ -53,8 +53,12 @@ Pod::Spec.new do |s|
       end
       if component != 'UI7Color'
         c.dependency 'UI7Kit/Core' # always depend on our Core, but dont cause a dep cycle on UI7Color
+      else
+        c.dependency 'FoundationExtension/UIKitExtension', '~> 0.46'      
       end
-      c.resources = "Resources/#{component}*", "Resources/#{res}" # this should go away eventually
+      if component == 'UI7NavigationBar' or component == 'UI7Slider'
+        c.resources = "Resources/#{component}*" # this should go away eventually
+      end
       c.frameworks = framewrks
     end
   end
@@ -90,6 +94,7 @@ Pod::Spec.new do |s|
     ss.resources = 'Resources/Popover*'
     ss.framework = 'QuartzCore'
     ss.dependency 'GIKPopoverBackgroundView/Core'
+    ss.dependency 'UI7Kit/Core'
   end
 
   s.subspec 'Core' do |core|
@@ -101,7 +106,6 @@ Pod::Spec.new do |s|
 #include <UIKitExtension/UIKitExtension.h>
 #include <UI7Kit/UI7Kit.h>
     '
-    core.dependency 'FoundationExtension', '~> 0.46'
     core.dependency 'cdebug'
     core.dependency 'UI7Kit/UI7Color'
   end
