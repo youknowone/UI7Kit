@@ -335,7 +335,7 @@ UIView *_UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableVi
 
         view = [[[UIView alloc] initWithFrame:CGRectMake(.0, .0, tableView.frame.size.width, height)] autorelease];
         [view addSubview:label];
-        view.backgroundColor = [UI7Color groupedTableViewSectionBackgroundColor];
+        view.backgroundColor = [UIColor clearColor];
     } else {
         UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(.0, .0, tableView.frame.size.width, height)] autorelease];
         label.text = [@"    " stringByAppendingString:title]; // TODO: do this pretty later
