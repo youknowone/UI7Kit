@@ -104,7 +104,9 @@ CGFloat UI7SegmentedControlCellWidthDefault = 80.0f;
     [self setBackgroundImage:highlightedBackgroundImage forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
     [self setBackgroundImage:selectedBackgroundImage forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
 
-    [self setDividerImage:tintColor.image forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    if (tintColor != [UIColor clearColor]) {//use setted dividerImage
+        [self setDividerImage:tintColor.image forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    }
 
     self.layer.borderColor = tintColor.CGColor;
 }
