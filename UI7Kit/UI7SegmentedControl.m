@@ -104,7 +104,9 @@ CGFloat UI7SegmentedControlCellWidthDefault = 80.0f;
     [self setBackgroundImage:highlightedBackgroundImage forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
     [self setBackgroundImage:selectedBackgroundImage forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
 
-    [self setDividerImage:tintColor.image forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    if (tintColor != [UIColor clearColor]) {//use setted dividerImage
+        [self setDividerImage:tintColor.image forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    }
 
     self.layer.borderColor = tintColor.CGColor;
 }
@@ -113,7 +115,11 @@ CGFloat UI7SegmentedControlCellWidthDefault = 80.0f;
     if ([self titleTextAttributesForState:UIControlStateSelected]) { //if i customize a new style, no need to update this.
         return;
     }
-    NSDictionary *selectedAttributes = @{UITextAttributeTextColor: self.stackedBackgroundColor};
+//    NSDictionary *selectedAttributes = @{UITextAttributeTextColor: self.stackedBackgroundColor};
+    UIColor *tintColor = self.tintColor;
+    UIColor *whiteColor = [UIColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:1.0f];
+    NSDictionary *selectedAttributes = @{UITextAttributeTextColor: [tintColor isEqual:whiteColor] ? [UIColor darkTextColor] : self.stackedBackgroundColor};//if tintColor is white, then set selectedColor to darkTextColor
+    
     [self setTitleTextAttributes:selectedAttributes forState:UIControlStateSelected];
 }
 
