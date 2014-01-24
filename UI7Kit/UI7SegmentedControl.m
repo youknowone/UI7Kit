@@ -116,9 +116,11 @@ CGFloat UI7SegmentedControlCellWidthDefault = 80.0f;
         return;
     }
 //    NSDictionary *selectedAttributes = @{UITextAttributeTextColor: self.stackedBackgroundColor};
-    UIColor *tintColor = self.tintColor;
-    UIColor *whiteColor = [UIColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:1.0f];
-    NSDictionary *selectedAttributes = @{UITextAttributeTextColor: [tintColor isEqual:whiteColor] ? [UIColor darkTextColor] : self.stackedBackgroundColor};//if tintColor is white, then set selectedColor to darkTextColor
+    UIColor *tintColor = self.stackedBackgroundColor;
+    if ([self.tintColor isEqual:[UIColor whiteColor]] || [self.tintColor isEqual:[UIColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:1.0f]] || [self.tintColor isEqual:[UIColor colorWithWhite:1.0f alpha:1.0f]]) {
+        tintColor = [UIColor darkTextColor];
+    }
+    NSDictionary *selectedAttributes = @{UITextAttributeTextColor: tintColor};//if tintColor is white, then set selectedColor to darkTextColor
     
     [self setTitleTextAttributes:selectedAttributes forState:UIControlStateSelected];
 }
