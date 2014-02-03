@@ -77,34 +77,34 @@ CGFloat UI7SegmentedControlCellWidthDefault = 80.0f;
     UIColor *tintColor = self.tintColor;
     if (tintColor == nil) return;
     // Set background images
+    
+    if (tintColor != [UIColor clearColor]) { //default UISegmentedControl style, set tintColor = [UIColor clearColor] to customize UISegmentedControl style
+        UIImage *backgroundImage = [UIColor clearColor].image;
+        UIImage *selectedBackgroundImage = [UIImage roundedImageWithSize:CGSizeMake(10.0f, self.frame.size.height) color:tintColor radius:UI7ControlRadius];
+        UIImage *highlightedBackgroundImage = [UIImage roundedImageWithSize:CGSizeMake(10.0f, self.frame.size.height) color:[tintColor highligtedColorForBackgroundColor:self.stackedBackgroundColor] radius:UI7ControlRadius];
+        
+        NSDictionary *oldAttributes = [self titleTextAttributesForState:UIControlStateNormal];
+        NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
+        if (oldAttributes[UITextAttributeFont]) {
+            attributes[UITextAttributeFont] = oldAttributes[UITextAttributeFont];
+        } else {
+            attributes[UITextAttributeFont] = [UI7Font systemFontOfSize:13.0 attribute:UI7FontAttributeMedium];
+        }
+        if (oldAttributes[UITextAttributeTextShadowOffset]) {
+            attributes[UITextAttributeTextShadowOffset] = oldAttributes[UITextAttributeTextShadowOffset];
+        } else {
+            attributes[UITextAttributeTextShadowOffset] = [NSValue valueWithUIOffset:UIOffsetZero];
+        }
+        attributes[UITextAttributeTextColor] = tintColor;
+        [self setTitleTextAttributes:attributes forState:UIControlStateNormal];
+        
+        NSDictionary *highlightedAttributes = @{UITextAttributeTextColor: tintColor};
+        [self setTitleTextAttributes:highlightedAttributes forState:UIControlStateHighlighted];
+        
+        [self setBackgroundImage:backgroundImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+        [self setBackgroundImage:highlightedBackgroundImage forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
+        [self setBackgroundImage:selectedBackgroundImage forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
 
-    UIImage *backgroundImage = [UIColor clearColor].image;
-    UIImage *selectedBackgroundImage = [UIImage roundedImageWithSize:CGSizeMake(10.0f, self.frame.size.height) color:tintColor radius:UI7ControlRadius];
-    UIImage *highlightedBackgroundImage = [UIImage roundedImageWithSize:CGSizeMake(10.0f, self.frame.size.height) color:[tintColor highligtedColorForBackgroundColor:self.stackedBackgroundColor] radius:UI7ControlRadius];
-
-    NSDictionary *oldAttributes = [self titleTextAttributesForState:UIControlStateNormal];
-    NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
-    if (oldAttributes[UITextAttributeFont]) {
-        attributes[UITextAttributeFont] = oldAttributes[UITextAttributeFont];
-    } else {
-        attributes[UITextAttributeFont] = [UI7Font systemFontOfSize:13.0 attribute:UI7FontAttributeMedium];
-    }
-    if (oldAttributes[UITextAttributeTextShadowOffset]) {
-        attributes[UITextAttributeTextShadowOffset] = oldAttributes[UITextAttributeTextShadowOffset];
-    } else {
-        attributes[UITextAttributeTextShadowOffset] = [NSValue valueWithUIOffset:UIOffsetZero];
-    }
-    attributes[UITextAttributeTextColor] = tintColor;
-    [self setTitleTextAttributes:attributes forState:UIControlStateNormal];
-
-    NSDictionary *highlightedAttributes = @{UITextAttributeTextColor: tintColor};
-    [self setTitleTextAttributes:highlightedAttributes forState:UIControlStateHighlighted];
-
-    [self setBackgroundImage:backgroundImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    [self setBackgroundImage:highlightedBackgroundImage forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
-    [self setBackgroundImage:selectedBackgroundImage forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
-
-    if (tintColor != [UIColor clearColor]) {//use setted dividerImage
         [self setDividerImage:tintColor.image forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     }
 
