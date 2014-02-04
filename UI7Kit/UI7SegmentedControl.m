@@ -78,33 +78,33 @@ CGFloat UI7SegmentedControlCellWidthDefault = 80.0f;
     if (tintColor == nil) return;
     // Set background images
 
-    UIImage *backgroundImage = [UIColor clearColor].image;
-    UIImage *selectedBackgroundImage = [UIImage roundedImageWithSize:CGSizeMake(10.0f, self.frame.size.height) color:tintColor radius:UI7ControlRadius];
-    UIImage *highlightedBackgroundImage = [UIImage roundedImageWithSize:CGSizeMake(10.0f, self.frame.size.height) color:[tintColor highligtedColorForBackgroundColor:self.stackedBackgroundColor] radius:UI7ControlRadius];
+    if (tintColor != [UIColor clearColor]) { //default UISegmentedControl style, set tintColor = [UIColor clearColor] to customize UISegmentedControl style
+        UIImage *backgroundImage = [UIColor clearColor].image;
+        UIImage *selectedBackgroundImage = [UIImage roundedImageWithSize:CGSizeMake(10.0f, self.frame.size.height) color:tintColor radius:UI7ControlRadius];
+        UIImage *highlightedBackgroundImage = [UIImage roundedImageWithSize:CGSizeMake(10.0f, self.frame.size.height) color:[tintColor highligtedColorForBackgroundColor:self.stackedBackgroundColor] radius:UI7ControlRadius];
 
-    NSDictionary *oldAttributes = [self titleTextAttributesForState:UIControlStateNormal];
-    NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
-    if (oldAttributes[UITextAttributeFont]) {
-        attributes[UITextAttributeFont] = oldAttributes[UITextAttributeFont];
-    } else {
-        attributes[UITextAttributeFont] = [UI7Font systemFontOfSize:13.0 attribute:UI7FontAttributeMedium];
-    }
-    if (oldAttributes[UITextAttributeTextShadowOffset]) {
-        attributes[UITextAttributeTextShadowOffset] = oldAttributes[UITextAttributeTextShadowOffset];
-    } else {
-        attributes[UITextAttributeTextShadowOffset] = [NSValue valueWithUIOffset:UIOffsetZero];
-    }
-    attributes[UITextAttributeTextColor] = tintColor;
-    [self setTitleTextAttributes:attributes forState:UIControlStateNormal];
+        NSDictionary *oldAttributes = [self titleTextAttributesForState:UIControlStateNormal];
+        NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
+        if (oldAttributes[UITextAttributeFont]) {
+            attributes[UITextAttributeFont] = oldAttributes[UITextAttributeFont];
+        } else {
+            attributes[UITextAttributeFont] = [UI7Font systemFontOfSize:13.0 attribute:UI7FontAttributeMedium];
+        }
+        if (oldAttributes[UITextAttributeTextShadowOffset]) {
+            attributes[UITextAttributeTextShadowOffset] = oldAttributes[UITextAttributeTextShadowOffset];
+        } else {
+            attributes[UITextAttributeTextShadowOffset] = [NSValue valueWithUIOffset:UIOffsetZero];
+        }
+        attributes[UITextAttributeTextColor] = tintColor;
+        [self setTitleTextAttributes:attributes forState:UIControlStateNormal];
 
-    NSDictionary *highlightedAttributes = @{UITextAttributeTextColor: tintColor};
-    [self setTitleTextAttributes:highlightedAttributes forState:UIControlStateHighlighted];
+        NSDictionary *highlightedAttributes = @{UITextAttributeTextColor: tintColor};
+        [self setTitleTextAttributes:highlightedAttributes forState:UIControlStateHighlighted];
 
-    [self setBackgroundImage:backgroundImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    [self setBackgroundImage:highlightedBackgroundImage forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
-    [self setBackgroundImage:selectedBackgroundImage forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
+        [self setBackgroundImage:backgroundImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+        [self setBackgroundImage:highlightedBackgroundImage forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
+        [self setBackgroundImage:selectedBackgroundImage forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
 
-    if (tintColor != [UIColor clearColor]) {//use setted dividerImage
         [self setDividerImage:tintColor.image forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     }
 
@@ -116,10 +116,12 @@ CGFloat UI7SegmentedControlCellWidthDefault = 80.0f;
         return;
     }
 //    NSDictionary *selectedAttributes = @{UITextAttributeTextColor: self.stackedBackgroundColor};
-    UIColor *tintColor = self.tintColor;
-    UIColor *whiteColor = [UIColor whiteColor];
-    NSDictionary *selectedAttributes = @{UITextAttributeTextColor: [tintColor isEqual:whiteColor] ? [UIColor darkTextColor] : self.stackedBackgroundColor};//if tintColor is white, then set selectedColor to darkTextColor
-    
+    UIColor *tintColor = self.stackedBackgroundColor;
+    if ([self.tintColor isEqual:[UIColor whiteColor]] || [self.tintColor isEqual:[UIColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:1.0f]] || [self.tintColor isEqual:[UIColor colorWithWhite:1.0f alpha:1.0f]]) {
+        tintColor = [UIColor darkTextColor];
+    }
+    NSDictionary *selectedAttributes = @{UITextAttributeTextColor: tintColor};//if tintColor is white, then set selectedColor to darkTextColor
+
     [self setTitleTextAttributes:selectedAttributes forState:UIControlStateSelected];
 }
 
