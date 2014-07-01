@@ -66,7 +66,7 @@ NSString *UI7TabBarStyle = @"UI7TabBarStyle";
 }
 
 - (void)_tabBarInit {
-    self.tintColor = [UIColor grayColor];
+    self.tintColor = [[UI7TabBar appearance] tintColor] ? [[UI7TabBar appearance] tintColor] : [UIColor grayColor];
     self.selectedImageTintColor = self.superview.tintColor;
 
     UIGraphicsBeginImageContext(CGSizeMake(1.0, 3.0));
