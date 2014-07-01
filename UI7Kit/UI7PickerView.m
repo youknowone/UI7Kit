@@ -106,6 +106,7 @@ UIImage *UI7PickerLikeViewGradientImage(UIColor *maskColor, CGFloat topGradient,
     
     if ([[UI7PickerView appearance] backgroundColor]) {
         self.backgroundView = [[[UIView alloc] init] autorelease];
+        self.backgroundView.frame = CGRectMake(.0, .0, self.frame.size.width, self.frame.size.height);
         self.backgroundView.backgroundColor = [[UI7PickerView appearance] backgroundColor];
         [self addSubview:self.backgroundView];
     }
@@ -127,9 +128,6 @@ UIImage *UI7PickerLikeViewGradientImage(UIColor *maskColor, CGFloat topGradient,
     UIColor *maskColor = self.stackedBackgroundColor;
     self.topGradient.frame = CGRectMake(.0, .0, width, height);
     self.topLineView.frame = CGRectMake(.0, height, width, 1.0f);
-    if ([[UI7PickerView appearance] backgroundColor]) {
-        self.backgroundView.frame = CGRectMake(.0, .0, self.frame.size.width, self.frame.size.height);
-    }
     self.bottomGradient.frame = CGRectMake(.0, height + rowHeight, width, height);
     self.bottomLineView.frame = CGRectMake(.0, height + rowHeight - 1, width, 1.0f);
     
