@@ -140,22 +140,23 @@ NSAPropertyAssignSetter(setNavigationBar, @"_navigationBar");
 
 - (void)setBarStyle:(UIBarStyle)barStyle {
     [self __setBarStyle:barStyle];
-
-    UIColor *backgroundColor = nil;
+    
+    UIColor *backgroundColor = [[UI7NavigationBar appearance] backgroundColor];
     UIColor *titleColor = nil;
     switch (barStyle) {
         case UIBarStyleDefault: {
-            backgroundColor = [UI7Color defaultBarColor];
+            backgroundColor = backgroundColor ? backgroundColor : [UI7Color defaultBarColor];
             titleColor = [UIColor blackColor];
         }   break;
         case UIBarStyleBlackOpaque:
         case UIBarStyleBlackTranslucent: {
-            backgroundColor = [UI7Color blackBarColor];
+            backgroundColor = backgroundColor ? backgroundColor : [UI7Color blackBarColor];
             titleColor = [UIColor whiteColor];
         }   break;
         default:
             break;
     }
+
     if (titleColor) {
         NSDictionary *dict = @{
                                UITextAttributeFont: [UI7Font systemFontOfSize:17.0 attribute:UI7FontAttributeMedium],
