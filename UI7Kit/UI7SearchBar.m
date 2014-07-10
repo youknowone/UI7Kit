@@ -47,7 +47,10 @@ NSAPropertyGetter(scopeBar, @"_scopeBar");
     UIGraphicsEndImageContext();
     self.backgroundColor = [UIColor colorWith8bitRed:201 green:201 blue:205 alpha:255];
     self.backgroundImage = backgroundImage;
-    self.placeholder = @" ";
+    if (self.placeholder == nil || [self.placeholder stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]].length == 0) {
+        self.placeholder = @" ";
+    }
+
     
     UIBarButtonItem *searchBarButton = [UIBarButtonItem appearanceWhenContainedIn:[UISearchBar class], nil];
     [searchBarButton setBackgroundImage:[UIColor clearColor].image forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
