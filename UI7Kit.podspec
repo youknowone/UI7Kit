@@ -3,11 +3,11 @@ Pod::Spec.new do |s|
   s.version      = "0.9.19"
   s.summary      = "UI7Kit is a GUI toolkit to implement iOS7 look & feel UIKit under iOS5/iOS6. It is also supported that patching UIKit to UI7Kit in runtime."
   s.homepage     = "https://github.com/youknowone/UI7Kit"
-  s.screenshots  = "https://raw.github.com/youknowone/UI7Kit/master/UI7Kit.png",
   s.license      = "2-clause BSD"
   s.author       = { "Jeong YunWon" => "jeong@youknowone.org" }
   s.source       = { :git => "https://github.com/youknowone/UI7Kit.git", :tag => "0.9.19" }
-
+  s.requires_arc = false
+  s.screenshots  = "https://raw.github.com/youknowone/UI7Kit/master/UI7Kit.png"
   s.platform     = :ios, '5.0'
   s.header_dir = "UI7Kit"
 
@@ -54,7 +54,7 @@ Pod::Spec.new do |s|
       if component != 'UI7Color'
         c.dependency 'UI7Kit/Core' # always depend on our Core, but dont cause a dep cycle on UI7Color
       else
-        c.dependency 'FoundationExtension/UIKitExtension', '~> 0.46'      
+        c.dependency 'FoundationExtension/UIKitExtension', '~> 0.48'
       end
       if component == 'UI7NavigationBar' or component == 'UI7Slider'
         c.resources = "Resources/#{component}*" # this should go away eventually
