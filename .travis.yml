@@ -1,0 +1,4 @@
+language: objective-c
+xcode_project: UI7Kit.xcodeproj # path to your xcodeproj folder
+xcode_scheme: UI7Kit
+script: xcodebuild test -workspace UI7Kit.xcworkspace -scheme UI7KitTests -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
