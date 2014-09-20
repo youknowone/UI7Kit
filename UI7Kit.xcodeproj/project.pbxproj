@@ -8,10 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		15315B9E98864B01A283D8AB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C081AB61224D42EF8B7ABD3F /* libPods.a */; };
-		38017432176989660049D26C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38C7A9891495181800381910 /* SenTestingKit.framework */; };
 		38017433176989660049D26C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383764E213373155007072FD /* UIKit.framework */; };
 		38017434176989660049D26C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383764D713373154007072FD /* Foundation.framework */; };
-		38017437176989660049D26C /* libUI7Kit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38017423176989650049D26C /* libUI7Kit.a */; };
 		3801743D176989660049D26C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3801743B176989660049D26C /* InfoPlist.strings */; };
 		38017440176989660049D26C /* UI7KitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3801743F176989660049D26C /* UI7KitTests.m */; };
 		38017450176989B80049D26C /* UI7Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 38740493176825D900C0BB18 /* UI7Utilities.m */; };
@@ -130,6 +128,7 @@
 		38CE37D6176F657800AC0C89 /* UI7SegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 38CE37D4176F4C8400AC0C89 /* UI7SegmentedControl.m */; };
 		38D1C937177EF7B70026135A /* UI7Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D1C936177EF7B70026135A /* UI7Tool.m */; };
 		38D3310517911022009576B2 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38D3310417911022009576B2 /* MessageUI.framework */; };
+		38D5BD3319CDBD2900DC7C8D /* libUI7Kit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38017423176989650049D26C /* libUI7Kit.a */; };
 		38DBEB76178C67FB000EFC5C /* UICGlobalSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DBEB75178C67FB000EFC5C /* UICGlobalSettingsViewController.m */; };
 		38DBEB79178C6A27000EFC5C /* UICUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DBEB78178C6A27000EFC5C /* UICUserDefaults.m */; };
 		38DBEB7C178C6F28000EFC5C /* UICMainListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DBEB7B178C6F28000EFC5C /* UICMainListViewController.m */; };
@@ -199,10 +198,9 @@
 		38017411176776020049D26C /* UI7BarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7BarButtonItem.m; sourceTree = "<group>"; };
 		38017423176989650049D26C /* libUI7Kit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUI7Kit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		38017427176989660049D26C /* UI7Kit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UI7Kit-Prefix.pch"; sourceTree = "<group>"; };
-		38017431176989660049D26C /* UI7KitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UI7KitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		38017431176989660049D26C /* UI7KitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UI7KitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3801743A176989660049D26C /* UI7KitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UI7KitTests-Info.plist"; sourceTree = "<group>"; };
 		3801743C176989660049D26C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		3801743E176989660049D26C /* UI7KitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UI7KitTests.h; sourceTree = "<group>"; };
 		3801743F176989660049D26C /* UI7KitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UI7KitTests.m; sourceTree = "<group>"; };
 		3801745E1769F3B50049D26C /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		38017461176A245B0049D26C /* UI7NavigationBarBackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI7NavigationBarBackButton.png; sourceTree = "<group>"; };
@@ -325,7 +323,6 @@
 		38C7A9761495181800381910 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		38C7A9771495181800381910 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		38C7A9781495181800381910 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		38C7A9891495181800381910 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		38CE37D3176F4C8400AC0C89 /* UI7SegmentedControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UI7SegmentedControl.h; sourceTree = "<group>"; };
 		38CE37D4176F4C8400AC0C89 /* UI7SegmentedControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UI7SegmentedControl.m; sourceTree = "<group>"; };
 		38D1C935177EF7B70026135A /* UI7Tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7Tool.h; sourceTree = "<group>"; };
@@ -380,11 +377,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38D5BD3319CDBD2900DC7C8D /* libUI7Kit.a in Frameworks */,
 				3888FC63176C8EAD00489638 /* CoreGraphics.framework in Frameworks */,
-				38017432176989660049D26C /* SenTestingKit.framework in Frameworks */,
 				38017433176989660049D26C /* UIKit.framework in Frameworks */,
 				38017434176989660049D26C /* Foundation.framework in Frameworks */,
-				38017437176989660049D26C /* libUI7Kit.a in Frameworks */,
 				384BF442178A188E00485BED /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,7 +429,6 @@
 		38017438176989660049D26C /* UI7KitTests */ = {
 			isa = PBXGroup;
 			children = (
-				3801743E176989660049D26C /* UI7KitTests.h */,
 				3801743F176989660049D26C /* UI7KitTests.m */,
 				38017439176989660049D26C /* Supporting Files */,
 			);
@@ -495,7 +490,7 @@
 			children = (
 				38F068161636F8C8002723AB /* UI7KitTestApp.app */,
 				38017423176989650049D26C /* libUI7Kit.a */,
-				38017431176989660049D26C /* UI7KitTests.octest */,
+				38017431176989660049D26C /* UI7KitTests.xctest */,
 				384BF421178A176600485BED /* UI7KitCatalog.app */,
 			);
 			name = Products;
@@ -507,7 +502,6 @@
 				383764D713373154007072FD /* Foundation.framework */,
 				383764E213373155007072FD /* UIKit.framework */,
 				383764E513373155007072FD /* CoreGraphics.framework */,
-				38C7A9891495181800381910 /* SenTestingKit.framework */,
 				3886F6FD17709EF300890D47 /* QuartzCore.framework */,
 				38D3310417911022009576B2 /* MessageUI.framework */,
 				38460CFA17ED74C700AF8C53 /* AddressBookUI.framework */,
@@ -763,8 +757,8 @@
 			);
 			name = UI7KitTests;
 			productName = UI7KitTests;
-			productReference = 38017431176989660049D26C /* UI7KitTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productReference = 38017431176989660049D26C /* UI7KitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		384BF420178A176600485BED /* UI7KitCatalog */ = {
 			isa = PBXNativeTarget;
@@ -1199,6 +1193,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1216,9 +1211,17 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = "$(PODS_ROOT)/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-framework",
+					QuartzCore,
+					"-framework",
+					UIKit,
+					"-framework",
+					XCTest,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -1237,6 +1240,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1248,10 +1252,18 @@
 				INFOPLIST_FILE = "UI7KitTests/UI7KitTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = "$(PODS_ROOT)/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-framework",
+					QuartzCore,
+					"-framework",
+					UIKit,
+					"-framework",
+					XCTest,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
