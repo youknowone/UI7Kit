@@ -60,8 +60,8 @@
 
 UIColor *UI7ButtonDefaultTitleColor = nil;
 
-- (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
-- (id)__initWithFrame:(CGRect)frame { assert(NO); return nil; }
+- (instancetype)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
+- (instancetype)__initWithFrame:(CGRect)frame { assert(NO); return nil; }
 + (id)__buttonWithType:(UIButtonType)buttonType { assert(NO); return nil; }
 - (void)__setTitleColor:(UIColor *)color forState:(UIControlState)state { assert(NO); }
 - (void)__setBackgroundColor:(UIColor *)backgroundColor { assert(NO); }
@@ -163,7 +163,7 @@ UIColor *UI7ButtonDefaultTitleColor = nil;
     }
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [self __initWithCoder:aDecoder];
     if (self != nil) {
         UIColor *color = [aDecoder decodeObjectForKey:@"UITintColor"];
@@ -184,7 +184,7 @@ UIColor *UI7ButtonDefaultTitleColor = nil;
     return self;
 }
 
-- (id)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [self __initWithFrame:frame];
     if (self != nil) {
         [self _buttonInitTheme];
@@ -193,7 +193,7 @@ UIColor *UI7ButtonDefaultTitleColor = nil;
 }
 
 + (id)buttonWithType:(UIButtonType)buttonType {
-    UIButton *button = nil;
+    id button = nil;
     if (buttonType == UIButtonTypeRoundedRect) {
         button = [self __buttonWithType:UIButtonTypeCustom];
     } else {
@@ -255,14 +255,14 @@ UIColor *UI7ButtonDefaultTitleColor = nil;
     [self __setTitleColor:highlightedTintColor forState:UIControlStateSelected];
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     self.___backgroundColor = [aDecoder decodeObjectForKey:@"UIBackgroundColor"];
     [self _roundedRectButtonInit];
     return self;
 }
 
-- (id)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     [self _roundedRectButtonInit];
     return self;
@@ -308,13 +308,13 @@ UIColor *UI7ButtonDefaultTitleColor = nil;
     self.layer.borderColor = textTitleColor.CGColor;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     [self _roundedRectButtonInit];
     return self;
 }
 
-- (id)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     [self _roundedRectButtonInit];
     return self;

@@ -38,8 +38,8 @@ NSAPropertyGetter(titleLabel, @"_titleLabel");
 
 @implementation UIActionSheet (Patch)
 
-- (id)init { return [super init]; }
-- (id)__init { assert(NO); return nil; }
+- (instancetype)init { return [super init]; }
+- (instancetype)__init { assert(NO); return nil; }
 - (void)__showFromBarButtonItem:(UIBarButtonItem *)item animated:(BOOL)animated { assert(NO); }
 - (void)__showFromRect:(CGRect)rect inView:(UIView *)view animated:(BOOL)animated { assert(NO); }
 - (void)__showFromTabBar:(UITabBar *)view { assert(NO); }
@@ -205,7 +205,7 @@ NSAPropertyGetter(titleLabel, @"_titleLabel");
             ssuperview.frame = frame;
             [firstSubview setHidden:YES];
             UIView *dimmingView = [[[UIView alloc] initWithFrame:self.window.bounds] autorelease];
-            dimmingView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.15];
+            dimmingView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.15f];
             dimmingView.hidden = YES;
             [ssuperview.superview insertSubview:dimmingView belowSubview:ssuperview];
             [dimmingView setHidden:NO animated:YES];
@@ -252,7 +252,7 @@ NSAPropertyGetter(titleLabel, @"_titleLabel");
     //[self exportSelector:@selector(tableView:heightForRowAtIndexPath:) toClass:target];
 }
 
-- (id)init {
+- (instancetype)init {
     self = [self __init];
     if (self != nil) {
 

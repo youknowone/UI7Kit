@@ -13,7 +13,7 @@
 
 @implementation UIPopoverController (Patch)
 
-- (id)__initWithContentViewController:(UIViewController *)viewController { assert(NO); return nil; }
+- (instancetype)__initWithContentViewController:(UIViewController *)viewController { assert(NO); return nil; }
 
 @end
 
@@ -34,7 +34,7 @@
     [self exportSelector:@selector(initWithContentViewController:) toClass:target];
 }
 
-- (id)initWithContentViewController:(UIViewController *)viewController {
+- (instancetype)initWithContentViewController:(UIViewController *)viewController {
     self = [self __initWithContentViewController:viewController];
     if (self != nil) {
         [self setPopoverBackgroundViewClass:[UI7PopoverBackgroundView class]];

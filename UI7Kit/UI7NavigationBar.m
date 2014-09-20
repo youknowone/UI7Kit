@@ -47,10 +47,10 @@ NSAPropertyAssignSetter(setNavigationBar, @"_navigationBar");
 
 @implementation UINavigationBar (Patch)
 
-- (id)init { return [super init]; }
-- (id)__init { assert(NO); return nil; }
-- (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
-- (id)__initWithFrame:(CGRect)frame { assert(NO); return nil; }
+- (instancetype)init { return [super init]; }
+- (instancetype)__init { assert(NO); return nil; }
+- (instancetype)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
+- (instancetype)__initWithFrame:(CGRect)frame { assert(NO); return nil; }
 - (void)__setBarStyle:(UIBarStyle)barStyle { assert(NO); }
 - (void)__pushNavigationItem:(UINavigationItem *)item { assert(NO); }
 - (UIColor *)__tintColor { assert(NO); return nil; }
@@ -114,7 +114,7 @@ NSAPropertyAssignSetter(setNavigationBar, @"_navigationBar");
     }
 }
 
-- (id)init {
+- (instancetype)init {
     self = [self __init];
     if (self) {
         [self _navigationBarInit];
@@ -122,7 +122,7 @@ NSAPropertyAssignSetter(setNavigationBar, @"_navigationBar");
     return self;
 }
 
-- (id)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [self __initWithFrame:frame];
     if (self) {
         [self _navigationBarInit];
@@ -130,7 +130,7 @@ NSAPropertyAssignSetter(setNavigationBar, @"_navigationBar");
     return self;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [self __initWithCoder:aDecoder];
     if (self) {
         [self _navigationBarInit];
@@ -243,9 +243,9 @@ NSAPropertyAssignSetter(setNavigationBar, @"_navigationBar");
 
 @implementation UINavigationItem (Patch)
 
-- (id)__init { assert(NO); return nil; }
-- (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
-- (id)__initWithTitle:(NSString *)title { assert(NO); return nil; }
+- (instancetype)__init { assert(NO); return nil; }
+- (instancetype)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
+- (instancetype)__initWithTitle:(NSString *)title { assert(NO); return nil; }
 - (void)__setLeftBarButtonItem:(UIBarButtonItem *)leftBarButtonItem animated:(BOOL)animated { assert(NO); }
 - (void)__setRightBarButtonItem:(UIBarButtonItem *)rightBarButtonItem animated:(BOOL)animated { assert(NO); }
 - (void)__setBackBarButtonItem:(UIBarButtonItem *)backBarButtonItem { assert(NO); }
@@ -282,7 +282,7 @@ NSAPropertyAssignSetter(setNavigationBar, @"_navigationBar");
     [self exportSelector:@selector(setRightBarButtonItems:animated:) toClass:target];
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [self __initWithCoder:aDecoder];
     if (self != nil) {
 
@@ -290,7 +290,7 @@ NSAPropertyAssignSetter(setNavigationBar, @"_navigationBar");
     return self;
 }
 
-- (id)initWithTitle:(NSString *)title {
+- (instancetype)initWithTitle:(NSString *)title {
     self = [self __initWithTitle:title];
     if (self != nil) {
         

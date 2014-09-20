@@ -18,7 +18,7 @@
 
 - (void)awakeFromNib { [super awakeFromNib]; }
 
-- (id)__init { assert(NO); return nil; }
+- (instancetype)__init { assert(NO); return nil; }
 - (void)__awakeFromNib { assert(NO); }
 - (UIColor *)__tintColor { assert(NO); return nil; }
 - (void)__setTintColor:(UIColor *)color { assert(NO); }
@@ -108,7 +108,7 @@
     [self _stepperInit];
 }
 
-- (id)init {
+- (instancetype)init {
     self = [self __init];
     if (self != nil) {
         [self _stepperInit];
@@ -116,7 +116,7 @@
     return self;
 }
 
-- (id)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self != nil) {
         [self _stepperInit];

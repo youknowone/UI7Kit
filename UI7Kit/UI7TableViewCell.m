@@ -45,8 +45,8 @@
 
 @implementation UITableViewCell (Patch)
 
-- (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
-- (id)__initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier { assert(NO); return nil; }
+- (instancetype)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
+- (instancetype)__initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier { assert(NO); return nil; }
 - (UIColor *)__tintColor { assert(NO); return  nil; }
 - (UITableViewCellAccessoryType)__accessoryType { assert(NO); return 0; }
 - (void)__setAccessoryType:(UITableViewCellAccessoryType)accessoryType { assert(NO); }
@@ -169,7 +169,7 @@ UIImage *UI7TableViewCellAccessoryCheckmarkImageCreate() {
     [self exportSelector:@selector(_setTableBackgroundCGColor:withSystemColorName:) toClass:target];
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [self __initWithCoder:aDecoder];
     if (self != nil) {
         UIColor *backgroundColor = [aDecoder decodeObjectForKey:@"UIBackgroundColor"];
@@ -184,7 +184,7 @@ UIImage *UI7TableViewCellAccessoryCheckmarkImageCreate() {
     return self;
 }
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [self __initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self != nil) {
         switch (style) {

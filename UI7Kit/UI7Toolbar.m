@@ -13,8 +13,8 @@
 
 @implementation UIToolbar (Patch)
 
-- (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
-- (id)__initWithFrame:(CGRect)frame { assert(NO); return nil; }
+- (instancetype)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
+- (instancetype)__initWithFrame:(CGRect)frame { assert(NO); return nil; }
 - (void)__setBarStyle:(UIBarStyle)barStyle { assert(NO); }
 
 - (void)_toolbarInit {
@@ -74,7 +74,7 @@
     [self exportSelector:@selector(setBarStyle:) toClass:target];
 }
 
-- (id)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [self __initWithFrame:frame];
     if (self) {
         [self _toolbarInit];
@@ -82,7 +82,7 @@
     return self;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [self __initWithCoder:aDecoder];
     if (self) {
         [self _toolbarInit];

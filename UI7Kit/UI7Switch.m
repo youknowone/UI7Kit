@@ -34,8 +34,8 @@
 
 @implementation UISwitch (Patch)
 
-- (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
-- (id)__initWithFrame:(CGRect)frame { assert(NO); return nil; }
+- (instancetype)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
+- (instancetype)__initWithFrame:(CGRect)frame { assert(NO); return nil; }
 - (void)__awakeFromNib { assert(NO); }
 
 @end
@@ -95,7 +95,7 @@
     [self exportSelector:@selector(initWithFrame:) toClass:target];
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
     NSString *className = self.class.name;
     if ([className isEqual:@"UISwitch"] || [className isEqual:@"UI7Switch"]) {
         [self release];
@@ -139,7 +139,7 @@
 }
 #endif
 
-- (id)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame {
     NSString *className = self.class.name;
     if ([className isEqual:@"UISwitch"] || [className isEqual:@"UI7Switch"]) {
         [self release];

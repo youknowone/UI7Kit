@@ -51,7 +51,7 @@ NSString *UI7TabBarItemIconNames[] = {
 @property(nonatomic,readonly) BOOL isSystemItem __deprecated; // not rejected (?) but warned
 @property(nonatomic,readonly) UITabBarSystemItem systemItem __deprecated; // not rejected (?) but warned
 
-- (id)initWithCoder:(NSCoder *)aDecoder;
+- (instancetype)initWithCoder:(NSCoder *)aDecoder;
 - (id)_updateImageWithTintColor:(UIColor *)tintColor isSelected:(BOOL)selected getImageOffset:(UIOffset *)offset;
 
 @end
@@ -80,8 +80,8 @@ NSString *UI7TabBarItemIconNames[] = {
     [UI7TabBarItem self];
 }
 
-- (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
-- (id)__initWithTabBarSystemItem:(UITabBarSystemItem)systemItem tag:(NSInteger)tag { assert(NO); return nil; }
+- (instancetype)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
+- (instancetype)__initWithTabBarSystemItem:(UITabBarSystemItem)systemItem tag:(NSInteger)tag { assert(NO); return nil; }
 - (id)__updateImageWithTintColor:(UIColor *)tintColor isSelected:(BOOL)selected getImageOffset:(UIOffset *)offset { assert(NO); return nil; }
 
 - (void)_tabBarItemInit {
@@ -111,13 +111,13 @@ NSString *UI7TabBarItemIconNames[] = {
     [self exportSelector:@selector(_updateImageWithTintColor:isSelected:getImageOffset:) toClass:target];
 }
 
-- (id)initWithTitle:(NSString *)title image:(UIImage *)image tag:(NSInteger)tag {
+- (instancetype)initWithTitle:(NSString *)title image:(UIImage *)image tag:(NSInteger)tag {
     self = [super initWithTitle:title image:image tag:tag];
     [self _tabBarItemInit];
     return self;
 }
 
-- (id)initWithTabBarSystemItem:(UITabBarSystemItem)systemItem tag:(NSInteger)tag {
+- (instancetype)initWithTabBarSystemItem:(UITabBarSystemItem)systemItem tag:(NSInteger)tag {
     NSString *iconName = UI7TabBarItemIconNames[systemItem];
     NSString *title = UI7TabBarItemTitles[systemItem];
     UIImage *unselected = [UIImage imageNamed:[@"UITabBar%@Template" format:iconName]];
@@ -128,7 +128,7 @@ NSString *UI7TabBarItemIconNames[] = {
     return self;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [self __initWithCoder:aDecoder];
     if (self != nil) {
         NSString *selectorName = [@"is" stringByAppendingString:@"SystemItem"];

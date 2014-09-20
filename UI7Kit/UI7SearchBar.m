@@ -34,8 +34,8 @@ NSAPropertyGetter(scopeBar, @"_scopeBar");
 
 @implementation UISearchBar (Patch)
 
-- (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
-- (id)__initWithFrame:(CGRect)frame { assert(NO); return nil; }
+- (instancetype)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
+- (instancetype)__initWithFrame:(CGRect)frame { assert(NO); return nil; }
 
 - (void)_searchBarInit {
     CGFloat height = self.frame.size.height;
@@ -102,7 +102,7 @@ NSAPropertyGetter(scopeBar, @"_scopeBar");
     [self exportSelector:@selector(initWithFrame:) toClass:target];
 }
 
-- (id)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [self __initWithFrame:frame];
     if (self) {
         [self _searchBarInit];
@@ -110,7 +110,7 @@ NSAPropertyGetter(scopeBar, @"_scopeBar");
     return self;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [self __initWithCoder:aDecoder];
     if (self != nil) {
         [self _searchBarInit];

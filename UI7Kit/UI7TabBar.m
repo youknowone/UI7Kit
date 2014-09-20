@@ -58,8 +58,8 @@ NSString *UI7TabBarStyle = @"UI7TabBarStyle";
 
 @implementation UITabBar (Patch)
 
-- (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
-- (id)__initWithFrame:(CGRect)frame { assert(NO); return nil; }
+- (instancetype)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
+- (instancetype)__initWithFrame:(CGRect)frame { assert(NO); return nil; }
 
 - (void)_tabBarInitTheme {
     [self _setBarStyle:self.barStyle];
@@ -120,7 +120,7 @@ NSString *UI7TabBarStyle = @"UI7TabBarStyle";
     [target addMethodForSelector:@selector(setBarStyle:) fromMethod:[target methodObjectForSelector:@selector(_setBarStyle:)]];
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [self __initWithCoder:aDecoder];
     if (self != nil) {
         NSInteger style = [aDecoder decodeIntegerForKey:@"UIBarStyle"];
@@ -131,7 +131,7 @@ NSString *UI7TabBarStyle = @"UI7TabBarStyle";
     return self;
 }
 
-- (id)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [self __initWithFrame:frame];
     if (self) {
         [self _tabBarInitTheme];

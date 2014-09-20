@@ -24,8 +24,8 @@ static NSString *UI7ViewControllerEditButtonItem = @"UI7ViewControllerEditButton
 
 @implementation UIViewController (Patch)
 
-- (id)__initViewControllerWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil { assert(NO); return nil; }
-- (id)__initViewControllerWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
+- (instancetype)__initViewControllerWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil { assert(NO); return nil; }
+- (instancetype)__initViewControllerWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
 
 - (void)_viewControllerInit {
     
@@ -56,7 +56,7 @@ static NSString *UI7ViewControllerEditButtonItem = @"UI7ViewControllerEditButton
     [self exportSelector:@selector(initWithNibName:bundle:) toClass:target];
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [self __initViewControllerWithCoder:aDecoder];
     if (self != nil) {
 
@@ -64,7 +64,7 @@ static NSString *UI7ViewControllerEditButtonItem = @"UI7ViewControllerEditButton
     return self;
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [self __initViewControllerWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self != nil) {
 

@@ -96,10 +96,10 @@ NSString *UI7BarButtonItemIconNames[] = {
 @implementation UIBarButtonItem (Patch)
 
 // backup
-- (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
-- (id)__initWithImage:(UIImage *)image style:(UIBarButtonItemStyle)style target:(id)target action:(SEL)action { assert(NO); return nil; }
-- (id)__initWithBarButtonSystemItem:(UIBarButtonSystemItem)systemItem target:(id)target action:(SEL)action { assert(NO); return nil; }
-- (id)__initWithTitle:(NSString *)title style:(UIBarButtonItemStyle)style target:(id)target action:(SEL)action { assert(NO); return nil; }
+- (instancetype)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
+- (instancetype)__initWithImage:(UIImage *)image style:(UIBarButtonItemStyle)style target:(id)target action:(SEL)action { assert(NO); return nil; }
+- (instancetype)__initWithBarButtonSystemItem:(UIBarButtonSystemItem)systemItem target:(id)target action:(SEL)action { assert(NO); return nil; }
+- (instancetype)__initWithTitle:(NSString *)title style:(UIBarButtonItemStyle)style target:(id)target action:(SEL)action { assert(NO); return nil; }
 - (UIColor *)__tintColor { assert(NO); return nil; }
 
 - (UIColor *)_tintColor {
@@ -150,7 +150,7 @@ NSString *UI7BarButtonItemIconNames[] = {
     [self exportSelector:@selector(tintColor) toClass:target];
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [self __initWithCoder:aDecoder];
     if (self != nil) {
         if ([aDecoder containsValueForKey:@"UISystemItem"]) {
@@ -164,13 +164,13 @@ NSString *UI7BarButtonItemIconNames[] = {
     return self;
 }
 
-- (id)initWithImage:(UIImage *)image style:(UIBarButtonItemStyle)style target:(id)target action:(SEL)action {
+- (instancetype)initWithImage:(UIImage *)image style:(UIBarButtonItemStyle)style target:(id)target action:(SEL)action {
     self = [self __initWithImage:image style:style target:target action:action];
     [self _barButtonItemInit];
     return self;
 }
 
-- (id)initWithBarButtonSystemItem:(UIBarButtonSystemItem)systemItem target:(id)target action:(SEL)action {
+- (instancetype)initWithBarButtonSystemItem:(UIBarButtonSystemItem)systemItem target:(id)target action:(SEL)action {
     UIFont *font = [UI7Font systemFontOfSize:17.0 attribute:UI7FontAttributeLight];
     switch (systemItem) {
         case UIBarButtonSystemItemAdd:
@@ -207,7 +207,7 @@ NSString *UI7BarButtonItemIconNames[] = {
     return self;
 }
 
-- (id)initWithTitle:(NSString *)title style:(UIBarButtonItemStyle)style target:(id)target action:(SEL)action {
+- (instancetype)initWithTitle:(NSString *)title style:(UIBarButtonItemStyle)style target:(id)target action:(SEL)action {
     self = [self __initWithTitle:title style:style target:target action:action];
     [self _barButtonItemInit];
     return self;

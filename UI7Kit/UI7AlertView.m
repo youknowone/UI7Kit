@@ -89,7 +89,7 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
 - (void)relayout {
     // dim view - not available before setDimsBackground as NO
     UIView *view = self.dimView = [[[UIADimmingView alloc] initWithFrame:self.superview.bounds] autorelease];
-    view.alpha = 0.4;
+    view.alpha = 0.4f;
     view.hidden = YES;
     [view setHidden:NO animated:YES];
     [self.window insertSubview:view belowSubview:self];
@@ -196,8 +196,8 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
 
 @implementation UIAlertView (Patch)
 
-- (id)init { return [super init]; }
-- (id)__init { assert(NO); return nil; }
+- (instancetype)init { return [super init]; }
+- (instancetype)__init { assert(NO); return nil; }
 - (void)__show { assert(NO); }
 - (void)__dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated { assert(NO); }
 
@@ -224,7 +224,7 @@ NSAPropertyRetainSetter(setBackgroundImageView, @"_backgroundImageView")
     [self exportSelector:@selector(dismissWithClickedButtonIndex:animated:) toClass:target];
 }
 
-- (id)init {
+- (instancetype)init {
     self = [self __init];
     if (self != nil) {
         SEL setDimsBackground = NSSelectorFromString([@"set" stringByAppendingString:@"DimsBackground:"]);

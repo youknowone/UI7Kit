@@ -17,9 +17,9 @@ NSString *UI7ProgressViewProgressTintColor = @"UI7ProgressViewProgressTintColor"
 
 @implementation UIProgressView (Patch)
 
-- (id)__initWithFrame:(CGRect)frame { assert(NO); return nil; }
-- (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
-- (id)__initWithProgressViewStyle:(UIProgressViewStyle)style { assert(NO); return nil; }
+- (instancetype)__initWithFrame:(CGRect)frame { assert(NO); return nil; }
+- (instancetype)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
+- (instancetype)__initWithProgressViewStyle:(UIProgressViewStyle)style { assert(NO); return nil; }
 - (UIColor *)__trackTintColor { assert(NO); return nil; }
 - (UIColor *)__progressTintColor { assert(NO); return nil; }
 
@@ -85,7 +85,7 @@ NSString *UI7ProgressViewProgressTintColor = @"UI7ProgressViewProgressTintColor"
     [self exportSelector:@selector(setProgressTintColor:) toClass:target];
 }
 
-- (id)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [self __initWithFrame:frame];
     if (self != nil) {
         [self _progressViewInit];
@@ -93,7 +93,7 @@ NSString *UI7ProgressViewProgressTintColor = @"UI7ProgressViewProgressTintColor"
     return self;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [self __initWithCoder:aDecoder];
     if (self != nil) {
         if ([aDecoder containsValueForKey:@"UIProgressTrackTintColor"]) {
@@ -107,7 +107,7 @@ NSString *UI7ProgressViewProgressTintColor = @"UI7ProgressViewProgressTintColor"
     return self;
 }
 
-- (id)initWithProgressViewStyle:(UIProgressViewStyle)style {
+- (instancetype)initWithProgressViewStyle:(UIProgressViewStyle)style {
     self = [self __initWithProgressViewStyle:style];
     if (self != nil) {
         [self _progressViewInit];

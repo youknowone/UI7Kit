@@ -46,9 +46,9 @@ CGFloat UI7SegmentedControlCellWidthDefault = 80.0f;
 
 - (void)awakeFromNib { [super awakeFromNib]; }
 
-- (id)__initWithItems:(NSArray *)items { assert(NO); return nil; }
-- (id)__initWithFrame:(CGRect)frame { assert(NO); return nil; }
-- (id)__initWithCoder:(NSCoder *)aDecoder { asctime(NO); return nil; }
+- (instancetype)__initWithItems:(NSArray *)items { assert(NO); return nil; }
+- (instancetype)__initWithFrame:(CGRect)frame { assert(NO); return nil; }
+- (instancetype)__initWithCoder:(NSCoder *)aDecoder { asctime(NO); return nil; }
 - (void)__awakeFromNib { assert(NO); }
 - (UIColor *)__tintColor { assert(NO); return nil; }
 - (void)__setTintColor:(UIColor *)tintColor { assert(NO); }
@@ -163,7 +163,7 @@ CGFloat UI7SegmentedControlCellWidthDefault = 80.0f;
     [self _segmentedControlInit];
 }
 
-- (id)initWithItems:(NSArray *)items {
+- (instancetype)initWithItems:(NSArray *)items {
     self = [self __initWithItems:items];
     if (self != nil) {
         [self _segmentedControlInit];
@@ -171,7 +171,7 @@ CGFloat UI7SegmentedControlCellWidthDefault = 80.0f;
     return self;
 }
 
-- (id)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [self __initWithFrame:frame];
     if (self != nil) {
         [self _segmentedControlInit];
@@ -179,7 +179,7 @@ CGFloat UI7SegmentedControlCellWidthDefault = 80.0f;
     return self;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [self __initWithCoder:aDecoder];
     if (self != nil) {
         [self _segmentedControlInit];

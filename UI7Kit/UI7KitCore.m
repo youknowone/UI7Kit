@@ -20,7 +20,7 @@ NSMutableArray *UI7KitAutopatchException = nil;
 
 UI7Kit *UI7KitSharedObject = nil;
 
-- (id)init {
+- (instancetype)init {
     self = [super init];
     if (self != nil) {
         self.tintColor = [UI7Color defaultTintColor];

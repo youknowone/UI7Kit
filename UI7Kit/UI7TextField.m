@@ -16,8 +16,8 @@ NSString *UI7TextFieldBorderStyleIsBordered = @"UI7TextFieldBorderStyleIsBordere
 
 //- (id)initWithFrame:(CGRect)frame { return [super initWithFrame:frame]; }
 
-- (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
-- (id)__initWithFrame:(CGRect)frame { assert(NO); return nil; }
+- (instancetype)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
+- (instancetype)__initWithFrame:(CGRect)frame { assert(NO); return nil; }
 - (UITextBorderStyle)__borderStyle { assert(NO); return 0; }
 - (void)__setBorderStyle:(UITextBorderStyle)borderStyle { assert(NO); }
 - (CGRect)__textRectForBounds:(CGRect)bounds { assert(NO); return CGRectZero; }
@@ -63,7 +63,7 @@ NSString *UI7TextFieldBorderStyleIsBordered = @"UI7TextFieldBorderStyleIsBordere
 //    return self;
 //}
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [self __initWithCoder:aDecoder];
     if (self) {
         [self _textFieldInit];

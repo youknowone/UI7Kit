@@ -26,7 +26,6 @@ CGFloat UI7PickerLikeViewRowHeight = 36.0f;
 @property(nonatomic, strong) NSMutableArray            *dividers;
 @property(nonatomic, strong) NSMutableArray            *selectionBars;
 @property(nonatomic, strong) UIView                    *backgroundView;
-@property(nonatomic, assign) NSInteger                  numberOfComponents;
 
 @property(nonatomic, strong) UIImageView               *topGradient;
 @property(nonatomic, strong) UIImageView               *bottomGradient;
@@ -139,7 +138,7 @@ UIImage *UI7PickerLikeViewGradientImage(UIColor *maskColor, CGFloat topGradient,
     [self _updateGradient];
 }
 
-- (id)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame {
     frame.size.height = 216.0f;
     frame.size.width = [UIScreen mainScreen].bounds.size.width;
     self = [super initWithFrame:frame];
@@ -147,7 +146,7 @@ UIImage *UI7PickerLikeViewGradientImage(UIColor *maskColor, CGFloat topGradient,
     return self;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     CGRect frame = self.frame;
     frame.size.height = 216.0f;
@@ -378,8 +377,8 @@ NSAPropertyGetter(bottomGradient, @"_bottomGradient");
 
 @implementation UIPickerView (Patch)
 
-- (id)__initWithFrame:(CGRect)frame { assert(NO); return nil; }
-- (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
+- (instancetype)__initWithFrame:(CGRect)frame { assert(NO); return nil; }
+- (instancetype)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
 
 @end
 
@@ -400,7 +399,7 @@ NSAPropertyGetter(bottomGradient, @"_bottomGradient");
     [self exportSelector:@selector(initWithCoder:) toClass:target];
 }
 
-- (id)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame {
     NSString *className = self.class.name;
     if ([UIDevice currentDevice].needsUI7Kit && ([className isEqual:@"UIPickerView"] || [className isEqual:@"UI7PickerView"])) {
         [self release];
@@ -410,7 +409,7 @@ NSAPropertyGetter(bottomGradient, @"_bottomGradient");
     return self;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
     NSString *className = self.class.name;
     if ([UIDevice currentDevice].needsUI7Kit && ([className isEqual:@"UIPickerView"] || [className isEqual:@"UI7PickerView"])) {
         [self release];

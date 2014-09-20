@@ -33,9 +33,9 @@ CGFloat UI7TableViewGroupedTableSectionSeperatorHeight = 28.0f;
 
 UIColor *UI7TableViewGroupedViewPatternColor = nil;
 
-- (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
-- (id)__initWithFrame:(CGRect)frame { assert(NO); return nil; }
-- (id)__initWithFrame:(CGRect)frame style:(UITableViewStyle)style { assert(NO); return nil; }
+- (instancetype)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
+- (instancetype)__initWithFrame:(CGRect)frame { assert(NO); return nil; }
+- (instancetype)__initWithFrame:(CGRect)frame style:(UITableViewStyle)style { assert(NO); return nil; }
 - (void)__setDelegate:(id<UITableViewDelegate>)delegate { assert(NO); return; }
 - (void)__setDataSource:(id<UITableViewDataSource>)dataSource { assert(NO); return; }
 - (UITableViewStyle)__style { assert(NO); return 0; }
@@ -124,7 +124,7 @@ UIColor *UI7TableViewGroupedViewPatternColor = nil;
     }
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
 //    UITableViewStyle style = UITableViewStylePlain;
 //    if ([aDecoder containsValueForKey:@"UIStyle"]) {
 //        style = [aDecoder decodeIntegerForKey:@"UIStyle"];
@@ -157,7 +157,7 @@ UIColor *UI7TableViewGroupedViewPatternColor = nil;
     return self;
 }
 
-- (id)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [self __initWithFrame:frame];
     if (self) {
         [self _tableViewInit];
@@ -165,7 +165,7 @@ UIColor *UI7TableViewGroupedViewPatternColor = nil;
     return self;
 }
 
-- (id)initWithFrame:(CGRect)frame style:(UITableViewStyle)style {
+- (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style {
     self = [self __initWithFrame:frame style:style];
     if (self) {
         self.backgroundColor = [UI7Color whiteColor];
@@ -453,7 +453,7 @@ UIView *_UI7TableViewDelegateViewForFooterInSection(id self, SEL _cmd, UITableVi
 
 @implementation UI7TableViewController
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     return self;
 }

@@ -29,9 +29,9 @@ NSAPropertyAssignSetter(setNavigationBarClass, @"_navigationBarClass");
 
 @implementation UINavigationController (Patch)
 
-- (id)__init { assert(NO); return nil; }
-- (id)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
-- (id)__initWithRootViewController:(UIViewController *)rootViewController { assert(NO); return nil; }
+- (instancetype)__init { assert(NO); return nil; }
+- (instancetype)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
+- (instancetype)__initWithRootViewController:(UIViewController *)rootViewController { assert(NO); return nil; }
 
 - (void)_navigationControllerInit {
     
@@ -79,7 +79,7 @@ NSAPropertyAssignSetter(setNavigationBarClass, @"_navigationBarClass");
     }
 }
 
-- (id)init {
+- (instancetype)init {
     self = [self initWithNavigationBarClass:[UI7NavigationBar class] toolbarClass:[UI7Toolbar class]];
     if (self != nil) {
         [self _navigationControllerInit];
@@ -87,7 +87,7 @@ NSAPropertyAssignSetter(setNavigationBarClass, @"_navigationBarClass");
     return self;
 }
 
-- (id)initWithRootViewController:(UIViewController *)rootViewController {
+- (instancetype)initWithRootViewController:(UIViewController *)rootViewController {
     self = [self initWithNavigationBarClass:[UI7NavigationBar class] toolbarClass:[UI7Toolbar class]];
     if (self != nil) {
         self.viewControllers = @[rootViewController];
@@ -96,14 +96,14 @@ NSAPropertyAssignSetter(setNavigationBarClass, @"_navigationBarClass");
     return self;
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self.navigationBarClass = [UI7NavigationBar class];
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
 
     return self;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
     // no idea yet
     self = [self __initWithCoder:aDecoder];
     if (self) {
