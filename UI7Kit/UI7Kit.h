@@ -11,57 +11,22 @@
  *      [UI7Kit patchIfNeeded]; // in main.m, before UIApplicationMain()
  */
 
-
-#ifdef COCOAPODS
-#include "../Pods-environment.h"
-#else // no cocoapods, so enable everything
-
-#define COCOAPODS_POD_AVAILABLE_FoundationExtension
-
-#define COCOAPODS_POD_AVAILABLE_UI7Kit_UI7ActionSheet
-#define COCOAPODS_POD_AVAILABLE_UI7Kit_UI7AlertView
-#define COCOAPODS_POD_AVAILABLE_UI7Kit_UI7BarButtonItem
-#define COCOAPODS_POD_AVAILABLE_UI7Kit_UI7Button
-#define COCOAPODS_POD_AVAILABLE_UI7Kit_UI7Color
-#define COCOAPODS_POD_AVAILABLE_UI7Kit_UI7Font
-#define COCOAPODS_POD_AVAILABLE_UI7Kit_UI7NavigationBar
-#define COCOAPODS_POD_AVAILABLE_UI7Kit_UI7NavigationController
-#define COCOAPODS_POD_AVAILABLE_UI7Kit_UI7PickerView
-#define COCOAPODS_POD_AVAILABLE_UI7Kit_UI7ProgressView
-#define COCOAPODS_POD_AVAILABLE_UI7Kit_UI7SearchBar
-#define COCOAPODS_POD_AVAILABLE_UI7Kit_UI7SegmentedControl
-#define COCOAPODS_POD_AVAILABLE_UI7Kit_UI7Slider
-#define COCOAPODS_POD_AVAILABLE_UI7Kit_UI7Stepper
-#define COCOAPODS_POD_AVAILABLE_UI7Kit_UI7Switch
-#define COCOAPODS_POD_AVAILABLE_UI7Kit_UI7TabBar
-#define COCOAPODS_POD_AVAILABLE_UI7Kit_UI7TabBarController
-#define COCOAPODS_POD_AVAILABLE_UI7Kit_UI7TabBarItem
-#define COCOAPODS_POD_AVAILABLE_UI7Kit_UI7TableView
-#define COCOAPODS_POD_AVAILABLE_UI7Kit_UI7TableViewCell
-#define COCOAPODS_POD_AVAILABLE_UI7Kit_UI7TextField
-#define COCOAPODS_POD_AVAILABLE_UI7Kit_UI7Toolbar
-#define COCOAPODS_POD_AVAILABLE_UI7Kit_UI7View
-#define COCOAPODS_POD_AVAILABLE_UI7Kit_UI7ViewController
-#define COCOAPODS_POD_AVAILABLE_UI7Kit_UI7Window
-
-#endif // ifdef COCOAPODS
-
-#ifdef COCOAPODS_POD_AVAILABLE_UI7Kit_UI7Button
+#if __has_include(<UI7Kit/UI7Button.h>)
 #define UI7KIT_HAS_QUARTZCORE
 #endif
-#ifdef COCOAPODS_POD_AVAILABLE_UI7Kit_UI7PickerView
+#if __has_include(<UI7Kit/UI7PickerView.h>)
 #define UI7KIT_HAS_QUARTZCORE
 #endif
-#ifdef COCOAPODS_POD_AVAILABLE_UI7Kit_UI7SearchBar
+#if __has_include(<UI7Kit/UI7SearchBar.h>)
 #define UI7KIT_HAS_QUARTZCORE
 #endif
-#ifdef COCOAPODS_POD_AVAILABLE_UI7Kit_UI7SegmentedControl
+#if __has_include(<UI7Kit/UI7SegmentedControl.h>)
 #define UI7KIT_HAS_QUARTZCORE
 #endif
-#ifdef COCOAPODS_POD_AVAILABLE_UI7Kit_UI7Stepper
+#if __has_include(<UI7Kit/UI7Stepper.h>)
 #define UI7KIT_HAS_QUARTZCORE
 #endif
-#ifdef COCOAPODS_POD_AVAILABLE_UI7Kit_UI7TextField
+#if __has_include(<UI7Kit/UI7TextField.h>)
 #define UI7KIT_HAS_QUARTZCORE
 #endif
 
@@ -69,68 +34,123 @@
 #import <QuartzCore/QuartzCore.h>
 #endif
 
-#ifdef COCOAPODS_POD_AVAILABLE_FoundationExtension
-#import <UIKitExtension/UIKitExtension.h>
-#endif
-
 // Core
 #import <UI7Kit/UI7KitCore.h>
 #import <UI7Kit/UI7Utilities.h>
 
-#ifdef COCOAPODS_POD_AVAILABLE_UI7Kit_UI7Font
+#ifdef COCOAPODS
+
+#if __has_include(<UI7Kit/UI7Font.h>)
 #import <UI7Kit/UI7Font.h>
 #endif
-#ifdef COCOAPODS_POD_AVAILABLE_UI7Kit_UI7AlertView
+
+#if __has_include(<UI7Kit/UI7AlertView.h>)
 #import <UI7Kit/UI7AlertView.h>
 #endif
-#ifdef COCOAPODS_POD_AVAILABLE_UI7Kit_UI7ActionSheet
+
+#if __has_include(<UI7Kit/UI7ActionSheet.h>)
 #import <UI7Kit/UI7ActionSheet.h>
 #endif
-#ifdef COCOAPODS_POD_AVAILABLE_UI7Kit_UI7BarButtonItem
+
+#if __has_include(<UI7Kit/UI7BarButtonItem.h>)
 #import <UI7Kit/UI7BarButtonItem.h>
 #endif
-#ifdef COCOAPODS_POD_AVAILABLE_UI7Kit_UI7Button
+
+#if __has_include(<UI7Kit/UI7Button.h>)
 #import <UI7Kit/UI7Button.h>
 #endif
-#ifdef COCOAPODS_POD_AVAILABLE_UI7Kit_UI7NavigationBar
+
+#if __has_include(<UI7Kit/UI7NavigationBar.h>)
 #import <UI7Kit/UI7NavigationBar.h>
 #endif
-#ifdef COCOAPODS_POD_AVAILABLE_UI7Kit_UI7NavigationController
+
+#if __has_include(<UI7Kit/UI7NavigationController.h>)
 #import <UI7Kit/UI7NavigationController.h>
 #endif
-#ifdef COCOAPODS_POD_AVAILABLE_UI7Kit_UI7ProgressView
+
+#if __has_include(<UI7Kit/UI7ProgressView.h>)
 #import <UI7Kit/UI7ProgressView.h>
 #endif
-#ifdef COCOAPODS_POD_AVAILABLE_UI7Kit_UI7SegmentedControl
+
+#if __has_include(<UI7Kit/UI7PickerView.h>)
+#import <UI7Kit/UI7PickerView.h>
+#endif
+
+#if __has_include(<UI7Kit/UI7SearchBar.h>)
+#import <UI7Kit/UI7SearchBar.h>
+#endif
+
+#if __has_include(<UI7Kit/UI7SegmentedControl.h>)
 #import <UI7Kit/UI7SegmentedControl.h>
 #endif
-#ifdef COCOAPODS_POD_AVAILABLE_UI7Kit_UI7Slider
+
+#if __has_include(<UI7Kit/UI7Slider.h>)
 #import <UI7Kit/UI7Slider.h>
 #endif
-#ifdef COCOAPODS_POD_AVAILABLE_UI7Kit_UI7Stepper
+
+#if __has_include(<UI7Kit/UI7Stepper.h>)
 #import <UI7Kit/UI7Stepper.h>
 #endif
-#ifdef COCOAPODS_POD_AVAILABLE_UI7Kit_UI7TabBar
+
+#if __has_include(<UI7Kit/UI7TabBar.h>)
 #import <UI7Kit/UI7TabBar.h>
 #endif
-#ifdef COCOAPODS_POD_AVAILABLE_UI7Kit_UI7TabBarItem
+
+#if __has_include(<UI7Kit/UI7TabBarItem.h>)
 #import <UI7Kit/UI7TabBarItem.h>
 #endif
-#ifdef COCOAPODS_POD_AVAILABLE_UI7Kit_UI7TabBarController
+
+#if __has_include(<UI7Kit/UI7TabBarController.h>)
 #import <UI7Kit/UI7TabBarController.h>
 #endif
-#ifdef COCOAPODS_POD_AVAILABLE_UI7Kit_UI7TableView
+
+#if __has_include(<UI7Kit/UI7TableView.h>)
 #import <UI7Kit/UI7TableView.h>
 #endif
-#ifdef COCOAPODS_POD_AVAILABLE_UI7Kit_UI7TextField
+
+#if __has_include(<UI7Kit/UI7TextField.h>)
 #import <UI7Kit/UI7TextField.h>
 #endif
-#ifdef COCOAPODS_POD_AVAILABLE_UI7Kit_UI7Toolbar
+
+#if __has_include(<UI7Kit/UI7Toolbar.h>)
 #import <UI7Kit/UI7Toolbar.h>
 #endif
-#ifdef COCOAPODS_POD_AVAILABLE_UI7Kit_UI7View
+
+#if __has_include(<UI7Kit/UI7View.h>)
 #import <UI7Kit/UI7View.h>
 #endif
-#ifdef COCOAPODS_POD_AVAILABLE_UI7Kit_UI7ViewController
+
+#if __has_include(<UI7Kit/UI7ViewController.h>)
 #import <UI7Kit/UI7ViewController.h>
 #endif
+
+#if __has_include(<UIKitExtension/UIKitExtension.h>)
+#import <UIKitExtension/UIKitExtension.h>
+#endif
+
+#else // no cocoapods, so enable everything
+
+#import <UI7Kit/UI7Font.h>
+#import <UI7Kit/UI7AlertView.h>
+#import <UI7Kit/UI7ActionSheet.h>
+#import <UI7Kit/UI7BarButtonItem.h>
+#import <UI7Kit/UI7Button.h>
+#import <UI7Kit/UI7NavigationBar.h>
+#import <UI7Kit/UI7NavigationController.h>
+#import <UI7Kit/UI7ProgressView.h>
+#import <UI7Kit/UI7PickerView.h>
+#import <UI7Kit/UI7SearchBar.h>
+#import <UI7Kit/UI7SegmentedControl.h>
+#import <UI7Kit/UI7Slider.h>
+#import <UI7Kit/UI7Stepper.h>
+#import <UI7Kit/UI7TabBar.h>
+#import <UI7Kit/UI7TabBarItem.h>
+#import <UI7Kit/UI7TabBarController.h>
+#import <UI7Kit/UI7TableView.h>
+#import <UI7Kit/UI7TextField.h>
+#import <UI7Kit/UI7Toolbar.h>
+#import <UI7Kit/UI7View.h>
+#import <UI7Kit/UI7ViewController.h>
+#import <UIKitExtension/UIKitExtension.h>
+
+#endif // ifdef COCOAPODS
