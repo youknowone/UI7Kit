@@ -48,7 +48,7 @@ CGFloat UI7SegmentedControlCellWidthDefault = 80.0f;
 
 - (instancetype)__initWithItems:(NSArray *)items { assert(NO); return nil; }
 - (instancetype)__initWithFrame:(CGRect)frame { assert(NO); return nil; }
-- (instancetype)__initWithCoder:(NSCoder *)aDecoder { asctime(NO); return nil; }
+- (instancetype)__initWithCoder:(NSCoder *)aDecoder { assert(NO); return nil; }
 - (void)__awakeFromNib { assert(NO); }
 - (UIColor *)__tintColor { assert(NO); return nil; }
 - (void)__setTintColor:(UIColor *)tintColor { assert(NO); }
