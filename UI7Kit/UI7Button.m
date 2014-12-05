@@ -124,7 +124,7 @@ UIColor *UI7ButtonDefaultTitleColor = nil;
             [self __setTitleColor:highlightedTextTitleColor forState:UIControlStateHighlighted];
             [self __setTitleColor:selectedTextTitleColor forState:UIControlStateSelected];
             [self __setTitleColor:disabledTextTitleColor forState:UIControlStateDisabled];
-
+            
         }   break;
         case UIButtonTypeDetailDisclosure:
         case UIButtonTypeInfoDark:
