@@ -30,6 +30,13 @@
 @interface UIButton (Accessor)
 
 @property(nonatomic,retain,setter=___setTextTitleColor:) UIColor *___textTitleColor;
+
+@property(nonatomic,retain,setter=___setHighLightedTextTitleColor:) UIColor *___highLightedTextTitleColor;
+
+@property(nonatomic,retain,setter=___setSelectedTextTitleColor:) UIColor *___selectedTextTitleColor;
+
+@property(nonatomic,retain,setter=___setDisabledTextTitleColor:) UIColor *___disabledTextTitleColor;
+
 @property(nonatomic,retain,setter=___setBackgroundColor:) UIColor *___backgroundColor;
 
 @end
@@ -43,6 +50,30 @@
 
 - (void)___setTextTitleColor:(UIColor *)color {
     [self setAssociatedObject:color forKey:@"UI7ButtonTextTitleColor"];
+}
+
+- (UIColor *)___highLightedTextTitleColor {
+    return [self associatedObjectForKey:@"UI7ButtonHighLightedTextTitleColor"];
+}
+
+- (void)___setHighLightedTextTitleColor:(UIColor *)color {
+    [self setAssociatedObject:color forKey:@"UI7ButtonHighLightedTextTitleColor"];
+}
+
+- (UIColor *)___selectedTextTitleColor {
+    return [self associatedObjectForKey:@"UI7ButtonSelectedTextTitleColor"];
+}
+
+- (void)___setSelectedTextTitleColor:(UIColor *)color {
+    [self setAssociatedObject:color forKey:@"UI7ButtonSelectedTextTitleColor"];
+}
+
+- (UIColor *)___disabledTextTitleColor {
+    return [self associatedObjectForKey:@"UI7ButtonDisabledTextTitleColor"];
+}
+
+- (void)___setDisabledTextTitleColor:(UIColor *)color {
+    [self setAssociatedObject:color forKey:@"UI7ButtonDisabledTextTitleColor"];
 }
 
 - (UIColor *)___backgroundColor {
@@ -83,9 +114,17 @@ UIColor *UI7ButtonDefaultTitleColor = nil;
                 textTitleColor = self.tintColor;
             }
             [self __setTitleColor:textTitleColor forState:UIControlStateNormal];
-            UIColor *highlightedTextTitleColor = textTitleColor.highligtedColor;
+            UIColor *highlightedTextTitleColor = self.___highLightedTextTitleColor ? self.___highLightedTextTitleColor : textTitleColor.highligtedColor;
+            
+            UIColor *selectedTextTitleColor = self.___selectedTextTitleColor ? self.___selectedTextTitleColor : textTitleColor.highligtedColor;
+            
+            
+            UIColor *disabledTextTitleColor = self.___disabledTextTitleColor ? self.___disabledTextTitleColor : textTitleColor.highligtedColor;
+            
             [self __setTitleColor:highlightedTextTitleColor forState:UIControlStateHighlighted];
-            [self __setTitleColor:highlightedTextTitleColor forState:UIControlStateSelected];
+            [self __setTitleColor:selectedTextTitleColor forState:UIControlStateSelected];
+            [self __setTitleColor:disabledTextTitleColor forState:UIControlStateDisabled];
+            
         }   break;
         case UIButtonTypeDetailDisclosure:
         case UIButtonTypeInfoDark:
@@ -205,9 +244,33 @@ UIColor *UI7ButtonDefaultTitleColor = nil;
 }
 
 - (void)setTitleColor:(UIColor *)color forState:(UIControlState)state {
-    if (state == UIControlStateNormal) {
-        self.___textTitleColor = color;
-        [self _tintColorUpdated];
+    switch (state) {
+        case UIControlStateNormal:
+        {
+            self.___textTitleColor = color;
+            [self _tintColorUpdated];
+        }
+            break;
+        case UIControlStateHighlighted:
+        {
+            self.___highLightedTextTitleColor = color;
+            [self _tintColorUpdated];
+        }
+            break;
+        case UIControlStateDisabled:
+        {
+            self.___disabledTextTitleColor = color;
+            [self _tintColorUpdated];
+        }
+            break;
+        case UIControlStateSelected:
+        {
+            self.___selectedTextTitleColor = color;
+            [self _tintColorUpdated];
+        }
+            break;
+        default:
+            break;
     }
     
     NSString *name; SEL selector; IMP impl;
@@ -302,9 +365,16 @@ UIColor *UI7ButtonDefaultTitleColor = nil;
         textTitleColor = tintColor;
     }
     [self __setTitleColor:textTitleColor forState:UIControlStateNormal];
-    UIColor *highlightedTextTitleColor = textTitleColor.highligtedColor;
+    UIColor *highlightedTextTitleColor = self.___highLightedTextTitleColor ? self.___highLightedTextTitleColor : textTitleColor.highligtedColor;
+    
+    UIColor *selectedTextTitleColor = self.___selectedTextTitleColor ? self.___selectedTextTitleColor : textTitleColor.highligtedColor;
+    
+    
+    UIColor *disabledTextTitleColor = self.___disabledTextTitleColor ? self.___disabledTextTitleColor : textTitleColor.highligtedColor;
+    
     [self __setTitleColor:highlightedTextTitleColor forState:UIControlStateHighlighted];
-    [self __setTitleColor:highlightedTextTitleColor forState:UIControlStateSelected];
+    [self __setTitleColor:selectedTextTitleColor forState:UIControlStateSelected];
+    [self __setTitleColor:disabledTextTitleColor forState:UIControlStateDisabled];
     self.layer.borderColor = textTitleColor.CGColor;
 }
 
