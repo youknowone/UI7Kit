@@ -1,3 +1,17 @@
+Notice about current Status of the project
+==========================================
+
+Since April, I have no devices to test any patches anymore.
+Because I don't think this library has many users these days, I suggest a guideline for bugs and patches.
+
+- Any bug reports will be just archived - I don't have any way to solve it.
+- Any patches doesn't look suspicious will be accepted - I will considerate real users. If there is new problems, you can go back to older version or suggest reverting.
+
+Any volunteer - is there someone, really? -  who want to take over this project also will be appreciated.
+We will watch the project together for a while and I will grant every permission.
+
+
+
 Bug report
 ==========
 
