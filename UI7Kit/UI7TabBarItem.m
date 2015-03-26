@@ -160,7 +160,7 @@ NSString *UI7TabBarItemIconNames[] = {
         NSString *name = [@"set" stringByAppendingString:@"UnselectedImage:"];
         SEL selector = NSSelectorFromString(name);
         IMP impl = class_getMethodImplementation(self.class, selector);
-        impl(self, selector, self.image);
+        ((void(*)(id, SEL, id))impl)(self, selector, self.image);
     }
     return image;
 }

@@ -85,15 +85,15 @@ NSString *UI7TabBarStyle = @"UI7TabBarStyle";
     name = [@"_set" stringByAppendingString:@"LabelFont:"];
     selector = NSSelectorFromString(name);
     impl = class_getMethodImplementation(self.class, selector);
-    impl(self, selector, [UI7Font systemFontOfSize:10.0 attribute:UI7FontAttributeLight]);
+    ((void(*)(id, SEL, id))impl)(self, selector, [UI7Font systemFontOfSize:10.0 attribute:UI7FontAttributeLight]);
     name = [@"_set" stringByAppendingString:@"LabelShadowOffset:"];
     selector = NSSelectorFromString(name);
     impl = class_getMethodImplementation(self.class, selector);
-    impl(self, selector, CGSizeZero);
+    ((void(*)(id, SEL, CGSize))impl)(self, selector, CGSizeZero);
     name = [@"_set" stringByAppendingString:@"LabelTextColor:selectedTextColor:"];
     selector = NSSelectorFromString(name);
     impl = class_getMethodImplementation(self.class, selector);
-    impl(self, selector, [UIColor grayColor], self.tintColor);
+    ((void(*)(id, SEL, id, id))impl)(self, selector, [UIColor grayColor], self.tintColor);
 }
 
 @end
