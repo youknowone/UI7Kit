@@ -156,7 +156,7 @@ UIColor *UI7ButtonDefaultTitleColor = nil;
     if (self != nil && [self.class.name isEqualToString:@"UIRoundedRectButton"]) {
         object_setClass(self, [UI7Button class]);
     }
-    self = [UI7Button methodImplementationForSelector:@selector(initWithCoder:)](self, _cmd, aDecoder);
+    self = ((id(*)(id, SEL, id))[UI7Button methodImplementationForSelector:@selector(initWithCoder:)])(self, _cmd, aDecoder);
     return self;
 }
 
@@ -277,7 +277,7 @@ UIColor *UI7ButtonDefaultTitleColor = nil;
     name = [@"__set" stringByAppendingString:@"TitleColor:forState:"];
     selector = NSSelectorFromString(name);
     impl = class_getMethodImplementation(self.class, selector);
-    impl(self, selector, color, state);
+    ((void(*)(id, SEL, id, UIControlState))impl)(self, selector, color, state);
 }
 
 - (UIColor *)___tintColor {
