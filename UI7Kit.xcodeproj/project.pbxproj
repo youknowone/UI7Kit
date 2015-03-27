@@ -361,8 +361,9 @@
 		38F2BA441767599400F12168 /* UI7NavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7NavigationBar.m; sourceTree = "<group>"; };
 		38FB2AA0178F06B1000491FE /* UICBareTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICBareTableViewController.h; sourceTree = "<group>"; };
 		38FB2AA1178F06B1000491FE /* UICBareTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICBareTableViewController.m; sourceTree = "<group>"; };
-		55EED93614CF421499E970F0 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		A139A27C5866BDDAAE205C8D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C081AB61224D42EF8B7ABD3F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5BB7C116AC2E015DECAD0BF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -416,6 +417,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32708E8560925F5F0623F7C7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A139A27C5866BDDAAE205C8D /* Pods.debug.xcconfig */,
+				F5BB7C116AC2E015DECAD0BF /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		38017426176989660049D26C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -481,7 +491,7 @@
 				384BF425178A176600485BED /* UI7KitCatalog */,
 				383764D613373154007072FD /* Frameworks */,
 				383764D513373154007072FD /* Products */,
-				55EED93614CF421499E970F0 /* Pods.xcconfig */,
+				32708E8560925F5F0623F7C7 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -966,7 +976,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 		};
 		996A269D6AF947408B896263 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1125,7 +1135,6 @@
 /* Begin XCBuildConfiguration section */
 		38017442176989660049D26C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55EED93614CF421499E970F0 /* Pods.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -1155,7 +1164,6 @@
 		};
 		38017443176989660049D26C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55EED93614CF421499E970F0 /* Pods.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -1180,7 +1188,6 @@
 		};
 		38017445176989660049D26C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55EED93614CF421499E970F0 /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1227,7 +1234,6 @@
 		};
 		38017446176989660049D26C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55EED93614CF421499E970F0 /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1339,7 +1345,6 @@
 		};
 		384BF437178A176600485BED /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55EED93614CF421499E970F0 /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1373,7 +1378,6 @@
 		};
 		384BF438178A176600485BED /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55EED93614CF421499E970F0 /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1404,7 +1408,7 @@
 		};
 		38F068401636F8C9002723AB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55EED93614CF421499E970F0 /* Pods.xcconfig */;
+			baseConfigurationReference = A139A27C5866BDDAAE205C8D /* Pods.debug.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -1435,7 +1439,7 @@
 		};
 		38F068411636F8C9002723AB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55EED93614CF421499E970F0 /* Pods.xcconfig */;
+			baseConfigurationReference = F5BB7C116AC2E015DECAD0BF /* Pods.release.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
