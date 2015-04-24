@@ -1135,6 +1135,7 @@
 /* Begin XCBuildConfiguration section */
 		38017442176989660049D26C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A139A27C5866BDDAAE205C8D /* Pods.debug.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -1151,10 +1152,6 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					.,
-				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -1164,6 +1161,7 @@
 		};
 		38017443176989660049D26C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5BB7C116AC2E015DECAD0BF /* Pods.release.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -1175,10 +1173,6 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UI7Kit/UI7Kit-Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					.,
-				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -1188,6 +1182,7 @@
 		};
 		38017445176989660049D26C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A139A27C5866BDDAAE205C8D /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1234,6 +1229,7 @@
 		};
 		38017446176989660049D26C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5BB7C116AC2E015DECAD0BF /* Pods.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1302,7 +1298,11 @@
 				GCC_WARN_UNKNOWN_PRAGMAS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = .;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					.,
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1336,7 +1336,11 @@
 				GCC_WARN_UNKNOWN_PRAGMAS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = .;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					.,
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 				WARNING_CFLAGS = "-Wall";
@@ -1345,6 +1349,7 @@
 		};
 		384BF437178A176600485BED /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A139A27C5866BDDAAE205C8D /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1378,6 +1383,7 @@
 		};
 		384BF438178A176600485BED /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5BB7C116AC2E015DECAD0BF /* Pods.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

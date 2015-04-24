@@ -54,7 +54,7 @@ Pod::Spec.new do |s|
       if component != 'UI7Color'
         c.dependency 'UI7Kit/Core' # always depend on our Core, but dont cause a dep cycle on UI7Color
       else
-        c.dependency 'FoundationExtension/UIKitExtension', '~> 0.48'
+        c.dependency 'FoundationExtension/UIKitExtension', '~> 1.0.0'
       end
       if component == 'UI7NavigationBar' or component == 'UI7Slider'
         c.resources = "Resources/#{component}*" # this should go away eventually

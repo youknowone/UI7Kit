@@ -211,7 +211,7 @@ CGFloat _UI7TableViewDelegateHeightForHeaderInSection(id self, SEL _cmd, UITable
         UIFont *font = [UI7Font systemFontOfSize:14.0 attribute:UI7FontAttributeNone];
         CGSize size = [title sizeWithFont:font constrainedToSize:CGSizeMake(tableView.frame.size.width, INFINITY)];
         if (size.height > 0) {
-            height = UI7TableViewGroupedTableSectionSeperatorHeight + ceilf(size.height) + 2.0f;
+            height = UI7TableViewGroupedTableSectionSeperatorHeight + ceil(size.height) + 2.0f;
         } else {
             height = UI7TableViewGroupedTableSectionSeperatorHeight;
         }
@@ -237,7 +237,7 @@ CGFloat _UI7TableViewDelegateHeightForFooterInSection(id self, SEL _cmd, UITable
         UIFont *font = [UI7Font systemFontOfSize:14.0 attribute:UI7FontAttributeNone];
         CGSize size = [title sizeWithFont:font constrainedToSize:CGSizeMake(tableView.frame.size.width, INFINITY)];
         if (size.height > 0) {
-            return ceilf(size.height) + 7.0f;
+            return ceil(size.height) + 7.0f;
         } else {
             return .0f;
         }
