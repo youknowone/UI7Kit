@@ -1,6 +1,9 @@
 UI7Kit
 ======
 
+NOTE: For iOS5 Support, Use "0.9.22" or prior. The project is updated for iOS 6.0 and recent cocoapods setup.
+
+
 UI7Kit is a GUI toolkit which can backport flat-style UIKit from iOS7 to iOS5/iOS6. Additionally, UI7Kit can also be used to patch legacy UIKit to UI7Kit in runtime.
 
 NOTE: This project is not mature yet and is being refined. You may come across some bugs or unexpected behaviors for complex real-world product.

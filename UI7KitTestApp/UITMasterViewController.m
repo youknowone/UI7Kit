@@ -114,7 +114,8 @@
     UIImage *bulletImage = [originalImage imageByResizingToSize:CGSizeMake(20.0, 20.0)];
     cell.imageView.image = bulletImage;
 
-    cell.textLabel.text = cellIdentifier;
+    assert([cellIdentifier isKindOfClass:[NSString class]]);
+    cell.textLabel.text = [cellIdentifier copy];
     return cell;
 }
 

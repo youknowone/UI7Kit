@@ -38,7 +38,8 @@
 - (void)patchChanged:(UISwitch *)sender {
     UICUserDefaults.globalPatch = sender.on;
 
-    [UIAlertView showNoticeWithTitle:@"Restart required" message:@"This setting is adjusted after restarting." cancelButtonTitle:@"OK"];
+    UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"Restart required" message:@"This setting is adjusted after restarting." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [view show];
 }
 
 - (void)barStyleChanged:(UISegmentedControl *)sender {

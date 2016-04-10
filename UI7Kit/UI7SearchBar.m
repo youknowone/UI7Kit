@@ -10,6 +10,7 @@
 #import "UI7Color.h"
 #import "UI7SearchBar.h"
 
+#pragma clang diagnostic ignored "-Wobjc-designated-initializers"
 
 @interface UISearchBar (Private)
 

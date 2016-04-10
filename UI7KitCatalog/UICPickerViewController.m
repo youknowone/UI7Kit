@@ -30,12 +30,15 @@
 
 - (void)selectToday:(id)sender {
     NSDate *date = [NSDate date];
+    #pragma clang diagnostic push
+    #pragma clang diagnostic ignored "-Wdeprecated-declarations"
     [self.pickerView selectRow:date.components.year - 2000 inComponent:0 animated:YES];
     [self.pickerView selectRow:date.components.month inComponent:1 animated:YES];
     [self.pickerView selectRow:date.components.day inComponent:2 animated:YES];
+    #pragma clang diagnostic pop
 }
 
-#pragma mark 
+#pragma mark
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     return 4;

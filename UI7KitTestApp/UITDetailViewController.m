@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 youknowone.org. All rights reserved.
 //
 
+#import <UIKitExtension/UIKitExtension.h>
 #import "UITDetailViewController.h"
 
 @interface UITDetailViewController ()
@@ -32,7 +33,8 @@
 - (void)showAlertView1:(id)sender {
     NSString *title = @"Title";
     NSString *message = @"Message";
-    [UIAlertView showNoticeWithTitle:title message:message cancelButtonTitle:@"OK"];
+    UIAlertView *view = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [view show];
 }
 
 - (void)showAlertView2:(id)sender {
@@ -94,7 +96,7 @@
 }
 
 - (void)changeStepperColor:(UIStepper *)sender {
-    sender.tintColor = [UIColor colorWith8bitRed:60 + sender.value green:120 + sender.value blue:180 + sender.value alpha:255];
+    sender.tintColor = [UIColor colorWith8bitRed:60.0 + sender.value green:120.0 + sender.value blue:180.0 + sender.value alpha:255.0];
 }
 
 @end

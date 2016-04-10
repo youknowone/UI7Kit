@@ -8,6 +8,8 @@
 
 #import <QuartzCore/QuartzCore.h>
 
+#pragma clang diagnostic ignored "-Wobjc-designated-initializers"
+
 #import "UI7TextField.h"
 
 NSString *UI7TextFieldBorderStyleIsBordered = @"UI7TextFieldBorderStyleIsBordered";

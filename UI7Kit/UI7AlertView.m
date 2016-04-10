@@ -14,6 +14,8 @@
 
 #import "UI7AlertView.h"
 
+#pragma clang diagnostic ignored "-Wobjc-designated-initializers"
+
 const CGFloat UI7AlertViewWidth = 270.0f;
 
 @interface UIAlertView (Private)

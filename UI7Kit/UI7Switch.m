@@ -8,6 +8,8 @@
 
 #import "UI7Switch.h"
 
+#pragma clang diagnostic ignored "-Wobjc-designated-initializers"
+
 #if !defined(UI7SWITCH_KLSWITCH) && !defined(UI7SWITCH_MBSWITCH) && !defined(UI7SWITCH_SEVENSWITCH)
 #   define UI7SWITCH_SEVENSWITCH 1
 #endif

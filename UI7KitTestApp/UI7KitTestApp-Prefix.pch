@@ -10,5 +10,6 @@
 
 #ifdef __OBJC__
     #undef COCOAPODS
+#define TARGET_
     #import <UI7Kit/UI7Kit.h>
 #endif

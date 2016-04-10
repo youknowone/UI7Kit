@@ -10,6 +10,8 @@
 
 #import <UI7Kit/UI7Utilities.h>
 
+#pragma clang diagnostic ignored "-Wobjc-designated-initializers"
+
 UIKIT_EXTERN NSString *UI7AppearanceSuperview;
 
 @interface UIView (UI7View)

@@ -1,6 +1,6 @@
-platform :ios, '5.0'
+platform :ios, '6.0'
 
-pod 'FoundationExtension', '~> 1.0.0'
+pod 'FoundationExtension', '~> 1.2.4'
 pod 'SevenSwitch', '~> 1.3.0'
 pod 'GIKPopoverBackgroundView/Core'
 pod 'UIKitResources/UIAccessoryButton'

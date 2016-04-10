@@ -38,6 +38,9 @@
 		382B5801177F60AA00D46754 /* UITAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 382B5800177F60AA00D46754 /* UITAlertViewController.m */; };
 		382B58061780427800D46754 /* UITTintViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 382B58051780427800D46754 /* UITTintViewController.m */; };
 		382E2206176CB72D005F0A98 /* UITPreparedCellTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38485C5F1710974C0001A99D /* UITPreparedCellTableViewController.m */; };
+		383071C81CBAAADF000E35EC /* libFoundationExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 383071C51CBAAADF000E35EC /* libFoundationExtension.a */; };
+		383071C91CBAAADF000E35EC /* libGIKPopoverBackgroundView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 383071C61CBAAADF000E35EC /* libGIKPopoverBackgroundView.a */; };
+		383071CA1CBAAADF000E35EC /* libSevenSwitch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 383071C71CBAAADF000E35EC /* libSevenSwitch.a */; };
 		383E6A831775CF0100EF7ADA /* UI7Font.m in Sources */ = {isa = PBXBuildFile; fileRef = 383E6A821775CF0100EF7ADA /* UI7Font.m */; };
 		38460CF917ED6CF900AF8C53 /* UITExternalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38460CF817ED6CF900AF8C53 /* UITExternalViewController.m */; };
 		38460CFB17ED74C700AF8C53 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38460CFA17ED74C700AF8C53 /* AddressBookUI.framework */; };
@@ -229,6 +232,9 @@
 		382B58051780427800D46754 /* UITTintViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITTintViewController.m; sourceTree = "<group>"; };
 		382F54271767863B004D6F59 /* UI7TableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI7TableView.h; sourceTree = "<group>"; };
 		382F54281767863B004D6F59 /* UI7TableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI7TableView.m; sourceTree = "<group>"; };
+		383071C51CBAAADF000E35EC /* libFoundationExtension.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFoundationExtension.a; path = "Pods/../build/Debug-iphoneos/libFoundationExtension.a"; sourceTree = "<group>"; };
+		383071C61CBAAADF000E35EC /* libGIKPopoverBackgroundView.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGIKPopoverBackgroundView.a; path = "Pods/../build/Debug-iphoneos/libGIKPopoverBackgroundView.a"; sourceTree = "<group>"; };
+		383071C71CBAAADF000E35EC /* libSevenSwitch.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSevenSwitch.a; path = "Pods/../build/Debug-iphoneos/libSevenSwitch.a"; sourceTree = "<group>"; };
 		383764D713373154007072FD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		383764E213373155007072FD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		383764E513373155007072FD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -378,6 +384,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				383071C81CBAAADF000E35EC /* libFoundationExtension.a in Frameworks */,
+				383071C91CBAAADF000E35EC /* libGIKPopoverBackgroundView.a in Frameworks */,
+				383071CA1CBAAADF000E35EC /* libSevenSwitch.a in Frameworks */,
 				38D5BD3319CDBD2900DC7C8D /* libUI7Kit.a in Frameworks */,
 				3888FC63176C8EAD00489638 /* CoreGraphics.framework in Frameworks */,
 				38017433176989660049D26C /* UIKit.framework in Frameworks */,
@@ -509,6 +518,9 @@
 		383764D613373154007072FD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				383071C51CBAAADF000E35EC /* libFoundationExtension.a */,
+				383071C61CBAAADF000E35EC /* libGIKPopoverBackgroundView.a */,
+				383071C71CBAAADF000E35EC /* libSevenSwitch.a */,
 				383764D713373154007072FD /* Foundation.framework */,
 				383764E213373155007072FD /* UIKit.framework */,
 				383764E513373155007072FD /* CoreGraphics.framework */,
@@ -799,6 +811,7 @@
 				38F068131636F8C8002723AB /* Frameworks */,
 				38F068141636F8C8002723AB /* Resources */,
 				634EE775A43E454E95DFF409 /* Copy Pods Resources */,
+				4D2FEEE3F2CB9DCEBC12C36B /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -816,7 +829,7 @@
 		383764CB13373154007072FD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = youknowone.org;
 			};
 			buildConfigurationList = 383764CE13373154007072FD /* Build configuration list for PBXProject "UI7Kit" */;
@@ -831,8 +844,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				38F068151636F8C8002723AB /* UI7KitTestApp */,
 				38017422176989650049D26C /* UI7Kit */,
+				38F068151636F8C8002723AB /* UI7KitTestApp */,
 				38017430176989660049D26C /* UI7KitTests */,
 				384BF420178A176600485BED /* UI7KitCatalog */,
 			);
@@ -963,6 +976,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		4D2FEEE3F2CB9DCEBC12C36B /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		634EE775A43E454E95DFF409 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1152,9 +1180,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -1174,7 +1200,6 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UI7Kit/UI7Kit-Prefix.pch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1210,9 +1235,10 @@
 					.,
 				);
 				INFOPLIST_FILE = "UI7KitTests/UI7KitTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				LIBRARY_SEARCH_PATHS = "$(PODS_ROOT)/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
-				ONLY_ACTIVE_ARCH = YES;
+				LIBRARY_SEARCH_PATHS = (
+					"$(PODS_ROOT)/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-framework",
@@ -1222,8 +1248,8 @@
 					"-framework",
 					XCTest,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.youknowone.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -1252,8 +1278,10 @@
 					.,
 				);
 				INFOPLIST_FILE = "UI7KitTests/UI7KitTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				LIBRARY_SEARCH_PATHS = "$(PODS_ROOT)/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(PODS_ROOT)/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-framework",
@@ -1263,8 +1291,8 @@
 					"-framework",
 					XCTest,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.youknowone.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1281,6 +1309,8 @@
 				CLANG_WARN_OBJC_RECEIVER_WEAK = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_BITCODE = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
@@ -1303,7 +1333,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					.,
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				WARNING_CFLAGS = "-Wall";
@@ -1322,6 +1352,7 @@
 				CLANG_WARN_OBJC_RECEIVER_WEAK = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_BITCODE = NO;
 				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
 				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1341,7 +1372,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					.,
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				SDKROOT = iphoneos;
 				WARNING_CFLAGS = "-Wall";
 			};
@@ -1368,13 +1399,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				HEADER_SEARCH_PATHS = (
-					"${inherited}",
-					.,
-				);
 				INFOPLIST_FILE = "UI7KitCatalog/UI7KitCatalog-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				LIBRARY_SEARCH_PATHS = "$(PODS_ROOT)/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.youknowone.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -1397,14 +1423,9 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UI7KitCatalog/UI7KitCatalog-Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"${inherited}",
-					.,
-				);
 				INFOPLIST_FILE = "UI7KitCatalog/UI7KitCatalog-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				LIBRARY_SEARCH_PATHS = "$(PODS_ROOT)/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.youknowone.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1428,16 +1449,10 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				HEADER_SEARCH_PATHS = (
-					"${inherited}",
-					.,
-				);
+				HEADER_SEARCH_PATHS = "${inherited}";
 				INFOPLIST_FILE = "UI7KitTestApp/UI7KitTestApp-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				LIBRARY_SEARCH_PATHS = "$(PODS_ROOT)/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
-				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.youknowone.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1454,16 +1469,11 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UI7KitTestApp/UI7KitTestApp-Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"${inherited}",
-					.,
-				);
+				HEADER_SEARCH_PATHS = "${inherited}";
 				INFOPLIST_FILE = "UI7KitTestApp/UI7KitTestApp-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				LIBRARY_SEARCH_PATHS = "$(PODS_ROOT)/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.youknowone.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
