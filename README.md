@@ -41,7 +41,7 @@ Example with current code. (0.9.6)
 
 The phones on the left most column of the screenshot are iOS7, and the phones on the middle and right columns are iOS5 or iOS6.
 
-![Current status](https://raw.github.com/youknowone/UI7Kit/master/UI7Kit.png).
+![Current status](https://github.com/youknowone/UI7Kit/blob/master/UI7Kit.png?raw=true).
 
 - [Quick video of 0.0.16 test app](http://www.youtube.com/watch?v=xVA5MAbUW44)
 - [Step by step video of 0.2 - QRQR](http://www.youtube.com/watch?v=M2P1Um20py4)
